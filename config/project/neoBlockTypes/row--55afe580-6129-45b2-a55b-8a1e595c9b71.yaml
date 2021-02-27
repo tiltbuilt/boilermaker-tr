@@ -1,0 +1,79 @@
+childBlocks:
+  - column
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  d4170b2e-e2ff-4814-bd88-fcdce1a4aac1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2e5285f5-0e17-42b4-a8d4-d1162bd4b90e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9f6aab1b-ba77-4f5c-b2e4-0375d2582065
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Column Alignment'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: c09f83e7-2a34-4a4b-8655-6fbff6ce3705
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 76c29aa7-c5a9-460a-92c8-deba792d3954
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: 'Padding & Margins'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        sortOrder: 3
+handle: row
+maxBlocks: 0
+maxChildBlocks: 4
+maxSiblingBlocks: 0
+name: 'Multicolumn Layout Row'
+sortOrder: 15
+topLevel: false

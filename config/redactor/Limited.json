@@ -1,0 +1,12 @@
+{
+	  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "indent", "outdent","link","html", "undo", "redo"],
+	  "plugins": [
+		  "fullscreen",		  
+		  "redactoranchors",
+		  "specialchars"
+		],
+	  "linkNewTab": true,
+	  "toolbarFixed": true,
+	  "pastePlainText": true
+	}
+	

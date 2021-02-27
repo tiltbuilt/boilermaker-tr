@@ -1,0 +1,94 @@
+/**
+ * components/slider.css
+ *
+ * Slider Set and Slide component specific styles
+ *
+ */
+ 
+ .sliderSet {
+	overflow: hidden;
+	position: relative;
+	
+	.slide {
+		overflow: hidden;
+		position: relative;		
+		
+		& > .inner {
+			display: flex;
+			min-height: 500px;
+			
+			/*
+			.lazyload {
+				display: none;
+			}
+			*/
+		}
+	}
+	/*
+	.owl-item.active {
+		.slide {
+									
+			& > .inner {
+								
+				.lazyload {
+					display: block;
+				}
+			}
+		}
+	}
+	*/
+	.owl-prev, .owl-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		/* add/adjust styles here to control color, etc. of icons for prev and next buttons */
+		@apply text-white;
+		transition: color 0.3s ease-in-out;
+		
+		svg {
+			width: 30px;
+			height: 30px;
+			fill: currentColor;	
+		}
+		
+		&:hover {
+			/* add/adjust styles here to control color, etc. of icons for prev and next buttons on hover */
+			@apply text-red;
+		}
+	}
+	
+	.owl-prev {
+		left: 0px;
+	}
+	
+	.owl-next {
+		right: 0px;
+	}
+	
+	/* uncomment the block below to control the styles of the dot set if using dot navigation */
+	
+	
+	.owl-dots {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		left: 0px;
+		bottom: 0px;
+		padding-bottom: 0.5rem;
+		
+		.owl-dot {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			border: solid 1px theme('colors.white');
+			background-color: transparent;
+			margin: 0px 3px;
+			transition: background-color 0.3s ease-in-out;
+			
+			&.active {
+				background-color: theme('colors.white');	
+			}	
+		}	
+	}
+}

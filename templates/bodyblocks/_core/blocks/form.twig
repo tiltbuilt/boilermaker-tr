@@ -1,0 +1,63 @@
+{#
+/**
+ * Block - Form
+ * -----
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2020, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{% if block.formToDisplay|length %}
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'form-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = block.type.handle %}
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+{% set stylingClasses = stylingClasses|merge([block.topMargin, block.bottomMargin]) %}
+{% set buttonClasses = 'btn btn-formsubmit ' ~ block.buttonStyling.value %}
+
+{# if header has text build set of padding and margin classes for header #}
+
+{% if block.headingText|length and block.headingLevel != '' %}
+	{% set headerClasses = [] %}
+	{% set headerClasses = headerClasses|merge([block.headingBottomMargin]) %}
+	{% set headerClasses = headerClasses|merge([block.headerAlignment]) %}
+	{% set headerClasses = headerClasses|merge(block.headingStyling) %}
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
+  <div class="inner">
+	{% if block.headingText|length and block.headingLevel != '' %}
+		<{{ block.headingLevel }} {{ edcMacros.buildClasses('contentWrapper-header', headerClasses) -}}>
+		  {{ gMacros.stripTags(block.headingText) }}
+		</{{ block.headingLevel }}>
+	{% endif %}  
+	<div class="form-wrapper">
+		{{ block.formToDisplay.render({submitClass: buttonClasses}) }}
+		<small>* Required Field</small>
+	</div>  
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,365 @@
+fieldLayouts:
+  14f4dc6b-77ee-42b0-89b0-570b795a216a:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55f8e319-bfe4-44a9-9985-13713c65d7a1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Page Header'
+            type: craft\fieldlayoutelements\Heading
+          -
+            style: tip
+            tip: 'These settings apply to the page header for this page. You can override the default page header with the Page Header Layout Location in the Page Builder.'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: c93a7fcd-889b-4fcd-9282-c75a0dc6aa7a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 00137578-07ac-4ec9-b168-06dfe0dfffc9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4d637aab-baa9-4278-85d8-9f75cca06b46
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7cb92208-f474-4828-b924-c50db15671d1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bb7ab3c5-5f73-4fd9-8128-a3287db4b883
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 78c1fc91-ebd7-4e99-a80c-5813ed187bfc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3203006b-146d-472a-af2c-ed9143ed8e26
+            instructions: ''
+            label: 'Header Image Alt Text'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 98b65bd3-2aa4-49ff-84c1-5b71d0c20c75
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: 'Add any additional classes needed for specific styling affects on a per page header basis'
+            label: 'Page Header Custom Classes'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Page Footer'
+            type: craft\fieldlayoutelements\Heading
+          -
+            style: tip
+            tip: 'To create a footer for a page, use the Page Footer Layout Location in the page builder field. If no footer is created, a footer from a parent page will be used, or from the home page if no parent pages have footers. To turn the footer off, use the field below.'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: 1a83c91d-fa72-413c-98bf-4f619be8efeb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Page Content'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 47215f2d-31c0-489f-8f3e-a898ad65b8ac
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3e5ad499-2792-4b4a-80c2-151788b555f5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 48f0945a-414e-4059-9d5f-7951e8cf0ea8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 24c1f110-fa99-43c2-9785-c94ace56822d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b46ccfb-b6a8-405c-a4d5-2fec882c205d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Image Settings'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 9b8e7f29-6d7a-4fcb-bbf9-2aa241f9fc91
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8da0ef17-47f8-43cc-a5eb-b94ed7264be5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Button Settings'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 0bf8ce81-5a07-4a2d-ab74-f3d3dbd7091a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Background Settings'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 38cf68d5-c2e9-4a3a-be6f-f78467c7ce35
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b4f9e572-6516-4354-adc0-598a2acc2024
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 53398f5c-c89b-4bb8-947b-f1c18a5285a7
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a6142a53-d635-4e7a-b2cc-a3124c08f7b9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 76074de5-823f-4a9b-843b-746f628ac874
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f82237d5-4da4-4e7a-85e1-5ea1e5568971
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Page Header Styling'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 3d9e7dfc-9a38-49ed-881c-393bab5bbd9f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a91fe423-ac9a-40f5-87ea-7d32e897d5b0
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Embeds
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: 67d43f2b-85dc-40f0-aa3f-9ddc8e53c7a6
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1fa2fbda-3895-4a01-bc37-55f76479c57a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e94bbb7-66d9-49bc-9423-12aab53c42ad
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 4
+handle: pages
+hasTitleField: true
+name: Pages
+section: 6825f88f-d9e6-4971-a598-8beb758fc4f0
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

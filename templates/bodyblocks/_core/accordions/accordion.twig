@@ -1,0 +1,180 @@
+{#
+/**
+ * Accordion
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute values #}
+{% if accordion.customId is defined and accordion.customId != '' %}
+	{% set blockId = accordion.customId %}
+	{% set panelId = accordion.customId ~ '-panel' %}
+	{% set buttonId = accordion.customId ~ '-button' %}
+	{% set headingId = accordion.customId ~ '-heading' %}		
+{% else %}
+	{% set blockId = 'accordion-' ~ accordion.id %}
+	{% set panelId = 'accordion-' ~ accordion.id ~ '-panel' %}
+	{% set buttonId = 'accordion-' ~ accordion.id ~ '-button' %}
+	{% set headingId = 'accordion-' ~ accordion.customId ~ '-heading' %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = accordion.type.handle %}
+
+{# Set styling classes for outer block #}
+{% set stylingClassesOuter = [] %}
+
+{% if setPiece is defined and setPiece %}
+	{% set stylingClassesOuter = stylingClassesOuter|merge([accSpacing]) %}
+{% else %}
+	{% set stylingClassesOuter = stylingClassesOuter|merge([accordion.topMargin, accordion.bottomMargin]) %}
+{% endif %}
+
+
+{# Set styling classes and attributes for button #}
+{% set buttonClasses = [] %}
+{% set buttonAttrs = {'type': 'button', 'data-toggle': 'expanded', 'data-target': '#' ~ panelId, 'aria-controls': panelId} %}
+
+{# check to see if accordion is part of a set, if so check to see if the set is configured to have the first block open or closed and if this is the first block or not and apply styling accordingly#}
+{% if setPiece is defined and setPiece and (loopCount is defined) %}
+	{% if openFirst and (loopCount == 1) %}
+		{% set openStatus = true %}
+	{% else %}
+		{% set openStatus = false %}
+	{% endif %}
+{% else %}
+	{% if accordion.accordionStartState %}
+		{% set openStatus = true %}
+	{% else %}
+		{% set openStatus = false %}
+	{% endif %}
+{% endif %}
+
+{% if openStatus %}
+	{% set buttonClasses = buttonClasses|merge(['expanded']) %}
+	{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'true'}) %}
+	{% set stylingClassesOuter = stylingClassesOuter|merge(['expanded']) %}
+{% else %}
+	{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'false'}) %}
+{% endif %}
+
+{# Set styling classes and attributes for Panel #}
+{% set stylingClasses = [] %}
+{% set panelAttrs = {'aria-labelledby': headingId, 'role': 'region'} %}
+
+{% if openStatus %}
+	{% set stylingClasses = stylingClasses|merge(['expanded']) %}
+{% endif %}
+
+{% if accordion.contentAlignment is defined and accordion.contentAlignment != '' %}
+	{% set stylingClasses = stylingClasses|merge([accordion.contentAlignment]) %}
+{% endif %}
+
+{% if accordion.textStyling is defined and accordion.textStyling != null  %}
+	{% set stylingClasses = stylingClasses|merge(accordion.textStyling) %}
+{% endif %}
+
+{% if accordion.backgroundColor is defined and accordion.backgroundColor != ''  %}
+	{% set stylingClasses = stylingClasses|merge([accordion.backgroundColor]) %}
+{% endif %}
+
+{% if parentAccSet is defined and parentAccSet != null  %}
+	{% set panelAttrs = panelAttrs|merge({'data-parent': '#' ~ parentAccSet}) %}
+	{% set buttonAttrs = buttonAttrs|merge({'data-parent': '#' ~ parentAccSet}) %}
+{% endif %}
+
+
+{# build array of padding classes #}
+
+{% set paddingClasses = [] %}
+{% set paddingClasses = paddingClasses|merge([accordion.topPadding]) %}
+{% set paddingClasses = paddingClasses|merge([accordion.bottomPadding]) %}
+{% set paddingClasses = paddingClasses|merge([accordion.leftPadding]) %}
+{% set paddingClasses = paddingClasses|merge([accordion.rightPadding]) %}
+
+  
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (accordion['customClassList'] is defined ? accordion.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClassesOuter, customClassString) -}}>
+	<{{accordion.headingLevel}} id="{{ headingId }}" >
+		<button {{ edcMacros.buildElementAttributes(buttonId, 'accordion-button', buttonClasses, '', buttonAttrs) -}} >
+			<div class="accordion-icon">
+				<svg viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M3.085,0l2.908,7.235l-2.908,7.234l-3.085,0l2.907,-7.234l-2.907,-7.235l3.085,0Zm5.993,0l2.908,7.235l-2.908,7.234l-3.085,0l2.907,-7.234l-2.907,-7.235l3.085,0Z" style="fill:currentColor;fill-rule:nonzero;"></path></svg>
+			</div>
+			{{ accordion.headerText}}
+		</button>
+	</{{accordion.headingLevel}} >
+	<div {{ edcMacros.buildElementAttributes(panelId, 'accordion-panel', stylingClasses, '', panelAttrs) -}} >
+		
+		<div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
+			
+			{% for child in accordion.children.all() %}
+		
+			  {#-
+				For each child component, attempt to load a custom template for the
+				component handle from the project's files,
+				then the same template from the core Tiltrus files,
+				then a custom default template from the project,
+				and finally the default template for this component type from the core Tiltrus files.
+			  -#}	  
+			  {% if child.type.handle starts with 'row' %}
+				  {%
+					include [
+					  'bodyblocks/project/rows/' ~ child.type.handle,
+					  'bodyblocks/_core/rows/' ~ child.type.handle,
+					  'bodyblocks/project/rows/row',
+					  'bodyblocks/_core/rows/row'
+					] with { 'row' :  child }
+				  %}
+			  {% elseif child.type.handle starts with 'repeater' %}
+				  {%
+					include [
+					  'bodyblocks/project/repeaters/' ~ child.type.handle,
+					  'bodyblocks/_core/repeaters/' ~ child.type.handle,
+					  'bodyblocks/project/repeaters/repeater',
+					  'bodyblocks/_core/repeaters/repeater'
+					] with { 'repeater' :  child }
+				  %}	  
+			  {% elseif child.type.handle starts with 'tabSet' %}
+				{%
+				  include [
+					'bodyblocks/project/tabs/' ~ child.type.handle,
+					'bodyblocks/_core/tabs/' ~ child.type.handle,
+					'bodyblocks/project/tabs/tabSet',
+					'bodyblocks/_core/tabs/tabSet'
+				  ] with { 'tabSet' :  child }
+				%}	  
+			  {% else %}
+				  {%
+					include [
+					  'bodyblocks/project/blocks/' ~ child.type.handle,
+					  'bodyblocks/_core/blocks/' ~ child.type.handle,
+					  'bodyblocks/project/blocks/block',
+					  'bodyblocks/_core/blocks/block'
+					] ignore missing with { 'block' :  child }
+				  %}
+			  {% endif %}
+		
+			{% endfor %}
+			
+		</div>
+		{% if accordion.backgroundImage|length != 0 %}
+		  {% set bgAsset = accordion.backgroundImage.one() %}
+		  {{ edcMacros.buildElementBackground(bgAsset, accordion.backgroundOpacity, accordion.backgroundSize, accordion.backgroundRepeat, accordion.backgroundPosition, {'default': '100vw'}) }}
+	  {% endif %}		
+	</div>   
+</div>

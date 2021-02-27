@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: 7038cea8-7693-4b38-aec3-afbbbcc7f426
+handle: listItemDisplayStyle
+instructions: ''
+name: 'List Item Display Style'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Simple Text List'
+        -
+          - value
+          - textList
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Card
+        -
+          - value
+          - cardList
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Card with Small Image'
+        -
+          - value
+          - cardListSmallImage
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Card with Large Image'
+        -
+          - value
+          - cardListLargeImage
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

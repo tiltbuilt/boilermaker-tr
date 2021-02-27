@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: pages
+name: Pages
+propagationMethod: all
+siteSettings:
+  94e7f604-17a5-4834-836f-6ead0c94b054:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 908a5384-d90d-40d5-948b-ff713e436ec1
+type: structure

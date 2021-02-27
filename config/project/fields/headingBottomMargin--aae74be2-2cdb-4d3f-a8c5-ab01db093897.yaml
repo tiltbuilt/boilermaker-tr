@@ -1,0 +1,89 @@
+contentColumnType: string
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: headingBottomMargin
+instructions: 'This applies margin to the header tag itself if the additional optional content is added. If not, this field is ignored. '
+name: 'Heading Bottom Margin'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Double'
+        -
+          - value
+          - mb-negdouble
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal'
+        -
+          - value
+          - mb-negnormal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Half'
+        -
+          - value
+          - mb-neghalf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - mb-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - mb-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - mb-normal
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Double
+        -
+          - value
+          - mb-double
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

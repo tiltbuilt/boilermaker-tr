@@ -1,0 +1,166 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: listItemHeadingStyling
+instructions: ''
+name: 'List Item Heading Styling'
+searchable: false
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Font Weight - Normal'
+        -
+          - value
+          - font-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Font Weight - Bold'
+        -
+          - value
+          - font-bold
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Font Italic'
+        -
+          - value
+          - italic
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Upper Case'
+        -
+          - value
+          - uppercase
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - XS'
+        -
+          - value
+          - text-xs
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - Small'
+        -
+          - value
+          - text-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - Base'
+        -
+          - value
+          - text-base
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - Large'
+        -
+          - value
+          - text-lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - XL'
+        -
+          - value
+          - text-xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - 2XL'
+        -
+          - value
+          - text-2xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - 3XL'
+        -
+          - value
+          - text-3xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - 4XL'
+        -
+          - value
+          - text-4xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - 5XL'
+        -
+          - value
+          - text-5xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Size - 6XL'
+        -
+          - value
+          - text-6xl
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

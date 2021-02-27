@@ -1,0 +1,9 @@
+contentColumnType: integer
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: formToDisplay
+instructions: ''
+name: 'Form to Display'
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: Solspace\Freeform\FieldTypes\FormFieldType

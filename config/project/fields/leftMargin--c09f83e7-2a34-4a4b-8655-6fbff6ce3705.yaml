@@ -1,0 +1,89 @@
+contentColumnType: string
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: leftMargin
+instructions: ''
+name: 'Left Margin'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Double'
+        -
+          - value
+          - ml-negdouble
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal'
+        -
+          - value
+          - ml-negnormal
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Half'
+        -
+          - value
+          - ml-neghalf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - ml-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - ml-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - ml-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Double
+        -
+          - value
+          - ml-double
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

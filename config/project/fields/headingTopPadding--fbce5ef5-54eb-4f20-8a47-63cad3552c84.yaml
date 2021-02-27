@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: headingTopPadding
+instructions: ''
+name: 'Heading Top Padding'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - pt-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - pt-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - pt-normal
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Double
+        -
+          - value
+          - pt-double
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

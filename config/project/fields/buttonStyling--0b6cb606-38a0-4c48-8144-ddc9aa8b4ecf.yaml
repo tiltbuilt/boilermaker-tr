@@ -1,0 +1,45 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: buttonStyling
+instructions: ''
+name: 'Button Styling'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Test Class'
+        -
+          - value
+          - btn-test
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - value
+          - btn-black
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - btn-white
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

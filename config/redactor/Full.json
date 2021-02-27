@@ -1,0 +1,26 @@
+{
+	"buttons": [		
+		"html",
+		"formatting",
+		"bold",
+		"italic",
+		"unorderedlist",
+		"orderedlist",
+		"link",
+		"image"		
+	  ],
+	  "plugins": [
+		"alignment",				
+		"fontcolor",
+		"fullscreen",		
+		"redactoranchors",
+		"specialchars"		
+	  ], 
+	  "fontcolors": [
+		  "#000", "#333", "#555", "#777", "#999", "#FF0000"
+	  ],
+	  "linkNewTab": true,
+	  "toolbarFixed": true,
+	  "pastePlainText": true
+}
+	

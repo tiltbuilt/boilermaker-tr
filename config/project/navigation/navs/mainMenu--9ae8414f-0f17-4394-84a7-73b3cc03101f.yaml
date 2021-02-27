@@ -1,0 +1,44 @@
+fieldLayouts:
+  c1a1e5ac-e358-4211-b1e0-bfb3f9231dc5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b4e0d35f-1eb1-4f66-8726-5741ec202b55
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Fields
+        sortOrder: 1
+handle: mainMenu
+instructions: ''
+maxNodes: ''
+name: 'Main Menu'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  custom:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+siteSettings:
+  94e7f604-17a5-4834-836f-6ead0c94b054: null
+sortOrder: 1
+structure:
+  maxLevels: null
+  uid: 5d786ad9-a80b-4e4b-b459-0c727fb41a6e

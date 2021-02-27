@@ -1,0 +1,45 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: iconAlignment
+instructions: ''
+name: 'Icon Alignment'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Left
+        -
+          - value
+          - 'block mr-auto ml-0'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Center
+        -
+          - value
+          - 'block mx-auto'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Right
+        -
+          - value
+          - 'block mr-0 ml-auto'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

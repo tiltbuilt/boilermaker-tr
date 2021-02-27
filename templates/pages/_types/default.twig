@@ -1,0 +1,41 @@
+{#
+/**
+ * Default page template
+ * -----
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides by calling it edcMacros and loading in here #}
+
+{% extends "_layout" %}
+
+{% block pageId %}page-{{- entry.slug -}}{% endblock %}
+	
+{% block pageHeader %}
+	{% if entry.showPageHeader %}	
+	  {{ gMacros.pageHeader(entry) }}
+	{% endif %} 
+ {% endblock %}
+ 
+{% block pageContent %}  
+	{% set layoutLocationPageContent = entry.pageBuilder.level(1).type('layoutLocationPageContent').one() %}
+	{% if layoutLocationPageContent|length and layoutLocationPageContent.children|length %}
+	  {% include 'bodyblocks/_core/locationRender' with { layoutLocation: layoutLocationPageContent } %}	
+	{% endif %}  
+{% endblock %}
+
+{% block pageFooter %}
+	{% if entry.showPageFooter %}
+	  {{ gMacros.pageFooter(entry) }}
+	{% endif %}
+{% endblock %}
+
+

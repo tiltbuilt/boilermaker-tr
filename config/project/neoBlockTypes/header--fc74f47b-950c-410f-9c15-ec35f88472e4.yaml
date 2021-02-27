@@ -1,0 +1,173 @@
+childBlocks:
+  - buttonGroup
+  - button
+  - simpleText
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  6a7bb028-e487-46ca-84f5-da1acbb8c2c6:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e981e99-35dd-4701-a310-b2d5d140c27f
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Additional Elements'
+            type: craft\fieldlayoutelements\Heading
+          -
+            style: tip
+            tip: 'These elements are not required. They add additional text and/or a button below the header.'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: 7cb92208-f474-4828-b924-c50db15671d1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Content Settings'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 5f79a3c7-4902-4616-8329-995c6888e6d9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 47215f2d-31c0-489f-8f3e-a898ad65b8ac
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 48f0945a-414e-4059-9d5f-7951e8cf0ea8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 697213d6-7f4d-4f3d-ad74-9e4bba4c8366
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b46ccfb-b6a8-405c-a4d5-2fec882c205d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Display Settings'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837
+            instructions: 'This margin is applied to the entire block'
+            label: ''
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            instructions: 'This margin is applied to the entire block so it acts as the bottom margin of the heading if none of the optional content is added, or it acts as the bottom margin under the last optional item if they are included.'
+            label: ''
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: aae74be2-2cdb-4d3f-a8c5-ab01db093897
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ea5c0d76-9339-4695-9291-e231ca02db80
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 24ffc041-4ca2-41b8-8903-d03b454f03fe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Padding & Margins'
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        sortOrder: 4
+handle: header
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 0
+name: Header
+sortOrder: 41
+topLevel: false

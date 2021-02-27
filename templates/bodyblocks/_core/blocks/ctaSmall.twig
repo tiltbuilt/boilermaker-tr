@@ -1,0 +1,67 @@
+{#
+/**
+ * Block - CTA - Small
+ * -----
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2020, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'cta-small-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = block.type.handle %}
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [block.topMargin, block.bottomMargin] %}
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+{% set headingLevel = block['headingLevel'] is defined and block.headingLevel|length ? block.headingLevel : 'div' %}
+  
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
+  <div class="inner">
+	<div class="cta-content-wrapper">
+	  {% if block.headingText|length %}
+		<{{ headingLevel }} class="cta-block-heading">
+		  {{ gMacros.stripTags(block.headingText) }}
+		</{{ headingLevel }}>
+	  {% endif %}
+
+	  {% if block.simpleText|length %}
+		<div class="content">
+		  {{ block.simpleText }}
+		</div>
+	  {% endif %}
+
+	  {% if block.linkSettings|length %}
+		<a href="{{ block.linkSettings.url }}" class="btn cta-btn">
+		  {{ block.linkSettings.text }}
+		  <div class="link-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30">
+			  <use xlink:href="{{ siteUrl }}images/svg-assets.svg#icon-arrow" href="{{ siteUrl }}images/svg-assets.svg#icon-arrow"></use>
+			</svg>
+		  </div>
+		</a>
+	  {% endif %}
+	</div>
+	
+  </div>
+</div>

@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: e967fad7-e3bd-4f07-8db2-8ba215f7b617
+handle: nodeStyling
+instructions: ''
+name: 'Node Styling'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Button
+        -
+          - value
+          - main-menu-btn
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: sliderControls
+instructions: ''
+name: 'Slider Controls'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Buttons
+        -
+          - value
+          - buttons
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Dots
+        -
+          - value
+          - dots
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Both '
+        -
+          - value
+          - both
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

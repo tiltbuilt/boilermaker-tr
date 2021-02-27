@@ -1,0 +1,135 @@
+{#
+/**
+ * Tiltrus - Column 2 Column Main Column - Default
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if column.customId is defined and column.customId != '' %}
+	{% set blockId = column.customId %}
+{% else %}
+	{% set blockId = 'column-' ~ column.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = column.type.handle %}
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+
+{% if column.contentAlignment is defined and column.contentAlignment != '' %}
+	{% set stylingClasses = stylingClasses|merge([column.contentAlignment]) %}
+{% endif %}
+
+{% if column.textStyling is defined and column.textStyling != null  %}
+	{% set stylingClasses = stylingClasses|merge(column.textStyling) %}
+{% endif %}
+
+{# build array of sizing and order classes and add to stylingClasses #}
+
+{% set sizingClasses = ['w-full','md:w-2/3','lg:w-3/4'] %}
+{% set stylingClasses = stylingClasses|merge(sizingClasses) %}
+
+{# build array of padding classes and add to stylingClasses #}
+
+{% set paddingClasses = [] %}
+{% set paddingClasses = paddingClasses|merge([column.topPadding]) %}
+{% set paddingClasses = paddingClasses|merge([column.bottomPadding]) %}
+{% set paddingClasses = paddingClasses|merge([column.leftPadding]) %}
+{% set paddingClasses = paddingClasses|merge([column.rightPadding]) %}
+{% set stylingClasses = stylingClasses|merge(paddingClasses) %}
+  
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (column['customClassList'] is defined ? column.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
+
+  <div class="inner">
+	{% for child in column.children.all() %}
+
+	  {#-
+		For each child component, attempt to load a custom template for the
+		component handle from the project's files,
+		then the same template from the core Tiltrus files,
+		then a custom default template from the project,
+		and finally the default template for this component type from the core Tiltrus files.
+	  -#}	  
+	  {% if child.type.handle starts with 'row' %}
+		  {%
+			include [
+			  'bodyblocks/project/rows/' ~ child.type.handle,
+			  'bodyblocks/_core/rows/' ~ child.type.handle,
+			  'bodyblocks/project/rows/row',
+			  'bodyblocks/_core/rows/row'
+			] with { 'row' :  child }
+		  %}
+	  {% elseif child.type.handle starts with 'repeater' %}
+		  {%
+			include [
+			  'bodyblocks/project/repeaters/' ~ child.type.handle,
+			  'bodyblocks/_core/repeaters/' ~ child.type.handle,
+			  'bodyblocks/project/repeaters/repeater',
+			  'bodyblocks/_core/repeaters/repeater'
+			] with { 'repeater' :  child }
+		  %}
+	  {% elseif child.type.handle starts with 'accordion' %}
+		{%
+		  include [
+			'bodyblocks/project/accordions/' ~ child.type.handle,
+			'bodyblocks/_core/accordions/' ~ child.type.handle,
+			'bodyblocks/project/accordions/accordion',
+			'bodyblocks/_core/accordions/accordion'
+		  ] with { 'accordion' :  child }
+		%}
+	  {% elseif child.type.handle starts with 'tabSet' %}
+		{%
+		  include [
+			'bodyblocks/project/tabs/' ~ child.type.handle,
+			'bodyblocks/_core/tabs/' ~ child.type.handle,
+			'bodyblocks/project/tabs/tabSet',
+			'bodyblocks/_core/tabs/tabSet'
+		  ] with { 'tabSet' :  child }
+		%}
+	  {% elseif child.type.handle starts with 'tabPanel' %}
+		{%
+		  include [
+			'bodyblocks/project/tabs/' ~ child.type.handle,
+			'bodyblocks/_core/tabs/' ~ child.type.handle,
+			'bodyblocks/project/tabs/tabPanel',
+			'bodyblocks/_core/tabs/tabPanel'
+		  ] with { 'tabPanel' :  child }
+		%}
+	  {% else %}
+		  {%
+			include [
+			  'bodyblocks/project/blocks/' ~ child.type.handle,
+			  'bodyblocks/_core/blocks/' ~ child.type.handle,
+			  'bodyblocks/project/blocks/block',
+			  'bodyblocks/_core/blocks/block'
+			] ignore missing with { 'block' :  child }
+		  %}
+	  {% endif %}
+
+	{% endfor %}
+  </div>
+  
+  {% if column.backgroundImage|length != 0 %}
+	{% set bgAsset = column.backgroundImage.one() %}
+	{{ edcMacros.buildElementBackground(bgAsset, column.backgroundOpacity, column.backgroundSize, column.backgroundRepeat, column.backgroundPosition, {'default': '100vw'}) }}
+  {% endif %}
+   
+</div>

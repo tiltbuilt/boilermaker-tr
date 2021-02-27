@@ -1,0 +1,9 @@
+contentColumnType: text
+fieldGroup: 8f921d13-ace1-4907-9c1b-0943e5da4e44
+handle: navigationMenu
+instructions: ''
+name: 'Navigation Menu'
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: verbb\navigation\fields\NavigationField

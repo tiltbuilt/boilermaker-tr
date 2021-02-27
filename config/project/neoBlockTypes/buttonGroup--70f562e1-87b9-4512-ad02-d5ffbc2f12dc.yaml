@@ -1,0 +1,79 @@
+childBlocks:
+  - button
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  c6d243fd-4dfd-415e-9e6a-56bee02d5346:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0bf8ce81-5a07-4a2d-ab74-f3d3dbd7091a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ac517c13-59a8-43bc-ad6b-42deecb80176
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Content Settings'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: 'Padding & Margins'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        sortOrder: 3
+handle: buttonGroup
+maxBlocks: 0
+maxChildBlocks: 4
+maxSiblingBlocks: 0
+name: 'Button Group'
+sortOrder: 34
+topLevel: false

@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: slideTransitionDelay
+instructions: ''
+name: 'Slide Transition Delay'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - '5 Seconds'
+        -
+          - value
+          - '5000'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '6 Seconds'
+        -
+          - value
+          - '6000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '7 Seconds'
+        -
+          - value
+          - '7000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '8 Seconds'
+        -
+          - value
+          - '8000'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

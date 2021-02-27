@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: rightPadding
+instructions: ''
+name: 'Right Padding'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - pr-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - pr-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - pr-normal
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Double
+        -
+          - value
+          - pr-double
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

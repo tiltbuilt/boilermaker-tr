@@ -1,0 +1,45 @@
+contentColumnType: string
+fieldGroup: e16f936f-53ab-48f7-b271-0b8308ca5a11
+handle: backgroundSize
+instructions: ''
+name: 'Background Size'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Auto
+        -
+          - value
+          - auto
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Fill Container With Cropping (Cover)'
+        -
+          - value
+          - cover
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Largest Size With No Cropping (Contain)'
+        -
+          - value
+          - contain
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,144 @@
+contentColumnType: string
+fieldGroup: e16f936f-53ab-48f7-b271-0b8308ca5a11
+handle: pageHeaderBackgroundOpacity
+instructions: ''
+name: 'Page Header Background Opacity'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Use Default'
+        -
+          - value
+          - useDefault
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 100%
+        -
+          - value
+          - opacity-100
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 90%
+        -
+          - value
+          - opacity-90
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 80%
+        -
+          - value
+          - opacity-80
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 70%
+        -
+          - value
+          - opacity-70
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 60%
+        -
+          - value
+          - opacity-60
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 50%
+        -
+          - value
+          - opacity-50
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 40%
+        -
+          - value
+          - opacity-40
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 30%
+        -
+          - value
+          - opacity-30
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 20%
+        -
+          - value
+          - opacity-20
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 10%
+        -
+          - value
+          - opacity-10
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 0%
+        -
+          - value
+          - opacity-0
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

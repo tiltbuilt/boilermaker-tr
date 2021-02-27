@@ -1,0 +1,127 @@
+childBlocks: ''
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  c505eb48-5a0a-454c-9e81-e4f08a807ce9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f936d327-e170-4759-bdac-5280d53d5602
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e981e99-35dd-4701-a310-b2d5d140c27f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Content Settings'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 5f79a3c7-4902-4616-8329-995c6888e6d9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 47215f2d-31c0-489f-8f3e-a898ad65b8ac
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0b6cb606-38a0-4c48-8144-ddc9aa8b4ecf
+            instructions: ''
+            label: 'Submit Button Styling'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Display Settings'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: aae74be2-2cdb-4d3f-a8c5-ab01db093897
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Padding & Margins'
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        sortOrder: 4
+handle: form
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Form
+sortOrder: 40
+topLevel: false

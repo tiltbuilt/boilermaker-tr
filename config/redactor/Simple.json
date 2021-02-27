@@ -1,0 +1,10 @@
+{
+  "buttons": ["bold", "italic", "link"],
+  "plugins": [    
+    "redactoranchors",
+    "specialchars"
+    ],
+  "toolbarFixed": true,
+  "breakline": true,
+  "pastePlainText": true
+}

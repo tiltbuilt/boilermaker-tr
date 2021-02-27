@@ -1,0 +1,34 @@
+{#
+/**
+ * Block - Embed
+ * -----
+ * Generic block for rendering embed code
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+  {% set blockId = block.customId %}
+{% else %}
+  {% set blockId = 'embed-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = block.type.handle %}
+
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass) -}}>  
+	  {{ block.embedCode|raw }}  
+</div>

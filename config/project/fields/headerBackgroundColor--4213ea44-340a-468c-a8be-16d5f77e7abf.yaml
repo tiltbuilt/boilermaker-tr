@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: e16f936f-53ab-48f7-b271-0b8308ca5a11
+handle: headerBackgroundColor
+instructions: ''
+name: 'Header Background Color'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Transparent
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - value
+          - bg-black
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

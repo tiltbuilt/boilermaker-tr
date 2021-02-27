@@ -1,0 +1,13 @@
+{#
+/**
+ * Pages entry template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{% include ['pages/_types/' ~ entry.type, 'pages/_types/default'] with { entry : entry } %}

@@ -1,0 +1,88 @@
+childBlocks:
+  - columnHalf
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  73a2f4ab-f0f4-4a52-b12d-221a57c904d0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: bcf74542-f70e-4cb9-82c0-2bce0eed4c23
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Display Settings'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: d1b22eff-2800-4ebc-b527-e83b3274b227
+            instructions: ''
+            label: ''
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 5acfa166-4b23-426f-9901-4ab9ad411c19
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: b5b1ce85-677c-4772-a5c5-0b6fc4da062b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 307f5062-1b6a-40b7-b56c-20a21b7edbfc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: 'Padding & Margins'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        sortOrder: 3
+handle: container2Column
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 0
+name: 'Container - 2 Column'
+sortOrder: 12
+topLevel: false

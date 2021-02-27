@@ -1,0 +1,128 @@
+{#
+/**
+ * Tiltrus - Page Footer Section
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if section.customId is defined and section.customId != '' %}
+	{% set blockId = section.customId %}
+{% else %}
+	{% set blockId = 'section-' ~ section.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = section.type.handle %}
+
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+{% if section.contentAlignment is defined %}
+	{% set stylingClasses = stylingClasses|merge([section.contentAlignment]) %}
+{% else %}
+	{% set stylingClasses = stylingClasses|merge(['text-left']) %}
+{% endif %}
+
+
+{# add background color class to stylingClasses if it isn't empty #}
+
+{% if section.backgroundColor is defined and section.backgroundColor != '' %}
+	{% set stylingClasses = stylingClasses|merge([section.backgroundColor]) %}
+{% endif %}
+
+{% if section.textStyling is defined %}
+	{% set stylingClasses = stylingClasses|merge(section.textStyling) %}
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (section['customClassList'] is defined ? section.customClassList : null) %}
+
+<footer {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
+
+  <div class="inner">
+	  
+	{# This is where you put the html specific to the layout of the footer for a particular site. By putting it inside the .inner div it lays out above the background. The page footer block has two child blocks, one for the nav and another for link buttons. Other elements can be added via the template, but these two blocks are controllable via the control panel in Craft. Examples of the code for them is below. Incorporate it into the template for each site on an as-needed basis. #}
+	
+	<div class="container p-normal">
+	
+	{# this code is for the nav block, you can take this code and place it inside whatever container you like that fits your layout #}
+	{% set navBlock = section.children.type('footerNavigationBlock').one() %}
+
+	{% if navBlock != null %}
+		{# Get the heading level for the Footer menus #}
+		{% set footerMenusHeadingLevel = navBlock.headingLevel %}
+	
+		<div class="row mx-negnormal justify-start items-start">
+			{% if navBlock.children|length > 1 %}
+				{% set menuSizeClass = navBlock.children|length %}
+			{% else %}
+				{% set menuSizeClass = 'full' %}
+			{% endif %}
+			{% for navMenu in navBlock.children.all() %}
+				<div class="footer-menu md:w-1/{{- menuSizeClass }} px-normal">
+				  <ul>
+					{% set footerMenuNodes = craft.navigation.nodes().handle(navMenu.navigationMenu).level(1).all() %}
+					{# passing in menu nodes from menu, header level for top level items, base class name to use in constructing class names for parts of the nav, and boolean for whether or not the menu is a dropdown menu #}
+					{% include '_partials/menus/standard' with { 'menuNodes': footerMenuNodes, 'headingLevel': footerMenusHeadingLevel, 'baseClassName': 'footer-menu', 'hasDrop': false } %}
+				  </ul>
+				</div>
+			{% endfor %}
+		</div>		
+	{% endif %}		  
+	{# end of nav block code #}
+	
+	
+	{# this code is for the button block, you can take this code and place it inside whatever container you like that fits your layout #}
+	  
+	{% set buttonBlock = section.children.type('footerLinkButtonBlock').one() %}
+	
+	{% if buttonBlock != null %}
+	
+		{% for child in buttonBlock.children.all() %}
+	
+		    {%
+				include [
+				  'bodyblocks/project/blocks/' ~ child.type.handle,
+				  'bodyblocks/_core/blocks/' ~ child.type.handle,
+				  'bodyblocks/project/blocks/block',
+				  'bodyblocks/_core/blocks/block'
+				] ignore missing with { 'block' :  child }
+			%}		  
+	
+		{% endfor %}
+	
+	{% endif %}
+	
+	{# end of button block code #}
+	
+	</div>
+	  
+	<div class="container p-normal text-center">
+		{{ section.footerImprint }}
+	</div>
+	  
+  </div>
+	
+  {# This is where the customization area should stop to prevent issues with the background #}
+  
+  {% if section.backgroundImage|length != 0 %}
+	  {% set bgAsset = section.backgroundImage.one() %}
+	  {{ edcMacros.buildElementBackground(bgAsset, section.backgroundOpacity, section.backgroundSize, section.backgroundRepeat, section.backgroundPosition, {'default': '100vw'}) }}
+  {% endif %}
+ 
+</footer>

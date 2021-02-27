@@ -1,0 +1,35 @@
+contentColumnType: string
+fieldGroup: 7038cea8-7693-4b38-aec3-afbbbcc7f426
+handle: listEntriesSections
+instructions: ''
+name: 'List - Entries - Section(s)'
+searchable: false
+settings:
+  multi: true
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - All
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Pages
+        -
+          - value
+          - pages
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\MultiSelect

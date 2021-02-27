@@ -1,0 +1,41 @@
+{#
+/**
+ * Partial - Pagination
+ * -----
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{% if pageInfo.totalPages > 1 %}
+  <nav class="pagination">
+	<div class="inner">
+	  <div class="pagination__prev">
+		{% if pageInfo.prevUrl %}
+		  <a href="{{ pageInfo.prevUrl }}" title="Previous Page">Previous</a>
+		{% endif %}
+	  </div>
+	  
+	  <div class="pagination__pages">
+		{% for page, url in pageInfo.getPrevUrls(3) %}
+		  <a href="{{ url }}">{{ page }}</a>
+		{% endfor %}
+
+		<span class="current">{{ pageInfo.currentPage }}</span>
+
+		{% for page, url in pageInfo.getNextUrls(3) %}
+		  <a href="{{ url }}">{{ page }}</a>
+		{% endfor %}
+	  </div>
+	  
+	  <div class="pagination__next">
+		{% if pageInfo.nextUrl %}
+		  <a href="{{ pageInfo.nextUrl }}" title="Next Page">Next</a>
+		{% endif %}
+	  </div>
+	</div>
+  </nav>
+{% endif %}

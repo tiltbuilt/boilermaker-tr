@@ -1,0 +1,89 @@
+contentColumnType: string
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: topMargin
+instructions: ''
+name: 'Top Margin'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Double'
+        -
+          - value
+          - mt-negdouble
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal'
+        -
+          - value
+          - mt-negnormal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Half'
+        -
+          - value
+          - mt-neghalf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - mt-none
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - mt-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - mt-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Double
+        -
+          - value
+          - mt-double
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

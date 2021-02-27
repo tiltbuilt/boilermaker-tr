@@ -1,0 +1,79 @@
+{#
+/**
+ * Slider Set
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'sliderSet-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = block.type.handle %}
+
+{# Get styling and script classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+
+{# add margin classes to stylingClasses #}
+
+{% set stylingClasses = stylingClasses|merge([block.topMargin, block.bottomMargin]) %}
+
+{# set up attribute list for settings #}
+
+{% set sliderAttrs = {'data-autoplay': block.autoplay, 'data-timing': block.slideTransitionDelay, 'data-controls': block.sliderControls} %}
+  
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString, sliderAttrs) -}}>
+  
+	<div class="owl-carousel" id="{{ blockId  ~ '-owl'}}">
+	{% for child in block.children.all() %}
+ 
+	  {#-
+		For each child component, attempt to load a custom template for the
+		component handle from the project's files,
+		then the same template from the core Tiltrus files,
+		then a custom default template from the project,
+		and finally the default template for this component type from the core Tiltrus files.
+	  -#}	  
+	  
+		{% include [
+			'bodyblocks/project/blocks/' ~ child.type.handle,
+			'bodyblocks/_core/blocks/' ~ child.type.handle,
+			'bodyblocks/project/blocks/slide',
+			'bodyblocks/_core/blocks/slide'
+		  ] with { 'block': child }
+		%}	  
+
+	{% endfor %}
+	</div>
+	
+	{% if block.sliderControls == 'buttons' or block.sliderControls == 'both' %}
+		<button class="owl-prev" data-target="#{{ blockId  ~ '-owl'}}">
+			<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.sprite }}"></use></svg>
+		</button>
+		
+		<button class="owl-next" data-target="#{{ blockId  ~ '-owl'}}">
+			<svg><use xlink:href="#{{ gSettings.sliderNextIcon.sprite }}"></use></svg>
+		</button>
+	{% endif %}  
+   
+</div>

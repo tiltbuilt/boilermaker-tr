@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: e967fad7-e3bd-4f07-8db2-8ba215f7b617
+handle: headerEmbeds
+instructions: 'Add any Javascript embeds in the header for this specific Entry/Category.'
+name: 'Header Embeds'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: '1'
+  columnType: null
+  initialRows: '8'
+  multiline: '1'
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

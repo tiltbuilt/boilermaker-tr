@@ -1,0 +1,110 @@
+{#
+/**
+ * Block - Image
+ * -----
+ * `imageFixedRatio` control is optionally used for Fixed Ratio sizing of image with
+ * `blc-img-fxrt` class prefix.
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2018, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Don't show if there isn't an image set #}
+{% if block.imageAsset|length %}
+
+	{% set image = block.imageAsset[0] %}
+
+	{# Set block id attribute value #}
+	{% if block.customId is defined and block.customId != '' %}
+	  {% set blockId = block.customId %}
+	  {% set imageId = 'imageblock-' ~ block.customId ~ '-image' %}
+	{% else %}
+	  {% set blockId = 'imageblock-' ~ block.id %}
+	  {% set imageId = 'imageblock-' ~ block.id ~ '-image' %}
+	{% endif %}
+	
+	{# Set block type handle as class name for styling #}
+	{% set blockClass = 'image-block' %}
+	{% set imageClass = 'content-image' %}	
+	
+	{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
+	{% if loadType is defined and loadType != null and loadType != 0 %}
+		{% set loadClass = 'owl-lazy' %}
+	{% else %}
+		{% set loadClass = 'lazyload' %}
+	{% endif %}
+	
+	{# assemble class arrays #}
+	{% set blockStylingClasses = [] %}
+	{% set imageStylingClasses = [loadClass] %}
+	
+	{% if block.imageCaption != '' %}
+	
+		{% set blockStylingClasses = blockStylingClasses|merge(block.imageStyling) %}
+		{% set imageStylingClasses = imageStylingClasses|merge(['w-full']) %}
+	
+	{% else %}
+	
+		{% set imageStylingClasses = imageStylingClasses|merge(block.imageStyling) %}
+	
+	{% endif %}
+	
+	{% set imageAltText = block.altText is defined and block.altText|length ? block.altText : (image['altText'] is defined and image.altText|length ? image.altText : image.title) %}
+	
+	{% if block.imageCaption != '' %}
+	  <figure {{ edcMacros.buildClasses(blockClass, blockStylingClasses) -}}>
+	{% endif %}
+	
+		{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}
+		
+		{% if craft.imager.serverSupportsWebp() %}
+		  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+	    {% endif %}
+		
+		{% if transformedImages|length %}
+		  
+		  {% if block['linkSettings'] is defined and block.linkSettings|length %}
+			  {% set imageLink = block.linkSettings %}
+			  <a href="{{ imageLink.url }}" title="{{ imageLink.text }}"
+				{{- imageLink.target|length ? ' target="_blank"' : '' -}}
+			  >
+		  {% endif %}
+		  
+		  <picture>			  
+			  
+			  {% if craft.imager.serverSupportsWebp() %}
+				  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+			  {% endif %}
+		  
+			  <img src="{{ craft.imager.base64Pixel() }}"
+			  data-sizes="auto"
+			  data-src="{{ transformedImages[0] }}"
+			  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+			  alt="{{ imageAltText }}" {{ edcMacros.buildClasses(imageClass, imageStylingClasses) -}}
+			  >
+		  </picture>
+		  
+		  {% if block['linkSettings'] is defined and block.linkSettings|length %}			
+			</a>
+		  {% endif %}		  
+		  
+		{% endif %}
+	
+	{% if block.imageCaption != '' %}
+	  	<figcaption>
+			{{ block.imageCaption }}  
+		</figcaption>
+	  </figure>
+	{% endif %}
+
+{% endif %}

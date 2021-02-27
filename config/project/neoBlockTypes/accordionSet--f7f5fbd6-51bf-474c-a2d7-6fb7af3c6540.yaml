@@ -1,0 +1,88 @@
+childBlocks:
+  - accordion
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  be0a9c64-7386-4ceb-a49d-485c0a5f800d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 58b879ef-24ae-4208-85fe-efcada4adeea
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9a591e22-51c0-45ce-8a8f-616a7971c49c
+            instructions: ''
+            label: 'First Panel Start State'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9e8e93fe-604a-472c-9935-d553284b5dd9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Content Settings'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: 'Padding & Margins'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77a77b5e-3006-41dc-9c21-305089930bcf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        sortOrder: 3
+handle: accordionSet
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Accordion Set'
+sortOrder: 22
+topLevel: false

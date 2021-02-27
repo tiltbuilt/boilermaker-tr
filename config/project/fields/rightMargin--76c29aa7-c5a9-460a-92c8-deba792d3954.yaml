@@ -1,0 +1,89 @@
+contentColumnType: string
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: rightMargin
+instructions: ''
+name: 'Right Margin'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Double'
+        -
+          - value
+          - mr-negdouble
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal'
+        -
+          - value
+          - mr-negnormal
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Half'
+        -
+          - value
+          - mr-neghalf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - mr-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - mr-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - mr-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Double
+        -
+          - value
+          - mr-double
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

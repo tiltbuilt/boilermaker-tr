@@ -1,0 +1,28 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ */
+@import 'tailwindcss/base';
+
+/**
+ * Here we add custom base styles, applied after the tailwind-base
+ * classes
+ *
+ */
+
+/* SET BASELINE SCREEN SIZE ON HTML TAG AS WELL AS BASELINE FONT SIZE TO 16PX */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  @apply w-screen h-screen bg-white text-black leading-normal text-base;
+  overflow-x: hidden;
+}

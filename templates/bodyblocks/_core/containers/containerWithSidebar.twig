@@ -1,0 +1,103 @@
+{#
+/**
+ * Tiltrus - Container 2 Column with Sidebar - Default
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if container.customId is defined and container.customId != '' %}
+	{% set blockId = container.customId %}
+{% else %}
+	{% set blockId = 'container-' ~ container.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = container.type.handle %}
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+
+{% if container.fullScreenWidth is defined and container.fullScreenWidth == 1 %}
+	{% set stylingClasses = stylingClasses|merge(['container-fullwidth']) %}
+{% endif %}
+
+{% if container.contentAlignment is defined and container.contentAlignment != '' %}
+	{% set stylingClasses = stylingClasses|merge([container.contentAlignment]) %}
+{% endif %}
+
+{% if container.textStyling is defined and container.textStyling != null %}
+	{% set stylingClasses = stylingClasses|merge(container.textStyling) %}
+{% endif %}
+
+{# build array of padding classes and add to stylingClasses #}
+
+{% set paddingClasses = [] %}
+{% set paddingClasses = paddingClasses|merge([container.topPadding]) %}
+{% set paddingClasses = paddingClasses|merge([container.bottomPadding]) %}
+{% set paddingClasses = paddingClasses|merge([container.leftPadding]) %}
+{% set paddingClasses = paddingClasses|merge([container.rightPadding]) %}
+{% set stylingClasses = stylingClasses|merge(paddingClasses) %}
+
+{# set up second style array for row inside this container type with left and right margins set to negative version of block padding settings #}
+{% set rowClasses = ['justify-center', 'items-stretch'] %}
+{% set rowMarginLeft = '' %}
+{% set rowMarginRight = '' %}
+{% switch container.leftPadding %}
+{% case 'pl-normal' %}
+	{% set rowMarginLeft = 'ml-negnormal' %}
+{% case 'pl-extra' %}
+	{% set rowMarginLeft = 'ml-negextra' %}
+{% case 'pl-none' %}
+	{% set rowMarginLeft = 'ml-none' %}
+{% endswitch %}
+{% switch container.rightPadding %}
+{% case 'pr-normal' %}
+	{% set rowMarginRight = 'mr-negnormal' %}
+{% case 'pr-extra' %}
+	{% set rowMarginRight = 'mr-negextra' %}
+{% case 'pr-none' %}
+	{% set rowMarginRight = 'mr-none' %}
+{% endswitch %}
+{% set rowClasses = rowClasses|merge([rowMarginLeft, rowMarginRight]) %}
+  
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (container['customClassList'] is defined ? container.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
+
+  <div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
+	  <div {{ edcMacros.buildClasses('row', rowClasses) -}}> pe
+		{% for column in container.children.all() %}
+		  {#-
+			Attempt to load a custom template for the component handle from the project's files,
+			then the same template from the core Tiltrus files,
+			then a custom default template from the project,
+			and finally the default template for this component type from the core Tiltrus files.
+		  -#}
+		  {%
+			include [
+			  'bodyblocks/project/columns/' ~ column.type.handle,
+			  'bodyblocks/_core/columns/' ~ column.type.handle,
+			  'bodyblocks/project/columns/column',
+			  'bodyblocks/_core/columns/column'
+			] with { 'column' :  column }
+		  %}
+		{% endfor %}
+	  </div>
+  </div>
+   
+</div>

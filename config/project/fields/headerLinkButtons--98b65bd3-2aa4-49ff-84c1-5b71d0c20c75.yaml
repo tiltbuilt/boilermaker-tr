@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 44f621ce-9d9d-46b3-8459-f34120086dcf
+handle: headerLinkButtons
+instructions: ''
+name: 'Header - Link Buttons'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_headerlinkbuttons}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

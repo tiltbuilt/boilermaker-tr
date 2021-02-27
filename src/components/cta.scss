@@ -1,0 +1,71 @@
+/**
+ * components/column.css
+ *
+ * CTA component specific styles
+ * 
+ This file contains the styles to handle the display of the Standard CTA and Small CTA Components. These do not use controls in the Control Panel to standardize their appearance. If additional CTA types are needed for a project, they can be added here as well.
+ *
+ */
+ 
+.ctaStandard {
+	
+	@apply bg-black text-white;
+	
+	/* column sizes and padding, etc. set here can be changed to fit project specs */
+	
+	& .row {
+		@apply p-0 my-0 items-center justify-center;
+	}
+	
+	.cta-content-wrapper {
+		
+		@apply w-full p-normal;
+		
+		
+		@media (min-width: 768px) {
+			@apply w-1/2;
+		}
+	}
+	
+	.cta-image-wrapper {
+		
+		@apply w-full p-normal;
+		
+		
+		@media (min-width: 768px) {
+			@apply w-1/2;
+		}
+		
+		.cta-image {
+			@apply w-full m-0;
+			height: auto;
+		}
+	}
+}
+ 
+.ctaSmall {
+	
+	@apply bg-black text-white;
+	
+	.cta-content-wrapper {
+		
+		@apply p-normal;
+		
+	}
+	 
+}
+
+.cta-btn {
+	
+	@apply bg-white text-black;
+	
+	.link-icon {
+		display: inline-block;
+		width: 15px;
+		margin-left: 0.5rem;
+		
+		svg {
+			fill: currentColor;
+		}		
+	}
+}

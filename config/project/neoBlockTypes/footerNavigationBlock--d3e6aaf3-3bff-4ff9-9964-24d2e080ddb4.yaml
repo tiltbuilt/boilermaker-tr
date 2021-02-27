@@ -1,0 +1,26 @@
+childBlocks:
+  - footerMenu
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+fieldLayouts:
+  03d7417d-433f-4f18-8824-e3d07dd28a9a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0e981e99-35dd-4701-a310-b2d5d140c27f
+            instructions: ''
+            label: 'Nav Heading Level'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Content Settings'
+        sortOrder: 1
+handle: footerNavigationBlock
+maxBlocks: 1
+maxChildBlocks: 5
+maxSiblingBlocks: 0
+name: 'Footer Navigation Block'
+sortOrder: 55
+topLevel: false

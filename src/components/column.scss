@@ -1,0 +1,11 @@
+/**
+ * components/column.css
+ *
+ * Column component specific styles
+ *
+ */
+ 
+ .column, .columnHalf, .columnMain, .columnSidebar {
+	 position: relative;
+	 overflow-x: hidden;
+ }

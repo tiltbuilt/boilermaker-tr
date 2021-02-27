@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: buttonAlignment
+instructions: ''
+name: 'Button Alignment'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Auto
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Left
+        -
+          - value
+          - text-left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Center
+        -
+          - value
+          - text-center
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Right
+        -
+          - value
+          - text-right
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

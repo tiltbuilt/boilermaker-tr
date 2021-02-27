@@ -1,0 +1,174 @@
+{#
+/**
+ * Element Display Controls Macros
+ * -----
+ * Builds HTML attributes (e.g. class, data-attr, etc.) for a Tiltrus component
+ * 
+ * Some notes:
+ * 
+ * 1) Values for different types of controls (e.g. padding, width) are stored in the
+ * array as controls[breakpointKey][controlKey]. EDC Controls in the backend are setup
+ * to follow this [ctrl][bp] pattern, even for some global controls that don't relate to
+ * a breakpoint. In those cases, we adapt this pattern to ['settings']['advanced']
+ * so that the EDC macros (in the backend) still work properly.
+ * 
+ * 2) The default/basic breakpoint, which affects an element at all device sizes, is
+ * stored under the breakpointSlug 'all' (e.g. controls['xMargins']['all']).
+ * 
+ * 3) For some controls, we store (& detect) an additional custom value for in
+ * `prefixes` which we use to build classes/attributes.
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{%- macro buildElementAttributes(blockId, blockClass, stylingClasses, customClassString, attributeObj) -%}
+  {%- import 'bodyblocks/_core/_macros/edcMacros' as edcMacros -%}
+  
+  {%- set blockId = blockId is defined and blockId != null ? blockId : '' -%}
+
+  {#- Add Live Preview classes -#}
+  {#
+  {%- if craft.app.request.isPreview and blockId|length -%} 
+	{%- set elementClasses = elementClasses|merge(['tiltrus_el']) -%}
+  {%- endif -%}
+  #}
+  
+    
+  {#- Add an id attribute if `onPageId` is set -#}
+  {%- if blockId|length -%} id="{{ blockId }}"{%- endif -%}
+  
+  {{ edcMacros.buildClasses(blockClass, stylingClasses, customClassString) }}
+  
+  {{ edcMacros.buildOtherElementAttributes(attributeObj) }}
+
+  {#- Add Live Preview data attributes -#}
+  {#
+  {%- if craft.app.request.isPreview -%}
+	{%- if blockId|length %} data-tiltrus-id="{{ blockId }}"{%- endif -%}
+  {%- endif -%}
+  #}
+  
+  
+{%- endmacro -%}
+
+{#-
+  Element Display Controls - Classes
+  -----
+  Output classes for the element.
+-#}
+{%- macro buildClasses(blockClass, styleClasses, customClass) -%}
+  {# Start class output array with block class for block type #}
+  {%- set classesOutput = [blockClass] -%}
+  
+  {# Add styling classes to array #}
+  {% if styleClasses != null and styleClasses|length %}  
+    {%- set classesOutput = classesOutput|merge(styleClasses) -%}
+  {% endif %}
+  
+  {# Add custom class string #}
+  {% if customClass != null and customClass != '' %}
+    {%- set classesOutput = classesOutput|merge([customClass]) -%}
+  {% endif %}
+  
+  {#- Join classes into string -#}
+  {%- set classesOutput = classesOutput|join(' ') -%}
+
+  {#- Output the classes string -#}
+  class="{{ classesOutput }}"
+{%- endmacro -%}
+
+{#-
+  Element Display Controls - Attributes
+  -----
+  Output animation (or other) data-attributes for the element.
+-#}
+{%- macro buildOtherElementAttributes(attrObj) -%}
+  {% for key, value in attrObj %}
+    {{- key -}}="{{- value -}}" 
+  {% endfor %}
+{%- endmacro -%}
+
+{#-
+  Element Display Controls - Background
+  -----
+  Output a background node based on an element's Tiltrus EDC field.
+-#}
+{%- macro buildElementBackground(bgAsset, bgOpacity, bgSize, bgRepeat, bgPosition, sizesAtr, loadType) -%}
+  {% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+  {# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
+  {% if loadType is defined and loadType != null and loadType != 0 %}
+    {% set loadClass = 'owl-lazy' %}
+  {% else %}
+    {% set loadClass = 'lazyload' %}
+  {% endif %}
+  {#- If bgAsset is set, if not then don't do anything  -#}
+  {% if bgAsset is defined and bgAsset != null %}
+    {# check type of asset bgAsset is. If video, do one thing, if image do something else. #}
+    {% if bgAsset.kind == 'image' %}
+      {# check repeat setting if repeats then set size to auto and assemble class list if doesn't repeat then assemble class list from settings in fields #}
+      {% if bgRepeat != 'bg-no-repeat' %}
+        <div {{ edcMacros.buildClasses('background ' ~ loadClass, [bgRepeat, 'bg-' ~ bgPosition, 'bg-auto', bgOpacity]) }} style="background-image:url('{{ bgAsset.url }}');"></div>
+      {% else %}
+        
+        {% set image = bgAsset %}
+        
+        {%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}
+        
+        {% if craft.imager.serverSupportsWebp() %}
+          {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+        {% endif %}
+        
+        {% if bgSize == 'auto' %}
+          {% set sizeSetting = 'object-scale-down' %}
+        {% else %}
+          {% set sizeSetting = 'object-' ~ bgSize %}
+        {% endif %}
+        
+        {% if transformedImages|length %}
+        
+        <picture class="background">		  
+          
+          {% if craft.imager.serverSupportsWebp() %}
+            <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+          {% endif %}
+        
+            <img src="{{ craft.imager.base64Pixel() }}"
+            data-sizes="auto"
+            data-src="{{ transformedImages[0] }}"
+            data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+            alt="background" {{ edcMacros.buildClasses('background ' ~ loadClass, ['object-' ~ bgPosition, bgOpacity, sizeSetting]) -}}
+            >
+          </picture>
+        {% endif %}
+      {% endif %}
+      
+    {% elseif bgAsset.kind == 'video' %}
+    
+      {# assemble class list for div that will hold video #}
+      {% set bgImageVideo = bgAsset %}
+                  
+      {% if bgSize == 'auto' %}
+        {% set sizeSetting = 'object-scale-down' %}
+      {% else %}
+        {% set sizeSetting = 'object-' ~ bgSize %}
+      {% endif %}
+                  
+      <div class="background">
+        <video          
+          class="background lazyload {{sizeSetting}} {{bgPosition}}"
+          aria-hidden="true"
+          role="presentation"
+          preload=""
+          autoplay playsinline muted loop
+          data-src="{{ bgImageVideo.url }}"
+          type="{{ bgImageVideo.mimeType }}"
+        ></video>
+      </div>
+    {% endif %}
+  {% endif %}
+{%- endmacro -%}
+

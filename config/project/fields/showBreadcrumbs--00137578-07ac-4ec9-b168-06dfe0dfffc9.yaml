@@ -1,0 +1,13 @@
+contentColumnType: boolean
+fieldGroup: 791b08f7-5dda-4a24-9147-2aea1e8fb8db
+handle: showBreadcrumbs
+instructions: ''
+name: 'Show Breadcrumbs'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

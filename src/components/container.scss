@@ -1,0 +1,15 @@
+/**
+ * components/container.css
+ *
+ * Container component specific styles
+ *
+ */
+ 
+.container, .container2Column, .containerWithSidebar {
+	margin-left: auto;
+	margin-right: auto;
+    
+    &.container-fullwidth {
+	    max-width: 100%;
+    }
+}

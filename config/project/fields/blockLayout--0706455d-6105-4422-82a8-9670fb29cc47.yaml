@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: blockLayout
+instructions: 'Choose how you want the additional content to lay out. The default setting is vertical. It puts the icon at the top, then the headline, then the text, then the button. If Horizontal is selected, the icon is to the left and the headline, text, and button are to the right. Vertical layout is intended for narrow container spaces and horizontal for wide spaces. This only gets applied if there is a value set for the headline, text, or button.'
+name: 'Block Layout'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Vertical
+        -
+          - value
+          - v
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Horizontal
+        -
+          - value
+          - h
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

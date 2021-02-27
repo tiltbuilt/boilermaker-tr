@@ -1,0 +1,221 @@
+dateModified: 1613526515
+email:
+  fromEmail: $SITE_EMAIL
+  fromName: $SITE_NAME
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    encryptionMethod: tls
+    host: $SMTP_HOSTNAME
+    password: $SMTP_PASSWORD
+    port: $SMTP_PORT
+    timeout: '10'
+    useAuthentication: '1'
+    username: $SMTP_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
+plugins:
+  architect:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  blitz:
+    edition: standard
+    enabled: true
+    licenseKey: JR2O0QQGE8R5I458WBY1BF3J
+    schemaVersion: 3.6.6
+  blitz-recommendations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  environment-label:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.3.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  freeform:
+    edition: lite
+    enabled: true
+    licenseKey: 0GV28X2Y9O9JOWF3IJYLZPXV
+    schemaVersion: 3.3.0
+    settings:
+      ajaxByDefault: false
+      alertNotificationRecipients: null
+      autoScrollToErrors: true
+      badgeType: all
+      blockedEmails: null
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: null
+      blockedKeywords: null
+      blockedKeywordsError: 'Invalid Entry Data'
+      clientDigestFrequency: 1
+      clientDigestRecipients: null
+      customErrorMessage: null
+      customHoneypotName: null
+      defaultTemplates: true
+      defaultView: dashboard
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: null
+      displayFeed: true
+      emailTemplateDirectory: null
+      emailTemplateStorage: db
+      fieldDisplayOrder: name
+      fillWithGet: false
+      footerScripts: false
+      formSubmitDisable: false
+      formSubmitExpiration: null
+      formTemplateDirectory: freeform-custom/
+      formattingTemplate: flexbox.html
+      freeformHoneypot: true
+      freeformHoneypotEnhancement: false
+      hideBannerDemo: false
+      hideBannerOldFreeform: false
+      minimumSubmitTime: null
+      pluginName: null
+      purgableSpamAgeInDays: null
+      purgableSubmissionAgeInDays: null
+      purgableUnfinalizedAssetAgeInMinutes: 180
+      recaptchaBehaviour: display_error
+      recaptchaEnabled: false
+      recaptchaErrorMessage: 'Please verify that you are not a robot.'
+      recaptchaKey: null
+      recaptchaMinScore: 0.5
+      recaptchaSecret: null
+      recaptchaSize: normal
+      recaptchaTheme: light
+      recaptchaType: v2_checkbox
+      removeNewlines: false
+      renderFormHtmlInCpViews: true
+      salesforce_client_id: null
+      salesforce_client_secret: null
+      salesforce_password: null
+      salesforce_username: null
+      scriptInsertLocation: footer
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: false
+      showErrorsForBlockedKeywords: false
+      showTutorial: false
+      spamFolderEnabled: true
+      spamProtectionBehaviour: simulate_success
+      submissionThrottlingCount: null
+      submissionThrottlingTimeFrame: null
+      twigInHtml: true
+      twigInHtmlIsolatedMode: true
+  icon-picker:
+    edition: standard
+    enabled: true
+    licenseKey: RAV8M4LD6LGRFFGD5QM0IPAO
+    schemaVersion: 1.0.1
+    settings:
+      enableCache: true
+      iconSetsPath: '@webroot/dist/icons'
+      iconSetsUrl: /dist/icons/
+      maxIconsShown: '100'
+      redactorFieldHandle: ''
+  image-optimize:
+    edition: standard
+    enabled: false
+    licenseKey: WRSWVVDZXU3X5V6V1FEMRXNT
+    schemaVersion: 1.0.0
+  imager-x:
+    edition: pro
+    enabled: true
+    licenseKey: M3S7K2ZC9ON07LET5PFVLP7D
+    schemaVersion: 3.0.0
+  linkit:
+    edition: standard
+    enabled: true
+    licenseKey: BTLLW1NPL9YRX4NDCP96HNB2
+    schemaVersion: 1.0.8
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: 4F58XY83B4JD7EHGWC5GAFJZ
+    schemaVersion: 1.0.21
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: L2P84C6DZAJ8N7ZZOCKAV6Y9
+    schemaVersion: 2.8.16
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  redactor-anchors:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  redactor-custom-styles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retour:
+    edition: standard
+    enabled: true
+    licenseKey: 3KPMO0HLL3H1O3D8WOU7RUTO
+    schemaVersion: 3.0.9
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: S2M034EHRD0L11HQ6LUJR28V
+    schemaVersion: 3.0.9
+    settings:
+      addHrefLang: true
+      addPaginatedHreflang: true
+      addXDefaultHrefLang: true
+      cpTitlePrefix: '⚙ '
+      devModeCpTitlePrefix: '&#x1f6a7;⚙ '
+      devModeTitlePrefix: '&#x1f6a7; '
+      displayAnalysisSidebar: true
+      displayPreviewSidebar: true
+      enableJsonLdEndpoint: ''
+      enableMetaContainerEndpoint: ''
+      environment: live
+      generatorEnabled: true
+      headersEnabled: true
+      lowercaseCanonicalUrl: '1'
+      maxDescriptionLength: 155
+      maxTitleLength: 70
+      metaCacheDuration: '604800'
+      pluginName: SEO
+      regenerateSitemapsAutomatically: true
+      renderEnabled: true
+      separatorChar: '|'
+      sidebarDisplayPreviewTypes:
+        - google
+        - twitter
+        - facebook
+      siteGroupsSeparate: '1'
+      siteUrlOverride: ''
+      sitemapsEnabled: true
+      socialMediaPreviewTarget: true
+      submitSitemaps: true
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: $SITE_NAME
+  retryDuration: null
+  schemaVersion: 3.6.4
+  timeZone: America/Chicago
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

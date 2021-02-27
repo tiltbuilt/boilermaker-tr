@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 5d1cef41-ee54-4d66-b4f7-7035b831a1a1
+handle: customId
+instructions: ''
+name: 'Custom ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

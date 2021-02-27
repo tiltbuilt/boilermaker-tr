@@ -1,0 +1,36 @@
+/**
+ * components/forms.css
+ *
+ * Form component specific styles
+ * 
+ This file contains the styles to handle the display of the form elements on the site. Feel free to make any adjustments as needed
+ *
+ */
+ 
+ /* Style inputs */
+ 
+ .freeform-input {
+	/* Freeform applies this class to all the inputs and textareas except for the submit button. If you need to target a particular type individually you can use the &[type='bla'] selector inside of this selector */   
+	border: solid 1px #000;
+	padding: 5px;
+	background-color: #f4f4f4; 
+ }
+ 
+ /* fix to make select dropdown consistent with height of text inputs */
+ select.freeform-input {	
+	line-height: 24px;
+	min-height: 36px;
+ }
+ 
+ 
+ /* fix for lack of responsive layout change in freeform flexbox template */
+ 
+ @media (max-width: 767px) {
+	 .freeform-row {
+		 display: block !important;
+	 }
+ }
+ 
+ 
+ /* for any styles that need to be applied specifically to the submit buttons in the forms, use this selector: .btn.btn-formsubmit */
+ 

@@ -1,0 +1,111 @@
+contentColumnType: string
+fieldGroup: 36ab68c0-ddfb-499d-b8b8-7e1dbae7c799
+handle: columnDisplayLaptop
+instructions: ''
+name: 'Column Display - Laptop'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Change'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full Width'
+        -
+          - value
+          - 'lg:w-full'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Screen Width'
+        -
+          - value
+          - 'lg:w-screen'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 1/4
+        -
+          - value
+          - 'lg:w-1/4'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 1/3
+        -
+          - value
+          - 'lg:w-1/3'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 1/2
+        -
+          - value
+          - 'lg:w-1/2'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 2/3
+        -
+          - value
+          - 'lg:w-2/3'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 3/4
+        -
+          - value
+          - 'lg:w-3/4'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hidden
+        -
+          - value
+          - 'lg:hidden'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

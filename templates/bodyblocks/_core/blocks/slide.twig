@@ -1,0 +1,102 @@
+{#
+/**
+ * Tiltrus - Slide - Default
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'slide-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = block.type.handle %}
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+
+{% if block.contentAlignment is defined and block.contentAlignment != '' %}
+	{% set stylingClasses = stylingClasses|merge([block.contentAlignment]) %}
+{% endif %}
+
+{% if block.textStyling is defined and block.textStyling != null  %}
+	{% set stylingClasses = stylingClasses|merge(block.textStyling) %}
+{% endif %}
+
+{% if block.rowHorizontalAlignment is defined and block.rowHorizontalAlignment != null  %}
+	{% set stylingClasses = stylingClasses|merge([block.rowHorizontalAlignment]) %}
+{% endif %}
+
+{% if block.rowVerticalAlignment is defined and block.rowVerticalAlignment != null  %}
+	{% set stylingClasses = stylingClasses|merge([block.rowVerticalAlignment]) %}
+{% endif %}
+
+
+{# build array of padding classes and add to stylingClasses #}
+
+{% set paddingClasses = [] %}
+{% set paddingClasses = paddingClasses|merge([block.topPadding]) %}
+{% set paddingClasses = paddingClasses|merge([block.bottomPadding]) %}
+{% set paddingClasses = paddingClasses|merge([block.leftPadding]) %}
+{% set paddingClasses = paddingClasses|merge([block.rightPadding]) %}
+
+  
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, paddingClasses, customClassString) -}}>  
+  <div  {{ edcMacros.buildClasses('inner', stylingClasses) -}}>
+	{% for child in block.children.all() %}
+
+	  {#-
+		For each child component, attempt to load a custom template for the
+		component handle from the project's files,
+		then the same template from the core Tiltrus files,
+		then a custom default template from the project,
+		and finally the default template for this component type from the core Tiltrus files.
+	  -#}	  
+	  {% if child.type.handle starts with 'row' %}
+		  {%
+			include [
+			  'bodyblocks/project/rows/' ~ child.type.handle,
+			  'bodyblocks/_core/rows/' ~ child.type.handle,
+			  'bodyblocks/project/rows/row',
+			  'bodyblocks/_core/rows/row'
+			] with { 'row' :  child, 'loadType' : 1  }
+		  %}	  
+	  {% else %}
+		  {%
+			include [
+			  'bodyblocks/project/blocks/' ~ child.type.handle,
+			  'bodyblocks/_core/blocks/' ~ child.type.handle,
+			  'bodyblocks/project/blocks/block',
+			  'bodyblocks/_core/blocks/block'
+			] ignore missing with { 'block' :  child, 'loadType' : 1 }
+		  %}
+	  {% endif %}
+
+	{% endfor %}
+  </div>
+  
+  {% if block.backgroundImage|length != 0 %}
+	{% set bgAsset = block.backgroundImage.one() %}
+	{{ edcMacros.buildElementBackground(bgAsset, block.backgroundOpacity, block.backgroundSize, block.backgroundRepeat, block.backgroundPosition, {'default': '100vw'}, 1) }}
+  {% endif %}
+   
+</div>
