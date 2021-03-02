@@ -38,6 +38,16 @@ DB_TABLE_PREFIX=
 
 **DB_TABLE_PREFIX** is the prefix Craft will attach to the database tables it creates when it installs. This is optional, but I usually set it to some abbreviation of the project name (i.e. MMR)
 
+#### Application Settings
+```
+APP_ID=CraftCMS-
+SECURITY_KEY=
+```
+
+**APP_ID** Is a unique identifier used by the site for caching purposes. It typically starts with CraftCMS- and then a unique random string of characters. I typically go to [1Password's Password Generator](https://1password.com/password-generator/) and have it generator a random character string 30 characters in length and then add that after the CraftCMS-.
+
+**SECURITY_KEY** is a unique character string used as the encryption key for encrypting the site. I typically go to [1Password's Password Generator](https://1password.com/password-generator/) and have it generator a random character string 40 characters in length.
+
 #### Site Settings
 ```
 SITE_NAME="Website"
@@ -78,5 +88,10 @@ Once the .env files has been set properly, you should run the `./craft install` 
 ### Create new Git Repo for Project
 
 **ONLY DO THIS IF YOU ARE CREATING A NEW PROJECT** Once you have finished installing the boilerplate. You need to create a new local git repository for your project (if you are starting a new site, if you are working on an existing site or if someone else on the team has already set up a repo for a project, clone the repo that should already exist for the site). 
+
+
+### Install Javascript Dependencies
+
+Finally you need to install all of the javascript dependencies on the project to be able to start working on the site. To do this, assuming you are running npm, run the `npm install` command from the project folder and it npm will install everything specified in the package.json file.
 
 
