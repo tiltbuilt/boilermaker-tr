@@ -1,4 +1,4 @@
-dateModified: 1613526515
+dateModified: 1618432570
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -120,11 +120,6 @@ plugins:
       iconSetsUrl: /dist/icons/
       maxIconsShown: '100'
       redactorFieldHandle: ''
-  image-optimize:
-    edition: standard
-    enabled: false
-    licenseKey: WRSWVVDZXU3X5V6V1FEMRXNT
-    schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
@@ -211,7 +206,7 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 3.6.4
+  schemaVersion: 3.6.8
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false
