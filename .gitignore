@@ -26,9 +26,12 @@ prepros-6.config
 
 # Craft instance specific files and vendor files
 /config/license.key
-/dist
 /web/cpresources/*
+/public/cpresources/*
 composer.lock
+/dist
+/public/imager/*
+/public/blitz/*
 
 # local env files
 /.env

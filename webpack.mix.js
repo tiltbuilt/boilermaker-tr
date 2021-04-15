@@ -20,7 +20,7 @@ const devhost = process.env.DEV_HOST;
  |
  */
 
-mix.js('src/app.js', 'web/dist/js/')
+mix.js('src/app.js', 'public/dist/js/')
     .autoload({
         jquery: ['$', 'jQuery', 'window.jQuery']
     })
@@ -34,7 +34,7 @@ mix.js('src/app.js', 'web/dist/js/')
             cache: false,
             emitWarning: true,
         }
-    })
+    })/*
     .criticalCss({
         enabled: mix.inProduction(),
         paths: {
@@ -53,8 +53,8 @@ mix.js('src/app.js', 'web/dist/js/')
         enabled: true,
         useBuiltIns: "usage",
         targets: false
-    })
-    .setPublicPath('web/dist/')
+    })*/
+    .setPublicPath('public/dist/')
     .sourceMaps()
     .webpackConfig( {
         plugins: [
@@ -63,7 +63,7 @@ mix.js('src/app.js', 'web/dist/js/')
                 externalImages: {
                     context: 'src', // Important! This tells the plugin where to "base" the paths at
                     sources: glob.sync('src/img/**.*'),
-                    destination: 'web/dist',
+                    destination: 'public/dist',
                     fileName: '[path][name].[ext]' // (filePath) => filePath.replace('jpg', 'webp') is also possible
                 },
                 test: /\.(jpe?g|png|gif|svg)$/i,

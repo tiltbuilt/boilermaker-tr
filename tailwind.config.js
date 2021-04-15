@@ -13,9 +13,13 @@ module.exports = {
         'half': '0.75rem',
         'normal': '1.5rem',
         'double': '3rem',
+        'triple': '4.5rem',
+        'quadruple': '6rem',
         'neghalf': '-0.75rem',
         'negnormal': '-1.5rem',
         'negdouble': '-3rem',
+        'negtriple': '-4.5rem',
+        'negquadruple': '-6rem',
       },
     },
     colors: {
@@ -25,6 +29,21 @@ module.exports = {
       white: '#fff',
       red: '#ff0000',
       gray: colors.gray,      
+    },
+    fontFamily: {
+      
+    },
+    fontSize: {
+      xs: '0.8rem',
+      sm: '1.2rem',
+      base: '1.6rem',
+      lg: '1.8rem',
+      xl: '2.4rem',
+      '2xl': '3.6rem',
+      '3xl': '4.8rem',
+      '4xl': '6.0rem',
+      '5xl': '7.2rem',
+      '6xl': '8.4rem',
     },
     opacity: {
       '0': '0',
