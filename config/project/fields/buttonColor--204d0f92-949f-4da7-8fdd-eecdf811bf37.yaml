@@ -1,0 +1,45 @@
+contentColumnType: string
+fieldGroup: a14cc8b6-5551-4711-9589-ab33c555fa41
+handle: buttonColor
+instructions: ''
+name: 'Button Color'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - text-white
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - value
+          - text-black
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Gray
+        -
+          - value
+          - text-gray
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

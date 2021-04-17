@@ -1,7 +1,7 @@
 childBlocks:
   - footerNavigationBlock
   - footerLinkButtonBlock
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   0d1b8d4c-e0c9-4b03-b5b0-0f966a8be064:
     tabs:
@@ -39,7 +39,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef
+            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef # Background Image
             instructions: null
             label: null
             required: false

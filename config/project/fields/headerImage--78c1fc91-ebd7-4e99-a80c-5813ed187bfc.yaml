@@ -7,13 +7,14 @@ searchable: false
 settings:
   allowSelfRelations: false
   allowUploads: true
-  allowedKinds: null
+  allowedKinds:
+    - image
   defaultUploadLocationSource: 'volume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
   previewMode: full
-  restrictFiles: ''
+  restrictFiles: '1'
   selectionLabel: ''
   showSiteMenu: true
   showUnpermittedFiles: false
@@ -21,7 +22,8 @@ settings:
   singleUploadLocationSource: 'volume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
   singleUploadLocationSubpath: ''
   source: null
-  sources: '*'
+  sources:
+    - 'volume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
   targetSiteId: null
   useSingleFolder: false
   validateRelatedElements: false

@@ -6,6 +6,7 @@ name: 'Page Builder'
 searchable: true
 settings:
   maxBlocks: ''
+  maxLevels: ''
   maxTopBlocks: ''
   minBlocks: ''
   propagationMethod: all

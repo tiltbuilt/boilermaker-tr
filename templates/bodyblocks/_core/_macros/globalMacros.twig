@@ -142,7 +142,6 @@
   {% endif %}
 
 {% endmacro %}
-
 {#
   Render any header embeds for the current entry/category
 #}
@@ -173,4 +172,17 @@
 	{{- (i > 1 ? ', ' : null) -}}
 	<a href="{{ newsTopic.url }}">{{ newsTopic.title }}</a>
   {%- endfor -%}
+{% endmacro %}
+
+
+{#
+  Render social icon links
+#}
+
+{% macro socialIconLinks() %}
+  {% if companyInfo.socialMediaLinks is defined and companyInfo.socialMediaLinks|length %}
+	{% for socialLink in companyInfo.socialMediaLinks.all() %}
+		<a href="{{ socialLink.linkUrl }}" class="social-icon-link" title="{{ socialLink.linkName }}" target="_blank"><svg><use xlink:href="#{{ socialLink.linkIcon.sprite }}"></use></svg></a>
+	{% endfor %}
+  {% endif %}
 {% endmacro %}

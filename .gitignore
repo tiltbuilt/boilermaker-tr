@@ -29,7 +29,7 @@ prepros-6.config
 /web/cpresources/*
 /public/cpresources/*
 composer.lock
-/dist
+/public/dist
 /public/imager/*
 /public/blitz/*
 

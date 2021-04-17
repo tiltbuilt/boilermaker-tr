@@ -1,0 +1,82 @@
+/**
+ * components/pagination.css
+ *
+ * repeater specific styles
+ * 
+ This file contains the styles to handle the display of the team repeater lists. 
+ *
+ */
+ 
+ .pagination {
+	@apply w-full p-normal;
+	
+	
+	.btn {		
+		@apply mx-2;
+		padding: 1rem;
+				
+		.pagination-btn-text {
+			display: none;
+		}
+		
+		.pagination-btn-icon {
+			display: block;
+			
+			svg {
+				fill: currentColor;
+				width: 30px;
+				height: 30px;
+			}
+		}
+		
+		@media (min-width: 768px) {
+			
+			@apply mx-0;
+			width: 15rem;
+			padding: 1rem 2rem;
+			
+			
+			.pagination-btn-text {
+				display: block;
+			}
+			
+			.pagination-btn-icon {
+				display: none;
+			}
+		}
+	}
+	
+	.inner {
+		@apply w-full flex flex-row flex-wrap content-center justify-center items-center;
+		
+		@media (min-width: 768px) {
+			@apply flex-no-wrap justify-between;
+		}
+	}
+	
+	.pagination-pages {
+		
+		@apply pt-normal w-full text-center;
+		
+		span, a {
+			@apply font-semibold mx-2 inline-block;
+		}
+		
+		@media (min-width: 768px) {
+			@apply pt-none w-auto;
+		}
+	}
+	
+	@media (min-width: 768px) {
+		
+		.pagination-prev {
+			@apply order-first;	
+		}
+		
+		.pagination-next {
+			@apply order-last;	
+		}
+		
+		
+	}
+ }

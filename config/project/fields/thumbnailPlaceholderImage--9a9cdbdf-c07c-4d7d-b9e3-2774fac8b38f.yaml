@@ -16,7 +16,7 @@ settings:
   previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
@@ -25,7 +25,7 @@ settings:
   sources:
     - 'volume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
   targetSiteId: null
-  useSingleFolder: true
+  useSingleFolder: false
   validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null

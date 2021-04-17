@@ -2,7 +2,7 @@ childBlocks:
   - container
   - container2Column
   - containerWithSidebar
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   e7a7872e-3b8e-4f91-bc03-d85beeccef72:
     tabs:
@@ -40,7 +40,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef
+            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef # Background Image
             instructions: null
             label: null
             required: false

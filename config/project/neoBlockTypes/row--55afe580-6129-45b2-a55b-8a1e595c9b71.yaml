@@ -1,6 +1,7 @@
 childBlocks:
   - column
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+  - columnGoogleMap
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   d4170b2e-e2ff-4814-bd88-fcdce1a4aac1:
     tabs:
@@ -29,7 +30,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: c09f83e7-2a34-4a4b-8655-6fbff6ce3705
+            fieldUid: c09f83e7-2a34-4a4b-8655-6fbff6ce3705 # Left Margin
             instructions: null
             label: null
             required: false
@@ -38,7 +39,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 76c29aa7-c5a9-460a-92c8-deba792d3954
+            fieldUid: 76c29aa7-c5a9-460a-92c8-deba792d3954 # Right Margin
             instructions: null
             label: null
             required: false

@@ -9,3 +9,15 @@
 	 position: relative;
 	 overflow-x: hidden;
  }
+ 
+ .columnGoogleMap {
+     position: relative;
+     
+     .inner {
+         min-height: 100%;
+     }
+     
+     .gmap-wrapper {
+         @apply absolute inset-0;
+     } 
+  }

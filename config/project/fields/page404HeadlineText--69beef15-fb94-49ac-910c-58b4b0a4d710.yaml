@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: c81afefb-17b0-43b1-8a24-22204009926c
+handle: page404HeadlineText
+instructions: ''
+name: '404 Page Headline Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

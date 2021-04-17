@@ -1,5 +1,5 @@
 childBlocks: ''
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   c2f87b89-da00-40d2-ae42-c3431164e605:
     tabs:
@@ -21,5 +21,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 1
 name: 'Simple Text'
-sortOrder: 42
+sortOrder: 47
 topLevel: false

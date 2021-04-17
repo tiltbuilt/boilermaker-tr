@@ -1,6 +1,6 @@
 childBlocks:
   - footerMenu
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   03d7417d-433f-4f18-8824-e3d07dd28a9a:
     tabs:
@@ -22,5 +22,5 @@ maxBlocks: 1
 maxChildBlocks: 5
 maxSiblingBlocks: 0
 name: 'Footer Navigation Block'
-sortOrder: 55
+sortOrder: 58
 topLevel: false

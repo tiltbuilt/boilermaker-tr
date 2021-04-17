@@ -37,12 +37,9 @@
 	{% set blockClass = 'image-block' %}
 	{% set imageClass = 'content-image' %}	
 	
-	{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
-	{% if loadType is defined and loadType != null and loadType != 0 %}
-		{% set loadClass = 'owl-lazy' %}
-	{% else %}
-		{% set loadClass = 'lazyload' %}
-	{% endif %}
+	
+	{% set loadClass = 'lazyload' %}
+	
 	
 	{# assemble class arrays #}
 	{% set blockStylingClasses = [] %}
@@ -65,43 +62,51 @@
 	  <figure {{ edcMacros.buildClasses(blockClass, blockStylingClasses) -}}>
 	{% endif %}
 	
-		{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}
+	{% if block['linkSettings'] is defined and block.linkSettings|length %}
+		  {% set imageLink = block.linkSettings %}
+		  <a href="{{ imageLink.url }}" title="{{ imageLink.text }}"
+		{{- imageLink.target|length ? ' target="_blank"' : '' -}}
+	  >
+	  {% endif %}
+	
+		{% if image.mimeType == "image/svg+xml" %}		
+
+			<img src="{{ image.url }}" alt="{{imageAltText}}" {{ edcMacros.buildClasses(imageClass, imageStylingClasses) -}}>
+	
+		{% else %}		
 		
-		{% if craft.imager.serverSupportsWebp() %}
-		  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
-	    {% endif %}
-		
-		{% if transformedImages|length %}
-		  
-		  {% if block['linkSettings'] is defined and block.linkSettings|length %}
-			  {% set imageLink = block.linkSettings %}
-			  <a href="{{ imageLink.url }}" title="{{ imageLink.text }}"
-				{{- imageLink.target|length ? ' target="_blank"' : '' -}}
-			  >
-		  {% endif %}
-		  
-		  <picture>			  
+			{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}
+			
+			{% if craft.imager.serverSupportsWebp() %}
+			  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+			{% endif %}
+			
+			{% if transformedImages|length %}		  
 			  
-			  {% if craft.imager.serverSupportsWebp() %}
-				  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
-			  {% endif %}
-		  
-			  <img src="{{ craft.imager.base64Pixel() }}"
-			  data-sizes="auto"
-			  data-src="{{ transformedImages[0] }}"
-			  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-			  alt="{{ imageAltText }}" {{ edcMacros.buildClasses(imageClass, imageStylingClasses) -}}
-			  >
-		  </picture>
-		  
-		  {% if block['linkSettings'] is defined and block.linkSettings|length %}			
-			</a>
-		  {% endif %}		  
+				  <picture>			  
+					  
+					  {% if craft.imager.serverSupportsWebp() %}
+						  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+					  {% endif %}
+				  
+					  <img src="{{ craft.imager.base64Pixel() }}"
+					  data-sizes="auto"
+					  data-src="{{ transformedImages[0] }}"
+					  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+					  alt="{{ imageAltText }}" {{ edcMacros.buildClasses(imageClass, imageStylingClasses) -}}
+					  >
+				  </picture>
+				  
+			{% endif %}			  		  
 		  
 		{% endif %}
+		
+	{% if block['linkSettings'] is defined and block.linkSettings|length %}			
+		</a>
+	{% endif %}
 	
 	{% if block.imageCaption != '' %}
-	  	<figcaption>
+		  <figcaption>
 			{{ block.imageCaption }}  
 		</figcaption>
 	  </figure>

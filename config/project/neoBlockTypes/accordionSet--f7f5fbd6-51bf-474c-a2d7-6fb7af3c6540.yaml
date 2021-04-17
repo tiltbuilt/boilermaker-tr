@@ -1,6 +1,6 @@
 childBlocks:
   - accordion
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   be0a9c64-7386-4ceb-a49d-485c0a5f800d:
     tabs:
@@ -47,7 +47,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b # Bottom Margin
             instructions: null
             label: null
             required: false
@@ -84,5 +84,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Accordion Set'
-sortOrder: 22
+sortOrder: 23
 topLevel: false

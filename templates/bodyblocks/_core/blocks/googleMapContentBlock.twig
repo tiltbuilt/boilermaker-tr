@@ -1,0 +1,25 @@
+{#
+/**
+ * Block - Google Map
+ * -----
+ * `imageFixedRatio` control is optionally used for Fixed Ratio sizing of image with
+ * `blc-img-fxrt` class prefix.
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2018, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{% set mapStyleClasses = 'block w-full ' ~ block.topMargin ~ ' ' ~ block.bottomMargin %}
+
+
+<div class="gmap-wrapper {{mapStyleClasses}}" style="min-height: {{block.mapMinimumHeight}}px"></div>

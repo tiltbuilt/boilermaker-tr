@@ -78,7 +78,7 @@
   <div class="inner">
 	  
 	  {% if block.blockLayout == 'h' and (block.headingText|length or blockKids is not empty) %}
-	  <div class="row">
+	  <div class="row {{block.rowHorizontalAlignment}} {{block.rowVerticalAlignment}}">
 		  <div class="iconblock-icon-column">
 	  {% endif %}
 	  
@@ -88,8 +88,8 @@
 		   {{- iconLink.target|length ? ' target="_blank"' : '' -}}
 		 >
 	 {% endif %}
-	   <div  {{ edcMacros.buildElementAttributes(iconId, 'iconwrapper', iconClasses) -}}>
-		   {{ block.iconAsset.inline }}
+	   <div {{ edcMacros.buildElementAttributes(iconId, 'iconwrapper', iconClasses) -}}>
+		   <svg><use xlink:href="#{{ block.iconAsset.sprite }}"></use></svg>
 	   </div>
 	 {% if block['linkSettings'] is defined and block.linkSettings|length %}			
 	   </a>
@@ -150,7 +150,7 @@
 		{% if block.blockLayout == 'h' and (block.headingText|length or blockKids is not empty) %}
 		   </div>
 	  	 </div>
-		 {% endif %}
+		{% endif %}
 		  
   </div>
 </div>

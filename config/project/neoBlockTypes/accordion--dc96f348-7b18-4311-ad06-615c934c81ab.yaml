@@ -6,18 +6,21 @@ childBlocks:
   - button
   - contentWrapper
   - ctaStandard
+  - ctaSmall
   - embed
   - form
   - header
   - iconContent
   - image
+  - longFormatText
+  - googleMapContentBlock
   - textContent
   - contentVideo
   - repeaterContentLinks
   - repeaterEntryList
   - repeaterEntryChildList
   - repeaterSpecificEntryList
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   b21b90ca-e6d1-4bd4-a498-60c0db0dde6f:
     tabs:
@@ -82,7 +85,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef
+            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef # Background Image
             instructions: null
             label: null
             required: false
@@ -134,7 +137,7 @@ fieldLayouts:
             heading: Padding
             type: craft\fieldlayoutelements\Heading
           -
-            fieldUid: d1b22eff-2800-4ebc-b527-e83b3274b227
+            fieldUid: d1b22eff-2800-4ebc-b527-e83b3274b227 # Top Padding
             instructions: ''
             label: ''
             required: false
@@ -143,7 +146,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 5acfa166-4b23-426f-9901-4ab9ad411c19
+            fieldUid: 5acfa166-4b23-426f-9901-4ab9ad411c19 # Bottom Padding
             instructions: null
             label: null
             required: false
@@ -152,7 +155,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: b5b1ce85-677c-4772-a5c5-0b6fc4da062b
+            fieldUid: b5b1ce85-677c-4772-a5c5-0b6fc4da062b # Left Padding
             instructions: null
             label: null
             required: false
@@ -161,7 +164,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 307f5062-1b6a-40b7-b56c-20a21b7edbfc
+            fieldUid: 307f5062-1b6a-40b7-b56c-20a21b7edbfc # Right Padding
             instructions: null
             label: null
             required: false
@@ -186,7 +189,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b # Bottom Margin
             instructions: null
             label: null
             required: false
@@ -223,5 +226,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Accordion
-sortOrder: 23
+sortOrder: 24
 topLevel: false

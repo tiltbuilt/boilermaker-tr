@@ -1,0 +1,18 @@
+fieldLayouts:
+  36515a7e-cb41-4184-9b29-e76e1d47827d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a4f08de7-2889-4ba7-9ae5-e6448b21aa1e # Social Media Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Company Info'
+        sortOrder: 1
+handle: companyInfo
+name: 'Company Info'

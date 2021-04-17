@@ -1,0 +1,19 @@
+contentColumnType: integer(10)
+fieldGroup: e967fad7-e3bd-4f07-8db2-8ba215f7b617
+handle: mapMinimumHeight
+instructions: ''
+name: 'Map Minimum Height'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: '450'
+  max: null
+  min: '100'
+  prefix: null
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

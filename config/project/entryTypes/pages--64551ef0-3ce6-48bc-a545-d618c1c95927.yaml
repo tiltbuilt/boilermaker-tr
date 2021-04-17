@@ -88,7 +88,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 78c1fc91-ebd7-4e99-a80c-5813ed187bfc
+            fieldUid: 78c1fc91-ebd7-4e99-a80c-5813ed187bfc # Header - Image
             instructions: null
             label: null
             required: false
@@ -147,7 +147,7 @@ fieldLayouts:
             heading: 'Page Content'
             type: craft\fieldlayoutelements\Heading
           -
-            fieldUid: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+            fieldUid: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
             instructions: null
             label: null
             required: false
@@ -345,7 +345,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0e94bbb7-66d9-49bc-9423-12aab53c42ad
+            fieldUid: 0e94bbb7-66d9-49bc-9423-12aab53c42ad # SEO - Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 77dfb385-bcea-42a9-afa0-fe1cc6463f2a # SEO -  Robots
             instructions: null
             label: null
             required: false

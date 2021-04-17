@@ -1,6 +1,6 @@
 childBlocks:
   - button
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   c6d243fd-4dfd-415e-9e6a-56bee02d5346:
     tabs:
@@ -8,6 +8,15 @@ fieldLayouts:
         elements:
           -
             fieldUid: 0bf8ce81-5a07-4a2d-ab74-f3d3dbd7091a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 50aeb9ea-d0df-4503-af9a-4831d84332a6 # Button Size
             instructions: null
             label: null
             required: false
@@ -38,7 +47,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b # Bottom Margin
             instructions: null
             label: null
             required: false
