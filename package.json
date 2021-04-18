@@ -38,9 +38,10 @@
     "glob": "^7.1.6",
     "gsap": "^3.6.0",
     "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1",
     "lazysizes": "^5.2.2",
     "owl.carousel": "^2.3.4",
-    "tailwindcss": "^1.9.5",
+    "tailwindcss": "^2.1.0",
     "yt-player": "^3.5.0"
   }
 }

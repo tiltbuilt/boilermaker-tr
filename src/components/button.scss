@@ -8,7 +8,7 @@
  */
  
  .btn {
-	@apply inline-block py-4 px-8 font-acme uppercase font-semibold text-center;
+	@apply inline-block py-4 px-8 uppercase font-semibold text-center;
 	border-radius: 0.4rem;
 	line-height: 1;
 	transition: opacity 0.3s ease-in;

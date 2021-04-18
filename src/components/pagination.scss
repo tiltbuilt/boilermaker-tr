@@ -50,7 +50,7 @@
 		@apply w-full flex flex-row flex-wrap content-center justify-center items-center;
 		
 		@media (min-width: 768px) {
-			@apply flex-no-wrap justify-between;
+			@apply flex-nowrap justify-between;
 		}
 	}
 	

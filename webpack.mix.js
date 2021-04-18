@@ -1,3 +1,5 @@
+// webpack.mix.js
+
 const mix = require('laravel-mix');
 require('mix-tailwindcss');
 require('laravel-mix-eslint');
@@ -17,41 +19,23 @@ const devhost = process.env.DEV_HOST;
  | file for your application, as well as bundling up your JS files.
  |
  */
+ 
+mix.autoload({
+	jquery: ['$', 'window.jQuery', 'jQuery', 'window.$']
+}); 
 
-mix.sass('src/app.scss', 'public/dist/css/')
-   .tailwind('./tailwind.config.js')
-   .js('src/app.js', 'public/dist/js/')
-   .autoload({
-		jquery: ['$', 'jQuery', 'window.jQuery']
-	})
+mix.sass('src/app.scss', 'css')
+	.tailwind('./tailwind.config.js')
+	.js('src/app.js', 'js')
+	.setPublicPath('public/dist')    
 	.eslint({		
 		fix: true,
 		cache: false,
 		emitWarning: true,
 		extensions: ['js']		
-	})/*
-	.criticalCss({
-		enabled: mix.inProduction(),
-		paths: {
-			base: process.env.BASE_URL + '/',
-			templates: 'web/dist/critical/',
-			suffix: '_critical.min'
-		},
-		urls: [
-			{ url: 'blog', template: 'blog' },
-		],
-		options: {
-			minify: true,
-		},
-	})
-	.polyfill({
-		enabled: true,
-		useBuiltIns: "usage",
-		targets: false
-	})*/
-	.setPublicPath('public/dist/')
+	})	
 	.sourceMaps()
-	.webpackConfig( {
+	.webpackConfig( {		
 		plugins: [
 			new ImageminPlugin( {
 //            disable: process.env.NODE_ENV !== 'production', // Disable during development

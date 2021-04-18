@@ -25,7 +25,7 @@
             }
             
             @media (min-width: 768px) {
-                @apply flex-no-wrap;
+                @apply flex-nowrap;
                 
                 li {
                     @apply w-auto py-0 px-3 text-center;                    

@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import 'owl.carousel';
 import 'lazysizes';
 import { gsap } from "gsap";
@@ -5,7 +6,10 @@ import { ExpoScaleEase, RoughEase, SlowMo } from "gsap/EasePack";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-const YTPlayer = require('yt-player');
+import * as YTPlayer from 'yt-player';
+
+
+window.$ = window.jQuery = $;
 
 $(document).ready(function() {
 	
@@ -21,7 +25,7 @@ $(document).ready(function() {
 		
 		/* LOADER FUNCTIONALITY */
 		
-		function turnoffloader() {
+		var turnoffloader = function() {
 			$('body').addClass('pageloaded');
 		}
 		
@@ -225,10 +229,7 @@ $(document).ready(function() {
 			url: '/resources/formfixer?form=' + formhandle,
 			type: 'get',
 			dataType: 'json',
-			success: function (response) {
-				console.log(response.hash);
-				console.log(response.honeypot);
-				console.log(response.csrf);
+			success: function (response) {				
 				// Update the Form Hash
 				form.children('input[name=formHash]').val(response.hash);
 		
@@ -255,7 +256,7 @@ $(document).ready(function() {
 		// Stop the default field error rendering
 		if (event.form.id == 'newsletter-form') {
 			event.preventDefault();
-		  
+		
 			var form = event.form;		
 			var errors = event.errors;	
 			
@@ -263,7 +264,7 @@ $(document).ready(function() {
 			errorEl.className = 'ff-errors';
 			
 			for (var fieldHandle in errors) {
-			  errorEl.appendChild(document.createTextNode(errors[fieldHandle]));
+				errorEl.appendChild(document.createTextNode(errors[fieldHandle]));
 			}
 			
 			form.appendChild(errorEl);
