@@ -84,5 +84,5 @@ maxBlocks: 0
 maxChildBlocks: 4
 maxSiblingBlocks: 0
 name: 'Button Group'
-sortOrder: 34
+sortOrder: 30
 topLevel: false

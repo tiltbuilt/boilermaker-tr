@@ -271,5 +271,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Content Wrapper'
-sortOrder: 36
+sortOrder: 32
 topLevel: false

@@ -21,7 +21,7 @@
 	
 {% block pageHeader %}
 	{% if entry.showPageHeader %}	
-	  {{ gMacros.pageHeader(entry) }}
+	  {% include 'bodyblocks/project/sections/sectionPageHeader' %}
 	{% endif %} 
  {% endblock %}
  
@@ -34,7 +34,7 @@
 
 {% block pageFooter %}
 	{% if entry.showPageFooter %}
-	  {{ gMacros.pageFooter(entry) }}
+	  {% include 'bodyblocks/project/sections/sectionPageFooter' %}
 	{% endif %}
 {% endblock %}
 

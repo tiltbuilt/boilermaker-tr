@@ -170,5 +170,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 1
 name: 'Sidebar Column'
-sortOrder: 20
+sortOrder: 16
 topLevel: false

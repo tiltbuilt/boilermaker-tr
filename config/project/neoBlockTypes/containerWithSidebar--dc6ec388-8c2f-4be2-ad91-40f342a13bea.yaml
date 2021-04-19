@@ -85,5 +85,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: 'Container with Sidebar'
-sortOrder: 13
+sortOrder: 9
 topLevel: false

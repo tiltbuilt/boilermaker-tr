@@ -76,5 +76,5 @@ maxBlocks: 0
 maxChildBlocks: 4
 maxSiblingBlocks: 0
 name: 'Multicolumn Layout Row'
-sortOrder: 15
+sortOrder: 11
 topLevel: false

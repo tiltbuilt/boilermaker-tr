@@ -6,5 +6,5 @@ maxBlocks: 1
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Layout Location - Sidebar'
-sortOrder: 5
+sortOrder: 3
 topLevel: true

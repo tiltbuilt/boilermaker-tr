@@ -43,5 +43,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Google Map Content Block'
-sortOrder: 46
+sortOrder: 42
 topLevel: false

@@ -263,5 +263,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Repeater - Specific Entry List'
-sortOrder: 54
+sortOrder: 50
 topLevel: false
