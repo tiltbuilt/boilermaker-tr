@@ -1,4 +1,4 @@
-dateModified: 1618863366
+dateModified: 1618867019
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -202,7 +202,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: true
   name: $SITE_NAME
   retryDuration: null
