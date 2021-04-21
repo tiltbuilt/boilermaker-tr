@@ -60,7 +60,7 @@
 	{% set headingClasses = headingClasses|merge(block.headingStyling) %}	
 {% endif %}
 
-{% set blockKids = block.children.all() %}
+{% set blockKids = block['children'] %}
 
 {% if blockKids is not empty %}	
 	{% if block.headingText|length and block.headingLevel != '' %}

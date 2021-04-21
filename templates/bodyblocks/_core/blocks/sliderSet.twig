@@ -51,7 +51,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString, sliderAttrs) -}}>
   
 	<div class="owl-carousel" id="{{ blockId  ~ '-owl'}}">
-	{% for child in block.children.all() %}
+	{% for child in block['children'] %}
  
 	  {#-
 		For each child component, attempt to load a custom template for the

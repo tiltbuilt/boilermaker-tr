@@ -69,7 +69,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, paddingClasses, customClassString) -}}>  
   <div {{ edcMacros.buildClasses('inner') -}}>
 	  <div {{ edcMacros.buildClasses('row', stylingClasses) -}}>
-		{% for child in block.children.all() %}
+		{% for child in block['children'] %}
 	
 		  {#-
 			For each child component, attempt to load a custom template for the
@@ -103,7 +103,7 @@
   </div>
   
   {% if block.backgroundImage|length != 0 %}
-	{% set bgAsset = block.backgroundImage.one() %}
+	{% set bgAsset = block.backgroundImage[0] %}
 	{{ edcMacros.buildElementBackground(bgAsset, block.backgroundOpacity, block.backgroundSize, block.backgroundRepeat, block.backgroundPosition, {'default': '100vw'}, 1) }}
   {% endif %}
    

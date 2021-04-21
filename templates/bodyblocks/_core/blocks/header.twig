@@ -60,7 +60,7 @@
 {% set subheadClasses = subheadClasses|merge([block.headerAlignment]) %}
 {% set subheadClasses = subheadClasses|merge(block.subheadStyling) %}
 
-{% set blockKids = block.children.all() %}
+{% set blockKids = block['children'] %}
 
 {% if block.subheadText|length or blockKids is not empty %}
 	{% set headingClasses = headingClasses|merge([block.headingBottomMargin]) %}

@@ -1,4 +1,4 @@
-dateModified: 1618867019
+dateModified: 1618963912
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -24,6 +24,10 @@ plugins:
     licenseKey: JR2O0QQGE8R5I458WBY1BF3J
     schemaVersion: 3.6.6
   blitz-recommendations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  elements-panel:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

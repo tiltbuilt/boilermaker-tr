@@ -46,7 +46,7 @@
 
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
   
-	{% for child in accordion.children.all() %}
+	{% for child in accordion['children'] %}
 
 	  {# determine if this is the first loop through children to determine how to set initial state of first clid accordion #}
 	  

@@ -61,7 +61,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString, panelAttrs) -}}>
 
   <div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
-	{% for child in tabPanel.children.all() %}
+	{% for child in tabPanel['children'] %}
 
 	  {#-
 		For each child component, attempt to load a custom template for the

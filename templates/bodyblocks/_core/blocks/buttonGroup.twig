@@ -47,7 +47,7 @@
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
 
 {# Render #}
-{% set blockKids = block.children.all() %}
+{% set blockKids = block['children'] %}
 
 {% if blockKids is not empty %}
 	<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>

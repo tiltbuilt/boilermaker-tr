@@ -15,6 +15,12 @@
 {% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
 {# Optionally load in project-specific EDC macro overrides by calling it edcMacros and loading in here #}
 
+{% do craft.app.elements.eagerLoadElements(
+ className(entry),
+ [entry],
+ ['seoImage', 'headerImage', 'headerLinkButtons', 'headerBackground', 'pageBuilder', 'pageBuilder.sectionStandard:backgroundImage', 'pageBuilder.column:backgroundImage', 'pageBuilder.columnHalf:backgroundImage','pageBuilder.columnMain:backgroundImage', 'pageBuilder.columnSidebar:backgroundImage', 'pageBuilder.columnSlideContent:backgroundImage',  'pageBuilder.contentWrapper:backgroundImage', 'pageBuilder.accordion:backgroundImage', 'pageBuilder.tabSet:backgroundImage', 'pageBuilder.slide:backgroundImage', 'pageBuilder.image:imageAsset', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.slideContentImage:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry', 'pageBuilder.repeaterSpecificEntryList:listSpecificEntries']
+) %}
+
 {% extends "_layout" %}
 
 {% block pageId %}page-{{- entry.slug -}}{% endblock %}
@@ -23,13 +29,20 @@
 	{% if entry.showPageHeader %}	
 	  {% include 'bodyblocks/project/sections/sectionPageHeader' %}
 	{% endif %} 
- {% endblock %}
+{% endblock %}
  
-{% block pageContent %}  
-	{% set layoutLocationPageContent = entry.pageBuilder.level(1).type('layoutLocationPageContent').one() %}
-	{% if layoutLocationPageContent|length and layoutLocationPageContent.children|length %}
-	  {% include 'bodyblocks/_core/locationRender' with { layoutLocation: layoutLocationPageContent } %}	
-	{% endif %}  
+  
+{% block pageContent %}
+	{# Preparation for the eager-loaded Neo field #}
+	
+	{% for block in entry.pageBuilder %}
+		{% do block.useMemoized(entry.pageBuilder) %}
+	{% endfor %}
+	
+	{% for block in entry.pageBuilder if block.level == 1 %}
+		{% include 'bodyblocks/_core/locationRender' with { layoutLocation: block } %}  
+	 {% endfor %}
+	  
 {% endblock %}
 
 {% block pageFooter %}

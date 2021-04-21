@@ -13,19 +13,11 @@
 
 {# Load in global macros for use across all Twig templates #}
 {% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
-
 {# Load in _core Tiltrus Element Display Controls macros #}
 {% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
 
-{% if layoutLocation is defined and layoutLocation|length and layoutLocation['children'] is defined %}
-  
-  {% if blockType is defined and blockType|length %}
-  	{% set renderSet = layoutLocation.children.type(blockType).all() %}
-  {% else %}
-  	{% set renderSet = layoutLocation.children.all() %}
-  {% endif %}
-  
-  {% for child in renderSet %}
+
+{% for child in layoutLocation['children'] %}	
 	{#-
 	  For each child component, attempt to load a custom template for the
 	  component handle from the project's files,
@@ -40,7 +32,7 @@
 		  'bodyblocks/_core/sections/' ~ child.type.handle,
 		  'bodyblocks/project/sections/section',
 		  'bodyblocks/_core/sections/section'
-		] with { 'section' : child }
+		] with { 'section' : child,  }
 	  %}
 	{% elseif child.type.handle starts with 'container' %}
 	  {%
@@ -67,7 +59,7 @@
 		  'bodyblocks/_core/repeaters/' ~ child.type.handle
 		] with { 'repeater' :  child }
 	  %}
-    {% elseif child.type.handle starts with 'accordion' %}
+	{% elseif child.type.handle starts with 'accordion' %}
 	  {%
 		include [
 		  'bodyblocks/project/accordions/' ~ child.type.handle,
@@ -103,6 +95,5 @@
 		  'bodyblocks/_core/blocks/block'
 		] with { 'block' :  child }
 	  %}
-	{% endif %}
-  {% endfor %}
-{% endif %}
+	{% endif %}	
+{% endfor %}

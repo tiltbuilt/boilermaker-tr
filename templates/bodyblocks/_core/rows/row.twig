@@ -42,7 +42,7 @@
 
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
  
-	{% for column in row.children.all() %}
+	{% for column in row['children'] %}
 	  {#-
 		Attempt to load a custom template for the component handle from the project's files,
 		then the same template from the core Tiltrus files,
