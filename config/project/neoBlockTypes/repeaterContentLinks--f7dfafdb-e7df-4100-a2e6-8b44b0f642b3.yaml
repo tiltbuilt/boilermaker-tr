@@ -65,7 +65,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 6e019a3b-9cb2-46e9-bcc7-9cfdcbf47fbb
+            fieldUid: 6e019a3b-9cb2-46e9-bcc7-9cfdcbf47fbb # List Item Display Style
             instructions: null
             label: null
             required: false

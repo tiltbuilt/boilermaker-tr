@@ -31,6 +31,7 @@
 - Updated slider to images to use lazysizes instead of built-in lazy load in owl carousel
 - Added Render as Button as option to all Repeaters
 - Changed Icon Content block to use svg use tag instead of inline
+- Updated templates to eager load asset fields, neo blocks, and entry fields
   
 ## 1.1.0 - 2021-03-02
 ### Changed

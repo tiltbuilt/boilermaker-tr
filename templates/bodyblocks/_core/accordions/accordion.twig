@@ -122,7 +122,7 @@
 		
 		<div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
 			
-			{% for child in accordion['children'] %}
+			{% for child in accordion['children'].all() %}
 		
 			  {#-
 				For each child component, attempt to load a custom template for the

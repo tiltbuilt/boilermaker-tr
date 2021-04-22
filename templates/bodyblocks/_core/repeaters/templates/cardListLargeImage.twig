@@ -26,7 +26,7 @@
 	{% if repeaterItem.seoImage|length %}
 		{% set image = repeaterItem.seoImage[0] %}
 	{% else %}
-		{% set image = gSettings.thumbnailPlaceholderImage[0] %}
+		{% set image = siteGlobals.thumbnailPlaceholderImage[0] %}
 	{% endif %}
 	
 	{%- set transformedImages = craft.imagerx.transformImage(image, 'thumbnail')	%}

@@ -92,7 +92,7 @@
 		{% endfor %}  
 	</div>
 	<div class="tab-panel-wrapper {{ tabSet.backgroundColor }}">
-		{% for child in tabSet['children'] %}
+		{% for child in tabSet['children'].all() %}
 	
 		{% if child.customId is defined and child.customId != '' %}			  
 			{% set panelId = child.customId ~ '-panel' %}

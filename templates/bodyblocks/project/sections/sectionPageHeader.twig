@@ -174,7 +174,7 @@
   </div>
   
   {% if entry.headerBackground|length != 0 %}
-	  {% set bgAsset = entry.headerBackground.one() %}	  	  	  
+	  {% set bgAsset = entry.headerBackground[0] %}	  	  	  
 	  {{ edcMacros.buildElementBackground(bgAsset, entry.backgroundOpacity, entry.backgroundSize, entry.backgroundRepeat, entry.backgroundPosition, {'default': '100vw'}) }}
   {% endif %}
  

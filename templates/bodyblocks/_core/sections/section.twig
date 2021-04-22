@@ -52,7 +52,7 @@
 <section {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
 
   <div class="inner">
-	{% for child in section['children'] %}
+	{% for child in section['children'].all() %}
 
 	  {#-
 		For each child component, attempt to load a custom template for the

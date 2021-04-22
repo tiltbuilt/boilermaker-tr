@@ -17,7 +17,7 @@
 {% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
 
 
-{% for child in layoutLocation['children'] %}	
+{% for child in layoutLocation['children'].all() %}	
 	{#-
 	  For each child component, attempt to load a custom template for the
 	  component handle from the project's files,

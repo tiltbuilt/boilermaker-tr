@@ -86,7 +86,7 @@
 	  {% endif %}
 	  
 	  <div {{ edcMacros.buildClasses('contentBlock', paddingClasses) -}}>
-		{% for child in block['children'] %}
+		{% for child in block['children'].all() %}
 	
 		  {#-
 			For each child component, attempt to load a custom template for the

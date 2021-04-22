@@ -101,10 +101,10 @@
 {% if paginateItems == true %}
   {% set itemsPerPage = repeater.listItemsPerPage is defined and repeater.listItemsPerPage|length ? repeater.listItemsPerPage : 3 %}
 
-  {% paginate craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(itemsPerPage) as pageInfo, itemList %}
+  {% paginate craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(itemsPerPage).with(['seoImage']) as pageInfo, itemList %}
   {% do seomatic.helper.paginate(pageInfo) %}
 {% else %}
-  {% set itemList = craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(numberOfItems).all() %}
+  {% set itemList = craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(numberOfItems).with(['seoImage']).all() %}
 {% endif %}
 
 {#

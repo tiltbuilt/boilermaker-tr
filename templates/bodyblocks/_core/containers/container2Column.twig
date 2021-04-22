@@ -80,7 +80,7 @@
 
   <div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
 	  <div {{ edcMacros.buildClasses('row', rowClasses) -}}>
-		{% for column in container['children'] %}
+		{% for column in container['children'].all() %}
 		  {#-
 			Attempt to load a custom template for the component handle from the project's files,
 			then the same template from the core Tiltrus files,

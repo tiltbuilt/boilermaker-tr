@@ -59,7 +59,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
 
   <div class="inner">
-	{% for child in column['children'] %}
+	{% for child in column['children'].all() %}
 
 	  {#-
 		For each child component, attempt to load a custom template for the

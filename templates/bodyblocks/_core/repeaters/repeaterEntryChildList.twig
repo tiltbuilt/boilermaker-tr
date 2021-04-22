@@ -89,17 +89,19 @@
 {% if repeater.listParentEntry|length and numberOfItems > 0 %}
 	{%
 		set itemList = craft.entries().
-		  descendantOf(repeater.listParentEntry.one().id).
+		  descendantOf(repeater.listParentEntry[0].id).
 		  descendantDist(1).
 		  orderBy(listOrder).
+		  with(['seoImage']).
 		  limit(numberOfItems).all()
 	%}
 {% else %}
 	{%
 		set itemList = craft.entries().
-		  descendantOf(repeater.listParentEntry.one().id).
+		  descendantOf(repeater.listParentEntry[0].id).
 		  descendantDist(1).
 		  orderBy(listOrder).
+		  with(['seoImage']).
 		  all()
 	%}
 {% endif %}

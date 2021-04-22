@@ -84,12 +84,12 @@
 {% endif %}
 
 {% set itemList = [] %}
-{% for child in repeater.children.orderBy(listOrder).all() %}
+{% for child in repeater.children.orderBy(listOrder).with(['imageAsset']).all() %}
 	{% set listItem = {
 		'title' : child.headingText,
 		'excerpt' : child.simpleText,
 		'url': child.linkSettings.url,
-		'thumbnail': child.imageAsset
+		'seoImage': child.imageAsset
 	}
 	%}
 	{% set itemList = itemList|merge([listItem]) %}
@@ -140,21 +140,7 @@
 		  %}
   
 		</div>
-  
-		{#- If paginated, show pagination UI -#}
-		{% if paginateItems == true %}
-		  {% include '_partials/pagination' %}
-		{#- Else, show the view all button (if set) -#}
-		{% else %}
-		  {% if repeater['viewAllButtonSettings'] is defined and repeater.viewAllButtonSettings|length %}
-		  {% set viewAllLink = repeater.viewAllButtonSettings %}			
-			<div class="list-button-wrapper {{ repeater.buttonAlignment }}">
-			  <a href="{{ viewAllLink.url }}" {{ edcMacros.buildElementAttributes(null, 'btn', repeater.buttonStyling) }} {{- viewAllLink.target|length ? ' target="_blank"' : '' -}}>
-				<span>{{ viewAllLink.text }}</span>
-			  </a>
-			</div>
-		  {% endif %}
-		{% endif %}
+		
 	  {% else %}
 		<div class="list-no-items">
 		  <b>No items found.</b>
