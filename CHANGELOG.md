@@ -1,4 +1,7 @@
 # Changelog
+## 1.2.1 - 2021-04-22
+### Changed
+- Updated composer.json file to reflect new release.
 
 ## 1.2.0 - 2021-04-22
 ### Added
