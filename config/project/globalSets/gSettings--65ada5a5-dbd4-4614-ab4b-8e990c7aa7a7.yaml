@@ -31,7 +31,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9a9cdbdf-c07c-4d7d-b9e3-2774fac8b38f
+            fieldUid: 9a9cdbdf-c07c-4d7d-b9e3-2774fac8b38f # Thumbnail Placeholder Image
             instructions: 'Upload an image for use as a placeholder in listings where a thumbnail is needed and an entry does not have one.'
             label: ''
             required: ''

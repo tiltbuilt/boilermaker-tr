@@ -1,0 +1,27 @@
+fieldLayouts:
+  fdd1b125-2125-4c0b-81c5-5bd151a192f3:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 69beef15-fb94-49ac-910c-58b4b0a4d710 # 404 Page Headline Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c09231cf-ab93-4b67-a685-12de7e0f3607 # 404 Page Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Content Settings'
+        sortOrder: 1
+handle: page404
+name: '404 Page'

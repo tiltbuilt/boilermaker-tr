@@ -59,7 +59,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
 
   <div class="inner">
-	{% for child in column.children.all() %}
+	{% for child in column['children'].all() %}
 
 	  {#-
 		For each child component, attempt to load a custom template for the
@@ -128,7 +128,7 @@
   </div>
   
   {% if column.backgroundImage|length != 0 %}
-	{% set bgAsset = column.backgroundImage.one() %}
+	{% set bgAsset = column.backgroundImage[0] %}
 	{{ edcMacros.buildElementBackground(bgAsset, column.backgroundOpacity, column.backgroundSize, column.backgroundRepeat, column.backgroundPosition, {'default': '100vw'}) }}
   {% endif %}
    

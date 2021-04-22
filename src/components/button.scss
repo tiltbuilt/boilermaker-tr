@@ -8,13 +8,35 @@
  */
  
  .btn {
-	@apply inline-block py-2 px-3 bg-gray-500 text-white;
+	@apply inline-block py-4 px-8 uppercase font-semibold text-center;
+	border-radius: 0.4rem;
+	line-height: 1;
+	transition: opacity 0.3s ease-in;
+	text-shadow: none !important;
 	
 	&:hover {
 		/* place general hover styles for all buttons here */
+		opacity: 0.7;
 	}
 	
 	/* add specific button classes here, starting each class selector with an '&' for example &.btn-blue. include hover styles inside those selectors for any hover styles that are specific to that particular button class */
+	
+	&.btn-lg {
+		@apply text-xl py-5 px-10;
+	}
+	
+	&.btn-sm {
+		@apply text-sm py-3 px-6;
+	}
+	
+	&.btn-fullwidth {
+		@apply w-full mb-half;
+		
+		&:last-child {
+			@apply mb-0;
+		}
+	}
+	
  }
  
  /* if group is set you have buttons be full width on mobile, apply styling */	
@@ -53,7 +75,7 @@
 	&.btn-mobile-fullwidth {
 		.btn {
 			@media (max-width: 767px) {
-				@apply mb-2 mx-0;
+				@apply mb-half mx-0;
 			}
 			
 			&:last-child {

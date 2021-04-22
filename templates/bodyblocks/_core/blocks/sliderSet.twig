@@ -35,6 +35,12 @@
 
 {% set stylingClasses = stylingClasses|merge([block.topMargin, block.bottomMargin]) %}
 
+
+{# add button color classes to stylingClasses #}
+
+{% set stylingClasses = stylingClasses|merge([block.buttonColor, block.buttonHoverColor]) %}
+
+
 {# set up attribute list for settings #}
 
 {% set sliderAttrs = {'data-autoplay': block.autoplay, 'data-timing': block.slideTransitionDelay, 'data-controls': block.sliderControls} %}
@@ -45,7 +51,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString, sliderAttrs) -}}>
   
 	<div class="owl-carousel" id="{{ blockId  ~ '-owl'}}">
-	{% for child in block.children.all() %}
+	{% for child in block['children'].all() %}
  
 	  {#-
 		For each child component, attempt to load a custom template for the
@@ -66,7 +72,7 @@
 	{% endfor %}
 	</div>
 	
-	{% if block.sliderControls == 'buttons' or block.sliderControls == 'both' %}
+	{% if (block.sliderControls == 'buttons' or block.sliderControls == 'both') and (block.children|length > 1)  %}
 		<button class="owl-prev" data-target="#{{ blockId  ~ '-owl'}}">
 			<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.sprite }}"></use></svg>
 		</button>

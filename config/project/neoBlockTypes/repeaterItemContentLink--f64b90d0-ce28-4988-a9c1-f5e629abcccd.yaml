@@ -1,5 +1,5 @@
 childBlocks: ''
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   1d23babb-956d-4661-804b-673b5578b4c4:
     tabs:
@@ -33,7 +33,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a0306f2d-4667-4b02-8640-74c9667f4bff
+            fieldUid: a0306f2d-4667-4b02-8640-74c9667f4bff # Image Asset
             instructions: null
             label: null
             required: false
@@ -48,5 +48,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Repeater Item - Content Link'
-sortOrder: 53
+sortOrder: 52
 topLevel: false

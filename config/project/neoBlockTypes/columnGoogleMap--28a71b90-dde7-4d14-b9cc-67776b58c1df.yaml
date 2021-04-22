@@ -1,18 +1,12 @@
-childBlocks:
-  - buttonGroup
-  - button
-  - header
-  - simpleText
-  - image
-  - contentVideo
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+childBlocks: ''
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
-  187dcdc6-28c3-4c19-8d18-6eb0df5cb02a:
+  67a89278-6cab-4f32-8b79-a83f6b8bf3e8:
     tabs:
       -
         elements:
           -
-            fieldUid: 697213d6-7f4d-4f3d-ad74-9e4bba4c8366
+            fieldUid: 0051d1c8-a8a0-4b8a-a480-2c1ac079c3af # Map Minimum Height
             instructions: null
             label: null
             required: false
@@ -20,19 +14,6 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: 5b46ccfb-b6a8-405c-a4d5-2fec882c205d
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Content Settings'
-        sortOrder: 1
-      -
-        elements:
           -
             fieldUid: 8fe181c7-e727-4db7-920d-a8aa042b86c1
             instructions: null
@@ -43,7 +24,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Settings - Default'
-        sortOrder: 2
+        sortOrder: 1
       -
         elements:
           -
@@ -65,7 +46,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Settings - Phone Horizontal'
-        sortOrder: 3
+        sortOrder: 2
       -
         elements:
           -
@@ -87,7 +68,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Settings - Tablet'
-        sortOrder: 4
+        sortOrder: 3
       -
         elements:
           -
@@ -109,7 +90,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Settings - Laptop'
-        sortOrder: 5
+        sortOrder: 4
       -
         elements:
           -
@@ -131,105 +112,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Settings - Desktop'
-        sortOrder: 6
-      -
-        elements:
-          -
-            fieldUid: 84891428-c51d-44d3-b41e-c09424d0470d
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 17276dc7-0ba1-40fb-b31a-f1f49afcddef
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 53398f5c-c89b-4bb8-947b-f1c18a5285a7
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a6142a53-d635-4e7a-b2cc-a3124c08f7b9
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 76074de5-823f-4a9b-843b-746f628ac874
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: f82237d5-4da4-4e7a-85e1-5ea1e5568971
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Background Settings'
-        sortOrder: 7
-      -
-        elements:
-          -
-            fieldUid: d1b22eff-2800-4ebc-b527-e83b3274b227
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 5acfa166-4b23-426f-9901-4ab9ad411c19
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: b5b1ce85-677c-4772-a5c5-0b6fc4da062b
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 307f5062-1b6a-40b7-b56c-20a21b7edbfc
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Padding & Margins'
-        sortOrder: 8
+        sortOrder: 5
       -
         elements:
           -
@@ -251,11 +134,11 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Block Settings'
-        sortOrder: 9
-handle: slideContentColumn
+        sortOrder: 6
+handle: columnGoogleMap
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: 'Slide Content Column'
-sortOrder: 31
+name: 'Google Map Column'
+sortOrder: 17
 topLevel: false

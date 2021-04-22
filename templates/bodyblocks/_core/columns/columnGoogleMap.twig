@@ -1,0 +1,77 @@
+{#
+/**
+ * Tiltrus - Column - Google Map
+ * -----
+ *
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import 'bodyblocks/_core/_macros/globalMacros' as gMacros %}
+{# Load in _core Tiltrus Element Display Controls macros #}
+{% import 'bodyblocks/_core/_macros/edcMacros' as edcMacros %}
+{# Optionally load in project-specific EDC macro overrides #}
+{# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
+
+
+{# Set block id attribute value #}
+{% if column.customId is defined and column.customId != '' %}
+	{% set blockId = column.customId %}
+{% else %}
+	{% set blockId = 'column-' ~ column.id %}
+{% endif %}
+
+{# set loadType to null if not defined - for handling lazy load on carousels #}
+{% if loadType is not defined %}
+	{% set loadType = null %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = column.type.handle %}
+
+{# Get styling classes for block and assemble as class string #}
+{% set stylingClasses = [] %}
+
+{% if column.contentAlignment is defined and column.contentAlignment != '' %}
+	{% set stylingClasses = stylingClasses|merge([column.contentAlignment]) %}
+{% endif %}
+
+{% if column.textStyling is defined and column.textStyling != null  %}
+	{% set stylingClasses = stylingClasses|merge(column.textStyling) %}
+{% endif %}
+
+{# add background color class to stylingClasses if it isn't empty #}
+
+{% if column.backgroundColor is defined and column.backgroundColor != '' %}
+	{% set stylingClasses = stylingClasses|merge([column.backgroundColor]) %}
+{% endif %}
+
+{# build array of sizing and order classes and add to stylingClasses #}
+
+{% set sizingClasses = [] %}
+{% set sizingClasses = sizingClasses|merge([column.columnDisplayDefault]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnDisplayPhoneHorizontal]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnOrderPhoneHorizontal]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnDisplayTablet]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnOrderTablet]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnDisplayLaptop]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnOrderLaptop]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnDisplayDesktop]) %}
+{% set sizingClasses = sizingClasses|merge([column.columnOrderDesktop]) %}
+{% set stylingClasses = stylingClasses|merge(sizingClasses) %}
+
+  
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (column['customClassList'] is defined ? column.customClassList : null) %}
+
+<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}  style="min-height: {{column.mapMinimumHeight}}px">
+
+  <div class="inner">
+	<div class="gmap-wrapper"></div>
+  </div>
+   
+</div>

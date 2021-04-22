@@ -1,7 +1,7 @@
 childBlocks:
   - columnMain
   - columnSidebar
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   457e037e-e4f1-46da-9684-1c975cda100a:
     tabs:
@@ -21,7 +21,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: d1b22eff-2800-4ebc-b527-e83b3274b227
+            fieldUid: d1b22eff-2800-4ebc-b527-e83b3274b227 # Top Padding
             instructions: ''
             label: ''
             required: false
@@ -30,7 +30,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 5acfa166-4b23-426f-9901-4ab9ad411c19
+            fieldUid: 5acfa166-4b23-426f-9901-4ab9ad411c19 # Bottom Padding
             instructions: null
             label: null
             required: false
@@ -39,7 +39,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: b5b1ce85-677c-4772-a5c5-0b6fc4da062b
+            fieldUid: b5b1ce85-677c-4772-a5c5-0b6fc4da062b # Left Padding
             instructions: null
             label: null
             required: false
@@ -48,7 +48,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 307f5062-1b6a-40b7-b56c-20a21b7edbfc
+            fieldUid: 307f5062-1b6a-40b7-b56c-20a21b7edbfc # Right Padding
             instructions: null
             label: null
             required: false
@@ -85,5 +85,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: 'Container with Sidebar'
-sortOrder: 13
+sortOrder: 9
 topLevel: false

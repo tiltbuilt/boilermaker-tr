@@ -73,7 +73,8 @@
 	'da' : 'postDate asc',
 	'r'  : 'RAND()',
 	'az' : 'title asc',
-	'za' : 'title desc'
+	'za' : 'title desc',
+	'so' : '',
   }
 %}
 {% set listOrder = repeater.listOrder is defined and repeater.listOrder|length ? repeater.listOrder.value : null %}
@@ -85,16 +86,24 @@
 {% set numberOfItems = repeater['listCount'] is defined and repeater.listCount|length ? repeater.listCount : 0 %}
 
 
-
-
-{% if repeater.listParentEntry|length %}
-  {%
-	set itemList = craft.entries().
-	  descendantOf(repeater.listParentEntry.one().id).
-	  descendantDist(1).
-	  orderBy(listOrder).
-	  limit(numberOfItems).all()
-  %}
+{% if repeater.listParentEntry|length and numberOfItems > 0 %}
+	{%
+		set itemList = craft.entries().
+		  descendantOf(repeater.listParentEntry[0].id).
+		  descendantDist(1).
+		  orderBy(listOrder).
+		  with(['seoImage']).
+		  limit(numberOfItems).all()
+	%}
+{% else %}
+	{%
+		set itemList = craft.entries().
+		  descendantOf(repeater.listParentEntry[0].id).
+		  descendantDist(1).
+		  orderBy(listOrder).
+		  with(['seoImage']).
+		  all()
+	%}
 {% endif %}
 
 
@@ -119,6 +128,7 @@
 		{{ repeater.simpleText }}
 	  </div>
 	  {% endif %}
+
 	  
 	  {% if itemList|length %}
 		<div class="entryList">
@@ -140,7 +150,7 @@
 			include [
 			  'bodyblocks/project/repeaters/templates/' ~ repeaterTemplateHandle,
 			  'bodyblocks/_core/repeaters/templates/' ~ repeaterTemplateHandle,
-			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt }
+			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt, 'repeaterBtnStyles' : repeater.listItemButtonStyling, 'repeaterBtnSize' : repeater.listItemButtonSize }
 		  %}
   
 		</div>

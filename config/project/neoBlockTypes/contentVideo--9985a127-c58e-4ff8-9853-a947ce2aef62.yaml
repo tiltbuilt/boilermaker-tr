@@ -1,5 +1,5 @@
 childBlocks: ''
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   af2e7412-7389-4422-89dd-0dd16d7fdbf6:
     tabs:
@@ -15,7 +15,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a0306f2d-4667-4b02-8640-74c9667f4bff
+            fieldUid: a0306f2d-4667-4b02-8640-74c9667f4bff # Image Asset
             instructions: ''
             label: 'Poster Image'
             required: '1'
@@ -64,7 +64,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b # Bottom Margin
             instructions: null
             label: null
             required: false
@@ -101,5 +101,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Video
-sortOrder: 46
+sortOrder: 45
 topLevel: false

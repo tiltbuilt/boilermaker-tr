@@ -22,6 +22,17 @@ settings:
       __assoc__:
         -
           - label
+          - Buttons
+        -
+          - value
+          - buttonList
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - Card
         -
           - value

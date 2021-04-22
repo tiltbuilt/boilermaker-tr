@@ -92,7 +92,7 @@
 		{% endfor %}  
 	</div>
 	<div class="tab-panel-wrapper {{ tabSet.backgroundColor }}">
-		{% for child in tabSet.children.all() %}
+		{% for child in tabSet['children'].all() %}
 	
 		{% if child.customId is defined and child.customId != '' %}			  
 			{% set panelId = child.customId ~ '-panel' %}
@@ -131,7 +131,7 @@
 		{% endfor %}
 		
 		{% if tabSet.backgroundImage|length != 0 %}
-			{% set bgAsset = tabSet.backgroundImage.one() %}
+			{% set bgAsset = tabSet.backgroundImage[0] %}
 			{{ edcMacros.buildElementBackground(bgAsset, tabSet.backgroundOpacity, tabSet.backgroundSize, tabSet.backgroundRepeat, tabSet.backgroundPosition, {'default': '100vw'}) }}
 		{% endif %}  
 	</div>

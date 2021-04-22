@@ -25,10 +25,10 @@
   <div class="item-wrapper">
 	  <div class="row justify-center items-stretch">
 		  <div class="list-item-thumbnail-column">
-			  {% if repeaterItem.seoImage|length %}
+			  {% if repeaterItem.seoImage is defined and repeaterItem.seoImage|length %}
 				  {% set image = repeaterItem.seoImage[0] %}
 			  {% else %}
-				  {% set image = gSettings.thumbnailPlaceholderImage[0] %}
+				  {% set image = siteGlobals.thumbnailPlaceholderImage[0] %}
 			  {% endif %}
 			  
 			  {%- set transformedImages = craft.imagerx.transformImage(image, 'thumbnail')	%}

@@ -86,7 +86,7 @@
 	  {% endif %}
 	  
 	  <div {{ edcMacros.buildClasses('contentBlock', paddingClasses) -}}>
-		{% for child in block.children.all() %}
+		{% for child in block['children'].all() %}
 	
 		  {#-
 			For each child component, attempt to load a custom template for the
@@ -146,7 +146,7 @@
 	  </div>
   </div>
   {% if block.backgroundImage|length != 0 %}
-		{% set bgAsset = block.backgroundImage.one() %}
+		{% set bgAsset = block.backgroundImage[0] %}
 		{{ edcMacros.buildElementBackground(bgAsset, block.backgroundOpacity, block.backgroundSize, block.backgroundRepeat, block.backgroundPosition, {'default': '100vw'}) }}
   {% endif %}
    

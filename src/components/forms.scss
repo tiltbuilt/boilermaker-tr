@@ -9,28 +9,172 @@
  
  /* Style inputs */
  
+ #main.main {
+    .form-wrapper {
+        ul.freeform-pages {            
+            list-style-position: inside;
+            margin-left: 0px;
+            flex-wrap: wrap;
+            
+            li {               
+                @apply w-full mb-2 text-left;
+                
+                &::before {
+                    display: none;
+                }               
+            }
+            
+            @media (min-width: 768px) {
+                @apply flex-nowrap;
+                
+                li {
+                    @apply w-auto py-0 px-3 text-center;                    
+                    
+                    &:first-child {
+                        border-left: none;
+                        padding-left: 0px;
+                    }               
+                    
+                }
+            }            
+        }
+    }
+    
+    .ff-errors  {
+      @apply ml-0;
+      
+      li {
+        &::before {
+          display: none;
+      }
+      }
+    }
+ }
+ 
+h3.form-header {
+  @apply text-xl mt-normal;  
+}
+ 
  .freeform-input {
-	/* Freeform applies this class to all the inputs and textareas except for the submit button. If you need to target a particular type individually you can use the &[type='bla'] selector inside of this selector */   
-	border: solid 1px #000;
-	padding: 5px;
-	background-color: #f4f4f4; 
+    /* Freeform applies this class to all the inputs and textareas except for the submit button. If you need to target a particular type individually you can use the &[type='bla'] selector inside of this selector */   
+    border: solid 1px #000;
+    padding: 5px;
+    background-color: #f4f4f4; 
  }
  
  /* fix to make select dropdown consistent with height of text inputs */
  select.freeform-input {	
-	line-height: 24px;
-	min-height: 36px;
+    line-height: 24px;
+    min-height: 36px;
+ }
+ 
+ button[name='form_page_submit'], button[name='form_previous_page_button'] {
+    @apply inline-block py-4 px-8 uppercase text-center;
+    border-radius: 0.4rem;
+    line-height: 1;
+    transition: opacity 0.3s ease-in;
+    
+    &:hover {
+        /* place general hover styles for all buttons here */
+        opacity: 0.7;
+    }
+ }
+ 
+ button[name='form_page_submit'] {
+     /* put color styles here */
+ }
+ 
+ button[name='form_previous_page_button'] {
+      /* put color styles here */
+  } 
+ 
+ form {
+     .ff-form-success {
+         @apply pb-normal;
+     }
+     
+     .ff-form-errors {
+         @apply mb-normal bg-transparent text-red pt-none px-none;
+         border: none;
+     }
+     
+     .ff-errors {
+         @apply text-red w-full pt-normal px-none;
+         flex-basis: 100%;
+     }
  }
  
  
  /* fix for lack of responsive layout change in freeform flexbox template */
  
  @media (max-width: 767px) {
-	 .freeform-row {
-		 display: block !important;
-	 }
+     .freeform-row {
+         display: block !important;
+     }
  }
  
  
  /* for any styles that need to be applied specifically to the submit buttons in the forms, use this selector: .btn.btn-formsubmit */
  
+ /*
+ #newsletter-form { 
+   
+    label {
+      display: none;
+    }
+    
+    .freeform-row {
+      @apply justify-center;
+      max-width: 90%;
+      margin: 0px auto;
+      
+      .freeform-column {
+        @apply p-0 m-0;
+        flex-grow: 0;
+        
+        
+        &:first-child {
+          flex-grow: 2;
+        }
+      }
+    }   
+      
+    #form-input-email {
+        @apply text-gray-700 uppercase text-left font-acme mb-normal block mx-auto;        
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-left: solid 2px;
+        border-right: solid 2px;
+        border-top: solid 2px;
+        border-bottom: solid 2px;
+        border-color: theme('colors.green.light');        
+        
+        &:focus {           
+           outline: none;
+        } 
+        
+        @media (min-width: 768px) {
+            @apply mx-0 mb-0;
+            border-radius: 0.5rem 0px 0px 0.5rem;
+            border-right: none;
+            
+        }      
+    }
+    
+    .btn-formsubmit {
+        @apply px-6 block;
+        border-radius: 0.5rem;
+        white-space: nowrap;
+        margin: 0px auto;
+        
+        &:focus {           
+           outline: none;
+        }
+        
+        @media (min-width: 768px) {
+            border-radius: 0px 0.5rem 0.5rem 0px;            
+        } 
+    }
+ }
+ 
+ */

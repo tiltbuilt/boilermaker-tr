@@ -1,5 +1,5 @@
 childBlocks: ''
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   c505eb48-5a0a-454c-9e81-e4f08a807ce9:
     tabs:
@@ -77,7 +77,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b # Bottom Margin
             instructions: null
             label: null
             required: false
@@ -86,7 +86,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: aae74be2-2cdb-4d3f-a8c5-ab01db093897
+            fieldUid: aae74be2-2cdb-4d3f-a8c5-ab01db093897 # Heading Bottom Margin
             instructions: null
             label: null
             required: false
@@ -123,5 +123,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Form
-sortOrder: 40
+sortOrder: 36
 topLevel: false

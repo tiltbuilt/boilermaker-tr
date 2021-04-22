@@ -16,7 +16,12 @@
   {% import _self as macros %}
 
   {% set nodeClasses = [] %}  
-  {% set topLevelClasses = [] %}  
+ 
+  {% if baseClass == 'main-menu' %} 
+    {% set topLevelClasses = ['menu-item'] %}
+  {% else %}
+    {% set topLevelClasses = [] %}
+  {% endif %} 
     
   {% set level = level|length ? level + 1 : 1 %}
   
@@ -36,17 +41,17 @@
 	{%- set nodeClasses = nodeClasses|merge([baseClass ~ '-top']) -%}
   {% endif %}
   
-  {% if node.level == 1 and node.children|length %}  	
+  {% if node.level == 1 %}  	
 	
-	{% if hasDropdown is defined and hasDropdown %}
-	  {%- set topLevelClasses = topLevelClasses|merge([baseClass ~ '-parent', 'has-sub']) -%}
-	{% else %}
-	  {%- set topLevelClasses = topLevelClasses|merge([baseClass ~ '-parent']) -%}
-	{%- endif -%}
+  	{% if hasDropdown is defined and hasDropdown and node.children|length %}
+  	  {%- set topLevelClasses = topLevelClasses|merge([baseClass ~ '-parent', 'has-sub']) -%}
+  	{% else %}
+  	  {%- set topLevelClasses = topLevelClasses|merge([baseClass ~ '-parent']) -%}
+  	{%- endif -%}
 	
-	{% set nodeClasses = nodeClasses|merge(topLevelClasses) %}
+	  {% set nodeClasses = nodeClasses|merge(topLevelClasses) %}
   {%- elseif node.level == 2 and node.children|length -%}
-	{%- set nodeClasses = nodeClasses|merge(['menu_item_children']) -%}
+	  {%- set nodeClasses = nodeClasses|merge(['menu_item_children']) -%}
   {%- endif -%}
   
   {# If Link Styling for buttons is set, override nodeClasses #}

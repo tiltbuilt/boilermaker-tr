@@ -2,7 +2,7 @@ childBlocks:
   - buttonGroup
   - button
   - simpleText
-field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc
+field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   6a7bb028-e487-46ca-84f5-da1acbb8c2c6:
     tabs:
@@ -105,7 +105,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b
+            fieldUid: 2b057849-b29b-43da-8a36-63bdfbaf4a9b # Bottom Margin
             instructions: 'This margin is applied to the entire block so it acts as the bottom margin of the heading if none of the optional content is added, or it acts as the bottom margin under the last optional item if they are included.'
             label: ''
             required: false
@@ -114,7 +114,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: aae74be2-2cdb-4d3f-a8c5-ab01db093897
+            fieldUid: aae74be2-2cdb-4d3f-a8c5-ab01db093897 # Heading Bottom Margin
             instructions: null
             label: null
             required: false
@@ -123,7 +123,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ea5c0d76-9339-4695-9291-e231ca02db80
+            fieldUid: ea5c0d76-9339-4695-9291-e231ca02db80 # Subhead Bottom Margin
             instructions: null
             label: null
             required: false
@@ -132,7 +132,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 24ffc041-4ca2-41b8-8903-d03b454f03fe
+            fieldUid: 24ffc041-4ca2-41b8-8903-d03b454f03fe # Intro Text Bottom Margin
             instructions: null
             label: null
             required: false
@@ -169,5 +169,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: Header
-sortOrder: 41
+sortOrder: 37
 topLevel: false

@@ -1,8 +1,8 @@
+// webpack.mix.js
+
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
-require('laravel-mix-eslint-config');
-require('laravel-mix-polyfill');
-require('laravel-mix-criticalcss');
+require('mix-tailwindcss');
+require('laravel-mix-eslint');
 let glob = require('glob');
 let ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 let imageminMozjpeg = require('imagemin-mozjpeg');
@@ -19,82 +19,61 @@ const devhost = process.env.DEV_HOST;
  | file for your application, as well as bundling up your JS files.
  |
  */
+ 
+mix.autoload({
+	jquery: ['$', 'window.jQuery', 'jQuery', 'window.$']
+}); 
 
-mix.js('src/app.js', 'web/dist/js/')
-    .autoload({
-        jquery: ['$', 'jQuery', 'window.jQuery']
-    })
-    .eslint({
-        enforce: 'pre',
-        test: /\.(js|vue)$/, // will convert to /\.(js|vue)$/ or you can use /\.(js|vue)$/ by itself.
-        exclude: /node_modules/, // will convert to regexp and work. or you can use a regular expression like /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-            fix: true,
-            cache: false,
-            emitWarning: true,
-        }
-    })
-    .criticalCss({
-        enabled: mix.inProduction(),
-        paths: {
-            base: process.env.BASE_URL + '/',
-            templates: 'web/dist/critical/',
-            suffix: '_critical.min'
-        },
-        urls: [
-            { url: 'blog', template: 'blog' },
-        ],
-        options: {
-            minify: true,
-        },
-    })
-    .polyfill({
-        enabled: true,
-        useBuiltIns: "usage",
-        targets: false
-    })
-    .setPublicPath('web/dist/')
-    .sourceMaps()
-    .webpackConfig( {
-        plugins: [
-            new ImageminPlugin( {
+mix.sass('src/app.scss', 'css')
+	.tailwind('./tailwind.config.js')
+	.js('src/app.js', 'js')
+	.setPublicPath('public/dist')    
+	.eslint({		
+		fix: true,
+		cache: false,
+		emitWarning: true,
+		extensions: ['js']		
+	})	
+	.sourceMaps()
+	.webpackConfig( {		
+		plugins: [
+			new ImageminPlugin( {
 //            disable: process.env.NODE_ENV !== 'production', // Disable during development
-                externalImages: {
-                    context: 'src', // Important! This tells the plugin where to "base" the paths at
-                    sources: glob.sync('src/img/**.*'),
-                    destination: 'web/dist',
-                    fileName: '[path][name].[ext]' // (filePath) => filePath.replace('jpg', 'webp') is also possible
-                },
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                optipng: {
-                    optimizationLevel: 5
-                },
-                gifsicle: {
-                    optimizationLevel: 3
-                },
-                svgo: {},
-                jpegtran: null,
-                plugins: [
-                    imageminMozjpeg({
-                        quality: 80,
-                        progressive: true
-                    })
-                ],
-            }),
-        ],
-    })
-    .browserSync(devhost);
+				externalImages: {
+					context: 'src', // Important! This tells the plugin where to "base" the paths at
+					sources: glob.sync('src/img/**.*'),
+					destination: 'public/dist',
+					fileName: '[path][name].[ext]' // (filePath) => filePath.replace('jpg', 'webp') is also possible
+				},
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				optipng: {
+					optimizationLevel: 5
+				},
+				gifsicle: {
+					optimizationLevel: 3
+				},
+				svgo: {},
+				jpegtran: null,
+				plugins: [
+					imageminMozjpeg({
+						quality: 80,
+						progressive: true
+					})
+				],
+			}),
+		],
+	})
+	.browserSync(devhost);
 
 mix.options({
-    hmrOptions: {
-        host: devhost,
-        port: 8080
-    }
+	hmrOptions: {
+		host: devhost,
+		port: 8080
+	}
 });
 
 if (mix.inProduction()) {
-    mix.version();
+	mix.version();
 }
 
 

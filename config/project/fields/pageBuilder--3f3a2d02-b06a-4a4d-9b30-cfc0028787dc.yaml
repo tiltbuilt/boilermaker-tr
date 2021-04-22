@@ -6,10 +6,11 @@ name: 'Page Builder'
 searchable: true
 settings:
   maxBlocks: ''
+  maxLevels: ''
   maxTopBlocks: ''
   minBlocks: ''
   propagationMethod: all
-  wasModified: false
+  wasModified: true
 translationKeyFormat: null
 translationMethod: site
 type: benf\neo\Field

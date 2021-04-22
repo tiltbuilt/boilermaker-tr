@@ -29,7 +29,78 @@
   {% hook 'seomaticRender' %}
 
   {# Inject meta tags created by favicons #}
-  <!-- inject:favicons:html --><!-- endinject -->
+  
+  
+  
+	{# LOADER STYLES INLINE #}
+	
+	<style>
+		#loader {
+		  display: flex;
+		  flex-direction: row;
+		  width: 100vw;
+		  height: 100vh;
+		  position: fixed;
+		  background-color: #000;
+		  top: 0px;
+		  left: 0px;
+		  z-index: 9999999;
+		  box-sizing: border-box;		  
+	  }
+	  
+	  .pageloaded #loader {
+		  display: none;
+		  width: 0px;
+		  height: 0px;
+		  z-index: -9999;
+		  overflow: hidden;
+		  left: -10px;
+		  top: -10px;
+	  }
+	  /*
+	  .loader-inner {
+		  width: 120px;
+		  height: 120px;
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  box-sizing: border-box;
+		  
+	  }
+	  
+	  .loader-circle {
+		  border: 8px solid #EDF2F7; 
+		  border-top: 8px solid #a5ce3a; 
+		  border-radius: 50%;
+		  width: 120px;
+		  height: 120px;
+		  animation: spin 1.5s linear infinite;
+		  position: absolute;
+		  top: 0px;
+		  left: 0px;
+		  box-sizing: border-box;		
+	  }
+	  
+	  .loader-icon {
+		  display: block;
+		  position: absolute;
+		  z-index: 10;
+		  width: 60px;
+		  height: auto;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-50%, -50%);
+		  box-sizing: border-box;
+	  }
+	  
+	  @keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	  }
+	  */
+	  
+	</style>
 
   {{ gSettings.headerEmbeds|raw }}
 
@@ -49,22 +120,23 @@
   <![endif]-->
   {{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }}
 
-  {# Add an edit page link if logged in #}
-  {% if currentUser and currentUser.admin and ((entry is defined and entry.cpEditUrl is defined) or (category is defined and category.cpEditUrl is defined)) %}
-	<div style="padding: 0.5em; background-color: #000;"><a href="{{ entry is defined ? entry.cpEditUrl : category.cpEditUrl }}" target="_blank" style="color: #FFF;">Edit this {{ entry is defined ? "entry" : "category" }}</a></div>
-  {% endif %}
+  <div id="login-status-bar-wrapper"></div>
 
   {# Break the chain to disable the loader entirely #}
-  {% if 1==1==1 %}
-	{# Break the chain to disable the loader in Live Preview only #}
-	{% if 1==1==1 or not craft.app.request.isPreview %}
-	  {# Page loader element #}
-	  <div id="loader" class="loader ani ani-load_start">
-		<div class="inner"></div>
-		<div class="loader__helper"></div>
-	  </div>
+	{% if 1==1==1 %}
+	  {# Break the chain to disable the loader in Live Preview only #}
+	  {% if 1==1==1 or not craft.app.request.isPreview %}
+		{# Page loader element #}
+		<div id="loader">
+		  <!--
+		  <div class="loader-inner">
+			  <img src="/dist/img/loader-icon.svg" alt="Loading" class="loader-icon">
+			  <div class="loader-circle"></div>
+		  </div>
+	  -->		
+		</div>
+	  {% endif %}
 	{% endif %}
-  {% endif %}
 
   <div class="wrapper" id="wrapper">
 
@@ -89,15 +161,13 @@
 		  </a>
 		</div>
 
-		<div class="sm_header">
-		  {# Mobile menu button #}
-		  <div id="btn-mm" class="btn-mm">
-			<div class="btn-mm-bar"></div>
-			<div class="btn-mm-bar"></div>
-			<div class="btn-mm-bar btn-mm-bar-2"></div>
-			<div class="btn-mm-close"></div>
-		  </div>
-		</div>  
+		
+		{# Mobile menu button #}
+		<button id="btn-mm" class="btn-mm">
+			<span class="btn-mm-openstate"><svg><use xlink:href="#icon-bars"></use></svg></span>
+			<span class="btn-mm-closestate"><svg><use xlink:href="#icon-close"></use></svg></span>
+		</button>
+		 
 
 		{# Menu wrapper #}
 		<div id="mm_wrapper" class="mm_wrapper">
@@ -155,7 +225,7 @@
 	</style>
   </noscript>
 
-
+ 
   {{ craft.twigpack.includeJsModule("/js/app.js") }}
 
   {#

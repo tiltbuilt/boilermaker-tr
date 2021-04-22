@@ -1,4 +1,4 @@
-dateModified: 1613526515
+dateModified: 1619112292
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -27,6 +27,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  elements-panel:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   environment-label:
     edition: standard
     enabled: true
@@ -43,7 +47,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: 0GV28X2Y9O9JOWF3IJYLZPXV
-    schemaVersion: 3.3.0
+    schemaVersion: 3.3.1
     settings:
       ajaxByDefault: false
       alertNotificationRecipients: null
@@ -120,11 +124,6 @@ plugins:
       iconSetsUrl: /dist/icons/
       maxIconsShown: '100'
       redactorFieldHandle: ''
-  image-optimize:
-    edition: standard
-    enabled: false
-    licenseKey: WRSWVVDZXU3X5V6V1FEMRXNT
-    schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
@@ -207,11 +206,11 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 3.6.4
+  schemaVersion: 3.6.8
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false

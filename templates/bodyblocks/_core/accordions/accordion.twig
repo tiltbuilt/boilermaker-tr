@@ -122,7 +122,7 @@
 		
 		<div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
 			
-			{% for child in accordion.children.all() %}
+			{% for child in accordion['children'].all() %}
 		
 			  {#-
 				For each child component, attempt to load a custom template for the
@@ -173,7 +173,7 @@
 			
 		</div>
 		{% if accordion.backgroundImage|length != 0 %}
-		  {% set bgAsset = accordion.backgroundImage.one() %}
+		  {% set bgAsset = accordion.backgroundImage[0] %}
 		  {{ edcMacros.buildElementBackground(bgAsset, accordion.backgroundOpacity, accordion.backgroundSize, accordion.backgroundRepeat, accordion.backgroundPosition, {'default': '100vw'}) }}
 	  {% endif %}		
 	</div>   

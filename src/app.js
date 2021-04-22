@@ -1,7 +1,4 @@
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import './app-base.scss';
-import './app-components.scss';
-import './app-utilities.scss';
+import $ from 'jquery';
 import 'owl.carousel';
 import 'lazysizes';
 import { gsap } from "gsap";
@@ -9,23 +6,42 @@ import { ExpoScaleEase, RoughEase, SlowMo } from "gsap/EasePack";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-const YTPlayer = require('yt-player');
+import * as YTPlayer from 'yt-player';
+
+
+window.$ = window.jQuery = $;
 
 $(document).ready(function() {
 	
-	console.log('running!');
+	console.log('TEST');
+	
+	/* DO THE THINGS IF NOT IN LIVE PREVIEW IN CONTROL PANEL */
+	
+	if (!($('body').hasClass('ispreview'))) {
+		
+		/* GET LOGIN STATUS AND POPULATE CLOGIN BAR IF LOGGED IN */
+		
+		$("#login-status-bar-wrapper").load("/resources/loginbar");
+		
+		/* LOADER FUNCTIONALITY */
+		
+		var turnoffloader = function() {
+			$('body').addClass('pageloaded');
+		}
+		
+		var loadAnim = gsap.to("#loader", {duration: 0.5, ease: "power1.out", opacity: 0, paused: true, onComplete:turnoffloader});
+		loadAnim.play();			
+	}
+	
 	
 	/* REGISTER GSAP PLUGINS */
 	
 	gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, ScrollTrigger, ExpoScaleEase, RoughEase, SlowMo);
 	
+	
 	/* ACCORDION BEHAVIOR */
 	
-	function accordionFunction(toggleFunction, acc, btn, pnl) {	
-		console.log(toggleFunction);
-		console.log(acc);
-		console.log(btn);
-		console.log(pnl);
+	function accordionFunction(toggleFunction, acc, btn, pnl) {		
 		var accordion, button, panel;
 		/* grab dom elements based on ids */
 		accordion = $(acc);
@@ -34,14 +50,12 @@ $(document).ready(function() {
 		
 		/* check toggleFunction to see if opening or closing */
 		
-		if (toggleFunction == 1) {
-			console.log('opening');
+		if (toggleFunction == 1) {			
 			accordion.addClass('expanded');
 			button.addClass('expanded');
 			button.attr('aria-expanded', 'true');
 			panel.addClass('expanded');		
-		} else {
-			console.log('closing');
+		} else {			
 			accordion.removeClass('expanded');
 			button.removeClass('expanded');
 			button.attr('aria-expanded', 'false');
@@ -76,8 +90,7 @@ $(document).ready(function() {
 	
 	/* TABSET BEHAVIORS */
 	
-	$('.tab-button').click(function() {
-		console.log('click!');
+	$('.tab-button').click(function() {		
 		if (!($(this).hasClass('active-tab'))) {
 			var prevPanel, myTabSet, myPanel;
 			myTabSet = $(this).data('parent');
@@ -144,7 +157,7 @@ $(document).ready(function() {
 				youtubePlayer = new YTPlayer('#vid-' + youtubeVideoId, {
 					width: '640',
 					height: '360',
-					realted: false
+					related: false
 				});
 				youtubePlayer.load(youtubeVideoId, true);
 			});
@@ -155,6 +168,17 @@ $(document).ready(function() {
 	
 	/* SLIDER SETUP AND FUNCTIONALITY */
 	
+	function sliderFlexFix(e) {		
+		var myCarousel = e.target;		
+		var myItems = $(myCarousel).find('.owl-item');		
+		myItems.each(function() {
+			$(this).css('height', '');
+		});	
+		var heightVal = $(myCarousel).find('.owl-stage').height();
+		myItems.each(function() {
+			$(this).css('height', heightVal + 'px');
+		});		
+	}
 	
 	$('.sliderSet').each(function() {
 		var autoplaysetting = false;
@@ -176,9 +200,12 @@ $(document).ready(function() {
 			autoplay: autoplaysetting,
 			autoplayTimeout: timingsetting,
 			lazyLoad: true,
-			lazyLoadEager: 2
+			lazyLoadEager: 2,
+			onInitialized: sliderFlexFix,
+			onResized: sliderFlexFix,
 		});		
 	});
+	
 	
 	$('.owl-prev').click(function() {
 		var mytarget = $(this).data('target');
@@ -189,4 +216,59 @@ $(document).ready(function() {
 		var mytarget = $(this).data('target');
 		$(mytarget).trigger('next.owl.carousel');
 	});
+	
+	/* FIX FORMS TO WORK WITH BLITZ CACHE BY DYNAMICALLY RESETTING CSRF TOKENS AND HASH VALUES */
+	
+	$( "form" ).each(function() {
+		var form = $(this);
+		var formhandle = form.data('handle');
+		
+		$.ajax({
+			// Specify the form handle in the GET parameters
+			// ! Make sure to change the `myFormHandle` to your specific form handle.
+			url: '/resources/formfixer?form=' + formhandle,
+			type: 'get',
+			dataType: 'json',
+			success: function (response) {				
+				// Update the Form Hash
+				form.children('input[name=formHash]').val(response.hash);
+		
+				// Update the JS Honeypot (ONLY when JS Enhancement setting is ON)
+				
+				var honeypot = response.honeypot;
+				var honeypotInput = form.children('input[name^="freeform_form_handle"]');
+				honeypotInput.attr('id', honeypot.name);
+				honeypotInput.attr('name', honeypot.name);
+				honeypotInput.val(honeypot.hash);
+		
+				// Locate and update the CSRF input
+				var csrf = response.csrf;
+				form.children('input[name=' + csrf.name + ']').val(csrf.value);
+				
+			},
+		});
+	});
+	
+
+	/* FIX ERROR DISPLAY ON NEWSLETTER FORM */
+	
+	document.addEventListener("freeform-render-field-errors", function (event) {
+		// Stop the default field error rendering
+		if (event.form.id == 'newsletter-form') {
+			event.preventDefault();
+		
+			var form = event.form;		
+			var errors = event.errors;	
+			
+			var errorEl = document.createElement('div');
+			errorEl.className = 'ff-errors';
+			
+			for (var fieldHandle in errors) {
+				errorEl.appendChild(document.createTextNode(errors[fieldHandle]));
+			}
+			
+			form.appendChild(errorEl);
+		}		
+	});
+		
 });

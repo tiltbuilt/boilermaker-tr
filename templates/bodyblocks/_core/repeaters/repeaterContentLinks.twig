@@ -73,7 +73,8 @@
 	'da' : 'postDate asc',
 	'r'  : 'RAND()',
 	'az' : 'title asc',
-	'za' : 'title desc'
+	'za' : 'title desc',
+	'so' : '',
   }
 %}
 {% set listOrder = repeater.listOrder is defined and repeater.listOrder|length ? repeater.listOrder.value : null %}
@@ -83,12 +84,12 @@
 {% endif %}
 
 {% set itemList = [] %}
-{% for child in repeater.children.orderBy(listOrder).all() %}
+{% for child in repeater.children.orderBy(listOrder).with(['imageAsset']).all() %}
 	{% set listItem = {
 		'title' : child.headingText,
 		'excerpt' : child.simpleText,
 		'url': child.linkSettings.url,
-		'thumbnail': child.imageAsset
+		'seoImage': child.imageAsset
 	}
 	%}
 	{% set itemList = itemList|merge([listItem]) %}
@@ -135,25 +136,11 @@
 			include [
 			  'bodyblocks/project/repeaters/templates/' ~ repeaterTemplateHandle,
 			  'bodyblocks/_core/repeaters/templates/' ~ repeaterTemplateHandle,
-			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt }
+			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles'  : listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt, 'repeaterBtnStyles' : repeater.listItemButtonStyling, 'repeaterBtnSize' : repeater.listItemButtonSize }
 		  %}
   
 		</div>
-  
-		{#- If paginated, show pagination UI -#}
-		{% if paginateItems == true %}
-		  {% include '_partials/pagination' %}
-		{#- Else, show the view all button (if set) -#}
-		{% else %}
-		  {% if repeater['viewAllButtonSettings'] is defined and repeater.viewAllButtonSettings|length %}
-		  {% set viewAllLink = repeater.viewAllButtonSettings %}			
-			<div class="list-button-wrapper {{ repeater.buttonAlignment }}">
-			  <a href="{{ viewAllLink.url }}" {{ edcMacros.buildElementAttributes(null, 'btn', repeater.buttonStyling) }} {{- viewAllLink.target|length ? ' target="_blank"' : '' -}}>
-				<span>{{ viewAllLink.text }}</span>
-			  </a>
-			</div>
-		  {% endif %}
-		{% endif %}
+		
 	  {% else %}
 		<div class="list-no-items">
 		  <b>No items found.</b>

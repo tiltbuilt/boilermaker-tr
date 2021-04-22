@@ -17,7 +17,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 62.5%; /* sets up base font size of root element at 10px which allows for easier sizing as it is base 10 - for example 1.6rem = 16px */
   width: 100vw;
   height: 100vh;
 }
@@ -25,4 +25,14 @@ html {
 body {
   @apply w-screen h-screen bg-white text-black leading-normal text-base;
   overflow-x: hidden;
+  line-height: 1.5;
+}
+
+a {
+  
+  transition: color 0.3s ease-in;
+  
+  &:hover {
+    /* put hover styles for standard text links here */
+  }  
 }

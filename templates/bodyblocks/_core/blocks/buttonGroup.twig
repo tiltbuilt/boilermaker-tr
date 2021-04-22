@@ -47,12 +47,12 @@
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
 
 {# Render #}
-{% set blockKids = block.children.all() %}
+{% set blockKids = block['children'].all() %}
 
 {% if blockKids is not empty %}
 	<div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
 	   <div class="inner">
-		    
+			
 			{% for child in blockKids %}		
 					
 					{%						
@@ -61,7 +61,7 @@
 						  'bodyblocks/_core/blocks/' ~ child.type.handle,
 						  'bodyblocks/project/blocks/block',
 						  'bodyblocks/_core/blocks/block'
-						] ignore missing with { 'block': child, 'ignoreMargins': true, 'inGroup': true }
+						] ignore missing with { 'block': child, 'ignoreMargins': true, 'inGroup': true, 'btnSize': block.buttonSize }
 					%}					
 				
 			{% endfor %}	  

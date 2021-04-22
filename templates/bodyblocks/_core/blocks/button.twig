@@ -34,6 +34,14 @@
 
 {% set buttonClasses = buttonClasses|merge([block.buttonStyling]) %}
 
+{% if btnSize is not defined %}
+	{% set btnSize = block.buttonSize %}	
+{% endif %}
+
+{% if btnSize != '' %}
+	{% set buttonClasses = buttonClasses|merge([btnSize]) %}
+{% endif %}
+
 {# check if button is inside a button group, if it is, then don't use settings from button because it inherits from the group #}
 
 {% if inGroup is not defined or (inGroup is defined and inGroup == false) %}
@@ -60,7 +68,7 @@
 
 {% set buttonLink = block.linkSettings %} 
   {% if buttonLink %}
-  	{% if inGroup is not defined or (inGroup is defined and inGroup == false) %}
+	  {% if inGroup is not defined or (inGroup is defined and inGroup == false) %}
 	  
 	  <div {{ edcMacros.buildClasses('btn-wrapper', stylingClasses) -}}>
 	  

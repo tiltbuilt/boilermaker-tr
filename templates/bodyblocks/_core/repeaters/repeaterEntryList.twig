@@ -73,7 +73,8 @@
 	'da' : 'postDate asc',
 	'r'  : 'RAND()',
 	'az' : 'title asc',
-	'za' : 'title desc'
+	'za' : 'title desc',
+	'so' : '',
   }
 %}
 {% set listOrder = repeater.listOrder is defined and repeater.listOrder|length ? repeater.listOrder.value : null %}
@@ -100,10 +101,10 @@
 {% if paginateItems == true %}
   {% set itemsPerPage = repeater.listItemsPerPage is defined and repeater.listItemsPerPage|length ? repeater.listItemsPerPage : 3 %}
 
-  {% paginate craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(itemsPerPage) as pageInfo, itemList %}
+  {% paginate craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(itemsPerPage).with(['seoImage']) as pageInfo, itemList %}
   {% do seomatic.helper.paginate(pageInfo) %}
 {% else %}
-  {% set itemList = craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(numberOfItems).all() %}
+  {% set itemList = craft.entries.section(sectionsToLoad|join(', ')).search(searchTerm).relatedTo(relatedToArray).orderby(listOrder).limit(numberOfItems).with(['seoImage']).all() %}
 {% endif %}
 
 {#
@@ -148,7 +149,7 @@
 			include [
 			  'bodyblocks/project/repeaters/templates/' ~ repeaterTemplateHandle,
 			  'bodyblocks/_core/repeaters/templates/' ~ repeaterTemplateHandle,
-			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt }
+			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt, 'repeaterBtnStyles' : repeater.listItemButtonStyling, 'repeaterBtnSize' : repeater.listItemButtonSize }
 		  %}
   
 		</div>

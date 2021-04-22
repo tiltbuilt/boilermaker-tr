@@ -73,7 +73,7 @@
 	'r'  : 'RAND()',
 	'az' : 'title asc',
 	'za' : 'title desc',
-	'so' : null
+	'so' : '',
   }
 %}
 {% set listOrder = repeater.listOrder is defined and repeater.listOrder|length ? repeater.listOrder.value : null %}
@@ -84,9 +84,9 @@
 
 {% if repeater.listSpecificEntries|length %}
   {% if listOrder != null %}
-  	{% set itemList =  repeater.listSpecificEntries.orderBy(listOrder).all() %}
+  	{% set itemList =  repeater.listSpecificEntries.orderBy(listOrder).with(['seoImage']).all() %}
   {% else %}
-  	{% set itemList =  repeater.listSpecificEntries.all() %}
+  	{% set itemList =  repeater.listSpecificEntries.with(['seoImage']).all() %}
   {% endif %}
 {% endif %}
 
@@ -133,7 +133,7 @@
 			include [
 			  'bodyblocks/project/repeaters/templates/' ~ repeaterTemplateHandle,
 			  'bodyblocks/_core/repeaters/templates/' ~ repeaterTemplateHandle,
-			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt }
+			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt, 'repeaterBtnStyles' : repeater.listItemButtonStyling, 'repeaterBtnSize' : repeater.listItemButtonSize }
 		  %}
 		  </div>
 	  {% else %}

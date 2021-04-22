@@ -108,7 +108,7 @@
   {#- If bgAsset is set, if not then don't do anything  -#}
   {% if bgAsset is defined and bgAsset != null %}
     {# check type of asset bgAsset is. If video, do one thing, if image do something else. #}
-    {% if bgAsset.kind == 'image' %}
+    {% if bgAsset.kind == 'image' %}      
       {# check repeat setting if repeats then set size to auto and assemble class list if doesn't repeat then assemble class list from settings in fields #}
       {% if bgRepeat != 'bg-no-repeat' %}
         <div {{ edcMacros.buildClasses('background ' ~ loadClass, [bgRepeat, 'bg-' ~ bgPosition, 'bg-auto', bgOpacity]) }} style="background-image:url('{{ bgAsset.url }}');"></div>
@@ -140,7 +140,7 @@
             data-sizes="auto"
             data-src="{{ transformedImages[0] }}"
             data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-            alt="background" {{ edcMacros.buildClasses('background ' ~ loadClass, ['object-' ~ bgPosition, bgOpacity, sizeSetting]) -}}
+            alt="background" {{ edcMacros.buildClasses('background lazyload', ['object-' ~ bgPosition, bgOpacity, sizeSetting]) -}}
             >
           </picture>
         {% endif %}
