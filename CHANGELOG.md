@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0 - 2021-04-17
+## 1.2.0 - 2021-04-22
 ### Added
 - Added long format text content block type
 - Added 404 fields to globals to allow for custom 404 page content
@@ -12,11 +12,11 @@
   - feed-me 4.3.5.1 => 4.3.6
   - redactor 2.8.5 => 2.8.6
   - retour 3.1.48 => 3.1.52
-  - seomatic 3.3.33 => 3.3.39
+  - seomatic 3.3.33 => 3.3.40
   - twigpack 1.2.10 => 1.2.13
   - architect 2.4.1 => 2.4.2
   - blitz 3.7.0 => 3.8.0
-  - freeform 3.10.8 => 3.10.11
+  - freeform 3.10.8 => 3.11.0
   - imager-x 3.3.0 => 3.4.0
   - neo 2.9.0 => 2.9.6
   - navigation 1.4.13 => 1.4.15

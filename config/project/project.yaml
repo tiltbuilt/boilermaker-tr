@@ -1,4 +1,4 @@
-dateModified: 1619079797
+dateModified: 1619112292
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -47,7 +47,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: 0GV28X2Y9O9JOWF3IJYLZPXV
-    schemaVersion: 3.3.0
+    schemaVersion: 3.3.1
     settings:
       ajaxByDefault: false
       alertNotificationRecipients: null
