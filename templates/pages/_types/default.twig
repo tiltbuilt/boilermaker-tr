@@ -21,6 +21,13 @@
 .one()
 -%}
 
+{%- set coSocialLinks = craft.globalSets()
+.handle('companyInfo')
+.with(['socialLinks'])
+.one()
+-%}
+
+
 {% do craft.app.elements.eagerLoadElements(
  className(entry),
  [entry],
