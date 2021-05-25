@@ -180,7 +180,7 @@ fieldLayouts:
             tip: 'This sets the space above or below the accordion. When the accordion is inside an accordion set, these settings are ignored in favor of the spacing setting on the set.'
             type: craft\fieldlayoutelements\Tip
           -
-            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837
+            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837 # Top Margin
             instructions: null
             label: null
             required: false
