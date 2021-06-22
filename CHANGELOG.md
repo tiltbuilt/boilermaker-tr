@@ -1,4 +1,21 @@
 # Changelog
+
+## 1.3.0 - 2021-06-21
+### Changed
+- Updated
+  - craft 3.6.15 => 3.6.17 
+  - retour 3.1.53 => 3.1.54
+  - seomatic 3.3.42 => 3.3.43
+  - freeform 3.11.4.1 => 3.11.7
+  - neo 2.9.8 => 2.10.3
+  - field manager 2.2.2 => 2.2.3
+  - navigation 1.4.16 => 1.4.18
+- Modified EDC Macro to properly implement opacity on video backgrounds
+- Added wider range of options for padding and margins
+- Updated 2 column containers to use new padding and margin settings
+- Modified image component to allow floats and image wrapping if needed
+- Added eager loading of social links
+  
 ## 1.2.2 - 2021-04-22
 ### Changed
 - Updated composer.json file to reflect new release.
