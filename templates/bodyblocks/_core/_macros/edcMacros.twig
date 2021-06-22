@@ -157,7 +157,7 @@
         {% set sizeSetting = 'object-' ~ bgSize %}
       {% endif %}
                   
-      <div class="background">
+      <div class="background {{bgOpacity}}">
         <video          
           class="background lazyload {{sizeSetting}} {{bgPosition}}"
           aria-hidden="true"

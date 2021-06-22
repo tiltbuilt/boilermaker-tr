@@ -11,6 +11,28 @@ settings:
       __assoc__:
         -
           - label
+          - 'Negative 4x (-60px)'
+        -
+          - value
+          - mb-neg4x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative 3x (-45px)'
+        -
+          - value
+          - mb-neg3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - 'Negative 2x (-30px)'
         -
           - value
@@ -81,6 +103,28 @@ settings:
         -
           - value
           - mb-2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3x (45px)'
+        -
+          - value
+          - mb-3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4x (60px)'
+        -
+          - value
+          - mb-4x
         -
           - default
           - ''

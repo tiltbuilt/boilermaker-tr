@@ -109,7 +109,7 @@
 #}
 
 {% macro socialIconLinks() %}
-  {% if companyInfo.socialMediaLinks is defined and companyInfo.socialMediaLinks|length %}
+  {% if coSocialLinks.socialMediaLinks is defined and coSocialLinks.socialMediaLinks|length %}
 	{% for socialLink in companyInfo.socialMediaLinks.all() %}
 		<a href="{{ socialLink.linkUrl }}" class="social-icon-link" title="{{ socialLink.linkName }}" target="_blank"><svg><use xlink:href="#{{ socialLink.linkIcon.sprite }}"></use></svg></a>
 	{% endfor %}

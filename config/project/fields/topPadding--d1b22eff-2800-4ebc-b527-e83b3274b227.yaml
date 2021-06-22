@@ -11,7 +11,7 @@ settings:
       __assoc__:
         -
           - label
-          - None
+          - 'None (0px)'
         -
           - value
           - pt-none
@@ -22,7 +22,7 @@ settings:
       __assoc__:
         -
           - label
-          - Half
+          - 'Half (7.5px)'
         -
           - value
           - pt-half
@@ -33,7 +33,7 @@ settings:
       __assoc__:
         -
           - label
-          - Normal
+          - 'Normal (15px)'
         -
           - value
           - pt-normal
@@ -44,10 +44,32 @@ settings:
       __assoc__:
         -
           - label
-          - 2x
+          - '2x (30px)'
         -
           - value
           - pt-2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3x (45px)'
+        -
+          - value
+          - pt-3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4x (60px)'
+        -
+          - value
+          - pt-4x
         -
           - default
           - ''

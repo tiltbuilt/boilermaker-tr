@@ -38,6 +38,18 @@
     bottom: 0px;
 }
 
+/* IMAGE WRAPS */
+
+.image-wrap-left {
+    @apply float-left mr-normal mb-normal;
+}
+
+.image-wrap-right {
+    @apply float-right ml-normal mb-normal;
+}
+
+/* GENERAL TEXT STYLES */
+
 #main.main {
   p, ul, ol {
     @apply mb-normal;   

@@ -96,7 +96,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837
+            fieldUid: 9e893957-b0e2-4722-8a8c-02ec98c8e837 # Top Margin
             instructions: 'This margin is applied to the entire block'
             label: ''
             required: false

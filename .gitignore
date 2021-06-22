@@ -32,6 +32,7 @@ composer.lock
 /public/dist
 /public/imager/*
 /public/blitz/*
+/public/cache/blitz/*
 
 # local env files
 /.env

@@ -11,10 +11,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Negative Double'
+          - 'Negative 4x (-60px)'
         -
           - value
-          - mt-negdouble
+          - mt-neg4x
         -
           - default
           - ''
@@ -22,7 +22,29 @@ settings:
       __assoc__:
         -
           - label
-          - 'Negative Normal'
+          - 'Negative 3x (-45px)'
+        -
+          - value
+          - mt-neg3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative 2x (-30px)'
+        -
+          - value
+          - mt-neg2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal (-15px)'
         -
           - value
           - mt-negnormal
@@ -33,7 +55,7 @@ settings:
       __assoc__:
         -
           - label
-          - 'Negative Half'
+          - 'Negative Half (-7.5px)'
         -
           - value
           - mt-neghalf
@@ -44,7 +66,7 @@ settings:
       __assoc__:
         -
           - label
-          - None
+          - 'None (0px)'
         -
           - value
           - mt-none
@@ -55,7 +77,7 @@ settings:
       __assoc__:
         -
           - label
-          - Half
+          - 'Half (7.5px)'
         -
           - value
           - mt-half
@@ -66,7 +88,7 @@ settings:
       __assoc__:
         -
           - label
-          - Normal
+          - 'Normal (15px)'
         -
           - value
           - mt-normal
@@ -77,10 +99,32 @@ settings:
       __assoc__:
         -
           - label
-          - Double
+          - '2x (30px)'
         -
           - value
-          - mt-double
+          - mt-2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3x (45px)'
+        -
+          - value
+          - mt-3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4x (60px)'
+        -
+          - value
+          - mt-4x
         -
           - default
           - ''

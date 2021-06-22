@@ -41,6 +41,10 @@
 	{% set loadClass = 'lazyload' %}
 	
 	
+	{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+	{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+	
+	
 	{# assemble class arrays #}
 	{% set blockStylingClasses = [] %}
 	{% set imageStylingClasses = [loadClass] %}
@@ -48,11 +52,16 @@
 	{% if block.imageCaption != '' %}
 	
 		{% set blockStylingClasses = blockStylingClasses|merge(block.imageStyling) %}
+		{% set blockStylingClasses = blockStylingClasses|merge([block.topMargin]) %}
+		{% set blockStylingClasses = blockStylingClasses|merge([block.bottomMargin]) %}
 		{% set imageStylingClasses = imageStylingClasses|merge(['w-full']) %}
+		
 	
 	{% else %}
 	
 		{% set imageStylingClasses = imageStylingClasses|merge(block.imageStyling) %}
+		{% set imageStylingClasses = imageStylingClasses|merge([block.topMargin]) %}
+		{% set imageStylingClasses = imageStylingClasses|merge([block.bottomMargin]) %}
 	
 	{% endif %}
 	
@@ -93,7 +102,7 @@
 					  data-sizes="auto"
 					  data-src="{{ transformedImages[0] }}"
 					  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-					  alt="{{ imageAltText }}" {{ edcMacros.buildClasses(imageClass, imageStylingClasses) -}}
+					  alt="{{ imageAltText }}" {{ edcMacros.buildClasses(imageClass, imageStylingClasses, customClassString) -}}
 					  >
 				  </picture>
 				  

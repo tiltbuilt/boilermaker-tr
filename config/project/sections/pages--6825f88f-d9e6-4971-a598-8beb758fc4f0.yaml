@@ -1,6 +1,18 @@
 enableVersioning: true
 handle: pages
 name: Pages
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary Entry Page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   94e7f604-17a5-4834-836f-6ead0c94b054:
