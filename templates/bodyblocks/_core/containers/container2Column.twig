@@ -56,18 +56,30 @@
 {% set rowMarginLeft = '' %}
 {% set rowMarginRight = '' %}
 {% switch container.leftPadding %}
+{% case 'pl-4x' %}
+	{% set rowMarginLeft = 'ml-neg4x' %}
+{% case 'pl-3x' %}
+	{% set rowMarginLeft = 'ml-neg3x' %}
+{% case 'pl-2x' %}
+	{% set rowMarginLeft = 'ml-neg2x' %}
 {% case 'pl-normal' %}
 	{% set rowMarginLeft = 'ml-negnormal' %}
-{% case 'pl-extra' %}
-	{% set rowMarginLeft = 'ml-negextra' %}
+{% case 'pl-half' %}
+	{% set rowMarginLeft = 'ml-neghalf' %}
 {% case 'pl-none' %}
 	{% set rowMarginLeft = 'ml-none' %}
 {% endswitch %}
 {% switch container.rightPadding %}
+{% case 'pr-4x' %}
+	{% set rowMarginLeft = 'mr-neg4x' %}
+{% case 'pr-3x' %}
+	{% set rowMarginLeft = 'mr-neg3x' %}
+{% case 'pr-2x' %}
+	{% set rowMarginLeft = 'mr-neg2x' %}
 {% case 'pr-normal' %}
 	{% set rowMarginRight = 'mr-negnormal' %}
-{% case 'pr-extra' %}
-	{% set rowMarginRight = 'mr-negextra' %}
+{% case 'pr-half' %}
+	{% set rowMarginRight = 'mr-neghalf' %}
 {% case 'pr-none' %}
 	{% set rowMarginRight = 'mr-none' %}
 {% endswitch %}

@@ -1,4 +1,4 @@
-dateModified: 1621916736
+dateModified: 1624319459
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -21,7 +21,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true
-    licenseKey: JR2O0QQGE8R5I458WBY1BF3J
+    licenseKey: 
     schemaVersion: 3.6.6
   blitz-recommendations:
     edition: standard
@@ -46,7 +46,7 @@ plugins:
   freeform:
     edition: lite
     enabled: true
-    licenseKey: 0GV28X2Y9O9JOWF3IJYLZPXV
+    licenseKey: 
     schemaVersion: 3.3.1
     settings:
       ajaxByDefault: false
@@ -116,7 +116,7 @@ plugins:
   icon-picker:
     edition: standard
     enabled: true
-    licenseKey: RAV8M4LD6LGRFFGD5QM0IPAO
+    licenseKey: 
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -127,23 +127,23 @@ plugins:
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: M3S7K2ZC9ON07LET5PFVLP7D
+    licenseKey: 
     schemaVersion: 3.0.0
   linkit:
     edition: standard
     enabled: true
-    licenseKey: BTLLW1NPL9YRX4NDCP96HNB2
+    licenseKey: 
     schemaVersion: 1.0.8
   navigation:
     edition: standard
     enabled: true
-    licenseKey: 4F58XY83B4JD7EHGWC5GAFJZ
+    licenseKey: 
     schemaVersion: 1.0.21
   neo:
     edition: standard
     enabled: true
-    licenseKey: L2P84C6DZAJ8N7ZZOCKAV6Y9
-    schemaVersion: 2.8.16
+    licenseKey: 
+    schemaVersion: 2.9.11
   redactor:
     edition: standard
     enabled: true
@@ -163,13 +163,13 @@ plugins:
   retour:
     edition: standard
     enabled: true
-    licenseKey: 3KPMO0HLL3H1O3D8WOU7RUTO
-    schemaVersion: 3.0.9
+    licenseKey: CK4NBTTZ2HB2H4TLN8JW27O5
+    schemaVersion: 3.0.10
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: S2M034EHRD0L11HQ6LUJR28V
-    schemaVersion: 3.0.9
+    licenseKey: 9LVI06362ZK7RNJH0MU1SYAS
+    schemaVersion: 3.0.10
     settings:
       addHrefLang: true
       addPaginatedHreflang: true

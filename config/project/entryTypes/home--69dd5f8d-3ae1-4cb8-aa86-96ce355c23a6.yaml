@@ -358,7 +358,7 @@ fieldLayouts:
 handle: home
 hasTitleField: false
 name: Home
-section: ff205767-6ee6-4142-8f7a-3935940f647e
+section: ff205767-6ee6-4142-8f7a-3935940f647e # Home
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

@@ -367,7 +367,7 @@ fieldLayouts:
 handle: pages
 hasTitleField: true
 name: Pages
-section: 6825f88f-d9e6-4971-a598-8beb758fc4f0
+section: 6825f88f-d9e6-4971-a598-8beb758fc4f0 # Pages
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
