@@ -71,10 +71,20 @@
 	{% endif %}
 	
 	<div class="cta-content-wrapper">
-		{% if block.headingText|length %}
-		  <{{ headingLevel }} class="cta-block-heading">
+		{% if block.subheadText|length and block.subheadPosition == 1 %}
+			<b class='cta-block-header-subhead'>
+				{{ gMacros.stripTags(block.subheadText) }}
+			</b>
+		{% endif %}
+		
+		<{{ headingLevel }} class='cta-block-heading'>
 			{{ gMacros.stripTags(block.headingText) }}
-		  </{{ headingLevel }}>
+		</{{ headingLevel }}>
+		
+		{% if block.subheadText|length and block.subheadPosition == 0 %}
+			<b class='cta-block-header-subhead'>
+				{{ gMacros.stripTags(block.subheadText) }}
+			</b>
 		{% endif %}
 	
 		{% if block.simpleText|length %}

@@ -75,14 +75,20 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
   <div class="inner">
 	
+		{% if block.subheadText|length and block.subheadPosition == 1 %}
+		  <b {{ edcMacros.buildElementAttributes(subheadId, 'header-subhead', subheadClasses) -}}>
+			  {{ gMacros.stripTags(block.subheadText) }}
+		  </b>
+		{% endif %}
+		
 		<{{ headingLevel }} {{ edcMacros.buildElementAttributes(blockId, 'header-mainHeading', headingClasses) -}}>
-			{{ gMacros.stripTags(block.headingText) }}
+		  {{ gMacros.stripTags(block.headingText) }}
 		</{{ headingLevel }}>
-	  
-		{% if block.subheadText|length %}
-			<b {{ edcMacros.buildElementAttributes(subheadId, 'header-subhead', subheadClasses) -}}>
-				{{ gMacros.stripTags(block.subheadText) }}
-			</b>
+		
+		{% if block.subheadText|length and block.subheadPosition == 0 %}
+		  <b {{ edcMacros.buildElementAttributes(subheadId, 'header-subhead', subheadClasses) -}}>
+			  {{ gMacros.stripTags(block.subheadText) }}
+		  </b>
 		{% endif %}
 	
 	  			

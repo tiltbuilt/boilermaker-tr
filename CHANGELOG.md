@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.4.0 - 2021-07-25
+### Changed
+- Fixed container class on 2 column container
+- Fixed name of public folder in env example file
+- Cleaned testing images out of src/img folder
+- Added background opacity field to background field setup on content wrapper block
+- Fixed nesting rules on main and half-width columns to not allow nested containers
+- Fixed reference to companyInfo.socialLinks in global macro
+- Added positioning switch for subhead positioning to header and cta blocks
+- npm audit fixes
+- changed dist folder gitgnore settings to include fonts and icons
+- Updated
+  - craft 3.6.17 => 3.7.5
+  - architect 2.4.2 => 2.4.3
+  - blitz 3.9.0 => 3.10.2
+  - field-manager 2.2.3 => 2.2.4
+  - freeform 3.11.7 => 3.11.10
+  - imager-x v3.4.0 => v3.5.1
+  - navigation 1.4.18 => 1.4.20
+  - neo 2.10.3 => 2.11.2
+  - retour 3.1.54 => 3.1.57
+  - seomatic 3.3.43 => 3.3.45
+  - twigpack 1.2.14 => 1.2.15
+
+
 ## 1.3.0 - 2021-06-21
 ### Changed
 - Updated

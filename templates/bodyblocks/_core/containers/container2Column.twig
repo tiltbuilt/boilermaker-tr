@@ -29,7 +29,7 @@
 {% set blockClass = container.type.handle %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [] %}
+{% set stylingClasses = ['container'] %}
 
 {% if container.fullScreenWidth is defined and container.fullScreenWidth == 1 %}
 	{% set stylingClasses = stylingClasses|merge(['container-fullwidth']) %}

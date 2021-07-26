@@ -1,6 +1,4 @@
 childBlocks:
-  - container
-  - container2Column
   - row
   - accordionSet
   - tabSet
