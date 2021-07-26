@@ -29,7 +29,7 @@
 {% set blockClass = block.type.handle %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [block.topMargin, block.bottomMargin] %}
+{% set stylingClasses = ['cta', block.topMargin, block.bottomMargin] %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}

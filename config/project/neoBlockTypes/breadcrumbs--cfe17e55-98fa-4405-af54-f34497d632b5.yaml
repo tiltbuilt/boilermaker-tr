@@ -28,6 +28,19 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: f467c195-a0fb-4326-9915-1c8b51816f61 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Animation
+        sortOrder: 2
+      -
+        elements:
+          -
             fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
             instructions: null
             label: null
@@ -46,7 +59,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Block Settings'
-        sortOrder: 2
+        sortOrder: 3
 handle: breadcrumbs
 maxBlocks: 0
 maxChildBlocks: 0

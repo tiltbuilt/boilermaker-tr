@@ -32,7 +32,7 @@
 {% set customClassString = (repeater['customClassList'] is defined ? repeater.customClassList : null) %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [] %}
+{% set stylingClasses = ['repeater'] %}
 
 
 {% if repeater.contentAlignment is defined and repeater.contentAlignment != '' %}

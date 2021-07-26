@@ -1,4 +1,4 @@
-dateModified: 1627260400
+dateModified: 1627272428
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -69,9 +69,12 @@ meta:
     64551ef0-3ce6-48bc-a545-d618c1c95927: Pages # Pages
     09732774-2ee8-477c-9984-905796312ba2: 'Content Elements' # Content Elements
     23850449-35c5-4055-8ecc-266af005dce5: 'Simple Text' # Simple Text
+    57101542-5ec7-45f1-9d3d-351b68995b18: Animations # Animations
     a0306f2d-4667-4b02-8640-74c9667f4bff: 'Image Asset' # Image Asset
     a4f08de7-2889-4ba7-9ae5-e6448b21aa1e: 'Social Media Links' # Social Media Links
+    a2638b0f-c6c2-4633-9718-e54161872041: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
     aae74be2-2cdb-4d3f-a8c5-ab01db093897: 'Heading Bottom Margin' # Heading Bottom Margin
+    ac7c643a-b9dc-4eac-9500-46d27af9ae09: 'Stagger Child Reveals' # Stagger Child Reveals
     aed4ad20-d720-4a48-8dd7-cfd3c4ffc1be: 'Link Icon' # Link Icon
     b5b1ce85-677c-4772-a5c5-0b6fc4da062b: 'Left Padding' # Left Padding
     b90eb218-05f3-4a6f-9524-6bb6747f0266: Image # Image
@@ -101,6 +104,7 @@ meta:
     f7f5fbd6-51bf-474c-a2d7-6fb7af3c6540: 'Accordion Set' # Accordion Set
     f58a83d1-6622-469e-b07e-200bec5386a3: 'Long Format Text' # Long Format Text
     f64b90d0-ce28-4988-a9c1-f5e629abcccd: 'Repeater Item - Content Link' # Repeater Item - Content Link
+    f467c195-a0fb-4326-9915-1c8b51816f61: 'Reveal Animation' # Reveal Animation
     f919389e-2b5a-478a-8a8c-0fd82228970a: 'Link Url' # Link Url
     fa70a300-e0db-4455-a46e-ac8761078874: 'Layout Locations' # Layout Locations
     fbce5ef5-54eb-4f20-8a47-63cad3552c84: 'Heading Top Padding' # Heading Top Padding
