@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0 - 2021-07-25
+## 1.4.0 - 2021-07-??
 ### Changed
 - Fixed container class on 2 column container
 - Fixed name of public folder in env example file

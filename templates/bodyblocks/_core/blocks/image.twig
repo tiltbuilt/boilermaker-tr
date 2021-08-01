@@ -65,6 +65,11 @@
 	
 	{% endif %}
 	
+	{# reveal animations #}
+	{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	  {% set stylingClasses = imageStylingClasses|merge([block.revealAnimation]) %}
+	{% endif %}
+	
 	{% set imageAltText = block.altText is defined and block.altText|length ? block.altText : (image['altText'] is defined and image.altText|length ? image.altText : image.title) %}
 	
 	{% if block.imageCaption != '' %}

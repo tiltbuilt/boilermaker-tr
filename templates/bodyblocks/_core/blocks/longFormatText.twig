@@ -29,6 +29,11 @@
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [block.topMargin, block.bottomMargin] %}
 
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
+{% endif %}
+
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
 	{{ block.textContent }}
 </div>

@@ -45,6 +45,12 @@
 {% if section.textStyling is defined %}
 	{% set stylingClasses = stylingClasses|merge(section.textStyling) %}
 {% endif %}
+
+
+{% if section.revealAnimation is defined and section.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([section.revealAnimation]) %}
+{% endif %}
+
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (section['customClassList'] is defined ? section.customClassList : null) %}

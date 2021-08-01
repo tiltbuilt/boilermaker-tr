@@ -39,6 +39,13 @@
   {# Set CSS classes for the component and any sub-components #}
   {% set stylingClasses = [block.topMargin, block.bottomMargin] %}
   {% set imageAltText = block.altText is defined and block.altText|length ? block.altText : (image['altText'] is defined and image.altText|length ? image.altText : image.title) %}
+  
+  
+  {# reveal animations #}
+  {% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
+  {% endif %}
+  
 
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
 	<div class="inner">

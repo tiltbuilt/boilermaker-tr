@@ -44,6 +44,12 @@
 {# set up attribute list for settings #}
 
 {% set sliderAttrs = {'data-autoplay': block.autoplay, 'data-timing': block.slideTransitionDelay, 'data-controls': block.sliderControls} %}
+
+
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
+{% endif %}
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}

@@ -43,6 +43,11 @@
 	{% set stylingClasses = stylingClasses|merge(container.textStyling) %}
 {% endif %}
 
+{# reveal animations #}
+{% if container.revealAnimation is defined and container.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([container.revealAnimation]) %}
+{% endif %}
+
 {# build array of padding classes and add to stylingClasses #}
 
 {% set paddingClasses = [] %}

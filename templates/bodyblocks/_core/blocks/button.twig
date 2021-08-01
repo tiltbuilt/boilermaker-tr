@@ -57,6 +57,11 @@
 	{% if ignoreMargins is not defined or (ignoreMargins is defined and ignoreMargins == false) %}
 		{% set stylingClasses = stylingClasses|merge([block.topMargin, block.bottomMargin]) %}
 	{% endif %}
+	
+	{# reveal animations #}
+	{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	  {% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
+	{% endif %}
 
 {% endif %}
 
