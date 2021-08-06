@@ -8,20 +8,23 @@
 - Added background opacity field to background field setup on content wrapper block
 - Fixed nesting rules on main and half-width columns to not allow nested containers
 - Fixed reference to companyInfo.socialLinks in global macro
+- Fixed id settings in header block component
+- Fixed header text cotnent in page header component
 - Added positioning switch for subhead positioning to header and cta blocks
 - npm audit fixes
 - changed dist folder gitgnore settings to include fonts and icons
 - Updated
-  - craft 3.6.17 => 3.7.5
+  - craft 3.6.17 => 3.7.7
   - architect 2.4.2 => 2.4.3
   - blitz 3.9.0 => 3.10.2
   - field-manager 2.2.3 => 2.2.4
   - freeform 3.11.7 => 3.11.10
   - imager-x v3.4.0 => v3.5.1
   - navigation 1.4.18 => 1.4.20
-  - neo 2.10.3 => 2.11.2
-  - retour 3.1.54 => 3.1.57
-  - seomatic 3.3.43 => 3.3.45
+  - neo 2.10.3 => 2.11.5
+  - redactor 2.8.7 => 2.8.8
+  - retour 3.1.54 => 3.1.58
+  - seomatic 3.3.43 => 3.3.46
   - twigpack 1.2.14 => 1.2.15
 
 

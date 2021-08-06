@@ -27,6 +27,15 @@
 {% set blockClass = 'pageHeader' %}
 
 
+{# set main heading text #}
+
+{% if entry.headerText|length %}
+	{% set headerContent = entry.headerText %}
+{% else %}
+	{% set headerContent = entry.title %}
+{% endif %}
+
+
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [] %}
 
@@ -140,7 +149,7 @@
 				{% endif %}
 				
 				<h1 {{ edcMacros.buildElementAttributes(headingId, 'pageheader-headline', headerStylingClasses) -}}>
-					{{ gMacros.stripTags(entry.headerText) }}
+					{{ headerContent }}
 				</h1>
 			  
 				{% if entry.subheadText|length %}

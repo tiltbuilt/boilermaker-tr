@@ -28,9 +28,9 @@
 {% else %}
 	{% set blockId = 'header-' ~ block.id %}
 	{% set subheadId = 'header-' ~ block.id ~ '-subhead' %}	
-	{% set headingId = 'header-' ~ block.customId ~ '-heading' %}
-	{% set contentId = 'header-' ~ block.customId ~ '-content' %}
-	{% set buttonSetId = block.customId ~ '-buttonSet' %}
+	{% set headingId = 'header-' ~ block.id ~ '-heading' %}
+	{% set contentId = 'header-' ~ block.id ~ '-content' %}
+	{% set buttonSetId = 'header-' ~ block.id ~ '-buttonSet' %}
 {% endif %}
 
 {# Set block type handle as class name for styling #}

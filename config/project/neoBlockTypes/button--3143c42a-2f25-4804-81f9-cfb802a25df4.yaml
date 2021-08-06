@@ -89,6 +89,10 @@ fieldLayouts:
       -
         elements:
           -
+            style: tip
+            tip: 'These settings are ignored when a button is in a Button Group'
+            type: craft\fieldlayoutelements\Tip
+          -
             fieldUid: f467c195-a0fb-4326-9915-1c8b51816f61 # Reveal Animation
             instructions: null
             label: null
