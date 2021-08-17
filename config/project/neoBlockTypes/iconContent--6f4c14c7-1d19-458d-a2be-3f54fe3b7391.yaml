@@ -1,6 +1,7 @@
 childBlocks:
   - buttonGroup
   - button
+  - buttonModal
   - simpleText
 field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
@@ -34,7 +35,7 @@ fieldLayouts:
             tip: 'These additional elements are optional. Leave them blank to only show an icon by itself. Fill them out to add additional content that goes with the icon.'
             type: craft\fieldlayoutelements\Tip
           -
-            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            fieldUid: 4d637aab-baa9-4278-85d8-9f75cca06b46
             instructions: null
             label: null
             required: false
@@ -243,5 +244,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: 'Icon and Content'
-sortOrder: 38
+sortOrder: 39
 topLevel: false

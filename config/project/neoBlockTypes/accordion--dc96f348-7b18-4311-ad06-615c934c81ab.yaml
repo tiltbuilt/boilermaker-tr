@@ -4,6 +4,7 @@ childBlocks:
   - sliderSet
   - buttonGroup
   - button
+  - buttonModal
   - contentWrapper
   - ctaStandard
   - ctaSmall

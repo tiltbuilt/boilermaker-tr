@@ -1,0 +1,27 @@
+<div class="socials share-links">
+	<b class="share-header">Share This</b>
+	<a href="mailto:?subject={{ siteName }} - {{ entry.title }}&amp;body={{ siteName }} - {{ entry.title }} {{ craft.app.request.absoluteUrl }}" target="_blank" alt="Share via Email">
+		<svg xmlns="http://www.w3.org/2000/svg"  viewbox="0 0 30 30">
+			<use xlink:href="#icon-envelope-o" href="#icon-envelope-o"></use>
+		</svg>
+	</a>
+	
+	<a href="https://www.facebook.com/sharer/sharer.php?u={{ craft.app.request.absoluteUrl }}" target="_blank" alt="Share on Facebook">
+		<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30">
+			<use xlink:href="#icon-facebook" href="#icon-facebook"></use>
+		</svg>
+	</a>
+	
+	<a href="https://www.linkedin.com/sharing/share-offsite/?url={{ craft.app.request.absoluteUrl }}" target="_blank" alt="Share via LinkedIn">
+		<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewbox="0 0 30 30">
+			<use xlink:href="#icon-linkedin" href="#icon-linkedin"></use>
+		</svg>
+	</a>
+	{#	
+	<a href="https://twitter.com/intent/tweet?text={{ siteName ~ ' - ' ~ entry.title }}&url={{ craft.app.request.absoluteUrl }}" target="_blank" alt="Share on Twitter">
+		<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30">
+			<use xlink:href="#icon-twitter" href="#icon-twitter"></use>
+		</svg>
+	</a>
+	#}
+</div>

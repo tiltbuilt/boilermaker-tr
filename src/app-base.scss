@@ -26,6 +26,16 @@ body {
   @apply w-screen h-screen bg-white text-black leading-normal text-base;
   overflow-x: hidden;
   line-height: 1.5;
+  
+  & > #page-wrapper {
+    @apply w-screen;
+    min-height: 100vh;
+    overflow: hidden;
+    
+    & > #wrapper {
+      position: relative;
+    }
+  }
 }
 
 a {

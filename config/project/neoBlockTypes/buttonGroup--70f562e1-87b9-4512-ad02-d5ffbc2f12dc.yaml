@@ -1,5 +1,6 @@
 childBlocks:
   - button
+  - buttonModal
 field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   c6d243fd-4dfd-415e-9e6a-56bee02d5346:

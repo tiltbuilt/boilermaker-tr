@@ -34,7 +34,19 @@
 {% set blockClass = 'row' %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [row.rowHorizontalAlignment, row.rowVerticalAlignment, row.leftMargin, row.rightMargin] %}
+{% set stylingClasses = [row.rowHorizontalAlignment, row.rowVerticalAlignment, row.leftMargin, row.rightMargin, row.rowTopMargin, row.rowBottomMargin] %}
+
+{# reveal animations #}
+{% if row.revealAnimation is defined and row.revealAnimation != '' %}  
+  {% set revealClass = row.revealAnimation %}
+  {% if row.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if row.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
 
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}

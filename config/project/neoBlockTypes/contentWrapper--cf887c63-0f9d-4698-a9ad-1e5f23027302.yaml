@@ -6,6 +6,7 @@ childBlocks:
   - sliderSet
   - buttonGroup
   - button
+  - buttonModal
   - contentWrapper
   - ctaStandard
   - ctaSmall
@@ -29,7 +30,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            fieldUid: 4d637aab-baa9-4278-85d8-9f75cca06b46
             instructions: null
             label: null
             required: false
@@ -293,5 +294,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Content Wrapper'
-sortOrder: 32
+sortOrder: 33
 topLevel: false

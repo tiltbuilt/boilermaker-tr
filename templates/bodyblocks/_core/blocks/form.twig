@@ -36,12 +36,25 @@
 
 {# if header has text build set of padding and margin classes for header #}
 
-{% if block.headingText|length and block.headingLevel != '' %}
+{% if block.headerText|length and block.headingLevel != '' %}
 	{% set headerClasses = [] %}
 	{% set headerClasses = headerClasses|merge([block.headingBottomMargin]) %}
 	{% set headerClasses = headerClasses|merge([block.headerAlignment]) %}
 	{% set headerClasses = headerClasses|merge(block.headingStyling) %}
 {% endif %}
+
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set revealClass = block.revealAnimation %}
+  {% if block.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if block.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
 
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
@@ -49,9 +62,9 @@
 
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
   <div class="inner">
-	{% if block.headingText|length and block.headingLevel != '' %}
-		<{{ block.headingLevel }} {{ edcMacros.buildClasses('contentWrapper-header', headerClasses) -}}>
-		  {{ gMacros.stripTags(block.headingText) }}
+	{% if block.headerText|length and block.headingLevel != '' %}
+		<{{ block.headingLevel }} {{ edcMacros.buildClasses('form-header', headerClasses) -}}>
+		  {{ gMacros.stripTags(block.headerText) }}
 		</{{ block.headingLevel }}>
 	{% endif %}  
 	<div class="form-wrapper">

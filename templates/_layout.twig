@@ -107,7 +107,7 @@
   {{ gMacros.entryHeaderEmbeds(entry ??? category ??? null) }}
 </head>
 
-<body id="{{ block('pageId') }}">
+<body id="{{ block('pageId') }}" {% if block('bodyAttr') is defined %}{{block('bodyAttr')}}{% endif %}>	
   <!--[if lte IE 10]>
 	<div style="padding: 1.0em; margin-bottom: 1.0em; background-color: #0077CC; color: #FFF; font-size: 18px;">
 	  <p>
@@ -137,6 +137,8 @@
 		</div>
 	  {% endif %}
 	{% endif %}
+	
+<div id="page-wrapper">
 
   <div class="wrapper" id="wrapper">
 
@@ -192,7 +194,7 @@
 	</header>
 
 	<div class="root" id="root">
-	  <div class="main" id="main">
+	  <main class="main" id="main">
 		{% if block('pageHeader') is defined %}
 		  {{ block('pageHeader') }}
 		{% endif %}
@@ -200,7 +202,7 @@
 		{% if block('pageContent') is defined %}
 		  {{ block('pageContent') }}
 		{% endif %}
-	  </div>
+	  </main>
 
 	  <footer class="footer" id="footer">
 		{% if block('pageFooter') is defined %}
@@ -210,6 +212,11 @@
 	</div>
 
   </div>
+</div>
+
+{% if block('modalContent') is defined %}
+	{{ block('modalContent') }}
+{% endif %}
   
   {# Main CSS with cachebuster plugin #}
   {{ craft.twigpack.includeCssModule("/css/app.css") }}

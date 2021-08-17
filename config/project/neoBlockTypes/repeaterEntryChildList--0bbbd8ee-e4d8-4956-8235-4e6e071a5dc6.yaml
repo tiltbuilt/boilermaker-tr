@@ -15,7 +15,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            fieldUid: 4d637aab-baa9-4278-85d8-9f75cca06b46
             instructions: null
             label: null
             required: false
@@ -303,5 +303,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Repeater - Entry Child List'
-sortOrder: 49
+sortOrder: 50
 topLevel: false

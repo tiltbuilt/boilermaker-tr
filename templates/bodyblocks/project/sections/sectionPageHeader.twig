@@ -148,14 +148,20 @@
 					</div>				
 				{% endif %}
 				
+				{% if entry.subheadText|length and entry.subheadPosition == 1 %}
+				  <b {{ edcMacros.buildElementAttributes(subheadId, 'pageheader-subhead', subheadStylingClasses) -}}>
+					  {{ gMacros.stripTags(entry.subheadText) }}
+				  </b>
+				{% endif %}
+				
 				<h1 {{ edcMacros.buildElementAttributes(headingId, 'pageheader-headline', headerStylingClasses) -}}>
 					{{ headerContent }}
 				</h1>
 			  
-				{% if entry.subheadText|length %}
-					<b {{ edcMacros.buildElementAttributes(subheadId, 'pageheader-subhead', subheadStylingClasses) -}}>
-						{{ gMacros.stripTags(entry.subheadText) }}
-					</b>
+				{% if entry.subheadText|length and entry.subheadPosition == 0 %}
+				  <b {{ edcMacros.buildElementAttributes(subheadId, 'pageheader-subhead', subheadStylingClasses) -}}>
+					  {{ gMacros.stripTags(entry.subheadText) }}
+				  </b>
 				{% endif %}
 				
 				{% if entry.headerIntro|length %}

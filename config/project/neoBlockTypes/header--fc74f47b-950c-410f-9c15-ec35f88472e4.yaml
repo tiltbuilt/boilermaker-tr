@@ -1,6 +1,7 @@
 childBlocks:
   - buttonGroup
   - button
+  - buttonModal
   - simpleText
 field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
@@ -9,7 +10,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            fieldUid: 4d637aab-baa9-4278-85d8-9f75cca06b46
             instructions: ''
             label: ''
             required: '1'
@@ -209,5 +210,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: Header
-sortOrder: 37
+sortOrder: 38
 topLevel: false

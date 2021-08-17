@@ -56,7 +56,7 @@
 
 {# if header has text build set of padding and margin classes for header #}
 
-{% if block.headingText|length and block.headingLevel != '' %}
+{% if block.headerText|length and block.headingLevel != '' %}
 	{% set headerClasses = [] %}
 	{% set headerSpacingClasses = [] %}
 	{% set headerSpacingClasses = headerSpacingClasses|merge([block.leftPadding]) %}
@@ -82,9 +82,9 @@
 
   <div class="inner">
 	  
-	  {% if block.headingText|length and block.headingLevel != '' %}
+	  {% if block.headerText|length and block.headingLevel != '' %}
 		  <{{block.headingLevel}} {{ edcMacros.buildClasses('contentWrapper-header', headerClasses) -}}>
-		  	{{ gMacros.stripTags(block.headingText) }}
+		  	{{ gMacros.stripTags(block.headerText) }}
 		  </{{block.headingLevel}}>
 	  {% endif %}
 	  

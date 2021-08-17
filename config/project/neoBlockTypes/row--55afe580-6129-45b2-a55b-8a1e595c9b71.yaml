@@ -30,6 +30,24 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: cf6364a2-8eb1-422c-88b8-7f4b53b26004 # Row Top Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 554b50ee-cdec-4798-96b8-d37e1451eabb # Row Bottom Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: c09f83e7-2a34-4a4b-8655-6fbff6ce3705 # Left Margin
             instructions: null
             label: null

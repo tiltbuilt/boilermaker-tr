@@ -60,7 +60,7 @@
 {% set iconClasses = [block.iconAlignment] %}
 {% set iconClasses = iconClasses|merge([block.iconStyling]) %}
 
-{% if block.headingText|length and block.headingLevel != '' %}
+{% if block.headerText|length and block.headingLevel != '' %}
 	{% set headingClasses = [block.headerAlignment] %}
 	{% set headingClasses = headingClasses|merge(block.headingStyling) %}	
 {% endif %}
@@ -68,12 +68,12 @@
 {% set blockKids = block['children'].all() %}
 
 {% if blockKids is not empty %}	
-	{% if block.headingText|length and block.headingLevel != '' %}
+	{% if block.headerText|length and block.headingLevel != '' %}
 		{% set headingClasses = headingClasses|merge([block.headingBottomMargin]) %}	
 	{% endif %}	
 {% endif %}
 
-{% if blockKids is not empty or block.headingText|length %}
+{% if blockKids is not empty or block.headerText|length %}
 	{% set iconClasses = iconClasses|merge([block.subheadBottomMargin]) %}
 {% endif %}	
 
@@ -82,7 +82,7 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
   <div class="inner">
 	  
-	  {% if block.blockLayout == 'h' and (block.headingText|length or blockKids is not empty) %}
+	  {% if block.blockLayout == 'h' and (block.headerText|length or blockKids is not empty) %}
 	  <div class="row {{block.rowHorizontalAlignment}} {{block.rowVerticalAlignment}}">
 		  <div class="iconblock-icon-column">
 	  {% endif %}
@@ -100,12 +100,12 @@
 	   </a>
 	 {% endif %}
 	 
-	 {% if block.blockLayout == 'h' and (block.headingText|length or blockKids is not empty) %}
+	 {% if block.blockLayout == 'h' and (block.headerText|length or blockKids is not empty) %}
 	   </div>
 	   <div class="iconblock-content-column">
 	 {% endif %}	 
 	 
-	{% if block.headingText|length and block.headingLevel != '' %}
+	{% if block.headerText|length and block.headingLevel != '' %}
 		
 		{% if block['linkSettings'] is defined and block.linkSettings|length %}
 		 {% set iconLink = block.linkSettings %}
@@ -114,7 +114,7 @@
 		 >
 	 	{% endif %}		
 		<{{ headingLevel }} {{ edcMacros.buildElementAttributes(blockId, 'iconblock-heading', headingClasses) -}}>
-			{{ gMacros.stripTags(block.headingText, '<b><strong><i><em><br>') }}
+			{{ gMacros.stripTags(block.headerText, '<b><strong><i><em><br>') }}
 		</{{ headingLevel }}>		
 		{% if block['linkSettings'] is defined and block.linkSettings|length %}			
 		   </a>
@@ -152,7 +152,7 @@
 			{% endif %}
 		{% endfor %}
 		
-		{% if block.blockLayout == 'h' and (block.headingText|length or blockKids is not empty) %}
+		{% if block.blockLayout == 'h' and (block.headerText|length or blockKids is not empty) %}
 		   </div>
 	  	 </div>
 		{% endif %}

@@ -103,7 +103,9 @@
 						  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
 					  {% endif %}
 				  
-					  <img src="{{ craft.imager.base64Pixel() }}"
+					  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+					  width="{{image.width}}"
+					  height="{{image.height}}"
 					  data-sizes="auto"
 					  data-src="{{ transformedImages[0] }}"
 					  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
