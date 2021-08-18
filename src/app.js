@@ -504,14 +504,8 @@ $(document).ready(function() {
 		
 		/* GET LOGIN STATUS AND POPULATE CLOGIN BAR IF LOGGED IN */
 		
-		$("#login-status-bar-wrapper").load("/resources/loginbar");
-		
-		/* LOADER FUNCTIONALITY */
-		
-		var turnoffloader = function() {
-			$('body').addClass('pageloaded');
-		}
-		
+		$("#login-status-bar-wrapper").load("/resources/loginbar");		
+				
 		var loadAnim = gsap.to("#loader", {duration: 0.5, ease: "power1.out", opacity: 0, paused: true, onComplete:turnoffloader});
 		loadAnim.play();			
 	}

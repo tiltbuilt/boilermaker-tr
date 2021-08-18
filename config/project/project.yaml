@@ -1,4 +1,4 @@
-dateModified: 1629223779
+dateModified: 1629302697
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -55,6 +55,7 @@ meta:
     65ada5a5-dbd4-4614-ab4b-8e990c7aa7a7: Globals # Globals
     66d43c25-adc0-41c0-ab23-e93d342b0a29: 'Repeater - Entry List' # Repeater - Entry List
     69beef15-fb94-49ac-910c-58b4b0a4d710: '404 Page Headline Text' # 404 Page Headline Text
+    69dd5f8d-3ae1-4cb8-aa86-96ce355c23a6: Home # Home
     70f562e1-87b9-4512-ad02-d5ffbc2f12dc: 'Button Group' # Button Group
     71dd9dc2-2fbd-441f-9c85-02212a836fcf: Embed # Embed
     73b7ce36-6244-427a-ab1a-38550522e2b9: 'Modal Builder' # Modal Builder

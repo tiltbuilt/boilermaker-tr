@@ -118,9 +118,7 @@
 	  .loader { display: none; z-index: 0; visibility: hidden; opacity: 0; }
 	</style>
   <![endif]-->
-  {{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }}
-
-  <div id="login-status-bar-wrapper"></div>
+  {{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }} 
 
   {# Break the chain to disable the loader entirely #}
 	{% if 1==1==1 %}
@@ -139,7 +137,7 @@
 	{% endif %}
 	
 <div id="page-wrapper">
-
+  <div id="login-status-bar-wrapper"></div>
   <div class="wrapper" id="wrapper">
 
 	{% if gSettings.notificationBarCopy|length %}
