@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1 - 2021-08-18
+### Changed
+- Composer file update for release
+
 ## 1.4.0 - 2021-08-18
 ### Changed
 - Fixed container class on 2 column container
