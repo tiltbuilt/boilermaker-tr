@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0 - 2021-07-??
+## 1.4.0 - 2021-08-18
 ### Changed
 - Fixed container class on 2 column container
 - Fixed name of public folder in env example file
@@ -17,18 +17,20 @@
 - added share icon partial
 - added better sizing on images to help with reveal animations
 - added background capability to containers
+- added animated reveals to most page components
+- added modal capabilities
 - Updated
-  - craft 3.6.17 => 3.7.8  
+  - craft 3.6.17 => 3.7.9  
   - architect 2.4.2 => 2.4.3
   - blitz 3.9.0 => 3.10.2
   - feed-me 4.3.6 => 4.4.0
   - field-manager 2.2.3 => 2.2.4
   - freeform 3.11.7 => 3.11.10
-  - imager-x v3.4.0 => v3.5.1
+  - imager-x v3.4.0 => v3.5.2
   - navigation 1.4.18 => 1.4.20
   - neo 2.10.3 => 2.11.6.1
   - redactor 2.8.7 => 2.8.8
-  - retour 3.1.54 => 3.1.59
+  - retour 3.1.54 => 3.1.60
   - seomatic 3.3.43 => 3.3.48
   - twigpack 1.2.14 => 1.2.15
 
