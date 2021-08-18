@@ -31,12 +31,21 @@
 {% do craft.app.elements.eagerLoadElements(
  className(entry),
  [entry],
- ['seoImage', 'headerImage', 'headerLinkButtons', 'headerBackground', 'pageBuilder', 'pageBuilder.sectionStandard:backgroundImage', 'pageBuilder.column:backgroundImage', 'pageBuilder.columnHalf:backgroundImage','pageBuilder.columnMain:backgroundImage', 'pageBuilder.columnSidebar:backgroundImage', 'pageBuilder.columnSlideContent:backgroundImage',  'pageBuilder.contentWrapper:backgroundImage', 'pageBuilder.accordion:backgroundImage', 'pageBuilder.tabSet:backgroundImage', 'pageBuilder.slide:backgroundImage', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.slideContentImage:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry']
+ ['seoImage', 'modalToDisplay', 'headerImage', 'headerLinkButtons', 'headerBackground', 'pageBuilder', 'pageBuilder.sectionStandard:backgroundImage', 'pageBuilder.container:backgroundImage', 'pageBuilder.container2Column:backgroundImage', 'pageBuilder.containerWithSidebar:backgroundImage', 'pageBuilder.column:backgroundImage', 'pageBuilder.columnHalf:backgroundImage','pageBuilder.columnMain:backgroundImage', 'pageBuilder.columnSidebar:backgroundImage', 'pageBuilder.columnSlideContent:backgroundImage',  'pageBuilder.contentWrapper:backgroundImage', 'pageBuilder.accordion:backgroundImage', 'pageBuilder.tabSet:backgroundImage', 'pageBuilder.slide:backgroundImage', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.slideContentImage:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry']
 ) %}
 
 {% extends "_layout" %}
 
 {% block pageId %}page-{{- entry.slug -}}{% endblock %}
+
+{% set buttonModalList = [] %}
+{% for block in entry.pageBuilder if block.type == 'buttonModal' %}
+	{% set buttonModalList = buttonModalList|merge([block]) %}
+{% endfor %}
+
+{% block bodyAttr %}	
+	{% if entry.modalToDisplay|length or buttonModalList|length %}class="has-modal{% if entry.modalToDisplay|length %} load-modal{% endif %}"{% endif %} {% if entry.modalToDisplay|length %}{% set loadModal = entry.modalToDisplay[0] %}data-load-modal="{{loadModal.url}}"{% endif %}	
+{% endblock %}
 	
 {% block pageHeader %}
 	{% if entry.showPageHeader %}	
@@ -62,6 +71,23 @@
 	{% if entry.showPageFooter %}
 	  {% include 'bodyblocks/project/sections/sectionPageFooter' %}
 	{% endif %}
+{% endblock %}
+
+{% block modalContent %}	
+{% if entry.modalToDisplay|length or buttonModalList|length %}		
+	<div id="modal-overlay" class="closed">
+		<div id="modal" class="closed" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+			<button id="btn-modal-close" class="btn-modal-close">			  
+				<svg><use xlink:href="#icon-close"></use></svg>
+			</button>
+			<div id="modal-content">
+				<div class="modal-spinner">
+					<img src="/dist/img/ajax-loader-gray-300.gif" alt="Loading" />
+				</div>
+			</div>
+		</div>
+	</div>		
+{% endif %}
 {% endblock %}
 
 

@@ -1,8 +1,9 @@
+columnSuffix: kigzzjsy
 contentColumnType: string
-fieldGroup: e16f936f-53ab-48f7-b271-0b8308ca5a11
-handle: pageHeaderBackgroundPosition
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: rowBottomMargin
 instructions: ''
-name: 'Page Header Background Position'
+name: 'Row Bottom Margin'
 searchable: false
 settings:
   optgroups: true
@@ -11,10 +12,65 @@ settings:
       __assoc__:
         -
           - label
-          - 'Use Default'
+          - 'Negative 4x (-60px)'
         -
           - value
-          - useDefault
+          - mb-neg4x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative 3x (-45px)'
+        -
+          - value
+          - mb-neg3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative 2x (-30px)'
+        -
+          - value
+          - mb-neg2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal (-15px)'
+        -
+          - value
+          - mb-negnormal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Half (-7.5px)'
+        -
+          - value
+          - mb-neghalf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'None (0px)'
+        -
+          - value
+          - mb-none
         -
           - default
           - '1'
@@ -22,10 +78,10 @@ settings:
       __assoc__:
         -
           - label
-          - Center
+          - 'Half (7.5px)'
         -
           - value
-          - center
+          - mb-half
         -
           - default
           - ''
@@ -33,10 +89,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Top Center'
+          - 'Normal (15px)'
         -
           - value
-          - top
+          - mb-normal
         -
           - default
           - ''
@@ -44,10 +100,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Bottom Center'
+          - '2x (30px)'
         -
           - value
-          - bottom
+          - mb-2x
         -
           - default
           - ''
@@ -55,10 +111,10 @@ settings:
       __assoc__:
         -
           - label
-          - Left
+          - '3x (45px)'
         -
           - value
-          - left
+          - mb-3x
         -
           - default
           - ''
@@ -66,54 +122,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Left Top'
+          - '4x (60px)'
         -
           - value
-          - left-top
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Left Bottom'
-        -
-          - value
-          - left-bottom
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - Right
-        -
-          - value
-          - right
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Right Top'
-        -
-          - value
-          - right-top
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Right Bottom'
-        -
-          - value
-          - right-bottom
+          - mb-4x
         -
           - default
           - ''

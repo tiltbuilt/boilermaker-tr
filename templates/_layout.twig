@@ -107,7 +107,7 @@
   {{ gMacros.entryHeaderEmbeds(entry ??? category ??? null) }}
 </head>
 
-<body id="{{ block('pageId') }}">
+<body id="{{ block('pageId') }}" {% if block('bodyAttr') is defined %}{{block('bodyAttr')}}{% endif %}>	
   <!--[if lte IE 10]>
 	<div style="padding: 1.0em; margin-bottom: 1.0em; background-color: #0077CC; color: #FFF; font-size: 18px;">
 	  <p>
@@ -118,9 +118,7 @@
 	  .loader { display: none; z-index: 0; visibility: hidden; opacity: 0; }
 	</style>
   <![endif]-->
-  {{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }}
-
-  <div id="login-status-bar-wrapper"></div>
+  {{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }} 
 
   {# Break the chain to disable the loader entirely #}
 	{% if 1==1==1 %}
@@ -137,7 +135,9 @@
 		</div>
 	  {% endif %}
 	{% endif %}
-
+	
+<div id="page-wrapper">
+  <div id="login-status-bar-wrapper"></div>
   <div class="wrapper" id="wrapper">
 
 	{% if gSettings.notificationBarCopy|length %}
@@ -192,7 +192,7 @@
 	</header>
 
 	<div class="root" id="root">
-	  <div class="main" id="main">
+	  <main class="main" id="main">
 		{% if block('pageHeader') is defined %}
 		  {{ block('pageHeader') }}
 		{% endif %}
@@ -200,7 +200,7 @@
 		{% if block('pageContent') is defined %}
 		  {{ block('pageContent') }}
 		{% endif %}
-	  </div>
+	  </main>
 
 	  <footer class="footer" id="footer">
 		{% if block('pageFooter') is defined %}
@@ -210,6 +210,11 @@
 	</div>
 
   </div>
+</div>
+
+{% if block('modalContent') is defined %}
+	{{ block('modalContent') }}
+{% endif %}
   
   {# Main CSS with cachebuster plugin #}
   {{ craft.twigpack.includeCssModule("/css/app.css") }}

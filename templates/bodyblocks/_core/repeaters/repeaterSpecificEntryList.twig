@@ -32,7 +32,7 @@
 {% set customClassString = (repeater['customClassList'] is defined ? repeater.customClassList : null) %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [] %}
+{% set stylingClasses = ['repeater'] %}
 
 
 {% if repeater.contentAlignment is defined and repeater.contentAlignment != '' %}
@@ -45,9 +45,21 @@
 
 {% set stylingClasses = stylingClasses|merge([repeater.topMargin, repeater.bottomMargin]) %}
 
+{# reveal animations #}
+{% if repeater.revealAnimation is defined and repeater.revealAnimation != '' %}  
+  {% set revealClass = repeater.revealAnimation %}
+  {% if repeater.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if repeater.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
 {# if header has text build set of padding and margin classes for header #}
 
-{% if repeater.headingText|length and repeater.headingLevel != '' %}
+{% if repeater.headerText|length and repeater.headingLevel != '' %}
 	{% set headerClasses = [] %}		
 	{% set headerClasses = headerClasses|merge([repeater.headerAlignment]) %}
 	{% set headerClasses = headerClasses|merge(repeater.headingStyling) %}	
@@ -101,9 +113,9 @@
 
   <div class="inner">
 	  
-	  {% if repeater.headingText|length and repeater.headingLevel != '' %}
+	  {% if repeater.headerText|length and repeater.headingLevel != '' %}
 		  <{{ repeater.headingLevel }} {{ edcMacros.buildClasses('contentWrapper-header', headerClasses) -}}>
-			  {{ gMacros.stripTags(repeater.headingText) }}
+			  {{ gMacros.stripTags(repeater.headerText) }}
 		  </{{ repeater.headingLevel }}>
 	  {% endif %}
 	  

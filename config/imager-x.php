@@ -1,4 +1,7 @@
 <?php
+
+  use craft\helpers\App;
+
   return [
 	/*'transformer' => 'imgix',*/
 	'jpegQuality' => 70,
@@ -17,6 +20,5 @@
 			'getExternalImageDimensions' => true,
 			'defaultParams' => ['auto'=>'compress,format', 'q'=>70],
 		],		
-	]
 	]*/
   ];

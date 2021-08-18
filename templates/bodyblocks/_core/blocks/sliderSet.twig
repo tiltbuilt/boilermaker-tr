@@ -44,13 +44,19 @@
 {# set up attribute list for settings #}
 
 {% set sliderAttrs = {'data-autoplay': block.autoplay, 'data-timing': block.slideTransitionDelay, 'data-controls': block.sliderControls} %}
+
+
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
+{% endif %}
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
 
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString, sliderAttrs) -}}>
   
-	<div class="owl-carousel" id="{{ blockId  ~ '-owl'}}">
+	<div class="{% if block['children']|length > 1 %}owl-carousel{% endif %}" id="{{ blockId  ~ '-owl'}}">
 	{% for child in block['children'].all() %}
  
 	  {#-
@@ -72,7 +78,7 @@
 	{% endfor %}
 	</div>
 	
-	{% if (block.sliderControls == 'buttons' or block.sliderControls == 'both') and (block.children|length > 1)  %}
+	{% if (block.sliderControls == 'buttons' or block.sliderControls == 'both') and (block['children']|length > 1)  %}
 		<button class="owl-prev" data-target="#{{ blockId  ~ '-owl'}}">
 			<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.sprite }}"></use></svg>
 		</button>

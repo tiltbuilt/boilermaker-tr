@@ -31,6 +31,11 @@
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [block.topMargin, block.bottomMargin] %}
 
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
+{% endif %}
+
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (container['customClassList'] is defined ? container.customClassList : null) %}
   

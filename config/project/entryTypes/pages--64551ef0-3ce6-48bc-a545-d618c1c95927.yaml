@@ -79,6 +79,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 19ec06f2-3590-4561-8194-3ac0f91bdfb9 # Subhead Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: bb7ab3c5-5f73-4fd9-8128-a3287db4b883
             instructions: null
             label: null
@@ -327,6 +336,19 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: df8f170d-0ad6-4e61-b8fc-073e22913d9b # Modal to Display
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Page Load Modals'
+        sortOrder: 4
+      -
+        elements:
+          -
             fieldUid: 67d43f2b-85dc-40f0-aa3f-9ddc8e53c7a6
             instructions: null
             label: null
@@ -363,7 +385,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 4
+        sortOrder: 5
 handle: pages
 hasTitleField: true
 name: Pages

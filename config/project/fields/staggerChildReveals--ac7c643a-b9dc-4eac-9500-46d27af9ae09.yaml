@@ -1,0 +1,14 @@
+columnSuffix: thgszydz
+contentColumnType: boolean
+fieldGroup: 57101542-5ec7-45f1-9d3d-351b68995b18 # Animations
+handle: staggerChildReveals
+instructions: ''
+name: 'Stagger Child Reveals'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

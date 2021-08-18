@@ -114,3 +114,33 @@
 .shadow-text {
   text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
 }
+
+.share-links {
+  
+  @apply flex justify-start content-center items-center;
+  
+  .share-header {
+    @apply block uppercase mr-normal text-lg;
+  }
+  
+  a {
+    @apply block mr-half;
+    transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+    &:hover {
+      
+    }
+    
+    svg {
+      @apply block;
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+  }
+}
+
+.text-center > .share-links {
+  @apply justify-center;
+}
+

@@ -29,7 +29,21 @@
 {% set blockClass = block.type.handle %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [block.topMargin, block.bottomMargin] %}
+{% set stylingClasses = ['cta', block.topMargin, block.bottomMargin] %}
+
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set revealClass = block.revealAnimation %}
+  {% if block.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if block.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
+
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
@@ -39,10 +53,20 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
   <div class="inner">
 	<div class="cta-content-wrapper">
-	  {% if block.headingText|length %}
-		<{{ headingLevel }} class="cta-block-heading">
-		  {{ gMacros.stripTags(block.headingText) }}
-		</{{ headingLevel }}>
+	  {% if block.subheadText|length and block.subheadPosition == 1 %}
+		  <b class='cta-block-header-subhead'>
+			  {{ gMacros.stripTags(block.subheadText) }}
+		  </b>
+	  {% endif %}
+	  
+	  <{{ headingLevel }} class='cta-block-heading'>
+		  {{ gMacros.stripTags(block.headerText) }}
+	  </{{ headingLevel }}>
+	  
+	  {% if block.subheadText|length and block.subheadPosition == 0 %}
+		  <b class='cta-block-header-subhead'>
+			  {{ gMacros.stripTags(block.subheadText) }}
+		  </b>
 	  {% endif %}
 
 	  {% if block.simpleText|length %}

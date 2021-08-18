@@ -31,6 +31,10 @@
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [] %}
 
+{% if container.backgroundColor is defined and container.backgroundColor != '' %}
+	{% set stylingClasses = stylingClasses|merge([container.backgroundColor]) %}
+{% endif %}
+
 {% if container.fullScreenWidth is defined and container.fullScreenWidth == 1 %}
 	{% set stylingClasses = stylingClasses|merge(['container-fullwidth']) %}
 {% endif %}
@@ -41,6 +45,11 @@
 
 {% if container.textStyling is defined and container.textStyling != null  %}
 	{% set stylingClasses = stylingClasses|merge(container.textStyling) %}
+{% endif %}
+
+{# reveal animations #}
+{% if container.revealAnimation is defined and container.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([container.revealAnimation]) %}
 {% endif %}
 
 {# build array of padding classes and add to stylingClasses #}
@@ -124,5 +133,10 @@
 
 	{% endfor %}
   </div>
+  
+{% if container.backgroundImage|length != 0 %}
+	{% set bgAsset = container.backgroundImage[0] %}
+	{{ edcMacros.buildElementBackground(bgAsset, container.backgroundOpacity, container.backgroundSize, container.backgroundRepeat, container.backgroundPosition, {'default': '100vw'}) }}
+{% endif %}
    
 </div>

@@ -35,6 +35,12 @@
 {# add margin classes to stylingClasses #}
 
 {% set stylingClasses = stylingClasses|merge([tabSet.topMargin, tabSet.bottomMargin]) %}
+
+
+{# reveal animations #}
+{% if tabSet.revealAnimation is defined and tabSet.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([tabSet.revealAnimation]) %}
+{% endif %}
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (tabSet['customClassList'] is defined ? tabSet.customClassList : null) %}

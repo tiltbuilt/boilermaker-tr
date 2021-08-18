@@ -6,6 +6,7 @@ childBlocks:
   - sliderSet
   - buttonGroup
   - button
+  - buttonModal
   - contentWrapper
   - ctaStandard
   - ctaSmall
@@ -29,7 +30,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: f80be393-ec6a-4758-9407-8aadf4454f97
+            fieldUid: 4d637aab-baa9-4278-85d8-9f75cca06b46
             instructions: null
             label: null
             required: false
@@ -148,6 +149,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: f82237d5-4da4-4e7a-85e1-5ea1e5568971
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: 'Background Settings'
         sortOrder: 3
       -
@@ -247,6 +257,19 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: f467c195-a0fb-4326-9915-1c8b51816f61 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Animation
+        sortOrder: 5
+      -
+        elements:
+          -
             fieldUid: c99946bc-4118-48d4-b3a6-59c7c0e99c74
             instructions: null
             label: null
@@ -265,11 +288,11 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Block Settings'
-        sortOrder: 5
+        sortOrder: 6
 handle: contentWrapper
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Content Wrapper'
-sortOrder: 32
+sortOrder: 33
 topLevel: false

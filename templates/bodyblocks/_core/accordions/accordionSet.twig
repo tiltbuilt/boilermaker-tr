@@ -40,6 +40,20 @@
 {# add margin classes to stylingClasses #}
 
 {% set stylingClasses = stylingClasses|merge([accordion.topMargin, accordion.bottomMargin]) %}
+
+
+{# reveal animations #}
+{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
+  {% set revealClass = accordion.revealAnimation %}
+  {% if accordion.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if accordion.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (accordion['customClassList'] is defined ? accordion.customClassList : null) %}

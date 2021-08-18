@@ -27,6 +27,15 @@
 {% set blockClass = 'pageHeader' %}
 
 
+{# set main heading text #}
+
+{% if entry.headerText|length %}
+	{% set headerContent = entry.headerText %}
+{% else %}
+	{% set headerContent = entry.title %}
+{% endif %}
+
+
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [] %}
 
@@ -139,14 +148,20 @@
 					</div>				
 				{% endif %}
 				
+				{% if entry.subheadText|length and entry.subheadPosition == 1 %}
+				  <b {{ edcMacros.buildElementAttributes(subheadId, 'pageheader-subhead', subheadStylingClasses) -}}>
+					  {{ gMacros.stripTags(entry.subheadText) }}
+				  </b>
+				{% endif %}
+				
 				<h1 {{ edcMacros.buildElementAttributes(headingId, 'pageheader-headline', headerStylingClasses) -}}>
-					{{ gMacros.stripTags(entry.headerText) }}
+					{{ headerContent }}
 				</h1>
 			  
-				{% if entry.subheadText|length %}
-					<b {{ edcMacros.buildElementAttributes(subheadId, 'pageheader-subhead', subheadStylingClasses) -}}>
-						{{ gMacros.stripTags(entry.subheadText) }}
-					</b>
+				{% if entry.subheadText|length and entry.subheadPosition == 0 %}
+				  <b {{ edcMacros.buildElementAttributes(subheadId, 'pageheader-subhead', subheadStylingClasses) -}}>
+					  {{ gMacros.stripTags(entry.subheadText) }}
+				  </b>
 				{% endif %}
 				
 				{% if entry.headerIntro|length %}

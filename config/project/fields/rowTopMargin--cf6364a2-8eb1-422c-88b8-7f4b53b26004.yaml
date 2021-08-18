@@ -1,8 +1,9 @@
+columnSuffix: kszasgrp
 contentColumnType: string
-fieldGroup: e16f936f-53ab-48f7-b271-0b8308ca5a11
-handle: pageHeaderBackgroundOpacity
+fieldGroup: cc1f41a8-547c-47b8-842e-52b14f6d5176
+handle: rowTopMargin
 instructions: ''
-name: 'Page Header Background Opacity'
+name: 'Row Top Margin'
 searchable: false
 settings:
   optgroups: true
@@ -11,10 +12,65 @@ settings:
       __assoc__:
         -
           - label
-          - 'Use Default'
+          - 'Negative 4x (-60px)'
         -
           - value
-          - useDefault
+          - mt-neg4x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative 3x (-45px)'
+        -
+          - value
+          - mt-neg3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative 2x (-30px)'
+        -
+          - value
+          - mt-neg2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Normal (-15px)'
+        -
+          - value
+          - mt-negnormal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Negative Half (-7.5px)'
+        -
+          - value
+          - mt-neghalf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'None (0px)'
+        -
+          - value
+          - mt-none
         -
           - default
           - '1'
@@ -22,10 +78,10 @@ settings:
       __assoc__:
         -
           - label
-          - 100%
+          - 'Half (7.5px)'
         -
           - value
-          - opacity-100
+          - mt-half
         -
           - default
           - ''
@@ -33,10 +89,10 @@ settings:
       __assoc__:
         -
           - label
-          - 90%
+          - 'Normal (15px)'
         -
           - value
-          - opacity-90
+          - mt-normal
         -
           - default
           - ''
@@ -44,10 +100,10 @@ settings:
       __assoc__:
         -
           - label
-          - 80%
+          - '2x (30px)'
         -
           - value
-          - opacity-80
+          - mt-2x
         -
           - default
           - ''
@@ -55,10 +111,10 @@ settings:
       __assoc__:
         -
           - label
-          - 70%
+          - '3x (45px)'
         -
           - value
-          - opacity-70
+          - mt-3x
         -
           - default
           - ''
@@ -66,76 +122,10 @@ settings:
       __assoc__:
         -
           - label
-          - 60%
+          - '4x (60px)'
         -
           - value
-          - opacity-60
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 50%
-        -
-          - value
-          - opacity-50
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 40%
-        -
-          - value
-          - opacity-40
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 30%
-        -
-          - value
-          - opacity-30
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 20%
-        -
-          - value
-          - opacity-20
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 10%
-        -
-          - value
-          - opacity-10
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 0%
-        -
-          - value
-          - opacity-0
+          - mt-4x
         -
           - default
           - ''

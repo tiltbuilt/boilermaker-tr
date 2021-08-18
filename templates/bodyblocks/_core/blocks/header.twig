@@ -28,9 +28,9 @@
 {% else %}
 	{% set blockId = 'header-' ~ block.id %}
 	{% set subheadId = 'header-' ~ block.id ~ '-subhead' %}	
-	{% set headingId = 'header-' ~ block.customId ~ '-heading' %}
-	{% set contentId = 'header-' ~ block.customId ~ '-content' %}
-	{% set buttonSetId = block.customId ~ '-buttonSet' %}
+	{% set headingId = 'header-' ~ block.id ~ '-heading' %}
+	{% set contentId = 'header-' ~ block.id ~ '-content' %}
+	{% set buttonSetId = 'header-' ~ block.id ~ '-buttonSet' %}
 {% endif %}
 
 {# Set block type handle as class name for styling #}
@@ -48,6 +48,20 @@
 {% endif %}
 
 {% set stylingClasses = stylingClasses|merge([block.topMargin, block.bottomMargin]) %}
+
+{# reveal animations #}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+  {% set revealClass = block.revealAnimation %}
+  {% if block.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if block.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
+
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
@@ -75,14 +89,20 @@
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClasses, customClassString) -}}>
   <div class="inner">
 	
+		{% if block.subheadText|length and block.subheadPosition == 1 %}
+		  <b {{ edcMacros.buildElementAttributes(subheadId, 'header-subhead', subheadClasses) -}}>
+			  {{ gMacros.stripTags(block.subheadText) }}
+		  </b>
+		{% endif %}
+		
 		<{{ headingLevel }} {{ edcMacros.buildElementAttributes(blockId, 'header-mainHeading', headingClasses) -}}>
-			{{ gMacros.stripTags(block.headingText) }}
+		  {{ gMacros.stripTags(block.headerText) }}
 		</{{ headingLevel }}>
-	  
-		{% if block.subheadText|length %}
-			<b {{ edcMacros.buildElementAttributes(subheadId, 'header-subhead', subheadClasses) -}}>
-				{{ gMacros.stripTags(block.subheadText) }}
-			</b>
+		
+		{% if block.subheadText|length and block.subheadPosition == 0 %}
+		  <b {{ edcMacros.buildElementAttributes(subheadId, 'header-subhead', subheadClasses) -}}>
+			  {{ gMacros.stripTags(block.subheadText) }}
+		  </b>
 		{% endif %}
 	
 	  			

@@ -64,6 +64,12 @@
 {% set sizingClasses = sizingClasses|merge([column.columnOrderDesktop]) %}
 {% set stylingClasses = stylingClasses|merge(sizingClasses) %}
 
+
+{# reveal animations #}
+{% if column.revealAnimation is defined and column.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([column.revealAnimation]) %}
+{% endif %}
+
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (column['customClassList'] is defined ? column.customClassList : null) %}

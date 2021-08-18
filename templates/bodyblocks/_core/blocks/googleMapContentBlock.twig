@@ -19,7 +19,7 @@
 {# {% import '_tiltrus/_project/edcMacros' as edcMacros %} #}
 
 
-{% set mapStyleClasses = 'block w-full ' ~ block.topMargin ~ ' ' ~ block.bottomMargin %}
+{% set mapStyleClasses = 'block w-full ' ~ block.topMargin ~ ' ' ~ block.bottomMargin ~ ' ' ~ block.revealAnimation %}
 
 
 <div class="gmap-wrapper {{mapStyleClasses}}" style="min-height: {{block.mapMinimumHeight}}px"></div>

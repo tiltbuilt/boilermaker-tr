@@ -29,7 +29,11 @@
 {% set blockClass = container.type.handle %}
 
 {# Get styling classes for block and assemble as class string #}
-{% set stylingClasses = [] %}
+{% set stylingClasses = ['container'] %}
+
+{% if container.backgroundColor is defined and container.backgroundColor != '' %}
+	{% set stylingClasses = stylingClasses|merge([container.backgroundColor]) %}
+{% endif %}
 
 {% if container.fullScreenWidth is defined and container.fullScreenWidth == 1 %}
 	{% set stylingClasses = stylingClasses|merge(['container-fullwidth']) %}
@@ -84,6 +88,20 @@
 	{% set rowMarginRight = 'mr-none' %}
 {% endswitch %}
 {% set rowClasses = rowClasses|merge([rowMarginLeft, rowMarginRight]) %}
+
+
+{# reveal animations #}
+{% if container.revealAnimation is defined and container.revealAnimation != '' %}  
+  {% set revealClass = container.revealAnimation %}
+  {% if container.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if container.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (container['customClassList'] is defined ? container.customClassList : null) %}
@@ -110,5 +128,9 @@
 		{% endfor %}
 	  </div>
   </div>
+{% if container.backgroundImage|length != 0 %}
+	{% set bgAsset = container.backgroundImage[0] %}
+	{{ edcMacros.buildElementBackground(bgAsset, container.backgroundOpacity, container.backgroundSize, container.backgroundRepeat, container.backgroundPosition, {'default': '100vw'}) }}
+{% endif %}
    
 </div>
