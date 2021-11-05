@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0 - 2021-11-05
+### Changed
+- Updated Craft CMS and Plugins to latesrt releases
+
 ## 1.4.1 - 2021-08-18
 ### Changed
 - Composer file update for release
