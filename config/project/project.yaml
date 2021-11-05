@@ -1,4 +1,4 @@
-dateModified: 1629311423
+dateModified: 1636132380
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -155,7 +155,7 @@ plugins:
     schemaVersion: 2.0.0
   blitz:
     edition: standard
-    enabled: true    
+    enabled: true
     schemaVersion: 3.10.0
   blitz-recommendations:
     edition: standard
@@ -179,7 +179,7 @@ plugins:
     schemaVersion: 1.0.0
   freeform:
     edition: lite
-    enabled: true    
+    enabled: true
     schemaVersion: 3.3.2
     settings:
       ajaxByDefault: false
@@ -248,7 +248,7 @@ plugins:
       twigInHtmlIsolatedMode: true
   icon-picker:
     edition: standard
-    enabled: true    
+    enabled: true
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -258,19 +258,19 @@ plugins:
       redactorFieldHandle: ''
   imager-x:
     edition: pro
-    enabled: true    
+    enabled: true
     schemaVersion: 3.0.0
   linkit:
     edition: standard
-    enabled: true    
+    enabled: true
     schemaVersion: 1.0.8
   navigation:
     edition: standard
-    enabled: true    
+    enabled: true
     schemaVersion: 1.0.21
   neo:
     edition: standard
-    enabled: true    
+    enabled: true
     schemaVersion: 2.11.6
   redactor:
     edition: standard
@@ -290,12 +290,12 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true    
+    enabled: true
     schemaVersion: 3.0.10
   seomatic:
     edition: standard
-    enabled: true    
-    schemaVersion: 3.0.10
+    enabled: true
+    schemaVersion: 3.0.11
     settings:
       addHrefLang: true
       addPaginatedHreflang: true
@@ -336,7 +336,7 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 3.7.7
+  schemaVersion: 3.7.8
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false
