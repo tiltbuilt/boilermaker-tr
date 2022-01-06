@@ -1,4 +1,4 @@
-dateModified: 1636132380
+dateModified: 1641156319
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -47,6 +47,7 @@ meta:
     25cc4381-5cfd-4280-a96c-80e3995aab06: 'Link Name' # Link Name
     28a71b90-dde7-4d14-b9cc-67776b58c1df: 'Google Map Column' # Google Map Column
     39d6f4bb-b73e-430f-bc63-2b8408f7f1a6: Video # Video
+    46c6c9f9-98fc-491d-9f89-2966c90c07c8: 'Override Parent Animation' # Override Parent Animation
     50aeb9ea-d0df-4503-af9a-4831d84332a6: 'Button Size' # Button Size
     0051d1c8-a8a0-4b8a-a480-2c1ac079c3af: 'Map Minimum Height' # Map Minimum Height
     54a8a41f-5d4e-4ab3-8483-f819874032cc: Embed # Embed
@@ -156,6 +157,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true
+    licenseKey: IFSHYLFRF0N0Z5V2SXXAJ13J
     schemaVersion: 3.10.0
   blitz-recommendations:
     edition: standard
@@ -180,7 +182,8 @@ plugins:
   freeform:
     edition: lite
     enabled: true
-    schemaVersion: 3.3.2
+    licenseKey: TWWQEIVONPSQYXL7LXLF6VZZ
+    schemaVersion: 3.5.1
     settings:
       ajaxByDefault: false
       alertNotificationRecipients: null
@@ -249,6 +252,7 @@ plugins:
   icon-picker:
     edition: standard
     enabled: true
+    licenseKey: RAV8M4LD6LGRFFGD5QM0IPAO
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -259,18 +263,22 @@ plugins:
   imager-x:
     edition: pro
     enabled: true
+    licenseKey: 9S2CVWM3OY52V2514W37YL1Z
     schemaVersion: 3.0.0
   linkit:
     edition: standard
     enabled: true
+    licenseKey: SVWVAK63N51CORXZGQU2OZ9D
     schemaVersion: 1.0.8
   navigation:
     edition: standard
     enabled: true
+    licenseKey: WTCPE7Y9YUXW49CSZQED2D63
     schemaVersion: 1.0.21
   neo:
     edition: standard
     enabled: true
+    licenseKey: AASEMG6JLWIWW5VG4VNUMGUM
     schemaVersion: 2.11.6
   redactor:
     edition: standard
@@ -291,10 +299,12 @@ plugins:
   retour:
     edition: standard
     enabled: true
+    licenseKey: CK4NBTTZ2HB2H4TLN8JW27O5
     schemaVersion: 3.0.10
   seomatic:
     edition: standard
     enabled: true
+    licenseKey: 9LVI06362ZK7RNJH0MU1SYAS
     schemaVersion: 3.0.11
     settings:
       addHrefLang: true

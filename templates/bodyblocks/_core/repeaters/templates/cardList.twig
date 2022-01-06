@@ -20,7 +20,7 @@
 
 <div class="repeater-list-card">
 {% for repeaterItem in repeaterData %}
-<div class="repeater-list-item">
+<div class="repeater-list-item {% if parentAnim %}anim-child{% endif %}">
   <a href="{{ repeaterItem.url }}">
   <div class="item-wrapper">
 	{% if repeaterItem['title'] is defined and repeaterItem.title|length %}

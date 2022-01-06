@@ -44,6 +44,7 @@
 {% endif %}
 
 {# reveal animations #}
+{% set parentAnim = false %}
 {% if block.revealAnimation is defined and block.revealAnimation != '' %}  
   {% set revealClass = block.revealAnimation %}
   {% if block.applyRevealToChildElements %}
@@ -54,7 +55,6 @@
   {% endif %}
   {% set stylingClasses = stylingClasses|merge([revealClass]) %}
 {% endif %}
-
 
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}

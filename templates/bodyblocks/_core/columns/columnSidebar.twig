@@ -54,8 +54,12 @@
 {% set stylingClasses = stylingClasses|merge(paddingClasses) %}
 
 {# reveal animations #}
-{% if column.revealAnimation is defined and column.revealAnimation != '' %}  
-  {% set stylingClasses = stylingClasses|merge([column.revealAnimation]) %}
+{% if parentAnim %}
+	{% set stylingClasses = stylingClasses|merge(['anim-child']) %}	
+{% else %}
+	{% if column.revealAnimation is defined and column.revealAnimation != '' %}  
+	  {% set stylingClasses = stylingClasses|merge([column.revealAnimation]) %}
+	{% endif %}
 {% endif %}
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}

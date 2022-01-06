@@ -1,0 +1,14 @@
+columnSuffix: vthvczpn
+contentColumnType: boolean
+fieldGroup: 57101542-5ec7-45f1-9d3d-351b68995b18 # Animations
+handle: overrideParentAnimation
+instructions: ''
+name: 'Override Parent Animation'
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

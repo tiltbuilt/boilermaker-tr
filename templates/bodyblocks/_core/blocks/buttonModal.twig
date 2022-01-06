@@ -58,11 +58,15 @@
 		{% set stylingClasses = stylingClasses|merge([block.topMargin, block.bottomMargin]) %}
 	{% endif %}
 	
-	{# reveal animations #}
+{% endif %}
+
+{# reveal animations #}
+{% if parentAnim %}
+	{% set stylingClasses = stylingClasses|merge(['anim-child']) %}	
+{% else %}
 	{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
 	  {% set stylingClasses = stylingClasses|merge([block.revealAnimation]) %}
 	{% endif %}
-
 {% endif %}
 
 

@@ -31,18 +31,32 @@
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = ['cta', block.topMargin, block.bottomMargin] %}
 
+
+{% set headingClasses = ['cta-block-heading'] %}
+{% if block.applyRevealToChildElements %}
+	{% set headingClasses = headingClasses|merge(['anim-child']) %}
+{% endif %}
+
+{% set subheadClasses = ['cta-block-header-subhead'] %}
+{% if block.applyRevealToChildElements %}
+	{% set subheadClasses = headingClasses|merge(['anim-child']) %}
+{% endif %}
+
+
 {# reveal animations #}
+
+{% set parentAnim = false %}
 {% if block.revealAnimation is defined and block.revealAnimation != '' %}  
   {% set revealClass = block.revealAnimation %}
   {% if block.applyRevealToChildElements %}
 	  {% set revealClass = revealClass ~ 'Subs' %}
+	  {% set parentAnim = true %}
 	{% if block.staggerChildReveals %}
 		{% set revealClass = revealClass ~ 'Stagger' %}
 	{% endif %}
   {% endif %}
   {% set stylingClasses = stylingClasses|merge([revealClass]) %}
 {% endif %}
-
 
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
@@ -54,29 +68,29 @@
   <div class="inner">
 	<div class="cta-content-wrapper">
 	  {% if block.subheadText|length and block.subheadPosition == 1 %}
-		  <b class='cta-block-header-subhead'>
+		  <b {{ edcMacros.buildClasses('', subheadClasses, '') -}}>
 			  {{ gMacros.stripTags(block.subheadText) }}
 		  </b>
 	  {% endif %}
 	  
-	  <{{ headingLevel }} class='cta-block-heading'>
+	  <{{ headingLevel }} {{ edcMacros.buildClasses('', headingClasses, '') -}}>
 		  {{ gMacros.stripTags(block.headerText) }}
 	  </{{ headingLevel }}>
 	  
 	  {% if block.subheadText|length and block.subheadPosition == 0 %}
-		  <b class='cta-block-header-subhead'>
+		  <b {{ edcMacros.buildClasses('', subheadClasses, '') -}}>
 			  {{ gMacros.stripTags(block.subheadText) }}
 		  </b>
 	  {% endif %}
 
 	  {% if block.simpleText|length %}
-		<div class="content">
+		<div class="content {% if block.applyRevealToChildElements %}anim-child{% endif %}">
 		  {{ block.simpleText }}
 		</div>
 	  {% endif %}
 
 	  {% if block.linkSettings|length %}
-		<a href="{{ block.linkSettings.url }}" class="btn cta-btn">
+		<a href="{{ block.linkSettings.url }}" class="btn cta-btn {% if block.applyRevealToChildElements %}anim-child{% endif %}">
 		  {{ block.linkSettings.text }}
 		  <div class="link-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30">

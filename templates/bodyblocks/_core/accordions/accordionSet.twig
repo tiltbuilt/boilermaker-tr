@@ -43,10 +43,12 @@
 
 
 {# reveal animations #}
+{% set parentAnim = false %}
 {% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
   {% set revealClass = accordion.revealAnimation %}
   {% if accordion.applyRevealToChildElements %}
 	  {% set revealClass = revealClass ~ 'Subs' %}
+	  {% set parentAnim = true %}
 	{% if accordion.staggerChildReveals %}
 		{% set revealClass = revealClass ~ 'Stagger' %}
 	{% endif %}
@@ -83,7 +85,7 @@
 			'bodyblocks/_core/accordions/' ~ child.type.handle,
 			'bodyblocks/project/accordions/accordion',
 			'bodyblocks/_core/accordions/accordion'
-		  ] with { 'accordion': child, 'setPiece': true, 'accSpacing': accordion.accordionSpacing, 'openFirst': openFirst, 'loopCount': loop.index, 'parentAccSet': blockId }
+		  ] with { 'accordion': child, 'setPiece': true, 'accSpacing': accordion.accordionSpacing, 'openFirst': openFirst, 'loopCount': loop.index, 'parentAccSet': blockId, 'parentAnim' : parentAnim }
 		%}	  
 
 	{% endfor %}  

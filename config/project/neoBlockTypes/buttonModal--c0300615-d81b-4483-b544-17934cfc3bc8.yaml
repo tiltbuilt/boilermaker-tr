@@ -1,4 +1,4 @@
-childBlocks: ''
+childBlocks: null
 field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   043d500a-1c20-4b67-85d9-399ed82ea59c:
@@ -88,6 +88,15 @@ fieldLayouts:
         sortOrder: 3
       -
         elements:
+          -
+            fieldUid: 46c6c9f9-98fc-491d-9f89-2966c90c07c8 # Override Parent Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             style: tip
             tip: 'These settings are ignored when a button is in a Button Group'

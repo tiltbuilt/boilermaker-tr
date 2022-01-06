@@ -1,4 +1,4 @@
-childBlocks: ''
+childBlocks: null
 field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
 fieldLayouts:
   67a89278-6cab-4f32-8b79-a83f6b8bf3e8:
@@ -115,6 +115,15 @@ fieldLayouts:
         sortOrder: 5
       -
         elements:
+          -
+            fieldUid: 46c6c9f9-98fc-491d-9f89-2966c90c07c8 # Override Parent Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: f467c195-a0fb-4326-9915-1c8b51816f61 # Reveal Animation
             instructions: null

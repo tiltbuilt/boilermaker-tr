@@ -107,8 +107,12 @@
 
 
 {# reveal animations #}
-{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
-  {% set stylingClasses = stylingClasses|merge([accordion.revealAnimation]) %}
+{% if parentAnim %}
+	{% set stylingClasses = stylingClasses|merge(['anim-child']) %}	
+{% else %}
+	{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
+	  {% set stylingClasses = stylingClasses|merge([accordion.revealAnimation]) %}
+	{% endif %}
 {% endif %}
 
   

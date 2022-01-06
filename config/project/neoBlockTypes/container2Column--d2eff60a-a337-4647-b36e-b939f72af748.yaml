@@ -15,6 +15,24 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 2e5285f5-0e17-42b4-a8d4-d1162bd4b90e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9f6aab1b-ba77-4f5c-b2e4-0375d2582065
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: 'Display Settings'
         sortOrder: 1
       -
@@ -117,6 +135,15 @@ fieldLayouts:
         sortOrder: 3
       -
         elements:
+          -
+            fieldUid: 46c6c9f9-98fc-491d-9f89-2966c90c07c8 # Override Parent Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: f467c195-a0fb-4326-9915-1c8b51816f61 # Reveal Animation
             instructions: null
