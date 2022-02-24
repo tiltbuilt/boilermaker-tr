@@ -175,7 +175,7 @@
 					
 					<div id="{{buttonSetId}}" class="pageheader-buttons {{entry.buttonAlignment}}">
 						{% for button in entry.headerLinkButtons %}
-							<a href="{{ button.linkSettings.url }}" {{- button.linkSettings|length ? ' target="_blank"' : '' }} class="btn btn-pageheader {{button.buttonStyling}}">
+							<a href="{{ button.linkSettings.url }}"  target="{{button.linkSettings.target}}" class="btn btn-pageheader {{button.buttonStyling}}">
 								<span>{{ button.linkSettings.text }}</span>
 							</a>
 						{% endfor %}

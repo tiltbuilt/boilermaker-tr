@@ -1,4 +1,4 @@
-dateModified: 1641156319
+dateModified: 1645676101
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -47,7 +47,6 @@ meta:
     25cc4381-5cfd-4280-a96c-80e3995aab06: 'Link Name' # Link Name
     28a71b90-dde7-4d14-b9cc-67776b58c1df: 'Google Map Column' # Google Map Column
     39d6f4bb-b73e-430f-bc63-2b8408f7f1a6: Video # Video
-    46c6c9f9-98fc-491d-9f89-2966c90c07c8: 'Override Parent Animation' # Override Parent Animation
     50aeb9ea-d0df-4503-af9a-4831d84332a6: 'Button Size' # Button Size
     0051d1c8-a8a0-4b8a-a480-2c1ac079c3af: 'Map Minimum Height' # Map Minimum Height
     54a8a41f-5d4e-4ab3-8483-f819874032cc: Embed # Embed
@@ -346,7 +345,7 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 3.7.8
+  schemaVersion: 3.7.33
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false

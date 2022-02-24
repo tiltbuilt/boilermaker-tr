@@ -89,15 +89,6 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 46c6c9f9-98fc-491d-9f89-2966c90c07c8 # Override Parent Animation
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             style: tip
             tip: 'These settings are ignored when a button is in a Button Group'
             type: craft\fieldlayoutelements\Tip

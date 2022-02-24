@@ -257,34 +257,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 46c6c9f9-98fc-491d-9f89-2966c90c07c8 # Override Parent Animation
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: f467c195-a0fb-4326-9915-1c8b51816f61 # Reveal Animation
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a2638b0f-c6c2-4633-9718-e54161872041 # Apply Reveal to Child Elements
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: ac7c643a-b9dc-4eac-9500-46d27af9ae09 # Stagger Child Reveals
             instructions: null
             label: null
             required: false

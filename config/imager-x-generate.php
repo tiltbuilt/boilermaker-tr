@@ -2,7 +2,7 @@
 
 return [
    'volumes' => [	   
-	   'images' => ['contenttImage', 'contentImageWebp', 'thumbnail', 'thumbnailWebp'],
+	   'images' => ['contentImage', 'contentImageWebp', 'thumbnail', 'thumbnailWebp'],
    ],  
    
    'fields' => [
