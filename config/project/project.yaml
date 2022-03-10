@@ -1,4 +1,4 @@
-dateModified: 1645676101
+dateModified: 1646689057
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -86,6 +86,7 @@ meta:
     9985a127-c58e-4ff8-9853-a947ce2aef62: Video # Video
     17276dc7-0ba1-40fb-b31a-f1f49afcddef: 'Background Image' # Background Image
     45754be3-212e-4eec-ad23-fa32e9a516a9: 'Multicolumn Layout Row' # Multicolumn Layout Row
+    60487a24-7aca-4ae1-b7d9-44bedc186160: 'Content Admin' # Content Admin
     64551ef0-3ce6-48bc-a545-d618c1c95927: Pages # Pages
     09732774-2ee8-477c-9984-905796312ba2: 'Content Elements' # Content Elements
     23850449-35c5-4055-8ecc-266af005dce5: 'Simple Text' # Simple Text
@@ -182,7 +183,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: TWWQEIVONPSQYXL7LXLF6VZZ
-    schemaVersion: 3.5.1
+    schemaVersion: 3.6.3
     settings:
       ajaxByDefault: false
       alertNotificationRecipients: null
@@ -347,9 +348,3 @@ system:
   retryDuration: null
   schemaVersion: 3.7.33
   timeZone: America/Chicago
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true
