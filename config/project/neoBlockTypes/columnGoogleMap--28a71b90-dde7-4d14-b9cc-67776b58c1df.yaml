@@ -148,6 +148,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 7
+group: 4db257b0-8de7-4943-b5b2-d690edc0b279 # Columns
 handle: columnGoogleMap
 maxBlocks: 0
 maxChildBlocks: 0

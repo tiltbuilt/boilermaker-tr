@@ -121,6 +121,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 4
+group: 7605a963-4cb6-4954-8e8e-eab3a49997fc # Sections
 handle: sectionStandard
 maxBlocks: 0
 maxChildBlocks: 0

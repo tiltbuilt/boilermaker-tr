@@ -31,23 +31,11 @@
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = ['cta', block.topMargin, block.bottomMargin] %}
 
-{% set headingClasses = ['cta-block-heading'] %}
-{% if block.applyRevealToChildElements %}
-	{% set headingClasses = headingClasses|merge(['anim-child']) %}
-{% endif %}
-
-{% set subheadClasses = ['cta-block-header-subhead'] %}
-{% if block.applyRevealToChildElements %}
-	{% set subheadClasses = headingClasses|merge(['anim-child']) %}
-{% endif %}
-
 {# reveal animations #}
-{% set parentAnim = false %}
 {% if block.revealAnimation is defined and block.revealAnimation != '' %}  
   {% set revealClass = block.revealAnimation %}
   {% if block.applyRevealToChildElements %}
 	  {% set revealClass = revealClass ~ 'Subs' %}
-	  {% set parentAnim = true %}
 	{% if block.staggerChildReveals %}
 		{% set revealClass = revealClass ~ 'Stagger' %}
 	{% endif %}
@@ -88,7 +76,7 @@
 				  data-sizes="auto"
 				  data-src="{{ transformedImages[0] }}"
 				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-				  alt="{{ imageAltText }}" class="lazyload cta-image {% if block.applyRevealToChildElements %}anim-child{% endif %}"
+				  alt="{{ imageAltText }}" class="lazyload cta-image"
 				  >
 			  </picture>
 			{% endif %}
@@ -96,30 +84,30 @@
 	{% endif %}
 	
 	<div class="cta-content-wrapper">
-		{% if block.subheadText|length and block.subheadPosition == 1 %}			
-			<b {{ edcMacros.buildClasses('', subheadClasses, '') -}}>
+		{% if block.subheadText|length and block.subheadPosition == 1 %}
+			<b class='cta-block-header-subhead'>
 				{{ gMacros.stripTags(block.subheadText) }}
 			</b>
 		{% endif %}
 		
-		<{{ headingLevel }} {{ edcMacros.buildClasses('', headingClasses, '') -}}>
+		<{{ headingLevel }} class='cta-block-heading'>
 			{{ gMacros.stripTags(block.headerText) }}
 		</{{ headingLevel }}>
 		
 		{% if block.subheadText|length and block.subheadPosition == 0 %}
-			<b {{ edcMacros.buildClasses('', subheadClasses, '') -}}>
+			<b class='cta-block-header-subhead'>
 				{{ gMacros.stripTags(block.subheadText) }}
 			</b>
 		{% endif %}
 	
 		{% if block.simpleText|length %}
-		  <div class="content {% if block.applyRevealToChildElements %}anim-child{% endif %}">
+		  <div class="content">
 			{{ block.simpleText }}
 		  </div>
 		{% endif %}
 	
 		{% if block.linkSettings|length %}
-		  <a href="{{ block.linkSettings.url }}" class="btn cta-btn {% if block.applyRevealToChildElements %}anim-child{% endif %}">
+		  <a href="{{ block.linkSettings.url }}" class="btn cta-btn">
 			{{ block.linkSettings.text }}
 			<div class="link-icon">
 			  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30">

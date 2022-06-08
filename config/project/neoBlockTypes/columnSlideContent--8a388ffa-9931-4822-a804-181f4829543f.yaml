@@ -252,6 +252,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 9
+group: 03efdc90-1905-462a-907c-bb109f5b3606 # Sliders
 handle: columnSlideContent
 maxBlocks: 0
 maxChildBlocks: 0

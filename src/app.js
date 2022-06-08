@@ -158,9 +158,7 @@ $(document).ready(function() {
 				duration: duration * 1.5,			
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],				
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -178,11 +176,6 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -200,9 +193,7 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],			
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -224,11 +215,6 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},	
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -246,9 +232,7 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],						
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -270,11 +254,6 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -292,9 +271,7 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],			
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -316,11 +293,6 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -338,9 +310,7 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],			
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -362,11 +332,6 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -383,9 +348,7 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],			
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -407,11 +370,6 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -428,9 +386,7 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",
-				onComplete: postRevealFunction,
-				onCompleteParams: [aniItem],			
+				ease: "expo.out",			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -452,24 +408,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
-				onComplete() {
-					for (let i = 0; i < this._targets.length - 1 ; i++) {
-						postRevealFunction(this._targets[i]);
-					}
-				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
 			once: true
 		});		
-	}
-	
-	
-	/* POST REVEAL FUNCTIONS */
-	
-	function postRevealFunction(el) {		
-		/* insert any post-reveal script functions here. Determine which element triggered the post reveal function by checking against el. It is the element whose reveal triggered the post reveal feature */
-		console.log(el);
 	}
 	
 	

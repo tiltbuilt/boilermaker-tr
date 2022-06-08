@@ -1,6 +1,7 @@
 childBlocks:
   - sectionStandard
 field: 3f3a2d02-b06a-4a4d-9b30-cfc0028787dc # Page Builder
+group: 5b37cd5f-43e2-438f-822d-c7d8d5eb03e5 # Layout Locations
 handle: layoutLocationSidebar
 maxBlocks: 1
 maxChildBlocks: 0

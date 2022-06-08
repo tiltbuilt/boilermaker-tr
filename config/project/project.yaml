@@ -1,4 +1,4 @@
-dateModified: 1646689057
+dateModified: 1650669479
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -279,7 +279,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: AASEMG6JLWIWW5VG4VNUMGUM
-    schemaVersion: 2.11.6
+    schemaVersion: 2.13.0
   redactor:
     edition: standard
     enabled: true

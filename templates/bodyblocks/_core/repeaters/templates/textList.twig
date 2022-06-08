@@ -20,7 +20,7 @@
 
 <ul class="repeater-list-text">
 {% for repeaterItem in repeaterData %}	
-	<li class="repeater-list-item {% if parentAnim %}anim-child{% endif %}">
+	<li class="repeater-list-item">
 	<{{ repeaterHeadingLevel }} {{ edcMacros.buildClasses('list-item-heading', repeaterListHeaderStyles) -}}>
 	  <a href="{{ repeaterItem.url }}">{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>
 	</{{ repeaterHeadingLevel }}>

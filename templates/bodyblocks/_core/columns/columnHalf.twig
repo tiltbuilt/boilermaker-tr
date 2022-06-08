@@ -31,10 +31,6 @@
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [] %}
 
-{% if column.backgroundColor is defined and column.backgroundColor != '' %}
-	{% set stylingClasses = stylingClasses|merge([column.backgroundColor]) %}
-{% endif %}
-
 {% if column.contentAlignment is defined and column.contentAlignment != '' %}
 	{% set stylingClasses = stylingClasses|merge([column.contentAlignment]) %}
 {% endif %}
@@ -58,12 +54,8 @@
 {% set stylingClasses = stylingClasses|merge(paddingClasses) %}
 
 {# reveal animations #}
-{% if parentAnim %}
-	{% set stylingClasses = stylingClasses|merge(['anim-child']) %}	
-{% else %}
-	{% if column.revealAnimation is defined and column.revealAnimation != '' %}  
-	  {% set stylingClasses = stylingClasses|merge([column.revealAnimation]) %}
-	{% endif %}
+{% if column.revealAnimation is defined and column.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([column.revealAnimation]) %}
 {% endif %}
   
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}

@@ -281,6 +281,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 5
+group: 605a4447-5ac1-4d5e-8648-119a45241020 # Repeaters
 handle: repeaterContentLinks
 maxBlocks: 0
 maxChildBlocks: 0

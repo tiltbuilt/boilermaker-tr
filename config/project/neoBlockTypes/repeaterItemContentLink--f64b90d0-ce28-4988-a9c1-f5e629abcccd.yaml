@@ -43,6 +43,7 @@ fieldLayouts:
             width: 100
         name: 'Content Settings'
         sortOrder: 1
+group: 86a6b32a-abd4-4c79-b100-6d0b901068e2 # Repeater Items
 handle: repeaterItemContentLink
 maxBlocks: 0
 maxChildBlocks: 0

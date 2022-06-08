@@ -56,7 +56,7 @@
 {% set paddingClasses = paddingClasses|merge([container.rightPadding]) %}
 
 {# set up second style array for row inside this container type with left and right margins set to negative version of block padding settings #}
-{% set rowClasses = [container.rowHorizontalAlignment, container.rowVerticalAlignment] %}
+{% set rowClasses = ['justify-center', 'items-stretch'] %}
 {% set rowMarginLeft = '' %}
 {% set rowMarginRight = '' %}
 {% switch container.leftPadding %}
@@ -91,12 +91,10 @@
 
 
 {# reveal animations #}
-{% set parentAnim = false %}
 {% if container.revealAnimation is defined and container.revealAnimation != '' %}  
   {% set revealClass = container.revealAnimation %}
   {% if container.applyRevealToChildElements %}
 	  {% set revealClass = revealClass ~ 'Subs' %}
-	  {% set parentAnim = true %}	  
 	{% if container.staggerChildReveals %}
 		{% set revealClass = revealClass ~ 'Stagger' %}
 	{% endif %}
@@ -125,7 +123,7 @@
 			  'bodyblocks/_core/columns/' ~ column.type.handle,
 			  'bodyblocks/project/columns/column',
 			  'bodyblocks/_core/columns/column'
-			] with { 'column' :  column, 'parentAnim' : parentAnim }
+			] with { 'column' :  column }
 		  %}
 		{% endfor %}
 	  </div>

@@ -88,6 +88,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 3
+group: 822bd06b-0d1d-4f42-968c-2dc19c16ab56 # Rows
 handle: row
 maxBlocks: 0
 maxChildBlocks: 0

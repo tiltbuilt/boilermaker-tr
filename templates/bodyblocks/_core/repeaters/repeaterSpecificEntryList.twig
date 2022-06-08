@@ -45,6 +45,18 @@
 
 {% set stylingClasses = stylingClasses|merge([repeater.topMargin, repeater.bottomMargin]) %}
 
+{# reveal animations #}
+{% if repeater.revealAnimation is defined and repeater.revealAnimation != '' %}  
+  {% set revealClass = repeater.revealAnimation %}
+  {% if repeater.applyRevealToChildElements %}
+	  {% set revealClass = revealClass ~ 'Subs' %}
+	{% if repeater.staggerChildReveals %}
+		{% set revealClass = revealClass ~ 'Stagger' %}
+	{% endif %}
+  {% endif %}
+  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
+{% endif %}
+
 {# if header has text build set of padding and margin classes for header #}
 
 {% if repeater.headerText|length and repeater.headingLevel != '' %}
@@ -56,22 +68,6 @@
 
 {# Get the heading level for Repeater Items #}
 {% set repeaterItemsHeadingLevel = repeater['listItemsHeadingLevel'] is defined and repeater.listItemsHeadingLevel|length ? repeater.listItemsHeadingLevel : 'div' %}
-
-{# reveal animations #}
-{% set parentAnim = false %}
-{% if repeater.revealAnimation is defined and repeater.revealAnimation != '' %}  
-  {% set revealClass = repeater.revealAnimation %}
-  {% if repeater.applyRevealToChildElements %}
-	  {% set revealClass = revealClass ~ 'Subs' %}
-	  {% set parentAnim = true %}
-	  {% set headerClasses = headerClasses|merge(['anim-child']) %}
-	{% if repeater.staggerChildReveals %}
-		{% set revealClass = revealClass ~ 'Stagger' %}
-	{% endif %}
-  {% endif %}
-  {% set stylingClasses = stylingClasses|merge([revealClass]) %}
-{% endif %}
-
 
 {# Get the styling for Repeater Items Titles #}
 {% set listItemHeaderStyles = repeater.listItemHeadingStyling %}
@@ -124,7 +120,7 @@
 	  {% endif %}
 	  
 	  {% if repeater.simpleText|length %}
-	  <div class="{{ repeater.introTextBottomMargin }} {% if repeater.applyRevealToChildElements %}anim-child{% endif %}">
+	  <div class="{{ repeater.introTextBottomMargin }}">
 		{{ repeater.simpleText }}
 	  </div>
 	  {% endif %}
@@ -149,7 +145,7 @@
 			include [
 			  'bodyblocks/project/repeaters/templates/' ~ repeaterTemplateHandle,
 			  'bodyblocks/_core/repeaters/templates/' ~ repeaterTemplateHandle,
-			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt, 'repeaterBtnStyles' : repeater.listItemButtonStyling, 'repeaterBtnSize' : repeater.listItemButtonSize, 'parentAnim' : parentAnim }
+			] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterListHeaderStyles': listItemHeaderStyles, 'repeaterShowExcerpt' : repeater.showExcerpt, 'repeaterBtnStyles' : repeater.listItemButtonStyling, 'repeaterBtnSize' : repeater.listItemButtonSize }
 		  %}
 		  </div>
 	  {% else %}

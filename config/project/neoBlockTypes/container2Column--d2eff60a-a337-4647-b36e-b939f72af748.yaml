@@ -186,6 +186,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 5
+group: 59dac4ee-2a3a-4494-9898-475a0c94d46c # Containers
 handle: container2Column
 maxBlocks: 0
 maxChildBlocks: 2

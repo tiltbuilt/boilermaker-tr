@@ -38,6 +38,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 2
+group: 3ba3ff5e-3ac2-447c-bec5-88ba72627b3b # Content Elements
 handle: embed
 maxBlocks: 0
 maxChildBlocks: 0

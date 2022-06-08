@@ -37,12 +37,10 @@
 {% set stylingClasses = [row.rowHorizontalAlignment, row.rowVerticalAlignment, row.leftMargin, row.rightMargin, row.rowTopMargin, row.rowBottomMargin] %}
 
 {# reveal animations #}
-{% set parentAnim = false %}
 {% if row.revealAnimation is defined and row.revealAnimation != '' %}  
   {% set revealClass = row.revealAnimation %}
   {% if row.applyRevealToChildElements %}
 	  {% set revealClass = revealClass ~ 'Subs' %}
-	  {% set parentAnim = true %}
 	{% if row.staggerChildReveals %}
 		{% set revealClass = revealClass ~ 'Stagger' %}
 	{% endif %}
@@ -69,7 +67,7 @@
 		  'bodyblocks/_core/columns/' ~ column.type.handle,
 		  'bodyblocks/project/columns/column',
 		  'bodyblocks/_core/columns/column'
-		] with { 'column' :  column, 'loadType': loadType, 'parentAnim' : parentAnim }
+		] with { 'column' :  column, 'loadType': loadType }
 	  %}
 	{% endfor %}  
    

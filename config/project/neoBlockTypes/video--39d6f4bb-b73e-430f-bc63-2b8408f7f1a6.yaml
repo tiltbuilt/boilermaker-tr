@@ -96,6 +96,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 3
+group: 3ba3ff5e-3ac2-447c-bec5-88ba72627b3b # Content Elements
 handle: video
 maxBlocks: 0
 maxChildBlocks: 0

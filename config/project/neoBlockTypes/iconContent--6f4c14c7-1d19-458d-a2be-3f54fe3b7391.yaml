@@ -239,6 +239,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 5
+group: 09732774-2ee8-477c-9984-905796312ba2 # Content Elements
 handle: iconContent
 maxBlocks: 0
 maxChildBlocks: 2

@@ -107,12 +107,8 @@
 
 
 {# reveal animations #}
-{% if parentAnim %}
-	{% set stylingClasses = stylingClasses|merge(['anim-child']) %}	
-{% else %}
-	{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
-	  {% set stylingClasses = stylingClasses|merge([accordion.revealAnimation]) %}
-	{% endif %}
+{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
+  {% set stylingClasses = stylingClasses|merge([accordion.revealAnimation]) %}
 {% endif %}
 
   
@@ -120,73 +116,71 @@
 {% set customClassString = (accordion['customClassList'] is defined ? accordion.customClassList : null) %}
 
 <div {{ edcMacros.buildElementAttributes(blockId, blockClass, stylingClassesOuter, customClassString) -}}>
-	<div class="anim-wrapper">
-		<{{accordion.headingLevel}} id="{{ headingId }}" >
-			<button {{ edcMacros.buildElementAttributes(buttonId, 'accordion-button', buttonClasses, '', buttonAttrs) -}} >
-				<div class="accordion-icon">
-					<svg viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M3.085,0l2.908,7.235l-2.908,7.234l-3.085,0l2.907,-7.234l-2.907,-7.235l3.085,0Zm5.993,0l2.908,7.235l-2.908,7.234l-3.085,0l2.907,-7.234l-2.907,-7.235l3.085,0Z" style="fill:currentColor;fill-rule:nonzero;"></path></svg>
-				</div>
-				{{ accordion.headerText}}
-			</button>
-		</{{accordion.headingLevel}} >
-		<div {{ edcMacros.buildElementAttributes(panelId, 'accordion-panel', stylingClasses, '', panelAttrs) -}} >
-			
-			<div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
-				
-				{% for child in accordion['children'].all() %}
-			
-				  {#-
-					For each child component, attempt to load a custom template for the
-					component handle from the project's files,
-					then the same template from the core Tiltrus files,
-					then a custom default template from the project,
-					and finally the default template for this component type from the core Tiltrus files.
-				  -#}	  
-				  {% if child.type.handle starts with 'row' %}
-					  {%
-						include [
-						  'bodyblocks/project/rows/' ~ child.type.handle,
-						  'bodyblocks/_core/rows/' ~ child.type.handle,
-						  'bodyblocks/project/rows/row',
-						  'bodyblocks/_core/rows/row'
-						] with { 'row' :  child }
-					  %}
-				  {% elseif child.type.handle starts with 'repeater' %}
-					  {%
-						include [
-						  'bodyblocks/project/repeaters/' ~ child.type.handle,
-						  'bodyblocks/_core/repeaters/' ~ child.type.handle,
-						  'bodyblocks/project/repeaters/repeater',
-						  'bodyblocks/_core/repeaters/repeater'
-						] with { 'repeater' :  child }
-					  %}	  
-				  {% elseif child.type.handle starts with 'tabSet' %}
-					{%
-					  include [
-						'bodyblocks/project/tabs/' ~ child.type.handle,
-						'bodyblocks/_core/tabs/' ~ child.type.handle,
-						'bodyblocks/project/tabs/tabSet',
-						'bodyblocks/_core/tabs/tabSet'
-					  ] with { 'tabSet' :  child }
-					%}	  
-				  {% else %}
-					  {%
-						include [
-						  'bodyblocks/project/blocks/' ~ child.type.handle,
-						  'bodyblocks/_core/blocks/' ~ child.type.handle,
-						  'bodyblocks/project/blocks/block',
-						  'bodyblocks/_core/blocks/block'
-						] ignore missing with { 'block' :  child }
-					  %}
-				  {% endif %}
-			
-				{% endfor %}
-				
+	<{{accordion.headingLevel}} id="{{ headingId }}" >
+		<button {{ edcMacros.buildElementAttributes(buttonId, 'accordion-button', buttonClasses, '', buttonAttrs) -}} >
+			<div class="accordion-icon">
+				<svg viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M3.085,0l2.908,7.235l-2.908,7.234l-3.085,0l2.907,-7.234l-2.907,-7.235l3.085,0Zm5.993,0l2.908,7.235l-2.908,7.234l-3.085,0l2.907,-7.234l-2.907,-7.235l3.085,0Z" style="fill:currentColor;fill-rule:nonzero;"></path></svg>
 			</div>
-			{% if accordion.backgroundImage|length != 0 %}
-			  {% set bgAsset = accordion.backgroundImage[0] %}
-			  {{ edcMacros.buildElementBackground(bgAsset, accordion.backgroundOpacity, accordion.backgroundSize, accordion.backgroundRepeat, accordion.backgroundPosition, {'default': '100vw'}) }}
-		  	{% endif %}		
+			{{ accordion.headerText}}
+		</button>
+	</{{accordion.headingLevel}} >
+	<div {{ edcMacros.buildElementAttributes(panelId, 'accordion-panel', stylingClasses, '', panelAttrs) -}} >
+		
+		<div {{ edcMacros.buildClasses('inner', paddingClasses) -}}>
+			
+			{% for child in accordion['children'].all() %}
+		
+			  {#-
+				For each child component, attempt to load a custom template for the
+				component handle from the project's files,
+				then the same template from the core Tiltrus files,
+				then a custom default template from the project,
+				and finally the default template for this component type from the core Tiltrus files.
+			  -#}	  
+			  {% if child.type.handle starts with 'row' %}
+				  {%
+					include [
+					  'bodyblocks/project/rows/' ~ child.type.handle,
+					  'bodyblocks/_core/rows/' ~ child.type.handle,
+					  'bodyblocks/project/rows/row',
+					  'bodyblocks/_core/rows/row'
+					] with { 'row' :  child }
+				  %}
+			  {% elseif child.type.handle starts with 'repeater' %}
+				  {%
+					include [
+					  'bodyblocks/project/repeaters/' ~ child.type.handle,
+					  'bodyblocks/_core/repeaters/' ~ child.type.handle,
+					  'bodyblocks/project/repeaters/repeater',
+					  'bodyblocks/_core/repeaters/repeater'
+					] with { 'repeater' :  child }
+				  %}	  
+			  {% elseif child.type.handle starts with 'tabSet' %}
+				{%
+				  include [
+					'bodyblocks/project/tabs/' ~ child.type.handle,
+					'bodyblocks/_core/tabs/' ~ child.type.handle,
+					'bodyblocks/project/tabs/tabSet',
+					'bodyblocks/_core/tabs/tabSet'
+				  ] with { 'tabSet' :  child }
+				%}	  
+			  {% else %}
+				  {%
+					include [
+					  'bodyblocks/project/blocks/' ~ child.type.handle,
+					  'bodyblocks/_core/blocks/' ~ child.type.handle,
+					  'bodyblocks/project/blocks/block',
+					  'bodyblocks/_core/blocks/block'
+					] ignore missing with { 'block' :  child }
+				  %}
+			  {% endif %}
+		
+			{% endfor %}
+			
 		</div>
+		{% if accordion.backgroundImage|length != 0 %}
+		  {% set bgAsset = accordion.backgroundImage[0] %}
+		  {{ edcMacros.buildElementBackground(bgAsset, accordion.backgroundOpacity, accordion.backgroundSize, accordion.backgroundRepeat, accordion.backgroundPosition, {'default': '100vw'}) }}
+	  {% endif %}		
 	</div>   
 </div>

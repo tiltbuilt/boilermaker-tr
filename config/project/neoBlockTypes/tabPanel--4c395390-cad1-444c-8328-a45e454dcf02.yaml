@@ -128,6 +128,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 3
+group: dfeb7379-27e4-4d75-bcd4-9b428992b97d # Tabs
 handle: tabPanel
 maxBlocks: 0
 maxChildBlocks: 0

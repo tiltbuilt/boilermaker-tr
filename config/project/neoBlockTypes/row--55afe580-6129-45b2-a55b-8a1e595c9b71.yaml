@@ -120,6 +120,7 @@ fieldLayouts:
             width: 100
         name: 'Block Settings'
         sortOrder: 4
+group: ebd16450-5f18-4db1-8944-df83ff503eff # Rows
 handle: row
 maxBlocks: 0
 maxChildBlocks: 4
