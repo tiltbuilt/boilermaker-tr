@@ -1,0 +1,44 @@
+{% do seomatic.meta.setAttributes({
+  "seoTitle": "404"  
+  })
+%}
+
+{% block pageId %}page-password-set{% endblock %}
+
+{% set entry = {
+	'id': 'pw-reset',
+	'pageHeaderContentAlignment': 'text-center',
+	'headerText': page404.page404HeadlineText,
+	'backgroundOpacity': '100',
+	'backgroundSize': 'cover',
+	'backgroundRepeat': 'bg-no-repeat',
+	'backgroundPosition': 'center',
+	'subheadText': '',
+	'headerImage': '',
+	'showBreadcrumbs': 0,
+	'headerIntro': '',
+	'headerLinkButtons': '',
+	'headerBackground': page404.page404HeaderImage,
+} %}
+	
+{% block pageHeader %}		
+	 {{ gMacros.pageHeader(entry) }}	
+ {% endblock %}
+ 
+{% block pageContent %}  
+	<section class="sectionStandard">        
+		<div class="inner">
+			<div class="container">
+				<div class="inner">
+					<div class="row justify-center content-center items-center my-0 mx-negnormal">					
+						<p>{{page404.page404Text}}</p>					
+					</div>
+				</div>
+			</div>
+		</div>        
+	</section>   
+{% endblock %}
+
+{% block pageFooter %}	
+	  {{ gMacros.pageFooter() }}	
+{% endblock %}

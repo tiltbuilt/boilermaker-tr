@@ -1,6 +1,13 @@
+import './app-base.scss';
+import './app-components.scss';
+import './app-utilities.scss';
 import $ from 'jquery';
-import 'owl.carousel';
 import 'lazysizes';
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
+// import styles bundle
+import 'swiper/css/bundle';
+
 import { gsap } from "gsap";
 import { ExpoScaleEase, RoughEase, SlowMo } from "gsap/EasePack";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
@@ -158,7 +165,9 @@ $(document).ready(function() {
 				duration: duration * 1.5,			
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -176,6 +185,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -193,7 +207,9 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -215,6 +231,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -232,7 +253,9 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -254,6 +277,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -271,7 +299,9 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -293,6 +323,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -310,7 +345,9 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -332,6 +369,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -348,7 +390,9 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -370,6 +414,11 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
@@ -386,7 +435,9 @@ $(document).ready(function() {
 				force3D: true,
 				opacity: 1,			
 				// Note: Easing Pack required for easing
-				ease: "expo.out",			
+				ease: "expo.out",
+				onComplete: postRevealFunction,
+				onCompleteParams: [aniItem],			
 				scrollTrigger: {
 					trigger: aniItem,
 					start: "top 95%",
@@ -408,11 +459,22 @@ $(document).ready(function() {
 				opacity: 1,
 				// Note: Easing Pack required for easing
 				ease: "expo.out",
+				onComplete() {
+					for (let i = 0; i < this._targets.length - 1 ; i++) {
+						postRevealFunction(this._targets[i]);
+					}
+				},
 				stagger: 0.15			
 			}),
 			start: "top 95%",
 			once: true
 		});		
+	}
+	
+	/* POST REVEAL FUNCTIONS */
+		
+	function postRevealFunction(el) {		
+		console.log(el);
 	}
 	
 	
@@ -640,6 +702,7 @@ $(document).ready(function() {
 	
 	/* SLIDER SETUP AND FUNCTIONALITY */
 	
+	/*
 	function sliderFlexFix(e) {		
 		var myCarousel = e.target;		
 		var myItems = $(myCarousel).find('.owl-item');		
@@ -651,42 +714,51 @@ $(document).ready(function() {
 			$(this).css('height', heightVal + 'px');
 		});		
 	}
+	*/
 	
-	$('.sliderSet').each(function() {
-		var autoplaysetting = false;
-		var timingsetting, dotvalue, owl;
-		owl = $(this).children('.owl-carousel');
-		timingsetting = $(this).data('timing');
-		if ($(this).data('autoplay') == '1') {
-			autoplaysetting = true;
-		}
-		if (($(this).data('controls') == 'dots') || ($(this).data('controls') == 'both')) {
-			dotvalue = true;
-		} else {
-			dotvalue = false;
-		}
-		owl.owlCarousel({
+	$('.sliderSet').each(function() {		
+		var timingsetting, swiperEl, swiperOptions;
+		swiperEl = '#' + $(this).children('.swiper').attr('id');		
+		timingsetting = $(this).data('timing');		
+		
+		swiperOptions = {
 			loop: true,
-			items: 1,
-			dots: dotvalue,
-			autoplay: autoplaysetting,
-			autoplayTimeout: timingsetting,
-			lazyLoad: true,
-			lazyLoadEager: 2,
-			onInitialized: sliderFlexFix,
-			onResized: sliderFlexFix,
-		});		
-	});
-	
-	
-	$('.owl-prev').click(function() {
-		var mytarget = $(this).data('target');
-		$(mytarget).trigger('prev.owl.carousel');
-	});
-	
-	$('.owl-next').click(function() {
-		var mytarget = $(this).data('target');
-		$(mytarget).trigger('next.owl.carousel');
+			slidesPerView: 1,
+			spaceBetween: 0,
+			centeredSlides: true,									
+		};
+		
+		if ($(this).data('autoplay') == '1') {
+			swiperOptions.autoplay = {
+				delay: timingsetting,
+				disableOnInteraction: false,
+			}
+		}
+		
+		if ($(this).data('effect') == 'fade') {
+			swiperOptions.effect = 'fade';
+			swiperOptions.fadeEffect = {
+				crossFade: true
+			}
+		} 
+		
+		if (($(this).data('controls') == 'dots') || ($(this).data('controls') == 'both')) {
+			swiperOptions.pagination = {
+				el: '.swiper-pagination',
+				clickable: true
+			}
+		}
+		if (($(this).data('controls') == 'buttons') || ($(this).data('controls') == 'both')) {
+			swiperOptions.navigation = {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev'
+			}
+		}
+		
+		const mySwiper = new Swiper(swiperEl, swiperOptions);
+		mySwiper.init();
+		
+				
 	});
 	
 	/* FIX FORMS TO WORK WITH BLITZ CACHE BY DYNAMICALLY RESETTING CSRF TOKENS AND HASH VALUES */

@@ -26,7 +26,7 @@
 {% endif %}
 
 {# Set block type handle as class name for styling #}
-{% set blockClass = block.type.handle %}
+{% set blockClass = block.type.handle ~ ' swiper-slide' %}
 
 {# Get styling classes for block and assemble as class string #}
 {% set stylingClasses = [] %}
@@ -102,9 +102,13 @@
 	  </div>
   </div>
   
-  {% if block.backgroundImage|length != 0 %}
-	{% set bgAsset = block.backgroundImage[0] %}
-	{{ edcMacros.buildElementBackground(bgAsset, block.backgroundOpacity, block.backgroundSize, block.backgroundRepeat, block.backgroundPosition, {'default': '100vw'}, 1) }}
-  {% endif %}
+    {% if block.backgroundVideo|length != 0 %}
+	  {% set bgAsset = block.backgroundVideo[0] %}
+	{% elseif block.backgroundImage|length != 0 %}
+	  {% set bgAsset = block.backgroundImage[0] %}
+	{% else %}
+	   {% set bgAsset = null %}  
+	{% endif %}
+	{{ edcMacros.buildElementBackground(bgAsset, block.backgroundOpacity, block.backgroundSize, block.backgroundRepeat, block.backgroundPosition, {'default': '100vw'}) }}
    
 </div>

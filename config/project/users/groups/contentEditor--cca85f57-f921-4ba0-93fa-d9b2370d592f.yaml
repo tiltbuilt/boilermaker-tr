@@ -1,0 +1,136 @@
+description: ''
+handle: contentEditor
+name: 'Content Editor'
+permissions:
+  - accessplugin-freeform
+  - accessplugin-navigation
+  - accessplugin-retour
+  - accessplugin-seomatic
+  - accesscp
+  - registerusers
+  - assignuserpermissions
+  - assignusergroups
+  - editusers
+  - 'publishentries:ff205767-6ee6-4142-8f7a-3935940f647e' # Home
+  - 'publishpeerentrydrafts:ff205767-6ee6-4142-8f7a-3935940f647e' # Home
+  - 'deletepeerentrydrafts:ff205767-6ee6-4142-8f7a-3935940f647e' # Home
+  - 'editpeerentrydrafts:ff205767-6ee6-4142-8f7a-3935940f647e' # Home
+  - 'editentries:ff205767-6ee6-4142-8f7a-3935940f647e' # Home
+  - 'createentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'publishentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'deleteentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'publishpeerentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'deletepeerentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'editpeerentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'publishpeerentrydrafts:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'deletepeerentrydrafts:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'editpeerentrydrafts:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'editentries:aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e' # Modals
+  - 'createentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'publishentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'deleteentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'publishpeerentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'deletepeerentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'editpeerentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'publishpeerentrydrafts:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'deletepeerentrydrafts:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'editpeerentrydrafts:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'editentries:6825f88f-d9e6-4971-a598-8beb758fc4f0' # Pages
+  - 'editglobalset:b29653d8-1c46-4e51-a645-33af6226b04d' # 404 Page
+  - 'editglobalset:fbcfd40e-0b37-4500-821c-9cf6bfb800b5' # Company Info
+  - 'editglobalset:65ada5a5-dbd4-4614-ab4b-8e990c7aa7a7' # Globals
+  - 'saveassetinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'createfoldersinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'deletefilesandfoldersinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'replacefilesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'editimagesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'editpeerfilesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'replacepeerfilesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'deletepeerfilesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'editpeerimagesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'viewpeerfilesinvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'viewvolume:9a898db5-e6a1-40d1-a25c-d4999f7f3efb'
+  - 'saveassetinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'createfoldersinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'deletefilesandfoldersinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'replacefilesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'editimagesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'editpeerfilesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'replacepeerfilesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'deletepeerfilesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'editpeerimagesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'viewpeerfilesinvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'viewvolume:bec7e792-9c04-4ac3-a964-f609cdd21f15'
+  - 'saveassetinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'createfoldersinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'deletefilesandfoldersinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'replacefilesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'editimagesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'editpeerfilesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'replacepeerfilesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'deletepeerfilesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'editpeerimagesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'viewpeerfilesinvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'viewvolume:dd29b55e-b792-47a2-b650-b8202090ebe5'
+  - 'utility:queue-manager'
+  - 'utility:clear-caches'
+  - 'utility:blitz-cache'
+  - 'utility:generate-transforms-utility'
+  - 'blitz:refresh'
+  - freeform-dashboardaccess
+  - freeform-submissionsread
+  - freeform-submissionsreadindividual
+  - freeform-submissionsmanage
+  - freeform-submissionsmanageindividual
+  - freeform-submissionsaccess
+  - freeform-formscreate
+  - freeform-formsmanage
+  - freeform-formsmanageindividual
+  - freeform-formsaccess
+  - freeform-fieldsmanage
+  - freeform-fieldsaccess
+  - freeform-notificationsmanage
+  - freeform-notificationsaccess
+  - freeform-access-quick-export
+  - freeform-pro-exportprofilesmanage
+  - freeform-pro-exportprofilesaccess
+  - navigation-createnavs
+  - 'navigation-editnav:9ae8414f-0f17-4394-84a7-73b3cc03101f'
+  - 'navigation-managenav:9ae8414f-0f17-4394-84a7-73b3cc03101f'
+  - 'navigation-editnav:0f348177-83a7-43db-9b8b-e18046ed4978'
+  - 'navigation-managenav:0f348177-83a7-43db-9b8b-e18046ed4978'
+  - 'navigation-editnav:e1823762-399c-413f-ada8-dd3119859255'
+  - 'navigation-managenav:e1823762-399c-413f-ada8-dd3119859255'
+  - 'retour:dashboard'
+  - 'retour:redirects'
+  - 'seomatic:dashboard'
+  - 'seomatic:global-meta:general'
+  - 'seomatic:global-meta:twitter'
+  - 'seomatic:global-meta:facebook'
+  - 'seomatic:global-meta:robots'
+  - 'seomatic:global-meta:humans'
+  - 'seomatic:global-meta:ads'
+  - 'seomatic:global-meta:security'
+  - 'seomatic:global-meta'
+  - 'seomatic:content-meta:general'
+  - 'seomatic:content-meta:twitter'
+  - 'seomatic:content-meta:facebook'
+  - 'seomatic:content-meta:sitemap'
+  - 'seomatic:content-meta'
+  - 'seomatic:site-settings:identity'
+  - 'seomatic:site-settings:creator'
+  - 'seomatic:site-settings:social'
+  - 'seomatic:site-settings:sitemap'
+  - 'seomatic:site-settings:miscellaneous'
+  - 'seomatic:site-settings'
+  - 'seomatic:tracking-scripts:gtag'
+  - 'seomatic:tracking-scripts:googletagmanager'
+  - 'seomatic:tracking-scripts:facebookpixel'
+  - 'seomatic:tracking-scripts:linkedininsight'
+  - 'seomatic:tracking-scripts:hubspot'
+  - 'seomatic:tracking-scripts:pinteresttag'
+  - 'seomatic:tracking-scripts:fathom'
+  - 'seomatic:tracking-scripts:matomo'
+  - 'seomatic:tracking-scripts:plausible'
+  - 'seomatic:tracking-scripts:googleanalytics'
+  - 'seomatic:tracking-scripts'

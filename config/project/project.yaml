@@ -1,4 +1,4 @@
-dateModified: 1636132380
+dateModified: 1654886755
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
@@ -115,6 +115,7 @@ meta:
     c09f83e7-2a34-4a4b-8655-6fbff6ce3705: 'Left Margin' # Left Margin
     c09231cf-ab93-4b67-a685-12de7e0f3607: '404 Page Text' # 404 Page Text
     c86424f7-a5ef-49e2-9708-78b64e41ff95: Slide # Slide
+    cca85f57-f921-4ba0-93fa-d9b2370d592f: 'Content Editor' # Content Editor
     cddf29d7-c8ae-4fd2-b913-db04d3c2593b: Column # Column
     cf887c63-0f9d-4698-a9ad-1e5f23027302: 'Content Wrapper' # Content Wrapper
     cf6364a2-8eb1-422c-88b8-7f4b53b26004: 'Row Top Margin' # Row Top Margin
@@ -156,6 +157,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true
+    licenseKey: IFSHYLFRF0N0Z5V2SXXAJ13J
     schemaVersion: 3.10.0
   blitz-recommendations:
     edition: standard
@@ -180,7 +182,8 @@ plugins:
   freeform:
     edition: lite
     enabled: true
-    schemaVersion: 3.3.2
+    licenseKey: TWWQEIVONPSQYXL7LXLF6VZZ
+    schemaVersion: 3.6.2
     settings:
       ajaxByDefault: false
       alertNotificationRecipients: null
@@ -249,6 +252,7 @@ plugins:
   icon-picker:
     edition: standard
     enabled: true
+    licenseKey: RAV8M4LD6LGRFFGD5QM0IPAO
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -259,18 +263,22 @@ plugins:
   imager-x:
     edition: pro
     enabled: true
+    licenseKey: 9S2CVWM3OY52V2514W37YL1Z
     schemaVersion: 3.0.0
   linkit:
     edition: standard
     enabled: true
+    licenseKey: SVWVAK63N51CORXZGQU2OZ9D
     schemaVersion: 1.0.8
   navigation:
     edition: standard
     enabled: true
+    licenseKey: WTCPE7Y9YUXW49CSZQED2D63
     schemaVersion: 1.0.21
   neo:
     edition: standard
     enabled: true
+    licenseKey: AASEMG6JLWIWW5VG4VNUMGUM
     schemaVersion: 2.11.6
   redactor:
     edition: standard
@@ -291,10 +299,12 @@ plugins:
   retour:
     edition: standard
     enabled: true
+    licenseKey: CK4NBTTZ2HB2H4TLN8JW27O5
     schemaVersion: 3.0.10
   seomatic:
     edition: standard
     enabled: true
+    licenseKey: 9LVI06362ZK7RNJH0MU1SYAS
     schemaVersion: 3.0.11
     settings:
       addHrefLang: true
@@ -338,9 +348,3 @@ system:
   retryDuration: null
   schemaVersion: 3.7.8
   timeZone: America/Chicago
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true
