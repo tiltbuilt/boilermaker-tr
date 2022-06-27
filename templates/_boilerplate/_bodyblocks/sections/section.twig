@@ -1,0 +1,119 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Page Section Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% for item in section['children'].collect() %}
+	{% if item.type.handle == 'childrenSection' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsSection' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute value #}
+{% if section.customId is defined and section.customId != '' %}
+	{% set blockId = section.customId %}
+{% else %}
+	{% set blockId = 'section-' ~ section.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ section.type.handle %}
+{% set innerClass = 'inner ' ~ section.type.handle ~ '-inner' %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create array to collect style changes to primary element #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set bgClasses = null %}
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+	
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# Set variable for background settings if there are any #}
+		
+	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+{% endif %}
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (section['customClassList'] is defined ? section.customClassList : null) %}
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if section.revealAnimation is defined and section.revealAnimation != '' %}  
+
+	{% set animClasses = animClasses|merge(['anim-wrapper']) %}
+	{% set revealClass = section.revealAnimation %}
+	{% set revealClass = section.revealAnimation %}
+	{% if section.animateChildren is not empty %}
+		{% if section.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if section.staggerChildReveals is not empty %}
+				{% if section.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<section {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}>	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}> 
+			{% if contentKids != null %}
+				{% for child in clone(contentKids.children).collect() %}			
+					
+					{% if child.type.handle starts with 'container' %}
+						{%
+  						include [
+							'_project/_bodyblocks/containers/' ~ child.type.handle,
+							'_boilerplate/_bodyblocks/containers/' ~ child.type.handle,
+							'_project/_bodyblocks/containers/container',
+							'_boilerplate/_bodyblocks/containers/container'
+						] with { 'container' : child,  }			  
+						%}	  
+					{% endif %}
+					
+				{% endfor %}
+			{% endif %}
+		</div> 
+	
+		{% if bgClasses != null %}		  
+			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+		{% endif %}
+	</div>	   
+</section>

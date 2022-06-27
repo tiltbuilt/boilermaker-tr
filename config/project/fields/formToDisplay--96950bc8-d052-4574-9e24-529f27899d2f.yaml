@@ -1,0 +1,10 @@
+columnSuffix: jaggzgwy
+contentColumnType: integer
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: formToDisplay
+instructions: null
+name: 'Form to Display'
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: Solspace\Freeform\FieldTypes\FormFieldType

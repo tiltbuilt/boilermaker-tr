@@ -1,0 +1,34 @@
+columnSuffix: jxwbggzq
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: blockLayout
+instructions: null
+name: 'Block Layout'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Vertical
+        -
+          - value
+          - v
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Horizontal
+        -
+          - value
+          - h
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

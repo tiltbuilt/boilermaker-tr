@@ -1,0 +1,48 @@
+childBlocks: null
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  dcf494e5-4742-4109-98f7-2913daa99bd9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9a0de1e3-8425-4d59-8dc1-a937bc54af1f
+            warning: null
+            width: 100
+          -
+            fieldUid: 20f7930f-8c26-46a6-a6c5-218d9f97b7de # Row Horizontal Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 324b54ac-0d4d-4294-8efc-4f77d3d058ba
+            warning: null
+            width: 50
+          -
+            fieldUid: f8c0e88c-b8e4-4b28-8631-86132b814062 # Row Vertical Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0f958ef6-9189-4e31-8ebe-dbe4ce2ade0f
+            warning: null
+            width: 50
+        name: 'Row Alignment'
+        uid: 034c58db-f366-4ac9-8085-3f15693e20bc
+group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Styles
+handle: styleControlsRowAlignment
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Style Controls - Row Alignment'
+sortOrder: 108
+topLevel: false

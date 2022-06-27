@@ -1,0 +1,27 @@
+columnSuffix: qgoivlag
+contentColumnType: text
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: subheadText
+instructions: null
+name: 'Subhead Text'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: HeadingText.json
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

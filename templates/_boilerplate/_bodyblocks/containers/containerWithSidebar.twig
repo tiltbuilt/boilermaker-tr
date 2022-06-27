@@ -1,0 +1,140 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Container with Main & Sidebar Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% for item in container.children.all() %}
+	{% if item.type.handle == 'childrenContainerMainSidebar' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsContainer2Column' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute value #}
+{% if container.customId is defined and container.customId != '' %}
+	{% set blockId = container.customId %}
+{% else %}
+	{% set blockId = 'container-' ~ container.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block container ' ~ container.type.handle %}
+{% set innerClass = 'inner ' ~ container.type.handle ~ '-inner' %}
+
+{% set widthClass = '' %}
+{% if container.fullScreenWidth is not empty and container.fullScreenWidth == 1 %}
+	{% set widthClass = 'container-fullwidth' %}	
+{% endif %}	
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner, bg and interior row #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set rowClasses = [] %}
+{% set bgClasses = null %}
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+			
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# Set variable for background settings if there are any #}
+		
+	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+	{# get classes for interior row adjustments if any #}
+	
+	{% set rowAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsRow').one() %}
+	{% if rowAdjusts is not empty %}
+		{% for rowItem in clone(rowAdjusts.children).all() %}
+			{% set rowClasses = rowClasses|merge([rowItem]) %}
+		{% endfor %}
+	{% endif %}
+	
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (container['customClassList'] is defined ? container.customClassList : null) %}
+
+{# add widthClass to custom string to ensure it is added to container class list #}
+{% set customClassString = customClassString ~ ' ' ~ widthClass %}
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if container.revealAnimation is defined and container.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper']) %}
+	{% set revealClass = container.revealAnimation %}
+	{% if container.animateChildren is not empty %}
+		{% if container.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if container.staggerChildReveals is not empty %}
+				{% if container.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+			<div {{ gMacros.buildClassList('row', rowClasses, null) -}}>
+				{% if contentKids != null %}
+					{% for child in clone(contentKids.children).collect() %}	  
+						
+						{#-
+						For each child component, attempt to load a custom template for the
+						component handle from the project's files,
+						then the same template from the core Tiltrus files,
+						then a custom default template from the project,
+						and finally the default template for this component type from the core Tiltrus files.
+						-#}
+							
+							
+						{%
+						include [
+							'_project/_bodyblocks/columns/' ~ child.type.handle,
+							'_boilerplate/_bodyblocks/columns/' ~ child.type.handle,
+							'_project/_bodyblocks/columns/column',
+							'_boilerplate/_bodyblocks/columns/column'
+						] with { 'column' :  child }
+						%}						  
+						
+					{% endfor %}
+				{% endif %}
+			</div>			
+		</div>
+		{% if bgClasses != null %}		  
+			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+		{% endif %}		
+	</div>     
+</div>

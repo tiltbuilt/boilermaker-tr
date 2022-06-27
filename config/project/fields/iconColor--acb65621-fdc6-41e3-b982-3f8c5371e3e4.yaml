@@ -1,0 +1,45 @@
+columnSuffix: arccdbmj
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: iconColor
+instructions: null
+name: 'Icon Color'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - value
+          - text-black
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - text-white
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,23 @@
+columnSuffix: oziaqctv
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: font
+instructions: null
+name: Font
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

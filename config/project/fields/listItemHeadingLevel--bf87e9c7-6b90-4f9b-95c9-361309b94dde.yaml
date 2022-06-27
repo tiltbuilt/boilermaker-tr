@@ -1,0 +1,78 @@
+columnSuffix: xljjktmf
+contentColumnType: string
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: listItemHeadingLevel
+instructions: null
+name: 'List Item Heading Level'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Choose
+        -
+          - value
+          - div
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - h2
+        -
+          - value
+          - h2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h3
+        -
+          - value
+          - h3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h4
+        -
+          - value
+          - h4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h5
+        -
+          - value
+          - h5
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h6
+        -
+          - value
+          - h6
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,105 @@
+{#
+/**
+ * Tilt Boilermaker - Partial - (Standard) Menu - Standard
+ * -----
+ * Expects the top-level nodes from a Navigation as `menuNodes`
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{% import _self as macros %}
+
+{% macro navigationNodes(node, level, baseClass, hasDropdown, headingLevel) %}
+  {% import _self as macros %}
+
+  {% set nodeClasses = [] %}  
+ 
+  {% if baseClass == 'main-menu' %} 
+	{% set topLevelClasses = ['menu-item'] %}
+  {% else %}
+	{% set topLevelClasses = [] %}
+  {% endif %} 
+	
+  {% set level = level|length ? level + 1 : 1 %}
+  
+  {%- if node.classes|length -%}
+	{%- set nodeClasses = nodeClasses|merge([node.classes]) -%}
+  {%- endif -%}
+
+  {%- if node.active -%}
+	{%- set nodeClasses = nodeClasses|merge(['active']) -%}
+  {%- endif -%}
+
+  {%- if node.hasActiveChild -%}
+	{%- set nodeClasses = nodeClasses|merge(['active_child']) -%}
+  {%- endif -%}
+
+  {%- if node.level == 1 -%}
+	{%- set nodeClasses = nodeClasses|merge([baseClass ~ '-top']) -%}
+  {% endif %}
+  
+  {% if node.level == 1 %}  	
+	
+	  {% if node.hasDescendants %}
+		{%- set topLevelClasses = topLevelClasses|merge([baseClass ~ '-parent']) -%}	  
+	  {%- endif -%}
+	
+	  {% set nodeClasses = nodeClasses|merge(topLevelClasses) %}
+  {%- elseif node.level == 2 and node.children|length -%}
+	  {%- set nodeClasses = nodeClasses|merge(['menu_item_children']) -%}
+  {%- endif -%}
+  
+  {# If Link Styling for buttons is set, override nodeClasses #}
+  {% if node.nodeStyling is defined and node.nodeStyling|length %}
+	{% set nodeClasses = nodeClasses|merge([node.nodeStyling]) %}
+  {% else %}
+
+  {% endif %}
+
+  <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>	
+	{% if node.level == 1 and headingLevel != null %}
+		<{{- headingLevel -}}>
+	{% endif %}
+	<a href="{{ node.url }}" title="{{ node.title }}"{% if node.newWindow %} target="_blank"{% endif %}>
+	  <span>{{ node.title }}</span>
+	</a>
+	{% if node.level == 1 and headingLevel != null %}
+		</{{- headingLevel -}}>
+	{% endif %}
+	
+{% if node.hasDescendants %}
+  {% if node.level == 1 %}
+	<div class="{{ baseClass ~ '-sub' }}">
+	  <ul>
+		{% for subnode in node.children.all() %}
+		  {{ macros.navigationNodes(subnode, level) }}
+		{% endfor %}
+	  </ul>
+	</div>
+  {% else %}
+	<ul>
+	  {% for subnode in node.children.all() %}
+		{{ macros.navigationNodes(subnode, level) }}
+	  {% endfor %}
+	</ul>
+  {% endif %}
+{% endif %}
+  </li>
+{% endmacro %}
+
+{#
+  Render top-level nodes
+#}
+
+{% if headingLevel is not defined %}
+	{% set headingLevel = null %}
+{% endif %}
+
+{% if menuNodes is defined and menuNodes|length %}
+  {% for node in menuNodes %}
+	{{ macros.navigationNodes(node, 1, baseClassName, hasDrop, headingLevel) }}
+  {% endfor %}
+{% endif %}

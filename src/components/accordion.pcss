@@ -1,0 +1,108 @@
+/**
+ * components/accordion.css
+ *
+ * Accordion and Accordion Set component specific styles
+ *
+ */
+ 
+ .accordionSet {
+	 // These classes must stay in order to ensure functionality
+	
+	 //The default classes and style below can be changed on a per-project basis
+	 @apply mb-normal lg:mb-2x;
+ }
+ 
+ .accrdionSet-inner {
+	 // These classes must stay in order to ensure functionality
+	 
+	  //The default classes and style below can be changed on a per-project basis
+ }
+ 
+ .accordion {
+	// These classes must stay in order to ensure functionality
+	overflow: hidden;
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-half;
+	
+	&.accordion-button-header {
+		//these classes should not be changed. They affect the header tag that wraps the button and are set this way to prevent gaps between the button and the panel
+		padding: 0px !important;
+		margin: 0px !important;
+		display: block !important;
+		width: 100% !important;	
+	}	
+ }
+ 
+ .accordion-button {		
+	// These classes must stay in order to ensure functionality
+	@apply m-0 relative w-full block;
+	//The default classes and style below can be changed on a per-project basis
+	@apply text-left pl-16 py-3 pr-3 uppercase text-lg bg-black text-white font-bold;
+	
+	
+	 
+	.accordion-icon {
+		@apply absolute p-4 flex items-center justify-center;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: auto;					
+		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		
+		svg {
+			height: 1.5rem;
+			width: 1.5rem;			
+			transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			fill: currentColor;
+		}
+	}
+		
+	&:hover {
+		  
+	/* Add hover styles here for the accordion button and the accordion icon */
+		  
+		.accordion-icon {
+			 
+		}
+	}
+		
+	&.expanded {
+		 
+		/* Add/change styles here to customize the appearance of the accordion button when the accordion is expanded */
+		 
+		.accordion-icon {
+			 
+		/* Add/change styles here to customize the appearance of the accordion icon when the accordion is expanded */
+		
+			svg {
+				transform: rotate(90deg);
+			}
+		}
+		
+		&:hover {
+		/* Add/change styles here to customize the hover appearance of the accordion icon when the accordion is expanded */
+		
+			.accordion-icon {
+					 
+			}
+		}
+	}	
+}
+  
+.accordion-panel {
+	// These classes must stay in order to ensure functionality
+	overflow: hidden;	
+	height: 0;
+	transition: height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+	 
+	&.init-expanded {			
+		height: auto;
+	}
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply bg-gray-200;
+}
+
+.accordion-inner {
+	@apply p-2x;  
+}

@@ -1,0 +1,56 @@
+columnSuffix: lsujqwbd
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: buttonSize
+instructions: null
+name: 'Button Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (no change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - btn-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - btn-md
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - btn-lg
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

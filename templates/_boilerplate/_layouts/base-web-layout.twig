@@ -1,0 +1,71 @@
+{#
+/**
+ * Tilt Boilermaker - Base Web Template - Used for loading standard (non-ajax) page requests
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# -- Base web layout template that all web requests inherit from -- #}
+{% extends "_boilerplate/_layouts/global-variables.twig" %}
+
+{%- block htmlPage -%}
+	{% minify %}
+	<!DOCTYPE html>
+		<html lang="{{ craft.app.language |slice(0,2) }}">
+		{% block headTag %}
+			<head>
+		{% endblock headTag %}
+			{% include "_boilerplate/_partials/head-meta.twig" %}
+			{# -- Page content that should be included in the <head> -- #}
+			{% block headContent %}
+			{% endblock headContent %}
+			</head>
+
+			<body id="{{ block('pageId') }}" {% if block('bodyAttr') is defined %}{{block('bodyAttr')}}{% endif %}>					
+				{% block bodyContent %}
+					{# -- Page content that should be included in the <body> -- #}
+					<!--[if lte IE 10]>
+						<div style="padding: 1.0em; margin-bottom: 1.0em; background-color: #0077CC; color: #FFF; font-size: 18px;">
+						  <p>
+							We are sorry, your web browser is outdated and is not supported by this website. Please consider upgrading to a newer, more secure web browser (such as <a href="https://www.mozilla.org/en-US/firefox/" style="color: #FFF;">Mozilla Firefox</a>) or visiting from a different device with a newer browser to have a better experience on this website.
+						  </p>
+						</div>
+						<style type="text/css">
+						  .loader { display: none; z-index: 0; visibility: hidden; opacity: 0; }
+						</style>
+					  <![endif]-->
+					{{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }}
+				{% endblock bodyContent %}				
+				
+				{#-- Site-wide JavaScript --#}
+				{{ craft.twigpack.includeSafariNomoduleFix() }}
+				{{ craft.twigpack.includeCssModule("/css/app.css") }}
+				<noscript>
+					<style type="text/css">
+						  .loader {
+							display: none;
+							z-index: 0;
+							visibility: hidden;
+							opacity: 0;
+						  }
+					</style>
+				</noscript>
+				{{ craft.twigpack.includeJsModule("/js/app.js") }}
+				
+				{# -- Any JavaScript that should be included before </body> -- #}
+				{% block footerJs %}
+					{{ gSettings.footerEmbeds|raw }}
+					{{ gMacros.entryFooterEmbeds(entry ??? category ??? null) }}
+				{% endblock footerJs %}
+			</body>
+		</html>
+	{% endminify %}
+{%- endblock htmlPage -%}

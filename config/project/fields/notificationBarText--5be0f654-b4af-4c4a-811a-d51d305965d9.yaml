@@ -1,0 +1,27 @@
+columnSuffix: nbkmljbr
+contentColumnType: text
+fieldGroup: 7450367a-cdf2-446d-ad60-d78b932299d5 # Globals
+handle: notificationBarText
+instructions: null
+name: 'Notification Bar Text'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: Simple.json
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

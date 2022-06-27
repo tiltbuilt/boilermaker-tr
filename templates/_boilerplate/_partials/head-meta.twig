@@ -1,0 +1,20 @@
+{#
+/**
+ * Tilt Boilermaker - Header meta tags
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="home" href="{{ siteUrl }}" />
+
+{# SEOMatic handles title and SEO-related meta data #}
+{% hook 'seomaticRender' %}

@@ -1,0 +1,16 @@
+columnSuffix: byvnokpb
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: iconAsset
+instructions: null
+name: 'Icon Asset'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - 'sprite:ui-svg-sprites.svg'
+  remoteSets: null
+  showLabels: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

@@ -1,0 +1,100 @@
+columnSuffix: ocvazjwc
+contentColumnType: string
+fieldGroup: 1bf643d4-1bb3-4e85-abe5-0a6510c964a4 # Animations
+handle: revealAnimation
+instructions: null
+name: 'Reveal Animation'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Animation'
+        -
+          - value
+          - no-animation
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Fade In'
+        -
+          - value
+          - fade-in
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Up and Fade In'
+        -
+          - value
+          - slide-up-fade-in
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Down and Fade In'
+        -
+          - value
+          - slide-down-fade-in
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Left and Fade In'
+        -
+          - value
+          - slide-left-fade-in
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Right and Fade In'
+        -
+          - value
+          - slide-right-fade-in
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scale Down and Fade In'
+        -
+          - value
+          - scale-down-fade-in
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scale Up and Fade In'
+        -
+          - value
+          - scale-up-fade-in
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

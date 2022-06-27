@@ -1,0 +1,39 @@
+/**
+* components/column.css
+*
+* Column component specific styles
+*
+*/
+ 
+.column, .columnHalf, .columnMain, .columnSidebar {
+  // These classes must stay in order to ensure functionality
+  @apply relative;
+  //The default classes and style below can be changed on a per-project basis
+  @apply m-0;
+}
+ 
+.columnHalf {
+  // These classes must stay in order to ensure functionality
+  @apply w-full md:w-1/2;
+  //The default classes and style below can be changed on a per-project basis
+}
+
+.columnMain {
+  // These classes must stay in order to ensure functionality
+  @apply w-full md:w-3/5 lg:w-3/4;
+  //The default classes and style below can be changed on a per-project basis
+}
+
+.columnSidebar {
+  // These classes must stay in order to ensure functionality
+  @apply w-full md:w-2/5 lg:w-1/4;
+  //The default classes and style below can be changed on a per-project basis
+}
+
+.column-inner, .columnHalf-inner, .columnMain-inner, .columnSidebar-inner {
+  
+  //The default classes and style below can be changed on a per-project basis
+  // These padding sizes are based off of the padding defaults set on the inner divs for containers and the margin sizes for rows.
+  @apply px-normal lg:px-2x xl:px-3x py-normal;   
+}
+ 

@@ -1,0 +1,89 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Long Format Text Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set styleAdjusts = block.children.one() %}
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'longFormatText-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ block.type.handle %}
+
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+		
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = block.revealAnimation %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList('inner', padClasses, null) -}}>	
+			{{ block.longFormatText }}
+		</div>		
+	</div>     
+</div>

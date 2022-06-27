@@ -1,9 +1,0 @@
-siteUid: null
-sortOrder: 6
-template: /freeform-custom/bootstrap/view
-uriParts:
-  - freeform-custom/bootstrap/
-  -
-    - slug
-    - '[^\/]+'
-uriPattern: 'freeform-custom/bootstrap/<slug:[^\/]+>'

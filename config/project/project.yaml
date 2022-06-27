@@ -1,171 +1,296 @@
-dateModified: 1636132380
+dateModified: 1656357171
 email:
-  fromEmail: $SITE_EMAIL
-  fromName: $SITE_NAME
-  replyToEmail: null
-  template: ''
-  transportSettings:
-    encryptionMethod: tls
-    host: $SMTP_HOSTNAME
-    password: $SMTP_PASSWORD
-    port: $SMTP_PORT
-    timeout: '10'
-    useAuthentication: '1'
-    username: $SMTP_USERNAME
-  transportType: craft\mail\transportadapters\Smtp
+  fromEmail: brian@tiltthis.com
+  fromName: 'Boilermaker Craft 4'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  documents:
+    hasUrls: true
+    name: Documents
+    settings:
+      path: $DOC_ASSETS_PATH
+    type: craft\fs\Local
+    url: $DOC_ASSETS_URL
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: $IMAGE_ASSETS_PATH
+    type: craft\fs\Local
+    url: $IMAGE_ASSETS_URL
+  videos:
+    hasUrls: true
+    name: Videos
+    settings:
+      path: $VIDEO_ASSETS_PATH
+    type: craft\fs\Local
+    url: $VIDEO_ASSETS_URL
 meta:
   __names__:
-    0a13d706-cc80-4445-89e9-fae2fc47ec96: 'Layout Location - Sidebar' # Layout Location - Sidebar
-    0bbbd8ee-e4d8-4956-8235-4e6e071a5dc6: 'Repeater - Entry Child List' # Repeater - Entry Child List
-    0ce7f3d0-9770-4707-9b9c-e4af24a9a161: 'Half Width Column' # Half Width Column
-    0e94bbb7-66d9-49bc-9423-12aab53c42ad: 'SEO - Image' # SEO - Image
-    1d3c3f64-df4f-473f-b02d-7fc44b6a6227: 'Half Width Column' # Half Width Column
-    1f0d4a47-efc6-48c4-9319-49d3b2a95e57: 'Button Group' # Button Group
-    2b057849-b29b-43da-8a36-63bdfbaf4a9b: 'Bottom Margin' # Bottom Margin
-    2d60dc17-adb5-47a3-9b3a-954dd64ca819: 'Button Hover Color' # Button Hover Color
-    2fd36734-c062-478a-a575-7a9ad2770daa: Accordions # Accordions
-    3ba3ff5e-3ac2-447c-bec5-88ba72627b3b: 'Content Elements' # Content Elements
-    03efdc90-1905-462a-907c-bb109f5b3606: Sliders # Sliders
-    3f0b3749-560c-4a7a-bfea-310a7303d89c: 'Simple Text' # Simple Text
-    3f3a2d02-b06a-4a4d-9b30-cfc0028787dc: 'Page Builder' # Page Builder
-    04b97c49-4dd3-437c-b1a9-5d4b96ebdcfe: 'Repeater - Specific Entry List' # Repeater - Specific Entry List
-    4c395390-cad1-444c-8328-a45e454dcf02: 'Tab Panel' # Tab Panel
-    4db257b0-8de7-4943-b5b2-d690edc0b279: Columns # Columns
-    5acfa166-4b23-426f-9901-4ab9ad411c19: 'Bottom Padding' # Bottom Padding
-    5b37cd5f-43e2-438f-822d-c7d8d5eb03e5: 'Layout Locations' # Layout Locations
-    5df3bb6c-b909-4bb6-85d5-24b7f8764a56: Containers # Containers
-    6e019a3b-9cb2-46e9-bcc7-9cfdcbf47fbb: 'List Item Display Style' # List Item Display Style
-    6f4c14c7-1d19-458d-a2be-3f54fe3b7391: 'Icon and Content' # Icon and Content
-    8a388ffa-9931-4822-a804-181f4829543f: 'Slide Content Column' # Slide Content Column
-    8afb23c5-d769-4920-80fa-e4a3ee986307: 'Slider Set' # Slider Set
-    9a9cdbdf-c07c-4d7d-b9e3-2774fac8b38f: 'Thumbnail Placeholder Image' # Thumbnail Placeholder Image
-    9a94bf01-4261-4609-809a-ed0c409fd686: 'Main Column' # Main Column
-    9e893957-b0e2-4722-8a8c-02ec98c8e837: 'Top Margin' # Top Margin
-    19ec06f2-3590-4561-8194-3ac0f91bdfb9: 'Subhead Position' # Subhead Position
-    24abe73a-0375-402e-a887-e9d6d9bf99ab: Image # Image
-    24ffc041-4ca2-41b8-8903-d03b454f03fe: 'Intro Text Bottom Margin' # Intro Text Bottom Margin
-    25cc4381-5cfd-4280-a96c-80e3995aab06: 'Link Name' # Link Name
-    28a71b90-dde7-4d14-b9cc-67776b58c1df: 'Google Map Column' # Google Map Column
-    39d6f4bb-b73e-430f-bc63-2b8408f7f1a6: Video # Video
-    50aeb9ea-d0df-4503-af9a-4831d84332a6: 'Button Size' # Button Size
-    0051d1c8-a8a0-4b8a-a480-2c1ac079c3af: 'Map Minimum Height' # Map Minimum Height
-    54a8a41f-5d4e-4ab3-8483-f819874032cc: Embed # Embed
-    55afe580-6129-45b2-a55b-8a1e595c9b71: 'Multicolumn Layout Row' # Multicolumn Layout Row
-    59dac4ee-2a3a-4494-9898-475a0c94d46c: Containers # Containers
-    65ada5a5-dbd4-4614-ab4b-8e990c7aa7a7: Globals # Globals
-    66d43c25-adc0-41c0-ab23-e93d342b0a29: 'Repeater - Entry List' # Repeater - Entry List
-    69beef15-fb94-49ac-910c-58b4b0a4d710: '404 Page Headline Text' # 404 Page Headline Text
-    69dd5f8d-3ae1-4cb8-aa86-96ce355c23a6: Home # Home
-    70f562e1-87b9-4512-ad02-d5ffbc2f12dc: 'Button Group' # Button Group
-    71dd9dc2-2fbd-441f-9c85-02212a836fcf: Embed # Embed
-    73b7ce36-6244-427a-ab1a-38550522e2b9: 'Modal Builder' # Modal Builder
-    76c29aa7-c5a9-460a-92c8-deba792d3954: 'Right Margin' # Right Margin
-    77dfb385-bcea-42a9-afa0-fe1cc6463f2a: 'SEO -  Robots' # SEO -  Robots
-    78c1fc91-ebd7-4e99-a80c-5813ed187bfc: 'Header - Image' # Header - Image
-    86a6b32a-abd4-4c79-b100-6d0b901068e2: 'Repeater Items' # Repeater Items
-    098ffc16-35b2-4d07-9672-0f4e9b391e22: 'Modal Container' # Modal Container
-    204d0f92-949f-4da7-8fdd-eecdf811bf37: 'Button Color' # Button Color
-    241fb73a-0ccd-4912-b45d-62360f9c9b06: 'Tab Panel Set' # Tab Panel Set
-    307f5062-1b6a-40b7-b56c-20a21b7edbfc: 'Right Padding' # Right Padding
-    355bf56c-36d9-44f9-b0a9-238640003096: 'Heading Bottom Padding' # Heading Bottom Padding
-    432d8b1c-883c-44dd-9c3d-ac7387e88295: Modals # Modals
-    549f01c3-dfad-4aac-af34-4f6e86c98a55: 'Accordion Set' # Accordion Set
-    554b50ee-cdec-4798-96b8-d37e1451eabb: 'Row Bottom Margin' # Row Bottom Margin
-    605a4447-5ac1-4d5e-8648-119a45241020: Repeaters # Repeaters
-    625b7d63-a2e8-4ca5-889e-cad4ba1e8544: 'Content Wrapper' # Content Wrapper
-    705d3c29-f1b5-4480-b0a6-51efb7f216ca: 'List Item Button Size' # List Item Button Size
-    822bd06b-0d1d-4f42-968c-2dc19c16ab56: Rows # Rows
-    941b158e-893f-43fd-ba12-72ce8552a287: 'Layout Location - Page Content' # Layout Location - Page Content
-    2263b7c5-431f-4f8b-94d8-180c0756b099: 'CTA - Standard' # CTA - Standard
-    3143c42a-2f25-4804-81f9-cfb802a25df4: Button # Button
-    6825f88f-d9e6-4971-a598-8beb758fc4f0: Pages # Pages
-    6840bb85-bd88-4486-bb86-6721b189b5a0: 'Slide Content Image' # Slide Content Image
-    7030d9ed-855b-44dd-8289-f076cc1b89c8: 'Google Map Content Block' # Google Map Content Block
-    7517e8a9-2426-4d40-bb43-2e4ccf6787cd: 'CTA - Small' # CTA - Small
-    7605a963-4cb6-4954-8e8e-eab3a49997fc: Sections # Sections
-    9985a127-c58e-4ff8-9853-a947ce2aef62: Video # Video
-    17276dc7-0ba1-40fb-b31a-f1f49afcddef: 'Background Image' # Background Image
-    45754be3-212e-4eec-ad23-fa32e9a516a9: 'Multicolumn Layout Row' # Multicolumn Layout Row
-    64551ef0-3ce6-48bc-a545-d618c1c95927: Pages # Pages
-    09732774-2ee8-477c-9984-905796312ba2: 'Content Elements' # Content Elements
-    23850449-35c5-4055-8ecc-266af005dce5: 'Simple Text' # Simple Text
-    57101542-5ec7-45f1-9d3d-351b68995b18: Animations # Animations
-    59647847-a101-4e3e-9e88-4a4a6fa6aeaa: Button # Button
-    93833691-3f5b-448c-bf55-7a47bbd98dcb: 'Long Format Text' # Long Format Text
-    a0306f2d-4667-4b02-8640-74c9667f4bff: 'Image Asset' # Image Asset
-    a4f08de7-2889-4ba7-9ae5-e6448b21aa1e: 'Social Media Links' # Social Media Links
-    a6cec15b-71ab-4c2a-a5cb-f09c09442588: Tabs # Tabs
-    a324f85a-cb2a-4d36-8dfa-d78fe00be042: 'Modal Container - 2 Column' # Modal Container - 2 Column
-    a2638b0f-c6c2-4633-9718-e54161872041: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
-    aa6339b5-f9b8-4ac2-ae2c-83183e6ffd7e: Modals # Modals
-    aae74be2-2cdb-4d3f-a8c5-ab01db093897: 'Heading Bottom Margin' # Heading Bottom Margin
-    ac7c643a-b9dc-4eac-9500-46d27af9ae09: 'Stagger Child Reveals' # Stagger Child Reveals
-    ad2bced5-be7c-4709-ac6f-fd9c9cdadcf8: 'Text Content' # Text Content
-    aed4ad20-d720-4a48-8dd7-cfd3c4ffc1be: 'Link Icon' # Link Icon
-    af90b13a-9f07-49ca-b639-92e0526301c7: Columns # Columns
-    afcc284b-1041-4d7a-b6fe-966ea6a12a99: 'Tab Panel' # Tab Panel
-    b5b1ce85-677c-4772-a5c5-0b6fc4da062b: 'Left Padding' # Left Padding
-    b90eb218-05f3-4a6f-9524-6bb6747f0266: Image # Image
-    b702d20e-46e8-420f-b177-035041818bd4: 'Text Content' # Text Content
-    b984b0aa-13f0-488b-a0e4-e299ee978ca9: Form # Form
-    b29653d8-1c46-4e51-a645-33af6226b04d: '404 Page' # 404 Page
-    bd3f4e7e-aba1-403f-ab0f-49125710a768: 'Page Section' # Page Section
-    c0300615-d81b-4483-b544-17934cfc3bc8: 'Modal Trigger Button' # Modal Trigger Button
-    c07e5070-5952-429b-a610-e4ed45da1d84: 'Tab Panel Set' # Tab Panel Set
-    c09f83e7-2a34-4a4b-8655-6fbff6ce3705: 'Left Margin' # Left Margin
-    c09231cf-ab93-4b67-a685-12de7e0f3607: '404 Page Text' # 404 Page Text
-    c86424f7-a5ef-49e2-9708-78b64e41ff95: Slide # Slide
-    cddf29d7-c8ae-4fd2-b913-db04d3c2593b: Column # Column
-    cf887c63-0f9d-4698-a9ad-1e5f23027302: 'Content Wrapper' # Content Wrapper
-    cf6364a2-8eb1-422c-88b8-7f4b53b26004: 'Row Top Margin' # Row Top Margin
-    cfe17e55-98fa-4405-af54-f34497d632b5: Breadcrumbs # Breadcrumbs
-    d1b22eff-2800-4ebc-b527-e83b3274b227: 'Top Padding' # Top Padding
-    d2eff60a-a337-4647-b36e-b939f72af748: 'Container - 2 Column' # Container - 2 Column
-    d3ccbb79-b500-499f-a550-c8e161930134: 'Sidebar Column' # Sidebar Column
-    d70bb46a-3502-49fa-9a07-b18158cba4e3: 'Icon and Content' # Icon and Content
-    da4bae39-a292-4d16-b2e1-ce3253bc8383: Form # Form
-    dc6ec388-8c2f-4be2-ad91-40f342a13bea: 'Container with Sidebar' # Container with Sidebar
-    dc96f348-7b18-4311-ad06-615c934c81ab: Accordion # Accordion
-    ddaf01ac-b64d-47f1-ae7f-d7a6a57d4233: 'Social Link' # Social Link
-    df8f170d-0ad6-4e61-b8fc-073e22913d9b: 'Modal to Display' # Modal to Display
-    dfeb7379-27e4-4d75-bcd4-9b428992b97d: Tabs # Tabs
-    e0ad8ecb-48ed-4b7f-b0f4-7baac13f46a7: Accordions # Accordions
-    e2ef9e69-13e4-4bba-bf0a-6f9d25fb7e68: 'List Item Button Styling' # List Item Button Styling
-    ea5c0d76-9339-4695-9291-e231ca02db80: 'Subhead Bottom Margin' # Subhead Bottom Margin
-    ebd16450-5f18-4db1-8944-df83ff503eff: Rows # Rows
-    efb4d342-e71c-476d-873d-408fd1918ada: Column # Column
-    f5bfb966-8454-4177-8e32-97b3791add5f: 'Modal Link Settings' # Modal Link Settings
-    f7db6790-f5f0-410d-827c-6c3c32e5323a: Header # Header
-    f7dfafdb-e7df-4100-a2e6-8b44b0f642b3: 'Repeater - Content Links' # Repeater - Content Links
-    f7f5fbd6-51bf-474c-a2d7-6fb7af3c6540: 'Accordion Set' # Accordion Set
-    f9abaeed-a2aa-4106-9633-05ac02ccbae6: Accordion # Accordion
-    f58a83d1-6622-469e-b07e-200bec5386a3: 'Long Format Text' # Long Format Text
-    f64b90d0-ce28-4988-a9c1-f5e629abcccd: 'Repeater Item - Content Link' # Repeater Item - Content Link
-    f467c195-a0fb-4326-9915-1c8b51816f61: 'Reveal Animation' # Reveal Animation
-    f919389e-2b5a-478a-8a8c-0fd82228970a: 'Link Url' # Link Url
-    fbce5ef5-54eb-4f20-8a47-63cad3552c84: 'Heading Top Padding' # Heading Top Padding
-    fbcfd40e-0b37-4500-821c-9cf6bfb800b5: 'Company Info' # Company Info
-    fc74f47b-950c-410f-9c15-ec35f88472e4: Header # Header
-    fcd55a1b-321f-4e46-8d0c-3ef52adc99f1: Container # Container
-    ff205767-6ee6-4142-8f7a-3935940f647e: Home # Home
+    0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
+    1acfdc52-cb76-4bd9-9286-5e59bc27def6: 'Slider Next Icon' # Slider Next Icon
+    01bf235c-0b3d-4a9e-af7b-5121a7f92b25: 'List - Count' # List - Count
+    1bf643d4-1bb3-4e85-abe5-0a6510c964a4: Animations # Animations
+    02aa3c8d-1bfe-4d94-bd49-d0aecbb10da6: 'Font Weight' # Font Weight
+    02b5d1f7-4316-41c9-8a1b-bebea399fd40: 'Slide Content' # Slide Content
+    2bd882c5-a5b9-4492-9696-62f61b41ea33: 'Link Settings' # Link Settings
+    2d6da937-f615-448e-88cc-1e89e17e2957: 'Content Wrapper' # Content Wrapper
+    2d9ded80-74be-40bd-83a0-59c20a21643b: 'Style Controls - Image Size' # Style Controls - Image Size
+    2f49ebd8-325a-471d-9075-58a0eabb883e: 'Top Margin' # Top Margin
+    2f4643b8-3586-490a-af8c-496d257a8736: 'Multicolumn Layout Row' # Multicolumn Layout Row
+    3a0a5767-f2d8-4168-89fd-4c6f39d52a13: 'Panel Content' # Panel Content
+    03ab034d-edb4-4efb-b319-52e7e5093f03: 'List - Specific Entries' # List - Specific Entries
+    3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35: 'Long Format Text' # Long Format Text
+    3afc952e-2931-458c-8b3d-ee8a1664c529: 'Repeater - Content Links' # Repeater - Content Links
+    3e6dec31-cb29-4a91-a2a6-be03d236753f: Slides # Slides
+    3e54e327-a9a9-4587-b91e-4775a1f7dd3f: 'Header Text' # Header Text
+    4ba3c88d-ba55-41ee-9170-0162c180b871: 'Button Group' # Button Group
+    4c016574-75fe-42c2-a535-f83bc5ca783f: 'Page Header' # Page Header
+    4c5a287b-8078-4d62-8619-08e152ce576e: Documents # Documents
+    4c8a1b99-37ef-424c-9a73-26d40caccc9d: Autoplay # Autoplay
+    4d60bd72-6857-44f7-a62e-e36f9cf061b4: 'Company Info' # Company Info
+    4f4cef2e-3a2d-4e87-b045-5d2699ebcbb0: 'Style Adjustments - Slide' # Style Adjustments - Slide
+    5be0f654-b4af-4c4a-811a-d51d305965d9: 'Notification Bar Text' # Notification Bar Text
+    5ca2acc9-e150-4c68-acd9-3600a955a648: Accordions # Accordions
+    5deec8ca-f41a-4b0d-bb57-8a4a83895bb6: Images # Images
+    6a44ca5b-206c-44a9-af27-21b5aee28b45: 'Style Controls - Text Wrap' # Style Controls - Text Wrap
+    6b175c77-e00a-468d-b930-025488a8778e: 'Footer Embeds' # Footer Embeds
+    6b4735a7-3015-47c1-8572-f58fe16b8046: 'Left Margin' # Left Margin
+    6be8dbce-de0e-47d0-a0a1-888c876cc403: 'Heading Level' # Heading Level
+    6c77230b-ffe2-4e96-addf-e1638ac6cb58: 'SEO - Robots' # SEO - Robots
+    6ca71cdf-5677-41f2-a6d0-1b08e4b330c4: 'Accordion Set - Allow Multiple Open Panels' # Accordion Set - Allow Multiple Open Panels
+    6ce9653e-31c5-415e-a58c-31bf46b25998: 'CTA - Small' # CTA - Small
+    6d3b0bc0-34da-4b98-95ac-ea8c16f70a65: 'Slider Previous Icon' # Slider Previous Icon
+    06ebfcbe-5ce4-466d-b32d-d18f5c98c099: 'Embed Code' # Embed Code
+    6f7cdb29-cb8b-47ea-9e30-9dd9ccd30216: 'Style Adjustments - Button' # Style Adjustments - Button
+    6fa27166-9a3d-4f43-85c4-7c290970f314: 'Text Shadow' # Text Shadow
+    6fc21419-6629-4be1-993b-98df1befbf9a: 'Left Padding' # Left Padding
+    7a2b6f07-8f44-44eb-a8ab-4045df5aa602: '404 Page' # 404 Page
+    7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd: 'Page Builder' # Page Builder
+    07acce1b-2462-4302-8722-8e90b41670f6: 'Row Columns' # Row Columns
+    7b80b96c-716d-401c-9940-9808b70632fd: 'Page Builder - Containers' # Page Builder - Containers
+    7cfd4f7d-3f60-4509-94f6-2ff20ffbf96d: 'Show Excerpt' # Show Excerpt
+    7dffed86-acb0-4874-b66a-d89a8fa4f47d: 'Style Adjustments - Icon' # Style Adjustments - Icon
+    7e860b09-958f-4a2e-9c83-5afaf8167b7d: 'Style Adjustments - Tab Panel' # Style Adjustments - Tab Panel
+    7f0146e4-cfae-4bc2-a68b-396c0fa8e2d6: 'Background Controls' # Background Controls
+    7f8d2464-dd61-443e-97d4-0ce8137cc9ef: 'Background Size' # Background Size
+    7f9f54c1-a904-47d7-8882-3e3775e4f713: Buttons # Buttons
+    8a3a74f3-3e95-424e-9064-1f5904fbe9bc: 'Background Opacity' # Background Opacity
+    8a461305-6d93-4608-bb43-6ed229002b07: 'Box Shadow' # Box Shadow
+    08afc34f-5da9-4c20-80f2-884ae194e695: 'Style Adjustments - Long Format Text' # Style Adjustments - Long Format Text
+    8b211e5a-b602-4bdd-b531-777210b608d1: 'Column Order' # Column Order
+    8bc830c1-371e-45af-9e26-b2b41f946480: 'Social Media Links' # Social Media Links
+    8e6a8ae9-43d1-49e6-8634-e075f4d87a89: 'Background Image' # Background Image
+    8f315b09-46cf-425c-8fff-8b052a202dc8: 'Tab Title' # Tab Title
+    08f385be-023c-42db-9198-dc4ba042a730: 'Image Size' # Image Size
+    8f438a7d-e520-49ce-87d6-89fe4651b5f3: 'Page Header Buttons' # Page Header Buttons
+    9abf0812-f3c7-45e9-9322-f715a4d4a279: 'Style Adjustments - Caption' # Style Adjustments - Caption
+    9aef5c65-b9e0-4602-9d9a-e2683c03d6d1: 'Style Controls - Button Styling' # Style Controls - Button Styling
+    9af802da-9af4-4db1-a824-1c3a26737350: 'Page Builder - Styling' # Page Builder - Styling
+    9c3c6834-2633-4d89-ae1b-d0897a9bee7c: 'List Item Display Style' # List Item Display Style
+    9cc1146d-c859-4330-919e-d8a8da46d8ad: 'Right Margin' # Right Margin
+    9e4325cf-f265-4742-8b95-0c66626b9103: 'Background Repeat' # Background Repeat
+    12c30846-c1db-40fd-aa5a-3af9bc56847f: $SITE_NAME # $SITE_NAME
+    15e02460-e8b5-47da-98ed-78bdb8544472: 'Page Header' # Page Header
+    20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
+    22a053a5-a4ce-4380-ba58-45909af57b1f: Container # Container
+    33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
+    38b2d069-fc9a-47d3-92fe-dda7740ac324: Columns # Columns
+    42ed3a6e-60bd-447b-84ab-5057c4ebe215: 'Show Page Footer' # Show Page Footer
+    43d6f503-31d7-4e98-9433-57f53334cbbe: 'Style Controls - Background Image' # Style Controls - Background Image
+    50c41aa0-a307-4f48-b863-57a0326ccfd7: 'Link Settings' # Link Settings
+    52c8510f-7a0e-43dd-b081-7ab3b31828b9: Embed # Embed
+    61d3b035-6f86-4d6a-9a4b-fe85a81a440e: 'Style Controls - Box Shadow' # Style Controls - Box Shadow
+    69cf680d-8c01-4c06-a651-d42ca754821d: 'Repeater Links' # Repeater Links
+    69de199e-8337-4836-a446-cb00cd81b78d: Home # Home
+    72b4dadd-d8de-42a0-a437-ed4cf5fef754: 'Style Adjustments - Page Header' # Style Adjustments - Page Header
+    72e1d65a-fb33-44fa-95f1-110126a123fa: 'Style Controls - Display' # Style Controls - Display
+    74d44f30-825a-42fc-82a6-721093f4e27a: 'Style Controls - Icon Styling' # Style Controls - Icon Styling
+    76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
+    81a821f5-2bcc-416e-9391-c9f56d898530: 'Style Controls - Margins' # Style Controls - Margins
+    82f81f4c-6383-4eec-9643-20ae33adb7b7: 'Style Adjustments - Container' # Style Adjustments - Container
+    84babc6d-4432-426d-8a6b-2856e35ec2ad: Form # Form
+    88daa5b5-8ec4-4e8d-be7f-9f1918a8fd2b: 'Style Adjustments - Button Group' # Style Adjustments - Button Group
+    89a15627-8560-4222-8296-7e9a2b3c6ee9: 'Repeater - Select Entry List' # Repeater - Select Entry List
+    91f12310-3af3-454b-9212-382e6a4227d6: 'Style Adjustments - Accordion Set' # Style Adjustments - Accordion Set
+    92f2e46b-430e-4762-935d-0db544216ec2: 'Style Adjustments - Wrapper' # Style Adjustments - Wrapper
+    116b0f4f-13b5-47fe-9daa-6716a09821a4: 'Accordion Icon' # Accordion Icon
+    132ebecd-9bc6-46d3-a23e-552ca8eadd42: 'Style Controls - Content Alignment' # Style Controls - Content Alignment
+    133bbdba-eb78-4a0e-924c-dfc4af50bb53: 'Main Header Base Class' # Main Header Base Class
+    217da411-10b4-4af2-bd6c-010f5ff3260b: 'Padding & Margins' # Padding & Margins
+    228fee23-f613-44f8-8fe2-1ed8ddda25e4: 'Long Format Text' # Long Format Text
+    253df430-b9f1-4850-887c-978f92669ef6: 'Style Adjustments - Accordion' # Style Adjustments - Accordion
+    0282ab1a-d90f-4c56-bc80-55d336e8749e: Layouts # Layouts
+    291aeebd-5376-4a88-8bc5-dcbc98ae4f8f: 'List - Items per Page' # List - Items per Page
+    315a5a65-c63f-4a6c-8b96-9817783d8d4b: Modals # Modals
+    318ddb9d-6a63-4a8c-a127-3f6ae4f3caef: 'Text Case' # Text Case
+    345c96e3-abd1-4cbd-bcef-8688a9dcd0f3: 'Top Padding' # Top Padding
+    349fdddc-b026-4689-a2a0-886d0ae1ef23: 'Column Size' # Column Size
+    481b4191-d213-436f-8f88-9d0d779aa4c3: 'Style Controls - Type' # Style Controls - Type
+    485fa80c-9c77-4d0f-89d6-fca5f578416a: 'Node Styling' # Node Styling
+    551e08cb-8e1c-4a13-be36-c5ea51d18d39: 'Child Content Containers' # Child Content Containers
+    579ca8e8-d323-417e-8775-29705bb3e28a: Accordion # Accordion
+    616d3f20-6be2-43a3-87a9-0a0d54e89f20: 'Icon Size' # Icon Size
+    670b5abf-edf9-484c-a6bb-b817a00336f0: 'Display Setting' # Display Setting
+    678c7015-5101-4eea-a93d-eda6ed0083d1: Italic # Italic
+    691be60b-0d4c-4c75-b8bb-4f75afbb4315: 'Text Wrap Image Position' # Text Wrap Image Position
+    749aa3ee-0648-4955-9e21-a0ed5ff5d8cb: 'Style Adjustments - Container 2 Column' # Style Adjustments - Container 2 Column
+    938c6226-2dee-4440-a989-1741df63e4e4: 'Boilermaker Craft 4' # Boilermaker Craft 4
+    952d9143-2f31-4712-97d6-009d4d9b0265: 'Header Button Group Class List' # Header Button Group Class List
+    982b6185-6d4a-4655-b767-aa8cc325e579: 'Image Placement' # Image Placement
+    996a1b39-1f1e-4078-a3cc-8ea3ec3b4560: 'Tab Panel' # Tab Panel
+    1281a243-241d-495f-85d7-71bd28adf095: 'Style Adjustments - CTA Small' # Style Adjustments - CTA Small
+    1781b5c1-16cf-4b02-b340-aa62d22c5797: 'Body Tag Embeds' # Body Tag Embeds
+    2783b721-f14b-4f95-a241-04e44a4f17c9: Repeaters # Repeaters
+    2794a61e-7d0d-4137-ad1e-cd400325138b: Pages # Pages
+    3244f260-24fb-4443-b8e1-0101360cd91c: 'Main Column' # Main Column
+    3319f142-1b8b-414b-9562-430a4cd47446: Font # Font
+    3564fb89-095f-4f5e-8c17-b699a15ea6dd: 'Page Header Custom Classes' # Page Header Custom Classes
+    5217c960-8bc3-45ea-a0f2-2e4f539b53b5: 'Repeater - All Entry by Section List' # Repeater - All Entry by Section List
+    5553a528-f723-48bf-965f-6d720f5df686: 'SEO - Description' # SEO - Description
+    7250fbbb-07b2-4c31-a5b0-5f586c469ce2: 'Page Builder - Rows & Columns' # Page Builder - Rows & Columns
+    8434d96d-7ef0-489c-b77d-fea9a4f76737: 'Subhead Class List' # Subhead Class List
+    8933b575-f2c0-4930-a9fa-ec450aed0a0c: 'Styling Adjustments' # Styling Adjustments
+    9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
+    9455cb57-c765-4942-bd7e-4e4cc37415fc: 'Style Controls - Column Size' # Style Controls - Column Size
+    9651ecc9-b7a0-4294-bdb6-9e21fb575c08: 'Content Elements' # Content Elements
+    13662d93-bce6-47d1-b655-28788cfec494: 'Main Menu' # Main Menu
+    14205de1-1461-4c5e-bba4-807303cd42a1: 'Main Header Class List' # Main Header Class List
+    41694b92-bcd0-495d-96c4-478051aaabf0: 'Bottom Padding' # Bottom Padding
+    44683fa3-9b93-4d7a-8835-3b46fdab682c: 'Slider Controls' # Slider Controls
+    49453feb-0d8e-4fc0-8a1d-9f9cbc5b90a5: Sections # Sections
+    56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
+    78748af5-2d5a-4b89-b484-db2e0243dd02: Button # Button
+    79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
+    87560ba9-9a3d-4aa8-afb4-858c1ec8c119: 'Column Content' # Column Content
+    96950bc8-d052-4574-9e24-529f27899d2f: 'Form to Display' # Form to Display
+    130672eb-9963-4871-af80-625435582f12: 'Style Adjustments - CTA' # Style Adjustments - CTA
+    167456ee-f98a-48a0-8856-c9a090ed215f: 'Icon Asset' # Icon Asset
+    344936e3-3b14-4ddd-a3c2-6f556fb9528d: 'Background Color' # Background Color
+    857252fe-f251-456e-ac8d-187a340c8807: 'Letter Spacing' # Letter Spacing
+    992412a7-fff9-45d8-af57-43b55750ecdd: 'Style Adjustments - Images' # Style Adjustments - Images
+    1371181e-0e3f-44fe-bfdd-4848b6b55d74: 'Page Builder - Sliders' # Page Builder - Sliders
+    2157587f-ba0b-4f33-8ff3-29dd650e3bc4: 'Image Asset' # Image Asset
+    3908713c-a4c2-4e4d-ab34-8f92abacf276: 'List - Order' # List - Order
+    5925614f-5c61-4d48-a905-862a3e29d09f: 'Slide Row Columns' # Slide Row Columns
+    05937322-bebb-45f5-8c1e-2cf8d80e41bc: 'Style Adjustments - Subhead' # Style Adjustments - Subhead
+    6237434b-4af7-4d60-97a3-b055764ac5ce: 'Sidebar Content' # Sidebar Content
+    7450367a-cdf2-446d-ad60-d78b932299d5: Globals # Globals
+    09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
+    17007589-f6e2-4b62-849b-e627a43f3063: 'Slide Content Column' # Slide Content Column
+    29714022-fcc0-4fd4-b828-5c8687c242e1: 'Container with Sidebar' # Container with Sidebar
+    43791594-97eb-4702-a55d-9ea41a53d6b8: 'Text Content' # Text Content
+    46469126-9a53-4817-9f4b-ce78d8df108e: 'List - Parent Entry' # List - Parent Entry
+    54510867-1090-42cf-9962-0f0da66d1809: Default # Default
+    59188785-05ee-4819-af85-d78f4464f118: 'Style Adjustments - Form' # Style Adjustments - Form
+    60868356-6cc0-4a9c-9e93-81e431da773d: 'Font Size' # Font Size
+    73230320-128c-4692-aa98-aa4092738d56: 'Text Color' # Text Color
+    76008123-c60e-47eb-a353-4a30bf254759: 'Line Height' # Line Height
+    80480195-3a87-410a-8a5d-c51dd07e7c59: Videos # Videos
+    87483382-9eee-4f7f-955e-be74daf55a00: Default # Default
+    a0518828-eb2f-4be1-99b0-414ced253521: 'Nav List' # Nav List
+    a3c9dbac-000e-409d-80b1-6a757a2df565: 'Slide Column Content' # Slide Column Content
+    a7faa85f-4be1-4101-8d46-c1fc42bbdeeb: 'Page Builder - Accordions' # Page Builder - Accordions
+    a36da9f4-1661-4860-b462-766aa2d4e97d: 'Device Size' # Device Size
+    a81a50e3-5d81-4206-a7eb-6be69a2cd056: Image # Image
+    a207b59b-74c3-4aca-9e81-652173d3785a: 'Style Adjustments - Repeater Item' # Style Adjustments - Repeater Item
+    a664d687-8900-46f2-a7ad-172be91e20fc: 'Slider Set' # Slider Set
+    a79602ea-bbd9-41c8-9d75-9d134bc6951f: Tabs # Tabs
+    aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
+    aafa2ab8-b04b-41f3-95b1-7e15b8514a42: 'Style Adjustments - Section' # Style Adjustments - Section
+    abfaf225-b8f2-4839-bd2b-70244a0ec786: Styles # Styles
+    ac8a5abf-cb71-4272-8634-0442dff18f5f: 'Half Width Column' # Half Width Column
+    acb65621-fdc6-41e3-b982-3f8c5371e3e4: 'Icon Color' # Icon Color
+    adafad53-959c-487b-98e7-6df775004a2c: 'Layout Containers' # Layout Containers
+    adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
+    aef83439-116c-46bc-825d-d27071a38180: 'Style Adjustments - Tab Set' # Style Adjustments - Tab Set
+    b0168713-f29a-4bb7-a770-1c4cdfba8768: 'Page Section' # Page Section
+    b08ce1f2-612f-4e19-bc14-de46aac5b691: 'Style Adjustments - Header Block' # Style Adjustments - Header Block
+    b1f1fe04-0646-4432-9bd3-1b441e294004: 'Sidebar Column' # Sidebar Column
+    b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
+    b7b7bc3f-a98f-400f-b54b-1e35e9f26c85: 'Nav List to Display' # Nav List to Display
+    b53c9f0c-9969-4055-ab99-c8e641179ad2: 'Image Caption' # Image Caption
+    b53dd5c2-c363-4ceb-acd2-c871e7324dd7: 'Slider Size' # Slider Size
+    b416175b-b634-4f66-86ca-a58a914c85d8: Header # Header
+    b7148740-1499-44bc-a5ba-55492dd9c952: 'Container - 2 Column' # Container - 2 Column
+    bda39666-95a2-4a19-b0a1-f24b1dff1fa3: 'Thumbnail Placeholder Image' # Thumbnail Placeholder Image
+    be1a108c-3742-47bf-a723-ec1ddc308790: 'Icon Alignment' # Icon Alignment
+    be7bfbf5-0157-44df-a6f5-935aba22dab9: 'Block Layout' # Block Layout
+    be59c1e3-e430-409f-8dae-380cee1a446d: 'Container Content' # Container Content
+    be45752b-5950-4495-916b-645055cd1353: Excerpt # Excerpt
+    bec10435-8e4b-4dbd-90fa-15ad94e24fd5: 'Reveal Animation' # Reveal Animation
+    bf063701-6908-4ca1-aa87-5b19c885f3b7: 'CTA - Standard' # CTA - Standard
+    bf87e9c7-6b90-4f9b-95c9-361309b94dde: 'List Item Heading Level' # List Item Heading Level
+    bfd09ef3-955d-4497-ad10-acd77efcccc4: 'Content Admin' # Content Admin
+    c1cbe587-fbcb-4f85-b283-9490f65fde90: 'Page Builder - Content Elements' # Page Builder - Content Elements
+    c3ae950d-c826-4e68-9ab8-cf9469de1a53: 'Accordion Content' # Accordion Content
+    c9e32de2-ee61-4f72-a3b6-8b9dec0e7de0: 'Social Link' # Social Link
+    c32f95ec-cd66-44d0-9333-b5825adc6357: 'Section Containers' # Section Containers
+    c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
+    c54b2a49-78b3-43cb-bf40-1f652256611f: 'Repeater Item - Content Link' # Repeater Item - Content Link
+    c72a1dde-4ae3-46ae-a0b4-8ab01cd15e99: 'Repeater - Nav Collection' # Repeater - Nav Collection
+    c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
+    c95b389d-885a-4d6c-9b12-6e3e48df0b83: 'Wrapper Content' # Wrapper Content
+    c789bb00-ab5d-4a5a-af3e-99a82bcece7f: 'Style Controls- Background Color' # Style Controls- Background Color
+    c1225b8d-2770-40e5-92db-55a8e0acebd8: Accordions # Accordions
+    c9973b20-8f48-429c-be55-dd0498255786: 'Page Builder - Repeaters' # Page Builder - Repeaters
+    c2036654-1479-4180-9e87-c7cf588d25e8: 'Full Screen Width' # Full Screen Width
+    c2160053-ca19-4222-b62f-ae814b3e542f: 'Container Columns - 2 Column Container' # Container Columns - 2 Column Container
+    cae8de72-1b59-4faa-9532-102b16d9d3b6: Home # Home
+    cb7c5f64-dd68-41d8-b463-02c872472acb: 'Simple Text' # Simple Text
+    cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d: 'Link URL' # Link URL
+    cf7918a9-3b10-481b-a1f0-410a6574cba5: 'Right Padding' # Right Padding
+    cfca2aa9-b9da-4c7c-81c6-194322b496af: Slide # Slide
+    d02cb798-6a12-410b-bdea-a4d80d1543c5: 'Tab Panel Set' # Tab Panel Set
+    d6a8c60a-4514-4573-9e4d-0b594703d113: 'Container Columns - Main & Sidebar' # Container Columns - Main & Sidebar
+    d86c02d7-08d3-44c2-b76c-aa170103e7db: 'Subhead Level' # Subhead Level
+    d533a3e0-1a9b-4190-af12-f6b1a356c25a: 'Bottom Margin' # Bottom Margin
+    d559fe04-efd1-43e2-80b1-d4d46c2d2ae2: 'Subhead Text' # Subhead Text
+    d1336a2e-90ba-4ab3-b632-a1f61e700c2d: 'Block Controls' # Block Controls
+    d7701d3b-7087-4a4d-bd81-52a606ed6e75: Tabs # Tabs
+    db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
+    db9420fc-627a-4ec2-bf8f-058474f480bb: Button # Button
+    def70282-b293-46ab-9193-35c6fb708ead: Column # Column
+    e5e5fb70-98d0-40e8-9117-3e5a87c9caf5: 'Style Controls - Padding' # Style Controls - Padding
+    e8c93d59-48dc-424d-82b9-331fce7ff16b: 'Icon and Content' # Icon and Content
+    e16c576c-c525-440b-8ca8-fcfb71976823: 'Link Name' # Link Name
+    e28d1c24-f3ad-42e9-9ddb-f9837ee9f9b4: Entries # Entries
+    e366bff5-312d-446e-9610-345e122dd207: Video # Video
+    e56553d7-4c45-43d9-bd20-6ed0daaf2800: Sliders # Sliders
+    e76476c3-0516-4766-932d-cff2b07934a8: 'Subhead Base Class' # Subhead Base Class
+    ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
+    eb8fb4b6-5d17-4f46-a4be-93e8e32860ce: 'Text Content' # Text Content
+    eb783ee2-8b1b-4aed-9e1a-a4b3dd67946e: 'Style Adjustments - Repeater' # Style Adjustments - Repeater
+    eb156870-ab99-4f11-8c63-03c5e16515ef: 'Style Adjustments - Intro Text' # Style Adjustments - Intro Text
+    ee8ca78d-7fd4-4a57-9b62-5c9848f07ecc: 'Style Adjustments - Video' # Style Adjustments - Video
+    ee714ecd-7f03-475b-aac8-8b483a18eeac: 'Style Adjustments - Main Header' # Style Adjustments - Main Header
+    ef79f987-9cbf-4db0-afac-598a0eb85601: 'Style Controls - List Image' # Style Controls - List Image
+    f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
+    f2e3acea-f4ac-4967-92ce-a82e4e944990: 'Style Adjustments - Icon & Content' # Style Adjustments - Icon & Content
+    f6d84ca5-0262-466c-90b8-d1c1e2c6fab7: 'Accordion Set' # Accordion Set
+    f6f7710d-60a4-4b16-88a6-4a9e2bda96e5: 'Style Adjustments - Row' # Style Adjustments - Row
+    f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
+    f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Modal Trigger Button' # Modal Trigger Button
+    f66e9217-b742-47b0-a49c-fe679c02685d: 'Style Controls - Row Alignment' # Style Controls - Row Alignment
+    f82ba9bb-67c4-404e-9e5b-e5820caedde4: 'Header Image Class List' # Header Image Class List
+    f200de49-4c87-41f9-9a85-725ced12f7ca: 'Modal to Display' # Modal to Display
+    f314f126-29d7-43dd-8631-3dff02728310: 'YouTube Video ID' # YouTube Video ID
+    f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2: 'Custom Class List' # Custom Class List
+    f5015dd1-01ba-4268-88f1-c5631c0fec06: 'Slide Content Row' # Slide Content Row
+    f411052f-1a69-4dc0-bb4a-fa64eb492d54: 'Link Icon' # Link Icon
+    fa21d72e-f98b-4d34-8614-fe00b0d7f8df: 'Style Adjustments - Column' # Style Adjustments - Column
+    fa86d142-2ef4-4394-98e8-09cfb6601be2: 'Header Embeds' # Header Embeds
+    fb4f5400-b06f-4a57-9a15-52632e74f9fc: 'Modal Link Settings' # Modal Link Settings
+    fb43896c-7409-458a-a25e-8cbe2c511c48: 'Style Adjustments - Slider Set' # Style Adjustments - Slider Set
+    fce2fd29-6267-4aa3-8244-0ec47473a1e5: 'Background Position' # Background Position
+    fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17: 'Accordion - Start State' # Accordion - Start State
+    ff7c33c9-5640-4dda-a7ec-0e342b77adb7: 'Custom Id' # Custom Id
 plugins:
-  architect:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   blitz:
     edition: standard
-    enabled: true
-    schemaVersion: 3.10.0
-  blitz-recommendations:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
+    enabled: true    
+    schemaVersion: 4.1.2
   elements-panel:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  environment-label:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -178,12 +303,13 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   freeform:
-    edition: lite
-    enabled: true
-    schemaVersion: 3.3.2
+    edition: pro
+    enabled: true    
+    schemaVersion: 4.2.2
     settings:
-      ajaxByDefault: false
+      ajaxByDefault: true
       alertNotificationRecipients: null
+      autoScroll: true
       autoScrollToErrors: true
       badgeType: all
       blockedEmails: null
@@ -191,6 +317,7 @@ plugins:
       blockedIpAddresses: null
       blockedKeywords: null
       blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: false
       clientDigestFrequency: 1
       clientDigestRecipients: null
       customErrorMessage: null
@@ -202,14 +329,16 @@ plugins:
       digestRecipients: null
       displayFeed: true
       emailTemplateDirectory: null
-      emailTemplateStorage: db
+      exportHandlesAsNames: false
+      exportLabels: false
       fieldDisplayOrder: name
       fillWithGet: false
       footerScripts: false
-      formSubmitDisable: false
+      formFieldShowOnlyAllowedForms: false
+      formSubmitDisable: true
       formSubmitExpiration: null
-      formTemplateDirectory: freeform-custom/
-      formattingTemplate: flexbox.html
+      formTemplateDirectory: null
+      formattingTemplate: flexbox.twig
       freeformHoneypot: true
       freeformHoneypotEnhancement: false
       hideBannerDemo: false
@@ -223,18 +352,27 @@ plugins:
       recaptchaEnabled: false
       recaptchaErrorMessage: 'Please verify that you are not a robot.'
       recaptchaKey: null
+      recaptchaLazyLoad: false
       recaptchaMinScore: 0.5
       recaptchaSecret: null
       recaptchaSize: normal
       recaptchaTheme: light
       recaptchaType: v2_checkbox
+      rememberPageSubmitOrder: true
       removeNewlines: false
       renderFormHtmlInCpViews: true
       salesforce_client_id: null
       salesforce_client_secret: null
       salesforce_password: null
       salesforce_username: null
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
       scriptInsertLocation: footer
+      scriptInsertType: pointers
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
       sessionEntryMaxCount: 50
       sessionEntryTTL: 10800
       showErrorsForBlockedEmails: false
@@ -244,34 +382,40 @@ plugins:
       spamProtectionBehaviour: simulate_success
       submissionThrottlingCount: null
       submissionThrottlingTimeFrame: null
+      successTemplateDirectory: null
       twigInHtml: true
       twigInHtmlIsolatedMode: true
-  icon-picker:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.1
-    settings:
-      enableCache: true
-      iconSetsPath: '@webroot/dist/icons'
-      iconSetsUrl: /dist/icons/
-      maxIconsShown: '100'
-      redactorFieldHandle: ''
-  imager-x:
+      updateSearchIndexes: true
+  guide:
     edition: pro
     enabled: true
     schemaVersion: 3.0.0
-  linkit:
+  icon-picker:
+    edition: standard
+    enabled: true    
+    schemaVersion: 1.0.1
+    settings:
+      enableCache: true
+      iconSetsPath: '@webroot/dist/icons/'
+      iconSetsUrl: '@web/dist/icons/'
+      maxIconsShown: 100
+      redactorFieldHandle: ''
+  imager-x:
+    edition: pro
+    enabled: true    
+    schemaVersion: 4.0.0
+  minify:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.8
+    schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true
-    schemaVersion: 1.0.21
+    enabled: true    
+    schemaVersion: 2.0.2
   neo:
     edition: standard
-    enabled: true
-    schemaVersion: 2.11.6
+    enabled: true    
+    schemaVersion: 3.0.4
   redactor:
     edition: standard
     enabled: true
@@ -290,57 +434,28 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true
+    enabled: true    
     schemaVersion: 3.0.10
-  seomatic:
+  section-and-product-type:
     edition: standard
     enabled: true
+    schemaVersion: 1.1.1
+  seomatic:
+    edition: standard
+    enabled: true    
     schemaVersion: 3.0.11
-    settings:
-      addHrefLang: true
-      addPaginatedHreflang: true
-      addXDefaultHrefLang: true
-      cpTitlePrefix: '⚙ '
-      devModeCpTitlePrefix: '&#x1f6a7;⚙ '
-      devModeTitlePrefix: '&#x1f6a7; '
-      displayAnalysisSidebar: true
-      displayPreviewSidebar: true
-      enableJsonLdEndpoint: ''
-      enableMetaContainerEndpoint: ''
-      environment: live
-      generatorEnabled: true
-      headersEnabled: true
-      lowercaseCanonicalUrl: '1'
-      maxDescriptionLength: 155
-      maxTitleLength: 70
-      metaCacheDuration: '604800'
-      pluginName: SEO
-      regenerateSitemapsAutomatically: true
-      renderEnabled: true
-      separatorChar: '|'
-      sidebarDisplayPreviewTypes:
-        - google
-        - twitter
-        - facebook
-      siteGroupsSeparate: '1'
-      siteUrlOverride: ''
-      sitemapsEnabled: true
-      socialMediaPreviewTarget: true
-      submitSitemaps: true
   twigpack:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
 system:
   edition: pro
   live: true
-  name: $SITE_NAME
+  name: 'Boilermaker Craft 4'
   retryDuration: null
-  schemaVersion: 3.7.8
+  schemaVersion: 4.0.0.9
   timeZone: America/Chicago
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true

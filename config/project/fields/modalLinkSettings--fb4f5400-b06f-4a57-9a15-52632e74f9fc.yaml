@@ -1,0 +1,65 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: modalLinkSettings
+instructions: null
+name: 'Modal Link Settings'
+searchable: false
+settings:
+  allowCustomText: true
+  allowTarget: false
+  autoNoReferrer: false
+  customTextMaxLength: 0
+  customTextRequired: true
+  defaultLinkName: asset
+  defaultText: ''
+  enableAllLinkTypes: false
+  enableAriaLabel: false
+  enableElementCache: true
+  enableTitle: false
+  typeSettings:
+    asset:
+      allowCrossSiteLink: false
+      allowCustomQuery: false
+      enabled: false
+      sources: '*'
+    category:
+      allowCrossSiteLink: false
+      allowCustomQuery: false
+      enabled: false
+      sources: '*'
+    custom:
+      allowAliases: false
+      disableValidation: false
+      enabled: false
+    email:
+      allowAliases: false
+      disableValidation: false
+      enabled: false
+    entry:
+      allowCrossSiteLink: false
+      allowCustomQuery: true
+      enabled: true
+      sources:
+        - singles
+        - 'section:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
+        - 'section:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
+    site:
+      enabled: false
+      sites: '*'
+    tel:
+      allowAliases: false
+      disableValidation: false
+      enabled: false
+    url:
+      allowAliases: false
+      disableValidation: false
+      enabled: false
+    user:
+      allowCrossSiteLink: false
+      allowCustomQuery: false
+      enabled: false
+      sources: '*'
+translationKeyFormat: null
+translationMethod: none
+type: lenz\linkfield\fields\LinkField

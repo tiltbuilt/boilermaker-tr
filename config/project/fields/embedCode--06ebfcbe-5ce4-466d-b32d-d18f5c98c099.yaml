@@ -1,0 +1,19 @@
+columnSuffix: mtzpxntb
+contentColumnType: text
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: embedCode
+instructions: null
+name: 'Embed Code'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  columnType: null
+  initialRows: 8
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

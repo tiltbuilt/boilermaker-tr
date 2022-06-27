@@ -1,0 +1,56 @@
+columnSuffix: mjsmpnlm
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: iconSize
+instructions: null
+name: 'Icon Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - icon-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - icon-md
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - icon-lg
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

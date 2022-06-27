@@ -1,0 +1,17 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: e28d1c24-f3ad-42e9-9ddb-f9837ee9f9b4 # Entries
+handle: pageHeaderCustomClasses
+instructions: null
+name: 'Page Header Custom Classes'
+searchable: false
+settings:
+  maxBlocks: null
+  maxLevels: null
+  maxTopBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field

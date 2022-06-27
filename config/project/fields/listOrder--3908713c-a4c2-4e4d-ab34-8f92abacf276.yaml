@@ -1,0 +1,78 @@
+columnSuffix: cshaeltp
+contentColumnType: string
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: listOrder
+instructions: null
+name: 'List - Order'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Newest to Oldest'
+        -
+          - value
+          - dd
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Oldest to Newest'
+        -
+          - value
+          - da
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Random
+        -
+          - value
+          - r
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - A-Z
+        -
+          - value
+          - az
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Z-A
+        -
+          - value
+          - za
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Sort Order (for entries that can be rearranged in the admin)'
+        -
+          - value
+          - so
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

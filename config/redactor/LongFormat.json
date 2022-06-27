@@ -1,0 +1,65 @@
+{
+  "buttons": [
+	"html",
+	"formatting",
+	"bold",
+	"italic",
+	"unorderedlist",
+	"orderedlist",
+	"link",
+	"image",
+	"video"
+  ],
+  "plugins": [
+	"fullscreen",
+	"video"
+  ],
+  "formatting": [
+	  "p"
+	],
+	"formattingAdd": {
+	  
+	  "heading2": {
+		  "title": "Heading 2",
+		  "api": "module.block.format",
+		  "args": {
+			  "tag": "h2",
+			  "class": "heading2"
+		  }
+	  },
+	  "heading3": {
+		  "title": "Heading 3",
+		  "api": "module.block.format",
+		  "args": {
+			  "tag": "h3",
+			  "class": "heading3"
+		  }
+	  },
+	  "heading4": {
+		  "title": "Heading 4",
+		  "api": "module.block.format",
+		  "args": {
+			  "tag": "h4",
+			  "class": "heading4"
+		  }
+	  },
+	  "heading5": {
+		  "title": "Heading 5",
+		  "api": "module.block.format",
+		  "args": {
+			  "tag": "h5",
+			  "class": "heading5"
+		  }
+	  },
+	  "heading6": {
+		  "title": "Heading 6",
+		  "api": "module.block.format",
+		  "args": {
+			  "tag": "h6",
+			  "class": "heading6"
+		  }
+	  }
+	},
+  "linkNewTab": true,
+  "toolbarFixed": true
+}

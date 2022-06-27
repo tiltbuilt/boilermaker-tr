@@ -1,0 +1,121 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Nav List Block Template
+ * -----
+ * Nav lists function as Button Groups, but they pull their list of buttons from a nav collection rather than child blocks in the page builder
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set styleAdjusts = block.children.one() %}
+{% set navCollection = craft.navigation.nodes().handle(block.navListToDisplay).collect() %}
+{% set collectionIds = [] %}
+{% for node in navCollection %}
+	{% set collectionIds = collectionIds|merge([node.elementId]) %}
+{% endfor %}
+{% set btnLinkList = craft.entries().id(collectionIds).fixedOrder().collect() %}
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'navList-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ block.type.handle %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set childBtnAdjusts = null %}
+{% set btnMarginClasses = [] %}
+{% set btnPadClasses = [] %}
+{% set btnStyleClasses = [] %}
+
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleAdjustmentsButton']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# set up object for classes to apply to child accordions if setting controls from the group level #}
+	{% set childBtnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+	{% set btnMarginClasses = clone(childBtnAdjusts.children).type(['styleControlsMargins']).collect() %}
+	{% set btnPadClasses = clone(childBtnAdjusts.children).type(['styleControlsPadding']).collect() %}
+	{% set btnStyleClasses = clone(childBtnAdjusts.children).type(['styleControlsButton']).collect() %}
+		
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = block.revealAnimation %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList('inner', padClasses, null) -}}>	
+			
+			{% if btnLinkList|length %}
+			
+				{% for link in btnLinkList %}
+				
+					<div {{ gMacros.buildElementAttributes(null, 'elem-block button-wrapper', btnMarginClasses, null) -}}> 	
+						<div class="anim-elem anim-child">
+							<div {{ gMacros.buildClassList('inner', btnPadClasses, null) -}}>	
+								<a href="{{ link.url }}" {{ gMacros.buildClassList('btn', btnStyleClasses, null) -}} title="{{link.title}}">
+							  	<span>{{link.title}}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				
+				{% endfor %}
+			
+			{% endif %}
+		
+		</div>		
+	</div>     
+</div>

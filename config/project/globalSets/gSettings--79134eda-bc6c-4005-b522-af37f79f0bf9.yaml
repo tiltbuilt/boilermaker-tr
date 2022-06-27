@@ -1,0 +1,102 @@
+fieldLayouts:
+  03c55aa1-9d12-4f72-a17c-503ffc072d24:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fa86d142-2ef4-4394-98e8-09cfb6601be2 # Header Embeds
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0f4892e9-3ee1-4394-a016-83187ed126c3
+            warning: null
+            width: 100
+          -
+            fieldUid: 1781b5c1-16cf-4b02-b340-aa62d22c5797 # Body Tag Embeds
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ac24893-1aef-429a-a703-f788c0d0459f
+            warning: null
+            width: 100
+          -
+            fieldUid: 6b175c77-e00a-468d-b930-025488a8778e # Footer Embeds
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d361462-0a25-4952-ac68-f23f7cc9f507
+            warning: null
+            width: 100
+        name: Embeds
+        uid: a3bf1202-9c65-4c42-b373-4817275ba3dd
+      -
+        elements:
+          -
+            fieldUid: 6d3b0bc0-34da-4b98-95ac-ea8c16f70a65 # Slider Previous Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: af9951fa-ce69-4959-b80e-3de5b83b52dd
+            warning: null
+            width: 100
+          -
+            fieldUid: 1acfdc52-cb76-4bd9-9286-5e59bc27def6 # Slider Next Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5dfbff35-b991-4c8e-9aaf-4d96ca4602c6
+            warning: null
+            width: 100
+          -
+            fieldUid: 116b0f4f-13b5-47fe-9daa-6716a09821a4 # Accordion Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 067de6b3-a661-426c-85e4-2e9e865db5af
+            warning: null
+            width: 100
+        name: 'Control Icons'
+        uid: 9a832288-528a-4fbf-8fd1-d6e6da47d9b6
+      -
+        elements:
+          -
+            fieldUid: bda39666-95a2-4a19-b0a1-f24b1dff1fa3 # Thumbnail Placeholder Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aeaaa9e1-ea83-437c-949e-aaa445646bb4
+            warning: null
+            width: 100
+        name: 'Thumbnail Placeholder'
+        uid: 2a44b20c-541e-41c0-a050-daa5ad51bebb
+      -
+        elements:
+          -
+            fieldUid: 5be0f654-b4af-4c4a-811a-d51d305965d9 # Notification Bar Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b44a959d-5294-49cb-b2e2-78b8d67a9d84
+            warning: null
+            width: 100
+        name: 'Notification Bar'
+        uid: 3b8b30e1-ee49-4f22-8e2c-1c32c8a1a043
+handle: gSettings
+name: Globals
+sortOrder: 3

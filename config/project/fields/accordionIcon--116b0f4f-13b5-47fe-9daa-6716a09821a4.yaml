@@ -1,0 +1,17 @@
+columnSuffix: lllqpjgd
+contentColumnType: string
+fieldGroup: 7450367a-cdf2-446d-ad60-d78b932299d5 # Globals
+handle: accordionIcon
+instructions: null
+name: 'Accordion Icon'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - 'sprite:ui-svg-sprites.svg'
+  remoteSets:
+    - font-awesome-all
+  showLabels: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

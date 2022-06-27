@@ -1,6 +1,6 @@
 {#
 /**
- * Pages entry template
+ * Tilt Boilermaker - Pages entry template
  * -----
  * Loads the appropriate page partial or the default
  * 
@@ -10,4 +10,107 @@
  */
 #}
 
-{% include ['pages/_types/' ~ entry.type, 'pages/_types/default'] with { entry : entry } %}
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+
+{% do craft.app.elements.eagerLoadElements(
+ className(entry),
+ [entry],
+ ['seoImage', 'modalToDisplay', 'pageBuilder', 'pageBuilder.styleControlsBackgroundImage:backgroundImage', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry', 'pageBuilder.repeaterSectionEntryList.listEntriesSections', 'pageBuilder.repeaterSelectEntryList.listSpecificEntries']
+) %}
+
+{% set pageBuilderContent = entry.pageBuilder.collect() %}
+
+{% set buttonModalList = [] %}
+{% for block in entry.pageBuilder %}
+    {% if block.type == 'buttonModal' %}
+        {% set buttonModalList = buttonModalList|merge([block]) %}
+    {% endif %}
+{% endfor %}
+
+
+{# -- Layout template for HTML pages -- #}
+{% extends "_project/_layouts/generic-page-layout.twig" %}
+
+{% block pageId %}page-{{- entry.slug -}}{% endblock %}
+
+{% block bodyAttr %}	
+    {% if entry.modalToDisplay|length or buttonModalList|length %}class="has-modal{% if entry.modalToDisplay|length %} load-modal{% endif %}"{% endif %} {% if entry.modalToDisplay|length %}{% set loadModal = entry.modalToDisplay[0] %}data-load-modal="{{loadModal.url}}"{% endif %}	
+{% endblock %}
+
+{% block globalHeader %}
+
+    {% if entry.showPageHeader %}	
+      {% include '_project/_partials/global-header' %}
+    {% endif %}
+     
+{% endblock %}
+
+{% block pageHeader %}
+
+    {% if entry.showPageHeader %}	
+      {% for block in pageBuilderContent %}
+          {% if block.level == 1 and block.type.handle == 'pageHeader' %}
+              
+                {%
+                  include [
+                    '_project/_bodyblocks/sections/pageHeader',
+                    '_boilerplate/_bodyblocks/sections/pageHeader'
+                  ] with { 'section' : block }
+                %}
+              
+          {% endif %}  
+       {% endfor %} 
+     
+   {% endif %}
+     
+{% endblock %}
+
+{% block pageContent %}
+        
+    {% for block in pageBuilderContent %}
+        {% do block.useMemoized(pageBuilderContent) %}
+    {% endfor %}
+    
+    {% for block in pageBuilderContent %}
+        {% if block.level == 1 and block.type.handle starts with 'section' %}
+            
+              {%
+                include [
+                  '_project/_bodyblocks/sections/' ~ block.type.handle,
+                  '_boilerplate/_bodyblocks/sections/' ~ block.type.handle,
+                  '_project/_bodyblocks/sections/section',
+                  '_boilerplate/_bodyblocks/sections/section'
+                ] with { 'section' : block,  }
+              %}
+            
+        {% endif %}  
+     {% endfor %}    
+
+{% endblock %}
+
+{% block pageFooter %}
+
+    {% if entry.showPageFooter %}
+      {% include '_project/_partials/global-footer' %}
+    {% endif %}
+    
+{% endblock %}
+
+{% block modalContent %}	
+    {% if entry.modalToDisplay|length or buttonModalList|length %}		
+        <div id="modal-overlay" class="closed">
+            <div id="modal" class="closed" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+                <button id="btn-modal-close" class="btn-modal-close">			  
+                    <svg><use xlink:href="#icon-close"></use></svg>
+                </button>
+                <div id="modal-content">
+                    <div class="modal-spinner">
+                        <img src="/dist/img/ajax-loader-gray-300.gif" alt="Loading" />
+                    </div>
+                </div>
+            </div>
+        </div>		
+    {% endif %}
+{% endblock %}

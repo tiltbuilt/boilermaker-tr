@@ -1,0 +1,268 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Nav Collection Repeater Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{% set styleAdjusts = clone(repeater.children).type('styleAdjustmentsRepeater').one() %}
+	
+{# Set block id attribute value #}
+{% if repeater.customId is defined and repeater.customId != '' %}
+	{% set blockId = repeater.customId %}
+	{% set headerId = repeater.customId ~ '-mainheader' %}
+	{% set subId = repeater.customId ~ '-subhead' %}
+	{% set introId = repeater.customId ~ '-intro' %}
+	{% set btnId = repeater.customId ~ '-btn' %}
+{% else %}
+	{% set blockId = repeater.type.handle ~ '-' ~ repeater.id %}
+	{% set headerId = repeater.type.handle ~ '-' ~ repeater.id ~ '-mainheader' %}
+	{% set subId = repeater.type.handle ~ '-' ~ repeater.id ~ '-subhead' %}
+	{% set introId = repeater.type.handle ~ '-' ~ repeater.id ~ '-intro' %}
+	{% set btnId = repeater.type.handle ~ '-' ~ repeater.id ~ '-btn' %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ repeater.type.handle %}
+{% set innerClass = 'inner ' ~ repeater.type.handle ~ '-inner' %}
+
+{#
+  ----
+  Prepare the query parameters
+  -----
+#}
+
+{%
+  set orderOptions = {
+	'dd' : 'postDate desc',
+	'da' : 'postDate asc',
+	'r'  : 'RAND()',
+	'az' : 'title asc',
+	'za' : 'title desc',
+	'so' : '',
+  }
+%}
+{% set listOrder = repeater.listOrder is defined and repeater.listOrder|length ? repeater.listOrder.value : null %}
+
+{% if listOrder|length %}
+  {% set listOrder = listOrder in orderOptions|keys ? orderOptions[listOrder] : 'postDate desc' %}
+{% endif %}
+
+{% set paginateItems = repeater.listItemsPerPage == 0 ? false : true %}
+
+{% set navCollection = craft.navigation.nodes().handle(repeater.navListToDisplay).collect() %}
+{% set collectionIds = [] %}
+{% for node in navCollection %}
+	{% set collectionIds = collectionIds|merge([node.elementId]) %}
+{% endfor %}
+
+{# If a number of items isn't specified, get them all and paginate them #}
+
+{% if paginateItems == true %}
+	{% if repeater.listOrder == 'so' %}	
+  		{% paginate craft.entries.id(collectionIds).fixedOrder().limit(repeater.listItemsPerPage).with(['seoImage']) as pageInfo, itemList %}
+	{% else %}
+		{% paginate craft.entries.id(collectionIds).orderby(listOrder).limit(repeater.listItemsPerPage).with(['seoImage']) as pageInfo, itemList %}
+	{% endif %}
+  {% do seomatic.helper.paginate(pageInfo) %}
+{% else %}
+	{% if repeater.listOrder == 'so' %}	
+		{% set itemList = craft.entries.id(collectionIds).fixedOrder().with(['seoImage']).collect() %}
+	{% else %}
+		{% set itemList = craft.entries.id(collectionIds).orderby(listOrder).with(['seoImage']).collect() %}
+	{% endif %}  
+{% endif %}
+
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set headerClasses = [] %}
+{% set subClasses = [] %}
+{% set introClasses = [] %}
+{% set headerPadClasses = [] %}
+{% set subPadClasses = [] %}
+{% set introPadClasses = [] %}
+{% set btnAdjusts = null %}
+{% set listItemAdjusts = null %}
+
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackground', 'styleAdjustmentsMainHeader', 'styleAdjustmentsSubhead', 'styleAdjustmentsIntroText', 'styleAdjustmentsRow', 'styleAdjustmentsButton', 'styleAdjustmentsRepeaterItem']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{% set rowAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsRow').one() %}
+	{% if rowAdjusts != null %}
+		{% for rowItem in clone(rowAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+			{% set headerClasses = headerClasses|merge([headerItem]) %}
+		{% endfor %}		
+	{% endif %}
+	
+	{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+		
+	{# Set up Styles for Header, subhead intro text and button #}
+	{% if repeater.headerText|length and repeater.headingLevel != '' %}
+		{% set headerAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
+		{% if headerAdjusts != null %}
+			{% for headerItem in clone(headerAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+				{% set headerClasses = headerClasses|merge([headerItem]) %}
+			{% endfor %}
+			{% for headerPadItem in clone(headerAdjusts.children).type('styleControlsPadding').collect() %}
+				{% set headerPadClasses = headerPadClasses|merge([headerPadItem]) %}
+			{% endfor %}
+		{% endif %}
+	{% endif %}
+	
+	{% if repeater.subheadText|length %}
+		{% set subAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsSubhead').one() %}
+		{% if subAdjusts != null %}
+			{% for subItem in clone(subAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+				{% set subClasses = subClasses|merge([subItem]) %}
+			{% endfor %}
+			{% for subPadItem in clone(subAdjusts.children).type('styleControlsPadding').collect() %}
+				{% set subPadClasses = subPadClasses|merge([subPadItem]) %}
+			{% endfor %}
+		{% endif %}
+	{% endif %}
+	
+	{% if repeater.simpleText|length %}
+		{% set introAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsIntroText').one() %}
+		{% if introAdjusts != null %}
+			{% for introItem in clone(introAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+				{% set introClasses = introClasses|merge([introItem]) %}
+			{% endfor %}
+			{% for introPadItem in clone(introAdjusts.children).type('styleControlsPadding').collect() %}
+				{% set introPadClasses = introPadClasses|merge([introPadItem]) %}
+			{% endfor %}
+		{% endif %}
+	{% endif %}	
+	
+	{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+		
+	{% set listItemAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsRepeaterItem').one() %}	
+	
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? repeater.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if repeater.revealAnimation is defined and repeater.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = repeater.revealAnimation %}
+	{% if repeater.animateChildren is not empty %}
+		{% if repeater.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if repeater.staggerChildReveals is not empty %}
+				{% if repeater.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+			
+			{% if repeater.subheadText|length and repeater.subheadPosition == 1 %}
+			  <{{ repeater.subheadLevel }} {{ gMacros.buildElementAttributes(subId, 'elem-block repeater-subhead ' ~ repeater.subheadBaseClass, subClasses) -}}>
+				<div class="anim-wrapper anim-child">
+					<div {{ gMacros.buildClassList('inner repeater-subhead-inner', subPadClasses, null) -}}>
+						{{ gMacros.stripTags(repeater.subheadText) }}
+					</div>
+				</div>
+			  </{{ repeater.subheadLevel }}>
+			{% endif %}
+			
+			{% if repeater.headerText|length and repeater.headingLevel != '' %}
+				<{{ repeater.headingLevel }} {{ gMacros.buildElementAttributes(headerId, 'elem-block repeater-mainheader ' ~ repeater.mainHeaderBaseClass, headerClasses, null) -}}>
+				<div class="anim-wrapper anim-child">
+					<div {{ gMacros.buildClassList('inner repeater-mainheader-inner', headerPadClasses, null) -}}>
+						{{ gMacros.stripTags(repeater.headerText) }}
+					</div>
+				</div>
+				</{{ repeater.headingLevel }}>
+			{% endif %}
+			
+			{% if repeater.subheadText|length and repeater.subheadPosition == 0 %}
+			  <{{ repeater.subheadLevel }} {{ gMacros.buildElementAttributes(subId, 'elem-block repeater-subhead ' ~ repeater.subheadBaseClass, subClasses) -}}>
+				<div class="anim-wrapper anim-child">
+					<div {{ gMacros.buildClassList('inner repeater-subhead-inner', subPadClasses, null) -}}>
+						{{ gMacros.stripTags(repeater.subheadText) }}
+					</div>
+				</div>
+			  </{{ repeater.subheadLevel }}>
+			{% endif %}
+			
+			{% if repeater.simpleText|length %}				
+				<div {{ gMacros.buildElementAttributes(introId, 'elem-block repeater-intro', introClasses, null) -}}>
+					<div class="anim-wrapper anim-child">
+						<div {{ gMacros.buildClassList('inner repeater-intro-inner', introPadClasses, null) -}}>
+							{{repeater.simpleText}}
+						</div>
+					</div>
+				</div>
+			{% endif %}  
+			
+			{% if itemList|length %}							
+				
+				{% set repeaterData = [] %}
+				{% for item in itemList %}
+				  {% set repeaterData = repeaterData|merge([item]) %}
+				{% endfor %}
+				  
+							  
+				{% set repeaterTemplateHandle = repeater.listItemDisplayStyle %}    
+							
+				  {%
+					include [
+					  '_project/_bodyblocks/repeaters/templates/' ~ repeaterTemplateHandle,
+					  '_boilerplate/_bodyblocks/repeaters/templates/' ~ repeaterTemplateHandle,
+					] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterShowExcerpt' : repeater.showExcerpt, 'btnAdjusts' : btnAdjusts, 'itemAdjusts': listItemAdjusts }
+				  %}
+			
+				{% if paginateItems %}
+					{% include ['_project/_partials/pagination', '_boilerplate/_partials/pagination'] %}
+				{% endif %}					
+			  {% else %}
+				<div class="list-no-items">
+					  <b>No items found.</b>
+				</div>
+			  {% endif %} 			
+			
+		</div>
+						 
+	</div>     
+</div>

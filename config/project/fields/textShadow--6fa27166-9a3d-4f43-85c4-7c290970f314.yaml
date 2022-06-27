@@ -1,0 +1,89 @@
+columnSuffix: juhnpjne
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: textShadow
+instructions: null
+name: 'Text Shadow'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Base
+        -
+          - value
+          - text-shadow
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - text-shadow-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - text-shadow-md
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - text-shadow-lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - XL
+        -
+          - value
+          - text-shadow-xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - text-shadow-none
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

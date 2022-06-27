@@ -1,0 +1,20 @@
+childBlocks:
+  - styleAdjustmentsMainHeader
+  - styleAdjustmentsButtonGroup
+  - styleAdjustmentsSubhead
+  - styleAdjustmentsIntroText
+  - styleControlsType
+  - styleControlsBackgroundImage
+  - styleControlsContentAlignment
+  - styleControlsRowAlignment
+  - styleControlsBackgroundColor
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+group: 8933b575-f2c0-4930-a9fa-ec450aed0a0c # Styling Adjustments
+handle: styleAdjustmentsPageHeader
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 1
+name: 'Style Adjustments - Page Header'
+sortOrder: 97
+topLevel: false

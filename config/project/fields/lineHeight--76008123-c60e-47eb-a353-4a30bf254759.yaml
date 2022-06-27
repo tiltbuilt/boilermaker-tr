@@ -1,0 +1,89 @@
+columnSuffix: btxwzyyl
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: lineHeight
+instructions: null
+name: 'Line Height'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - leading-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tight
+        -
+          - value
+          - leading-tight
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Snug
+        -
+          - value
+          - leading-snug
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - leading-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Relaxed
+        -
+          - value
+          - leading-relaxed
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Loose
+        -
+          - value
+          - leading-loose
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,20 @@
+columnSuffix: hygomqqt
+contentColumnType: integer(10)
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: listItemsPerPage
+instructions: 'Set to zero to list all entries with no pagination'
+name: 'List - Items per Page'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 0
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

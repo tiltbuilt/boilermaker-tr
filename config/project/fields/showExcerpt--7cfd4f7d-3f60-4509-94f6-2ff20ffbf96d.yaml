@@ -1,0 +1,14 @@
+columnSuffix: ccsedjhe
+contentColumnType: boolean
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: showExcerpt
+instructions: null
+name: 'Show Excerpt'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

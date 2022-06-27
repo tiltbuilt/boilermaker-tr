@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: modals
+name: Modals
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  12c30846-c1db-40fd-aa5a-3af9bc56847f: # $SITE_NAME
+    enabledByDefault: true
+    hasUrls: true
+    template: _project/_layouts/generic-page-layout.twig
+    uriFormat: 'modals/{slug}'
+type: channel

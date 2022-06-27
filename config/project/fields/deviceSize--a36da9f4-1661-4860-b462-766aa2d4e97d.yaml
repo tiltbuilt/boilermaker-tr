@@ -1,0 +1,78 @@
+columnSuffix: jmresyqa
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: deviceSize
+instructions: null
+name: 'Device Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Phone Horizontal'
+        -
+          - value
+          - 'sm:'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tablet
+        -
+          - value
+          - 'md:'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Laptop
+        -
+          - value
+          - 'lg:'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Desktop
+        -
+          - value
+          - 'xl:'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - HiRes
+        -
+          - value
+          - '2xl:'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

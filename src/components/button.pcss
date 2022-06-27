@@ -1,0 +1,83 @@
+/**
+ * components/button.css
+ *
+ * Button and button group component specific styles
+ * 
+ This file contains the styles to handle the display of the buttons on the site. Feel free to make any adjustments as needed. The class names used in the site's buttonStyling field need to be represented here.
+ *
+ */
+ 
+ .buttonGroup {
+	// These classes must stay in order to ensure functionality
+	@apply block;
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-normal lg:mb-2x;
+	 
+	&:last-child {
+		@apply mb-0;
+	}	    
+ }
+ 
+ .buttonGroup-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+ }
+ 
+ .btn-wrapper {
+	// These classes must stay in order to ensure functionality
+	@apply inline-block;
+	//The default classes and style below can be changed on a per-project basis
+	@apply mr-half mb-half;	 
+ }
+ 
+ .btn-wrapper-inner {
+	 
+ }
+ 
+ /* btn and btn-primary and btn-md are set tothe same styles so that if a group is set to use a secondary style and you want to change one button the to the default you can */
+ 
+ .btn, .btn-primary {
+	// These classes must stay in order to ensure functionality
+	@apply inline-block leading-none;
+	//The default classes and style below can be changed on a per-project basis
+	@apply uppercase font-semibold text-white bg-black;
+	border-radius: 0.4rem; 
+	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	text-shadow: none !important;
+	
+	&:hover {
+		/* place general hover styles for all buttons here */
+		opacity: 0.7;
+	}	
+ }
+ 
+ .btn, .btn-md {
+	 @apply text-base py-4 px-8;	 
+  }
+ 
+/* add aditional button styles and sizes here */
+
+.btn-secondary {	 
+	 //The default classes and style below can be changed on a per-project basis
+	 @apply uppercase font-semibold text-black bg-gray-200;
+	 border-radius: 0.4rem; 
+	 transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	 text-shadow: none !important;
+	 
+	 &:hover {
+		 /* place general hover styles for all buttons here */
+		 opacity: 0.7;
+	 }	
+  }
+ 
+.btn-lg {
+	@apply text-lg py-5 px-10;
+ }
+ 
+ .btn-sm {
+	@apply text-sm py-3 px-6;
+ }
+ 
+ 

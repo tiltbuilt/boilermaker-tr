@@ -1,4 +1,4 @@
-const { colors } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   future: {
@@ -60,5 +60,7 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('tailwindcss-textshadow')
+  ]
 }

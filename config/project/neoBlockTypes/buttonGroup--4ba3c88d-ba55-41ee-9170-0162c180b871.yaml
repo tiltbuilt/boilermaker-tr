@@ -1,0 +1,81 @@
+childBlocks:
+  - childrenButtonGroup
+  - styleAdjustmentsButtonGroup
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  ba25f8cf-9c0f-464d-94a4-e996594495ba:
+    tabs:
+      -
+        elements:
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: da8f62e5-af31-49de-9c2c-9600d6fbb4fe
+        name: 'Content & Styling'
+        uid: 3fa414d5-d039-4db8-9f7e-6dd67521bef2
+      -
+        elements:
+          -
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a112c80f-e181-4f6e-89fa-410dfb42be65
+            warning: null
+            width: 100
+          -
+            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f821ee59-1cb5-4a38-89f2-4b6d4e512701
+            warning: null
+            width: 50
+          -
+            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 787b22bf-4f3c-46c0-a434-31b86cade8c6
+            warning: null
+            width: 50
+        name: Animation
+        uid: 3d5dcc7d-ef1e-4b9e-aa69-2148e92629c9
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be76da8c-0f52-4c2d-bf1a-4dd97159c59a
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7954ca24-9ce1-42fb-9e04-b51f39448bae
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 7d9f8a8f-f559-4098-94c7-38d059f807a6
+group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
+handle: buttonGroup
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 0
+name: 'Button Group'
+sortOrder: 46
+topLevel: false

@@ -1,0 +1,80 @@
+childBlocks:
+  - styleAdjustmentsVideo
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  7d65913a-50da-43ab-bd5d-d6b5a8495ae6:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f314f126-29d7-43dd-8631-3dff02728310 # YouTube Video ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 38b98b53-b765-4174-8d96-e943bfda87c7
+            warning: null
+            width: 50
+          -
+            fieldUid: 2157587f-ba0b-4f33-8ff3-29dd650e3bc4 # Image Asset
+            instructions: null
+            label: 'Poster Image'
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 299ef8a0-5859-451d-a08c-385d9cde3c56
+            warning: null
+            width: 50
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 6e461706-e2c8-4df8-81b9-f620ecf4a1e5
+        name: 'Content & Styling'
+        uid: 2a2db140-a26f-4176-b182-f87f8ea4b173
+      -
+        elements:
+          -
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6c0dcac-0d9b-4355-97d7-c3cf8076aaa6
+            warning: null
+            width: 100
+        name: Animation
+        uid: 6a8efe1f-43e7-4b71-bcef-2719381a10c2
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4b86f2e7-3d05-497b-9ca6-35278a4da1c4
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 29cea3f2-89e7-4e7e-9634-ed4e5d9896ae
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 66890c6f-8272-485d-a88b-17a930f6dd20
+group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
+handle: contentVideo
+maxBlocks: 0
+maxChildBlocks: 1
+maxSiblingBlocks: 0
+name: Video
+sortOrder: 60
+topLevel: false

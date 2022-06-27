@@ -1,0 +1,78 @@
+columnSuffix: czlxcgsu
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: subheadBaseClass
+instructions: null
+name: 'Subhead Base Class'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 1'
+        -
+          - value
+          - heading1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 2'
+        -
+          - value
+          - heading2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 3'
+        -
+          - value
+          - heading3
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 4'
+        -
+          - value
+          - heading4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 5'
+        -
+          - value
+          - heading5
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 6'
+        -
+          - value
+          - heading6
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown
