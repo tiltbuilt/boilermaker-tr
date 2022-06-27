@@ -1,0 +1,14 @@
+columnSuffix: copwknon
+contentColumnType: boolean
+fieldGroup: 1bf643d4-1bb3-4e85-abe5-0a6510c964a4 # Animations
+handle: staggerChildReveals
+instructions: null
+name: 'Stagger Child Reveals'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

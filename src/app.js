@@ -1,13 +1,12 @@
-import './app-base.scss';
-import './app-components.scss';
-import './app-utilities.scss';
-import $ from 'jquery';
-import 'lazysizes';
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
-
+import './app-base.pcss';
+import './app-components.pcss';
+import './app-utilities.pcss';
+import $ from 'jquery';
+import 'lazysizes';
 import { gsap } from "gsap";
 import { ExpoScaleEase, RoughEase, SlowMo } from "gsap/EasePack";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
@@ -30,27 +29,36 @@ $(document).ready(function() {
 	/* REVEAL ANIMATIONS */
 	
 	// collect parent triggered reveals
-	var fadeIns = gsap.utils.toArray('.fadeIn, .repeater.fadeInSubs .repeater-header, .repeater.fadeInSubs .repeater-introtext, .repeater.fadeInSubs .repeater-list-item, .container2Column.fadeInSubs .columnHalf, .containerWithSidebar.fadeInSubs .columnMain, .containerWithSidebar.fadeInSubs .columnSidebar, .row.fadeInSubs > .column, .accordionSet.fadeInSubs > .accordion, .buttonGroup.fadeInSubs .btn, .header.fadeInSubs .header-subhead, .header.fadeInSubs .header-mainHeading, .header.fadeInSubs .header-content, .header.fadeInSubs .btn, .cta.fadeInSubs .cta-image-wrapper, .cta.fadeInSubs .cta-block-header-subhead, cta.fadeInSubs .cta-block-heading, .cta.fadeInSubs .content, .cta.fadeInSubs .btn, .form.fadeInSubs .freeform-row')
-	var slideUps = gsap.utils.toArray('.slideUpAndFadeIn, .repeater.slideUpAndFadeInSubs .repeater-header, .repeater.slideUpAndFadeInSubs .repeater-introtext, .repeater.slideUpAndFadeInSubs .repeater-list-item, .container2Column.slideUpAndFadeInSubs .columnHalf, .containerWithSidebar.slideUpAndFadeInSubs .columnMain, .containerWithSidebar.slideUpAndFadeInSubs .columnSidebar, .row.slideUpAndFadeInSubs > .column, .accordionSet.slideUpAndFadeInSubs > .accordion, .buttonGroup.slideUpAndFadeInSubs .btn, .header.slideUpAndFadeInSubs .header-subhead, .header.slideUpAndFadeInSubs .header-mainHeading, .header.slideUpAndFadeInSubs .header-content, .header.slideUpAndFadeInSubs .btn, .cta.slideUpAndFadeInSubs .cta-image-wrapper, .cta.slideUpAndFadeInSubs .cta-block-header-subhead, cta.slideUpAndFadeInSubs .cta-block-heading, .cta.slideUpAndFadeInSubs .content, .cta.slideUpAndFadeInSubs .btn, .form.slideUpAndFadeInSubs .freeform-row');
-	var slideDowns = gsap.utils.toArray('.slideDownAndFadeIn, .repeater.slideDownAndFadeInSubs .repeater-header, .repeater.slideDownAndFadeInSubs .repeater-introtext, .repeater.slideDownAndFadeInSubs .repeater-list-item, .container2Column.slideDownAndFadeInSubs .columnHalf, .containerWithSidebar.slideDownAndFadeInSubs .columnMain, .containerWithSidebar.slideDownAndFadeInSubs .columnSidebar, .row.slideDownAndFadeInSubs > .column, .accordionSet.slideDownAndFadeInSubs > .accordion, .buttonGroup.slideDownAndFadeInSubs .btn, .header.slideDownAndFadeInSubs .header-subhead, .header.slideDownAndFadeInSubs .header-mainHeading, .header.slideDownAndFadeInSubs .header-content, .header.slideDownAndFadeInSubs .btn, .cta.slideDownAndFadeInSubs .cta-image-wrapper, .cta.slideDownAndFadeInSubs .cta-block-header-subhead, cta.slideDownAndFadeInSubs .cta-block-heading, .cta.slideDownAndFadeInSubs .content, .cta.slideDownAndFadeInSubs .btn, .form.slideDownAndFadeInSubs .freeform-row');
-	var slideLefts = gsap.utils.toArray('.slideLeftAndFadeIn, .repeater.slideLeftAndFadeInSubs .repeater-header, .repeater.slideLeftAndFadeInSubs .repeater-introtext, .repeater.slideLeftAndFadeInSubs .repeater-list-item, .container2Column.slideLeftAndFadeInSubs .columnHalf, .containerWithSidebar.slideLeftAndFadeInSubs .columnMain, .containerWithSidebar.slideLeftAndFadeInSubs .columnSidebar, .row.slideLeftAndFadeInSubs > .column, .accordionSet.slideLeftAndFadeInSubs > .accordion, .buttonGroup.slideLeftAndFadeInSubs .btn, .header.slideLeftAndFadeInSubs .header-subhead, .header.slideLeftAndFadeInSubs .header-mainHeading, .header.slideLeftAndFadeInSubs .header-content, .header.slideLeftAndFadeInSubs .btn, .cta.slideLeftAndFadeInSubs .cta-image-wrapper, .cta.slideLeftAndFadeInSubs .cta-block-header-subhead, cta.slideLeftAndFadeInSubs .cta-block-heading, .cta.slideLeftAndFadeInSubs .content, .cta.slideLeftAndFadeInSubs .btn, .form.slideLeftAndFadeInSubs .freeform-row');
-	var slideRights = gsap.utils.toArray('.slideRightAndFadeIn, .repeater.slideRightAndFadeInSubs .repeater-header, .repeater.slideRightAndFadeInSubs .repeater-introtext, .repeater.slideRightAndFadeInSubs .repeater-list-item, .container2Column.slideRightAndFadeInSubs .columnHalf, .containerWithSidebar.slideRightAndFadeInSubs .columnMain, .containerWithSidebar.slideRightAndFadeInSubs .columnSidebar, .row.slideRightAndFadeInSubs > .column, .accordionSet.slideRightAndFadeInSubs > .accordion, .buttonGroup.slideRightAndFadeInSubs .btn, .header.slideRightAndFadeInSubs .header-subhead, .header.slideRightAndFadeInSubs .header-mainHeading, .header.slideRightAndFadeInSubs .header-content, .header.slideRightAndFadeInSubs .btn, .cta.slideRightAndFadeInSubs .cta-image-wrapper, .cta.slideRightAndFadeInSubs .cta-block-header-subhead, cta.slideRightAndFadeInSubs .cta-block-heading, .cta.slideRightAndFadeInSubs .content, .cta.slideRightAndFadeInSubs .btn, .form.slideRightAndFadeInSubs .freeform-row');
-	var scaleDowns = gsap.utils.toArray('.scaleDownAndFadeIn, .repeater.scaleDownAndFadeInSubs .repeater-header, .repeater.scaleDownAndFadeInSubs .repeater-introtext, .repeater.scaleDownAndFadeInSubs .repeater-list-item, .container2Column.scaleDownAndFadeInSubs .columnHalf, .containerWithSidebar.scaleDownAndFadeInSubs .columnMain, .containerWithSidebar.scaleDownAndFadeInSubs .columnSidebar, .row.scaleDownAndFadeInSubs > .column, .accordionSet.scaleDownAndFadeInSubs > .accordion, .buttonGroup.scaleDownAndFadeInSubs .btn, .header.scaleDownAndFadeInSubs .header-subhead, .header.scaleDownAndFadeInSubs .header-mainHeading, .header.scaleDownAndFadeInSubs .header-content, .header.scaleDownAndFadeInSubs .btn, .cta.scaleDownAndFadeInSubs .cta-image-wrapper, .cta.scaleDownAndFadeInSubs .cta-block-header-subhead, cta.scaleDownAndFadeInSubs .cta-block-heading, .cta.scaleDownAndFadeInSubs .content, .cta.scaleDownAndFadeInSubs .btn, .form.scaleDownAndFadeInSubs .freeform-row');
-	var scaleUps = gsap.utils.toArray('.scaleUpAndFadeIn, .repeater.scaleUpAndFadeInSubs .repeater-header, .repeater.scaleUpAndFadeInSubs .repeater-introtext, .repeater.scaleUpAndFadeInSubs .repeater-list-item, .container2Column.scaleUpAndFadeInSubs .columnHalf, .containerWithSidebar.scaleUpAndFadeInSubs .columnMain, .containerWithSidebar.scaleUpAndFadeInSubs .columnSidebar, .row.scaleUpAndFadeInSubs > .column, .accordionSet.scaleUpAndFadeInSubs > .accordion, .buttonGroup.scaleUpAndFadeInSubs .btn, .header.scaleUpAndFadeInSubs .header-subhead, .header.scaleUpAndFadeInSubs .header-mainHeading, .header.scaleUpAndFadeInSubs .header-content, .header.scaleUpAndFadeInSubs .btn, .cta.scaleUpAndFadeInSubs .cta-image-wrapper, .cta.scaleUpAndFadeInSubs .cta-block-header-subhead, cta.scaleUpAndFadeInSubs .cta-block-heading, .cta.scaleUpAndFadeInSubs .content, .cta.scaleUpAndFadeInSubs .btn, .form.scaleUpAndFadeInSubs .freeform-row');	
+	var fadeIns = gsap.utils.toArray('.elem-block > .anim-elem.fade-in, .elem-block > .anim-parent.fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.fade-in > .inner .anim-pass > .elem-block > .anim-child');
+		
+	var slideUps = gsap.utils.toArray('.elem-block > .anim-elem.slide-up-fade-in, .elem-block > .anim-parent.slide-up-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-up-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var slideDowns = gsap.utils.toArray('.elem-block > .anim-elem.slide-down-fade-in, .elem-block > .anim-parent.slide-down-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-down-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var slideLefts = gsap.utils.toArray('.elem-block > .anim-elem.slide-left-fade-in, .elem-block > .anim-parent.slide-left-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-left-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var slideRights = gsap.utils.toArray('.elem-block > .anim-elem.slide-right-fade-in, .elem-block > .anim-parent.slide-right-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-right-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var scaleDowns = gsap.utils.toArray('.elem-block > .anim-elem.scale-down-fade-in, .elem-block > .anim-parent.scale-down-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-down-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var scaleUps = gsap.utils.toArray('.elem-block > .anim-elem.scale-up-fade-in, .elem-block > .anim-parent.scale-up-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-up-fade-in > .inner .anim-pass > .elem-block > .anim-child');	
 	
 	
 	// collect parent triggered reveals with staggering
 	
-	var fadeInsSubsStagger = gsap.utils.toArray('.repeater.fadeInSubsStagger .repeater-header, .repeater.fadeInSubsStagger .repeater-introtext, .repeater.fadeInSubsStagger .repeater-list-item, .container2Column.fadeInSubsStagger .columnHalf, .containerWithSidebar.fadeInSubsStagger .columnMain, .containerWithSidebar.fadeInSubsStagger .columnSidebar, .row.fadeInSubsStagger > .column, .accordionSet.fadeInSubsStagger > .accordion, .buttonGroup.fadeInSubsStagger .btn, .header.fadeInSubsStagger .header-subhead, .header.fadeInSubsStagger .header-mainHeading, .header.fadeInSubsStagger .header-content, .header.fadeInSubsStagger .btn, .cta.fadeInSubsStagger .cta-image-wrapper, .cta.fadeInSubsStagger .cta-block-header-subhead, cta.fadeInSubsStagger .cta-block-heading, .cta.fadeInSubsStagger .content, .cta.fadeInSubsStagger .btn, .form.fadeInSubsStagger .freeform-row')
+	var fadeInsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+		
+	var slideUpsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-up-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-up-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
 	
-	/*.page-header-content-wrapper > .breadcrumbs, .page-header-content-wrapper .pageheader-headline, .page-header-content-wrapper pageheader-subhead, .page-header-content-wrapper .pageheader-content, .page-header-content-wrapper .btn-pageheader, .page-header-content-wrapper .pageheader-image,*/
+	var slideDownsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-down-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-down-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
 	
-	var slideUpsSubsStagger = gsap.utils.toArray('.repeater.slideUpAndFadeInSubsStagger .repeater-header, .repeater.slideUpAndFadeInSubsStagger .repeater-introtext, .repeater.slideUpAndFadeInSubsStagger .repeater-list-item, .container2Column.slideUpAndFadeInSubsStagger .columnHalf, .containerWithSidebar.slideUpAndFadeInSubsStagger .columnMain, .containerWithSidebar.slideUpAndFadeInSubsStagger .columnSidebar, .row.slideUpAndFadeInSubsStagger > .column, .container.slideUpAndFadeInSubsStagger > .cert-header, .container.slideUpAndFadeInSubsStagger .certlogo, .accordionSet.slideUpAndFadeInSubsStagger > .accordion, .buttonGroup.slideUpAndFadeInSubsStagger .btn, .header.slideUpAndFadeInSubsStagger .header-subhead, .header.slideUpAndFadeInSubsStagger .header-mainHeading, .header.slideUpAndFadeInSubsStagger .header-content, .header.slideUpAndFadeInSubsStagger .btn, .cta.slideUpAndFadeInSubsStagger .cta-image-wrapper, .cta.slideUpAndFadeInSubsStagger .cta-block-header-subhead, cta.slideUpAndFadeInSubsStagger .cta-block-heading, .cta.slideUpAndFadeInSubsStagger .content, .cta.slideUpAndFadeInSubsStagger .btn, .form.slideUpAndFadeInSubsStagger .freeform-row');
-	var slideDownsSubsStagger = gsap.utils.toArray('.repeater.slideDownAndFadeInSubsStagger .repeater-header, .repeater.slideDownAndFadeInSubsStagger .repeater-introtext, .repeater.slideDownAndFadeInSubsStagger .repeater-list-item, .container2Column.slideDownAndFadeInSubsStagger .columnHalf, .containerWithSidebar.slideDownAndFadeInSubsStagger .columnMain, .containerWithSidebar.slideDownAndFadeInSubsStagger .columnSidebar, .row.slideDownAndFadeInSubsStagger > .column, .accordionSet.slideDownAndFadeInSubsStagger > .accordion, .buttonGroup.slideDownAndFadeInSubsStagger .btn, .header.slideDownAndFadeInSubsStagger .header-subhead, .header.slideDownAndFadeInSubsStagger .header-mainHeading, .header.slideDownAndFadeInSubsStagger .header-content, .header.slideDownAndFadeInSubsStagger .btn, .cta.slideDownAndFadeInSubsStagger .cta-image-wrapper, .cta.slideDownAndFadeInSubsStagger .cta-block-header-subhead, cta.slideDownAndFadeInSubsStagger .cta-block-heading, .cta.slideDownAndFadeInSubsStagger .content, .cta.slideDownAndFadeInSubsStagger .btn, .form.slideDownAndFadeInSubsStagger .freeform-row');
-	var slideLeftsSubsStagger = gsap.utils.toArray('.repeater.slideLeftAndFadeInSubsStagger .repeater-header, .repeater.slideLeftAndFadeInSubsStagger .repeater-introtext, .repeater.slideLeftAndFadeInSubsStagger .repeater-list-item, .container2Column.slideLeftAndFadeInSubsStagger .columnHalf, .containerWithSidebar.slideLeftAndFadeInSubsStagger .columnMain, .containerWithSidebar.slideLeftAndFadeInSubsStagger .columnSidebar, .row.slideLeftAndFadeInSubsStagger > .column, .accordionSet.slideLeftAndFadeInSubsStagger > .accordion, .buttonGroup.slideLeftAndFadeInSubsStagger .btn, .header.slideLeftAndFadeInSubsStagger .header-subhead, .header.slideLeftAndFadeInSubsStagger .header-mainHeading, .header.slideLeftAndFadeInSubsStagger .header-content, .header.slideLeftAndFadeInSubsStagger .btn, .cta.slideLeftAndFadeInSubsStagger .cta-image-wrapper, .cta.slideLeftAndFadeInSubsStagger .cta-block-header-subhead, cta.slideLeftAndFadeInSubsStagger .cta-block-heading, .cta.slideLeftAndFadeInSubsStagger .content, .cta.slideLeftAndFadeInSubsStagger .btn, .form.slideLeftAndFadeInSubsStagger .freeform-row');
-	var slideRightsSubsStagger = gsap.utils.toArray('.repeater.slideRightAndFadeInSubsStagger .repeater-header, .repeater.slideRightAndFadeInSubsStagger .repeater-introtext, .repeater.slideRightAndFadeInSubsStagger .repeater-list-item, .container2Column.slideRightAndFadeInSubsStagger .columnHalf, .containerWithSidebar.slideRightAndFadeInSubsStagger .columnMain, .containerWithSidebar.slideRightAndFadeInSubsStagger .columnSidebar, .row.slideRightAndFadeInSubsStagger > .column, .accordionSet.slideRightAndFadeInSubsStagger > .accordion, .buttonGroup.slideRightAndFadeInSubsStagger .btn, .header.slideRightAndFadeInSubsStagger .header-subhead, .header.slideRightAndFadeInSubsStagger .header-mainHeading, .header.slideRightAndFadeInSubsStagger .header-content, .header.slideRightAndFadeInSubsStagger .btn, .cta.slideRightAndFadeInSubsStagger .cta-image-wrapper, .cta.slideRightAndFadeInSubsStagger .cta-block-header-subhead, cta.slideRightAndFadeInSubsStagger .cta-block-heading, .cta.slideRightAndFadeInSubsStagger .content, .cta.slideRightAndFadeInSubsStagger .btn, .form.slideRightAndFadeInSubsStagger .freeform-row');
-	var scaleDownsSubsStagger = gsap.utils.toArray('.repeater.scaleDownAndFadeInSubsStagger .repeater-header, .repeater.scaleDownAndFadeInSubsStagger .repeater-introtext, .repeater.scaleDownAndFadeInSubsStagger .repeater-list-item, .container2Column.scaleDownAndFadeInSubsStagger .columnHalf, .containerWithSidebar.scaleDownAndFadeInSubsStagger .columnMain, .containerWithSidebar.scaleDownAndFadeInSubsStagger .columnSidebar, .row.scaleDownAndFadeInSubsStagger > .column, .accordionSet.scaleDownAndFadeInSubsStagger > .accordion, .buttonGroup.scaleDownAndFadeInSubsStagger .btn, .header.scaleDownAndFadeInSubsStagger .header-subhead, .header.scaleDownAndFadeInSubsStagger .header-mainHeading, .header.scaleDownAndFadeInSubsStagger .header-content, .header.scaleDownAndFadeInSubsStagger .btn, .cta.scaleDownAndFadeInSubsStagger .cta-image-wrapper, .cta.scaleDownAndFadeInSubsStagger .cta-block-header-subhead, cta.scaleDownAndFadeInSubsStagger .cta-block-heading, .cta.scaleDownAndFadeInSubsStagger .content, .cta.scaleDownAndFadeInSubsStagger .btn, .form.scaleDownAndFadeInSubsStagger .freeform-row');
-	var scaleUpsSubsStagger = gsap.utils.toArray('.repeater.scaleUpAndFadeInSubsStagger .repeater-header, .repeater.scaleUpAndFadeInSubsStagger .repeater-introtext, .repeater.scaleUpAndFadeInSubsStagger .repeater-list-item, .container2Column.scaleUpAndFadeInSubsStagger .columnHalf, .containerWithSidebar.scaleUpAndFadeInSubsStagger .columnMain, .containerWithSidebar.scaleUpAndFadeInSubsStagger .columnSidebar, .row.scaleUpAndFadeInSubsStagger > .column, .accordionSet.scaleUpAndFadeInSubsStagger > .accordion, .buttonGroup.scaleUpAndFadeInSubsStagger .btn, .header.scaleUpAndFadeInSubsStagger .header-subhead, .header.scaleUpAndFadeInSubsStagger .header-mainHeading, .header.scaleUpAndFadeInSubsStagger .header-content, .header.scaleUpAndFadeInSubsStagger .btn, .cta.scaleUpAndFadeInSubsStagger .cta-image-wrapper, .cta.scaleUpAndFadeInSubsStagger .cta-block-header-subhead, cta.scaleUpAndFadeInSubsStagger .cta-block-heading, .cta.scaleUpAndFadeInSubsStagger .content, .cta.scaleUpAndFadeInSubsStagger .btn, .form.scaleUpAndFadeInSubsStagger .freeform-row');
+	var slideLeftsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-left-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-left-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var slideRightsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-right-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-right-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var scaleDownsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.scale-down-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-down-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	
+	var scaleUpsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.scale-up-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-up-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
 	
 	
 	// set initial animation states for reveal elements
@@ -586,20 +594,23 @@ $(document).ready(function() {
 		
 		if (toggleFunction == 1) {			
 			accordion.addClass('expanded');
+			var accInner = accordion.find('.accordion-inner');			
 			button.addClass('expanded');
 			button.attr('aria-expanded', 'true');
-			panel.addClass('expanded');		
+			panel.addClass('expanded');
+			panel.height(accInner[0].scrollHeight);		
 		} else {			
 			accordion.removeClass('expanded');
 			button.removeClass('expanded');
 			button.attr('aria-expanded', 'false');
 			panel.removeClass('expanded');
+			panel.height(0);
 		}
 	}
 	
 	$('.accordion .accordion-button').click(function() {		
 		var mySet, myAcc, myTarget, myId;
-		myAcc = '#' + ($(this).parent('h1,h2,h3,h4,h5,h6').parent('.accordion').attr('id')); /* id of the accordion the clicked button is in */
+		myAcc = '#' + ($(this).parent('.accordion-button-header').parent('.anim-wrapper').parent('.accordion').attr('id')); /* id of the accordion the clicked button is in */
 		myId = '#' + ($(this).attr('id')); /* the id of the button that was clicked */
 		myTarget = $(this).data('target'); /* the id of the panel that is triggered by the button */
 		mySet = $(this).data('parent'); /* the id of the set containing the accordion if there is one */
@@ -608,11 +619,11 @@ $(document).ready(function() {
 			accordionFunction(0, myAcc, myId, myTarget);
 		} else {		
 			/* check to see if accordion is part of a set and allows multiple opens or not */		
-			if (mySet != undefined && $(mySet).hasClass('accordionSetSingleOpen')) { 
+			if (mySet != undefined && $(mySet).hasClass('accordionSetSingleOpen')) { 				
 				var closeAcc, closeBtn, closePnl;
-				closeAcc = '#' + ($(mySet + ' > .accordion.expanded').attr('id'));
-				closeBtn = '#' + ($(mySet + ' > .accordion.expanded .accordion-button').attr('id'));
-				closePnl = '#' + ($(mySet + ' > .accordion.expanded .accordion-panel').attr('id'));
+				closeAcc = '#' + ($(mySet + ' .accordion.expanded').attr('id'));
+				closeBtn = '#' + ($(mySet + ' .accordion.expanded .accordion-button').attr('id'));
+				closePnl = '#' + ($(mySet + ' .accordion.expanded .accordion-panel').attr('id'));				
 				accordionFunction(0, closeAcc, closeBtn, closePnl); /* close currently open panel because set doesn't allow multiple opens */
 				accordionFunction(1, myAcc, myId, myTarget); /* open the accordion where the button was clicked */
 			} else {
@@ -702,23 +713,10 @@ $(document).ready(function() {
 	
 	/* SLIDER SETUP AND FUNCTIONALITY */
 	
-	/*
-	function sliderFlexFix(e) {		
-		var myCarousel = e.target;		
-		var myItems = $(myCarousel).find('.owl-item');		
-		myItems.each(function() {
-			$(this).css('height', '');
-		});	
-		var heightVal = $(myCarousel).find('.owl-stage').height();
-		myItems.each(function() {
-			$(this).css('height', heightVal + 'px');
-		});		
-	}
-	*/
 	
 	$('.sliderSet').each(function() {		
 		var timingsetting, swiperEl, swiperOptions;
-		swiperEl = '#' + $(this).children('.swiper').attr('id');		
+		swiperEl = '#' + $(this).find('.swiper').attr('id');		
 		timingsetting = $(this).data('timing');		
 		
 		swiperOptions = {

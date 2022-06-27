@@ -1,0 +1,111 @@
+childBlocks:
+  - childrenSlider
+  - styleAdjustmentsSliderSet
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  23edb249-0251-4629-86f3-e9dc104719f0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4c8a1b99-37ef-424c-9a73-26d40caccc9d # Autoplay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f0369b29-6b81-4169-b023-e52352193711
+            warning: null
+            width: 100
+          -
+            fieldUid: b53dd5c2-c363-4ceb-acd2-c871e7324dd7 # Slider Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1f01162c-a982-451b-8b83-8e736b3053d7
+            warning: null
+            width: 50
+          -
+            fieldUid: 44683fa3-9b93-4d7a-8835-3b46fdab682c # Slider Controls
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d90fcf93-31ac-484c-871f-c119e0c19cf9
+            warning: null
+            width: 50
+          -
+            fieldUid: c72b4e48-ad6f-48d6-890b-dc2274f1e3c5 # Slide Transition Delay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 85eb952e-cac7-479a-ab9b-010ff89f0c21
+            warning: null
+            width: 50
+          -
+            fieldUid: 9105dd5d-53c1-4975-8d20-082c952a8f04 # Slider Effect
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5db69536-16ba-490b-98b2-5e8b639010ef
+            warning: null
+            width: 50
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 5125cc32-a816-417d-96f2-1d1ca2fbe947
+        name: 'Content & Styling'
+        uid: 790c6e7b-c11c-44c1-ab54-ab98a8470f34
+      -
+        elements:
+          -
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 54d96d55-f07b-4d69-8454-a63fa3a9c230
+            warning: null
+            width: 100
+        name: Animation
+        uid: e44d411b-848c-496b-a474-2b69dae5788d
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cdd354ff-3a82-45e4-823c-20bb131effa5
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5b9b5244-4b1e-47bf-ae41-ce958b2241ab
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: d71ab55d-afe5-48d2-acc2-e88d8c98c0ed
+group: e56553d7-4c45-43d9-bd20-6ed0daaf2800 # Sliders
+handle: sliderSet
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 0
+name: 'Slider Set'
+sortOrder: 43
+topLevel: false

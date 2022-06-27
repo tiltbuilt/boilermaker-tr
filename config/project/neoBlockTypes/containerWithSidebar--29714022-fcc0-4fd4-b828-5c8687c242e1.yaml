@@ -1,0 +1,91 @@
+childBlocks:
+  - childrenContainerMainSidebar
+  - styleAdjustmentsContainer2Column
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  d86b0b91-c82f-4b54-8f94-bd04326a7f02:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c2036654-1479-4180-9e87-c7cf588d25e8 # Full Screen Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5f779988-29ba-4dcd-beb2-0d8735e378fb
+            warning: null
+            width: 100
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 640d9d76-66ad-465c-8afd-a61a1e4c0d53
+        name: 'Content & Styling'
+        uid: 695a5de9-31c5-4420-b18e-22b7987dfe61
+      -
+        elements:
+          -
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 30ee66bc-e6f7-4aac-9dc5-cad31e30a347
+            warning: null
+            width: 100
+          -
+            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7db7d4c-01bb-472d-a2ad-a716a0700e13
+            warning: null
+            width: 50
+          -
+            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7223714b-795f-46b5-8a32-a041185d49dd
+            warning: null
+            width: 50
+        name: Animation
+        uid: 2270bc26-2097-459b-b11d-7cafcbc42af4
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 30424e17-fc91-40b3-a60c-050493142d55
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5e1f4df1-54c5-404d-9c57-0760cda8163e
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 7b775133-3117-444f-ad5d-72380d362c68
+group: adafad53-959c-487b-98e7-6df775004a2c # Layout Containers
+handle: containerWithSidebar
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 0
+name: 'Container with Sidebar'
+sortOrder: 25
+topLevel: false

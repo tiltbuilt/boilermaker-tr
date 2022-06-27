@@ -1,0 +1,179 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Column Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% for item in column.children.all() %}
+	{% if item.type.handle == 'childrenColumn' or item.type.handle == 'childrenSlideColumn' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsColumn' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute value #}
+{% if column.customId is defined and column.customId != '' %}
+	{% set blockId = column.customId %}
+{% else %}
+	{% set blockId = 'column-' ~ column.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block column' %}
+{% if column.type.handle != 'column' %}
+	{% set blockClass = blockClass ~ ' ' ~ column.type.handle %}
+{% endif %}
+{% set innerClass = "inner " ~ column.type.handle ~ "-inner" %}
+
+{% if column.type.handle == 'columnSlide' %}
+	{% set loadType = 1 %}
+{% else %}
+	{% set loadType = 0 %}
+{% endif %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set bgClasses = null %}
+
+{% if styleAdjusts != null %}	
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# Set variable for background settings if there are any #}
+		
+	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (column['customClassList'] is defined ? column.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if column.revealAnimation is defined and column.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = column.revealAnimation %}
+	{% if column.animateChildren is not empty %}
+		{% if column.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if column.staggerChildReveals is not empty %}
+				{% if column.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+			{% if contentKids != null %}
+				{% for child in clone(contentKids.children).collect() %}	  
+					
+					{#-
+					For each child component, attempt to load a custom template for the
+					component handle from the project's files,
+					then the same template from the core Tiltrus files,
+					then a custom default template from the project,
+					and finally the default template for this component type from the core Tiltrus files.
+					-#}
+					
+					{% if child.type.handle starts with 'row' %}
+						  {%
+							include [
+							  '_project/_bodyblocks/rows/' ~ child.type.handle,
+							  '_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
+							  '_project/_bodyblocks/rows/row',
+							  '_boilerplate/_bodyblocks/rows/row'
+							] with { 'row' :  child, 'loadType': loadType }
+						  %}
+					  {% elseif child.type.handle starts with 'repeater' %}
+						  {%
+							include [
+							  '_project/_bodyblocks/repeaters/' ~ child.type.handle,
+							  '_boilerplate/_bodyblocks/repeaters/' ~ child.type.handle,
+							  '_project/_bodyblocks/repeaters/repeater',
+							  '_boilerplate/_bodyblocks/repeaters/repeater'
+							] with { 'repeater' :  child, 'loadType': loadType }
+						  %}
+					  {% elseif child.type.handle starts with 'accordion' %}
+						{%
+						  include [
+							'_project/_bodyblocks/accordions/' ~ child.type.handle,
+							'_boilerplate/_bodyblocks/accordions/' ~ child.type.handle,
+							'_project/_bodyblocks/accordions/accordion',
+							'_boilerplate/_bodyblocks/accordions/accordion'
+						  ] with { 'accordion' :  child, 'loadType': loadType }
+						%}
+					  {% elseif child.type.handle starts with 'tabSet' %}
+						{%
+						  include [
+							'_project/_bodyblocks/tabs/' ~ child.type.handle,
+							'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+							'_project/_bodyblocks/tabs/tabSet',
+							'_boilerplate/_bodyblocks/tabs/tabSet'
+						  ] with { 'tabSet' :  child, 'loadType': loadType }
+						%}
+					  {% elseif child.type.handle starts with 'tabPanel' %}
+						{%
+						  include [
+							'_project/_bodyblocks/tabs/' ~ child.type.handle,
+							'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+							'_project/_bodyblocks/tabs/tabPanel',
+							'_boilerplate/_bodyblocks/tabs/tabPanel'
+						  ] with { 'tabPanel' :  child, 'loadType': loadType }
+						%}
+					  {% else %}
+						  {%
+							include [
+							  '_project/_bodyblocks/blocks/' ~ child.type.handle,
+							  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+							  '_project/_bodyblocks/blocks/block',
+							  '_boilerplate/_bodyblocks/blocks/block'
+							] ignore missing with { 'block' :  child, 'loadType': loadType }
+						  %}
+					{% endif %}
+					
+				{% endfor %}
+			{% endif %}
+		</div>
+		{% if bgClasses != null %}		  
+			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+		{% endif %}		
+	</div>     
+</div>

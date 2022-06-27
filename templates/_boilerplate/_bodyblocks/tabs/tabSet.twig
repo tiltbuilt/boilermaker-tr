@@ -1,0 +1,199 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Container Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% for item in tabSet.children.all() %}
+	{% if item.type.handle == 'childrenTabSet' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsTabSet' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute value #}
+{% if tabSet.customId is defined and tabSet.customId != '' %}
+	{% set blockId = tabSet.customId %}
+{% else %}
+	{% set blockId = 'tabSet-' ~ tabSet.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ tabSet.type.handle %}
+{% set innerClass = 'inner ' ~ tabSet.type.handle ~ '-inner' %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set bgClasses = null %}
+{% set childTabAdjusts = null %}
+{% set bgColorClasses = [] %}
+
+{% if styleAdjusts != null %}	
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage', 'styleControlsBackgroundColor']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# Set variable for background settings if there are any #}
+		
+	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+	{% for bgColorItem in clone(styleAdjusts.children).type('styleControlsBackgroundColor').collect() %}
+		{% set bgColorClasses = bgColorClasses|merge([bgColorItem]) %}
+	{% endfor %}
+	
+	{# set up object for classes to apply to child accordions if setting controls from the group level #}
+	{% set childTabAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsTabPanel').one() %}
+	
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (tabSet['customClassList'] is defined ? tabSet.customClassList : null) %}
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if tabSet.revealAnimation is defined and tabSet.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = tabSet.revealAnimation %}
+	{% if tabSet.animateChildren is not empty %}
+		{% if tabSet.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if tabSet.staggerChildReveals is not empty %}
+				{% if tabSet.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+			{% if contentKids != null %}				
+				<div class="tab-button-panel">
+					{% for child in clone(contentKids.children).collect() %}
+					
+					  {# Set IDs for appropriate component parts #}
+					  
+					  {% if child.customId is defined and child.customId != '' %}			  
+						  {% set panelId = child.customId ~ '-panel' %}
+						  {% set buttonId = child.customId ~ '-button' %}
+						  {% set headingId = child.customId ~ '-heading' %}		
+					  {% else %}			  
+						  {% set panelId = 'tab-' ~ child.id ~ '-panel' %}
+						  {% set buttonId = 'tab-' ~ child.id ~ '-button' %}
+						  {% set headingId = 'tab-' ~ child.id ~ '-heading' %}
+					  {% endif %}
+				
+					  {# determine if this is the first loop through children to determine how to set initial state of first clid tabSet #}
+					  
+					  {% if loop.first == true %}
+						  {% set openState = true %}
+					  {% else %}
+						  {% set openState = false %}
+					  {% endif %}
+					  
+					  {# set up attributes for header and button #}
+					  
+					  {% set buttonClasses = ['tab-button'] %}
+					  {% if openState %}
+						  {% set buttonClasses = buttonClasses|merge(['active-tab']) %}
+					  {% endif %}
+					  {% set buttonAttrs = {'role': 'tab', 'data-target': '#' ~ panelId, 'aria-controls': panelId, 'data-parent': '#' ~ blockId} %}
+					  
+					  {#-
+						For each child component, attempt to load a custom template for the
+						component handle from the project's files,
+						then the same template from the core Tiltrus files,
+						then a custom default template from the project,
+						and finally the default template for this component type from the core Tiltrus files.
+					  -#}	  
+					  
+						<button id="{{buttonId}}" {{ gMacros.buildclassListBasic(buttonClasses) -}} {{- gMacros.buildOtherElementAttributes(buttonAttrs) -}}>
+							{% if child.iconAsset is not empty and child.iconAsset.sprite|length %}
+								<div class="tab-icon-wrapper">									
+									<svg><use xlink:href="#{{ child.iconAsset.sprite }}"></use></svg>
+								</div>
+							{% endif %}
+							<{{ tabSet.headingLevel }} id="{{headingId}}" class="tab-title">{{child.tabTitle}}</{{ tabSet.headingLevel }}>
+						</button>	  
+				
+					{% endfor %}  
+				</div>
+				<div {{ gMacros.buildClassList('tab-panel-wrapper', bgColorClasses, null) -}}>
+					{% for child in clone(contentKids.children).collect() %}
+				
+						{% if child.customId is defined and child.customId != '' %}							
+							{% set headingId = child.customId ~ '-heading' %}		
+						{% else %}							
+							{% set headingId = 'tab-' ~ child.id ~ '-heading' %}
+						{% endif %}
+					  	
+					  	{# determine if this is the first loop through children to determine how to set initial state of first clid tabSet #}
+					  	
+					  	{% if loop.first == true %}
+						  	{% set openState = true %}
+					  	{% else %}
+						  	{% set openState = false %}
+					  	{% endif %}
+					  	
+					  	{#-
+							For each child component, attempt to load a custom template for the
+							component handle from the project's files,
+							then the same template from the core Tiltrus files,
+							then a custom default template from the project,
+							and finally the default template for this component type from the core Tiltrus files.
+					  	-#}	  
+					  
+						{% include [
+							'_project/_bodyblocks/tabs/' ~ child.type.handle,
+							'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+							'_project/_bodyblocks/tabs/tabPanel',
+							'_boilerplate/_bodyblocks/tabs/tabPanel'
+						  ] with { 'tabPanel': child, 'parentTabSet': blockId, 'openState': openState, 'labelledBy': headingId, 'groupStyles': childTabAdjusts }
+						%}	  
+				
+					{% endfor %}
+					
+					{% if bgClasses != null %}		  
+						{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+					{% endif %}  
+				</div>			
+				
+			{% endif %}
+		</div>
+				
+	</div>     
+</div>

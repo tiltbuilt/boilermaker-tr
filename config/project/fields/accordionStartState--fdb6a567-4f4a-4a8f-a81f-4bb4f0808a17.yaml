@@ -1,0 +1,14 @@
+columnSuffix: kxzmugzf
+contentColumnType: boolean
+fieldGroup: a7faa85f-4be1-4101-8d46-c1fc42bbdeeb # Page Builder - Accordions
+handle: accordionStartState
+instructions: null
+name: 'Accordion - Start State'
+searchable: false
+settings:
+  default: false
+  offLabel: Closed
+  onLabel: Open
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

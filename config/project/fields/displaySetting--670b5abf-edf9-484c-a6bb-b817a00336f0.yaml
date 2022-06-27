@@ -1,0 +1,67 @@
+columnSuffix: dylashtc
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: displaySetting
+instructions: null
+name: 'Display Setting'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Block
+        -
+          - value
+          - block
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Inline-Block
+        -
+          - value
+          - inline-block
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Inline
+        -
+          - value
+          - inline
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hidden
+        -
+          - value
+          - hidden
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

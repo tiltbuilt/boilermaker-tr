@@ -1,0 +1,19 @@
+columnSuffix: bicqqwfi
+contentColumnType: text
+fieldGroup: d1336a2e-90ba-4ab3-b632-a1f61e700c2d # Block Controls
+handle: customId
+instructions: null
+name: 'Custom Id'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

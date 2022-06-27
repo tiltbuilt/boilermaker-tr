@@ -1,0 +1,122 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Button Group Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% for item in block.children.all() %}
+	{% if item.type.handle == 'childrenButtonGroup' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsButtonGroup' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+{% else %}
+	{% set blockId = 'buttonGroup-' ~ block.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ block.type.handle %}
+{% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set childBtnAdjusts = null %}
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleAdjustmentsButton']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# set up object for classes to apply to child accordions if setting controls from the group level #}
+	{% set childBtnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+		
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = block.revealAnimation %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+			{% if contentKids != null %}
+				{% for child in clone(contentKids.children).collect() %}	  
+					
+					{#-
+					For each child component, attempt to load a custom template for the
+					component handle from the project's files,
+					then the same template from the core Tiltrus files,
+					then a custom default template from the project,
+					and finally the default template for this component type from the core Tiltrus files.
+					-#}
+					
+					
+				  {%
+					include [
+					  '_project/_bodyblocks/blocks/' ~ child.type.handle,
+					  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+					  '_project/_bodyblocks/blocks/block',
+					  '_boilerplate/_bodyblocks/blocks/block'
+					] ignore missing with { 'block' :  child, 'groupStyles': childBtnAdjusts, 'ignoreMargins': true, 'inGroup': true }
+				  %}
+					  
+					
+				{% endfor %}
+			{% endif %}
+		</div>		
+	</div>     
+</div>

@@ -1,0 +1,274 @@
+{#
+/**
+ * Global macros
+ * -----
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{#
+  Strip tags from a string except for a certain subset
+  -----
+#}
+
+{% macro stripTags(string, safeTagsString) %}
+  {% set safeTagsString = (safeTagsString ? safeTagsString : '<b><strong><i><em><a><br>') %}
+  {{- string|striptags(safeTagsString)|raw -}}
+{% endmacro %}
+
+
+
+{# EMBED RENDERING #}
+
+{#
+  Render any header embeds for the current entry/category
+#}
+
+{% macro entryHeaderEmbeds(object) %}
+  {% if object|length and object['headerEmbeds'] is defined and object.headerEmbeds|length %}
+	{{ object.headerEmbeds|raw }}
+  {% endif %}
+{% endmacro %}
+
+{#
+  Render any body tag embeds for the current entry/category
+#}
+
+{% macro entryBodyEmbeds(object) %}
+  {% if object|length and object['bodyTagEmbeds'] is defined and object.bodyTagEmbeds|length %}
+	{{ object.bodyTagEmbeds|raw }}
+  {% endif %}
+{% endmacro %}
+
+{#
+  Render any footer embeds for the current entry/category
+#}
+
+{% macro entryFooterEmbeds(object) %}
+  {% if object|length and object['footerEmbeds'] is defined and object.footerEmbeds|length %}
+	{{ object.footerEmbeds|raw }}
+  {% endif %}
+{% endmacro %}
+
+{#
+  Display an inline list of news topics links
+#}
+{% macro newsTopicsList(entry) %}
+  {%- set i = 0 -%}
+  {%- for newsTopic in entry.newsTopics.all() -%}
+	{%- set i = i + 1 -%}
+	{{- (i > 1 ? ', ' : null) -}}
+	<a href="{{ newsTopic.url }}">{{ newsTopic.title }}</a>
+  {%- endfor -%}
+{% endmacro %}
+
+
+{#
+  Render social icon links
+#}
+
+{% macro socialIconLinks() %}
+  {% if companyInfo.socialMediaLinks is defined and companyInfo.socialMediaLinks|length %}
+	{% for socialLink in companyInfo.socialMediaLinks.all() %}
+		<a href="{{ socialLink.linkUrl }}" class="social-icon-link" title="{{ socialLink.linkName }}" target="_blank"><svg><use xlink:href="#{{ socialLink.linkIcon.sprite }}"></use></svg></a>
+	{% endfor %}
+  {% endif %}
+{% endmacro %}
+
+
+{# ELEMENT RENDERING #}
+
+{%- macro buildElementAttributes(blockId, blockClass, styleClasses, customClassString, attributeObj) -%}
+  {% import '_boilerplate/_macros/globalMacros' as gMacros %}
+  
+  {%- set blockId = blockId is defined and blockId != null ? blockId : '' -%}
+  
+	
+  {#- Add an id attribute if `onPageId` is set -#}
+  {%- if blockId|length -%} id="{{ blockId }}"{%- endif -%}
+  
+  {{ gMacros.buildClassList(blockClass, styleClasses, customClassString) }}
+  
+  {{ gMacros.buildOtherElementAttributes(attributeObj) }}
+  
+{%- endmacro -%}
+
+{#-
+  Element Display Controls - Classes
+  -----
+  Output classes for the element.
+-#}
+{%- macro buildClassList(blockClass, styleClasses, customClassString) -%}
+  {# Start class output array with block class for block type #}
+  {%- set classesOutput = [] -%}
+  
+  {# Add block class string #}
+  {% if blockClass != null and blockClass != '' %}
+	{%- set classesOutput = classesOutput|merge([blockClass]) -%}
+  {% endif %}
+  
+  {# Process Style adjustment classes and add to output array to array #}
+  {% if styleClasses != null and styleClasses|length %}  
+  		{% for styleBlock in styleClasses %}
+		  	{% set devSize = styleBlock.deviceSize %}
+			  {% switch styleBlock.type.handle %}				
+				{% case 'background' %}					
+					{% for key, value in styleBlock %}
+						{% if key != 'deviceSize' and key != 'type' and value != '' %}
+							{% set classItem = styleBlock.deviceSize ~ value %}
+							{%- set classesOutput = classesOutput|merge([classItem]) -%}
+						{% endif %}						
+					{% endfor %}
+					
+				{% default %}
+					{% set styleBlockFieldLayout = styleBlock.getFieldLayout() %}
+					{% set styleBlockFields = styleBlockFieldLayout.getCustomFields() %}
+					{% for fieldItem in styleBlockFields %}
+						{% if fieldItem.handle != 'deviceSize' and styleBlock[fieldItem.handle] != '' %}
+							{% set classItem = styleBlock.deviceSize ~ styleBlock[fieldItem.handle] %}
+							{%- set classesOutput = classesOutput|merge([classItem]) -%}
+						{% endif %}						
+					{% endfor %}
+			  {% endswitch %}			
+		{% endfor %}		
+  {% endif %}
+  
+    
+  {# Add custom class string #}
+  {% if customClassString != null and customClassString != '' %}
+	{%- set classesOutput = classesOutput|merge([customClassString]) -%}
+  {% endif %}
+  
+  {#- Join classes into string -#}
+  {%- set classesOutput = classesOutput|join(' ') -%}
+
+  {#- Output the classes string -#}
+  class="{{ classesOutput }}"
+{%- endmacro -%}
+
+{#-
+  Element Display Controls - Classes Basic
+  -----
+  Output classes for the element. using basic array. Doesn't do tailwind device size adjustments
+-#}
+
+{%- macro buildClassListBasic(styleClasses) -%}
+	{% set classesOutput = styleClasses|join(' ') %}
+	class="{{ classesOutput }}"
+{%- endmacro -%}
+
+{#-
+  Element Display Controls - Attributes
+  -----
+  Output animation (or other) data-attributes for the element.
+-#}
+{%- macro buildOtherElementAttributes(attrObj) -%}
+  {% for key, value in attrObj %}
+	{{- key -}}="{{- value -}}" 
+  {% endfor %}
+{%- endmacro -%}
+
+{#-
+  Style Adjustments - Background
+  -----
+  Output a background node based on an element's Tiltrus EDC field.
+-#}
+{%- macro buildElementBackground(bgInfo, sizesAtr, loadType) -%}
+  {% import '_boilerplate/_macros/globalMacros' as gMacros %}
+  {# check if there is an image or video for this background #}
+  {% if bgInfo.backgroundImage|length %}
+    {# set bgAsset to get to file for image or video #}	
+  	{% set bgAsset = bgInfo.backgroundImage.one() %}
+	{% set loadClass = null %}
+	{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
+	{% if loadType is defined and loadType != null and loadType != 0 %}
+		{% set loadClass = 'owl-lazy' %}
+	{% else %}
+		{% set loadClass = 'lazyload' %}
+	{% endif %}
+	{# set up bgClasses object with all classes needed for the background #}
+	{% set bgClasses = {'type': {'handle': 'background'}, 'deviceSize' : bgInfo.deviceSize, 'backgroundOpacity': bgInfo.backgroundOpacity} %}		
+	{% if bgInfo.backgroundRepeat == 'bg-no-repeat' or bgInfo.backgroundRepeat == '' %}
+		{% set bgClasses = bgClasses|merge({'backgroundRepeat' : bgInfo.backgroundRepeat}) %}
+		{% if bgInfo.backgroundSize == 'auto' or bgInfo.backgroundSize == '' %}
+			{% set bgClasses = bgClasses|merge({'backgroundSize': 'object-scale-down'}) %}
+		{% else %}
+			{% set  bgClasses = bgClasses|merge({'backgroundSize': 'object-' ~ bgInfo.backgroundSize })%}
+		{% endif %}
+		{% if bgInfo.backgroundPosition != '' %}
+			{% set bgClasses = bgClasses|merge({'backgroundPosition': 'object-' ~ bgInfo.backgroundPosition}) %}
+		{% endif %}
+	{% else %}
+		{% set bgClasses = bgClasses|merge({'backgroundRepeat': bgInfo.backgroundRepeat}) %}
+		{% set bgClasses = bgClasses|merge({'backgroundSize': 'bg-auto'}) %}
+		{% if bgInfo.backgroundPosition != '' %}
+			{% set bgClasses = bgClasses|merge({'backgroundPosition': 'bg-' ~ bgInfo.backgroundPosition}) %}
+		{% endif %}
+	{% endif %}
+	{# handle situation where background block is set for device other than default #}
+	{% if bgInfo.deviceSize != '' %}
+		{% set bgCustString = 'hidden ' ~ bgInfo.deviceSize ~ 'block' %}
+	{% else %}
+		{% set bgCustString = '' %}
+	{% endif %}
+	{# output code based on if asset is image or video #}
+	{% if bgAsset.kind == 'image' %}
+		{# check repeat setting if repeats then set size to auto and assemble class list if doesn't repeat then assemble class list from settings in fields #}
+		{% if bgClasses.backgroundRepeat != 'bg-no-repeat' and bgClasses.backgroundRepeat != '' %}
+			<div {{ gMacros.buildClassList('background ', [bgClasses], loadClass ~ ' ' ~ bgCustString) }} style="background-image:url('{{ bgAsset.url }}');"></div>
+		{% else %}
+			{# set image to bgAsset for transformations #}
+			{% set image = bgAsset %}					
+			{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
+			{% if craft.imager.serverSupportsWebp() %}
+			  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+			  
+			  <picture class="background {{bgCustString}}">		  
+						
+				{% if craft.imager.serverSupportsWebp() %}
+				  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+				{% endif %}
+			  
+				  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+				  width="{{image.width}}"
+				  height="{{image.height}}"
+				  data-sizes="auto"
+				  data-src="{{ transformedImages[0] }}"
+				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				  alt="background" {{ gMacros.buildClassList('background', [bgClasses], 'lazyload') -}}
+				  >
+			  </picture>
+			{% endif %}
+			
+		{% endif %}
+	{% elseif bgAsset.kind == 'video' %}
+	
+		{% set bgImageVideo = bgAsset %}					  
+	  	
+	  	<div class="background {{bgClasses.backgroundOpacity}} {{bgCustString}}">
+			<video          
+		  	class="background lazyload {{bgClasses.backgroundSize}} {{bgClasses.backgroundPosition}}"
+		  	aria-hidden="true"
+		  	role="presentation"
+		  	preload=""
+		  	autoplay playsinline muted loop
+		  	data-src="{{ bgImageVideo.url }}"
+		  	type="{{ bgImageVideo.mimeType }}"
+			></video>
+	  	</div>
+		
+	{% endif %}
+	
+  {% else %}
+  	{# No image or video, just set background div with background color #}
+	<div {{ gMacros.buildClassList('background ', [{'type': {'handle': 'background'}, 'deviceSize' : bgInfo.deviceSize, 'backgroundColor' : bgInfo.backgroundColor}], null) }}></div>
+  {% endif %}
+  
+{%- endmacro -%}
+
+
+

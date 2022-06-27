@@ -1,0 +1,89 @@
+columnSuffix: lmoppehs
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: imageSize
+instructions: null
+name: 'Image Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (no change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Fluid Width Image'
+        -
+          - value
+          - w-full
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Width: 1/4'
+        -
+          - value
+          - w-1/4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Width: 1/3'
+        -
+          - value
+          - w-1/3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Width: 1/2'
+        -
+          - value
+          - w-1/2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Width: 2/3'
+        -
+          - value
+          - w-2/3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Width: 3/4'
+        -
+          - value
+          - w-3/4
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

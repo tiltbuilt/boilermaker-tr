@@ -10,46 +10,22 @@
 
 use craft\helpers\App;
 
-$isDev = App::env('ENVIRONMENT') === 'dev';
-$isProd = App::env('ENVIRONMENT') === 'production';
+$isDev = App::env('CRAFT_ENVIRONMENT') === 'dev';
+$isProd = App::env('CRAFT_ENVIRONMENT') === 'production';
 
 return [
-    // Global settings
-    '*' => [
-        // Default Week Start Day (0 = Sunday, 1 = Monday...)
-        'defaultWeekStartDay' => 1,
+    // Default Week Start Day (0 = Sunday, 1 = Monday...)
+    'defaultWeekStartDay' => 1,
 
-        // Whether generated URLs should omit "index.php"
-        'omitScriptNameInUrls' => true,
+    // Whether generated URLs should omit "index.php"
+    'omitScriptNameInUrls' => true,
 
-        // Control panel trigger word
-        'cpTrigger' => App::env('CP_TRIGGER') ?: 'admin',
+    // Whether Dev Mode should be enabled (see https://craftcms.com/guides/what-dev-mode-does)
+    'devMode' => $isDev,
 
-        // The secure key Craft will use for hashing and encrypting data
-        'securityKey' => App::env('SECURITY_KEY'),
-    ],
+    // Whether administrative changes should be allowed
+    'allowAdminChanges' => $isDev,
 
-    // Dev environment settings
-    'dev' => [
-        // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
-        'devMode' => true,
-
-        // Prevent crawlers from indexing pages and following links
-        'disallowRobots' => true,
-    ],
-
-    // Staging environment settings
-    'staging' => [
-        // Set this to `false` to prevent administrative changes from being made on staging
-        'allowAdminChanges' => true,
-
-        // Prevent crawlers from indexing pages and following links
-        'disallowRobots' => true,
-    ],
-
-    // Production environment settings
-    'production' => [
-        // Set this to `false` to prevent administrative changes from being made on production
-        'allowAdminChanges' => true,
-    ],
+    // Whether crawlers should be allowed to index pages and following links
+    'disallowRobots' => !$isProd,
 ];

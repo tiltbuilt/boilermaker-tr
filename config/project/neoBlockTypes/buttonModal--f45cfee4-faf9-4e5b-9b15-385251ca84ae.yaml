@@ -1,0 +1,75 @@
+childBlocks:
+  - styleAdjustmentsButton
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  9af89179-21f8-443a-98e8-1cec770b8ff7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fb4f5400-b06f-4a57-9a15-52632e74f9fc # Modal Link Settings
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8659d1e4-6436-4208-8c2d-25ab15e9b20e
+            warning: null
+            width: 100
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 72cc9c6a-d247-4bf7-8412-e734ea93e0c7
+        name: 'Content & Styling'
+        uid: dd8dce66-673e-4666-9ff0-0f2fc170638d
+      -
+        elements:
+          -
+            style: tip
+            tip: 'This setting is ignored if the button is in a button group'
+            type: craft\fieldlayoutelements\Tip
+            uid: d03515d8-9654-4627-9491-fd22f8c1107d
+          -
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c5f567c7-a1dc-497c-bc13-021bbccd6901
+            warning: null
+            width: 100
+        name: Animation
+        uid: 4c40a24b-af4a-411e-adc7-75526e13ef78
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b71b2959-ae0b-43d7-bb55-cc7464ae43e0
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ff8386f-788b-4a67-afde-7c1751ed69ee
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 45378a31-80c4-46a5-9e50-b80e5e7877f4
+group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
+handle: buttonModal
+maxBlocks: 0
+maxChildBlocks: 1
+maxSiblingBlocks: 0
+name: 'Modal Trigger Button'
+sortOrder: 48
+topLevel: false

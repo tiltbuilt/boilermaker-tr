@@ -1,0 +1,81 @@
+childBlocks:
+  - childrenColumn
+  - styleAdjustmentsColumn
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  f400d430-92d6-4d88-a012-12aa111a64c6:
+    tabs:
+      -
+        elements:
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 0913ecb9-5284-40ea-b8d9-fc7f58fc85a1
+        name: 'Content & Styling'
+        uid: 99c334cd-df15-4b11-bfb1-90873902d879
+      -
+        elements:
+          -
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0cae88ff-8ad7-494f-bb77-10afd0d7cb73
+            warning: null
+            width: 100
+          -
+            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 36a88c52-2b28-4d52-8640-3a6359a1b170
+            warning: null
+            width: 50
+          -
+            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ac2a2d2-923f-41e7-8bb2-c6dc6270bf44
+            warning: null
+            width: 50
+        name: Animation
+        uid: 2332dc63-b2f8-4f3c-bf07-e318a2cadead
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e71db2d3-b5d5-4cb8-9089-48be400354a6
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da2a2b20-9a1c-4b2e-a92c-f6f64f79321b
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 104b6c9c-73c2-43b2-bf8b-020676ae0844
+group: 38b2d069-fc9a-47d3-92fe-dda7740ac324 # Columns
+handle: columnHalf
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 2
+name: 'Half Width Column'
+sortOrder: 34
+topLevel: false

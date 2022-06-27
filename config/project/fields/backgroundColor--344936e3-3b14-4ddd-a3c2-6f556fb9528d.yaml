@@ -1,0 +1,67 @@
+columnSuffix: ifervxog
+contentColumnType: string
+fieldGroup: 7f0146e4-cfae-4bc2-a68b-396c0fa8e2d6 # Background Controls
+handle: backgroundColor
+instructions: null
+name: 'Background Color'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Use Default'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Transparent
+        -
+          - value
+          - bg-transparent
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - value
+          - bg-black
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - bg-white
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Red
+        -
+          - value
+          - bg-red
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,28 @@
+childBlocks:
+  - buttonGroup
+  - button
+  - buttonModal
+  - header
+  - image
+  - textContent
+  - contentVideo
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  3795bf38-b8a0-4b6b-aa1c-2433855032af:
+    tabs:
+      -
+        elements:
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: d3a4fb84-9e69-42b1-b24d-13bb9f3e6336
+        name: Content
+        uid: 3a6d9c2a-ec0c-43ff-a9df-4e07472e10bf
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+handle: childrenSlideColumn
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 1
+name: 'Slide Column Content'
+sortOrder: 18
+topLevel: false

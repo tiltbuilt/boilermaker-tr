@@ -1,0 +1,14 @@
+columnSuffix: eiswozev
+contentColumnType: boolean
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: imagePlacement
+instructions: null
+name: 'Image Placement'
+searchable: false
+settings:
+  default: true
+  offLabel: Left
+  onLabel: Right
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

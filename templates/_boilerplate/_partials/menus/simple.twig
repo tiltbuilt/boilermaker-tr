@@ -1,0 +1,17 @@
+{#
+/**
+ * Tilt Boilermaker - Partial - Menu - Simple
+ * -----
+ * Expects a single level of nodes as `menuNodes`
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{% nav node in menuNodes %}
+  <li>
+	{{ node.link }}
+  </li>
+{% endnav %}

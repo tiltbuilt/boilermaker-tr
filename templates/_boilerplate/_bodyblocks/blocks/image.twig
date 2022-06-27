@@ -1,0 +1,162 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Image Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# Don't show if there isn't an image set #}
+{% if block.imageAsset|length %}
+
+	{% set image = block.imageAsset[0] %}	
+	{% set styleAdjusts = block.children.one() %}
+	{# Set block id attribute value #}
+	{% if block.customId is defined and block.customId != '' %}
+	  {% set blockId = block.customId %}
+	  {% set imageId = 'imageblock-' ~ block.customId ~ '-image' %}
+	{% else %}
+	  {% set blockId = 'imageblock-' ~ block.id %}
+	  {% set imageId = 'imageblock-' ~ block.id ~ '-image' %}
+	{% endif %}
+	
+	{# Set block type handle as class name for styling #}
+	{% set blockClass = 'elem-block image-block' %}
+	{% set innerClass = 'inner image-block-inner' %}
+	{% set imageClass = 'content-image' %}	
+	{% set loadClass = 'lazyload' %}
+	{% set imageStyles = [imageClass, 'w-full', loadClass] %}	
+	
+			
+	{# set alt text #}	
+	{% set imageAltText = image.alt is defined and image.alt|length ? image.alt : image.title %}
+	
+	{# set outer tag depending on if element has caption or not #}
+	{% if block.imageCaption != '' %}
+		{% set outerTag = 'figure' %}
+	{% else %}
+		{% set outerTag = 'div' %}
+	{% endif %}
+	
+	{# Sort Out Styling Adjustments to set up class lit arrays #}
+	
+	{# create arrays to collect style changes to primary element and inner and bg #}
+	{% set styleClasses = [] %}
+	{% set padClasses = [] %}
+	{% set captionClasses = [] %}	
+	
+	{% if styleAdjusts != null %}	
+		{# add style changes to array except for padding because it isn't applied to primary element #}
+			
+		{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleAdjustmentsCaption']).collect() %}
+			{% set styleClasses = styleClasses|merge([styleItem]) %}
+		{% endfor %}
+		
+		{# add separate array to add padding classes since they are applied separately to inner #}
+		
+		{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+			{% set padClasses = padClasses|merge([padItem]) %}
+		{% endfor %}
+		
+		{% set captionAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsCaption').one() %}
+		{% if captionAdjusts != null %}
+			{% for captionItem in clone(captionAdjusts.children).collect() %}
+				{% set captionClasses = captionClasses|merge([captionItem]) %}
+			{% endfor %}
+		{% endif %}		
+		
+	{% endif %}
+	
+	
+	{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+	{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+	
+	{# add widthClass to custom string to ensure it is added to container class list #}
+	{% set customClassString = customClassString ~ ' ' ~ widthClass %}
+	
+	{# set animation classes for reveal #}
+	
+	{% set animClasses = [] %}
+	{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+		{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+		{% set revealClass = block.revealAnimation %}
+		{% if block.animateChildren is not empty %}
+			{% if block.animateChildren == true %}
+				{% set animClasses = animClasses|merge(['anim-parent']) %}
+				{% if block.staggerChildReveals is not empty %}
+					{% if block.staggerChildReveals == true %}
+						{% set revealClass = revealClass ~ '-stagger' %}
+					{% endif %}
+				{% endif %}
+			{% else %}
+				{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %} 
+		{% endif %}	
+		{% set animClasses = animClasses|merge([revealClass]) %}	
+	{% endif %}
+	
+	{# OUTPUT #}
+	
+	<{{outerTag}} {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+			<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>
+				{% if block['linkSettings'].isEmpty() == false %}
+					{% set imageLink = block.linkSettings %}
+					<a href="{{ imageLink.url }}" title="{{ imageLink.text }}" {{- imageLink.target|length ? ' target="_blank"' : '' -}}>
+			  	{% endif %}
+				
+				{% if image.mimeType == "image/svg+xml" %}		
+	
+				<img src="{{ image.url }}" alt="{{imageAltText}}" {{ gMacros.buildClassListBasic(imageStyles) -}}>
+		
+			{% else %}		
+			
+				{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}
+				
+				{% if craft.imager.serverSupportsWebp() %}
+				  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+				{% endif %}
+				
+				{% if transformedImages|length %}		  
+				  
+					<picture>						  
+						{% if craft.imager.serverSupportsWebp() %}
+							<source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+						{% endif %}
+					  
+						<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+						  width="{{image.width}}"
+						  height="{{image.height}}"
+						  data-sizes="auto"
+						  data-src="{{ transformedImages[0] }}"
+						  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+						  alt="{{ imageAltText }}" {{ gMacros.buildClassListBasic(imageStyles) -}}
+						>
+					</picture>
+					  
+				{% endif %}			  		  
+			  
+			{% endif %} 
+				  
+				{% if block['linkSettings'] is defined and block.linkSettings|length %}			
+					</a>
+				{% endif %}
+				
+				{% if block.imageCaption != '' %}
+					<figcaption {{ gMacros.buildClassList('image-caption', captionClasses, null) -}}>
+						{{ block.imageCaption }}						
+					</figcaption>				  
+				{% endif %}  
+			</div>						
+		</div>     
+	</{{outerTag}}>
+{% endif %}

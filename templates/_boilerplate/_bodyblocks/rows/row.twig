@@ -1,0 +1,114 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Row Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% for item in row.children.all() %}
+	{% if item.type.handle == 'childrenRow' or item.type.handle == 'childrenSlideRow' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsRow' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute value #}
+{% if row.customId is defined and row.customId != '' %}
+	{% set blockId = row.customId %}
+{% else %}
+	{% set blockId = 'row-' ~ row.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = row.type.handle %}
+
+{# set loadType to null if not defined - for handling lazy load on carousels #}
+{% if loadType is not defined %}
+	{% set loadType = null %}
+{% endif %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+
+
+{% if styleAdjusts != null %}	
+		
+	{% for styleItem in clone(styleAdjusts.children).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (row['customClassList'] is defined ? row.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if row.revealAnimation is defined and row.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = row.revealAnimation %}
+	{% if row.animateChildren is not empty %}
+		{% if row.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if row.staggerChildReveals is not empty %}
+				{% if row.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, 'elem-block row-wrapper', null, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(blockClass, styleClasses, null) -}}>	
+			{% if contentKids != null %}
+				{% for child in clone(contentKids.children).collect() %}	  
+					
+					{#-
+					For each child component, attempt to load a custom template for the
+					component handle from the project's files,
+					then the same template from the core Tiltrus files,
+					then a custom default template from the project,
+					and finally the default template for this component type from the core Tiltrus files.
+					-#}
+					
+					{%
+						include [
+						  '_project/_bodyblocks/columns/' ~ child.type.handle,
+						  '_boilerplate/_bodyblocks/columns/' ~ child.type.handle,
+						  '_project/_bodyblocks/columns/column',
+						  '_boilerplate/_bodyblocks/columns/column'
+						] with { 'column' :  child, 'loadType': loadType }
+					  %}
+					
+				{% endfor %}
+			{% endif %}
+		</div>		
+	</div>     
+</div>

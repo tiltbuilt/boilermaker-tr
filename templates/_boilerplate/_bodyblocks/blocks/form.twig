@@ -1,0 +1,170 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Form Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set styleAdjusts = block.children.one() %}
+	
+{# Set block id attribute value #}
+{% if block.customId is defined and block.customId != '' %}
+	{% set blockId = block.customId %}
+	{% set headerId = block.customId ~ '-header' %}
+	{% set introId = block.customId ~ '-intro' %}
+{% else %}
+	{% set blockId = 'form-' ~ block.id %}
+	{% set headerId = 'form-' ~ block.id  ~ '-header' %}
+	{% set introId = 'form-' ~ block.id  ~ '-intro' %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ block.type.handle %}
+{% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set styleClasses = [] %}
+{% set padClasses = [] %}
+{% set bgClasses = null %}
+{% set headerClasses = [] %}
+{% set headerPadClasses = [] %}
+{% set introClasses = [] %}
+{% set introPadClasses = [] %}
+{% set buttonClasses = ['btn', 'btn-formsubmit'] %}
+
+{% if styleAdjusts != null %}	
+	{# add style changes to array except for padding because it isn't applied to primary element #}
+		
+	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage', 'styleAdjustmentsMainHeader', 'styleAdjustmentsIntroText', 'styleAdjustmentsButton']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
+		{% set padClasses = padClasses|merge([padItem]) %}
+	{% endfor %}
+	
+	{# Set variable for background settings if there are any #}
+		
+	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+	{# Set up Styles for Header, intro text and button #}
+	
+	{% set headerAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
+	{% set introAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsIntroText').one() %}
+	{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+		
+	{% if headerAdjusts != null %}
+		{% for headerItem in clone(headerAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+			{% set headerClasses = headerClasses|merge([headerItem]) %}
+		{% endfor %}
+		{% for headerPadItem in clone(headerAdjusts.children).type('styleControlsPadding').collect() %}
+			{% set headerPadClasses = headerPadClasses|merge([headerPadItem]) %}
+		{% endfor %}
+	{% endif %}
+	
+	{% if introAdjusts != null %}
+		{% for introItem in clone(introAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
+			{% set introClasses = introClasses|merge([introItem]) %}
+		{% endfor %}
+		{% for introPadItem in clone(introAdjusts.children).type('styleControlsPadding').collect() %}
+			{% set introPadClasses = introPadClasses|merge([introPadItem]) %}
+		{% endfor %}
+	{% endif %}
+	
+	{% if btnAdjusts != null %}  
+		{% for btnStyle in clone(btnAdjusts.children).collect() %}
+			{% set devSize = btnStyle.deviceSize %}	
+			{% set styleBlockFieldLayout = btnStyle.getFieldLayout() %}
+			{% set styleBlockFields = styleBlockFieldLayout.getCustomFields() %}
+			{% for fieldItem in styleBlockFields %}
+				{% if fieldItem.handle != 'deviceSize' and btnStyle[fieldItem.handle] != '' %}
+					{% set classItem = btnStyle.deviceSize ~ btnStyle[fieldItem.handle] %}
+					{%- set buttonClasses = buttonClasses|merge([classItem]) -%}
+				{% endif %}						
+			{% endfor %}				
+		{% endfor %}		
+	{% endif %}
+{% endif %}
+{%- set buttonClasses = buttonClasses|join(' ') -%}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = block.revealAnimation %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+			{% if block.headerText|length and block.headingLevel != '' %}
+				<{{ block.headingLevel }} {{ gMacros.buildElementAttributes(headerId, 'elem-block form-header ' ~ block.mainHeaderBaseClass , headerClasses, null) -}}>
+				<div class="anim-wrapper anim-child">
+					<div {{ gMacros.buildClassList('inner ' ~ block.mainHeaderBaseClass ~ '-inner', headerPadClasses, null) -}}>
+				    	{{ gMacros.stripTags(block.headerText) }}
+					</div>
+				</div>
+				</{{ block.headingLevel }}>
+			{% endif %}
+			
+			{% if block.simpleText|length %}				
+				<div {{ gMacros.buildElementAttributes(introId, 'elem-block form-intro', introClasses, null) -}}>
+					<div class="anim-wrapper anim-child">
+						<div {{ gMacros.buildClassList('inner', introPadClasses, null) -}}>
+							{{block.simpleText}}
+						</div>
+					</div>
+				</div>
+			{% endif %}  
+			
+			<div class="elem-block form-wrapper">
+				<div class="anim-wrapper anim-child">
+					<div class="inner">
+						{{ block.formToDisplay.render({submitClass: buttonClasses}) }}
+						<small>* Required Field</small>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		{% if bgClasses != null %}		  
+			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+		{% endif %}		
+	</div>     
+</div>

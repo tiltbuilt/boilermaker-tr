@@ -1,0 +1,48 @@
+childBlocks: null
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  2a03a476-f1c0-4922-aec3-8d161d29fd25:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f3aac96d-ab12-4b63-a06a-9941f6d0da8b
+            warning: null
+            width: 100
+          -
+            fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a27e78e4-7865-47d6-84b8-d4c11d32ef13
+            warning: null
+            width: 50
+          -
+            fieldUid: c51a76cf-e325-4732-9bf5-a816ca68d07f # Button Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 56f16fe5-56a8-40aa-9aa3-abf016c51b82
+            warning: null
+            width: 50
+        name: 'Button Styles'
+        uid: fcf3c8ce-405d-4d40-a238-d8290b8e7bb6
+group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Styles
+handle: styleControlsButton
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Style Controls - Button Styling'
+sortOrder: 109
+topLevel: false

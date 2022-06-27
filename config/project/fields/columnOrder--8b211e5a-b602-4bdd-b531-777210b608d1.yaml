@@ -1,0 +1,100 @@
+columnSuffix: iyciabfl
+contentColumnType: string
+fieldGroup: 7250fbbb-07b2-4c31-a5b0-5f586c469ce2 # Page Builder - Rows & Columns
+handle: columnOrder
+instructions: null
+name: 'Column Order'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - First
+        -
+          - value
+          - order-first
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1'
+        -
+          - value
+          - order-1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2'
+        -
+          - value
+          - order-2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3'
+        -
+          - value
+          - order-3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4'
+        -
+          - value
+          - order-4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '5'
+        -
+          - value
+          - order-5
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Last
+        -
+          - value
+          - order-last
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,47 @@
+childBlocks:
+  - childrenSlideRow
+  - styleAdjustmentsRow
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  b3a2f93a-ac43-4b9e-8834-9613d14d8b7e:
+    tabs:
+      -
+        elements:
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 8d969449-ee38-4547-9d72-1719f6894b24
+        name: 'Content & Styling'
+        uid: dd1cc56a-c056-4d09-9000-754c3d204e3c
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 29f6c8ff-1376-4dfa-b173-76b93cab257b
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e36b796-91d2-4313-9f87-a3b36365df29
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: f6037bab-8e64-4fc1-98de-11a22d9cae38
+group: 0282ab1a-d90f-4c56-bc80-55d336e8749e # Layouts
+handle: rowSlideContent
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Slide Content Row'
+sortOrder: 29
+topLevel: false

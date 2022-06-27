@@ -1,0 +1,244 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Accordion Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for content child and style adjustment containers  #}
+{% set contentKids = null %}
+{% set styleAdjusts = null %}
+{% if groupStyles is defined and groupStyles != null %}
+	{% set styleAdjusts = groupStyles %}
+{% endif %}
+{% for item in accordion.children.all() %}
+	{% if item.type.handle == 'childrenAccordion' %}
+		{% set contentKids = item %}
+	{% elseif item.type.handle == 'styleAdjustmentsAccordion' %}
+		{% set styleAdjusts = item %}
+	{% endif %}
+{% endfor %}
+
+{# Set block id attribute values #}
+{% if accordion.customId is defined and accordion.customId != '' %}
+	{% set blockId = accordion.customId %}
+	{% set panelId = accordion.customId ~ '-panel' %}
+	{% set buttonId = accordion.customId ~ '-button' %}
+	{% set headingId = accordion.customId ~ '-heading' %}		
+{% else %}
+	{% set blockId = 'accordion-' ~ accordion.id %}
+	{% set panelId = 'accordion-' ~ accordion.id ~ '-panel' %}
+	{% set buttonId = 'accordion-' ~ accordion.id ~ '-button' %}
+	{% set headingId = 'accordion-' ~ accordion.id ~ '-heading' %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block ' ~ accordion.type.handle %}
+{% set innerClass = 'inner ' ~ accordion.type.handle ~ '-inner' %}
+
+{# set heading level for accordion #}
+{% if accordion.headingLevel != '' %}
+	{% set accHeadingLevel = accordion.headingLevel %}
+{% elseif groupHeadingLevel is defined and groupHeadingLevel != '' %}
+	{% set accHeadingLevel = groupHeadingLevel %}
+{% else %}
+	{% set accHeadingLevel = 'div' %}
+{% endif %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set outerClasses = [] %}
+{% set styleClasses = [] %}
+{% set bgClasses = null %}
+
+{% if styleAdjusts != null %}	
+	
+	{% for outerItem in clone(styleAdjusts.children).type(['styleControlsMargins', 'styleControlsDisplay']).collect() %}
+		{% set outerClasses = outerClasses|merge([outerItem]) %}
+	{% endfor %}
+	
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for styleItem in clone(styleAdjusts.children).type(['not','styleControlsMargins', 'styleControlsDisplay', 'styleControlsBackgroundImage']).collect() %}
+		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% endfor %}
+	
+	{# Set variable for background settings if there are any #}
+		
+	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+{% endif %}
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (accordion['customClassList'] is defined ? accordion.customClassList : null) %}
+
+
+{# Set styling classes and attributes for button #}
+{% set buttonClasses = ['accordion-button'] %}
+{% set buttonAttrs = {'type': 'button', 'data-toggle': 'expanded', 'data-target': '#' ~ panelId, 'aria-controls': panelId} %}
+
+{# check to see if accordion is part of a set, if so check to see if the set is configured to have the first block open or closed and if this is the first block or not and apply styling accordingly#}
+{% set openStatus = null %}
+{% if setPiece is defined and setPiece and (loopCount is defined) %}
+	{% if openFirst and (loopCount == 1) %}
+		{% set openStatus = true %}
+	{% else %}
+		{% set openStatus = false %}
+	{% endif %}
+{% else %}
+	{% if accordion.accordionStartState %}
+		{% set openStatus = true %}
+	{% else %}
+		{% set openStatus = false %}
+	{% endif %}
+{% endif %}
+
+{% if openStatus %}
+	{% set buttonClasses = buttonClasses|merge(['expanded']) %}
+	{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'true'}) %}
+	{% set outerExpClass = 'expanded' %}
+{% else %}
+	{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'false'}) %}
+	{% set outerExpClass = '' %}
+{% endif %}
+
+{# outer outerExpClass to custom string #}
+
+{% set customClassString = customClassString ~ ' ' ~ outerExpClass %}
+
+{# Set styling classes and attributes for Panel #}
+{% set panelClasses = ['accordion-panel'] %}
+{% set panelAttrs = {'aria-labelledby': headingId, 'role': 'region'} %}
+{% if openStatus %}
+	{% set panelClasses = panelClasses|merge(['init-expanded']) %}
+{% endif %}
+
+{% if parentAccSet is defined and parentAccSet != null  %}
+	{% set panelAttrs = panelAttrs|merge({'data-parent': '#' ~ parentAccSet}) %}
+	{% set buttonAttrs = buttonAttrs|merge({'data-parent': '#' ~ parentAccSet}) %}
+{% endif %}
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = accordion.revealAnimation %}
+	{% if accordion.animateChildren is not empty %}
+		{% if accordion.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if accordion.staggerChildReveals is not empty %}
+				{% if accordion.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+		
+		<{{accHeadingLevel}} id="{{ headingId }}" class="accordion-button-header" >
+			<button id="{{buttonId}}" {{ gMacros.buildClassListBasic(buttonClasses) -}} {{- gMacros.buildOtherElementAttributes(buttonAttrs) -}}>
+				<div class="accordion-icon">
+					<svg><use xlink:href="#{{ gSettings.accordionIcon.sprite }}"></use></svg>
+				</div>
+				{{ accordion.headerText}}
+			</button>
+		</{{accHeadingLevel}} >
+		<div id="{{ panelId }}" {{ gMacros.buildClassListBasic(panelClasses) -}} {{- gMacros.buildOtherElementAttributes(panelAttrs) -}}>
+			<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
+				{% if contentKids != null %}
+					{% for child in clone(contentKids.children).collect() %}	  
+						
+						{#-
+						For each child component, attempt to load a custom template for the
+						component handle from the project's files,
+						then the same template from the core Tiltrus files,
+						then a custom default template from the project,
+						and finally the default template for this component type from the core Tiltrus files.
+						-#}
+						
+						{% if child.type.handle starts with 'row' %}
+						  	{%
+								include [
+							  	'_project/_bodyblocks/rows/' ~ child.type.handle,
+							  	'_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
+							  	'_project/_bodyblocks/rows/row',
+							  	'_boilerplate/_bodyblocks/rows/row'
+								] with { 'row' :  child }
+						  	%}
+					  	{% elseif child.type.handle starts with 'repeater' %}
+						  	{%
+								include [
+							  	'_project/_bodyblocks/repeaters/' ~ child.type.handle,
+							  	'_boilerplate/_bodyblocks/repeaters/' ~ child.type.handle,
+							  	'_project/_bodyblocks/repeaters/repeater',
+							  	'_boilerplate/_bodyblocks/repeaters/repeater'
+								] with { 'repeater' :  child }
+						  	%}
+					  	{% elseif child.type.handle starts with 'accordion' %}
+							{%
+						  	include [
+								'_project/_bodyblocks/accordions/' ~ child.type.handle,
+								'_boilerplate/_bodyblocks/accordions/' ~ child.type.handle,
+								'_project/_bodyblocks/accordions/accordion',
+								'_boilerplate/_bodyblocks/accordions/accordion'
+						  	] with { 'accordion' :  child }
+							%}
+					  	{% elseif child.type.handle starts with 'tabSet' %}
+							{%
+						  	include [
+								'_project/_bodyblocks/tabs/' ~ child.type.handle,
+								'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+								'_project/_bodyblocks/tabs/tabSet',
+								'_boilerplate/_bodyblocks/tabs/tabSet'
+						  	] with { 'tabSet' :  child }
+							%}
+					  	{% elseif child.type.handle starts with 'tabPanel' %}
+							{%
+						  	include [
+								'_project/_bodyblocks/tabs/' ~ child.type.handle,
+								'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+								'_project/_bodyblocks/tabs/tabPanel',
+								'_boilerplate/_bodyblocks/tabs/tabPanel'
+						  	] with { 'tabPanel' :  child }
+							%}
+					  	{% else %}
+						  	{%
+								include [
+							  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
+							  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+							  	'_project/_bodyblocks/blocks/block',
+							  	'_boilerplate/_bodyblocks/blocks/block'
+								] ignore missing with { 'block' :  child }
+						  	%}
+					  	{% endif %}
+						
+					{% endfor %}
+				{% endif %}
+			</div>
+			{% if bgClasses != null %}		  
+				{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+			{% endif %}	
+		</div>	
+	</div>     
+</div>

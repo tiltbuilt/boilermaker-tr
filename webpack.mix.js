@@ -24,7 +24,7 @@ mix.autoload({
 	jquery: ['$', 'window.jQuery', 'jQuery', 'window.$']
 }); 
 
-mix.sass('src/app.scss', 'css')
+mix.postCss('src/app.pcss', 'css')
 	.tailwind('./tailwind.config.js')
 	.js('src/app.js', 'js')
 	.setPublicPath('public/dist')    

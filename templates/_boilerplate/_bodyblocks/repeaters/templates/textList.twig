@@ -1,0 +1,43 @@
+{#
+/**
+ * Tilt Boilermaker - Repeater Template - Text 
+ * -----
+ * Simple cards with title, excerpt and link
+ * 
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+{% set padClasses = [] %}
+{% set styleClasses = [] %}
+{% set headerClasses = [] %}
+
+{% if itemAdjusts != null %}
+	{% set styleClasses = clone(itemAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundColor', 'styleControlsButton', 'styleAdjustmentsMainHeader']).collect() %}
+	{% set padClasses = clone(itemAdjusts.children).type('styleControlsPadding').collect() %}
+		
+	{% set headerAdjusts = clone(itemAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
+	{% if headerAdjusts != null %}
+		{% for headerItem in clone(headerAdjusts.children).collect() %}
+			{% set headerClasses = headerClasses|merge([headerItem]) %}
+		{% endfor %}		
+	{% endif %}
+{% endif %}
+
+<ul class="repeater-list-text anim-pass">
+{% for repeaterItem in repeaterData %}	
+	<li {{ gMacros.buildClassList('elem-block repeater-list-item repeater-list-text-item', styleClasses, null) -}}>
+		<div class="anim-wrapper anim-child">
+			<div {{ gMacros.buildClassList('inner repeater-list-text-item-inner', padClasses, null) -}}>
+				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-text-item-header', headerClasses, null) -}}>
+	  			<a href="{{ repeaterItem.url }}">{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>
+				</{{ repeaterHeadingLevel }}>
+				{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
+					<div>{{ repeaterItem.excerpt }}</div>	  				 
+				{% endif %}
+			</div>
+		</div>
+	</li>	
+{% endfor %}
+</ul>

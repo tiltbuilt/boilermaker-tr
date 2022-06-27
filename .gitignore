@@ -32,6 +32,9 @@ composer.lock
 /public/imager/*
 /public/blitz/*
 /public/cache/blitz/*
+/node_modules
+/vendor
+/public/dist/mix-manifest.json
 
 # local env files
 /.env

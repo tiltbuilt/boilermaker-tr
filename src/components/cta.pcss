@@ -1,0 +1,224 @@
+/**
+ * components/column.css
+ *
+ * CTA component specific styles
+ * 
+ This file contains the styles to handle the display of the Standard CTA and Small CTA Components. These do not use controls in the Control Panel to standardize their appearance. If additional CTA types are needed for a project, they can be added here as well.
+ *
+ */
+ 
+/* STANDARD CTA */
+
+.ctaStandard {	
+	// These classes must stay in order to ensure functionality
+	@apply relative;
+	//The default classes and style below can be changed on a per-project basis
+	@apply bg-black text-white mb-normal lg:mb-2x text-left text-lg; 
+}
+
+.ctaStandard-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply p-2x; 
+}
+
+.ctaStandard-subhead {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-half uppercase text-gray-400 font-bold tracking-widest text-base;
+}
+
+.ctaStandard-subhead-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+}
+
+.ctaStandard-mainheader {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-normal text-white font-bold text-2xl;
+}
+
+.ctaStandard-mainheader-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+}
+
+.ctaStandard-intro {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-normal;
+}
+
+.ctaStandard-intro-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+}
+
+.ctaStandard-btn-wrapper {
+	// These classes must stay in order to ensure functionality
+	@apply block;
+	//The default classes and style below can be changed on a per-project basis
+		 
+ }
+
+.ctaStandard-btn-wrapper-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+ }
+
+
+.btn-ctaStandard {	
+	//The default classes and style below can be changed on a per-project basis
+	@apply uppercase font-semibold bg-white text-black;
+	border-radius: 0.4rem; 
+	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	text-shadow: none !important;
+	
+	&:hover {
+		/* place general hover styles for all buttons here */
+		opacity: 0.7;
+	}
+}
+
+.ctaStandard-row {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply flex justify-between items-stretch mx-none;
+}
+
+.ctaStandard-image-wrapper {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply w-full md:w-1/2 lg:w-2/5 mb-normal md:mb-none;
+	
+	// these are added to make the cta stanard image fill its column, remove if not needed
+	div, picture {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.ctaStandard-image {
+	// these are added to make the cta stanard image fill its column, remove if not needed
+	@apply object-cover object-center;
+}
+
+.md\:order-first {
+	@apply md:pr-normal lg:pr-2x;
+}
+
+.md\:order-last {
+	@apply md:pl-normal lg:pl-2x;
+}
+
+
+.ctaStandard-content-wrapper {
+	// These classes must stay in order to ensure functionality
+	@apply self-center;
+	//The default classes and style below can be changed on a per-project basis
+	@apply w-full md:w-1/2 lg:w-3/5;
+}
+
+
+
+
+/* SMALL CTA */
+ 
+.ctaSmall {	
+	// These classes must stay in order to ensure functionality
+	@apply relative;
+	//The default classes and style below can be changed on a per-project basis
+	@apply bg-black text-white mb-normal lg:mb-2x text-left text-lg; 
+}
+
+.ctaSmall-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply p-2x; 
+}
+
+.ctaSmall-subhead {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-half uppercase text-gray-400 font-bold tracking-widest text-base;
+}
+
+.ctaSmall-subhead-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+}
+
+.ctaSmall-mainheader {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-normal text-white font-bold text-2xl;
+}
+
+.ctaSmall-mainheader-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+}
+
+.ctaSmall-intro {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	@apply mb-normal;
+}
+
+.ctaSmall-intro-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+}
+
+.ctaSmall-btn-wrapper {
+	// These classes must stay in order to ensure functionality
+	@apply block;
+	//The default classes and style below can be changed on a per-project basis
+		 
+ }
+
+.ctaSmall-btn-wrapper-inner {
+	// These classes must stay in order to ensure functionality
+	
+	//The default classes and style below can be changed on a per-project basis
+	
+ }
+
+
+.btn-ctaSmall {	
+	//The default classes and style below can be changed on a per-project basis
+	@apply uppercase font-semibold bg-white text-black;
+	border-radius: 0.4rem; 
+	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	text-shadow: none !important;
+	
+	&:hover {
+		/* place general hover styles for all buttons here */
+		opacity: 0.7;
+	}
+}

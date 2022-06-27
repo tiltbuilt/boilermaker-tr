@@ -1,0 +1,27 @@
+childBlocks: null
+field: 3564fb89-095f-4f5e-8c17-b699a15ea6dd # Page Header Custom Classes
+fieldLayouts:
+  24f95105-c650-45ef-91c6-04da1c80194b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 73622079-375a-49e8-ae27-6778c8d153b9
+            warning: null
+            width: 100
+        name: Settings
+        uid: 16c4c7b0-1559-410f-aea6-1888b7b65bc8
+group: null
+handle: headerImageClassList
+maxBlocks: 1
+maxChildBlocks: 0
+maxSiblingBlocks: 1
+name: 'Header Image Class List'
+sortOrder: 2
+topLevel: true

@@ -1,0 +1,45 @@
+childBlocks:
+  - row
+  - accordionSet
+  - accordion
+  - tabSet
+  - sliderSet
+  - buttonGroup
+  - button
+  - buttonModal
+  - contentWrapper
+  - ctaStandard
+  - ctaSmall
+  - embed
+  - form
+  - header
+  - iconContent
+  - image
+  - longFormatText
+  - navList
+  - textContent
+  - contentVideo
+  - repeaterContentLinks
+  - repeaterSectionEntryList
+  - repeaterSelectEntryList
+  - repeaterNavCollection
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  c3761053-dedd-4e18-8d8c-968d726f143b:
+    tabs:
+      -
+        elements:
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 5a58f327-b5a1-4075-b340-4995836bf990
+        name: Content
+        uid: e8ae09a2-2e88-44ad-8444-58788bc7c379
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+handle: childrenWrapper
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 1
+name: 'Wrapper Content'
+sortOrder: 7
+topLevel: false

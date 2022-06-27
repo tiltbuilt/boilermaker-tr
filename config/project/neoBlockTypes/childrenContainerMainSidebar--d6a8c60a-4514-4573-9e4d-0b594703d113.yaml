@@ -1,0 +1,13 @@
+childBlocks:
+  - columnMain
+  - columnSidebar
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+handle: childrenContainerMainSidebar
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 1
+name: 'Container Columns - Main & Sidebar'
+sortOrder: 10
+topLevel: false

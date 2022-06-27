@@ -1,0 +1,56 @@
+columnSuffix: nanqengp
+contentColumnType: string
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: textWrapImagePosition
+instructions: null
+name: 'Text Wrap Image Position'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Left
+        -
+          - value
+          - float-left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Right
+        -
+          - value
+          - float-right
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Remove Text Wrap'
+        -
+          - value
+          - float-none
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,47 @@
+childBlocks:
+  - childrenSlide
+  - styleAdjustmentsSlide
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  0e012876-50c8-4729-8d82-6907890130c4:
+    tabs:
+      -
+        elements:
+          -
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 86daf947-a9b0-4492-a60f-ec4fbd59c4ae
+        name: 'Content & Styling'
+        uid: fe254814-fb61-4778-b00d-2f1d32436fc7
+      -
+        elements:
+          -
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0fe6262f-b6fb-4b9a-9f5b-18642d15962e
+            warning: null
+            width: 100
+          -
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 249a2134-8ce6-4680-9a77-2d498d19d983
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 0c516223-fd33-4f98-8372-03984fc3aaf5
+group: e56553d7-4c45-43d9-bd20-6ed0daaf2800 # Sliders
+handle: slide
+maxBlocks: 0
+maxChildBlocks: 2
+maxSiblingBlocks: 6
+name: Slide
+sortOrder: 44
+topLevel: false
