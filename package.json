@@ -26,7 +26,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
-    "laravel-mix": "^6.0.16",
+    "laravel-mix": "^6.0.43",
     "laravel-mix-eslint": "^0.2.0",
     "laravel-mix-imagemin": "^1.0.3",
     "mix-tailwindcss": "^1.3.0",
