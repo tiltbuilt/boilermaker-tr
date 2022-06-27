@@ -20,6 +20,7 @@
         "verbb/icon-picker": "dev-craft-4 as 2.0.0-beta.5",
         "verbb/navigation": "2.0.2",
         "vlucas/phpdotenv": "^5.4.0",
+        "wbrowar/guide": "3.2.0",
         "wmd/section-and-product-type": "1.1.0"
     },
     "require-dev": {

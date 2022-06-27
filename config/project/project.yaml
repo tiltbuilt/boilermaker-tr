@@ -1,4 +1,4 @@
-dateModified: 1656355098
+dateModified: 1656357171
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -386,6 +386,10 @@ plugins:
       twigInHtml: true
       twigInHtmlIsolatedMode: true
       updateSearchIndexes: true
+  guide:
+    edition: pro
+    enabled: true
+    schemaVersion: 3.0.0
   icon-picker:
     edition: standard
     enabled: true    
