@@ -1,8 +1,14 @@
 # Changelog
 
+## 2.0 - 2022-06-27
+### Changed
+- Updated Craft CMS to version 4 and all plugins to latest releases
+- Overhauled Page Builder feature to use styling adjustment model to keep styling adjustments in CP down to only an as needed basis
+- Overhauled animation system to to simplify development and use
+
 ## 1.5.0 - 2021-11-05
 ### Changed
-- Updated Craft CMS and Plugins to latesrt releases
+- Updated Craft CMS and Plugins to latest releases
 
 ## 1.4.1 - 2021-08-18
 ### Changed

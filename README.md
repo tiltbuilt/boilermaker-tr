@@ -1,6 +1,6 @@
 # Tilt - BoilerMaker-TR 
 
-This is a starter Craft CMS v3.X setup for site built by Tilt. It is opinionated in the sense that it is configured to make use of the following stack:
+This is a starter Craft CMS v4.X setup for site built by Tilt. It is opinionated in the sense that it is configured to make use of the following stack:
 * Laravel Valet as the local dev server
 * Laravel Mix for handling of webpack
 * SASS/PostCSS for CSS processing
