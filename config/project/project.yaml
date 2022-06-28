@@ -1,4 +1,4 @@
-dateModified: 1656357171
+dateModified: 1656441569
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -455,7 +455,7 @@ plugins:
 system:
   edition: pro
   live: true
-  name: 'Boilermaker Craft 4'
+  name: $SITE_NAME
   retryDuration: null
   schemaVersion: 4.0.0.9
   timeZone: America/Chicago

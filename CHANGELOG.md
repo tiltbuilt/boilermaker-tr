@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.3 - 2022-06-28
+### Updated
+- Changed project config setting to allow for easier renaming of the site from the .env file
+
 ## 2.0.2 - 2022-06-28
 ### Updated
 - Neo to version 3.1.5 to fix issue with duplicate content on front end in unsaved drafts
