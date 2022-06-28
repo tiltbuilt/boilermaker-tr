@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 - 2022-06-27
+### Fixed
+- naming issues in env example to correct project setup errors
+
 ## 2.0.0 - 2022-06-27
 ### Changed
 - Updated Craft CMS to version 4 and all plugins to latest releases
