@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.2 - 2022-06-28
+### Updated
+- Neo to version 3.1.5 to fix issue with duplicate content on front end in unsaved drafts
+
 ## 2.0.1 - 2022-06-27
 ### Fixed
 - naming issues in env example to correct project setup errors
