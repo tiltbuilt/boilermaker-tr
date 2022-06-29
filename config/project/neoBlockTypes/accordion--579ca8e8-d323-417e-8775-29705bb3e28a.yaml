@@ -27,7 +27,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 6b0e4f9a-364d-419e-86a1-34d9440fb534
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17 # Accordion - Start State
             instructions: null
@@ -37,7 +37,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: b92569a2-38cb-469e-851b-1334967284b0
             warning: null
-            width: 50
+            width: 100
           -
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: fb8f22df-73a9-4f81-aa13-e32397cbd294
@@ -64,7 +64,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 14bcfcc2-959b-457a-beae-2813f1c0b9c2
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -74,7 +74,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: c6ca4cd5-b690-485d-8c83-afdd918ed9f2
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: cb05abb5-0c9a-4a8d-a027-282054f0ba1d
       -

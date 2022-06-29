@@ -16,7 +16,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 38b98b53-b765-4174-8d96-e943bfda87c7
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 2157587f-ba0b-4f33-8ff3-29dd650e3bc4 # Image Asset
             instructions: null
@@ -26,7 +26,17 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 299ef8a0-5859-451d-a08c-385d9cde3c56
             warning: null
-            width: 50
+            width: 100
+          -
+            fieldUid: b53c9f0c-9969-4055-ab99-c8e641179ad2 # Image Caption
+            instructions: null
+            label: 'Video Caption'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c4715993-6ba8-49af-8f7d-c3b3da3f42a8
+            warning: null
+            width: 100
           -
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 6e461706-e2c8-4df8-81b9-f620ecf4a1e5
@@ -42,6 +52,26 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c6c0dcac-0d9b-4355-97d7-c3cf8076aaa6
+            warning: null
+            width: 100
+          -
+            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d74096bf-4956-40ae-8726-c753496c041f
+            warning: null
+            width: 100
+          -
+            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fb81ca0d-9d00-42bd-83bd-0ba4665f2694
             warning: null
             width: 100
         name: Animation

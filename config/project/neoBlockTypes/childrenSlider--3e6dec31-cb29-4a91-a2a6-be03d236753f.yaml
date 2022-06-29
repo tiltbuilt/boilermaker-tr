@@ -12,7 +12,7 @@ fieldLayouts:
             uid: dcb9d3fa-9b13-4805-8cf9-fa4d00939814
         name: Slides
         uid: a2b18dce-2c93-4b3f-908c-2bb1c741cd78
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenSlider
 maxBlocks: 0
 maxChildBlocks: 6

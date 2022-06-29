@@ -14,7 +14,7 @@ fieldLayouts:
             uid: 7419f255-dba4-4660-9a90-51c44b92cf11
         name: Containers
         uid: d6f6a446-1223-45ed-b8c7-b024c416f434
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenSection
 maxBlocks: 0
 maxChildBlocks: 0

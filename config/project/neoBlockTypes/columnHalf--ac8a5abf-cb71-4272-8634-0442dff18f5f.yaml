@@ -34,7 +34,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 36a88c52-2b28-4d52-8640-3a6359a1b170
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -44,7 +44,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 0ac2a2d2-923f-41e7-8bb2-c6dc6270bf44
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 2332dc63-b2f8-4f3c-bf07-e318a2cadead
       -

@@ -33,7 +33,7 @@ fieldLayouts:
             uid: c4ee11ed-ee4e-4847-bb66-c6782608455f
         name: Content
         uid: 3a281308-6764-44c5-b4ad-9ad3ea72ea61
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenAccordion
 maxBlocks: 0
 maxChildBlocks: 0

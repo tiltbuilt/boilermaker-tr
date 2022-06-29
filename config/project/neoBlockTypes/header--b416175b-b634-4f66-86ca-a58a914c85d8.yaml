@@ -27,7 +27,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: bb0bf0dc-794d-40e2-afd9-289fdba5088c
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 133bbdba-eb78-4a0e-924c-dfc4af50bb53 # Main Header Base Class
             instructions: null
@@ -37,7 +37,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 82e9abe6-164a-46e8-89be-6b676da0ac17
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: d559fe04-efd1-43e2-80b1-d4d46c2d2ae2 # Subhead Text
             instructions: null
@@ -57,7 +57,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 06af1a8c-905f-4505-a601-e9d59819d43e
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: e76476c3-0516-4766-932d-cff2b07934a8 # Subhead Base Class
             instructions: null
@@ -67,7 +67,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 42d2c4a7-ef6b-410b-90d7-91640fa1f2ae
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: 33bdf607-ff20-47b4-9903-a658afbb72c5 # Subhead Position
             instructions: null
@@ -77,7 +77,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: f8f7d003-09ad-4785-b6ad-5969182eac1a
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
@@ -114,7 +114,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 7766e624-eeb9-408a-b283-07e59fad58d9
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -124,7 +124,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 28fa094e-5f7f-405e-9389-6735f1cefbcb
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 0c7c081b-121d-4676-b4af-e9d8db216472
       -

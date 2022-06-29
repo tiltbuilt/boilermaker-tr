@@ -26,7 +26,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: d6a7e208-ffae-46a3-b3bd-5d6c8d25780a
             warning: null
-            width: 50
+            width: 100
           -
             elementCondition:
               class: craft\elements\conditions\ElementCondition
@@ -48,7 +48,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 4ab35e39-f44e-4962-974d-db18f1937959
             warning: null
-            width: 50
+            width: 100
           -
             heading: 'Additional Elements'
             type: craft\fieldlayoutelements\Heading
@@ -124,7 +124,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: f38793c0-1698-4ca9-94f3-8028288adfb7
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -134,7 +134,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 10821216-3842-4874-8ebc-9e97fa9c8911
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 0041a6f7-ce36-45e8-a8d7-3149c82c5f79
       -

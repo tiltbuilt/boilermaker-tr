@@ -1,0 +1,105 @@
+childBlocks: null
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  153e2243-2b43-46bb-8316-8b9127788238:
+    tabs:
+      -
+        elements:
+          -
+            style: tip
+            tip: 'This block type is used to specify all of the style customization to an accordion set for a particular device size. When you select a size from the list, all the styles will be applied to that size and larger devices unless another style set for a larger size overrides a setting here.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 8c081b06-7f68-436b-adec-b356394a156e
+          -
+            fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 194de9ca-ccb1-4f8d-9ab7-f9db2bb4cae9
+            warning: null
+            width: 100
+        name: 'Device Size'
+        uid: 6354a0ed-7537-479e-a3bd-f9f851e5a985
+      -
+        elements:
+          -
+            fieldUid: 3b9d58ab-ed7a-4da0-9f56-0c677e7ce3db # Accordion Spacing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc9beafe-189b-4c20-b766-b16d4f5987a0
+            warning: null
+            width: 100
+          -
+            heading: Margins
+            type: craft\fieldlayoutelements\Heading
+            uid: 2f9791d5-bfc3-4929-a113-62058108075b
+          -
+            fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9c92e1d4-062c-462c-b254-8e32958efb7a
+            warning: null
+            width: 50
+          -
+            fieldUid: d533a3e0-1a9b-4190-af12-f6b1a356c25a # Bottom Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9341c64b-4c79-4da6-8714-1ffd935e3d21
+            warning: null
+            width: 50
+          -
+            fieldUid: 6b4735a7-3015-47c1-8572-f58fe16b8046 # Left Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 057ee1e4-5928-4877-8063-7b6852ba9ce0
+            warning: null
+            width: 50
+          -
+            fieldUid: 9cc1146d-c859-4330-919e-d8a8da46d8ad # Right Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: de3508a6-e305-44b6-b831-aa4df15ad7a0
+            warning: null
+            width: 50
+        name: Spacing
+        uid: a671e73d-246a-4cd5-9cc2-028ec6690d53
+      -
+        elements:
+          -
+            fieldUid: 670b5abf-edf9-484c-a6bb-b817a00336f0 # Display Setting
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 71e12a6f-f087-4c49-8d8a-6aeb759ed126
+            warning: null
+            width: 100
+        name: Display
+        uid: 46260a9b-c898-4c6f-8fe9-d972695ecffd
+group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
+handle: styleSetAccordionSet
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 6
+name: 'Style Set - Accordion Set'
+sortOrder: 96
+topLevel: false

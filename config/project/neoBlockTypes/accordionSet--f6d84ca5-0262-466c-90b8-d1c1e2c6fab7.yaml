@@ -17,7 +17,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: b5292bd9-f679-44a9-831d-280bda0bbea7
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: 6ca71cdf-5677-41f2-a6d0-1b08e4b330c4 # Accordion Set - Allow Multiple Open Panels
             instructions: null
@@ -27,7 +27,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 37a804b2-c6ce-49a7-98cf-e637eeac5b21
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
             instructions: null
@@ -37,7 +37,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 640e3d6b-5a6a-4066-8cda-f22486785b4b
             warning: null
-            width: 25
+            width: 100
           -
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: a14b835e-473e-443a-987b-5a593b53335b
@@ -64,7 +64,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 9dacda03-132b-4615-a2d8-98cd21972904
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -74,7 +74,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: c90b26bb-5ef9-469d-8fa1-3cd0981548a9
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 472e6c47-7bf3-4ca4-b3cb-7ced1493f167
       -

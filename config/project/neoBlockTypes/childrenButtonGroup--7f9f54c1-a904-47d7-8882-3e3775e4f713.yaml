@@ -13,7 +13,7 @@ fieldLayouts:
             uid: 80c7adad-4925-4480-9d05-82e9cc2cbd37
         name: Buttons
         uid: 00622f5c-a535-47b1-b4af-1a8167156524
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenButtonGroup
 maxBlocks: 0
 maxChildBlocks: 4

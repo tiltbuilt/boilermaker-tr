@@ -46,7 +46,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: e109c6ac-19a0-4b4f-80cc-1882b11c6ba8
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 33bdf607-ff20-47b4-9903-a658afbb72c5 # Subhead Position
             instructions: null
@@ -56,7 +56,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 5bbe96f7-64ae-4953-9974-f8792aa4ec78
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
@@ -103,7 +103,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 78dc5f18-1fd9-4c69-ad28-12c37fa0fccf
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -113,7 +113,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: fbd4f490-061d-41e6-99b9-0aa189a5d952
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 5f7d7efa-b866-44d1-8c9a-261dfa636155
       -

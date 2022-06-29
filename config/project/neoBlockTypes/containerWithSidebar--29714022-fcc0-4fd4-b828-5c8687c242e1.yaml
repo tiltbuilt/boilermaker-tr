@@ -1,6 +1,6 @@
 childBlocks:
   - childrenContainerMainSidebar
-  - styleAdjustmentsContainer2Column
+  - styleAdjustmentsSpecialContainer
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
@@ -44,7 +44,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: a7db7d4c-01bb-472d-a2ad-a716a0700e13
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -54,7 +54,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 7223714b-795f-46b5-8a32-a041185d49dd
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 2270bc26-2097-459b-b11d-7cafcbc42af4
       -

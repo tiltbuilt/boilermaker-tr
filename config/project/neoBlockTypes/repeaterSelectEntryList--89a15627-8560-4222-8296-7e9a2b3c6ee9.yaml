@@ -26,7 +26,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 180c8fee-d364-4791-9a62-f5f848dd0be6
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 133bbdba-eb78-4a0e-924c-dfc4af50bb53 # Main Header Base Class
             instructions: null
@@ -36,7 +36,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 224fdcde-a787-44b2-afeb-2fc0bc55ceba
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: d559fe04-efd1-43e2-80b1-d4d46c2d2ae2 # Subhead Text
             instructions: null
@@ -56,7 +56,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 16429316-9019-4ba3-938f-459906043c6d
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: e76476c3-0516-4766-932d-cff2b07934a8 # Subhead Base Class
             instructions: null
@@ -66,7 +66,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 54f13f23-f05c-4f8c-ab4d-5d6db769a334
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 33bdf607-ff20-47b4-9903-a658afbb72c5 # Subhead Position
             instructions: null
@@ -76,7 +76,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: f17fa0ec-9dde-45ea-aa34-f7507d1e6d5f
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
@@ -103,7 +103,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: aa582a0c-bf6c-4190-b5e0-7969a73d95ec
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 3908713c-a4c2-4e4d-ab34-8f92abacf276 # List - Order
             instructions: null
@@ -113,7 +113,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 4b4d786b-b858-4be2-b8b3-5e6c283fb814
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: bf87e9c7-6b90-4f9b-95c9-361309b94dde # List Item Heading Level
             instructions: null
@@ -123,7 +123,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: e371d9d7-70a2-43ed-80ba-1d3d270f259c
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 9c3c6834-2633-4d89-ae1b-d0897a9bee7c # List Item Display Style
             instructions: null
@@ -133,7 +133,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: f666626b-273b-476b-8912-1ae95d9c37a3
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 7cfd4f7d-3f60-4509-94f6-2ff20ffbf96d # Show Excerpt
             instructions: null
@@ -143,7 +143,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 5c06dbd2-0cf7-4126-b4a4-7523cfddf057
             warning: null
-            width: 50
+            width: 100
         name: 'List Settings'
         uid: fa406b7c-e595-4f5b-b12b-0139a2971131
       -
@@ -167,7 +167,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 1e947b69-adb9-455e-a34a-7bb08d291e9e
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
@@ -177,7 +177,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: ae801ee2-e86c-4ac0-8e4c-013700165c6a
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: cef577f5-f196-4d73-95e4-c727e28d2065
       -

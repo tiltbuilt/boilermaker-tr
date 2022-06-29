@@ -1,0 +1,208 @@
+childBlocks: null
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  ae1711c1-1c82-4456-a8ad-3806d9e8bd1a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9ac7da4c-d929-41df-b9d7-8088aad0ea16
+            warning: null
+            width: 100
+        name: 'Device Size'
+        uid: 4424a21d-4a17-4be5-8abc-1e73cd875981
+      -
+        elements:
+          -
+            fieldUid: 20f7930f-8c26-46a6-a6c5-218d9f97b7de # Row Horizontal Alignment
+            instructions: null
+            label: 'Slide Horizontal Alignment'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6b01e3c-9078-4dc1-a0ff-15d7c3e2b9e1
+            warning: null
+            width: 50
+          -
+            fieldUid: f8c0e88c-b8e4-4b28-8631-86132b814062 # Row Vertical Alignment
+            instructions: null
+            label: 'Slide Vertical Alignment'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2eb8673-40ea-4f0f-8c41-dc9f4afd536c
+            warning: null
+            width: 50
+        name: 'Slide Layout'
+        uid: 3653da98-bdba-4b50-99cb-e34abba258e1
+      -
+        elements:
+          -
+            fieldUid: 3319f142-1b8b-414b-9562-430a4cd47446 # Font
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bca2b8a-5372-408e-89d6-10c485d7a340
+            warning: null
+            width: 100
+          -
+            fieldUid: 60868356-6cc0-4a9c-9e93-81e431da773d # Font Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 13311b4b-6c6d-4cbb-ade6-2e21b6a06259
+            warning: null
+            width: 50
+          -
+            fieldUid: 76008123-c60e-47eb-a353-4a30bf254759 # Line Height
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fdf56ad9-44f8-45b3-bc84-695a4cd7d5a5
+            warning: null
+            width: 50
+          -
+            fieldUid: 02aa3c8d-1bfe-4d94-bd49-d0aecbb10da6 # Font Weight
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5dd5fa7c-1c83-4b68-a65e-0dcc6a347666
+            warning: null
+            width: 50
+          -
+            fieldUid: 678c7015-5101-4eea-a93d-eda6ed0083d1 # Italic
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e03e21d0-f566-4d2a-874b-fafb9df86d7f
+            warning: null
+            width: 50
+          -
+            fieldUid: 318ddb9d-6a63-4a8c-a127-3f6ae4f3caef # Text Case
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b807526f-7574-4eca-808f-fc36b8db4de1
+            warning: null
+            width: 50
+          -
+            fieldUid: 857252fe-f251-456e-ac8d-187a340c8807 # Letter Spacing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6d1d730-e896-4b9c-8f6e-65976689229a
+            warning: null
+            width: 50
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: e8f1c315-9aa8-49cb-8f0e-bbe6a4f5dbf1
+          -
+            heading: Alignment
+            type: craft\fieldlayoutelements\Heading
+            uid: d52024a0-b093-4555-9da1-53474976ea05
+          -
+            fieldUid: adf07d19-c655-4ed3-810d-ba23eaa068c4 # Content Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 272d00ac-0437-4813-8973-45751302260c
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 71845588-3a75-4eee-a655-796163ac3ddc
+          -
+            heading: 'Text Effects'
+            type: craft\fieldlayoutelements\Heading
+            uid: 0f3f032a-d497-4191-a5ce-69abae05af47
+          -
+            fieldUid: 6fa27166-9a3d-4f43-85c4-7c290970f314 # Text Shadow
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c1392b5-9cff-41b2-9783-43fa9f87327b
+            warning: null
+            width: 100
+        name: Type
+        uid: 5720bf6d-4d92-47d0-980b-d70f67f3de64
+      -
+        elements:
+          -
+            heading: Padding
+            type: craft\fieldlayoutelements\Heading
+            uid: 98461f3f-cf62-4447-887f-37c0559f1119
+          -
+            fieldUid: 345c96e3-abd1-4cbd-bcef-8688a9dcd0f3 # Top Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 689d5108-d0cf-4f66-a8d3-3ee2bdd96f86
+            warning: null
+            width: 50
+          -
+            fieldUid: 41694b92-bcd0-495d-96c4-478051aaabf0 # Bottom Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7c8ca3c9-8ef1-4d02-9077-d06abbd84bcf
+            warning: null
+            width: 50
+          -
+            fieldUid: 6fc21419-6629-4be1-993b-98df1befbf9a # Left Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a9923f44-a6c4-483b-96b6-273d72d64999
+            warning: null
+            width: 50
+          -
+            fieldUid: cf7918a9-3b10-481b-a1f0-410a6574cba5 # Right Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f263eaf4-ee39-4d72-8463-076c128e3103
+            warning: null
+            width: 50
+        name: Spacing
+        uid: 37a8466b-4036-4407-a07b-b4d6186cb859
+group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
+handle: styleSetSlide
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 6
+name: 'Style Set - Slide'
+sortOrder: 119
+topLevel: false

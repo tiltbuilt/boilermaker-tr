@@ -19,7 +19,7 @@ fieldLayouts:
             uid: af35b3cb-f01e-4aac-9b7a-8cdf9de79500
         name: Content
         uid: e97b67f6-43a2-438a-ba42-56379ce1c801
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenSlide
 maxBlocks: 0
 maxChildBlocks: 0

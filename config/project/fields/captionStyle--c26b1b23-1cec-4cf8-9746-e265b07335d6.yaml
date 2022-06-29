@@ -1,0 +1,14 @@
+columnSuffix: zopmhiwe
+contentColumnType: boolean
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: captionStyle
+instructions: 'This setting controls how the padding is applied to the captioned image. The Frame setting makes a box around the whole image with the caption under the image. The Bottom only setting makes a caption box only underneath the image with no framing at the top or sides.'
+name: 'Caption Style'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Bottom Only'
+  onLabel: Frame
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

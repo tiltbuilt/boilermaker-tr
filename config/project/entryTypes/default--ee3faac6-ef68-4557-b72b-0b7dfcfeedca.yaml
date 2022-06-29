@@ -1,0 +1,69 @@
+fieldLayouts:
+  eabaa537-3893-44c5-9bbb-d7b2ff41fcd5:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a51b2360-66a0-495e-9f7d-a34532908f89
+            warning: null
+            width: 100
+          -
+            fieldUid: be45752b-5950-4495-916b-645055cd1353 # Excerpt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ee3f51ca-1135-45cd-9880-36b802c483b8
+            warning: null
+            width: 100
+          -
+            fieldUid: aaf47b2e-bc87-461d-8aa7-55847fbcaeba # SEO - Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5456f5e3-ae12-47ba-b5e4-67c46d9c1d12
+            warning: null
+            width: 100
+          -
+            fieldUid: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 56a40844-1080-4fbd-aaf7-ea6ae82cb202
+            warning: null
+            width: 100
+        name: Content
+        uid: 3e756d69-a5d8-4f71-83d9-1c7035067a29
+handle: default
+hasTitleField: true
+name: Default
+section: 29d7b40f-cba4-4fc6-86b9-c8024f4b1790 # Test Channel
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

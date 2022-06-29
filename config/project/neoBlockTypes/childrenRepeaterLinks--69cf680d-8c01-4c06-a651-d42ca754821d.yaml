@@ -12,7 +12,7 @@ fieldLayouts:
             uid: 6a8dc0a7-13a1-4ce9-885a-95f0ad6b108d
         name: Links
         uid: d777ac1e-3574-4fd6-8210-df226b2b3062
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenRepeaterLinks
 maxBlocks: 0
 maxChildBlocks: 0

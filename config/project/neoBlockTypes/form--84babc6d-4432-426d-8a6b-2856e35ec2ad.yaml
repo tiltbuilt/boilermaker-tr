@@ -36,7 +36,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 89967fa0-1e38-4daf-af06-c8de3d66c9a6
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 133bbdba-eb78-4a0e-924c-dfc4af50bb53 # Main Header Base Class
             instructions: null
@@ -46,7 +46,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 64a75df8-4898-43b9-8e6e-32ea34e3a825
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
@@ -83,7 +83,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             uid: 36e4989c-e4c8-4bef-a461-9aadd8b3509d
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null

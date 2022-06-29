@@ -1,0 +1,89 @@
+columnSuffix: fbbhlypu
+contentColumnType: string
+fieldGroup: a7faa85f-4be1-4101-8d46-c1fc42bbdeeb # Page Builder - Accordions
+handle: accordionSpacing
+instructions: 'This setting controls the spacing between the accordions in the set. It is applied as a bottom margin.'
+name: 'Accordion Spacing'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'None (0px)'
+        -
+          - value
+          - mb-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Half (7.5px)'
+        -
+          - value
+          - mb-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Normal (15px)'
+        -
+          - value
+          - mb-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2x (30px)'
+        -
+          - value
+          - mb-2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3x (45px)'
+        -
+          - value
+          - mb-3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4x (60px)'
+        -
+          - value
+          - mb-4x
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown
