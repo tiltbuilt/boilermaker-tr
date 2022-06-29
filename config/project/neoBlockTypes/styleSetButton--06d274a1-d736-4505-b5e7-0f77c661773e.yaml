@@ -5,13 +5,17 @@ fieldLayouts:
   cdaf54f1-d905-4065-965e-fdd9a3d12e4a:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             style: tip
             tip: 'When a button is part of a group, the device size setting is ignored and the setting for the button group style adjustment is used.'
             type: craft\fieldlayoutelements\Tip
             uid: 2c3d77d3-d308-4393-9e2f-eae6b3496fc1
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
             instructions: null
             label: null
@@ -19,18 +23,24 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 02e28a1a-adcf-419b-a7c6-4b59b39e12dc
+            userCondition: null
             warning: null
             width: 100
         name: 'Device Size'
         uid: a123b94f-70b4-4a84-b736-4c4e73aee940
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             style: tip
             tip: 'When these adjustments are part of a button group adjustment, the styles are applied to all of the buttons in the group.'
             type: craft\fieldlayoutelements\Tip
             uid: 51d86a34-e029-4223-867d-d950e74ca68e
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
             instructions: null
             label: null
@@ -38,9 +48,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d6b58300-88c1-4fbe-bbb4-a4e2d803da14
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c51a76cf-e325-4732-9bf5-a816ca68d07f # Button Size
             instructions: null
             label: null
@@ -48,22 +60,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a8d092c0-c38b-462f-bced-6e8f4f9c9aa7
+            userCondition: null
             warning: null
             width: 100
         name: 'Button Settings'
         uid: 43b12c3f-c2c6-4c9d-9c7f-83eecfb66519
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             style: tip
             tip: 'When these adjustments are part of a button group adjustment, the styles are applied to all of the buttons in the group. To space out buttons in a group, apply margins on the side opposite the alignment setting of the group (so if the group is set to align left, add right margins to the buttons to space them out.)'
             type: craft\fieldlayoutelements\Tip
             uid: 358e5721-07db-4997-89ef-ebcc40d05410
+            userCondition: null
           -
+            elementCondition: null
             heading: Margins
             type: craft\fieldlayoutelements\Heading
             uid: 44e8d2f7-6615-4ce2-bee4-9090d2f04e0b
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 6b4735a7-3015-47c1-8572-f58fe16b8046 # Left Margin
             instructions: null
             label: null
@@ -71,9 +91,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5fcf8bfa-7b65-4460-8768-a6cc352a533c
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 9cc1146d-c859-4330-919e-d8a8da46d8ad # Right Margin
             instructions: null
             label: null
@@ -81,22 +103,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fa9e1641-1786-417e-b6cc-1c120c4a4cee
+            userCondition: null
             warning: null
             width: 50
         name: Spacing
         uid: f6cbb9cf-993b-4b50-bce3-350b1a4911ce
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             style: tip
             tip: 'When these adjustments are part of a button group adjustment, the styles are applied to all of the buttons in the group.'
             type: craft\fieldlayoutelements\Tip
             uid: 3d6827ef-44b6-45b3-b39c-3e61a7da619f
+            userCondition: null
           -
+            elementCondition: null
             heading: Display
             type: craft\fieldlayoutelements\Heading
             uid: 29067a94-c82e-4b3c-95c1-d2a82bff171c
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 670b5abf-edf9-484c-a6bb-b817a00336f0 # Display Setting
             instructions: null
             label: null
@@ -104,16 +134,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 49468720-3c7e-4f81-a87e-8520da77dccf
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: craft\fieldlayoutelements\HorizontalRule
             uid: 5c8727c7-b2e4-47e4-9b9d-acaf8d937501
+            userCondition: null
           -
+            elementCondition: null
             heading: Effects
             type: craft\fieldlayoutelements\Heading
             uid: c0ba977c-6e5f-4d50-9583-352f45c3e643
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 8a461305-6d93-4608-bb43-6ed229002b07 # Box Shadow
             instructions: null
             label: null
@@ -121,10 +157,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d224b896-aaae-4b98-befc-6956f31c30db
+            userCondition: null
             warning: null
             width: 100
         name: 'Display & Effects'
         uid: b1291d18-adf9-4784-a3ff-62d86a498c42
+        userCondition: null
 group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetButton
 maxBlocks: 0

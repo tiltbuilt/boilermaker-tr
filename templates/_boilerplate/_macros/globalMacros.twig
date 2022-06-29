@@ -111,32 +111,10 @@
 	{%- set classesOutput = classesOutput|merge([blockClass]) -%}
   {% endif %}
   
-  {# Process Style adjustment classes and add to output array to array #}
-  {% if styleClasses != null and styleClasses|length %}  
-  		{% for styleBlock in styleClasses %}
-		  	{% set devSize = styleBlock.deviceSize %}
-			  {% switch styleBlock.type.handle %}				
-				{% case 'background' %}					
-					{% for key, value in styleBlock %}
-						{% if key != 'deviceSize' and key != 'type' and value != '' %}
-							{% set classItem = styleBlock.deviceSize ~ value %}
-							{%- set classesOutput = classesOutput|merge([classItem]) -%}
-						{% endif %}						
-					{% endfor %}
-					
-				{% default %}
-					{% set styleBlockFieldLayout = styleBlock.getFieldLayout() %}
-					{% set styleBlockFields = styleBlockFieldLayout.getCustomFields() %}
-					{% for fieldItem in styleBlockFields %}
-						{% if fieldItem.handle != 'deviceSize' and styleBlock[fieldItem.handle] != '' %}
-							{% set classItem = styleBlock.deviceSize ~ styleBlock[fieldItem.handle] %}
-							{%- set classesOutput = classesOutput|merge([classItem]) -%}
-						{% endif %}						
-					{% endfor %}
-			  {% endswitch %}			
-		{% endfor %}		
+  {# Add styleClasses #}
+  {% if styleClasses != null and styleClasses|length %}
+	  {%- set classesOutput = classesOutput|merge(styleClasses) -%}
   {% endif %}
-  
     
   {# Add custom class string #}
   {% if customClassString != null and customClassString != '' %}

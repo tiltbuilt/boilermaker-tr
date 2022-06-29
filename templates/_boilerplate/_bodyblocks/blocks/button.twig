@@ -110,7 +110,7 @@
 {% set buttonLink = block.linkSettings %} {# no link settings, no button #}
 
 {% if buttonLink %}
-	<div {{ gMacros.buildElementAttributes(null, blockClass, wrapperClasses) -}}> 	
+	<div {{ gMacros.buildElementAttributes(null, blockClass, wrapperClasses) -}}>			 	
 		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
 			<div {{ gMacros.buildClassList('inner btn-wrapper-inner', padClasses, null) -}}>	
 				<a href="{{ buttonLink.url }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildElementAttributes(blockId, 'btn', styleClasses, customClassString) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>

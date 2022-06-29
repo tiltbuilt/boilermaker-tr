@@ -1,13 +1,13 @@
-columnSuffix: ifervxog
+columnSuffix: vkfehyzw
 contentColumnType: text
-fieldGroup: 7f0146e4-cfae-4bc2-a68b-396c0fa8e2d6 # Background Controls
-handle: backgroundColor
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: sectionColorScheme
 instructions: null
-name: 'Background Color'
+name: 'Section Color Scheme'
 searchable: false
 settings:
   default: null
-  palette: Backgrounds
+  palette: 'Color Schemes'
   useConfigFile: true
 translationKeyFormat: null
 translationMethod: none

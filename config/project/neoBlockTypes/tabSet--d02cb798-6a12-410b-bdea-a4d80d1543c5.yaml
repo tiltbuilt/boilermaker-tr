@@ -7,8 +7,10 @@ fieldLayouts:
   81d74064-47ee-4d93-a404-88f7da73280f:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
             instructions: null
             label: 'Tab Heading Level'
@@ -16,16 +18,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 7fd75873-71dc-40a2-abba-2c5659aa4c96
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 7dda10a0-aa73-4ba3-87f1-a11466acfef1
+            userCondition: null
         name: 'Content & Styling'
         uid: b966002d-486e-443c-88e9-ed7096ff61e5
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -33,13 +41,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a764362f-f398-402a-b125-9a7628f30ca9
+            userCondition: null
             warning: null
             width: 100
         name: Animation
         uid: f03410a0-86a3-41e5-8b96-4d18d44ff0e3
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -47,9 +59,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 06645b3c-41a5-4949-b483-6b020dddc926
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -57,10 +71,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ebd97ada-0237-4177-bf4c-4db63a6c0484
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: aee29d06-0a86-4dd5-8525-b033eaef22b2
+        userCondition: null
 group: d7701d3b-7087-4a4d-bd81-52a606ed6e75 # Tabs
 handle: tabSet
 maxBlocks: 0

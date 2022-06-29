@@ -5,13 +5,17 @@ fieldLayouts:
   51ade2a3-be15-414f-b836-3d133fe6d60e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             style: tip
             tip: 'This block type is used to specify all of the style customization to a tab set for a particular device size. When you select a size from the list, all the styles will be applied to that size and larger devices unless another style set for a larger size overrides a setting here.'
             type: craft\fieldlayoutelements\Tip
             uid: 9901a654-faa6-4d93-8c1d-26b6a42133de
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
             instructions: null
             label: null
@@ -19,17 +23,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 89a1c7a0-4343-4aed-8bff-317cec8ccdfd
+            userCondition: null
             warning: null
             width: 100
         name: 'Device Size'
         uid: abc563f8-607d-47c0-b02b-6483d4e823b6
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             heading: Margins
             type: craft\fieldlayoutelements\Heading
             uid: d3918f0a-7560-4872-a083-0328d2bc79a0
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
             instructions: null
             label: null
@@ -37,9 +47,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: aeeb8da4-145d-4605-9227-b8a158d301c4
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: d533a3e0-1a9b-4190-af12-f6b1a356c25a # Bottom Margin
             instructions: null
             label: null
@@ -47,9 +59,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: cb965ca9-1087-4413-8d31-d29e752d4929
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 6b4735a7-3015-47c1-8572-f58fe16b8046 # Left Margin
             instructions: null
             label: null
@@ -57,9 +71,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5ce90808-31e8-4734-bffd-90f519f6a0b8
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 9cc1146d-c859-4330-919e-d8a8da46d8ad # Right Margin
             instructions: null
             label: null
@@ -67,13 +83,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a14eb6a0-7e34-4c9e-b63d-14b1ca745e91
+            userCondition: null
             warning: null
             width: 50
         name: Spacing
         uid: 8c150cc9-ba60-4d17-af5e-2b1981734a8a
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 670b5abf-edf9-484c-a6bb-b817a00336f0 # Display Setting
             instructions: null
             label: null
@@ -81,10 +101,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a7649e77-4d39-4a95-a7f5-be1f7b048cbf
+            userCondition: null
             warning: null
             width: 100
         name: Display
         uid: cb09b8b4-5aab-41a1-b3b4-0f6cd4edd071
+        userCondition: null
 group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetTabSet
 maxBlocks: 0

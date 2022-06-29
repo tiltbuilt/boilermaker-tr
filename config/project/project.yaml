@@ -1,4 +1,4 @@
-dateModified: 1656493666
+dateModified: 1656532607
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -30,7 +30,7 @@ meta:
     0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
     0d3d2911-53a6-464a-b04b-54fc8789f80e: 'Style Set - Section' # Style Set - Section
     1acfdc52-cb76-4bd9-9286-5e59bc27def6: 'Slider Next Icon' # Slider Next Icon
-    1b522076-424a-45db-abff-b3a74931323f: 'Style Set - Slide'
+    1b522076-424a-45db-abff-b3a74931323f: 'Style Set - Slide' # Style Set - Slide
     01bf235c-0b3d-4a9e-af7b-5121a7f92b25: 'List - Count' # List - Count
     1bf643d4-1bb3-4e85-abe5-0a6510c964a4: Animations # Animations
     02a4f8c5-637d-405b-a6c1-1f01bdac1c01: 'Style Set - Content Text' # Style Set - Content Text
@@ -54,6 +54,7 @@ meta:
     4c8a1b99-37ef-424c-9a73-26d40caccc9d: Autoplay # Autoplay
     4d60bd72-6857-44f7-a62e-e36f9cf061b4: 'Company Info' # Company Info
     4f4cef2e-3a2d-4e87-b045-5d2699ebcbb0: 'Style Adjustments - Slide' # Style Adjustments - Slide
+    4f8b5bb8-0bca-4401-b96d-5a2b1bb273ed: 'Style Set - Page Header' # Style Set - Page Header
     5be0f654-b4af-4c4a-811a-d51d305965d9: 'Notification Bar Text' # Notification Bar Text
     5ca2acc9-e150-4c68-acd9-3600a955a648: Accordions # Accordions
     5deec8ca-f41a-4b0d-bb57-8a4a83895bb6: Images # Images
@@ -155,7 +156,7 @@ meta:
     3564fb89-095f-4f5e-8c17-b699a15ea6dd: 'Page Header Custom Classes' # Page Header Custom Classes
     5217c960-8bc3-45ea-a0f2-2e4f539b53b5: 'Repeater - All Entry by Section List' # Repeater - All Entry by Section List
     5553a528-f723-48bf-965f-6d720f5df686: 'SEO - Description' # SEO - Description
-    5812b692-0bf7-4342-a131-62a61ed68f7a: 'Style Set - Slider Set'
+    5812b692-0bf7-4342-a131-62a61ed68f7a: 'Style Set - Slider Set' # Style Set - Slider Set
     7250fbbb-07b2-4c31-a5b0-5f586c469ce2: 'Page Builder - Rows & Columns' # Page Builder - Rows & Columns
     8434d96d-7ef0-489c-b77d-fea9a4f76737: 'Subhead Class List' # Subhead Class List
     8933b575-f2c0-4930-a9fa-ec450aed0a0c: 'Styling Adjustments' # Styling Adjustments
@@ -176,7 +177,7 @@ meta:
     167456ee-f98a-48a0-8856-c9a090ed215f: 'Icon Asset' # Icon Asset
     344936e3-3b14-4ddd-a3c2-6f556fb9528d: 'Background Color' # Background Color
     392704c8-7a48-49d5-9b11-677194d1d941: 'Style Set - Caption' # Style Set - Caption
-    689596f7-042c-4a71-a9fb-dc50179596e9: 'Style Set - Repeater'
+    689596f7-042c-4a71-a9fb-dc50179596e9: 'Style Set - Repeater' # Style Set - Repeater
     857252fe-f251-456e-ac8d-187a340c8807: 'Letter Spacing' # Letter Spacing
     992412a7-fff9-45d8-af57-43b55750ecdd: 'Style Adjustments - Images' # Style Adjustments - Images
     1371181e-0e3f-44fe-bfdd-4848b6b55d74: 'Page Builder - Sliders' # Page Builder - Sliders
@@ -203,10 +204,11 @@ meta:
     a7faa85f-4be1-4101-8d46-c1fc42bbdeeb: 'Page Builder - Accordions' # Page Builder - Accordions
     a36da9f4-1661-4860-b462-766aa2d4e97d: 'Device Size' # Device Size
     a81a50e3-5d81-4206-a7eb-6be69a2cd056: Image # Image
+    a98ae0e4-a423-490c-9e75-2f3fe8a963fb: 'Color Scheme' # Color Scheme
     a207b59b-74c3-4aca-9e81-652173d3785a: 'Style Adjustments - Repeater Item' # Style Adjustments - Repeater Item
     a664d687-8900-46f2-a7ad-172be91e20fc: 'Slider Set' # Slider Set
     a79602ea-bbd9-41c8-9d75-9d134bc6951f: Tabs # Tabs
-    a9923610-5429-4721-849f-a32069ac727d: 'Style Set - Repeater Item'
+    a9923610-5429-4721-849f-a32069ac727d: 'Style Set - Repeater Item' # Style Set - Repeater Item
     aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
     aafa2ab8-b04b-41f3-95b1-7e15b8514a42: 'Style Adjustments - Section' # Style Adjustments - Section
     abfaf225-b8f2-4839-bd2b-70244a0ec786: 'Device Style Sets' # Device Style Sets
@@ -268,6 +270,7 @@ meta:
     d1336a2e-90ba-4ab3-b632-a1f61e700c2d: 'Block Controls' # Block Controls
     d7701d3b-7087-4a4d-bd81-52a606ed6e75: Tabs # Tabs
     dab5bc83-7229-4de4-9a9d-f042de16411a: 'Style Set - Icon & Content' # Style Set - Icon & Content
+    db4d0903-d1b2-4945-bef1-8b8cbba421ee: 'Section Color Scheme' # Section Color Scheme
     db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
     db9420fc-627a-4ec2-bf8f-058474f480bb: Button # Button
     def70282-b293-46ab-9193-35c6fb708ead: Column # Column
@@ -288,6 +291,7 @@ meta:
     f6d84ca5-0262-466c-90b8-d1c1e2c6fab7: 'Accordion Set' # Accordion Set
     f6f7710d-60a4-4b16-88a6-4a9e2bda96e5: 'Style Adjustments - Row' # Style Adjustments - Row
     f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
+    f8db0dbb-d033-4cd4-9556-cd1ae60191c2: 'Style Set - Wrapper' # Style Set - Wrapper
     f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Modal Trigger Button' # Modal Trigger Button
     f82ba9bb-67c4-404e-9e5b-e5820caedde4: 'Header Image Class List' # Header Image Class List
     f200de49-4c87-41f9-9a85-725ced12f7ca: 'Modal to Display' # Modal to Display

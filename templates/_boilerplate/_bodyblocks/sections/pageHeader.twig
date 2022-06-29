@@ -16,6 +16,9 @@
 {# set variables for content child and style adjustment containers  #}
 {% set buttonGroup = clone(section.children).type('childrenButtonGroup').one() %}
 {% set styleAdjusts = clone(section.children).type('styleAdjustmentsPageHeader').one() %}
+
+{# set section color scheme variable #}
+{% set colorScheme = section.colorScheme %}
 	
 {# Set block id attribute value #}
 {% if section.customId is defined and section.customId != '' %}
@@ -39,7 +42,7 @@
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create array to collect style changes to primary element #}
-{% set styleClasses = [] %}
+{% set styleClasses = [colorScheme.color[0].background, colorScheme.color[0].text] %}
 {% set rowClasses = [] %}
 {% set bgClasses = null %}
 {% set headerClasses = [] %}
@@ -54,74 +57,116 @@
 
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
 	
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleAdjustmentsMainHeader', 'styleAdjustmentsSubhead', 'styleControlsRowAlignment', 'styleControlsBackgroundImage']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
-	
-	{# Grab Style Adjustments for Header and Subhead if any #}
-	{% set h1Classes = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-	{% set subClasses = clone(styleAdjusts.children).type('styleAdjustmentsSubhead').one() %}	
-	
-	{# Set variable for background settings if there are any #}		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	{# Get Row Alignment Change If Any #}
-	{% for rowItem in clone(styleAdjusts.children).type('styleControlsRowAlignment').collect() %}
-		{% set rowClasses = rowClasses|merge([rowItem]) %}
-	{% endfor %}
-	
-	{# Set up Styles for Header, subhead intro text and button #}
-	
-	
-	{% set headerAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-	{% if headerAdjusts != null %}
-		{% for headerItem in clone(headerAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-			{% set headerClasses = headerClasses|merge([headerItem]) %}
-		{% endfor %}
-		{% for headerPadItem in clone(headerAdjusts.children).type('styleControlsPadding').collect() %}
-			{% set headerPadClasses = headerPadClasses|merge([headerPadItem]) %}
-		{% endfor %}
-	{% endif %}
-	
-	
-	{% if section.subheadText|length %}
-		{% set subAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsSubhead').one() %}
-		{% if subAdjusts != null %}
-			{% for subItem in clone(subAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set subClasses = subClasses|merge([subItem]) %}
-			{% endfor %}
-			{% for subPadItem in clone(subAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set subPadClasses = subPadClasses|merge([subPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}
-	
-	{% if section.simpleText|length %}
-		{% set introAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsIntroText').one() %}
-		{% if introAdjusts != null %}
-			{% for introItem in clone(introAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set introClasses = introClasses|merge([introItem]) %}
-			{% endfor %}
-			{% for introPadItem in clone(introAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set introPadClasses = introPadClasses|merge([introPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
 		
-	{% if buttonGroup != null %} {# if no buttons don't bother #}
-		{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButtonGroup').one() %}
-		{% if btnAdjusts != null %}  
-			{% set childBtnAdjusts = clone(btnAdjusts.children).type('styleAdjustmentsButton').one() %}
-			{% for btnItem in clone(btnAdjusts.children).type(['not', 'styleControlsPadding', 'styleAdjustmentsButton']).collect() %}
-				{% set btnGrpClasses = btnGrpClasses|merge([btnItem]) %}
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
+		{% for fieldItem in styleSetFields %}
+		
+			{# Leave out padding since it goes to a different element and leave out background fields #}
+			{% if fieldItem.handle != 'deviceSize' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'background') and not (fieldItem.handle starts with 'row') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+			{# Add padding settings to padClasses array #}
+			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set padClasses = padClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+			{# Add row layout classes to to rowClasses array #}
+			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set rowClasses = rowClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+			{# Get main header styleset adjustments if any #}
+			{% set headerStyles = clone(styleSet.children).type('styleSetMainHeader').one() %}
+			{% if headerStyles != null %}
+				{% set headerFieldLayout = headerStyles.getFieldLayout() %}
+				{% set headerFields = headerFieldLayout.getCustomFields() %}
+				{% for fieldItem in headerFields %}						
+					{# Leave out padding since it goes to a different element and leave out background fields #}
+					{% if not (fieldItem.handle ends with 'Padding') and headerStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+						{%- set headerClasses = headerClasses|merge([classItem]) -%}
+					{% endif %}	
+					
+					{# Add padding settings to padClasses array #}
+					{% if fieldItem.handle ends with 'Padding' and headerStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+						{%- set headerPadClasses = headerPadClasses|merge([classItem]) -%}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+			
+			{# Get subhead styleset adjustments if any #}
+			{% if section.subheadText|length %}
+				{% set subStyles = clone(styleSet.children).type('styleSetSubhead').one() %}
+				{% if subStyles != null %}
+					{% set subheadFieldLayout = subStyles.getFieldLayout() %}
+					{% set subheadFields = subheadFieldLayout.getCustomFields() %}
+					{% for fieldItem in subheadFields %}						
+						{# Leave out padding since it goes to a different element and leave out background fields #}
+						{% if not (fieldItem.handle ends with 'Padding') and subStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+							{%- set subClasses = subClasses|merge([classItem]) -%}
+						{% endif %}	
+						
+						{# Add padding settings to padClasses array #}
+						{% if fieldItem.handle ends with 'Padding' and subStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+							{%- set subPadClasses = subPadClasses|merge([classItem]) -%}
+						{% endif %}
+					{% endfor %}
+				{% endif %}
 			{% endfor %}
-			{% for btnPadItem in clone(btnAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set btnGrpPadClasses = btnGrpPadClasses|merge([btnPadItem]) %}
-			{% endfor %}		
-		{% endif %}
-	{% endif %}
+			
+			{# Get content text styleset adjustments if any #}
+			{% if section.simpleText|length %}
+				{% set introStyles = clone(styleSet.children).type('styleSetContentText').one() %}
+				{% if introStyles != null %}
+					{% set introFieldLayout = introStyles.getFieldLayout() %}
+					{% set introFields = subheadFieldLayout.getCustomFields() %}
+					{% for fieldItem in introFields %}						
+						{# Leave out padding since it goes to a different element and leave out background fields #}
+						{% if not (fieldItem.handle ends with 'Padding') and introStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+							{%- set introClasses = introClasses|merge([classItem]) -%}
+						{% endif %}	
+						
+						{# Add padding settings to padClasses array #}
+						{% if fieldItem.handle ends with 'Padding' and introStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+							{%- set introPadClasses = introPadClasses|merge([classItem]) -%}
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+			
+			{% if buttonGroup != null %} 			
+				{% set btnStyles = clone(styleSet.children).type('styleSetButton').one() %}
+				{% if btnStyles != null %}
+					{% set btnFieldLayout = btnStyles.getFieldLayout() %}
+					{% set btnFields = btnFieldLayout.getCustomFields() %}
+					{% for fieldItem in btnFields %}						
+						{# Leave out padding since it goes to a different element and leave out background fields #}
+						{% if introStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ btnStyles[fieldItem.handle] %}
+							{%- set btnClasses = btnClasses|merge([classItem]) -%}
+						{% endif %}					
+					{% endfor %}
+				{% endif %}
+			{% endif %}			
+			
+								
+		{% endfor %}
+				
+	{% endfor %}
 	
 {% endif %}
 
@@ -157,85 +202,86 @@
 {# OUTPUT #}
 
 <section {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}>	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, null, null) -}}> 
-			<div {{ gMacros.buildClassList('pageHeader-layout anim-pass', rowClasses, null) -}}>	
-				<div class="w-full anim-pass">
-					
-					{% if section.subheadText|length and section.subheadPosition == 1 %}
-					  <div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead', subClasses) -}}>
-						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-subhead-inner', subPadClasses, null) -}}>
-								{{ gMacros.stripTags(section.subheadText) }}
-							</div>
-						</div>
-					  </div>
-					{% endif %}
-					
-					
-					<h1 {{ gMacros.buildElementAttributes(headerId, 'elem-block pageHeader-mainheader heading1', headerClasses, null) -}}>
-						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-mainheader-inner heading1-inner', headerPadClasses, null) -}}>
-								{% if section.headerText|length %}
-									{{ gMacros.stripTags(section.headerText) }}
-								{% else %}
-									{{entry.title}}
-								{% endif %}
-							</div>
-						</div>
-					</h1>
-					
-					
-					{% if section.subheadText|length and section.subheadPosition == 0 %}
-					  <div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead', subClasses) -}}>
-						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-subhead-inner', subPadClasses, null) -}}>
-								{{ gMacros.stripTags(section.subheadText) }}
-							</div>
-						</div>
-					  </div>
-					{% endif %}
-					
-					{% if section.simpleText|length %}				
-						<div {{ gMacros.buildElementAttributes(introId, 'elem-block pageHeader-intro', introClasses, null) -}}>
+	<div {{ gMacros.buildClassList(null, animClasses, null ) -}}>
+		<div {{ gMacros.buildClassList(innerClass, null, null) -}}>			
+				<div {{ gMacros.buildClassList('pageHeader-layout anim-pass', rowClasses, null) -}}>	
+					<div class="w-full lg:w-3/4 anim-pass">
+						
+						{% if section.subheadText|length and section.subheadPosition == 1 %}
+					  	<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead', subClasses) -}}>
 							<div class="anim-wrapper anim-child">
-								<div {{ gMacros.buildClassList('inner pageHeader-intro-inner ', introPadClasses, null) -}}>
-									{{section.simpleText}}
+								<div {{ gMacros.buildClassList('inner pageHeader-subhead-inner', subPadClasses, null) -}}>
+									{{ gMacros.stripTags(section.subheadText) }}
 								</div>
 							</div>
-						</div>
-					{% endif %}  
-					
-					{% if buttonGroup != null %}
-						<div {{ gMacros.buildElementAttributes(btnGrpId, 'elem-block pageHeader-buttonGroup', btnGrpClasses, null) -}}> 	
+					  	</div>
+						{% endif %}
+						
+						
+						<h1 {{ gMacros.buildElementAttributes(headerId, 'elem-block pageHeader-mainheader heading1', headerClasses, null) -}}>
 							<div class="anim-wrapper anim-child">
-								<div {{ gMacros.buildClassList('inner pageHeader-buttonGroup-inner ', btnGrpPadClasses, null) -}}>
-									
-								{% for child in clone(buttonGroup.children).collect() %}	  
-									
-									{#-
-									For each child component, attempt to load a custom template for the
-									component handle from the project's files,
-									then the same template from the core Tiltrus files,
-									then a custom default template from the project,
-									and finally the default template for this component type from the core Tiltrus files.
-									-#}
-																		
-								  {%
-									include [
-									  '_project/_bodyblocks/blocks/' ~ child.type.handle,
-									  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-									  '_project/_bodyblocks/blocks/block',
-									  '_boilerplate/_bodyblocks/blocks/block'
-									] ignore missing with { 'block' :  child, 'groupStyles': childBtnAdjusts, 'ignoreMargins': true, 'inGroup': true }
-								  %}									  
-									
-								{% endfor %}							
-								</div>		
-							</div>     
-						</div>			
-					{% endif %}
-					
+								<div {{ gMacros.buildClassList('inner pageHeader-mainheader-inner heading1-inner', headerPadClasses, null) -}}>
+									{% if section.headerText|length %}
+										{{ gMacros.stripTags(section.headerText) }}
+									{% else %}
+										{{entry.title}}
+									{% endif %}
+								</div>
+							</div>
+						</h1>
+						
+						
+						{% if section.subheadText|length and section.subheadPosition == 0 %}
+					  	<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead', subClasses) -}}>
+							<div class="anim-wrapper anim-child">
+								<div {{ gMacros.buildClassList('inner pageHeader-subhead-inner', subPadClasses, null) -}}>
+									{{ gMacros.stripTags(section.subheadText) }}
+								</div>
+							</div>
+					  	</div>
+						{% endif %}
+						
+						{% if section.simpleText|length %}				
+							<div {{ gMacros.buildElementAttributes(introId, 'elem-block pageHeader-intro', introClasses, null) -}}>
+								<div class="anim-wrapper anim-child">
+									<div {{ gMacros.buildClassList('inner pageHeader-intro-inner ', introPadClasses, null) -}}>
+										{{section.simpleText}}
+									</div>
+								</div>
+							</div>
+						{% endif %}  
+						
+						{% if buttonGroup != null %}
+							<div {{ gMacros.buildElementAttributes(btnGrpId, 'elem-block pageHeader-buttonGroup', btnGrpClasses, null) -}}> 	
+								<div class="anim-wrapper anim-child">
+									<div {{ gMacros.buildClassList('inner pageHeader-buttonGroup-inner ', btnGrpPadClasses, null) -}}>
+										
+									{% for child in clone(buttonGroup.children).collect() %}	  
+										
+										{#-
+										For each child component, attempt to load a custom template for the
+										component handle from the project's files,
+										then the same template from the core Tiltrus files,
+										then a custom default template from the project,
+										and finally the default template for this component type from the core Tiltrus files.
+										-#}
+																			
+								  	{%
+										include [
+									  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
+									  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+									  	'_project/_bodyblocks/blocks/block',
+									  	'_boilerplate/_bodyblocks/blocks/block'
+										] ignore missing with { 'block' :  child, 'groupStyles': childBtnAdjusts, 'ignoreMargins': true, 'inGroup': true }
+								  	%}									  
+										
+									{% endfor %}							
+									</div>		
+								</div>     
+							</div>			
+						{% endif %}
+						
+					</div>
 				</div>
 			</div>
 		</div> 

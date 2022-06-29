@@ -7,12 +7,16 @@ fieldLayouts:
   a7b4f374-8fa2-438e-abca-df5e45a7d9ec:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 80c7adad-4925-4480-9d05-82e9cc2cbd37
+            userCondition: null
         name: Buttons
         uid: 00622f5c-a535-47b1-b4af-1a8167156524
+        userCondition: null
 group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenButtonGroup
 maxBlocks: 0

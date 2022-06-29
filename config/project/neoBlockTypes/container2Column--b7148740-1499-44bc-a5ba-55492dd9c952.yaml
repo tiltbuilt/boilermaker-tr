@@ -7,8 +7,10 @@ fieldLayouts:
   7093cd2f-54d3-4ac3-9489-89bf3bf9d975:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: c2036654-1479-4180-9e87-c7cf588d25e8 # Full Screen Width
             instructions: null
             label: null
@@ -16,16 +18,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 614a3fc3-370e-44d6-9ace-c1f75249c89f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 6712ac6e-ff56-41d2-9f59-d6cc02e0365a
+            userCondition: null
         name: 'Content & Styling'
         uid: ab47c76a-b3a6-4474-80fb-6491fdaf4420
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -33,9 +41,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 17d09448-ceff-4338-a73f-6cca3c7a9d2e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
             instructions: null
             label: null
@@ -43,9 +53,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4d454f9d-18ad-41eb-9dcd-7131981cdfb0
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
             label: null
@@ -53,13 +65,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: eef7a2ec-c74d-44cd-a097-e8e61e2108be
+            userCondition: null
             warning: null
             width: 100
         name: Animation
         uid: 307723d2-d0da-4b0d-ab10-455e0c1f2796
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -67,9 +83,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 0058f743-8ad4-4783-a025-1062073cf0b7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -77,10 +95,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 2d112629-4e5e-4c58-88c4-2f0d0d2929d7
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: 05613e73-1f5e-4d38-ba3d-e0c4b1af2dd5
+        userCondition: null
 group: adafad53-959c-487b-98e7-6df775004a2c # Layout Containers
 handle: container2Column
 maxBlocks: 0

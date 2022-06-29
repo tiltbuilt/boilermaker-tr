@@ -6,8 +6,10 @@ fieldLayouts:
   95b9a67d-e4be-4557-8f83-1546e1597db6:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: a36da9f4-1661-4860-b462-766aa2d4e97d # Device Size
             instructions: null
             label: null
@@ -15,17 +17,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5e45cf68-7e55-4725-b3d5-53b56c9ba5b0
+            userCondition: null
             warning: null
             width: 100
         name: 'Device Size'
         uid: 42b269cc-98af-4f73-a46a-45d9f17414bf
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             heading: Margins
             type: craft\fieldlayoutelements\Heading
             uid: d976577d-a2f3-48a4-9412-e5f5bf0d4de4
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
             instructions: null
             label: null
@@ -33,9 +41,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 7d546cbe-5330-41c1-b18a-b2c2dbb7ba51
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: d533a3e0-1a9b-4190-af12-f6b1a356c25a # Bottom Margin
             instructions: null
             label: null
@@ -43,9 +53,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 773624c2-2b1e-46e3-9956-2c4a7f3e035e
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 6b4735a7-3015-47c1-8572-f58fe16b8046 # Left Margin
             instructions: null
             label: null
@@ -53,9 +65,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a90cdf3f-41b4-434d-b9a7-24d2fbc6e57a
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 9cc1146d-c859-4330-919e-d8a8da46d8ad # Right Margin
             instructions: null
             label: null
@@ -63,17 +77,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3d40c367-f553-4e09-94d0-444860f4bb18
+            userCondition: null
             warning: null
             width: 50
         name: Spacing
         uid: b978595f-3ce6-4451-a25f-0a02eb54101c
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             heading: Display
             type: craft\fieldlayoutelements\Heading
             uid: c92551b9-5770-4d67-bf11-687ee30dbca3
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 670b5abf-edf9-484c-a6bb-b817a00336f0 # Display Setting
             instructions: null
             label: null
@@ -81,13 +101,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: cc4659bd-3c07-428c-85e7-6510f63eeeca
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: Effects
             type: craft\fieldlayoutelements\Heading
             uid: 241ac12c-fa01-4512-95c8-33d17e085c25
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 8a461305-6d93-4608-bb43-6ed229002b07 # Box Shadow
             instructions: null
             label: null
@@ -95,17 +119,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e5dfce77-e5c6-4184-a0b7-402689233ae1
+            userCondition: null
             warning: null
             width: 100
         name: 'Display & Effects'
         uid: d4d787e6-5e0d-4646-bd58-2caff9467f08
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: b120ed8c-360b-4d40-8369-a49e20e608f3
+            userCondition: null
         name: 'Caption Style Adjustments'
         uid: ff0c9ea3-b1e7-4f90-ad1d-f50ae2af3ba3
+        userCondition: null
 group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetVideo
 maxBlocks: 0

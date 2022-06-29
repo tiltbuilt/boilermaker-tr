@@ -4,10 +4,10 @@
     "version": "2.0.3",
     "type": "project",
     "require": {
-        "carlcs/craft-redactorcustomstyles": "4.0.1",
-        "craftcms/cms": "4.0.5.2",
+        "carlcs/craft-redactorcustomstyles": "4.0.2",
+        "craftcms/cms": "4.1.0.2",
         "craftcms/feed-me": "5.0.4",
-        "craftcms/redactor": "3.0.0",
+        "craftcms/redactor": "3.0.1",
         "mmikkel/retcon": "2.4.2",
         "nystudio107/craft-minify": "4.0.0-beta.2",
         "nystudio107/craft-retour": "4.0.2",

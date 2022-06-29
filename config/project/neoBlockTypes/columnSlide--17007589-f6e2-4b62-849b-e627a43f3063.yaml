@@ -7,15 +7,21 @@ fieldLayouts:
   93bba807-6e21-4f0b-9986-313605c1970f:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 1324d5a1-9be9-43ab-ac85-c8138d724333
+            userCondition: null
         name: 'Content & Styling'
         uid: 4b582fb5-ccb3-4e68-92ba-303590e6b57d
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -23,9 +29,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: da7986cd-6a3a-44b5-b2f2-b6c5d9ba1d16
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -33,10 +41,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 63feda6f-61d9-417e-bf1a-fe63714aa41c
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: b44a3d9c-a629-4cfe-bc4d-09f9466d695c
+        userCondition: null
 group: 38b2d069-fc9a-47d3-92fe-dda7740ac324 # Columns
 handle: columnSlide
 maxBlocks: 0

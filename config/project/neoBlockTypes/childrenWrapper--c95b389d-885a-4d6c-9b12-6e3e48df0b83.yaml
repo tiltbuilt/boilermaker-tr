@@ -29,12 +29,16 @@ fieldLayouts:
   c3761053-dedd-4e18-8d8c-968d726f143b:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 5a58f327-b5a1-4075-b340-4995836bf990
+            userCondition: null
         name: Content
         uid: e8ae09a2-2e88-44ad-8444-58788bc7c379
+        userCondition: null
 group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenWrapper
 maxBlocks: 0

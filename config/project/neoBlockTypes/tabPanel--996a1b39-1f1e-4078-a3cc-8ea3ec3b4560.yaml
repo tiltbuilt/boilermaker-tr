@@ -7,8 +7,10 @@ fieldLayouts:
   644bb086-53c1-4eac-a0e1-5cabe5994e99:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 8f315b09-46cf-425c-8fff-8b052a202dc8 # Tab Title
             instructions: null
             label: null
@@ -16,9 +18,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5a5a96cd-1d59-4695-8a1e-be736864c717
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 167456ee-f98a-48a0-8856-c9a090ed215f # Icon Asset
             instructions: null
             label: 'Tab Icon'
@@ -26,16 +30,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5116a823-fe1a-4b16-9cf3-315f958c0949
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 87d9a8ab-4598-4c28-a3ad-502d86cff905
+            userCondition: null
         name: 'Content & Styling'
         uid: 16ca0748-1b1c-4d9b-8175-ba7d855de273
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -43,9 +53,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 45209344-55a4-40a9-875a-16b58560f75e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -53,10 +65,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 236df86f-f3d6-4bc8-a583-eb188d6068ab
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: 79eab8cf-46b0-43c8-acb6-638dc28f523d
+        userCondition: null
 group: d7701d3b-7087-4a4d-bd81-52a606ed6e75 # Tabs
 handle: tabPanel
 maxBlocks: 0

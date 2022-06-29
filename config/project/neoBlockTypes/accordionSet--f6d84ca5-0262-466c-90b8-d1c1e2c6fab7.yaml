@@ -7,8 +7,10 @@ fieldLayouts:
   4c82ae8b-4ba7-46f6-98c8-600d5e98353a:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17 # Accordion - Start State
             instructions: null
             label: 'First Panel Start State'
@@ -16,9 +18,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b5292bd9-f679-44a9-831d-280bda0bbea7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6ca71cdf-5677-41f2-a6d0-1b08e4b330c4 # Accordion Set - Allow Multiple Open Panels
             instructions: null
             label: null
@@ -26,9 +30,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 37a804b2-c6ce-49a7-98cf-e637eeac5b21
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
             instructions: null
             label: null
@@ -36,16 +42,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 640e3d6b-5a6a-4066-8cda-f22486785b4b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: a14b835e-473e-443a-987b-5a593b53335b
+            userCondition: null
         name: 'Content & Styling'
         uid: 8a491d72-1ca0-447d-adb9-a5fd0308e97b
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -53,9 +65,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 1d799035-f73c-4e8c-bd4a-a823adcc27c6
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
             instructions: null
             label: null
@@ -63,9 +77,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9dacda03-132b-4615-a2d8-98cd21972904
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
             label: null
@@ -73,13 +89,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c90b26bb-5ef9-469d-8fa1-3cd0981548a9
+            userCondition: null
             warning: null
             width: 100
         name: Animation
         uid: 472e6c47-7bf3-4ca4-b3cb-7ced1493f167
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -87,9 +107,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4835ca37-f55e-4c80-ace5-c979cc8d8f19
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -97,10 +119,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 95e7fffa-b0b9-4691-90d5-937fe5705523
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: 622676d5-e2e7-4934-af75-b2c1fe76128a
+        userCondition: null
 group: 5ca2acc9-e150-4c68-acd9-3600a955a648 # Accordions
 handle: accordionSet
 maxBlocks: 0

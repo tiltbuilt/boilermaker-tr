@@ -5,8 +5,10 @@ fieldLayouts:
   5b404b26-9a90-4c87-849b-10c715ff2787:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 43791594-97eb-4702-a55d-9ea41a53d6b8 # Text Content
             instructions: null
             label: null
@@ -14,10 +16,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 236135bb-73dd-4576-9363-9a244bad27f5
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: c581fd9f-2de2-4f3d-a282-68c69a0bca2c
+        userCondition: null
 group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
 handle: textContent
 maxBlocks: 0

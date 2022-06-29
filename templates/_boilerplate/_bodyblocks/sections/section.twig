@@ -24,6 +24,9 @@
 	{% endif %}
 {% endfor %}
 
+{# set section color scheme variable #}
+{% set colorScheme = section.colorScheme %}
+
 {# Set block id attribute value #}
 {% if section.customId is defined and section.customId != '' %}
 	{% set blockId = section.customId %}
@@ -38,26 +41,41 @@
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create array to collect style changes to primary element #}
-{% set styleClasses = [] %}
+{% set styleClasses = [colorScheme.color[0].background, colorScheme.color[0].text] %}
 {% set padClasses = [] %}
 {% set bgClasses = null %}
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
 	
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+	
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
+		{% for fieldItem in styleSetFields %}
+		
+			{# Leave out padding since it goes to a different element and leave out background fields #}
+			{% if fieldItem.handle != 'deviceSize' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'background') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+			{# Add padding settings to padCLasses array #}
+			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set padClasses = padClasses|merge([classItem]) -%}
+			{% endif %}	
+								
+		{% endfor %}
+				
 	{% endfor %}
 	
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{# Set variable for background settings if there are any #}
+	{#
 		
 	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+	
+	#}
 	
 {% endif %}
 
@@ -91,8 +109,8 @@
 
 {# OUTPUT #}
 
-<section {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}>	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+<section {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}>		
+	<div {{ gMacros.buildClassList(null, animClasses, null) -}}>
 		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}> 
 			{% if contentKids != null %}
 				{% for child in clone(contentKids.children).collect() %}			
@@ -104,7 +122,7 @@
 							'_boilerplate/_bodyblocks/containers/' ~ child.type.handle,
 							'_project/_bodyblocks/containers/container',
 							'_boilerplate/_bodyblocks/containers/container'
-						] with { 'container' : child,  }			  
+						] with { 'container' : child }			  
 						%}	  
 					{% endif %}
 					

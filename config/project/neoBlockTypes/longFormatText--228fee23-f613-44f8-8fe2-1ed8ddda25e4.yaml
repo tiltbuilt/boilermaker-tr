@@ -6,8 +6,10 @@ fieldLayouts:
   f7b267ed-eebe-4472-91ef-58eccf6b48a9:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35 # Long Format Text
             instructions: null
             label: null
@@ -15,13 +17,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 45858233-eec3-48ac-b6ad-622c658ecef5
+            userCondition: null
             warning: null
             width: 100
         name: 'Content & Styling'
         uid: 3f059b94-f7eb-4118-a877-191a0c32044a
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -29,13 +35,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 2b623d8c-575f-4aa1-87a2-acd063f3579a
+            userCondition: null
             warning: null
             width: 100
         name: Animation
         uid: 86d9d85b-9584-4a7f-89c8-ae130b84c5a2
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -43,9 +53,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a141192e-35e8-449c-83fd-55fe75ed1522
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -53,10 +65,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a2411835-c236-4b3c-bdcc-8caef6ee2447
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: 29a0a16b-a1c5-4450-9623-48d30c7a4049
+        userCondition: null
 group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
 handle: longFormatText
 maxBlocks: 0

@@ -6,12 +6,16 @@ fieldLayouts:
   1c570a5e-19cc-44a7-96ab-0255c164594e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 3a40cfa7-002d-49ac-ac90-d427178ccecd
+            userCondition: null
         name: 'Style Adjustments'
         uid: 0d103f6f-d523-4c84-904b-15d6bbfd3240
+        userCondition: null
 group: 8933b575-f2c0-4930-a9fa-ec450aed0a0c # Styling Adjustments
 handle: styleAdjustmentsSection
 maxBlocks: 0

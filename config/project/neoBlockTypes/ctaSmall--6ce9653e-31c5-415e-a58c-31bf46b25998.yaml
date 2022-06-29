@@ -6,8 +6,10 @@ fieldLayouts:
   730e2b1c-8f17-4687-9c02-1b035b225d88:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 3e54e327-a9a9-4587-b91e-4775a1f7dd3f # Header Text
             instructions: null
             label: null
@@ -15,9 +17,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bae767da-430d-49a6-ae7f-49534fe57379
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
             instructions: null
             label: null
@@ -25,9 +29,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: aeaeb9ef-476b-44ee-8471-4ebab6195d26
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d559fe04-efd1-43e2-80b1-d4d46c2d2ae2 # Subhead Text
             instructions: null
             label: null
@@ -35,9 +41,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: cc38a073-4ce6-4145-8abe-12470a9b5d97
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d86c02d7-08d3-44c2-b76c-aa170103e7db # Subhead Level
             instructions: null
             label: null
@@ -45,9 +53,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e109c6ac-19a0-4b4f-80cc-1882b11c6ba8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 33bdf607-ff20-47b4-9903-a658afbb72c5 # Subhead Position
             instructions: null
             label: null
@@ -55,9 +65,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5bbe96f7-64ae-4953-9974-f8792aa4ec78
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
             label: 'CTA Text'
@@ -65,9 +77,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 12c9b598-ff10-4556-ad0c-d6c304e9015f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
             instructions: null
             label: null
@@ -75,16 +89,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9a8421d4-0c3d-4d1c-9bf6-d1dc3a1a5dd4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 432455bd-9409-4806-a5a9-bbd54065d68b
+            userCondition: null
         name: 'Content & Styling'
         uid: ff77555c-3b96-4214-a0d7-434ee574e561
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -92,9 +112,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 78ff1f8d-b5ab-4380-82de-ad6f838f0044
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
             instructions: null
             label: null
@@ -102,9 +124,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 78dc5f18-1fd9-4c69-ad28-12c37fa0fccf
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
             label: null
@@ -112,13 +136,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fbd4f490-061d-41e6-99b9-0aa189a5d952
+            userCondition: null
             warning: null
             width: 100
         name: Animation
         uid: 5f7d7efa-b866-44d1-8c9a-261dfa636155
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -126,9 +154,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c4d8f991-affe-45f2-97e8-f6fb59b471c7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -136,10 +166,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 38845e93-42ad-46aa-9c94-197e5ca87629
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: df43bb27-c654-404e-9f7b-220145a74448
+        userCondition: null
 group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
 handle: ctaSmall
 maxBlocks: 0
