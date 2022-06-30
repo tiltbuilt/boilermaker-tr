@@ -1,4 +1,4 @@
-dateModified: 1656532607
+dateModified: 1656627382
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -33,6 +33,7 @@ meta:
     1b522076-424a-45db-abff-b3a74931323f: 'Style Set - Slide' # Style Set - Slide
     01bf235c-0b3d-4a9e-af7b-5121a7f92b25: 'List - Count' # List - Count
     1bf643d4-1bb3-4e85-abe5-0a6510c964a4: Animations # Animations
+    1f46d766-e7d5-45a3-8b4e-577f84ec828c: 'Right Border Size' # Right Border Size
     02a4f8c5-637d-405b-a6c1-1f01bdac1c01: 'Style Set - Content Text' # Style Set - Content Text
     02aa3c8d-1bfe-4d94-bd49-d0aecbb10da6: 'Font Weight' # Font Weight
     02b5d1f7-4316-41c9-8a1b-bebea399fd40: 'Slide Content' # Slide Content
@@ -75,6 +76,7 @@ meta:
     07acce1b-2462-4302-8722-8e90b41670f6: 'Row Columns' # Row Columns
     7b80b96c-716d-401c-9940-9808b70632fd: 'Page Builder - Containers' # Page Builder - Containers
     7cfd4f7d-3f60-4509-94f6-2ff20ffbf96d: 'Show Excerpt' # Show Excerpt
+    07dde381-9c5f-4368-89c3-33fad5db0ff9: 'Top Border Size' # Top Border Size
     7e860b09-958f-4a2e-9c83-5afaf8167b7d: 'Style Adjustments - Tab Panel' # Style Adjustments - Tab Panel
     7e784580-052a-447e-bfd5-94414abfaa99: 'Style Set - Button Group' # Style Set - Button Group
     7f0146e4-cfae-4bc2-a68b-396c0fa8e2d6: 'Background Controls' # Background Controls
@@ -100,6 +102,7 @@ meta:
     15e02460-e8b5-47da-98ed-78bdb8544472: 'Page Header' # Page Header
     20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
     22a053a5-a4ce-4380-ba58-45909af57b1f: Container # Container
+    29cd508b-77c8-43b8-99ed-97325424e4f3: Borders # Borders
     29d7b40f-cba4-4fc6-86b9-c8024f4b1790: 'Test Channel' # Test Channel
     33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
     38b2d069-fc9a-47d3-92fe-dda7740ac324: Columns # Columns
@@ -145,6 +148,7 @@ meta:
     749e3a06-54bd-476f-95ea-97b91f43c692: 'Caption Title' # Caption Title
     938c6226-2dee-4440-a989-1741df63e4e4: 'Boilermaker Craft 4' # Boilermaker Craft 4
     952d9143-2f31-4712-97d6-009d4d9b0265: 'Header Button Group Class List' # Header Button Group Class List
+    964b590b-9008-4fe1-832d-bb0f6885b513: 'Border Color' # Border Color
     982b6185-6d4a-4655-b767-aa8cc325e579: 'Image Placement' # Image Placement
     996a1b39-1f1e-4078-a3cc-8ea3ec3b4560: 'Tab Panel' # Tab Panel
     1281a243-241d-495f-85d7-71bd28adf095: 'Style Adjustments - CTA Small' # Style Adjustments - CTA Small
@@ -168,6 +172,7 @@ meta:
     44683fa3-9b93-4d7a-8835-3b46fdab682c: 'Slider Controls' # Slider Controls
     49453feb-0d8e-4fc0-8a1d-9f9cbc5b90a5: Sections # Sections
     56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
+    062600cc-ab78-4d82-9315-610ffa661a9a: 'Bottom Border Size' # Bottom Border Size
     78748af5-2d5a-4b89-b484-db2e0243dd02: Button # Button
     79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
     87560ba9-9a3d-4aa8-afb4-858c1ec8c119: 'Column Content' # Column Content
@@ -191,6 +196,7 @@ meta:
     29714022-fcc0-4fd4-b828-5c8687c242e1: 'Container with Sidebar' # Container with Sidebar
     43791594-97eb-4702-a55d-9ea41a53d6b8: 'Text Content' # Text Content
     45293253-b0dc-4cb2-a388-cd234cf28442: 'Style Set - Long Text' # Style Set - Long Text
+    45471281-5b1e-4831-a7c9-3fe43d728275: 'Left Border Size' # Left Border Size
     46469126-9a53-4817-9f4b-ce78d8df108e: 'List - Parent Entry' # List - Parent Entry
     54510867-1090-42cf-9962-0f0da66d1809: Default # Default
     59188785-05ee-4819-af85-d78f4464f118: 'Style Adjustments - Form' # Style Adjustments - Form
@@ -207,12 +213,14 @@ meta:
     a98ae0e4-a423-490c-9e75-2f3fe8a963fb: 'Color Scheme' # Color Scheme
     a207b59b-74c3-4aca-9e81-652173d3785a: 'Style Adjustments - Repeater Item' # Style Adjustments - Repeater Item
     a664d687-8900-46f2-a7ad-172be91e20fc: 'Slider Set' # Slider Set
+    a751dd8a-4610-4da1-bb23-a20811e94d5f: 'All Borders Match?' # All Borders Match?
     a79602ea-bbd9-41c8-9d75-9d134bc6951f: Tabs # Tabs
     a9923610-5429-4721-849f-a32069ac727d: 'Style Set - Repeater Item' # Style Set - Repeater Item
     aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
     aafa2ab8-b04b-41f3-95b1-7e15b8514a42: 'Style Adjustments - Section' # Style Adjustments - Section
     abfaf225-b8f2-4839-bd2b-70244a0ec786: 'Device Style Sets' # Device Style Sets
     ac8a5abf-cb71-4272-8634-0442dff18f5f: 'Half Width Column' # Half Width Column
+    ac594e2f-6124-465e-9b70-d85d3ba149c7: 'Border Style' # Border Style
     acb65621-fdc6-41e3-b982-3f8c5371e3e4: 'Icon Color' # Icon Color
     adafad53-959c-487b-98e7-6df775004a2c: 'Layout Containers' # Layout Containers
     adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
@@ -251,6 +259,7 @@ meta:
     c72a1dde-4ae3-46ae-a0b4-8ab01cd15e99: 'Repeater - Nav Collection' # Repeater - Nav Collection
     c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
     c95b389d-885a-4d6c-9b12-6e3e48df0b83: 'Wrapper Content' # Wrapper Content
+    c826d302-6590-4881-9bf7-c12d233f3992: 'Border Size' # Border Size
     c1225b8d-2770-40e5-92db-55a8e0acebd8: Accordions # Accordions
     c9973b20-8f48-429c-be55-dd0498255786: 'Page Builder - Repeaters' # Page Builder - Repeaters
     c2036654-1479-4180-9e87-c7cf588d25e8: 'Full Screen Width' # Full Screen Width
@@ -470,7 +479,7 @@ plugins:
     schemaVersion: 3.0.10
   section-and-product-type:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 1.1.1
   seomatic:
     edition: standard

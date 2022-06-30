@@ -59,18 +59,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
-            instructions: null
-            label: null
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7f0f73d2-78f0-49aa-9b41-c693fe9fb885
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 44a6a0d3-efe4-4a59-b982-df896f078026
             userCondition: null

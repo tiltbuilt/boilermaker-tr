@@ -1,0 +1,78 @@
+columnSuffix: nqqpgcio
+contentColumnType: string
+fieldGroup: 29cd508b-77c8-43b8-99ed-97325424e4f3 # Borders
+handle: borderSizeBottom
+instructions: null
+name: 'Bottom Border Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 0px
+        -
+          - value
+          - border-b-0
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 pixel'
+        -
+          - value
+          - border-b
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Thin
+        -
+          - value
+          - border-b-2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - border-b-4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Thick
+        -
+          - value
+          - border-b-8
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

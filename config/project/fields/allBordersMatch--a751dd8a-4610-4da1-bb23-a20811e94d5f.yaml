@@ -1,0 +1,14 @@
+columnSuffix: wpwcigbm
+contentColumnType: boolean
+fieldGroup: 29cd508b-77c8-43b8-99ed-97325424e4f3 # Borders
+handle: allBordersMatch
+instructions: null
+name: 'All Borders Match?'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

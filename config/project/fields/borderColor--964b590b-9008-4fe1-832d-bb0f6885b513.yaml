@@ -1,9 +1,9 @@
-columnSuffix: ihmrzfsv
+columnSuffix: ntfgvmax
 contentColumnType: text
-fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
-handle: textColor
+fieldGroup: 29cd508b-77c8-43b8-99ed-97325424e4f3 # Borders
+handle: borderColor
 instructions: null
-name: 'Text Color'
+name: 'Border Color'
 searchable: false
 settings:
   default: null
@@ -21,7 +21,7 @@ settings:
           - ''
         -
           - class
-          - text-black
+          - border-black
     -
       __assoc__:
         -
@@ -35,7 +35,7 @@ settings:
           - ''
         -
           - class
-          - text-white
+          - border-white
     -
       __assoc__:
         -
@@ -49,7 +49,7 @@ settings:
           - ''
         -
           - class
-          - text-gray-300
+          - border-gray-300
     -
       __assoc__:
         -
@@ -63,7 +63,7 @@ settings:
           - ''
         -
           - class
-          - text-gray-400
+          - border-gray-400
     -
       __assoc__:
         -
@@ -77,21 +77,7 @@ settings:
           - ''
         -
           - class
-          - text-gray-800
-    -
-      __assoc__:
-        -
-          - label
-          - Red
-        -
-          - color
-          - '#FF0000'
-        -
-          - default
-          - ''
-        -
-          - class
-          - text-red
+          - border-gray-800
   palette: null
   useConfigFile: false
 translationKeyFormat: null
