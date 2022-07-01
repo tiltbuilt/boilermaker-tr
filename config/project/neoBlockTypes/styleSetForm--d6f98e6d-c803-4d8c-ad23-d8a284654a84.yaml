@@ -29,6 +29,17 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: f500ffde-3631-4f1e-a5c7-cccc1949aa9c
+            userCondition: null
+        name: 'Child Element Style Adjustments'
+        uid: 6bc70c14-730f-46d1-8db3-52d243e0af99
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
             heading: Padding
             type: craft\fieldlayoutelements\Heading
             uid: 7717b1a9-5657-4ea4-9648-e864c7df6726
@@ -148,11 +159,276 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
-            uid: f500ffde-3631-4f1e-a5c7-cccc1949aa9c
+            heading: Borders
+            type: craft\fieldlayoutelements\Heading
+            uid: 7131b8e3-a725-4013-8b0f-0f6105189de2
             userCondition: null
-        name: 'Child Element Style Adjustments'
-        uid: 6bc70c14-730f-46d1-8db3-52d243e0af99
+          -
+            elementCondition: null
+            fieldUid: a751dd8a-4610-4da1-bb23-a20811e94d5f # All Borders Match?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ae6acfb-a3b8-4145-bfdc-2ef694738f43
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ac594e2f-6124-465e-9b70-d85d3ba149c7 # Border Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5bde26fe-d840-416a-8fb7-f5f5738f5c1f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 964b590b-9008-4fe1-832d-bb0f6885b513 # Border Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 787a2fdf-0250-44b8-914e-dc1e1191118b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a751dd8a-4610-4da1-bb23-a20811e94d5f # All Borders Match?
+                  uid: f03d5e2a-1387-4b88-9f67-6b76d2ec33ef
+                  value: true
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: c826d302-6590-4881-9bf7-c12d233f3992 # Border Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ec6c63d-6217-4b5f-b3b9-149cf7418f7e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a751dd8a-4610-4da1-bb23-a20811e94d5f # All Borders Match?
+                  uid: c31dcf03-741c-4753-a5b0-f963fd656779
+                  value: false
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 07dde381-9c5f-4368-89c3-33fad5db0ff9 # Top Border Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 93ac8207-e30d-4815-b78d-8ffad38f3b30
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a751dd8a-4610-4da1-bb23-a20811e94d5f # All Borders Match?
+                  uid: 5e3a0953-dc19-4ce2-b772-0b539c09a629
+                  value: false
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 062600cc-ab78-4d82-9315-610ffa661a9a # Bottom Border Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b1f2caf3-760d-4162-bfe4-f88b1ad8cd74
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a751dd8a-4610-4da1-bb23-a20811e94d5f # All Borders Match?
+                  uid: 98e920f2-9e4d-43e8-9864-fa061a169a6b
+                  value: false
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 45471281-5b1e-4831-a7c9-3fe43d728275 # Left Border Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 46aea98a-3e3c-4fb0-87d9-fe92075f83f9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a751dd8a-4610-4da1-bb23-a20811e94d5f # All Borders Match?
+                  uid: 048e70a2-2f4b-4dd9-9c47-7001981a9b81
+                  value: true
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 1f46d766-e7d5-45a3-8b4e-577f84ec828c # Right Border Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5afd9c17-b7e9-4a6e-a2c9-ebc262f09dad
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: d6dae2f3-d52e-4787-8dde-a93df500e048
+            userCondition: null
+          -
+            elementCondition: null
+            heading: Background
+            type: craft\fieldlayoutelements\Heading
+            uid: 5126601e-ce25-4db1-ba98-71fe30bb5268
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 344936e3-3b14-4ddd-a3c2-6f556fb9528d # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ddbc808-2e71-4449-bc9a-c75b8fa7b8b8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5bf50641-2590-4b65-b8a6-2662eba6cd0e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: c4f6398f-4386-4ed9-bc51-73e6656c8b9a
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 7f8d2464-dd61-443e-97d4-0ce8137cc9ef # Background Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d120ff8-7d8c-4a09-b4fd-6da4437a7998
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: d1d71a27-4151-4e5b-b7a1-47c4f642801a
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: fce2fd29-6267-4aa3-8244-0ec47473a1e5 # Background Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1dc3fd3c-33ab-41c0-bf47-0c6e5c25f90e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: 4cf2f13b-d6ed-467a-a11f-20d7f06f8966
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 9e4325cf-f265-4742-8b95-0c66626b9103 # Background Repeat
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bc4c457-e976-4a05-9b0a-03611af89dec
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: 74c879a0-6951-493b-a159-2deefe1e2f33
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 8a3a74f3-3e95-424e-9064-1f5904fbe9bc # Background Opacity
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b2b0ed9-9713-4641-91e0-0f44108f6e37
+            userCondition: null
+            warning: null
+            width: 50
+        name: 'Borders & Background'
+        uid: 8d2d4c63-e902-4def-9d3e-83dfae3f178d
         userCondition: null
 group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetForm

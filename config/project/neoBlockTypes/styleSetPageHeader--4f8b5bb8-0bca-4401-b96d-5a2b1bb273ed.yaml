@@ -121,6 +121,18 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 73230320-128c-4692-aa98-aa4092738d56 # Text Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 44a57b5b-4f30-4adf-b62c-65dbca761b5c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 318ddb9d-6a63-4a8c-a127-3f6ae4f3caef # Text Case
             instructions: null
             label: null
@@ -262,6 +274,124 @@ fieldLayouts:
             userCondition: null
         name: 'Child Element Style Adjustments'
         uid: 796dd4cb-28a1-43e5-9c8a-131ea390c0e1
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 344936e3-3b14-4ddd-a3c2-6f556fb9528d # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2a75b556-c75b-4db5-ba46-f3d825f80f02
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e7680c87-5479-43d0-9a92-df57be560b6c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: 315545b4-6b42-4cf0-8e63-82099e063cac
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 7f8d2464-dd61-443e-97d4-0ce8137cc9ef # Background Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3baef360-716a-48aa-ba14-9b5128aed4e1
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: d0ffebcd-080e-4de4-8751-931494ef83ef
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: fce2fd29-6267-4aa3-8244-0ec47473a1e5 # Background Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ef40fee9-238e-4262-bbdd-dbea7a61c9e6
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: 64b77f26-88f9-43a0-8b12-aa32af112216
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 9e4325cf-f265-4742-8b95-0c66626b9103 # Background Repeat
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4decc7ba-1013-4789-9dd7-d5547251cc29
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\ElementCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: null
+                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
+                  operator: notempty
+                  uid: 15cffe86-37be-4675-939f-a9905b27cd55
+              elementType: benf\neo\elements\Block
+              fieldContext: global
+            fieldUid: 8a3a74f3-3e95-424e-9064-1f5904fbe9bc # Background Opacity
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0eb90873-b7dc-49b2-9d62-d9419a0d1270
+            userCondition: null
+            warning: null
+            width: 50
+        name: Background
+        uid: c3317b6f-2f4b-4086-8f84-103dc2f55ef3
         userCondition: null
       -
         elementCondition: null

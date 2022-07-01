@@ -1,9 +1,9 @@
-columnSuffix: arccdbmj
+columnSuffix: ocslmebi
 contentColumnType: text
 fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
-handle: iconColor
+handle: accTabButtonColor
 instructions: null
-name: 'Icon Color'
+name: 'Accordion & Tab Button Color'
 searchable: false
 settings:
   default: null
@@ -21,7 +21,7 @@ settings:
           - ''
         -
           - class
-          - icon-black
+          - accbtn-black
     -
       __assoc__:
         -
@@ -29,13 +29,13 @@ settings:
           - White
         -
           - color
-          - '#ffffff'
+          - '#FFFFFF'
         -
           - default
           - ''
         -
           - class
-          - icon-white
+          - accbtn-white
     -
       __assoc__:
         -
@@ -49,7 +49,7 @@ settings:
           - ''
         -
           - class
-          - icon-gray-lt
+          - accbtn-gray-lt
     -
       __assoc__:
         -
@@ -63,7 +63,7 @@ settings:
           - ''
         -
           - class
-          - icon-gray-md
+          - accbtn-gray-md
     -
       __assoc__:
         -
@@ -77,7 +77,7 @@ settings:
           - ''
         -
           - class
-          - icon-gray-dk
+          - accbtn-gray-dk
   palette: null
   useConfigFile: false
 translationKeyFormat: null

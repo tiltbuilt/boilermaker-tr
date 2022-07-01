@@ -28,6 +28,17 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: ada17791-778b-4752-9dee-08240396cf85
+            userCondition: null
+        name: 'Child Element Style Adjustments'
+        uid: 3c2a0269-b720-45fd-95a3-b3bf298fce65
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
             fieldUid: adf07d19-c655-4ed3-810d-ba23eaa068c4 # Content Alignment
             instructions: null
             label: null
@@ -177,17 +188,6 @@ fieldLayouts:
             width: 100
         name: Display
         uid: 2e6c3f72-2155-429a-a346-02173dcda54a
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
-            uid: ada17791-778b-4752-9dee-08240396cf85
-            userCondition: null
-        name: 'Child Element Style Adjustments'
-        uid: 3c2a0269-b720-45fd-95a3-b3bf298fce65
         userCondition: null
 group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetButtonGroup

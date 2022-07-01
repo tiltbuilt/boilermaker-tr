@@ -11,6 +11,18 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            fieldUid: 116b0f4f-13b5-47fe-9daa-6716a09821a4 # Accordion Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96c30a79-041d-46ed-800a-53cc9ad3f32a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17 # Accordion - Start State
             instructions: null
             label: 'First Panel Start State'

@@ -63,6 +63,18 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 62fcdeb8-54af-421a-86e9-3ee8c569ddcc # Button Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2325e12-50b0-4f8b-a076-b34f3b704cc7
+            userCondition: null
+            warning: null
+            width: 100
         name: 'Button Settings'
         uid: 43b12c3f-c2c6-4c9d-9c7f-83eecfb66519
         userCondition: null

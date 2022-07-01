@@ -1,4 +1,4 @@
-dateModified: 1656627382
+dateModified: 1656688661
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -111,10 +111,12 @@ meta:
     50c41aa0-a307-4f48-b863-57a0326ccfd7: 'Link Settings' # Link Settings
     52c8510f-7a0e-43dd-b081-7ab3b31828b9: Embed # Embed
     60fe403c-2e8f-4206-8d14-bf4ef59eac14: 'Style Set - Header Block' # Style Set - Header Block
+    62fcdeb8-54af-421a-86e9-3ee8c569ddcc: 'Button Color' # Button Color
     64c3cc0e-9e89-4534-8dfe-c843caabe996: 'Style Set - Container' # Style Set - Container
     69cf680d-8c01-4c06-a651-d42ca754821d: 'Repeater Links' # Repeater Links
     69de199e-8337-4836-a446-cb00cd81b78d: Home # Home
     72b4dadd-d8de-42a0-a437-ed4cf5fef754: 'Style Adjustments - Page Header' # Style Adjustments - Page Header
+    74bfcee1-4328-4223-a5e8-73cefe050b43: 'Accordion & Tab Panel Background Color' # Accordion & Tab Panel Background Color
     76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
     76cc8c13-1eee-4978-b281-e7946e576168: 'Style Set - Tab Set' # Style Set - Tab Set
     82f81f4c-6383-4eec-9643-20ae33adb7b7: 'Style Adjustments - Container' # Style Adjustments - Container
@@ -266,6 +268,7 @@ meta:
     c2160053-ca19-4222-b62f-ae814b3e542f: 'Container Columns - 2 Column Container' # Container Columns - 2 Column Container
     cae8de72-1b59-4faa-9532-102b16d9d3b6: Home # Home
     cb7c5f64-dd68-41d8-b463-02c872472acb: 'Simple Text' # Simple Text
+    cc3a7600-664f-4e93-a933-fb8b3d79fd71: 'Accordion & Tab Button Color' # Accordion & Tab Button Color
     cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d: 'Link URL' # Link URL
     cf7918a9-3b10-481b-a1f0-410a6574cba5: 'Right Padding' # Right Padding
     cfca2aa9-b9da-4c7c-81c6-194322b496af: Slide # Slide

@@ -63,6 +63,18 @@ fieldLayouts:
             width: 50
           -
             elementCondition: null
+            fieldUid: 73230320-128c-4692-aa98-aa4092738d56 # Text Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 58d3d038-5db5-48b2-934b-589fb2043871
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             type: craft\fieldlayoutelements\HorizontalRule
             uid: 0b447378-1ee0-4664-bdab-f7062841266d
             userCondition: null

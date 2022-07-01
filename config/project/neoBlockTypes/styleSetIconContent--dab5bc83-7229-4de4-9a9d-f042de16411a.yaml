@@ -30,136 +30,11 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            fieldUid: 3319f142-1b8b-414b-9562-430a4cd47446 # Font
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d335e516-bc27-4a48-bf79-d73d04c7406b
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 47e508d2-ebac-4f95-9c3e-b5c05792550e
             userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 60868356-6cc0-4a9c-9e93-81e431da773d # Font Size
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f25c10ea-8807-4f8b-b4af-ed419ca04f3e
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 76008123-c60e-47eb-a353-4a30bf254759 # Line Height
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 5f43364d-02b9-42e2-830d-970971e1c75e
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 02aa3c8d-1bfe-4d94-bd49-d0aecbb10da6 # Font Weight
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b852d2ed-e868-44ce-9d2d-8f38860afdf9
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 678c7015-5101-4eea-a93d-eda6ed0083d1 # Italic
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 71757e55-3c9a-47d2-8b9f-dd30190e4f94
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 318ddb9d-6a63-4a8c-a127-3f6ae4f3caef # Text Case
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f1c30d96-b0d2-421c-a4ed-02776596068a
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 857252fe-f251-456e-ac8d-187a340c8807 # Letter Spacing
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: cbf55fcd-5fa2-41de-9feb-611eb72cb503
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 7db7d1e4-281b-4960-895e-8faac4b6f521
-            userCondition: null
-          -
-            elementCondition: null
-            heading: Alignment
-            type: craft\fieldlayoutelements\Heading
-            uid: ca6af8e9-afbf-4517-bb95-43c853e81c2c
-            userCondition: null
-          -
-            elementCondition: null
-            fieldUid: adf07d19-c655-4ed3-810d-ba23eaa068c4 # Content Alignment
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e9a70406-5162-4fde-b598-5ded0f9d4e36
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 406d4a53-e9c1-4661-9300-765dce189ba0
-            userCondition: null
-          -
-            elementCondition: null
-            heading: 'Text Effects'
-            type: craft\fieldlayoutelements\Heading
-            uid: f211a970-b1c3-47a8-9196-d889500e1616
-            userCondition: null
-          -
-            elementCondition: null
-            fieldUid: 6fa27166-9a3d-4f43-85c4-7c290970f314 # Text Shadow
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d7740f2f-903e-4ba3-b55f-08640e007a0b
-            userCondition: null
-            warning: null
-            width: 100
-        name: Type
-        uid: fd3fd0ab-9afd-4438-a15c-0a8fd373b9e9
+        name: 'Child Element Style Adjustments'
+        uid: 05f68c42-3ef0-4e79-9191-002a1188f215
         userCondition: null
       -
         elementCondition: null
@@ -279,17 +154,6 @@ fieldLayouts:
             width: 50
         name: Spacing
         uid: 0ef54de8-be81-41d8-8a83-e82082335cd1
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
-            uid: 47e508d2-ebac-4f95-9c3e-b5c05792550e
-            userCondition: null
-        name: 'Child Element Style Adjustments'
-        uid: 05f68c42-3ef0-4e79-9191-002a1188f215
         userCondition: null
       -
         elementCondition: null
