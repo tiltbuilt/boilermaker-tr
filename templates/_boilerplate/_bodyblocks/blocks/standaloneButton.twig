@@ -43,6 +43,10 @@
 
 {# check if button is in group and if so and there are group styles set use them for wrapper styles #}
 {% if inGroup is defined and inGroup and groupStyles is defined and groupStyles != null %}
+	
+	
+	
+	
 	{% set wrapperAdjusts = clone(groupStyles.children).type(['not', 'styleControlsButton', 'styleControlsPadding']) %}
 	{% set padAdjusts = clone(groupStyles.children).type(['styleControlsPadding']) %}
 	{% set btnGroupStyles = clone(groupStyles.children).type(['styleControlsButton']).collect() %}

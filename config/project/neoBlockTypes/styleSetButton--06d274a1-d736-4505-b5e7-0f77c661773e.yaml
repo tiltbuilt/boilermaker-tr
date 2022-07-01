@@ -75,6 +75,30 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 146b1105-58ed-47c7-bca1-b6df9980d37d # Full Width Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 02d587b9-e448-4e0f-b793-44957b73c0dc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c68fea6b-214c-4d75-a3c6-9ae6225e0893 # Button Shadow
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8b389abc-a946-4778-bc2f-cb5de68f34a9
+            userCondition: null
+            warning: null
+            width: 100
         name: 'Button Settings'
         uid: 43b12c3f-c2c6-4c9d-9c7f-83eecfb66519
         userCondition: null
@@ -90,10 +114,82 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
+            fieldUid: 345c96e3-abd1-4cbd-bcef-8688a9dcd0f3 # Top Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51c9d1c4-b8b8-4c23-b7a0-03fc102f1997
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 41694b92-bcd0-495d-96c4-478051aaabf0 # Bottom Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2fc3aebb-203c-4892-a257-7f9b0ddd0205
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 6fc21419-6629-4be1-993b-98df1befbf9a # Left Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 983d07b8-fb2b-4eaa-b0ff-31cf53be67a9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: cf7918a9-3b10-481b-a1f0-410a6574cba5 # Right Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3529cc02-72bf-4fe7-a849-f6544b2f7a9e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
             heading: Margins
             type: craft\fieldlayoutelements\Heading
             uid: 44e8d2f7-6615-4ce2-bee4-9090d2f04e0b
             userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0669a991-5da1-4c54-a638-2cd8cbd11b3d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: d533a3e0-1a9b-4190-af12-f6b1a356c25a # Bottom Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bf8c64f1-e70a-4132-a287-554dbe77e013
+            userCondition: null
+            warning: null
+            width: 50
           -
             elementCondition: null
             fieldUid: 6b4735a7-3015-47c1-8572-f58fe16b8046 # Left Margin
@@ -149,29 +245,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 5c8727c7-b2e4-47e4-9b9d-acaf8d937501
-            userCondition: null
-          -
-            elementCondition: null
-            heading: Effects
-            type: craft\fieldlayoutelements\Heading
-            uid: c0ba977c-6e5f-4d50-9583-352f45c3e643
-            userCondition: null
-          -
-            elementCondition: null
-            fieldUid: 8a461305-6d93-4608-bb43-6ed229002b07 # Box Shadow
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d224b896-aaae-4b98-befc-6956f31c30db
-            userCondition: null
-            warning: null
-            width: 100
         name: 'Display & Effects'
         uid: b1291d18-adf9-4784-a3ff-62d86a498c42
         userCondition: null
@@ -181,5 +254,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 6
 name: 'Style Set - Button'
-sortOrder: 117
+sortOrder: 120
 topLevel: false

@@ -630,5 +630,5 @@ maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 6
 name: 'Style Set - Wrapper'
-sortOrder: 122
+sortOrder: 125
 topLevel: false

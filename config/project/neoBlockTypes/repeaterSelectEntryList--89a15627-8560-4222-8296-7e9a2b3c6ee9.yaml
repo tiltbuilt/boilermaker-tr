@@ -256,5 +256,5 @@ maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 0
 name: 'Repeater - Select Entry List'
-sortOrder: 64
+sortOrder: 66
 topLevel: false

@@ -628,5 +628,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 6
 name: 'Style Set - CTA'
-sortOrder: 100
+sortOrder: 103
 topLevel: false

@@ -1,5 +1,4 @@
-childBlocks:
-  - styleSetButton
+childBlocks: null
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
@@ -28,10 +27,106 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
-            uid: ada17791-778b-4752-9dee-08240396cf85
+            heading: 'Button Styling'
+            type: craft\fieldlayoutelements\Heading
+            uid: eaf86ccc-6cb7-4a6f-b1dd-97c1414253f0
             userCondition: null
-        name: 'Child Element Style Adjustments'
+          -
+            elementCondition: null
+            fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 74314ade-a8cf-4fc2-b4a9-369d28cf962d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c51a76cf-e325-4732-9bf5-a816ca68d07f # Button Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e474047b-faed-44e7-8440-2e1b34f65e72
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 62fcdeb8-54af-421a-86e9-3ee8c569ddcc # Button Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c22eabd0-a66f-4336-9cbe-671771aa6056
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 146b1105-58ed-47c7-bca1-b6df9980d37d # Full Width Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7116944a-d4af-4dfc-b42b-c6c7d4ee999e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c68fea6b-214c-4d75-a3c6-9ae6225e0893 # Button Shadow
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 296fa3ca-cddb-40c4-bdfe-4372dfd26335
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 166da2c1-1f6f-4a11-88e1-adad5630bbc0
+            userCondition: null
+          -
+            elementCondition: null
+            heading: 'Button Spacing'
+            type: craft\fieldlayoutelements\Heading
+            uid: d0b6abc9-312b-41d8-ab90-62c7dc4276c1
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 8ce60b3e-2c00-46e5-bf85-c3e376881e97 # Button Left Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 34351cfb-6125-427d-967d-3917764def38
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: f493aefd-5bad-4315-8048-ad90bca89919 # Button Right Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc419f3b-fbee-49b1-839c-30d8980b7829
+            userCondition: null
+            warning: null
+            width: 50
+        name: 'Button Style Adjustments'
         uid: 3c2a0269-b720-45fd-95a3-b3bf298fce65
         userCondition: null
       -
@@ -195,5 +290,5 @@ maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 6
 name: 'Style Set - Button Group'
-sortOrder: 116
+sortOrder: 119
 topLevel: false

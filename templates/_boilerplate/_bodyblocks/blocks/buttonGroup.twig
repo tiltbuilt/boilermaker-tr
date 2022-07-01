@@ -90,16 +90,7 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 
-	<!--
-		{% if colorScheme is defined and colorScheme != null %}
-		COLORS:		
-		{% for color in colorScheme.color %}
-			COLOR: {{ color.color }}<br>
-		{% endfor %}
-		{% else %}
-		NULL {% endif %}
-	-->	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
 		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
 			{% if contentKids != null %}

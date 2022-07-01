@@ -1,4 +1,4 @@
-dateModified: 1656688661
+dateModified: 1656714378
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -87,6 +87,7 @@ meta:
     08afc34f-5da9-4c20-80f2-884ae194e695: 'Style Adjustments - Long Format Text' # Style Adjustments - Long Format Text
     8b211e5a-b602-4bdd-b531-777210b608d1: 'Column Order' # Column Order
     8bc830c1-371e-45af-9e26-b2b41f946480: 'Social Media Links' # Social Media Links
+    8ce60b3e-2c00-46e5-bf85-c3e376881e97: 'Button Left Margin' # Button Left Margin
     8e6a8ae9-43d1-49e6-8634-e075f4d87a89: 'Background Image' # Background Image
     8f315b09-46cf-425c-8fff-8b052a202dc8: 'Tab Title' # Tab Title
     08f385be-023c-42db-9198-dc4ba042a730: 'Image Size' # Image Size
@@ -167,6 +168,7 @@ meta:
     8434d96d-7ef0-489c-b77d-fea9a4f76737: 'Subhead Class List' # Subhead Class List
     8933b575-f2c0-4930-a9fa-ec450aed0a0c: 'Styling Adjustments' # Styling Adjustments
     9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
+    9180e02e-2edc-430b-9c39-05f85a98784f: 'Style Adjustments - Group Button'
     9651ecc9-b7a0-4294-bdb6-9e21fb575c08: 'Content Elements' # Content Elements
     13662d93-bce6-47d1-b655-28788cfec494: 'Main Menu' # Main Menu
     14205de1-1461-4c5e-bba4-807303cd42a1: 'Main Header Class List' # Main Header Class List
@@ -175,6 +177,7 @@ meta:
     49453feb-0d8e-4fc0-8a1d-9f9cbc5b90a5: Sections # Sections
     56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
     062600cc-ab78-4d82-9315-610ffa661a9a: 'Bottom Border Size' # Bottom Border Size
+    75900a8a-d66e-491c-9f52-f5364eea2e68: 'Style Set- Header Buttons' # Style Set- Header Buttons
     78748af5-2d5a-4b89-b484-db2e0243dd02: Button # Button
     79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
     87560ba9-9a3d-4aa8-afb4-858c1ec8c119: 'Column Content' # Column Content
@@ -193,6 +196,7 @@ meta:
     5925614f-5c61-4d48-a905-862a3e29d09f: 'Slide Row Columns' # Slide Row Columns
     6237434b-4af7-4d60-97a3-b055764ac5ce: 'Sidebar Content' # Sidebar Content
     7450367a-cdf2-446d-ad60-d78b932299d5: Globals # Globals
+    7478980a-0616-4520-8888-14f12638f436: 'Group Modal Button' # Group Modal Button
     09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
     17007589-f6e2-4b62-849b-e627a43f3063: 'Slide Content Column' # Slide Content Column
     29714022-fcc0-4fd4-b828-5c8687c242e1: 'Container with Sidebar' # Container with Sidebar
@@ -258,6 +262,7 @@ meta:
     c32f95ec-cd66-44d0-9333-b5825adc6357: 'Section Containers' # Section Containers
     c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
     c54b2a49-78b3-43cb-bf40-1f652256611f: 'Repeater Item - Content Link' # Repeater Item - Content Link
+    c68fea6b-214c-4d75-a3c6-9ae6225e0893: 'Button Shadow' # Button Shadow
     c72a1dde-4ae3-46ae-a0b4-8ab01cd15e99: 'Repeater - Nav Collection' # Repeater - Nav Collection
     c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
     c95b389d-885a-4d6c-9b12-6e3e48df0b83: 'Wrapper Content' # Wrapper Content
@@ -284,7 +289,7 @@ meta:
     dab5bc83-7229-4de4-9a9d-f042de16411a: 'Style Set - Icon & Content' # Style Set - Icon & Content
     db4d0903-d1b2-4945-bef1-8b8cbba421ee: 'Section Color Scheme' # Section Color Scheme
     db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
-    db9420fc-627a-4ec2-bf8f-058474f480bb: Button # Button
+    db9420fc-627a-4ec2-bf8f-058474f480bb: 'Standalone Button' # Standalone Button
     def70282-b293-46ab-9193-35c6fb708ead: Column # Column
     e8c93d59-48dc-424d-82b9-331fce7ff16b: 'Icon and Content' # Icon and Content
     e16c576c-c525-440b-8ca8-fcfb71976823: 'Link Name' # Link Name
@@ -304,10 +309,13 @@ meta:
     f6f7710d-60a4-4b16-88a6-4a9e2bda96e5: 'Style Adjustments - Row' # Style Adjustments - Row
     f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
     f8db0dbb-d033-4cd4-9556-cd1ae60191c2: 'Style Set - Wrapper' # Style Set - Wrapper
-    f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Modal Trigger Button' # Modal Trigger Button
+    f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Standalone Modal Button' # Standalone Modal Button
     f82ba9bb-67c4-404e-9e5b-e5820caedde4: 'Header Image Class List' # Header Image Class List
+    f115b81c-d4ab-4eff-bd39-91d4bd46bf32: 'Style Set - Group Button'
     f200de49-4c87-41f9-9a85-725ced12f7ca: 'Modal to Display' # Modal to Display
     f314f126-29d7-43dd-8631-3dff02728310: 'YouTube Video ID' # YouTube Video ID
+    f432a083-0109-4062-909e-e13611c104c3: 'Group Button' # Group Button
+    f493aefd-5bad-4315-8048-ad90bca89919: 'Button Right Margin' # Button Right Margin
     f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2: 'Custom Class List' # Custom Class List
     f5015dd1-01ba-4268-88f1-c5631c0fec06: 'Slide Content Row' # Slide Content Row
     f411052f-1a69-4dc0-bb4a-fa64eb492d54: 'Link Icon' # Link Icon

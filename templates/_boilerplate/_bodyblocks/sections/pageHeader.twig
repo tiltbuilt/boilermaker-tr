@@ -66,104 +66,148 @@
 		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
 		{% for fieldItem in styleSetFields %}
 		
-			{# Leave out padding since it goes to a different element and leave out background fields #}
-			{% if fieldItem.handle != 'deviceSize' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'background') and not (fieldItem.handle starts with 'row') and styleSet[fieldItem.handle]|length %}
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}	
+			{% endif %}
 			
-			{# Add padding settings to padClasses array #}
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add padding settings to padCLasses array #}			
 			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set padClasses = padClasses|merge([classItem]) -%}
-			{% endif %}	
+			{% endif %}
 			
-			{# Add row layout classes to to rowClasses array #}
+			{# Add row layout classes to to rowClasses array #}			
 			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set rowClasses = rowClasses|merge([classItem]) -%}
 			{% endif %}	
 			
-			{# Get main header styleset adjustments if any #}
+			
+			{# Get main header styleset adjustments if any #}			
 			{% set headerStyles = clone(styleSet.children).type('styleSetMainHeader').one() %}
 			{% if headerStyles != null %}
 				{% set headerFieldLayout = headerStyles.getFieldLayout() %}
 				{% set headerFields = headerFieldLayout.getCustomFields() %}
 				{% for fieldItem in headerFields %}						
-					{# Leave out padding since it goes to a different element and leave out background fields #}
-					{% if not (fieldItem.handle ends with 'Padding') and headerStyles[fieldItem.handle]|length %}
+					
+					{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
 						{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
 						{%- set headerClasses = headerClasses|merge([classItem]) -%}
 					{% endif %}	
 					
-					{# Add padding settings to padClasses array #}
+					{# add color classes #}
+					{% if fieldItem.handle ends with 'Color' and headerStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ headerStyles[fieldItem.handle].class %}
+						{%- set headerClasses = styleClasses|merge([classItem]) -%}
+					{% endif %}
+					
 					{% if fieldItem.handle ends with 'Padding' and headerStyles[fieldItem.handle]|length %}
 						{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
 						{%- set headerPadClasses = headerPadClasses|merge([classItem]) -%}
 					{% endif %}
+					
 				{% endfor %}
 			{% endif %}
 			
-			{# Get subhead styleset adjustments if any #}
+			{# Get subhead styleset adjustments if any #}			
 			{% if section.subheadText|length %}
 				{% set subStyles = clone(styleSet.children).type('styleSetSubhead').one() %}
 				{% if subStyles != null %}
 					{% set subheadFieldLayout = subStyles.getFieldLayout() %}
 					{% set subheadFields = subheadFieldLayout.getCustomFields() %}
 					{% for fieldItem in subheadFields %}						
-						{# Leave out padding since it goes to a different element and leave out background fields #}
-						{% if not (fieldItem.handle ends with 'Padding') and subStyles[fieldItem.handle]|length %}
+						
+						{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and subStyles[fieldItem.handle]|length %}					
 							{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
 							{%- set subClasses = subClasses|merge([classItem]) -%}
 						{% endif %}	
 						
-						{# Add padding settings to padClasses array #}
+						{# add color classes #}
+						{% if fieldItem.handle ends with 'Color' and subStyles[fieldItem.handle] != null %}
+							{% set classItem = devSize ~ subStyles[fieldItem.handle].class %}
+							{%- set subClasses = subClasses|merge([classItem]) -%}
+						{% endif %}						
+						
 						{% if fieldItem.handle ends with 'Padding' and subStyles[fieldItem.handle]|length %}
 							{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
 							{%- set subPadClasses = subPadClasses|merge([classItem]) -%}
 						{% endif %}
+						
 					{% endfor %}
 				{% endif %}
-			{% endfor %}
+			{% endif %}
 			
 			{# Get content text styleset adjustments if any #}
+			
 			{% if section.simpleText|length %}
 				{% set introStyles = clone(styleSet.children).type('styleSetContentText').one() %}
 				{% if introStyles != null %}
 					{% set introFieldLayout = introStyles.getFieldLayout() %}
 					{% set introFields = subheadFieldLayout.getCustomFields() %}
 					{% for fieldItem in introFields %}						
-						{# Leave out padding since it goes to a different element and leave out background fields #}
-						{% if not (fieldItem.handle ends with 'Padding') and introStyles[fieldItem.handle]|length %}
+						
+						{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and introStyles[fieldItem.handle]|length %}
 							{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
 							{%- set introClasses = introClasses|merge([classItem]) -%}
 						{% endif %}	
 						
-						{# Add padding settings to padClasses array #}
+						{# add color classes #}
+						{% if fieldItem.handle ends with 'Color' and introStyles[fieldItem.handle] != null %}
+							{% set classItem = devSize ~ introStyles[fieldItem.handle].class %}
+							{%- set introClasses = introClasses|merge([classItem]) -%}
+						{% endif %}						
+						
 						{% if fieldItem.handle ends with 'Padding' and introStyles[fieldItem.handle]|length %}
 							{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
 							{%- set introPadClasses = introPadClasses|merge([classItem]) -%}
 						{% endif %}
+						
 					{% endfor %}
 				{% endif %}
 			{% endif %}
+		
 			
-			{% if buttonGroup != null %} 			
-				{% set btnStyles = clone(styleSet.children).type('styleSetButton').one() %}
-				{% if btnStyles != null %}
-					{% set btnFieldLayout = btnStyles.getFieldLayout() %}
-					{% set btnFields = btnFieldLayout.getCustomFields() %}
-					{% for fieldItem in btnFields %}						
-						{# Leave out padding since it goes to a different element and leave out background fields #}
-						{% if introStyles[fieldItem.handle]|length %}
-							{% set classItem = devSize ~ btnStyles[fieldItem.handle] %}
-							{%- set btnClasses = btnClasses|merge([classItem]) -%}
-						{% endif %}					
+			{# Get button group styleset adjustments if any #}
+			
+			{% if buttonGroup != null %} 				
+				{% set btnGrpStyles = clone(styleSet.children).type('styleSetButtonGroup').one() %}
+				{% if btnGrpStyles != null %}					
+					{% set btnGrpFieldLayout = btnGrpStyles.getFieldLayout() %}
+					{% set btnGrpFields = btnGrpFieldLayout.getCustomFields() %}
+					{% for fieldItem in btnGrpFields %}						
+						
+						{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and btnGrpStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+							{%- set btnClasses = btnGrpClasses|merge([classItem]) -%}
+						{% endif %}	
+						
+						{# add color classes #}
+						{% if fieldItem.handle ends with 'Color' and btnGrpStyles[fieldItem.handle] != null %}
+							{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle].class %}
+							{%- set btnGrpClasses = btnGrpClasses|merge([classItem]) -%}
+						{% endif %}						
+						
+						{% if fieldItem.handle ends with 'Padding' and btnGrpStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+							{%- set btnGrpPadClasses = btnGrpPadClasses|merge([classItem]) -%}
+						{% endif %}
+						
+						{#et styling for buttons in group if defined #}
+						{% set childBtnAdjusts = {% set btnGrpStyles = clone(styleSet.children).type('styleSetButtonGroup').one() %} %}
+						
+										
 					{% endfor %}
 				{% endif %}
 			{% endif %}			
-			
-								
+											
 		{% endfor %}
 				
 	{% endfor %}

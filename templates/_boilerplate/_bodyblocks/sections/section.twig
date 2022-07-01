@@ -50,25 +50,31 @@
 	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
 	
 	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}		  
+		{% set devSize = styleSet.deviceSize %}	
 		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
-		{% for fieldItem in styleSetFields %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
 		
-			{# Leave out padding since it goes to a different element and leave out background fields #}
-			{% if fieldItem.handle != 'deviceSize' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'background') and styleSet[fieldItem.handle]|length %}
+		{% for fieldItem in styleSetFields %}
+			
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}	
+			{% endif %}
 			
-			{# Add padding settings to padCLasses array #}
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add padding settings to padCLasses array #}			
 			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set padClasses = padClasses|merge([classItem]) -%}
-			{% endif %}	
-								
-		{% endfor %}
-				
+			{% endif %}
+					
+		{% endfor %}		
 	{% endfor %}
 	
 	{#

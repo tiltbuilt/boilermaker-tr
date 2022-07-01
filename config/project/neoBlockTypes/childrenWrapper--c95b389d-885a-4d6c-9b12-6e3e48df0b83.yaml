@@ -5,8 +5,8 @@ childBlocks:
   - tabSet
   - sliderSet
   - buttonGroup
-  - button
-  - buttonModal
+  - standaloneButton
+  - standaloneButtonModal
   - contentWrapper
   - ctaStandard
   - ctaSmall

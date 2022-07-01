@@ -669,5 +669,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 6
 name: 'Style Set - Accordion'
-sortOrder: 97
+sortOrder: 100
 topLevel: false

@@ -268,5 +268,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Repeater - Nav Collection'
-sortOrder: 65
+sortOrder: 67
 topLevel: false

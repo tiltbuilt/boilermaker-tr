@@ -1,8 +1,8 @@
 childBlocks:
   - rowSlideContent
   - buttonGroup
-  - button
-  - buttonModal
+  - standaloneButton
+  - standaloneButtonModal
   - header
   - image
   - textContent

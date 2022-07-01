@@ -1,45 +1,32 @@
 childBlocks:
-  - styleAdjustmentsLongFormatText
+  - styleAdjustmentsGroupButton
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
-  f7b267ed-eebe-4472-91ef-58eccf6b48a9:
+  03401b85-af29-4d30-927a-4bef699554f9:
     tabs:
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
-            fieldUid: 3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35 # Long Format Text
+            fieldUid: fb4f5400-b06f-4a57-9a15-52632e74f9fc # Modal Link Settings
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 45858233-eec3-48ac-b6ad-622c658ecef5
+            uid: 276a38b9-5b95-4333-8004-d321b61ebf92
             userCondition: null
             warning: null
             width: 100
-        name: 'Content & Styling'
-        uid: 3f059b94-f7eb-4118-a877-191a0c32044a
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
           -
             elementCondition: null
-            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 2b623d8c-575f-4aa1-87a2-acd063f3579a
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 22b70745-ecc4-48e3-a678-c586c42ec7c2
             userCondition: null
-            warning: null
-            width: 100
-        name: Animation
-        uid: 86d9d85b-9584-4a7f-89c8-ae130b84c5a2
+        name: 'Content & Styling'
+        uid: 8acf1652-6555-47eb-b0a3-fc969c047597
         userCondition: null
       -
         elementCondition: null
@@ -52,7 +39,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a141192e-35e8-449c-83fd-55fe75ed1522
+            uid: 00e344e6-a16c-49fa-b4e1-f7818b57c761
             userCondition: null
             warning: null
             width: 100
@@ -64,18 +51,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a2411835-c236-4b3c-bdcc-8caef6ee2447
+            uid: b086c734-ca97-4b59-b440-2b34a48a2309
             userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
-        uid: 29a0a16b-a1c5-4450-9623-48d30c7a4049
+        uid: dc21e55d-edf0-4018-b87c-0b13464d7bbf
         userCondition: null
 group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
-handle: longFormatText
+handle: groupModalButton
 maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 0
-name: 'Long Format Text'
-sortOrder: 59
+name: 'Group Modal Button'
+sortOrder: 50
 topLevel: false

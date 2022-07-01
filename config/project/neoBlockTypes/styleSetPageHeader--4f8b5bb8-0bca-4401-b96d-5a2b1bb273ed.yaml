@@ -2,7 +2,7 @@ childBlocks:
   - styleSetMainHeader
   - styleSetContentText
   - styleSetSubhead
-  - styleSetButton
+  - styleSetHeaderButtons
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
@@ -423,5 +423,5 @@ maxBlocks: 0
 maxChildBlocks: 4
 maxSiblingBlocks: 6
 name: 'Style Set - Page Header'
-sortOrder: 123
+sortOrder: 126
 topLevel: false

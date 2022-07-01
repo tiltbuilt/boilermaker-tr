@@ -233,5 +233,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: 'Repeater - Content Links'
-sortOrder: 62
+sortOrder: 64
 topLevel: false
