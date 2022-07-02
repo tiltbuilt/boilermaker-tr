@@ -36,7 +36,7 @@
 	 
  }
  
- /* btn and btn-primary and btn-md are set to the same styles so that if a group is set to use a secondary style and you want to change one button the to the default you can */
+ /* SET DEFAULT BUTTON STYLE, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON STYLE CLASSES IN APP-UTILITIES.PCSS */
  
  .btn, .btn-standard {
 	// These classes must stay in order to ensure functionality
@@ -44,49 +44,26 @@
 	//The default classes and style below can be changed on a per-project basis
 	@apply uppercase font-semibold;
 	border-radius: 0.4rem; 
-	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 	text-shadow: none !important;
 	
-	&:hover {
-		/* place general hover styles for all buttons here */
-		opacity: 0.7;
-	}	
+  // place general hover styles for all buttons here LEAVE IT OUT IF YOU SET CUSTOM HOVERS IN APP-UTILITIES.PCSS
+  /*
+  &:hover {		
+  		opacity: 0.7;
+  }*/	
  }
  
- .btn, .btn-md {
+ /* SET DEFAULT BUTTON SIZE, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON SIZE CLASSES IN APP-UTILITIES.PCSS */
+ .btn {
 	 @apply text-base py-4 px-8;	 
   }
   
- .btn, .btn-gray-lt {
+/* SET DEFAULT BUTTON COLOR, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON COLOR CLASSES IN APP-UTILITIES.PCSS */  
+ .btn {
 	@apply bg-gray-300 text-black;  
   }
  
-/* add additional button styles and sizes here */
 
 
- 
-.btn-lg {
-	@apply text-lg py-5 px-10;
- }
- 
- .btn-sm {
-	@apply text-sm py-3 px-6;
- }
- 
- .btn-black {
-	@apply bg-black text-white;
- }
- 
- .btn-white {
-	 @apply bg-white text-black;
-  }
-  
- .btn-gray-md {
-	@apply bg-gray-400 text-black;
-  }
-  
- .btn-gray-dk {
-	 @apply bg-gray-800 text-white;
-   }
- 
  

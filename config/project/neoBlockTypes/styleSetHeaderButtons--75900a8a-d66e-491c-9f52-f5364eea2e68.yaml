@@ -270,7 +270,7 @@ group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetHeaderButtons
 maxBlocks: 0
 maxChildBlocks: 0
-maxSiblingBlocks: 0
+maxSiblingBlocks: 1
 name: 'Style Set- Header Buttons'
 sortOrder: 127
 topLevel: false

@@ -1,6 +1,6 @@
 {#
 /**
- * Tilt Boilermaker - Generic Standalone Button Block Template
+ * Tilt Boilermaker - Generic In Group Button Block Template
  * -----
  * 
  * 
@@ -34,51 +34,62 @@
 
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set wrapperClasses = [] %}
-{% set padClasses = [] %}
 {% set styleClasses = [] %}
-{% set btnGroupStyles = [] %}
 {% set btnInstStyles = [] %}
-{% set wrapperAdjusts = null %}
-{% set padAdjusts = null %}
+{% set btnInstMarginStyles = [] %}
 
-{# check if button is in group and if so and there are group styles set use them for wrapper styles #}
-{% if inGroup is defined and inGroup and groupStyles is defined and groupStyles != null %}
-	
-	
-	
-	
-	{% set wrapperAdjusts = clone(groupStyles.children).type(['not', 'styleControlsButton', 'styleControlsPadding']) %}
-	{% set padAdjusts = clone(groupStyles.children).type(['styleControlsPadding']) %}
-	{% set btnGroupStyles = clone(groupStyles.children).type(['styleControlsButton']).collect() %}
-{% else %}
-	{% if btnAdjusts != null %}
-		{% set wrapperAdjusts = clone(btnAdjusts.children).type(['not', 'styleControlsButton', 'styleControlsPadding']) %}
-		{% set padAdjusts = clone(btnAdjusts.children).type(['styleControlsPadding']) %}
-	{% endif %}		
-{% endif %}
-
-{% if wrapperAdjusts != null %}
-	{% for wrapperItem in wrapperAdjusts.collect() %}
-		{% set wrapperClasses = wrapperClasses|merge([wrapperItem]) %}	
-	{% endfor %}
-{% endif %}
-
-{% if padAdjusts != null %}
-	{% for padItem in padAdjusts.collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-{% endif %}
-
-{# style array for actual button styles #}
+{# grab instance button styles and instance margin styles #}
 
 {% if btnAdjusts != null %}
-	{% set btnInstStyles = clone(btnAdjusts.children).type('styleControlsButton').collect() %}
+	{% for styleSet in clone(btnAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
+		{% for fieldItem in styleSetFields %}
+			{# add button classes to child btn array #}
+			{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnInstStyles = btnInstStyles|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes to btn classes #}
+			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set btnInstStyles = btnInstStyles|merge([classItem]) -%}
+			{% endif %}
+										
+			{# add button margin classes to array #}
+			{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnInstMarginStyles = btnInstMarginStyles|merge([classItem]) -%}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
 {% endif %}
-{% if btnInstStyles|length %}
-	{% set styleClasses = btnInstStyles %}
+
+
+
+{# check if button is in group and if so and there are group styles set use them for wrapper styles #}
+{% if inGroup is defined and inGroup and groupStyles is defined and groupStyles|length %}
+	{% if btnInstStyles|length %}
+		{% set styleClasses = btnInstStyles %}
+	{% else %}
+		{% set styleClasses = groupStyles %}		
+	{% endif %}
 {% else %}
-	{% set styleClasses = btnGroupStyles %}	
+	{% set styleClasses = btnInstStyles %}	
 {% endif %}
+
+{% if inGroup is defined and inGroup and spacingStyles is defined and spacingStyles|length %}
+	{% if btnInstStyles|length %}
+		{% set wrapperClasses = btnInstMarginStyles %}
+	{% else %}
+		{% set wrapperClasses = spacingStyles %}		
+	{% endif %}
+{% else %}
+	{% set wrapperClasses = btnInstMarginStyles %}	
+{% endif %}
+
 
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
@@ -114,9 +125,9 @@
 {% set buttonLink = block.linkSettings %} {# no link settings, no button #}
 
 {% if buttonLink %}
-	<div {{ gMacros.buildElementAttributes(null, blockClass, wrapperClasses) -}}>			 	
+	<div {{ gMacros.buildElementAttributes(null, blockClass, wrapperClasses) -}}>					 	
 		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-			<div {{ gMacros.buildClassList('inner btn-wrapper-inner', padClasses, null) -}}>	
+			<div class="inner btn-wrapper-inner">	
 				<a href="{{ buttonLink.url }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildElementAttributes(blockId, 'btn', styleClasses, customClassString) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>
 				  <span>{{ buttonLink.getCustomText('More Info') }}</span>
 				</a>

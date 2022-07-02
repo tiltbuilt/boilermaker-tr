@@ -32,7 +32,8 @@
 {% endif %}
 
 {# Set block type handle as class name for styling #}
-{% set blockClass = row.type.handle %}
+{% set blockClass = row.type.handle ~ ' anim-pass' %}
+{% set innerClass = 'inner ' ~ row.type.handle ~ '-inner' %}
 
 {# set loadType to null if not defined - for handling lazy load on carousels #}
 {% if loadType is not defined %}
@@ -43,13 +44,40 @@
 
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
+{% set outerClasses = [] %}
+{% set rowClasses = [] %}
 
 
 {% if styleAdjusts != null %}	
 		
-	{% for styleItem in clone(styleAdjusts.children).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{# add separate array to add padding classes since they are applied separately to inner #}
+	
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
+		
+		{% for fieldItem in styleSetFields %}
+			
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+									
+			{# Add row layout classes to to rowClasses array #}			
+			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set rowClasses = rowClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add margin settings to outerCLasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}	
+					
+		{% endfor %}		
 	{% endfor %}
 	
 {% endif %}
@@ -84,31 +112,33 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, 'elem-block row-wrapper', null, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, 'elem-block row-wrapper', outerClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(blockClass, styleClasses, null) -}}>	
-			{% if contentKids != null %}
-				{% for child in clone(contentKids.children).collect() %}	  
-					
-					{#-
-					For each child component, attempt to load a custom template for the
-					component handle from the project's files,
-					then the same template from the core Tiltrus files,
-					then a custom default template from the project,
-					and finally the default template for this component type from the core Tiltrus files.
-					-#}
-					
-					{%
-						include [
-						  '_project/_bodyblocks/columns/' ~ child.type.handle,
-						  '_boilerplate/_bodyblocks/columns/' ~ child.type.handle,
-						  '_project/_bodyblocks/columns/column',
-						  '_boilerplate/_bodyblocks/columns/column'
-						] with { 'column' :  child, 'loadType': loadType }
-					  %}
-					
-				{% endfor %}
-			{% endif %}
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
+			<div {{ gMacros.buildClassList(blockClass, rowClasses, null) -}}>	
+				{% if contentKids != null %}
+					{% for child in clone(contentKids.children).collect() %}	  
+						
+						{#-
+						For each child component, attempt to load a custom template for the
+						component handle from the project's files,
+						then the same template from the core Tiltrus files,
+						then a custom default template from the project,
+						and finally the default template for this component type from the core Tiltrus files.
+						-#}
+						
+						{%
+							include [
+							  '_project/_bodyblocks/columns/' ~ child.type.handle,
+							  '_boilerplate/_bodyblocks/columns/' ~ child.type.handle,
+							  '_project/_bodyblocks/columns/column',
+							  '_boilerplate/_bodyblocks/columns/column'
+							] with { 'column' :  child, 'loadType': loadType }
+						  %}
+						
+					{% endfor %}
+				{% endif %}
+			</div>
 		</div>		
 	</div>     
 </div>

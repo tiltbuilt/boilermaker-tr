@@ -303,17 +303,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            elementCondition:
-              class: craft\elements\conditions\ElementCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\RelationalFieldConditionRule
-                  elementId: null
-                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
-                  operator: notempty
-                  uid: 315545b4-6b42-4cf0-8e63-82099e063cac
-              elementType: benf\neo\elements\Block
-              fieldContext: global
+            elementCondition: null
             fieldUid: 7f8d2464-dd61-443e-97d4-0ce8137cc9ef # Background Size
             instructions: null
             label: null
@@ -325,17 +315,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            elementCondition:
-              class: craft\elements\conditions\ElementCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\RelationalFieldConditionRule
-                  elementId: null
-                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
-                  operator: notempty
-                  uid: d0ffebcd-080e-4de4-8751-931494ef83ef
-              elementType: benf\neo\elements\Block
-              fieldContext: global
+            elementCondition: null
             fieldUid: fce2fd29-6267-4aa3-8244-0ec47473a1e5 # Background Position
             instructions: null
             label: null
@@ -347,17 +327,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            elementCondition:
-              class: craft\elements\conditions\ElementCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\RelationalFieldConditionRule
-                  elementId: null
-                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
-                  operator: notempty
-                  uid: 64b77f26-88f9-43a0-8b12-aa32af112216
-              elementType: benf\neo\elements\Block
-              fieldContext: global
+            elementCondition: null
             fieldUid: 9e4325cf-f265-4742-8b95-0c66626b9103 # Background Repeat
             instructions: null
             label: null
@@ -369,17 +339,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            elementCondition:
-              class: craft\elements\conditions\ElementCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\RelationalFieldConditionRule
-                  elementId: null
-                  fieldUid: 8e6a8ae9-43d1-49e6-8634-e075f4d87a89 # Background Image
-                  operator: notempty
-                  uid: 15cffe86-37be-4675-939f-a9905b27cd55
-              elementType: benf\neo\elements\Block
-              fieldContext: global
+            elementCondition: null
             fieldUid: 8a3a74f3-3e95-424e-9064-1f5904fbe9bc # Background Opacity
             instructions: null
             label: null

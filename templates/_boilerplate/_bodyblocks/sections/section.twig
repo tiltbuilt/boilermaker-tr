@@ -40,10 +40,9 @@
 
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
-{# create array to collect style changes to primary element #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
-{% set bgClasses = null %}
+{% set outerClasses = [] %}
+{% set bgClasses = [] %}
 
 {% if styleAdjusts != null %}	
 	
@@ -57,31 +56,41 @@
 		{% for fieldItem in styleSetFields %}
 			
 			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
 			{% endif %}
 			
 			{# add color classes #}
-			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
 				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
 			{% endif %}
 						
-			{# Add padding settings to padCLasses array #}			
-			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set padClasses = padClasses|merge([classItem]) -%}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
 			{% endif %}
 					
-		{% endfor %}		
-	{% endfor %}
-	
-	{#
+		{% endfor %}
 		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	#}
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class ?? false) or (styleSet.backgroundImage[0] ?? false) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}		
+		{% endif %}
+				
+	{% endfor %}
 	
 {% endif %}
 
@@ -115,9 +124,9 @@
 
 {# OUTPUT #}
 
-<section {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}>		
+<section {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}>		
 	<div {{ gMacros.buildClassList(null, animClasses, null) -}}>
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}> 
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}> 
 			{% if contentKids != null %}
 				{% for child in clone(contentKids.children).collect() %}			
 					

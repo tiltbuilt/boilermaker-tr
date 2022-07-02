@@ -1,4 +1,4 @@
-dateModified: 1656714378
+dateModified: 1656777514
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -168,7 +168,7 @@ meta:
     8434d96d-7ef0-489c-b77d-fea9a4f76737: 'Subhead Class List' # Subhead Class List
     8933b575-f2c0-4930-a9fa-ec450aed0a0c: 'Styling Adjustments' # Styling Adjustments
     9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
-    9180e02e-2edc-430b-9c39-05f85a98784f: 'Style Adjustments - Group Button'
+    9180e02e-2edc-430b-9c39-05f85a98784f: 'Style Adjustments - Group Button' # Style Adjustments - Group Button
     9651ecc9-b7a0-4294-bdb6-9e21fb575c08: 'Content Elements' # Content Elements
     13662d93-bce6-47d1-b655-28788cfec494: 'Main Menu' # Main Menu
     14205de1-1461-4c5e-bba4-807303cd42a1: 'Main Header Class List' # Main Header Class List
@@ -311,7 +311,7 @@ meta:
     f8db0dbb-d033-4cd4-9556-cd1ae60191c2: 'Style Set - Wrapper' # Style Set - Wrapper
     f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Standalone Modal Button' # Standalone Modal Button
     f82ba9bb-67c4-404e-9e5b-e5820caedde4: 'Header Image Class List' # Header Image Class List
-    f115b81c-d4ab-4eff-bd39-91d4bd46bf32: 'Style Set - Group Button'
+    f115b81c-d4ab-4eff-bd39-91d4bd46bf32: 'Style Set - Group Button' # Style Set - Group Button
     f200de49-4c87-41f9-9a85-725ced12f7ca: 'Modal to Display' # Modal to Display
     f314f126-29d7-43dd-8631-3dff02728310: 'YouTube Video ID' # YouTube Video ID
     f432a083-0109-4062-909e-e13611c104c3: 'Group Button' # Group Button

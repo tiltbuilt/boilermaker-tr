@@ -514,6 +514,7 @@ $(document).ready(function() {
 	}
 	
 	function showModal(whichModal, triggerEl) {			
+		console.log(whichModal);
 		//show modal
 		$('body').addClass('modal-active');
 		$('#modal, #modal-overlay').removeClass('closed');

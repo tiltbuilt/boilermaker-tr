@@ -8,8 +8,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {      
-      spacing: {
+      spacing: {        
         'none': '0rem',
+        'quarter': '0.375rem',
         'half': '0.75rem',
         'normal': '1.5rem',
         '2x': '3rem',

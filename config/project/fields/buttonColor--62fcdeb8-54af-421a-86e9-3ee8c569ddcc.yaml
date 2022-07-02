@@ -71,7 +71,7 @@ settings:
           - 'Dark  Gray/Black Text'
         -
           - color
-          - '#1f2937, #000000'
+          - '#1f2937, #FFFFFF'
         -
           - default
           - ''

@@ -33,6 +33,17 @@ settings:
       __assoc__:
         -
           - label
+          - 'Quarter (3.75px)'
+        -
+          - value
+          - ml-quarter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - 'Half (7.5px)'
         -
           - value
@@ -81,17 +92,6 @@ settings:
         -
           - value
           - ml-4x
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Quarter (3.75px)'
-        -
-          - value
-          - ml-quarter
         -
           - default
           - ''

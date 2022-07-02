@@ -17,14 +17,14 @@
 {% do craft.app.elements.eagerLoadElements(
  className(entry),
  [entry],
- ['seoImage', 'modalToDisplay', 'pageBuilder', 'pageBuilder.styleControlsBackgroundImage:backgroundImage', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry', 'pageBuilder.repeaterSectionEntryList.listEntriesSections', 'pageBuilder.repeaterSelectEntryList.listSpecificEntries']
+ ['seoImage', 'modalToDisplay', 'pageBuilder', 'pageBuilder.styleSetSection:backgroundImage', 'pageBuilder.styleSetContainer:backgroundImage', 'pageBuilder.styleSetSpecialContainer:backgroundImage', 'pageBuilder.styleSetColumn:backgroundImage', 'pageBuilder.styleSetCtaSmall:backgroundImage', 'pageBuilder.styleSetCta:backgroundImage', 'pageBuilder.styleSetAccordion:backgroundImage', 'pageBuilder.styleSetAccordionSet:backgroundImage', 'pageBuilder.styleSetTabSet:backgroundImage', 'pageBuilder.styleSetTabPanel:backgroundImage', 'pageBuilder.styleSetForm:backgroundImage', 'pageBuilder.styleSetSliderSet:backgroundImage', 'pageBuilder.styleSetSlide:backgroundImage', 'pageBuilder.styleSetWrapper:backgroundImage', 'pageBuilder.styleSetPageHeader:backgroundImage', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry', 'pageBuilder.repeaterSectionEntryList.listEntriesSections', 'pageBuilder.repeaterSelectEntryList.listSpecificEntries']
 ) %}
 
 {% set pageBuilderContent = entry.pageBuilder.collect() %}
 
 {% set buttonModalList = [] %}
 {% for block in entry.pageBuilder %}
-    {% if block.type == 'buttonModal' %}
+    {% if block.type == 'standaloneButtonModal' or block.type == 'groupModalButton' %}
         {% set buttonModalList = buttonModalList|merge([block]) %}
     {% endif %}
 {% endfor %}

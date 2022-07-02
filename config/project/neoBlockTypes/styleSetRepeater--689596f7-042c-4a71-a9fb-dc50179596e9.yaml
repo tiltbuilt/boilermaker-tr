@@ -210,18 +210,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            elementCondition: null
-            fieldUid: 8a3a74f3-3e95-424e-9064-1f5904fbe9bc # Background Opacity
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0fe3cc8b-68d5-4029-ae58-aaa4f0421e78
-            userCondition: null
-            warning: null
-            width: 100
         name: 'Borders & Background'
         uid: 0f18f0c7-be01-4cd1-837d-1850e7da5280
         userCondition: null
