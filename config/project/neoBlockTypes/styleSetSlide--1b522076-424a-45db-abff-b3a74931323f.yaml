@@ -335,6 +335,18 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
+          -
+            elementCondition: null
+            fieldUid: d9ca4d46-5590-4e35-bc9f-5ccc54122c8a # Background Image Opacity
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c996112b-5105-4b73-8ec7-a51ec1398973
+            userCondition: null
+            warning: null
+            width: 50
         name: Background
         uid: 90de90fd-0cbb-4ac3-bf76-26a0abeb2646
         userCondition: null

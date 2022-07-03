@@ -1,4 +1,4 @@
-dateModified: 1656777514
+dateModified: 1656820612
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -280,6 +280,7 @@ meta:
     d02cb798-6a12-410b-bdea-a4d80d1543c5: 'Tab Panel Set' # Tab Panel Set
     d6a8c60a-4514-4573-9e4d-0b594703d113: 'Container Columns - Main & Sidebar' # Container Columns - Main & Sidebar
     d6f98e6d-c803-4d8c-ad23-d8a284654a84: 'Style Set - Form' # Style Set - Form
+    d9ca4d46-5590-4e35-bc9f-5ccc54122c8a: 'Background Image Opacity' # Background Image Opacity
     d9cc0dc2-3e69-4f79-b50c-f73d6906f806: 'Column Vertical Alignment' # Column Vertical Alignment
     d86c02d7-08d3-44c2-b76c-aa170103e7db: 'Subhead Level' # Subhead Level
     d533a3e0-1a9b-4190-af12-f6b1a356c25a: 'Bottom Margin' # Bottom Margin

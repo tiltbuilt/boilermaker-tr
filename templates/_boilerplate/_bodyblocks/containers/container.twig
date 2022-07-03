@@ -76,15 +76,26 @@
 				{%- set outerClasses = outerClasses|merge([classItem]) -%}
 			{% endif %}
 					
-		{% endfor %}		
-	{% endfor %}
-	
-	{#
+		{% endfor %}
 		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	#}
-	
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class ?? false) or (styleSet.backgroundImage[0] ?? false) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}
+				
+	{% endfor %}
 	
 {% endif %}
 
@@ -194,7 +205,7 @@
 			{% endif %}
 		</div>
 		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+			{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
 		{% endif %}		
 	</div>     
 </div>

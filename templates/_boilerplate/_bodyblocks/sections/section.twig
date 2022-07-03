@@ -43,6 +43,7 @@
 {% set styleClasses = [] %}
 {% set outerClasses = [] %}
 {% set bgClasses = [] %}
+{% set bgSizes = [] %}
 
 {% if styleAdjusts != null %}	
 	
@@ -85,9 +86,11 @@
 				'bgPosition': styleSet.backgroundPosition ?? '',
 				'bgRepeat': styleSet.backgroundRepeat ?? '',
 				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
 			}		
 			%}
-			{% set bgClasses = bgClasses|merge([bgItem]) %}		
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
 		{% endif %}
 				
 	{% endfor %}
@@ -146,7 +149,7 @@
 		</div> 
 	
 		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
+			{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
 		{% endif %}
 	</div>	   
 </section>

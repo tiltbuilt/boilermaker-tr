@@ -155,33 +155,151 @@
   -----
   Output a background node based on an element's Tiltrus EDC field.
 -#}
-{%- macro buildElementBackground(bgInfo, sizesAtr, loadType) -%}
+{%- macro buildElementBackground(bgInfo, bgSizes, sizesAtr, loadType) -%}
   {% import '_boilerplate/_macros/globalMacros' as gMacros %}
   
   {% for bgSet in bgInfo %}
   	
+	{% set bgOuterClasses = ['background', bgSet.bgColor, bgSet.bgOpacity] %}
 	
-		BGSET: {{bgSet.devSize}}<br>
-		BGCOLOR: {{bgSet.bgColor}}<br>
-		BGIMG: {% if bgSet.bgImg != null %}{{bgSet.bgImg.url}}{% else %}NULL{% endif %}<br>
-		BGIMGTYPE: {% if bgSet.bgImg != null %}{{bgSet.bgImg.kind}}{% endif %}<br>
-		BGSIZE: {{bgSet.bgSize}}<br>
-		BGPOS: {{bgSet.bgPosition}}<br>
-		BGRPT: {{bgSet.bgRepeat}}<br>
-		BGOP: {{bgSet.bgOpacity}}<br>
+	{% if bgSet.devSize != '' %}
+		{% set bgOuterClasses = bgOuterClasses|merge(['hidden', bgSet.devSize ~ 'block']) %}
+	{% endif %}
 	
-    <div class="{{bgSet.bgColor}} {% if devSize != ''%}{% endif %}">
+	{% switch bgSet.devSize %}
+		{% case 'sm:' %}
+			{% if 'md:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
+			{% elseif 'lg:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+			{% elseif 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+		{% case 'md:' %}			
+			{% if 'lg:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+			{% elseif 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+		{% case 'lg:' %}			
+			{% if 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+		
+		{% case 'xl:' %}			
+			{% if '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+		{% case '2xl:' %}
+			
+		{% default %}
+			{% if 'sm:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['sm:hidden']) %}
+			{% elseif 'md:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
+			{% elseif 'lg:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+			{% elseif 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+	{% endswitch %}	
+	
+    <div {{ gMacros.buildClassList(null, bgOuterClasses, null) -}}>
+		
 		{% if bgSet.bgImg != null %}
-			{% set bgAsset = bgInfo.bgImg %}
+			{% set bgAsset = bgSet.bgImg %}
 			{% set loadClass = null %}
 			{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
 			{% if loadType is defined and loadType != null and loadType != 0 %}
-				{% set loadClass = 'owl-lazy' %}
+				{% set loadClass = 'swiper-lazy' %}
 			{% else %}
 				{% set loadClass = 'lazyload' %}
-			{% endif %}
-			{# set up bgClasses object with all classes needed for the background #}
+			{% endif %}			
+			{% set bgInnerClasses = ['background', bgSet.bgImgOpacity] %}
+			{% set bgElemClasses = ['background', loadClass] %}
 			
+			{# Check if BG Asset is image or video #}
+			{% if bgAsset.kind == 'image' %}				
+						
+				{% if bgSet.bgRepeat == 'bg-no-repeat' or bgSet.bgRepeat == '' %}
+				
+					<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>	
+						{% if bgSet.bgSize == 'auto' or bgSet.bgSize == '' %}
+							{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
+						{% else %}
+							{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgSize])%}
+						{% endif %}
+						{% if bgSet.bgPosition != '' %}
+							{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgPosition]) %}
+						{% endif %}
+						
+						{# set image to bgAsset for transformations #}
+						{% set image = bgAsset %}					
+						{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
+						{% if craft.imager.serverSupportsWebp() %}
+						  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+						  
+						  <picture class="background">		  
+									
+							{% if craft.imager.serverSupportsWebp() %}
+							  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+							{% endif %}
+						  
+							  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+							  width="{{image.width}}"
+							  height="{{image.height}}"
+							  data-sizes="auto"
+							  data-src="{{ transformedImages[0] }}"
+							  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+							  alt="background" {{ gMacros.buildClassList(null, bgElemClasses, null) -}}
+							  >
+						  </picture>
+						{% endif %}
+					</div>
+					
+				{% else %}
+					
+					{% set bgInnerClasses = bgInnerClasses|merge([bgSet.bgRepeat, 'bg-auto', 'bg-' ~ bgSet.bgPosition]) %}
+					<div {{ gMacros.buildClassList(null, bgClasses, null) }} style="background-image:url('{{ bgAsset.url }}');"></div>
+					
+				{% endif %}
+				
+			{% elseif bgAsset.kind == 'video' %}
+				
+				{% if bgSet.bgSize == 'auto' or bgSet.bgSize == '' %}
+					{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
+				{% else %}
+					{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgSize])%}
+				{% endif %}
+				{% if bgSet.bgPosition != '' %}
+					{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgPosition]) %}
+				{% endif %}
+				
+				<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>
+					<video          
+					  {{ gMacros.buildClassList(null, bgElemClasses, null) }}
+					  aria-hidden="true"
+					  role="presentation"
+					  preload=""
+					  autoplay playsinline muted loop
+					  data-src="{{ bgAsset.url }}"
+					  type="{{ bgAsset.mimeType }}"
+					></video>
+				</div>
+				
+			{% endif %}		
 			
 		{% endif %}
 	</div>	
