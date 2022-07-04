@@ -89,5 +89,5 @@ maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 0
 name: 'Standalone Modal Button'
-sortOrder: 49
+sortOrder: 50
 topLevel: false

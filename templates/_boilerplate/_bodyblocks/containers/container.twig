@@ -45,7 +45,8 @@
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
 {% set outerClasses = [] %}
-{% set bgClasses = null %}
+{% set bgClasses = [] %}
+{% set bgSizes = [] %}
 
 {% if styleAdjusts != null %}	
 	
@@ -204,8 +205,10 @@
 				{% endfor %}
 			{% endif %}
 		</div>
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background container-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>		
 	</div>     
 </div>

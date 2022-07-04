@@ -9,24 +9,6 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{% set styleClasses = [] %}
-{% set outerClasses = [] %}
-{% set padClasses = [] %}
-{% set headerClasses = [] %}
-{% set marginClasses = [] %}
-
-
-{% if itemAdjusts != null %}  
-  
-  {% set styleClasses = clone(itemAdjusts.children).type(['not', 'styleAdjustmentsMainHeader', 'styleControlsButton']).collect() %}	
-  {% set headerAdjusts = clone(itemAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-  {% if headerAdjusts != null %}
-	  {% for headerItem in clone(headerAdjusts.children).collect() %}
-		  {% set headerClasses = headerClasses|merge([headerItem]) %}
-	  {% endfor %}		
-  {% endif %}  
-{% endif %}
-
 <div class="list-wrapper anim-pass">
 <div class="repeater-list-card anim-pass">
 {% for repeaterItem in repeaterData %}	
@@ -34,8 +16,8 @@
 	<div class="anim-wrapper anim-child">
 	  <div class="inner repeater-list-card-item-inner">		          
 		  <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassList('repeater-list-card-item-link', null, null) -}}>
-			<div {{ gMacros.buildClassList('item-wrapper repeater-list-card-item-card', styleClasses, null) -}}>
-				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-card-item-header', headerClasses, null) -}}>
+			<div {{ gMacros.buildClassList('item-wrapper repeater-list-card-item-card', listItemClasses, null) -}}>
+				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-card-item-header', listItemHeaderClasses, null) -}}>
 				  {{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
 				</{{ repeaterHeadingLevel }}>
 				{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		

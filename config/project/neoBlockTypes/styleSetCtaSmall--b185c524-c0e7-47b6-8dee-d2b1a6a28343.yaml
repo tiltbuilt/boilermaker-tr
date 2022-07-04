@@ -2,7 +2,7 @@ childBlocks:
   - styleSetMainHeader
   - styleSetContentText
   - styleSetSubhead
-  - styleSetButton
+  - styleSetChildButtons
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
@@ -600,5 +600,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 6
 name: 'Style Set - CTA Small'
-sortOrder: 104
+sortOrder: 106
 topLevel: false

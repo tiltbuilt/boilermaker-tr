@@ -2,42 +2,158 @@
  * This injects any component classes registered by plugins.
  *
  */
-@import 'tailwindcss/components';
+@tailwind components;
 
-/**
- * Here we add custom component classes; stuff we want loaded
- * *before* the utilities so that the utilities can still
- * override them.
- *
- */
-@import './components/global.pcss';
-@import './components/typography.pcss';
-@import './components/pagination.pcss';
-@import './components/webfonts.pcss';
-@import './components/button.pcss';
-@import './components/image.pcss';
-@import './components/long-format-text.pcss';
-@import './components/page-section.pcss';
-@import './components/site-header.pcss';
-@import './components/page-header.pcss';
-@import './components/page-footer.pcss';
-@import './components/container.pcss';
-@import './components/row.pcss';
-@import './components/column.pcss';
-@import './components/content-headers.pcss';
-@import './components/content-wrapper.pcss';
-@import './components/repeater.pcss';
-@import './components/accordion.pcss';
-@import './components/tab-set.pcss';
-@import './components/slider.pcss';
-@import './components/content-video.pcss';
-@import './components/cta.pcss';
-@import './components/forms.pcss';
-@import './components/icon-content.pcss';
-@import './components/modals.pcss';
-
-/**
- * Include styles for individual pages
- *
- */
-@import './pages/homepage.pcss';
+@layer components {
+	@variants responsive {
+		
+		//standard buttons
+		
+					
+		.btn-standard {
+			@apply uppercase font-semibold;
+			border-radius: 0.4rem; 
+			transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			text-shadow: none;
+		}
+				
+		.btn-black {
+			@apply bg-black text-gray-300;
+			
+			&:hover {
+				@apply bg-gray-800 text-white;
+			}
+		}
+		
+		.btn-white {
+			@apply bg-white text-black;
+			
+			&:hover {
+				@apply bg-gray-300 text-black;
+			}
+		}        
+			   
+		.btn-gray-lt {
+			@apply bg-gray-300 text-black;
+			
+			&:hover {
+				@apply bg-gray-400 text-black;
+			}  
+		}
+		
+		.btn-gray-md {
+			@apply bg-gray-400 text-black;
+			
+			&:hover {
+				@apply bg-gray-500 text-black;
+			} 
+		}
+		  
+		.btn-gray-dk {
+			@apply bg-gray-800 text-white;
+			
+			&:hover {
+				@apply bg-gray-700 text-white;
+			} 
+		}
+		
+		.btn-md {
+			@apply text-base py-4 px-8;	 
+		}
+		
+		.btn-lg {
+			@apply text-lg py-5 px-10;
+		}
+		 
+		.btn-sm {
+			@apply text-sm py-3 px-6;
+		}
+		
+		
+		//tabset buttons
+		
+		.icon-center {	
+			svg {
+				@apply mx-auto;
+			}
+		}
+		
+		.icon-left {
+			svg {
+				@apply ml-0 mr-auto;
+			}
+		}
+		
+		.icon-right {
+			svg {
+				@apply mr-0 ml-auto;
+			}
+		}
+		
+		.icon-sm {
+			svg {
+				width: 3.5rem;
+				height: 3.5rem;
+			}
+		}
+		
+		.icon-md {
+			svg {
+				width: 7.5rem;
+				height: 7.5rem;
+			}
+		}
+		
+		.icon-lg {
+			svg {
+				width: 15rem;
+				height: 15rem;
+			}
+		} 
+		
+		.btn-tab {
+			@apply relative py-2 px-6 mx-2 btn-gray-lt;
+			max-width: 20%;
+			display: flex;
+			text-align: center;
+			font-weight: 700;
+			align-items: center;
+			flex-direction: column;
+			overflow: hidden;
+			position: relative;
+			border-radius: 0.5rem 0.5rem 0 0;		 
+			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			
+			&:focus {
+				outline: none;
+			}
+			
+			.tab-icon-wrapper {
+				@apply icon-sm icon-center;
+				position: relative;
+				display: block !important;			
+				padding: 1rem 0;
+				z-index: 1;
+			}
+			
+			svg {			
+				display: block;
+				fill: currentColor;			
+			}
+			
+			.tab-title {
+				@apply block w-full text-center;			
+				z-index: 1;			
+			}		  			  			  
+			
+						  
+			&.active-tab {
+				/* put styles for the active mode of the button here */ 
+				@apply btn-black;
+			}			  
+			
+		}		
+		        
+	}	    
+	
+}

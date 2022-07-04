@@ -82,5 +82,5 @@ maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 0
 name: 'Standalone Button'
-sortOrder: 47
+sortOrder: 48
 topLevel: false

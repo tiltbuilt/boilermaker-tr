@@ -1,7 +1,7 @@
 columnSuffix: fbbhlypu
 contentColumnType: string
 fieldGroup: a7faa85f-4be1-4101-8d46-c1fc42bbdeeb # Page Builder - Accordions
-handle: accordionSpacing
+handle: accordionMargin
 instructions: 'This setting controls the spacing between the accordions in the set. It is applied as a bottom margin.'
 name: 'Accordion Spacing'
 searchable: false

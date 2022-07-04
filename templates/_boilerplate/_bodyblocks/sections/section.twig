@@ -24,9 +24,6 @@
 	{% endif %}
 {% endfor %}
 
-{# set section color scheme variable #}
-{% set colorScheme = section.colorScheme %}
-
 {# Set block id attribute value #}
 {% if section.customId is defined and section.customId != '' %}
 	{% set blockId = section.customId %}
@@ -77,7 +74,7 @@
 		{% endfor %}
 		
 		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class ?? false) or (styleSet.backgroundImage[0] ?? false) %}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
 			{% set bgItem  = {
 				'devSize': devSize,
 				'bgColor': styleSet.backgroundColor.class ?? '',
@@ -146,10 +143,12 @@
 					
 				{% endfor %}
 			{% endif %}
-		</div> 
-	
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-		{% endif %}
+		</div> 	
+		
+		<div class="background sectionStandard-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>
 	</div>	   
 </section>

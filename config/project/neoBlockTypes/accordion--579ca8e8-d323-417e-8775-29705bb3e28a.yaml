@@ -1,6 +1,5 @@
 childBlocks:
   - childrenAccordion
-  - styleAdjustmentsAccordion
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
@@ -23,37 +22,13 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 6b0e4f9a-364d-419e-86a1-34d9440fb534
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 116b0f4f-13b5-47fe-9daa-6716a09821a4 # Accordion Icon
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7fe54666-247b-4453-85ce-4f9bb9ee4457
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17 # Accordion - Start State
-            instructions: null
-            label: 'Start Position'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b92569a2-38cb-469e-851b-1334967284b0
+            uid: 3ec1324b-a21d-462b-9e84-37a60bdeb001
             userCondition: null
             warning: null
             width: 100
@@ -140,7 +115,7 @@ fieldLayouts:
 group: 5ca2acc9-e150-4c68-acd9-3600a955a648 # Accordions
 handle: accordion
 maxBlocks: 0
-maxChildBlocks: 2
+maxChildBlocks: 1
 maxSiblingBlocks: 0
 name: Accordion
 sortOrder: 38

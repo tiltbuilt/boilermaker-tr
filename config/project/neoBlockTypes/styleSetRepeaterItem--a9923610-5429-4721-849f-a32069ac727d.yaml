@@ -10,6 +10,13 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            style: tip
+            tip: 'These styles control the appearance of type in the list item. It applies to the excerpt text and to the header if there is no adjustment added for the list item header.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 5a79c324-11a6-433d-b763-72de2a702092
+            userCondition: null
+          -
+            elementCondition: null
             fieldUid: 3319f142-1b8b-414b-9562-430a4cd47446 # Font
             instructions: null
             label: null
@@ -158,6 +165,13 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            style: tip
+            tip: 'Apply styles to the title of the list item by adding an adjustment here.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 0825536f-9523-40a3-8e13-52ae9fcec94d
+            userCondition: null
+          -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: e91ca797-387f-48c1-8452-4de8f8d1056e
             userCondition: null
@@ -167,6 +181,13 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'This style is not applied when the list display type is set to any of the card types.'
+            type: craft\fieldlayoutelements\Tip
+            uid: fbfdb01f-4c8d-4d55-ae07-0937971f2503
+            userCondition: null
           -
             elementCondition: null
             fieldUid: d533a3e0-1a9b-4190-af12-f6b1a356c25a # Bottom Margin
@@ -179,12 +200,19 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: 'Image Settings'
+        name: 'Image & Button Spacing'
         uid: bf61581b-6abf-45a5-a0bd-710b60673f2d
         userCondition: null
       -
         elementCondition: null
         elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'These styles are only applied if the list display type is set to button list.'
+            type: craft\fieldlayoutelements\Tip
+            uid: f8d5c059-40c0-4c12-ae91-354c7c1d68f3
+            userCondition: null
           -
             elementCondition: null
             fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
@@ -417,6 +445,13 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            style: tip
+            tip: 'This style is not applied when the list display setting is set to text list.'
+            type: craft\fieldlayoutelements\Tip
+            uid: e47e6036-db90-4a6c-9f52-2861aba6c7f3
+            userCondition: null
+          -
+            elementCondition: null
             fieldUid: 8a461305-6d93-4608-bb43-6ed229002b07 # Box Shadow
             instructions: null
             label: null
@@ -436,5 +471,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 1
 name: 'Style Set - Repeater Item'
-sortOrder: 124
+sortOrder: 126
 topLevel: false

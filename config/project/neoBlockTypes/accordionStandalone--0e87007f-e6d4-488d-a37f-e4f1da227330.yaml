@@ -1,21 +1,69 @@
 childBlocks:
-  - childrenButtonGroup
-  - styleAdjustmentsButtonGroup
+  - childrenAccordion
+  - styleAdjustmentsStandaloneAccordion
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
-  ba25f8cf-9c0f-464d-94a4-e996594495ba:
+  a390e3ec-e0d1-45d9-9c08-c7c6d7b13cad:
     tabs:
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
+            fieldUid: 3e54e327-a9a9-4587-b91e-4775a1f7dd3f # Header Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8938fa4f-43bb-42b2-a4f9-598b102a52a6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4ad779d8-cbbc-4699-997e-6a3d3b21940d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 116b0f4f-13b5-47fe-9daa-6716a09821a4 # Accordion Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ad6ed6c5-8095-4959-adcc-f0653c3e59c0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17 # Accordion - Start State
+            instructions: null
+            label: 'Start Position'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b2c2bae-b063-41db-8f97-ad302c192509
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
-            uid: da8f62e5-af31-49de-9c2c-9600d6fbb4fe
+            uid: 9d52a7c5-318a-43fe-8910-851d701d0a8e
             userCondition: null
         name: 'Content & Styling'
-        uid: 3fa414d5-d039-4db8-9f7e-6dd67521bef2
+        uid: f2e3eed6-4acf-4ba4-bd14-619434bd0663
         userCondition: null
       -
         elementCondition: null
@@ -28,36 +76,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a112c80f-e181-4f6e-89fa-410dfb42be65
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f821ee59-1cb5-4a38-89f2-4b6d4e512701
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 787b22bf-4f3c-46c0-a434-31b86cade8c6
+            uid: 3b437679-b124-44c4-96e6-938f67421b58
             userCondition: null
             warning: null
             width: 100
         name: Animation
-        uid: 3d5dcc7d-ef1e-4b9e-aa69-2148e92629c9
+        uid: 3649499c-a601-469f-bfa2-45aecbaa1a1f
         userCondition: null
       -
         elementCondition: null
@@ -70,7 +94,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: be76da8c-0f52-4c2d-bf1a-4dd97159c59a
+            uid: da1c67a4-d990-4043-ba13-dd5fb66ea374
             userCondition: null
             warning: null
             width: 100
@@ -82,18 +106,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7954ca24-9ce1-42fb-9e04-b51f39448bae
+            uid: 531e5694-d1ce-4ed1-a33f-5ae86eb9f5f1
             userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
-        uid: 7d9f8a8f-f559-4098-94c7-38d059f807a6
+        uid: dd5ce6c4-8268-4e19-9459-db33f1c881ec
         userCondition: null
-group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
-handle: buttonGroup
+group: 5ca2acc9-e150-4c68-acd9-3600a955a648 # Accordions
+handle: accordionStandalone
 maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
-name: 'Button Group'
-sortOrder: 47
+name: 'Standalone Accordion'
+sortOrder: 39
 topLevel: false

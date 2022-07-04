@@ -74,79 +74,255 @@
 
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
+{% set outerClasses = [] %}
 {% set headerClasses = [] %}
 {% set subClasses = [] %}
 {% set introClasses = [] %}
-{% set headerPadClasses = [] %}
-{% set subPadClasses = [] %}
-{% set introPadClasses = [] %}
-{% set btnAdjusts = null %}
-{% set listItemAdjusts = null %}
-
+{% set headerOuterClasses = [] %}
+{% set subOuterClasses = [] %}
+{% set introOuterClasses = [] %}
+{% set listItemClasses = [] %}
+{% set listItemBtnClasses = [] %}
+{% set listItemImgClasses = [] %}
+{% set listItemOuterClasses = [] %}
+{% set listItemHeaderClasses = [] %}
 
 {% if styleAdjusts != null %}	
+	
 	{# add style changes to array except for padding because it isn't applied to primary element #}
 		
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackground', 'styleAdjustmentsMainHeader', 'styleAdjustmentsSubhead', 'styleAdjustmentsIntroText', 'styleAdjustmentsRow', 'styleAdjustmentsButton', 'styleAdjustmentsRepeaterItem']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
-	
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{% set rowAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsRow').one() %}
-	{% if rowAdjusts != null %}
-		{% for rowItem in clone(rowAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-			{% set headerClasses = headerClasses|merge([headerItem]) %}
-		{% endfor %}		
-	{% endif %}
-	
-	{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
 		
-	{# Set up Styles for Header, subhead intro text and button #}
-	{% if repeater.headerText|length and repeater.headingLevel != '' %}
-		{% set headerAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-		{% if headerAdjusts != null %}
-			{% for headerItem in clone(headerAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set headerClasses = headerClasses|merge([headerItem]) %}
-			{% endfor %}
-			{% for headerPadItem in clone(headerAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set headerPadClasses = headerPadClasses|merge([headerPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}
-	
-	{% if repeater.subheadText|length %}
-		{% set subAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsSubhead').one() %}
-		{% if subAdjusts != null %}
-			{% for subItem in clone(subAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set subClasses = subClasses|merge([subItem]) %}
-			{% endfor %}
-			{% for subPadItem in clone(subAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set subPadClasses = subPadClasses|merge([subPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}
-	
-	{% if repeater.simpleText|length %}
-		{% set introAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsIntroText').one() %}
-		{% if introAdjusts != null %}
-			{% for introItem in clone(introAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set introClasses = introClasses|merge([introItem]) %}
-			{% endfor %}
-			{% for introPadItem in clone(introAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set introPadClasses = introPadClasses|merge([introPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}	
-	
-	{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
+		{% for fieldItem in styleSetFields %}
 		
-	{% set listItemAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsRepeaterItem').one() %}	
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add margin settings to outerCLasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add row layout classes to to rowClasses array #}			
+			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set rowClasses = rowClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+		{% endfor %}
+			
+		{# Get main header styleset adjustments if any #}			
+		{% set headerStyles = clone(styleSet.children).type('styleSetMainHeader').one() %}
+		{% if headerStyles != null %}
+			{% set headerFieldLayout = headerStyles.getFieldLayout() %}
+			{% set headerFields = headerFieldLayout.getCustomFields() %}
+			{% for fieldItem in headerFields %}						
+				
+				{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerClasses = headerClasses|merge([classItem]) -%}
+				{% endif %}	
+				
+				{# add color classes #}
+				{% if fieldItem.handle ends with 'Color' and headerStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle].class %}
+					{%- set headerClasses = headerClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle ends with 'Margin' and headerStyles[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
+				{% endif %}
+				
+			{% endfor %}
+		{% endif %}
+		
+		{# Get subhead styleset adjustments if any #}			
+		{% if repeater.subheadText|length %}
+			{% set subStyles = clone(styleSet.children).type('styleSetSubhead').one() %}
+			{% if subStyles != null %}
+				{% set subheadFieldLayout = subStyles.getFieldLayout() %}
+				{% set subheadFields = subheadFieldLayout.getCustomFields() %}
+				{% for fieldItem in subheadFields %}						
+					
+					{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and subStyles[fieldItem.handle]|length %}					
+						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+						{%- set subClasses = subClasses|merge([classItem]) -%}
+					{% endif %}	
+					
+					{# add color classes #}
+					{% if fieldItem.handle ends with 'Color' and subStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ subStyles[fieldItem.handle].class %}
+						{%- set subClasses = subClasses|merge([classItem]) -%}
+					{% endif %}						
+					
+					{% if fieldItem.handle ends with 'Margin' and subStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+						{%- set subOuterClasses = subOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+				{% endfor %}
+			{% endif %}
+		{% endif %}
+		
+		{# Get content text styleset adjustments if any #}
+		
+		{% if repeater.simpleText|length %}
+			{% set introStyles = clone(styleSet.children).type('styleSetContentText').one() %}
+			{% if introStyles != null %}
+				{% set introFieldLayout = introStyles.getFieldLayout() %}
+				{% set introFields = subheadFieldLayout.getCustomFields() %}
+				{% for fieldItem in introFields %}						
+					
+					{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and introStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+						{%- set introClasses = introClasses|merge([classItem]) -%}
+					{% endif %}	
+					
+					{# add color classes #}
+					{% if fieldItem.handle ends with 'Color' and introStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle].class %}
+						{%- set introClasses = introClasses|merge([classItem]) -%}
+					{% endif %}						
+					
+					{% if fieldItem.handle ends with 'Margin' and introStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+						{%- set introOuterClasses = introOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+				{% endfor %}
+			{% endif %}
+		{% endif %}
+	
+		
+		{# Get list item styleset adjustments if any #}
+		
+		{% if itemList|length %}				
+			{% set listStyles = clone(styleSet.children).type('styleSetRepeaterItem').one() %}
+			{% if listStyles != null %}					
+				{% set listFieldLayout = listStyles.getFieldLayout() %}
+				{% set listFields = listFieldLayout.getCustomFields() %}
+				{% for fieldItem in listFields %}						
+					{% if repeater.listItemDisplayStyle.value != 'buttonList' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'button') and not (fieldItem.handle == 'boxShadow') and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemClasses = listItemClasses|merge([classItem]) -%}
+					{% endif %}									
+					
+					{% if (repeater.listItemDisplayStyle.value starts with 'card') and (repeater.listItemDisplayStyle.value ends with 'Image') and (fieldItem.handle ends with 'Margin') and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemImgClasses = listItemImgClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if repeater.listItemDisplayStyle.value == 'buttonList' and (fieldItem.handle ends with 'Margin') and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemBtnClasses = listItemBtnClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if repeater.listItemDisplayStyle.value == 'textList' and (fieldItem.handle ends with 'Margin') and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemOuterClasses = listItemOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if repeater.listItemDisplayStyle.value == 'buttonList' and fieldItem.handle == 'boxShadow' and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemBtnClasses = listItemBtnClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if (repeater.listItemDisplayStyle.value starts with 'card') and fieldItem.handle == 'boxShadow' and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemClasses = listItemClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{# add button classes to child btn array #}
+					{% if (repeater.listItemDisplayStyle.value starts with 'button') and (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and listStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle] %}
+						{%- set listItemBtnClasses = listItemBtnClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{# add color classes to respective classes #}
+					{% if fieldItem.handle == 'buttonColor' and listStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle].class %}
+						{%- set listItemBtnClasses = listItemBtnClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if fieldItem.handle == 'textColor' and listStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle].class %}
+						{%- set listItemClasses = listItemClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if (repeater.listItemDisplayStyle.value starts with 'card') and fieldItem.handle == 'borderColor' and listStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle].class %}
+						{%- set listItemClasses = listItemClasses|merge([classItem]) -%}
+					{% endif %}
+												
+					{% if (repeater.listItemDisplayStyle.value starts with 'card') and fieldItem.handle == 'backgroundColor' and listStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ listStyles[fieldItem.handle].class %}
+						{%- set listItemClasses = listItemClasses|merge([classItem]) -%}
+					{% endif %}	
+									
+				{% endfor %}
+				
+				{# Get list item header styleset adjustments if any #}			
+				{% set listHeaderStyles = clone(listStyles.children).type('styleSetMainHeader').one() %}
+				{% if listHeaderStyles != null %}
+					{% set listHeaderFieldLayout = listHeaderStyles.getFieldLayout() %}
+					{% set listHeaderFields = listHeaderFieldLayout.getCustomFields() %}
+					{% for fieldItem in listHeaderFields %}						
+						
+						{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and listHeaderStyles[fieldItem.handle]|length %}					
+							{% set classItem = devSize ~ listHeaderStyles[fieldItem.handle] %}
+							{%- set listItemHeaderClasses = listItemHeaderClasses|merge([classItem]) -%}
+						{% endif %}	
+						
+						{# add color classes #}
+						{% if fieldItem.handle ends with 'Color' and listHeaderStyles[fieldItem.handle] != null %}
+							{% set classItem = devSize ~ listHeaderStyles[fieldItem.handle].class %}
+							{%- set listItemHeaderClasses = listItemHeaderClasses|merge([classItem]) -%}
+						{% endif %}
+						
+						{% if fieldItem.handle ends with 'Margin' and listHeaderStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ listHeaderStyles[fieldItem.handle] %}
+							{%- set listItemHeaderClasses = listItemHeaderClasses|merge([classItem]) -%}
+						{% endif %}
+						
+					{% endfor %}
+				{% endif %}
+				
+			{% endif %}
+		{% endif %}
+		
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class ?? false) or (styleSet.backgroundImage[0] ?? false) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}	
+			
+	{% endfor %}			
 	
 {% endif %}
 
@@ -180,14 +356,14 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
 			
 			{% if repeater.subheadText|length and repeater.subheadPosition == 1 %}
-			  <{{ repeater.subheadLevel }} {{ gMacros.buildElementAttributes(subId, 'elem-block repeater-subhead ' ~ repeater.subheadBaseClass, subClasses) -}}>
+			  <{{ repeater.subheadLevel }} {{ gMacros.buildElementAttributes(subId, 'elem-block repeater-subhead ' ~ repeater.subheadBaseClass, subOuterClasses) -}}>
 				<div class="anim-wrapper anim-child">
-					<div {{ gMacros.buildClassList('inner repeater-subhead-inner', subPadClasses, null) -}}>
+					<div {{ gMacros.buildClassList('inner repeater-subhead-inner', subClasses, null) -}}>
 						{{ gMacros.stripTags(repeater.subheadText) }}
 					</div>
 				</div>
@@ -195,9 +371,9 @@
 			{% endif %}
 			
 			{% if repeater.headerText|length and repeater.headingLevel != '' %}
-				<{{ repeater.headingLevel }} {{ gMacros.buildElementAttributes(headerId, 'elem-block repeater-mainheader ' ~ repeater.mainHeaderBaseClass, headerClasses, null) -}}>
+				<{{ repeater.headingLevel }} {{ gMacros.buildElementAttributes(headerId, 'elem-block repeater-mainheader ' ~ repeater.mainHeaderBaseClass, headerOuterClasses, null) -}}>
 				<div class="anim-wrapper anim-child">
-					<div {{ gMacros.buildClassList('inner repeater-mainheader-inner', headerPadClasses, null) -}}>
+					<div {{ gMacros.buildClassList('inner repeater-mainheader-inner', headerClasses, null) -}}>
 						{{ gMacros.stripTags(repeater.headerText) }}
 					</div>
 				</div>
@@ -205,9 +381,9 @@
 			{% endif %}
 			
 			{% if repeater.subheadText|length and repeater.subheadPosition == 0 %}
-			  <{{ repeater.subheadLevel }} {{ gMacros.buildElementAttributes(subId, 'elem-block repeater-subhead ' ~ repeater.subheadBaseClass, subClasses) -}}>
+			  <{{ repeater.subheadLevel }} {{ gMacros.buildElementAttributes(subId, 'elem-block repeater-subhead ' ~ repeater.subheadBaseClass, subOuterClasses) -}}>
 				<div class="anim-wrapper anim-child">
-					<div {{ gMacros.buildClassList('inner repeater-subhead-inner', subPadClasses, null) -}}>
+					<div {{ gMacros.buildClassList('inner repeater-subhead-inner', subClasses, null) -}}>
 						{{ gMacros.stripTags(repeater.subheadText) }}
 					</div>
 				</div>
@@ -215,9 +391,9 @@
 			{% endif %}
 			
 			{% if repeater.simpleText|length %}				
-				<div {{ gMacros.buildElementAttributes(introId, 'elem-block repeater-intro', introClasses, null) -}}>
+				<div {{ gMacros.buildElementAttributes(introId, 'elem-block repeater-intro', introOuterClasses, null) -}}>
 					<div class="anim-wrapper anim-child">
-						<div {{ gMacros.buildClassList('inner repeater-intro-inner', introPadClasses, null) -}}>
+						<div {{ gMacros.buildClassList('inner repeater-intro-inner', introClasses, null) -}}>
 							{{repeater.simpleText}}
 						</div>
 					</div>
@@ -239,7 +415,7 @@
 					include [
 					  '_project/_bodyblocks/repeaters/templates/' ~ repeaterTemplateHandle,
 					  '_boilerplate/_bodyblocks/repeaters/templates/' ~ repeaterTemplateHandle,
-					] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterShowExcerpt' : repeater.showExcerpt, 'btnAdjusts' : btnAdjusts, 'itemAdjusts': listItemAdjusts }
+					] with { 'repeaterData' : repeaterData, 'repeaterHeadingLevel' : repeater.listItemHeadingLevel, 'repeaterShowExcerpt' : repeater.showExcerpt, 'listItemClasses': listItemClasses, 'listItemBtnClasses': listItemBtnClasses, 'listItemImgClasses': listItemImgClasses, 'listItemHeaderClasses': listItemHeaderClasses }
 				  %}
 			
 				{% if paginateItems %}
@@ -249,10 +425,13 @@
 				<div class="list-no-items">
 					  <b>No items found.</b>
 				</div>
-			  {% endif %} 
-			
+			  {% endif %} 			  
 			
 		</div>
-		 				
+		<div class="background repeater-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>				
 	</div>     
 </div>

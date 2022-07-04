@@ -46,7 +46,8 @@
 {% set styleClasses = [] %}
 {% set outerClasses = [] %}
 {% set rowClasses = [] %}
-{% set bgClasses = null %}
+{% set bgClasses = [] %}
+{% set bgSizes = [] %}
 
 {% if styleAdjusts != null %}	
 				
@@ -167,8 +168,10 @@
 				{% endif %}
 			</div>			
 		</div>
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background container2Column-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>	
 	</div>     
 </div>

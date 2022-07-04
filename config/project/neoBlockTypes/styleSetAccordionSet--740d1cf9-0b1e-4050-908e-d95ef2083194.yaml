@@ -458,8 +458,8 @@ fieldLayouts:
 group: abfaf225-b8f2-4839-bd2b-70244a0ec786 # Device Style Sets
 handle: styleSetAccordionSet
 maxBlocks: 0
-maxChildBlocks: 0
+maxChildBlocks: 1
 maxSiblingBlocks: 6
 name: 'Style Set - Accordion Set'
-sortOrder: 99
+sortOrder: 100
 topLevel: false

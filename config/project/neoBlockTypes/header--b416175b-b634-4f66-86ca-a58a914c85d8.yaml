@@ -107,18 +107,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
-            instructions: null
-            label: 'Button Settings'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d289bece-c734-45e3-8010-31132900947c
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: d8f29abf-7153-4321-b4ec-d9a13182b7c2
             userCondition: null
@@ -200,8 +188,8 @@ fieldLayouts:
 group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
 handle: header
 maxBlocks: 0
-maxChildBlocks: 1
+maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: Header
-sortOrder: 56
+sortOrder: 57
 topLevel: false

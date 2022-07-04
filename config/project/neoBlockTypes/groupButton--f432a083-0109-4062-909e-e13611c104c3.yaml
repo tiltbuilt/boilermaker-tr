@@ -23,7 +23,7 @@ fieldLayouts:
           -
             elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
-            uid: 416fa1bd-ff84-4cac-ac10-05043451e762
+            uid: 810e2537-291d-4f8f-9a77-2ca900bf5dea
             userCondition: null
         name: 'Content & Styling'
         uid: 87549566-f2f3-4f0d-a21e-c72b9e539436
@@ -64,5 +64,5 @@ maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 0
 name: 'Group Button'
-sortOrder: 48
+sortOrder: 49
 topLevel: false

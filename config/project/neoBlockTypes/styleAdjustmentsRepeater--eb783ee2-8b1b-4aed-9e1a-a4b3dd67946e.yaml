@@ -1,13 +1,12 @@
 childBlocks:
-  - styleAdjustmentsButton
-  - styleAdjustmentsRepeaterItem
+  - styleSetRepeater
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 group: 8933b575-f2c0-4930-a9fa-ec450aed0a0c # Styling Adjustments
 handle: styleAdjustmentsRepeater
 maxBlocks: 0
-maxChildBlocks: 0
+maxChildBlocks: 6
 maxSiblingBlocks: 1
 name: 'Style Adjustments - Repeater'
-sortOrder: 91
+sortOrder: 92
 topLevel: false

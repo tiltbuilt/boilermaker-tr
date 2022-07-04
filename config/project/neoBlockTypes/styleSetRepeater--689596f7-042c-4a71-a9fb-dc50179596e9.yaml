@@ -385,5 +385,5 @@ maxBlocks: 0
 maxChildBlocks: 4
 maxSiblingBlocks: 6
 name: 'Style Set - Repeater'
-sortOrder: 123
+sortOrder: 125
 topLevel: false

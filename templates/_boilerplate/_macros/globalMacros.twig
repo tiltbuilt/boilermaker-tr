@@ -158,7 +158,7 @@
 {%- macro buildElementBackground(bgInfo, bgSizes, sizesAtr, loadType) -%}
   {% import '_boilerplate/_macros/globalMacros' as gMacros %}
   
-  {% for bgSet in bgInfo %}
+    {% for bgSet in bgInfo %}
   	
 	{% set bgOuterClasses = ['background', bgSet.bgColor, bgSet.bgOpacity] %}
 	

@@ -14,26 +14,12 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{% import '_boilerplate/_macros/globalMacros' as gMacros %}
-{% set btnClasses = [] %}
-{% set outerClasses = [] %}
-{% set padClasses = [] %}
-
-
-{% if itemAdjusts != null %}
-  {% set btnClasses = clone(itemAdjusts.children).type('styleControlsButton').collect() %}
-  {% set padClasses = clone(itemAdjusts.children).type('styleControlsPadding').collect() %}
-  {% set outerClasses = clone(itemAdjusts.children).type(['styleControlsMargins', 'styleControlsContentAlignment']).collect() %}
-    
-  
-{% endif %}
-
 <div class="repeater-list-btn anim-pass">
 {% for repeaterItem in repeaterData %}	
-  <div {{ gMacros.buildClassList('elem-block repeater-list-btn-item', outerClasses, null) -}}>
+  <div {{ gMacros.buildClassList('elem-block repeater-list-btn-item', listItemOuterClasses, null) -}}>
     <div class="anim-wrapper anim-child">
-      <div {{ gMacros.buildClassList('inner repeater-list-btn-item-inner', padClasses, null) -}}>        
-          <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassList('btn repeater-list-btn-item-btn', btnClasses, null) -}}>{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>        
+      <div {{ gMacros.buildClassList('inner repeater-list-btn-item-inner', null, null) -}}>        
+          <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassList('btn repeater-list-btn-item-btn', listItemBtnClasses, null) -}}>{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>        
       </div>
     </div>
   </div>	

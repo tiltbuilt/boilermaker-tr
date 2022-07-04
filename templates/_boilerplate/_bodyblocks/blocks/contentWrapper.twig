@@ -37,39 +37,95 @@
 {% set blockClass = 'elem-block ' ~ block.type.handle %}
 {% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
 
+{% if block.styleWrapper %}
+	{% set innerClass = innerClass ~ ' ' ~ block.type.handle ~ '-inner-styled' %}
+{% endif %}
+
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
-{% set bgClasses = null %}
+{% set bgClasses = [] %}
 {% set headerClasses = [] %}
+{% set headerOuterClasses = [] %}
+{% set bgSizes = [] %}
+{% set outerClasses = [] %}
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
+	
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+	
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
 		
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage', 'styleAdjustmentsMainHeader']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
-	
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{# Set variable for background settings if there are any #}
-		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+		{% for fieldItem in styleSetFields %}
 			
-	{# get header styling classes if any #}
-	{% set headerAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-	{% if headerAdjusts != null %}
-		{% for headerItem in clone(headerAdjusts.children).collect() %}
-			{% set headerClasses = headerClasses|merge([headerItem]) %}
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+					
 		{% endfor %}
-	{% endif %}
-	
+		
+		{# Get main header styleset adjustments if any #}			
+		{% set headerStyles = clone(styleSet.children).type('styleSetMainHeader').one() %}
+		{% if headerStyles != null %}
+			{% set headerFieldLayout = headerStyles.getFieldLayout() %}
+			{% set headerFields = headerFieldLayout.getCustomFields() %}
+			{% for fieldItem in headerFields %}						
+				
+				{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerClasses = headerClasses|merge([classItem]) -%}
+				{% endif %}	
+				
+				{# add color classes #}
+				{% if fieldItem.handle ends with 'Color' and headerStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle].class %}
+					{%- set headerClasses = styleClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle ends with 'Margin' and headerStyles[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
+				{% endif %}
+				
+			{% endfor %}
+		{% endif %}
+		
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}
+				
+	{% endfor %}	
 {% endif %}
 
 
@@ -102,13 +158,19 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>
-			{% if block.headerText|length and block.headingLevel != '' %}
-				<{{block.headingLevel}} id="{{headerId}}" {{ gMacros.buildClassList('contentWrapper-header', headerClasses, null) -}}>
+		
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
+						
+			{% if block.headerText|length and block.headingLevel and block.styleWrapper %} 
+			<div {{ gMacros.buildElementAttributes(headerId, 'elem-block contentWrapper-header-outer', headerOuterClasses, null) -}}>
+				
+				<{{block.headingLevel}} {{ gMacros.buildClassList('inner contentWrapper-header', headerClasses, null) -}}>
 					{{ gMacros.stripTags(block.headerText) }}
 				</{{block.headingLevel}}>
+				
+			</div>
 			{% endif %}
 				
 			{% if contentKids != null %}
@@ -181,8 +243,10 @@
 				{% endfor %}
 			{% endif %}			
 		</div>
-		{% if bgClasses != null %}		
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background contentWrapper-default-bg {% if block.styleWrapper %}contentWrapper-styled-bg{% endif %}">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>			
 	</div>     
 </div>

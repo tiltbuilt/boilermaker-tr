@@ -50,6 +50,7 @@
 {% set styleClasses = [] %}
 {% set outerClasses = [] %}
 {% set bgClasses = [] %}
+{% set bgSizes = [] %}
 
 {% if styleAdjusts != null %}	
 		
@@ -89,7 +90,7 @@
 		{% endfor %}
 		
 		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class ?? false) or (styleSet.backgroundImage[0] ?? false) %}
+		{% if (styleSet.backgroundColor and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
 			{% set bgItem  = {
 				'devSize': devSize,
 				'bgColor': styleSet.backgroundColor.class ?? '',
@@ -139,10 +140,11 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 
+	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
 		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
-			{% if contentKids != null %}
+			{% if contentKids != null %}								
 				{% for child in clone(contentKids.children).collect() %}	  
 					
 					{#-
@@ -212,8 +214,10 @@
 				{% endfor %}
 			{% endif %}
 		</div>
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background {{column.type.handle}}-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>		
 	</div>     
 </div>

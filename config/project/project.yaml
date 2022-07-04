@@ -1,4 +1,4 @@
-dateModified: 1656820612
+dateModified: 1656970591
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -29,6 +29,7 @@ meta:
   __names__:
     0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
     0d3d2911-53a6-464a-b04b-54fc8789f80e: 'Style Set - Section' # Style Set - Section
+    0e87007f-e6d4-488d-a37f-e4f1da227330: 'Standalone Accordion' # Standalone Accordion
     1acfdc52-cb76-4bd9-9286-5e59bc27def6: 'Slider Next Icon' # Slider Next Icon
     1b522076-424a-45db-abff-b3a74931323f: 'Style Set - Slide' # Style Set - Slide
     01bf235c-0b3d-4a9e-af7b-5121a7f92b25: 'List - Count' # List - Count
@@ -131,7 +132,6 @@ meta:
     146b1105-58ed-47c7-bca1-b6df9980d37d: 'Full Width Button' # Full Width Button
     217da411-10b4-4af2-bd6c-010f5ff3260b: 'Padding & Margins' # Padding & Margins
     228fee23-f613-44f8-8fe2-1ed8ddda25e4: 'Long Format Text' # Long Format Text
-    253df430-b9f1-4850-887c-978f92669ef6: 'Style Adjustments - Accordion' # Style Adjustments - Accordion
     0282ab1a-d90f-4c56-bc80-55d336e8749e: Layouts # Layouts
     291aeebd-5376-4a88-8bc5-dcbc98ae4f8f: 'List - Items per Page' # List - Items per Page
     315a5a65-c63f-4a6c-8b96-9817783d8d4b: Modals # Modals
@@ -177,7 +177,7 @@ meta:
     49453feb-0d8e-4fc0-8a1d-9f9cbc5b90a5: Sections # Sections
     56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
     062600cc-ab78-4d82-9315-610ffa661a9a: 'Bottom Border Size' # Bottom Border Size
-    75900a8a-d66e-491c-9f52-f5364eea2e68: 'Style Set- Header Buttons' # Style Set- Header Buttons
+    75900a8a-d66e-491c-9f52-f5364eea2e68: 'Style Set - Child Buttons' # Style Set - Child Buttons
     78748af5-2d5a-4b89-b484-db2e0243dd02: Button # Button
     79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
     87560ba9-9a3d-4aa8-afb4-858c1ec8c119: 'Column Content' # Column Content
@@ -221,6 +221,7 @@ meta:
     a664d687-8900-46f2-a7ad-172be91e20fc: 'Slider Set' # Slider Set
     a751dd8a-4610-4da1-bb23-a20811e94d5f: 'All Borders Match?' # All Borders Match?
     a79602ea-bbd9-41c8-9d75-9d134bc6951f: Tabs # Tabs
+    a557370a-4eea-459d-8cd7-d7290b7dfa52: 'Style Adjustments - Standalone Accordion' # Style Adjustments - Standalone Accordion
     a9923610-5429-4721-849f-a32069ac727d: 'Style Set - Repeater Item' # Style Set - Repeater Item
     aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
     aafa2ab8-b04b-41f3-95b1-7e15b8514a42: 'Style Adjustments - Section' # Style Adjustments - Section
@@ -235,6 +236,7 @@ meta:
     b08ce1f2-612f-4e19-bc14-de46aac5b691: 'Style Adjustments - Header Block' # Style Adjustments - Header Block
     b1f1fe04-0646-4432-9bd3-1b441e294004: 'Sidebar Column' # Sidebar Column
     b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
+    b6d3b3e8-1c0b-4db1-8b10-742d5e4d5120: 'Style Set - Standalone Accordion' # Style Set - Standalone Accordion
     b7b7bc3f-a98f-400f-b54b-1e35e9f26c85: 'Nav List to Display' # Nav List to Display
     b9bf5946-6b5a-4906-b357-12ca26e1a7c6: 'Style Set - Image' # Style Set - Image
     b53c9f0c-9969-4055-ab99-c8e641179ad2: 'Image Caption' # Image Caption
@@ -278,6 +280,7 @@ meta:
     cf7918a9-3b10-481b-a1f0-410a6574cba5: 'Right Padding' # Right Padding
     cfca2aa9-b9da-4c7c-81c6-194322b496af: Slide # Slide
     d02cb798-6a12-410b-bdea-a4d80d1543c5: 'Tab Panel Set' # Tab Panel Set
+    d5e62664-f489-4e15-aa91-33e7750370d0: 'Style Wrapper?' # Style Wrapper?
     d6a8c60a-4514-4573-9e4d-0b594703d113: 'Container Columns - Main & Sidebar' # Container Columns - Main & Sidebar
     d6f98e6d-c803-4d8c-ad23-d8a284654a84: 'Style Set - Form' # Style Set - Form
     d9ca4d46-5590-4e35-bc9f-5ccc54122c8a: 'Background Image Opacity' # Background Image Opacity
@@ -491,7 +494,7 @@ plugins:
     schemaVersion: 3.0.10
   section-and-product-type:
     edition: standard
-    enabled: false
+    enabled: true
     schemaVersion: 1.1.1
   seomatic:
     edition: standard

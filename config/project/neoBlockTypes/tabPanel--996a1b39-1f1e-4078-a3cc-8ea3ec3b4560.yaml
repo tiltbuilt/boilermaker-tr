@@ -1,6 +1,5 @@
 childBlocks:
   - childrenTabPanel
-  - styleAdjustmentsTabPanel
 description: ''
 field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
 fieldLayouts:
@@ -77,5 +76,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 4
 name: 'Tab Panel'
-sortOrder: 41
+sortOrder: 42
 topLevel: false

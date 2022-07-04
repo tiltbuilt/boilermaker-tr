@@ -32,7 +32,19 @@ fieldLayouts:
             uid: 3bc83f8a-70f3-418b-be7e-647e3763b62d
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: d5e62664-f489-4e15-aa91-33e7750370d0 # Style Wrapper?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9fa61d7b-9cfd-48c2-8a98-08ecfd6436c1
+            userCondition: null
+            warning: null
+            width: 50
           -
             elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
@@ -119,5 +131,5 @@ maxBlocks: 0
 maxChildBlocks: 2
 maxSiblingBlocks: 0
 name: 'Content Wrapper'
-sortOrder: 51
+sortOrder: 52
 topLevel: false

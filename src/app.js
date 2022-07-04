@@ -609,9 +609,9 @@ $(document).ready(function() {
 		}
 	}
 	
-	$('.accordion .accordion-button').click(function() {		
+	$('.accordion .btn-accordion').click(function() {		
 		var mySet, myAcc, myTarget, myId;
-		myAcc = '#' + ($(this).parent('.accordion-button-header').parent('.anim-wrapper').parent('.accordion').attr('id')); /* id of the accordion the clicked button is in */
+		myAcc = '#' + ($(this).parent('.accordion-button-header').parent('.inner').parent('.anim-wrapper').parent('.accordion').attr('id')); /* id of the accordion the clicked button is in */
 		myId = '#' + ($(this).attr('id')); /* the id of the button that was clicked */
 		myTarget = $(this).data('target'); /* the id of the panel that is triggered by the button */
 		mySet = $(this).data('parent'); /* the id of the set containing the accordion if there is one */
@@ -623,7 +623,7 @@ $(document).ready(function() {
 			if (mySet != undefined && $(mySet).hasClass('accordionSetSingleOpen')) { 				
 				var closeAcc, closeBtn, closePnl;
 				closeAcc = '#' + ($(mySet + ' .accordion.expanded').attr('id'));
-				closeBtn = '#' + ($(mySet + ' .accordion.expanded .accordion-button').attr('id'));
+				closeBtn = '#' + ($(mySet + ' .accordion.expanded .btn-accordion').attr('id'));
 				closePnl = '#' + ($(mySet + ' .accordion.expanded .accordion-panel').attr('id'));				
 				accordionFunction(0, closeAcc, closeBtn, closePnl); /* close currently open panel because set doesn't allow multiple opens */
 				accordionFunction(1, myAcc, myId, myTarget); /* open the accordion where the button was clicked */
@@ -636,14 +636,14 @@ $(document).ready(function() {
 	
 	/* TABSET BEHAVIORS */
 	
-	$('.tab-button').click(function() {		
+	$('.btn-tab').click(function() {		
 		if (!($(this).hasClass('active-tab'))) {
 			var prevPanel, myTabSet, myPanel;
 			myTabSet = $(this).data('parent');
 			prevPanel = $(myTabSet + ' .tabPanel.active-tab');
 			myPanel = $(this).data('target');		
 			//$(myTabSet + ' .tabPanel.prev-tab').removeClass('prev-tab');
-			$(myTabSet + ' .tab-button.active-tab').removeClass('active-tab');
+			$(myTabSet + ' .btn-tab.active-tab').removeClass('active-tab');
 			prevPanel.removeClass('active-tab').addClass('prev-tab');
 			prevPanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
 			function() {	
