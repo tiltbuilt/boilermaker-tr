@@ -1,12 +1,12 @@
 childBlocks:
   - row
   - accordionSet
-  - accordion
+  - accordionStandalone
   - tabSet
   - sliderSet
   - buttonGroup
-  - button
-  - buttonModal
+  - standaloneButton
+  - standaloneButtonModal
   - contentWrapper
   - ctaStandard
   - ctaSmall
@@ -29,13 +29,17 @@ fieldLayouts:
   c7ed6363-15ff-4da6-9ef5-8f4c9a530f01:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: fe55c31b-6ae6-4de1-903d-461b992599fe
+            userCondition: null
         name: Content
         uid: ac6cf915-8d76-4303-a758-2c53568a70ac
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+        userCondition: null
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenColumn
 maxBlocks: 0
 maxChildBlocks: 0

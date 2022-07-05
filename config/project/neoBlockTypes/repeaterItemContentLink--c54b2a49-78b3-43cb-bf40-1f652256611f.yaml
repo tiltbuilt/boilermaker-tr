@@ -5,8 +5,10 @@ fieldLayouts:
   0bbb64d1-8384-4341-80b8-eb07ed754e9e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
             instructions: null
             label: null
@@ -14,9 +16,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d166955b-be9b-45ed-ab61-e92e498146cf
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
             label: 'Link Description'
@@ -24,9 +28,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 110d2374-3b41-4ecc-a037-363cf6e86551
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2157587f-ba0b-4f33-8ff3-29dd650e3bc4 # Image Asset
             instructions: null
             label: 'Link Photo'
@@ -34,15 +40,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d5acd871-f744-4843-8a19-1de9a2d16ce1
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: d8a41b3e-d850-4a30-b8ea-e35b4b34d4b7
+        userCondition: null
 group: 2783b721-f14b-4f95-a241-04e44a4f17c9 # Repeaters
 handle: repeaterItemContentLink
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Repeater Item - Content Link'
-sortOrder: 66
+sortOrder: 69
 topLevel: false

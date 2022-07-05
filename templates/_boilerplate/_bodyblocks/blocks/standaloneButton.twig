@@ -1,0 +1,136 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Standalone Button Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for style adjustment containers  #}
+{% set styleAdjusts = block.children.one() %}
+
+{# Set block id attribute value #}
+{% if blockId is not defined %}
+	{% if block.customId is defined and block.customId != '' %}
+		{% set blockId = block.customId %}
+	{% else %}
+		{% set blockId = 'button-' ~ block.id %}
+	{% endif %}
+{% endif %}
+
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block btn-wrapper' %}
+{% set innerClass = 'inner btn-wrapper-inner' %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{% set padClasses = [] %}
+{% set outerClasses = [] %}
+{% set btnClasses = [] %}
+
+{% if styleAdjusts != null %}	
+	
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+	
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
+		
+		{% for fieldItem in styleSetFields %}			
+			
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set padClasses = padClasses|merge([classItem]) -%}
+			{% endif %}
+								
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set btnClasses = btnClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add button classes to array #}			
+			{% if fieldItem.handle starts with 'button' and fieldItem.handle != 'buttonColor' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnClasses = btnClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'buttonFullWidth' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+					
+		{% endfor %}
+		
+				
+	{% endfor %}
+	
+{% endif %}
+
+
+
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = block.revealAnimation %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+
+{% set buttonLink = block.linkSettings %} {# no link settings, no button #}
+
+{% if buttonLink %}
+	<div {{ gMacros.buildElementAttributes(null, blockClass, outerClasses, customClassString) -}}>			 	
+		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+			<div {{ gMacros.buildClassList('inner btn-wrapper-inner', padClasses, null) -}}>	
+				<a href="{{ buttonLink.url }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildElementAttributes(blockId, 'btn', btnClasses, customClassString) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>
+				  <span>{{ buttonLink.getCustomText('More Info') }}</span>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endif %}

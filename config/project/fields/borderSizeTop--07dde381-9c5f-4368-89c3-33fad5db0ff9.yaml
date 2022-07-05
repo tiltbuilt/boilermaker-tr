@@ -1,0 +1,78 @@
+columnSuffix: zpylcjij
+contentColumnType: string
+fieldGroup: 29cd508b-77c8-43b8-99ed-97325424e4f3 # Borders
+handle: borderSizeTop
+instructions: null
+name: 'Top Border Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 0px
+        -
+          - value
+          - border-t-0
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 pixel'
+        -
+          - value
+          - border-t
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Thin
+        -
+          - value
+          - border-t-2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - border-t-4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Thick
+        -
+          - value
+          - border-t-8
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

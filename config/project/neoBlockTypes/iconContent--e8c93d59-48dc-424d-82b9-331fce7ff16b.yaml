@@ -6,8 +6,10 @@ fieldLayouts:
   2d0d6dba-8c1c-40fc-82ee-02321fae624e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 167456ee-f98a-48a0-8856-c9a090ed215f # Icon Asset
             instructions: null
             label: null
@@ -15,9 +17,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9c3223e6-9dd5-419b-b225-4fbb8e22a050
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: be7bfbf5-0157-44df-a6f5-935aba22dab9 # Block Layout
             instructions: null
             label: null
@@ -25,8 +29,9 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d6a7e208-ffae-46a3-b3bd-5d6c8d25780a
+            userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             elementCondition:
               class: craft\elements\conditions\ElementCondition
@@ -47,18 +52,24 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4ab35e39-f44e-4962-974d-db18f1937959
+            userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
+            elementCondition: null
             heading: 'Additional Elements'
             type: craft\fieldlayoutelements\Heading
             uid: f2f38294-6e82-4154-bc09-5e8c02e4f39f
+            userCondition: null
           -
+            elementCondition: null
             style: tip
             tip: 'The header, text, and button are optional and do not have to be included'
             type: craft\fieldlayoutelements\Tip
             uid: 6b4fc7fb-0571-48bf-8256-e4fe9cf3480f
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 3e54e327-a9a9-4587-b91e-4775a1f7dd3f # Header Text
             instructions: null
             label: null
@@ -66,9 +77,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d5e1ad45-7830-40f2-a135-b6cf7fb1b710
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
             instructions: null
             label: null
@@ -76,9 +89,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 8c251abb-d190-4f9b-b509-dd444b549277
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
             label: null
@@ -86,9 +101,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c2d87c2a-01ef-460f-a308-c825396e652d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
             instructions: null
             label: 'Button Settings'
@@ -96,16 +113,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 2f4c3eb5-d880-424a-a679-1411d53f8b76
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 01f452c9-e7c1-4b0c-8fd7-14a17e16b070
+            userCondition: null
         name: 'Content & Styling'
         uid: 5ae4b2cf-c3c7-4d1b-8eeb-45f726892790
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -113,9 +136,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 0f536906-27fa-4b35-981c-b394c6acdb6d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
             instructions: null
             label: null
@@ -123,9 +148,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f38793c0-1698-4ca9-94f3-8028288adfb7
+            userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
+            elementCondition: null
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
             instructions: null
             label: null
@@ -133,13 +160,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 10821216-3842-4874-8ebc-9e97fa9c8911
+            userCondition: null
             warning: null
-            width: 50
+            width: 100
         name: Animation
         uid: 0041a6f7-ce36-45e8-a8d7-3149c82c5f79
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -147,9 +178,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 8e7b5b34-5f6f-497f-ad6e-9ed00e411ef7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -157,15 +190,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c2256eb3-8fa1-4b6c-aaf9-32173920a4b4
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: 51430cb4-2a0b-421a-9515-8649e2a226f5
+        userCondition: null
 group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
 handle: iconContent
 maxBlocks: 0
 maxChildBlocks: 1
 maxSiblingBlocks: 0
 name: 'Icon and Content'
-sortOrder: 55
+sortOrder: 58
 topLevel: false

@@ -7,15 +7,21 @@ fieldLayouts:
   372925a1-58ad-420b-9a49-f299e21ee02d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 58d1e773-5a86-4b2a-9e23-3685630efacd
+            userCondition: null
         name: 'Content and Styling'
         uid: 6c22906a-1e53-407b-bf52-5a073882ef0e
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null
@@ -23,13 +29,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c6357b46-bc03-4e9c-9693-59628cc4b15c
+            userCondition: null
             warning: null
             width: 100
         name: Animation
         uid: 603c10f4-bafa-4f89-b821-1f260a6ef112
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
             instructions: null
             label: null
@@ -37,9 +47,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 01b9a060-bab7-4ba6-a6ee-e7b0af0a6f71
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
             instructions: null
             label: null
@@ -47,10 +59,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 2d6a16af-a172-4aac-8fdf-8031c6d2bb4e
+            userCondition: null
             warning: null
             width: 100
         name: 'Block Settings'
         uid: a78b6127-e1aa-47bf-aa05-75552dfaf5fc
+        userCondition: null
 group: 49453feb-0d8e-4fc0-8a1d-9f9cbc5b90a5 # Sections
 handle: sectionStandard
 maxBlocks: 0

@@ -1,0 +1,85 @@
+columnSuffix: pgvidvlq
+contentColumnType: text
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: panelBackgroundColor
+instructions: null
+name: 'Accordion & Tab Panel Background Color'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - color
+          - '#000000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg-black
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - color
+          - '#FFFFFF'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg-white
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Gray'
+        -
+          - color
+          - '#d1d5db'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg-gray-300
+    -
+      __assoc__:
+        -
+          - label
+          - 'Medium Gray'
+        -
+          - color
+          - '#9ca3af'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg-gray-400
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dark Gray'
+        -
+          - color
+          - '#1f2937'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg-gray-800
+  palette: null
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

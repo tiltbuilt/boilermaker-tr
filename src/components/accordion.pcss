@@ -33,12 +33,12 @@
 	}	
  }
  
- .accordion-button {		
+ .btn-accordion {		
 	// These classes must stay in order to ensure functionality
 	@apply m-0 relative w-full block;
 	//The default classes and style below can be changed on a per-project basis
-	@apply text-left pl-16 py-3 pr-3 uppercase text-lg bg-black text-white font-bold;
-	
+	@apply text-left pl-16 py-3 pr-3 uppercase text-lg font-bold btn-black;
+	transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	
 	 
 	.accordion-icon {
@@ -100,9 +100,13 @@
 	}
 	
 	//The default classes and style below can be changed on a per-project basis
-	@apply bg-gray-200;
+	
 }
 
 .accordion-inner {
 	@apply p-2x;  
+}
+
+.accordion-default-bg {
+	@apply bg-gray-200;
 }

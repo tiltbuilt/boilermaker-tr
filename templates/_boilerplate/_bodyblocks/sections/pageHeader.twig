@@ -16,6 +16,7 @@
 {# set variables for content child and style adjustment containers  #}
 {% set buttonGroup = clone(section.children).type('childrenButtonGroup').one() %}
 {% set styleAdjusts = clone(section.children).type('styleAdjustmentsPageHeader').one() %}
+
 	
 {# Set block id attribute value #}
 {% if section.customId is defined and section.customId != '' %}
@@ -40,88 +41,224 @@
 
 {# create array to collect style changes to primary element #}
 {% set styleClasses = [] %}
+{% set outerClasses = [] %}
 {% set rowClasses = [] %}
-{% set bgClasses = null %}
+{% set bgClasses = [] %}
 {% set headerClasses = [] %}
 {% set subClasses = [] %}
 {% set introClasses = [] %}
-{% set headerPadClasses = [] %}
-{% set subPadClasses = [] %}
-{% set introPadClasses = [] %}
+{% set headerOuterClasses = [] %}
+{% set subOuterClasses = [] %}
+{% set introOuterClasses = [] %}
 {% set btnGrpClasses = [] %}
-{% set btnGrpPadClasses = [] %}
-{% set childBtnAdjusts = null %}
-
+{% set btnGrpOuterClasses = [] %}
+{% set childBtnClasses = [] %}
+{% set childBtnOuterClasses = [] %}
+{% set bgSizes = [] %}
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
 	
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleAdjustmentsMainHeader', 'styleAdjustmentsSubhead', 'styleControlsRowAlignment', 'styleControlsBackgroundImage']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
-	
-	{# Grab Style Adjustments for Header and Subhead if any #}
-	{% set h1Classes = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-	{% set subClasses = clone(styleAdjusts.children).type('styleAdjustmentsSubhead').one() %}	
-	
-	{# Set variable for background settings if there are any #}		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	{# Get Row Alignment Change If Any #}
-	{% for rowItem in clone(styleAdjusts.children).type('styleControlsRowAlignment').collect() %}
-		{% set rowClasses = rowClasses|merge([rowItem]) %}
-	{% endfor %}
-	
-	{# Set up Styles for Header, subhead intro text and button #}
-	
-	
-	{% set headerAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-	{% if headerAdjusts != null %}
-		{% for headerItem in clone(headerAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-			{% set headerClasses = headerClasses|merge([headerItem]) %}
-		{% endfor %}
-		{% for headerPadItem in clone(headerAdjusts.children).type('styleControlsPadding').collect() %}
-			{% set headerPadClasses = headerPadClasses|merge([headerPadItem]) %}
-		{% endfor %}
-	{% endif %}
-	
-	
-	{% if section.subheadText|length %}
-		{% set subAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsSubhead').one() %}
-		{% if subAdjusts != null %}
-			{% for subItem in clone(subAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set subClasses = subClasses|merge([subItem]) %}
-			{% endfor %}
-			{% for subPadItem in clone(subAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set subPadClasses = subPadClasses|merge([subPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}
-	
-	{% if section.simpleText|length %}
-		{% set introAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsIntroText').one() %}
-		{% if introAdjusts != null %}
-			{% for introItem in clone(introAdjusts.children).type(['not', 'styleControlsPadding']).collect() %}
-				{% set introClasses = introClasses|merge([introItem]) %}
-			{% endfor %}
-			{% for introPadItem in clone(introAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set introPadClasses = introPadClasses|merge([introPadItem]) %}
-			{% endfor %}
-		{% endif %}
-	{% endif %}
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
 		
-	{% if buttonGroup != null %} {# if no buttons don't bother #}
-		{% set btnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButtonGroup').one() %}
-		{% if btnAdjusts != null %}  
-			{% set childBtnAdjusts = clone(btnAdjusts.children).type('styleAdjustmentsButton').one() %}
-			{% for btnItem in clone(btnAdjusts.children).type(['not', 'styleControlsPadding', 'styleAdjustmentsButton']).collect() %}
-				{% set btnGrpClasses = btnGrpClasses|merge([btnItem]) %}
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
+		{% for fieldItem in styleSetFields %}
+		
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add padding settings to padCLasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add row layout classes to to rowClasses array #}			
+			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set rowClasses = rowClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+		{% endfor %}
+			
+		{# Get main header styleset adjustments if any #}			
+		{% set headerStyles = clone(styleSet.children).type('styleSetMainHeader').one() %}
+		{% if headerStyles != null %}
+			{% set headerFieldLayout = headerStyles.getFieldLayout() %}
+			{% set headerFields = headerFieldLayout.getCustomFields() %}
+			{% for fieldItem in headerFields %}						
+				
+				{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerClasses = headerClasses|merge([classItem]) -%}
+				{% endif %}	
+				
+				{# add color classes #}
+				{% if fieldItem.handle ends with 'Color' and headerStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle].class %}
+					{%- set headerClasses = headerClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle ends with 'Margin' and headerStyles[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'displaySetting' and headerStyles[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
+				{% endif %}
+				
 			{% endfor %}
-			{% for btnPadItem in clone(btnAdjusts.children).type('styleControlsPadding').collect() %}
-				{% set btnGrpPadClasses = btnGrpPadClasses|merge([btnPadItem]) %}
-			{% endfor %}		
 		{% endif %}
-	{% endif %}
+		
+		{# Get subhead styleset adjustments if any #}			
+		{% if section.subheadText|length %}
+			{% set subStyles = clone(styleSet.children).type('styleSetSubhead').one() %}
+			{% if subStyles != null %}
+				{% set subheadFieldLayout = subStyles.getFieldLayout() %}
+				{% set subheadFields = subheadFieldLayout.getCustomFields() %}
+				{% for fieldItem in subheadFields %}						
+					
+					{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and subStyles[fieldItem.handle]|length %}					
+						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+						{%- set subClasses = subClasses|merge([classItem]) -%}
+					{% endif %}	
+					
+					{# add color classes #}
+					{% if fieldItem.handle ends with 'Color' and subStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ subStyles[fieldItem.handle].class %}
+						{%- set subClasses = subClasses|merge([classItem]) -%}
+					{% endif %}						
+					
+					{% if fieldItem.handle ends with 'Margin' and subStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+						{%- set subOuterClasses = subOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if fieldItem.handle == 'displaySetting' and subStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+						{%- set subOuterClasses = subOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+				{% endfor %}
+			{% endif %}
+		{% endif %}
+		
+		{# Get content text styleset adjustments if any #}
+		
+		{% if section.simpleText|length %}
+			{% set introStyles = clone(styleSet.children).type('styleSetContentText').one() %}
+			{% if introStyles != null %}
+				{% set introFieldLayout = introStyles.getFieldLayout() %}
+				{% set introFields = introFieldLayout.getCustomFields() %}
+				{% for fieldItem in introFields %}						
+					
+					{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and introStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+						{%- set introClasses = introClasses|merge([classItem]) -%}
+					{% endif %}	
+					
+					{# add color classes #}
+					{% if fieldItem.handle ends with 'Color' and introStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle].class %}
+						{%- set introClasses = introClasses|merge([classItem]) -%}
+					{% endif %}						
+					
+					{% if fieldItem.handle ends with 'Margin' and introStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+						{%- set introOuterClasses = introOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if fieldItem.handle == 'displaySetting' and introStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+						{%- set introOuterClasses = introOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+				{% endfor %}
+			{% endif %}
+		{% endif %}
+	
+		
+		{# Get button group styleset adjustments if any #}
+		
+		{% if buttonGroup != null %} 				
+			{% set btnGrpStyles = clone(styleSet.children).type('styleSetChildButtons').one() %}
+			{% if btnGrpStyles != null %}					
+				{% set btnGrpFieldLayout = btnGrpStyles.getFieldLayout() %}
+				{% set btnGrpFields = btnGrpFieldLayout.getCustomFields() %}
+				{% for fieldItem in btnGrpFields %}						
+					{% if not (fieldItem.handle ends with 'Margin') and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'button') and btnGrpStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+						{%- set btnGrpClasses = btnGrpClasses|merge([classItem]) -%}
+					{% endif %}									
+					
+					{% if fieldItem.handle ends with 'Margin' and btnGrpStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+						{%- set btnGrpOuterClasses = btnGrpOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if fieldItem.handle == 'displaySetting' and btnGrpStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+						{%- set btnGrpOuterClasses = btnGrpOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{# add button classes to child btn array #}
+					{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and btnGrpStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+						{%- set childBtnClasses = childBtnClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{# add color classes to btn classes #}
+					{% if fieldItem.handle ends with 'Color' and btnGrpStyles[fieldItem.handle] != null %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle].class %}
+						{%- set childBtnClasses = childBtnClasses|merge([classItem]) -%}
+					{% endif %}
+												
+					{# add button margin classes to array #}
+					{% if (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Margin') and btnGrpStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+						{%- set childBtnOuterClasses = childBtnOuterClasses|merge([classItem]) -%}
+					{% endif %}	
+									
+				{% endfor %}
+			{% endif %}
+		{% endif %}	
+		
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}	
+				
+	{% endfor %}
 	
 {% endif %}
 
@@ -156,50 +293,50 @@
 
 {# OUTPUT #}
 
-<section {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}>	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, null, null) -}}> 
+<section {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}>	
+	<div {{ gMacros.buildClassList(null, animClasses, null ) -}}>
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>			
 			<div {{ gMacros.buildClassList('pageHeader-layout anim-pass', rowClasses, null) -}}>	
-				<div class="w-full anim-pass">
+				<div class="w-full lg:w-3/4 anim-pass">
 					
 					{% if section.subheadText|length and section.subheadPosition == 1 %}
-					  <div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead', subClasses) -}}>
+				  	<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead-outer', subOuterClasses) -}}>
 						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-subhead-inner', subPadClasses, null) -}}>
+							<div {{ gMacros.buildClassList('inner pageHeader-subhead', subClasses, null) -}}>
 								{{ gMacros.stripTags(section.subheadText) }}
 							</div>
 						</div>
-					  </div>
+				  	</div>
 					{% endif %}
 					
 					
-					<h1 {{ gMacros.buildElementAttributes(headerId, 'elem-block pageHeader-mainheader heading1', headerClasses, null) -}}>
+					<div {{ gMacros.buildElementAttributes(headerId, 'elem-block pageHeader-mainheader heading1-outer', headerOuterClasses, null) -}}>
 						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-mainheader-inner heading1-inner', headerPadClasses, null) -}}>
+							<h1 {{ gMacros.buildClassList('inner pageHeader-mainheader-inner heading1', headerClasses, null) -}}>
 								{% if section.headerText|length %}
 									{{ gMacros.stripTags(section.headerText) }}
 								{% else %}
 									{{entry.title}}
 								{% endif %}
-							</div>
+							</h1>
 						</div>
-					</h1>
+					</div>
 					
 					
 					{% if section.subheadText|length and section.subheadPosition == 0 %}
-					  <div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead', subClasses) -}}>
+				  	<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead-outer', subOuterClasses) -}}>
 						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-subhead-inner', subPadClasses, null) -}}>
+							<div {{ gMacros.buildClassList('inner pageHeader-subhead', subClasses, null) -}}>
 								{{ gMacros.stripTags(section.subheadText) }}
 							</div>
 						</div>
-					  </div>
+				  	</div>
 					{% endif %}
 					
 					{% if section.simpleText|length %}				
-						<div {{ gMacros.buildElementAttributes(introId, 'elem-block pageHeader-intro', introClasses, null) -}}>
+						<div {{ gMacros.buildElementAttributes(introId, 'elem-block pageHeader-outer', introOuterClasses, null) -}}>
 							<div class="anim-wrapper anim-child">
-								<div {{ gMacros.buildClassList('inner pageHeader-intro-inner ', introPadClasses, null) -}}>
+								<div {{ gMacros.buildClassList('inner pageHeader-intro ', introClasses, null) -}}>
 									{{section.simpleText}}
 								</div>
 							</div>
@@ -207,10 +344,9 @@
 					{% endif %}  
 					
 					{% if buttonGroup != null %}
-						<div {{ gMacros.buildElementAttributes(btnGrpId, 'elem-block pageHeader-buttonGroup', btnGrpClasses, null) -}}> 	
+						<div {{ gMacros.buildElementAttributes(btnGrpId, 'elem-block pageHeader-buttonGroup', btnGrpOuterClasses, null) -}}> 	
 							<div class="anim-wrapper anim-child">
-								<div {{ gMacros.buildClassList('inner pageHeader-buttonGroup-inner ', btnGrpPadClasses, null) -}}>
-									
+								<div {{ gMacros.buildClassList('inner pageHeader-buttonGroup-inner ', btnGrpClasses, null) -}}>								
 								{% for child in clone(buttonGroup.children).collect() %}	  
 									
 									{#-
@@ -221,14 +357,14 @@
 									and finally the default template for this component type from the core Tiltrus files.
 									-#}
 																		
-								  {%
+							  	{%
 									include [
-									  '_project/_bodyblocks/blocks/' ~ child.type.handle,
-									  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-									  '_project/_bodyblocks/blocks/block',
-									  '_boilerplate/_bodyblocks/blocks/block'
-									] ignore missing with { 'block' :  child, 'groupStyles': childBtnAdjusts, 'ignoreMargins': true, 'inGroup': true }
-								  %}									  
+								  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
+								  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+								  	'_project/_bodyblocks/blocks/block',
+								  	'_boilerplate/_bodyblocks/blocks/block'
+									] ignore missing with { 'block' :  child, 'groupStyles': childBtnClasses, 'spacingStyles': childBtnOuterClasses, 'inGroup': true }
+							  	%}									  
 									
 								{% endfor %}							
 								</div>		
@@ -238,10 +374,14 @@
 					
 				</div>
 			</div>
+			
 		</div> 
 	
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
-		{% endif %}
+		<div class="background pageHeader-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>
+	
 	</div>	   
 </section>

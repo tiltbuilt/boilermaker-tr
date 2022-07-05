@@ -11,24 +11,13 @@ settings:
       __assoc__:
         -
           - label
-          - Default
-        -
-          - value
-          - ''
-        -
-          - default
-          - '1'
-    -
-      __assoc__:
-        -
-          - label
           - 100%
         -
           - value
           - opacity-100
         -
           - default
-          - ''
+          - '1'
     -
       __assoc__:
         -

@@ -1,0 +1,141 @@
+{#
+/**
+ * Tilt Boilermaker - Generic In Group Button Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+{# set variables for style adjustment containers  #}
+{% set btnAdjusts = block.children.one() %}
+
+{# Set block id attribute value #}
+{% if blockId is not defined %}
+	{% if block.customId is defined and block.customId != '' %}
+		{% set blockId = block.customId %}
+	{% else %}
+		{% set blockId = 'button-' ~ block.id %}
+	{% endif %}
+{% endif %}
+
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'elem-block btn-wrapper' %}
+{% set innerClass = 'inner btn-wrapper-inner' %}
+
+{# Sort Out Styling Adjustments to set up class lit arrays #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
+{% set wrapperClasses = [] %}
+{% set styleClasses = [] %}
+{% set btnInstStyles = [] %}
+{% set btnInstMarginStyles = [] %}
+
+{# grab instance button styles and instance margin styles #}
+
+{% if btnAdjusts != null %}
+	{% for styleSet in clone(btnAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
+		{% for fieldItem in styleSetFields %}
+			{# add button classes to child btn array #}
+			{% if (fieldItem.handle starts with 'button') and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnInstStyles = btnInstStyles|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes to btn classes #}
+			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set btnInstStyles = btnInstStyles|merge([classItem]) -%}
+			{% endif %}
+										
+			{# add button margin classes to array #}
+			{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnInstMarginStyles = btnInstMarginStyles|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnInstMarginStyles = btnInstMarginStyles|merge([classItem]) -%}
+			{% endif %}
+			
+		{% endfor %}
+	{% endfor %}
+{% endif %}
+
+
+
+{# check if button is in group and if so and there are group styles set use them for wrapper styles #}
+{% if inGroup is defined and inGroup and groupStyles is defined and groupStyles|length %}
+	{% if btnInstStyles|length %}
+		{% set styleClasses = btnInstStyles %}
+	{% else %}
+		{% set styleClasses = groupStyles %}		
+	{% endif %}
+{% else %}
+	{% set styleClasses = btnInstStyles %}	
+{% endif %}
+
+{% if inGroup is defined and inGroup and spacingStyles is defined and spacingStyles|length %}
+	{% if btnInstMarginStyles|length %}
+		{% set wrapperClasses = btnInstMarginStyles %}
+	{% else %}
+		{% set wrapperClasses = spacingStyles %}		
+	{% endif %}
+{% else %}
+	{% set wrapperClasses = btnInstMarginStyles %}	
+{% endif %}
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
+
+
+{# set animation classes for reveal #}
+
+{% set animClasses = [] %}
+{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
+	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
+	{% set revealClass = block.revealAnimation %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set animClasses = animClasses|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass ~ '-stagger' %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+		{% endif %}
+	{% else %}
+		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+	{% endif %}	
+	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% endif %}
+
+{# OUTPUT #}
+
+
+{% set buttonLink = block.modalLinkSettings %} {# no link settings, no button #}
+
+{% if buttonLink %}
+	<div {{ gMacros.buildElementAttributes(null, blockClass, wrapperClasses) -}}>					 	
+		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+			<div class="inner btn-wrapper-inner">				
+				<button data-modal-target="{{ buttonLink.url }}" {{ gMacros.buildElementAttributes(blockId, 'btn btn-modal', styleClasses, customClassString) -}} >
+					<span>{{ buttonLink.getCustomText('More Info') }}</span>
+				</button>
+			</div>
+		</div>
+	</div>
+{% endif %}

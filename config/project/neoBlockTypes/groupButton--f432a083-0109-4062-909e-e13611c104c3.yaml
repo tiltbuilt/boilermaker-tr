@@ -1,0 +1,68 @@
+childBlocks:
+  - styleAdjustmentsGroupButton
+description: ''
+field: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+fieldLayouts:
+  57c69671-44b2-4f33-b511-4d5e9eeaafea:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d1f988b-ae4a-4af3-8af0-02b545072a40
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 810e2537-291d-4f8f-9a77-2ca900bf5dea
+            userCondition: null
+        name: 'Content & Styling'
+        uid: 87549566-f2f3-4f0d-a21e-c72b9e539436
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ade1e81d-d2ac-44f5-b6c4-f2e9a8434d96
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bba85081-e4ee-4030-b6a6-103d76773337
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: cccad98e-e7bc-494a-9f49-a049601de192
+        userCondition: null
+group: 9651ecc9-b7a0-4294-bdb6-9e21fb575c08 # Content Elements
+handle: groupButton
+maxBlocks: 0
+maxChildBlocks: 1
+maxSiblingBlocks: 0
+name: 'Group Button'
+sortOrder: 49
+topLevel: false

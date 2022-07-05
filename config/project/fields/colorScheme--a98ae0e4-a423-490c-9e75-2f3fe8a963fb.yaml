@@ -1,0 +1,14 @@
+columnSuffix: oaftsvxx
+contentColumnType: text
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: colorScheme
+instructions: null
+name: 'Color Scheme'
+searchable: false
+settings:
+  default: null
+  palette: 'Color Schemes'
+  useConfigFile: true
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

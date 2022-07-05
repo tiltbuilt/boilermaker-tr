@@ -6,13 +6,17 @@ fieldLayouts:
   848ec46c-a993-4d3c-a67f-39942062250a:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 68015943-f2a2-4241-9517-ec2148d8ed26
+            userCondition: null
         name: Accordions
         uid: 5004de9d-2a39-4ecd-91c6-4b62130caa25
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+        userCondition: null
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenAccordionSet
 maxBlocks: 0
 maxChildBlocks: 0

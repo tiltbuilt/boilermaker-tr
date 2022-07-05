@@ -111,32 +111,10 @@
 	{%- set classesOutput = classesOutput|merge([blockClass]) -%}
   {% endif %}
   
-  {# Process Style adjustment classes and add to output array to array #}
-  {% if styleClasses != null and styleClasses|length %}  
-  		{% for styleBlock in styleClasses %}
-		  	{% set devSize = styleBlock.deviceSize %}
-			  {% switch styleBlock.type.handle %}				
-				{% case 'background' %}					
-					{% for key, value in styleBlock %}
-						{% if key != 'deviceSize' and key != 'type' and value != '' %}
-							{% set classItem = styleBlock.deviceSize ~ value %}
-							{%- set classesOutput = classesOutput|merge([classItem]) -%}
-						{% endif %}						
-					{% endfor %}
-					
-				{% default %}
-					{% set styleBlockFieldLayout = styleBlock.getFieldLayout() %}
-					{% set styleBlockFields = styleBlockFieldLayout.getCustomFields() %}
-					{% for fieldItem in styleBlockFields %}
-						{% if fieldItem.handle != 'deviceSize' and styleBlock[fieldItem.handle] != '' %}
-							{% set classItem = styleBlock.deviceSize ~ styleBlock[fieldItem.handle] %}
-							{%- set classesOutput = classesOutput|merge([classItem]) -%}
-						{% endif %}						
-					{% endfor %}
-			  {% endswitch %}			
-		{% endfor %}		
+  {# Add styleClasses #}
+  {% if styleClasses != null and styleClasses|length %}
+	  {%- set classesOutput = classesOutput|merge(styleClasses) -%}
   {% endif %}
-  
     
   {# Add custom class string #}
   {% if customClassString != null and customClassString != '' %}
@@ -177,96 +155,156 @@
   -----
   Output a background node based on an element's Tiltrus EDC field.
 -#}
-{%- macro buildElementBackground(bgInfo, sizesAtr, loadType) -%}
+{%- macro buildElementBackground(bgInfo, bgSizes, sizesAtr, loadType) -%}
   {% import '_boilerplate/_macros/globalMacros' as gMacros %}
-  {# check if there is an image or video for this background #}
-  {% if bgInfo.backgroundImage|length %}
-    {# set bgAsset to get to file for image or video #}	
-  	{% set bgAsset = bgInfo.backgroundImage.one() %}
-	{% set loadClass = null %}
-	{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
-	{% if loadType is defined and loadType != null and loadType != 0 %}
-		{% set loadClass = 'owl-lazy' %}
-	{% else %}
-		{% set loadClass = 'lazyload' %}
+  
+    {% for bgSet in bgInfo %}
+  	
+	{% set bgOuterClasses = ['background', bgSet.bgColor, bgSet.bgOpacity] %}
+	
+	{% if bgSet.devSize != '' %}
+		{% set bgOuterClasses = bgOuterClasses|merge(['hidden', bgSet.devSize ~ 'block']) %}
 	{% endif %}
-	{# set up bgClasses object with all classes needed for the background #}
-	{% set bgClasses = {'type': {'handle': 'background'}, 'deviceSize' : bgInfo.deviceSize, 'backgroundOpacity': bgInfo.backgroundOpacity} %}		
-	{% if bgInfo.backgroundRepeat == 'bg-no-repeat' or bgInfo.backgroundRepeat == '' %}
-		{% set bgClasses = bgClasses|merge({'backgroundRepeat' : bgInfo.backgroundRepeat}) %}
-		{% if bgInfo.backgroundSize == 'auto' or bgInfo.backgroundSize == '' %}
-			{% set bgClasses = bgClasses|merge({'backgroundSize': 'object-scale-down'}) %}
-		{% else %}
-			{% set  bgClasses = bgClasses|merge({'backgroundSize': 'object-' ~ bgInfo.backgroundSize })%}
-		{% endif %}
-		{% if bgInfo.backgroundPosition != '' %}
-			{% set bgClasses = bgClasses|merge({'backgroundPosition': 'object-' ~ bgInfo.backgroundPosition}) %}
-		{% endif %}
-	{% else %}
-		{% set bgClasses = bgClasses|merge({'backgroundRepeat': bgInfo.backgroundRepeat}) %}
-		{% set bgClasses = bgClasses|merge({'backgroundSize': 'bg-auto'}) %}
-		{% if bgInfo.backgroundPosition != '' %}
-			{% set bgClasses = bgClasses|merge({'backgroundPosition': 'bg-' ~ bgInfo.backgroundPosition}) %}
-		{% endif %}
-	{% endif %}
-	{# handle situation where background block is set for device other than default #}
-	{% if bgInfo.deviceSize != '' %}
-		{% set bgCustString = 'hidden ' ~ bgInfo.deviceSize ~ 'block' %}
-	{% else %}
-		{% set bgCustString = '' %}
-	{% endif %}
-	{# output code based on if asset is image or video #}
-	{% if bgAsset.kind == 'image' %}
-		{# check repeat setting if repeats then set size to auto and assemble class list if doesn't repeat then assemble class list from settings in fields #}
-		{% if bgClasses.backgroundRepeat != 'bg-no-repeat' and bgClasses.backgroundRepeat != '' %}
-			<div {{ gMacros.buildClassList('background ', [bgClasses], loadClass ~ ' ' ~ bgCustString) }} style="background-image:url('{{ bgAsset.url }}');"></div>
-		{% else %}
-			{# set image to bgAsset for transformations #}
-			{% set image = bgAsset %}					
-			{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
-			{% if craft.imager.serverSupportsWebp() %}
-			  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
-			  
-			  <picture class="background {{bgCustString}}">		  
-						
-				{% if craft.imager.serverSupportsWebp() %}
-				  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
-				{% endif %}
-			  
-				  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
-				  width="{{image.width}}"
-				  height="{{image.height}}"
-				  data-sizes="auto"
-				  data-src="{{ transformedImages[0] }}"
-				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-				  alt="background" {{ gMacros.buildClassList('background', [bgClasses], 'lazyload') -}}
-				  >
-			  </picture>
+	
+	{% switch bgSet.devSize %}
+		{% case 'sm:' %}
+			{% if 'md:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
+			{% elseif 'lg:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+			{% elseif 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
 			{% endif %}
 			
-		{% endif %}
-	{% elseif bgAsset.kind == 'video' %}
-	
-		{% set bgImageVideo = bgAsset %}					  
-	  	
-	  	<div class="background {{bgClasses.backgroundOpacity}} {{bgCustString}}">
-			<video          
-		  	class="background lazyload {{bgClasses.backgroundSize}} {{bgClasses.backgroundPosition}}"
-		  	aria-hidden="true"
-		  	role="presentation"
-		  	preload=""
-		  	autoplay playsinline muted loop
-		  	data-src="{{ bgImageVideo.url }}"
-		  	type="{{ bgImageVideo.mimeType }}"
-			></video>
-	  	</div>
+		{% case 'md:' %}			
+			{% if 'lg:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+			{% elseif 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+		{% case 'lg:' %}			
+			{% if 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
 		
-	{% endif %}
+		{% case 'xl:' %}			
+			{% if '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+		{% case '2xl:' %}
+			
+		{% default %}
+			{% if 'sm:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['sm:hidden']) %}
+			{% elseif 'md:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
+			{% elseif 'lg:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+			{% elseif 'xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+			{% elseif '2xl:' in bgSizes %}
+				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+			{% endif %}
+			
+	{% endswitch %}	
 	
-  {% else %}
-  	{# No image or video, just set background div with background color #}
-	<div {{ gMacros.buildClassList('background ', [{'type': {'handle': 'background'}, 'deviceSize' : bgInfo.deviceSize, 'backgroundColor' : bgInfo.backgroundColor}], null) }}></div>
-  {% endif %}
+    <div {{ gMacros.buildClassList(null, bgOuterClasses, null) -}}>
+		
+		{% if bgSet.bgImg != null %}
+			{% set bgAsset = bgSet.bgImg %}
+			{% set loadClass = null %}
+			{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
+			{% if loadType is defined and loadType != null and loadType != 0 %}
+				{% set loadClass = 'swiper-lazy' %}
+			{% else %}
+				{% set loadClass = 'lazyload' %}
+			{% endif %}			
+			{% set bgInnerClasses = ['background', bgSet.bgImgOpacity] %}
+			{% set bgElemClasses = ['background', loadClass] %}
+			
+			{# Check if BG Asset is image or video #}
+			{% if bgAsset.kind == 'image' %}				
+						
+				{% if bgSet.bgRepeat == 'bg-no-repeat' or bgSet.bgRepeat == '' %}
+				
+					<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>	
+						{% if bgSet.bgSize == 'auto' or bgSet.bgSize == '' %}
+							{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
+						{% else %}
+							{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgSize])%}
+						{% endif %}
+						{% if bgSet.bgPosition != '' %}
+							{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgPosition]) %}
+						{% endif %}
+						
+						{# set image to bgAsset for transformations #}
+						{% set image = bgAsset %}					
+						{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
+						{% if craft.imager.serverSupportsWebp() %}
+						  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+						  
+						  <picture class="background">		  
+									
+							{% if craft.imager.serverSupportsWebp() %}
+							  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+							{% endif %}
+						  
+							  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+							  width="{{image.width}}"
+							  height="{{image.height}}"
+							  data-sizes="auto"
+							  data-src="{{ transformedImages[0] }}"
+							  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+							  alt="background" {{ gMacros.buildClassList(null, bgElemClasses, null) -}}
+							  >
+						  </picture>
+						{% endif %}
+					</div>
+					
+				{% else %}
+					
+					{% set bgInnerClasses = bgInnerClasses|merge([bgSet.bgRepeat, 'bg-auto', 'bg-' ~ bgSet.bgPosition]) %}
+					<div {{ gMacros.buildClassList(null, bgClasses, null) }} style="background-image:url('{{ bgAsset.url }}');"></div>
+					
+				{% endif %}
+				
+			{% elseif bgAsset.kind == 'video' %}
+				
+				{% if bgSet.bgSize == 'auto' or bgSet.bgSize == '' %}
+					{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
+				{% else %}
+					{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgSize])%}
+				{% endif %}
+				{% if bgSet.bgPosition != '' %}
+					{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgPosition]) %}
+				{% endif %}
+				
+				<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>
+					<video          
+					  {{ gMacros.buildClassList(null, bgElemClasses, null) }}
+					  aria-hidden="true"
+					  role="presentation"
+					  preload=""
+					  autoplay playsinline muted loop
+					  data-src="{{ bgAsset.url }}"
+					  type="{{ bgAsset.mimeType }}"
+					></video>
+				</div>
+				
+			{% endif %}		
+			
+		{% endif %}
+	</div>	
+	  
+  {% endfor %}  
   
 {%- endmacro -%}
 

@@ -6,13 +6,17 @@ fieldLayouts:
   26886e9b-3e05-41cc-b2cb-7aed2cced67c:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: 2b767ee3-ddd2-4d05-a490-5db3c6d80690
+            userCondition: null
         name: Columns
         uid: 327ad0d4-a2ae-4d0b-8bb9-993e841a52fe
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+        userCondition: null
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenRow
 maxBlocks: 0
 maxChildBlocks: 5

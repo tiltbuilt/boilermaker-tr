@@ -39,24 +39,64 @@
 
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
-{% set childBtnAdjusts = null %}
+{% set outerClasses = [] %}
+{% set childBtnClasses = [] %}
+{% set childBtnOuterClasses = [] %}
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
+	
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
 		
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleAdjustmentsButton']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}		  
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
+		{% for fieldItem in styleSetFields %}
+		
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'button') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if not (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Color') and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add margin settings to outerCLasses array #}			
+			{% if not (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}	
+			
+			{# add button classes to child btn array #}
+			{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set childBtnClasses = childBtnClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes to btn classes #}
+			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set childBtnClasses = childBtnClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add button margin classes to array #}
+			{% if (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set childBtnOuterClasses = childBtnOuterClasses|merge([classItem]) -%}
+			{% endif %}
+					
+		{% endfor %}
+			
 	{% endfor %}
-	
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{# set up object for classes to apply to child accordions if setting controls from the group level #}
-	{% set childBtnAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsButton').one() %}
 		
 {% endif %}
 
@@ -90,9 +130,9 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
 			{% if contentKids != null %}
 				{% for child in clone(contentKids.children).collect() %}	  
 					
@@ -111,7 +151,7 @@
 					  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
 					  '_project/_bodyblocks/blocks/block',
 					  '_boilerplate/_bodyblocks/blocks/block'
-					] ignore missing with { 'block' :  child, 'groupStyles': childBtnAdjusts, 'ignoreMargins': true, 'inGroup': true }
+					] ignore missing with { 'block' :  child, 'groupStyles': childBtnClasses, 'spacingStyles': childBtnOuterClasses, 'inGroup': true }
 				  %}
 					  
 					

@@ -38,37 +38,132 @@
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create arrays to collect style changes to primary element and inner and bg #}
+
+{# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
-{% set bgClasses = null %}
-{% set childTabAdjusts = null %}
-{% set bgColorClasses = [] %}
+{% set outerClasses = [] %}
+{% set bgClasses = [] %}
+{% set bgSizes = [] %}
+
+{# Set styling classes and attributes for accrodion button and panel #}
+
+{% set buttonClasses = ['btn-tab'] %}
+{% set panelClasses = [] %}
+{% set iconClasses = ['tab-icon-wrapper'] %}
+{% set tabBgClasses = [] %}
+{% set tabBgSizes = [] %}
 
 {% if styleAdjusts != null %}	
 		
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage', 'styleControlsBackgroundColor']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
 	
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{# Set variable for background settings if there are any #}
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
 		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	{% for bgColorItem in clone(styleAdjusts.children).type('styleControlsBackgroundColor').collect() %}
-		{% set bgColorClasses = bgColorClasses|merge([bgColorItem]) %}
-	{% endfor %}
-	
-	{# set up object for classes to apply to child accordions if setting controls from the group level #}
-	{% set childTabAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsTabPanel').one() %}
+		{% for fieldItem in styleSetFields %}
+			
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+					
+		{% endfor %}
+		
+		{# Get tab panel styleset adjustments if any for this devices size #}			
+		{% set tabStyles = clone(styleSet.children).type('styleSetTabPanel').one() %}
+		{% if tabStyles != null %}
+			{% set tabFieldLayout = tabStyles.getFieldLayout() %}
+			{% set tabFields = tabFieldLayout.getCustomFields() %}
+			{% for fieldItem in tabFields %}						
+				
+				{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and tabStyles[fieldItem.handle]|length %}					
+					{% set classItem = devSize ~ tabStyles[fieldItem.handle] %}
+					{%- set panelClasses = panelClasses|merge([classItem]) -%}
+				{% endif %}	
+				
+				{# add color classes #}
+				{% if fieldItem.handle == 'buttonColor' and tabStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ tabStyles[fieldItem.handle].class %}
+					{%- set buttonClasses = buttonClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'iconColor' and tabStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ tabStyles[fieldItem.handle].class %}
+					{%- set iconClasses = iconClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'textColor' and tabStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ tabStyles[fieldItem.handle].class %}
+					{%- set panelClasses = panelClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'borderColor' and tabStyles[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ tabStyles[fieldItem.handle].class %}
+					{%- set panelClasses = panelClasses|merge([classItem]) -%}
+				{% endif %}				
+								
+			{% endfor %}
+					
+			{# set up background objects for accordions and drop into array. If no color and no image are set them skip styleset #}
+			{% if (tabStyles.backgroundColor.class is defined and tabStyles.backgroundColor.class) or (tabStyles.backgroundImage is defined and tabStyles.backgroundImage|length) %}
+				{% set bgItem  = {
+					'devSize': devSize,
+					'bgColor': tabStyles.backgroundColor.class ?? '',
+					'bgImg': tabStyles.backgroundImage[0] ?? null,
+					'bgSize': tabStyles.backgroundSize ?? '',
+					'bgPosition': tabStyles.backgroundPosition ?? '',
+					'bgRepeat': tabStyles.backgroundRepeat ?? '',
+					'bgOpacity': tabStyles.backgroundOpacity ?? '',
+					'bgImgOpacity': tabStyles.backgroundImageOpacity ?? '',
+				}		
+				%}
+				{% set tabBgClasses = tabBgClasses|merge([bgItem]) %}	
+				{% set tabBgSizes = tabBgSizes|merge([devSize])%}	
+			{% endif %}
+			
+		{% endif %}
+		
+		
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}
+					
+	{% endfor %}	
 	
 {% endif %}
-
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (tabSet['customClassList'] is defined ? tabSet.customClassList : null) %}
@@ -98,9 +193,9 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
 			{% if contentKids != null %}				
 				<div class="tab-button-panel">
 					{% for child in clone(contentKids.children).collect() %}
@@ -127,7 +222,7 @@
 					  
 					  {# set up attributes for header and button #}
 					  
-					  {% set buttonClasses = ['tab-button'] %}
+					  {% set buttonClasses = ['btn-tab'] %}
 					  {% if openState %}
 						  {% set buttonClasses = buttonClasses|merge(['active-tab']) %}
 					  {% endif %}
@@ -143,7 +238,7 @@
 					  
 						<button id="{{buttonId}}" {{ gMacros.buildclassListBasic(buttonClasses) -}} {{- gMacros.buildOtherElementAttributes(buttonAttrs) -}}>
 							{% if child.iconAsset is not empty and child.iconAsset.sprite|length %}
-								<div class="tab-icon-wrapper">									
+								<div {{ gMacros.buildClassListBasic(iconClasses) -}}>									
 									<svg><use xlink:href="#{{ child.iconAsset.sprite }}"></use></svg>
 								</div>
 							{% endif %}
@@ -152,48 +247,100 @@
 				
 					{% endfor %}  
 				</div>
-				<div {{ gMacros.buildClassList('tab-panel-wrapper', bgColorClasses, null) -}}>
+				<div class="tab-panel-wrapper">
 					{% for child in clone(contentKids.children).collect() %}
 				
 						{% if child.customId is defined and child.customId != '' %}							
-							{% set headingId = child.customId ~ '-heading' %}		
+							{% set headingId = child.customId ~ '-heading' %}
+							{% set panelId = child.customId ~ '-panel' %}		
 						{% else %}							
 							{% set headingId = 'tab-' ~ child.id ~ '-heading' %}
+							{% set panelId = 'tab-' ~ child.id ~ '-panel' %}
 						{% endif %}
-					  	
-					  	{# determine if this is the first loop through children to determine how to set initial state of first clid tabSet #}
-					  	
-					  	{% if loop.first == true %}
-						  	{% set openState = true %}
-					  	{% else %}
-						  	{% set openState = false %}
-					  	{% endif %}
-					  	
-					  	{#-
-							For each child component, attempt to load a custom template for the
-							component handle from the project's files,
-							then the same template from the core Tiltrus files,
-							then a custom default template from the project,
-							and finally the default template for this component type from the core Tiltrus files.
-					  	-#}	  
-					  
-						{% include [
-							'_project/_bodyblocks/tabs/' ~ child.type.handle,
-							'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
-							'_project/_bodyblocks/tabs/tabPanel',
-							'_boilerplate/_bodyblocks/tabs/tabPanel'
-						  ] with { 'tabPanel': child, 'parentTabSet': blockId, 'openState': openState, 'labelledBy': headingId, 'groupStyles': childTabAdjusts }
-						%}	  
+						
+						{# determine if this is the first loop through children to determine how to set initial state of first clid tabSet #}
+						
+						{% if loop.first == true %}
+							{% set openState = 'active-tab' %}
+						{% else %}
+							{% set openState = '' %}
+						{% endif %}
+						
+						{% set panelAttrs = {'aria-labelledby': headingId} %}
 				
-					{% endfor %}
-					
-					{% if bgClasses != null %}		  
-						{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
-					{% endif %}  
-				</div>			
+						<div {{ gMacros.buildElementAttributes(panelId, 'tabPanel', panelClasses, openState, panelAttrs) -}}> 	
+							
+							<div {{ gMacros.buildClassList('inner tabPanel-inner', null, null) -}}>	
+								{% set panelContentKids = clone(child.children).one() %}
+								{% if panelContentKids != null %}																		
+									{% for panelChild in clone(panelContentKids.children).collect() %}											  
+										
+										{#-
+										For each child component, attempt to load a custom template for the
+										component handle from the project's files,
+										then the same template from the core Tiltrus files,
+										then a custom default template from the project,
+										and finally the default template for this component type from the core Tiltrus files.
+										-#}
+										
+										{% if child.type.handle starts with 'row' %}
+											  {%
+												include [
+												  '_project/_bodyblocks/rows/' ~ panelChild.type.handle,
+												  '_boilerplate/_bodyblocks/rows/' ~ panelChild.type.handle,
+												  '_project/_bodyblocks/rows/row',
+												  '_boilerplate/_bodyblocks/rows/row'
+												] with { 'row' :  panelChild }
+											  %}
+										  {% elseif panelChild.type.handle starts with 'repeater' %}
+											  {%
+												include [
+												  '_project/_bodyblocks/repeaters/' ~ panelChild.type.handle,
+												  '_boilerplate/_bodyblocks/repeaters/' ~ panelChild.type.handle,
+												  '_project/_bodyblocks/repeaters/repeater',
+												  '_boilerplate/_bodyblocks/repeaters/repeater'
+												] with { 'repeater' :  panelChild }
+											  %}
+										  {% elseif panelChild.type.handle starts with 'accordion' %}
+											{%
+											  include [
+												'_project/_bodyblocks/accordions/' ~ panelChild.type.handle,
+												'_boilerplate/_bodyblocks/accordions/' ~ panelChild.type.handle,
+												'_project/_bodyblocks/accordions/accordion',
+												'_boilerplate/_bodyblocks/accordions/accordion'
+											  ] with { 'accordion' :  panelChild }
+											%}					  
+										  {% else %}
+											  {%
+												include [
+												  '_project/_bodyblocks/blocks/' ~ panelChild.type.handle,
+												  '_boilerplate/_bodyblocks/blocks/' ~ panelChild.type.handle,
+												  '_project/_bodyblocks/blocks/block',
+												  '_boilerplate/_bodyblocks/blocks/block'
+												] ignore missing with { 'block' :  panelChild }
+											  %}
+										  {% endif %}
+										
+									{% endfor %}
+								{% endif %}
+							</div>						    
+						</div>  
+				
+					{% endfor %}					
+					<div class="background tabPanel-default-bg">
+						{% if tabBgClasses != null %}		
+							{{ gMacros.buildElementBackground(tabBgClasses, tabBgSizes, {'default': '100vw'}, null) }}
+						{% endif %}		
+					</div> 
+					 
+				</div>	
 				
 			{% endif %}
 		</div>
-				
+		<div class="background tabSet-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>		
 	</div>     
 </div>

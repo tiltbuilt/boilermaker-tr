@@ -1,0 +1,111 @@
+columnSuffix: kzlvxpge
+contentColumnType: string
+fieldGroup: 217da411-10b4-4af2-bd6c-010f5ff3260b # Padding & Margins
+handle: buttonRightMargin
+instructions: null
+name: 'Button Right Margin'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Auto
+        -
+          - value
+          - mr-auto
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'None (0px)'
+        -
+          - value
+          - mr-none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Quarter (3.75px)'
+        -
+          - value
+          - mr-quarter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Half (7.5px)'
+        -
+          - value
+          - mr-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Normal (15px)'
+        -
+          - value
+          - mr-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2x (30px)'
+        -
+          - value
+          - mr-2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3x (45px)'
+        -
+          - value
+          - mr-3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4x (60px)'
+        -
+          - value
+          - mr-4x
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

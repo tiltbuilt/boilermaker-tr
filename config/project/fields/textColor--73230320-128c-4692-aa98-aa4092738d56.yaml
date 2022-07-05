@@ -1,45 +1,99 @@
 columnSuffix: ihmrzfsv
-contentColumnType: string
+contentColumnType: text
 fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
 handle: textColor
 instructions: null
 name: 'Text Color'
 searchable: false
 settings:
+  default: null
   options:
-    -
-      __assoc__:
-        -
-          - label
-          - 'Default (No Change)'
-        -
-          - value
-          - ''
-        -
-          - default
-          - '1'
     -
       __assoc__:
         -
           - label
           - Black
         -
-          - value
-          - text-black
+          - color
+          - '#000000'
         -
           - default
           - ''
+        -
+          - class
+          - text-black
     -
       __assoc__:
         -
           - label
           - White
         -
-          - value
-          - text-white
+          - color
+          - '#FFFFFF'
         -
           - default
           - ''
+        -
+          - class
+          - text-white
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Gray'
+        -
+          - color
+          - '#d1d5db'
+        -
+          - default
+          - ''
+        -
+          - class
+          - text-gray-300
+    -
+      __assoc__:
+        -
+          - label
+          - 'Medium Gray'
+        -
+          - color
+          - '#9ca3af'
+        -
+          - default
+          - ''
+        -
+          - class
+          - text-gray-400
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dark Gray'
+        -
+          - color
+          - '#1f2937'
+        -
+          - default
+          - ''
+        -
+          - class
+          - text-gray-800
+    -
+      __assoc__:
+        -
+          - label
+          - Red
+        -
+          - color
+          - '#FF0000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - text-red
+  palette: null
+  useConfigFile: false
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Dropdown
+type: percipiolondon\colourswatches\fields\ColourSwatches

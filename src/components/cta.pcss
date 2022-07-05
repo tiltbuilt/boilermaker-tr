@@ -13,7 +13,7 @@
 	// These classes must stay in order to ensure functionality
 	@apply relative;
 	//The default classes and style below can be changed on a per-project basis
-	@apply bg-black text-white mb-normal lg:mb-2x text-left text-lg; 
+	@apply text-white mb-normal lg:mb-2x text-left text-lg; 
 }
 
 .ctaStandard-inner {
@@ -80,19 +80,6 @@
  }
 
 
-.btn-ctaStandard {	
-	//The default classes and style below can be changed on a per-project basis
-	@apply uppercase font-semibold bg-white text-black;
-	border-radius: 0.4rem; 
-	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	text-shadow: none !important;
-	
-	&:hover {
-		/* place general hover styles for all buttons here */
-		opacity: 0.7;
-	}
-}
-
 .ctaStandard-row {
 	// These classes must stay in order to ensure functionality
 	
@@ -135,6 +122,10 @@
 }
 
 
+.ctaStandard-default-bg {
+	@apply bg-black;
+}
+
 
 
 /* SMALL CTA */
@@ -143,7 +134,7 @@
 	// These classes must stay in order to ensure functionality
 	@apply relative;
 	//The default classes and style below can be changed on a per-project basis
-	@apply bg-black text-white mb-normal lg:mb-2x text-left text-lg; 
+	@apply text-white mb-normal lg:mb-2x text-left text-lg; 
 }
 
 .ctaSmall-inner {
@@ -210,15 +201,9 @@
  }
 
 
-.btn-ctaSmall {	
-	//The default classes and style below can be changed on a per-project basis
-	@apply uppercase font-semibold bg-white text-black;
-	border-radius: 0.4rem; 
-	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	text-shadow: none !important;
-	
-	&:hover {
-		/* place general hover styles for all buttons here */
-		opacity: 0.7;
-	}
+.ctaSmall-default-bg {
+	@apply bg-black;
 }
+
+
+

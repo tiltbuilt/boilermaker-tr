@@ -19,7 +19,7 @@
 {% for item in container.children.all() %}
 	{% if item.type.handle == 'childrenContainerMainSidebar' %}
 		{% set contentKids = item %}
-	{% elseif item.type.handle == 'styleAdjustmentsContainer2Column' %}
+	{% elseif item.type.handle == 'styleAdjustmentsSpecialContainer' %}
 		{% set styleAdjusts = item %}
 	{% endif %}
 {% endfor %}
@@ -44,31 +44,71 @@
 
 {# create arrays to collect style changes to primary element and inner, bg and interior row #}
 {% set styleClasses = [] %}
-{% set padClasses = [] %}
+{% set outerClasses = [] %}
 {% set rowClasses = [] %}
-{% set bgClasses = null %}
+{% set bgClasses = [] %}
+{% set bgSizes = [] %}
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
-			
+	
 	{# add separate array to add padding classes since they are applied separately to inner #}
 	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{# Set variable for background settings if there are any #}
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
 		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	{# get classes for interior row adjustments if any #}
-	
-	{% set rowAdjusts = clone(styleAdjusts.children).type('styleAdjustmentsRow').one() %}
-	{% if rowAdjusts is not empty %}
-		{% for rowItem in clone(rowAdjusts.children).all() %}
-			{% set rowClasses = rowClasses|merge([rowItem]) %}
+		{% for fieldItem in styleSetFields %}
+			
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add margin settings to outerCLasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}			
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add row layout classes to to rowClasses array #}			
+			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set rowClasses = rowClasses|merge([classItem]) -%}
+			{% endif %}	
+					
 		{% endfor %}
-	{% endif %}
+		
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class ?? false) or (styleSet.backgroundImage[0] ?? false) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}
+				
+	{% endfor %}
 	
 {% endif %}
 
@@ -104,10 +144,10 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>	
-			<div {{ gMacros.buildClassList('row', rowClasses, null) -}}>
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
+			<div {{ gMacros.buildClassList('row anim-pass', rowClasses, null) -}}>
 				{% if contentKids != null %}
 					{% for child in clone(contentKids.children).collect() %}	  
 						
@@ -133,8 +173,10 @@
 				{% endif %}
 			</div>			
 		</div>
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background containerWithSidebar-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>	
 	</div>     
 </div>

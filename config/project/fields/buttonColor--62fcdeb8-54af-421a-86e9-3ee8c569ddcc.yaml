@@ -1,0 +1,85 @@
+columnSuffix: ikwppaht
+contentColumnType: text
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: buttonColor
+instructions: null
+name: 'Button Color'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Black/White Text'
+        -
+          - color
+          - '#000000, #FFFFFF'
+        -
+          - default
+          - ''
+        -
+          - class
+          - btn-black
+    -
+      __assoc__:
+        -
+          - label
+          - 'White/Black Text'
+        -
+          - color
+          - '#FFFFFF, #000000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - btn-white
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Gray/Black Text'
+        -
+          - color
+          - '#d1d5db, #000000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - btn-gray-lt
+    -
+      __assoc__:
+        -
+          - label
+          - 'Medium Gray/Black Text'
+        -
+          - color
+          - '#9ca3af, #000000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - btn-gray-md
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dark  Gray/Black Text'
+        -
+          - color
+          - '#1f2937, #FFFFFF'
+        -
+          - default
+          - ''
+        -
+          - class
+          - btn-gray-dk
+  palette: null
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

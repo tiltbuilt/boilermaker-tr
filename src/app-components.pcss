@@ -2,42 +2,303 @@
  * This injects any component classes registered by plugins.
  *
  */
-@import 'tailwindcss/components';
+@tailwind components;
 
-/**
- * Here we add custom component classes; stuff we want loaded
- * *before* the utilities so that the utilities can still
- * override them.
- *
- */
-@import './components/global.pcss';
-@import './components/typography.pcss';
-@import './components/pagination.pcss';
-@import './components/webfonts.pcss';
-@import './components/button.pcss';
-@import './components/image.pcss';
-@import './components/long-format-text.pcss';
-@import './components/page-section.pcss';
-@import './components/site-header.pcss';
-@import './components/page-header.pcss';
-@import './components/page-footer.pcss';
-@import './components/container.pcss';
-@import './components/row.pcss';
-@import './components/column.pcss';
-@import './components/content-headers.pcss';
-@import './components/content-wrapper.pcss';
-@import './components/repeater.pcss';
-@import './components/accordion.pcss';
-@import './components/tab-set.pcss';
-@import './components/slider.pcss';
-@import './components/content-video.pcss';
-@import './components/cta.pcss';
-@import './components/forms.pcss';
-@import './components/icon-content.pcss';
-@import './components/modals.pcss';
-
-/**
- * Include styles for individual pages
- *
- */
-@import './pages/homepage.pcss';
+@layer components {
+	@variants responsive {
+		
+		//standard buttons
+		
+					
+		.btn, .btn-standard {
+			// These classes must stay in order to ensure functionality
+			@apply inline-block text-center leading-none;
+			//The default classes and style below can be changed on a per-project basis
+			@apply uppercase font-semibold btn-gray-lt btn-md;
+			border-radius: 0.4rem; 
+			transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			text-shadow: none !important;		 
+		 }
+		 		 
+				
+		.btn-black {
+			@apply bg-black text-gray-300;
+			
+			&:hover {
+				@apply bg-gray-800 text-white;
+			}
+		}
+		
+		.btn-white {
+			@apply bg-white text-black;
+			
+			&:hover {
+				@apply bg-gray-300 text-black;
+			}
+		}        
+			   
+		.btn-gray-lt {
+			@apply bg-gray-300 text-black;
+			
+			&:hover {
+				@apply bg-gray-400 text-black;
+			}  
+		}
+		
+		.btn-gray-md {
+			@apply bg-gray-400 text-black;
+			
+			&:hover {
+				@apply bg-gray-500 text-black;
+			} 
+		}
+		  
+		.btn-gray-dk {
+			@apply bg-gray-800 text-white;
+			
+			&:hover {
+				@apply bg-gray-700 text-white;
+			} 
+		}
+		
+		.btn-md {
+			@apply text-base py-4 px-8;	 
+		}
+		
+		.btn-lg {
+			@apply text-lg py-5 px-10;
+		}
+		 
+		.btn-sm {
+			@apply text-sm py-3 px-6;
+		}
+		
+		
+		//tabset buttons and icon blocks
+		
+		.icon-center {	
+			svg {
+				@apply mx-auto;
+			}
+		}
+		
+		.icon-left {
+			svg {
+				@apply ml-0 mr-auto;
+			}
+		}
+		
+		.icon-right {
+			svg {
+				@apply mr-0 ml-auto;
+			}
+		}
+		
+		.icon-sm {
+			svg {
+				width: 3.5rem;
+				height: 3.5rem;
+			}
+		}
+		
+		.icon-md {
+			svg {
+				width: 7.5rem;
+				height: 7.5rem;
+			}
+		}
+		
+		.icon-lg {
+			svg {
+				width: 15rem;
+				height: 15rem;
+			}
+		}
+		
+		.icon-black {
+			@apply text-black;
+			
+			svg {
+				fill: currentColor;
+			}
+		}
+		
+		.icon-white {
+			@apply text-white;
+			
+			svg {
+				fill: currentColor;
+			}
+		}        
+			   
+		.icon-gray-lt {
+			@apply text-gray-300;
+			
+			svg {
+				fill: currentColor;
+			}
+		}
+		
+		.icon-gray-md {
+			@apply text-gray-400;
+			
+			svg {
+				fill: currentColor;
+			}
+		}
+		  
+		.icon-gray-dk {
+			@apply text-gray-800;
+			
+			svg {
+				fill: currentColor;
+			}
+		}	
+		
+		.icon-red {
+			@apply text-red;
+			
+			svg {
+				fill: currentColor;
+			}
+		}		
+		 
+		
+		.btn-tab {
+			@apply relative py-2 px-6 mx-2 btn-gray-lt;
+			max-width: 20%;
+			display: flex;
+			text-align: center;
+			font-weight: 700;
+			align-items: center;
+			flex-direction: column;
+			overflow: hidden;
+			position: relative;
+			border-radius: 0.5rem 0.5rem 0 0;		 
+			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			
+			&:focus {
+				outline: none;
+			}
+			
+			.tab-icon-wrapper {
+				@apply icon-sm icon-center;
+				position: relative;
+				display: block !important;			
+				padding: 1rem 0;
+				z-index: 1;
+			}
+			
+			svg {			
+				display: block;
+				fill: currentColor;			
+			}
+			
+			.tab-title {
+				@apply block w-full text-center;			
+				z-index: 1;			
+			}		  			  			  
+			
+						  
+			&.active-tab {
+				/* put styles for the active mode of the button here */ 
+				@apply btn-black;
+			}			  
+			
+		}
+		
+		
+		/* SLIDER DOTS */
+		
+		.swiper-pagination-bullet {
+			opacity: 1;
+		}
+		
+		.dots-gray-lt-white {
+			.swiper-pagination-bullet {
+				@apply border-2 border-solid bg-transparent border-gray-300;
+				
+				&:hover {
+					@apply bg-gray-300;
+				}
+				
+				&.swiper-pagination-bullet-active {
+					@apply border-white bg-white;
+				}
+			}
+		}
+		
+		.dots-white-gray-lt {
+			.swiper-pagination-bullet {
+				@apply border-2 border-solid bg-transparent border-white;
+				
+				&:hover {
+					@apply bg-white;
+				}
+				
+				&.swiper-pagination-bullet-active {
+					@apply border-gray-300 bg-gray-300;
+				}
+			}
+		}
+		
+		.dots-gray-lt-black {
+			.swiper-pagination-bullet {
+				@apply border-2 border-solid bg-transparent border-gray-300;
+				
+				&:hover {
+					@apply bg-gray-300;
+				}
+				
+				&.swiper-pagination-bullet-active {
+					@apply border-black bg-black;
+				}
+			}
+		}
+		
+		.dots-black-gray-lt {
+			.swiper-pagination-bullet {
+				@apply border-2 border-solid bg-transparent border-black;
+				
+				&:hover {
+					@apply bg-black;
+				}
+				
+				&.swiper-pagination-bullet-active {
+					@apply border-gray-300 bg-gray-300;
+				}
+			}
+		}
+		
+		.dots-black-white {
+			.swiper-pagination-bullet {
+				@apply border-2 border-solid bg-transparent border-black;
+				
+				&:hover {
+					@apply bg-black;
+				}
+				
+				&.swiper-pagination-bullet-active {
+					@apply border-white bg-white;
+				}
+			}
+		}
+		
+		.dots-white-black {
+			.swiper-pagination-bullet {
+				@apply border-2 border-solid bg-transparent border-white;
+				
+				&:hover {
+					@apply bg-white;
+				}
+				
+				&.swiper-pagination-bullet-active {
+					@apply border-black bg-black;
+				}
+			}
+		}
+				
+		        
+	}	    
+	
+}

@@ -9,28 +9,13 @@
 
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
-{% set padClasses = [] %}
-{% set styleClasses = [] %}
-{% set headerClasses = [] %}
-
-{% if itemAdjusts != null %}
-	{% set styleClasses = clone(itemAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundColor', 'styleControlsButton', 'styleAdjustmentsMainHeader']).collect() %}
-	{% set padClasses = clone(itemAdjusts.children).type('styleControlsPadding').collect() %}
-		
-	{% set headerAdjusts = clone(itemAdjusts.children).type('styleAdjustmentsMainHeader').one() %}
-	{% if headerAdjusts != null %}
-		{% for headerItem in clone(headerAdjusts.children).collect() %}
-			{% set headerClasses = headerClasses|merge([headerItem]) %}
-		{% endfor %}		
-	{% endif %}
-{% endif %}
 
 <ul class="repeater-list-text anim-pass">
 {% for repeaterItem in repeaterData %}	
-	<li {{ gMacros.buildClassList('elem-block repeater-list-item repeater-list-text-item', styleClasses, null) -}}>
+	<li {{ gMacros.buildClassList('elem-block repeater-list-item repeater-list-text-item', listItemOuterClasses, null) -}}>
 		<div class="anim-wrapper anim-child">
-			<div {{ gMacros.buildClassList('inner repeater-list-text-item-inner', padClasses, null) -}}>
-				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-text-item-header', headerClasses, null) -}}>
+			<div {{ gMacros.buildClassList('inner repeater-list-text-item-inner', listItemClasses, null) -}}>
+				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-text-item-header', listItemHeaderClasses, null) -}}>
 	  			<a href="{{ repeaterItem.url }}">{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>
 				</{{ repeaterHeadingLevel }}>
 				{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		

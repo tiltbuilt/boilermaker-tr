@@ -1,0 +1,163 @@
+defaultPlacement: end
+fieldLayouts:
+  f0d16416-6886-4bf9-a7f7-fcfa5ad0cbdb:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 09c1ec87-5136-42d2-a2f2-699d3006f070
+            warning: null
+            width: 100
+          -
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: verbb\navigation\fieldlayoutelements\NodeTypeElements
+            uid: 7dc34aaf-d75e-495c-9cdd-3aa2c48c8b81
+            warning: null
+          -
+            attribute: newWindow
+            id: null
+            instructions: null
+            label: null
+            mandatory: false
+            orientation: null
+            requirable: true
+            required: false
+            tip: null
+            translatable: false
+            type: verbb\navigation\fieldlayoutelements\NewWindowField
+            uid: c4ffd3f7-8d0a-4dae-b250-f04f6b64abed
+            warning: null
+            width: 100
+        name: Node
+        uid: 18e01c5f-21ec-44ea-a78b-c9c436eee8b1
+      -
+        elements:
+          -
+            attribute: urlSuffix
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            autofocus: false
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            mandatory: false
+            max: null
+            maxlength: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            translatable: false
+            type: verbb\navigation\fieldlayoutelements\UrlSuffixField
+            uid: c31f8e25-f004-43a0-8286-f6d6b71d5cbc
+            warning: null
+            width: 100
+          -
+            attribute: classes
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            autofocus: false
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            mandatory: false
+            max: null
+            maxlength: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            translatable: false
+            type: verbb\navigation\fieldlayoutelements\ClassesField
+            uid: e565c7fe-e566-4371-a161-c417cfd42241
+            warning: null
+            width: 100
+          -
+            attribute: customAttributes
+            id: null
+            instructions: null
+            label: null
+            mandatory: false
+            orientation: null
+            requirable: true
+            required: false
+            tip: null
+            translatable: false
+            type: verbb\navigation\fieldlayoutelements\CustomAttributesField
+            uid: 282f0694-1826-48e2-b24f-df65301e64bd
+            warning: null
+            width: 100
+        name: Advanced
+        uid: f9856f27-f90e-4794-856a-3e8bccadff89
+handle: testNavCollection
+instructions: ''
+maxNodes: null
+name: 'Test Nav Collection'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+siteSettings:
+  12c30846-c1db-40fd-aa5a-3af9bc56847f: # $SITE_NAME
+    enabled: true
+sortOrder: 2
+structure:
+  maxLevels: null
+  uid: e01d2d5a-2328-4fa0-a98a-34084fa33513

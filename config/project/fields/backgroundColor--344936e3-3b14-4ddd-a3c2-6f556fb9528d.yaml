@@ -1,67 +1,128 @@
 columnSuffix: ifervxog
-contentColumnType: string
+contentColumnType: text
 fieldGroup: 7f0146e4-cfae-4bc2-a68b-396c0fa8e2d6 # Background Controls
 handle: backgroundColor
 instructions: null
 name: 'Background Color'
 searchable: false
 settings:
+  default: null
   options:
-    -
-      __assoc__:
+    __assoc__:
+      -
+        - 0
         -
-          - label
-          - 'Use Default'
+          __assoc__:
+            -
+              - label
+              - Transparent
+            -
+              - color
+              - '#ecfeff,#e5e7eb'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-transparent
+      -
+        - 2
         -
-          - value
-          - ''
+          __assoc__:
+            -
+              - label
+              - White
+            -
+              - color
+              - '#ffffff'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-white
+      -
+        - 1
         -
-          - default
-          - '1'
-    -
-      __assoc__:
+          __assoc__:
+            -
+              - label
+              - Black
+            -
+              - color
+              - '#000000'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-black
+      -
+        - 3
         -
-          - label
-          - Transparent
+          __assoc__:
+            -
+              - label
+              - 'Light Gray'
+            -
+              - color
+              - '#d1d5db'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-gray-300
+      -
+        - 4
         -
-          - value
-          - bg-transparent
+          __assoc__:
+            -
+              - label
+              - 'Medium Gray'
+            -
+              - color
+              - '#9ca3af'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-gray-400
+      -
+        - 5
         -
-          - default
-          - ''
-    -
-      __assoc__:
+          __assoc__:
+            -
+              - label
+              - 'Dark Gray'
+            -
+              - color
+              - '#1f2937'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-gray-800
+      -
+        - 6
         -
-          - label
-          - Black
-        -
-          - value
-          - bg-black
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - White
-        -
-          - value
-          - bg-white
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - Red
-        -
-          - value
-          - bg-red
-        -
-          - default
-          - ''
+          __assoc__:
+            -
+              - label
+              - Red
+            -
+              - color
+              - '#FF0000'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg-red
+  palette: Backgrounds
+  useConfigFile: false
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Dropdown
+type: percipiolondon\colourswatches\fields\ColourSwatches

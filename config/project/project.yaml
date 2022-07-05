@@ -1,4 +1,4 @@
-dateModified: 1656441569
+dateModified: 1657047820
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -28,20 +28,26 @@ fs:
 meta:
   __names__:
     0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
+    0d3d2911-53a6-464a-b04b-54fc8789f80e: 'Style Set - Section' # Style Set - Section
+    0e87007f-e6d4-488d-a37f-e4f1da227330: 'Standalone Accordion' # Standalone Accordion
     1acfdc52-cb76-4bd9-9286-5e59bc27def6: 'Slider Next Icon' # Slider Next Icon
+    1b522076-424a-45db-abff-b3a74931323f: 'Style Set - Slide' # Style Set - Slide
     01bf235c-0b3d-4a9e-af7b-5121a7f92b25: 'List - Count' # List - Count
     1bf643d4-1bb3-4e85-abe5-0a6510c964a4: Animations # Animations
+    1f46d766-e7d5-45a3-8b4e-577f84ec828c: 'Right Border Size' # Right Border Size
+    02a4f8c5-637d-405b-a6c1-1f01bdac1c01: 'Style Set - Content Text' # Style Set - Content Text
     02aa3c8d-1bfe-4d94-bd49-d0aecbb10da6: 'Font Weight' # Font Weight
     02b5d1f7-4316-41c9-8a1b-bebea399fd40: 'Slide Content' # Slide Content
     2bd882c5-a5b9-4492-9696-62f61b41ea33: 'Link Settings' # Link Settings
     2d6da937-f615-448e-88cc-1e89e17e2957: 'Content Wrapper' # Content Wrapper
-    2d9ded80-74be-40bd-83a0-59c20a21643b: 'Style Controls - Image Size' # Style Controls - Image Size
+    2f4d6e54-3d3c-4398-ae2e-81bb5f25738e: 'Style Set - Subhead' # Style Set - Subhead
     2f49ebd8-325a-471d-9075-58a0eabb883e: 'Top Margin' # Top Margin
     2f4643b8-3586-490a-af8c-496d257a8736: 'Multicolumn Layout Row' # Multicolumn Layout Row
     3a0a5767-f2d8-4168-89fd-4c6f39d52a13: 'Panel Content' # Panel Content
     03ab034d-edb4-4efb-b319-52e7e5093f03: 'List - Specific Entries' # List - Specific Entries
     3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35: 'Long Format Text' # Long Format Text
     3afc952e-2931-458c-8b3d-ee8a1664c529: 'Repeater - Content Links' # Repeater - Content Links
+    3b9d58ab-ed7a-4da0-9f56-0c677e7ce3db: 'Accordion Spacing' # Accordion Spacing
     3e6dec31-cb29-4a91-a2a6-be03d236753f: Slides # Slides
     3e54e327-a9a9-4587-b91e-4775a1f7dd3f: 'Header Text' # Header Text
     4ba3c88d-ba55-41ee-9170-0162c180b871: 'Button Group' # Button Group
@@ -50,10 +56,10 @@ meta:
     4c8a1b99-37ef-424c-9a73-26d40caccc9d: Autoplay # Autoplay
     4d60bd72-6857-44f7-a62e-e36f9cf061b4: 'Company Info' # Company Info
     4f4cef2e-3a2d-4e87-b045-5d2699ebcbb0: 'Style Adjustments - Slide' # Style Adjustments - Slide
+    4f8b5bb8-0bca-4401-b96d-5a2b1bb273ed: 'Style Set - Page Header' # Style Set - Page Header
     5be0f654-b4af-4c4a-811a-d51d305965d9: 'Notification Bar Text' # Notification Bar Text
     5ca2acc9-e150-4c68-acd9-3600a955a648: Accordions # Accordions
     5deec8ca-f41a-4b0d-bb57-8a4a83895bb6: Images # Images
-    6a44ca5b-206c-44a9-af27-21b5aee28b45: 'Style Controls - Text Wrap' # Style Controls - Text Wrap
     6b175c77-e00a-468d-b930-025488a8778e: 'Footer Embeds' # Footer Embeds
     6b4735a7-3015-47c1-8572-f58fe16b8046: 'Left Margin' # Left Margin
     6be8dbce-de0e-47d0-a0a1-888c876cc403: 'Heading Level' # Heading Level
@@ -61,6 +67,7 @@ meta:
     6ca71cdf-5677-41f2-a6d0-1b08e4b330c4: 'Accordion Set - Allow Multiple Open Panels' # Accordion Set - Allow Multiple Open Panels
     6ce9653e-31c5-415e-a58c-31bf46b25998: 'CTA - Small' # CTA - Small
     6d3b0bc0-34da-4b98-95ac-ea8c16f70a65: 'Slider Previous Icon' # Slider Previous Icon
+    06d274a1-d736-4505-b5e7-0f77c661773e: 'Style Set - Button' # Style Set - Button
     06ebfcbe-5ce4-466d-b32d-d18f5c98c099: 'Embed Code' # Embed Code
     6f7cdb29-cb8b-47ea-9e30-9dd9ccd30216: 'Style Adjustments - Button' # Style Adjustments - Button
     6fa27166-9a3d-4f43-85c4-7c290970f314: 'Text Shadow' # Text Shadow
@@ -70,8 +77,9 @@ meta:
     07acce1b-2462-4302-8722-8e90b41670f6: 'Row Columns' # Row Columns
     7b80b96c-716d-401c-9940-9808b70632fd: 'Page Builder - Containers' # Page Builder - Containers
     7cfd4f7d-3f60-4509-94f6-2ff20ffbf96d: 'Show Excerpt' # Show Excerpt
-    7dffed86-acb0-4874-b66a-d89a8fa4f47d: 'Style Adjustments - Icon' # Style Adjustments - Icon
+    07dde381-9c5f-4368-89c3-33fad5db0ff9: 'Top Border Size' # Top Border Size
     7e860b09-958f-4a2e-9c83-5afaf8167b7d: 'Style Adjustments - Tab Panel' # Style Adjustments - Tab Panel
+    7e784580-052a-447e-bfd5-94414abfaa99: 'Style Set - Button Group' # Style Set - Button Group
     7f0146e4-cfae-4bc2-a68b-396c0fa8e2d6: 'Background Controls' # Background Controls
     7f8d2464-dd61-443e-97d4-0ce8137cc9ef: 'Background Size' # Background Size
     7f9f54c1-a904-47d7-8882-3e3775e4f713: Buttons # Buttons
@@ -80,34 +88,37 @@ meta:
     08afc34f-5da9-4c20-80f2-884ae194e695: 'Style Adjustments - Long Format Text' # Style Adjustments - Long Format Text
     8b211e5a-b602-4bdd-b531-777210b608d1: 'Column Order' # Column Order
     8bc830c1-371e-45af-9e26-b2b41f946480: 'Social Media Links' # Social Media Links
+    8ce60b3e-2c00-46e5-bf85-c3e376881e97: 'Button Left Margin' # Button Left Margin
     8e6a8ae9-43d1-49e6-8634-e075f4d87a89: 'Background Image' # Background Image
     8f315b09-46cf-425c-8fff-8b052a202dc8: 'Tab Title' # Tab Title
     08f385be-023c-42db-9198-dc4ba042a730: 'Image Size' # Image Size
     8f438a7d-e520-49ce-87d6-89fe4651b5f3: 'Page Header Buttons' # Page Header Buttons
-    9abf0812-f3c7-45e9-9322-f715a4d4a279: 'Style Adjustments - Caption' # Style Adjustments - Caption
-    9aef5c65-b9e0-4602-9d9a-e2683c03d6d1: 'Style Controls - Button Styling' # Style Controls - Button Styling
+    8f277180-6b3f-4530-8f63-0b6ab31bfae8: 'Style Set - Column' # Style Set - Column
     9af802da-9af4-4db1-a824-1c3a26737350: 'Page Builder - Styling' # Page Builder - Styling
     9c3c6834-2633-4d89-ae1b-d0897a9bee7c: 'List Item Display Style' # List Item Display Style
     9cc1146d-c859-4330-919e-d8a8da46d8ad: 'Right Margin' # Right Margin
     9e4325cf-f265-4742-8b95-0c66626b9103: 'Background Repeat' # Background Repeat
     12c30846-c1db-40fd-aa5a-3af9bc56847f: $SITE_NAME # $SITE_NAME
+    14e13a73-f796-4c42-8cae-63d19408bd2c: 'Style Set - Main Header' # Style Set - Main Header
     15e02460-e8b5-47da-98ed-78bdb8544472: 'Page Header' # Page Header
     20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
     22a053a5-a4ce-4380-ba58-45909af57b1f: Container # Container
+    29cd508b-77c8-43b8-99ed-97325424e4f3: Borders # Borders
     33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
     38b2d069-fc9a-47d3-92fe-dda7740ac324: Columns # Columns
+    42abf2d9-23e0-4cda-80a9-ff015bc314ea: 'Style Set - Accordion' # Style Set - Accordion
     42ed3a6e-60bd-447b-84ab-5057c4ebe215: 'Show Page Footer' # Show Page Footer
-    43d6f503-31d7-4e98-9433-57f53334cbbe: 'Style Controls - Background Image' # Style Controls - Background Image
     50c41aa0-a307-4f48-b863-57a0326ccfd7: 'Link Settings' # Link Settings
     52c8510f-7a0e-43dd-b081-7ab3b31828b9: Embed # Embed
-    61d3b035-6f86-4d6a-9a4b-fe85a81a440e: 'Style Controls - Box Shadow' # Style Controls - Box Shadow
+    60fe403c-2e8f-4206-8d14-bf4ef59eac14: 'Style Set - Header Block' # Style Set - Header Block
+    62fcdeb8-54af-421a-86e9-3ee8c569ddcc: 'Button Color' # Button Color
+    64c3cc0e-9e89-4534-8dfe-c843caabe996: 'Style Set - Container' # Style Set - Container
     69cf680d-8c01-4c06-a651-d42ca754821d: 'Repeater Links' # Repeater Links
     69de199e-8337-4836-a446-cb00cd81b78d: Home # Home
     72b4dadd-d8de-42a0-a437-ed4cf5fef754: 'Style Adjustments - Page Header' # Style Adjustments - Page Header
-    72e1d65a-fb33-44fa-95f1-110126a123fa: 'Style Controls - Display' # Style Controls - Display
-    74d44f30-825a-42fc-82a6-721093f4e27a: 'Style Controls - Icon Styling' # Style Controls - Icon Styling
+    74bfcee1-4328-4223-a5e8-73cefe050b43: 'Accordion & Tab Panel Background Color' # Accordion & Tab Panel Background Color
     76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
-    81a821f5-2bcc-416e-9391-c9f56d898530: 'Style Controls - Margins' # Style Controls - Margins
+    76cc8c13-1eee-4978-b281-e7946e576168: 'Style Set - Tab Set' # Style Set - Tab Set
     82f81f4c-6383-4eec-9643-20ae33adb7b7: 'Style Adjustments - Container' # Style Adjustments - Container
     84babc6d-4432-426d-8a6b-2856e35ec2ad: Form # Form
     88daa5b5-8ec4-4e8d-be7f-9f1918a8fd2b: 'Style Adjustments - Button Group' # Style Adjustments - Button Group
@@ -115,28 +126,30 @@ meta:
     91f12310-3af3-454b-9212-382e6a4227d6: 'Style Adjustments - Accordion Set' # Style Adjustments - Accordion Set
     92f2e46b-430e-4762-935d-0db544216ec2: 'Style Adjustments - Wrapper' # Style Adjustments - Wrapper
     116b0f4f-13b5-47fe-9daa-6716a09821a4: 'Accordion Icon' # Accordion Icon
-    132ebecd-9bc6-46d3-a23e-552ca8eadd42: 'Style Controls - Content Alignment' # Style Controls - Content Alignment
     133bbdba-eb78-4a0e-924c-dfc4af50bb53: 'Main Header Base Class' # Main Header Base Class
+    146b1105-58ed-47c7-bca1-b6df9980d37d: 'Full Width Button' # Full Width Button
     217da411-10b4-4af2-bd6c-010f5ff3260b: 'Padding & Margins' # Padding & Margins
     228fee23-f613-44f8-8fe2-1ed8ddda25e4: 'Long Format Text' # Long Format Text
-    253df430-b9f1-4850-887c-978f92669ef6: 'Style Adjustments - Accordion' # Style Adjustments - Accordion
     0282ab1a-d90f-4c56-bc80-55d336e8749e: Layouts # Layouts
     291aeebd-5376-4a88-8bc5-dcbc98ae4f8f: 'List - Items per Page' # List - Items per Page
     315a5a65-c63f-4a6c-8b96-9817783d8d4b: Modals # Modals
     318ddb9d-6a63-4a8c-a127-3f6ae4f3caef: 'Text Case' # Text Case
     345c96e3-abd1-4cbd-bcef-8688a9dcd0f3: 'Top Padding' # Top Padding
     349fdddc-b026-4689-a2a0-886d0ae1ef23: 'Column Size' # Column Size
-    481b4191-d213-436f-8f88-9d0d779aa4c3: 'Style Controls - Type' # Style Controls - Type
     485fa80c-9c77-4d0f-89d6-fca5f578416a: 'Node Styling' # Node Styling
-    551e08cb-8e1c-4a13-be36-c5ea51d18d39: 'Child Content Containers' # Child Content Containers
+    551e08cb-8e1c-4a13-be36-c5ea51d18d39: 'Content Containers' # Content Containers
     579ca8e8-d323-417e-8775-29705bb3e28a: Accordion # Accordion
     616d3f20-6be2-43a3-87a9-0a0d54e89f20: 'Icon Size' # Icon Size
+    637d4a82-6521-4403-80a8-dac65cd56a4e: 'Style Set - Row' # Style Set - Row
     670b5abf-edf9-484c-a6bb-b817a00336f0: 'Display Setting' # Display Setting
     678c7015-5101-4eea-a93d-eda6ed0083d1: Italic # Italic
     691be60b-0d4c-4c75-b8bb-4f75afbb4315: 'Text Wrap Image Position' # Text Wrap Image Position
-    749aa3ee-0648-4955-9e21-a0ed5ff5d8cb: 'Style Adjustments - Container 2 Column' # Style Adjustments - Container 2 Column
+    740d1cf9-0b1e-4050-908e-d95ef2083194: 'Style Set - Accordion Set' # Style Set - Accordion Set
+    749aa3ee-0648-4955-9e21-a0ed5ff5d8cb: 'Style Adjustments - Special Container' # Style Adjustments - Special Container
+    749e3a06-54bd-476f-95ea-97b91f43c692: 'Caption Title' # Caption Title
     938c6226-2dee-4440-a989-1741df63e4e4: 'Boilermaker Craft 4' # Boilermaker Craft 4
     952d9143-2f31-4712-97d6-009d4d9b0265: 'Header Button Group Class List' # Header Button Group Class List
+    964b590b-9008-4fe1-832d-bb0f6885b513: 'Border Color' # Border Color
     982b6185-6d4a-4655-b767-aa8cc325e579: 'Image Placement' # Image Placement
     996a1b39-1f1e-4078-a3cc-8ea3ec3b4560: 'Tab Panel' # Tab Panel
     1281a243-241d-495f-85d7-71bd28adf095: 'Style Adjustments - CTA Small' # Style Adjustments - CTA Small
@@ -148,11 +161,12 @@ meta:
     3564fb89-095f-4f5e-8c17-b699a15ea6dd: 'Page Header Custom Classes' # Page Header Custom Classes
     5217c960-8bc3-45ea-a0f2-2e4f539b53b5: 'Repeater - All Entry by Section List' # Repeater - All Entry by Section List
     5553a528-f723-48bf-965f-6d720f5df686: 'SEO - Description' # SEO - Description
+    5812b692-0bf7-4342-a131-62a61ed68f7a: 'Style Set - Slider Set' # Style Set - Slider Set
     7250fbbb-07b2-4c31-a5b0-5f586c469ce2: 'Page Builder - Rows & Columns' # Page Builder - Rows & Columns
     8434d96d-7ef0-489c-b77d-fea9a4f76737: 'Subhead Class List' # Subhead Class List
     8933b575-f2c0-4930-a9fa-ec450aed0a0c: 'Styling Adjustments' # Styling Adjustments
     9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
-    9455cb57-c765-4942-bd7e-4e4cc37415fc: 'Style Controls - Column Size' # Style Controls - Column Size
+    9180e02e-2edc-430b-9c39-05f85a98784f: 'Style Adjustments - Group Button' # Style Adjustments - Group Button
     9651ecc9-b7a0-4294-bdb6-9e21fb575c08: 'Content Elements' # Content Elements
     13662d93-bce6-47d1-b655-28788cfec494: 'Main Menu' # Main Menu
     14205de1-1461-4c5e-bba4-807303cd42a1: 'Main Header Class List' # Main Header Class List
@@ -160,26 +174,34 @@ meta:
     44683fa3-9b93-4d7a-8835-3b46fdab682c: 'Slider Controls' # Slider Controls
     49453feb-0d8e-4fc0-8a1d-9f9cbc5b90a5: Sections # Sections
     56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
+    062600cc-ab78-4d82-9315-610ffa661a9a: 'Bottom Border Size' # Bottom Border Size
+    75900a8a-d66e-491c-9f52-f5364eea2e68: 'Style Set - Child Buttons' # Style Set - Child Buttons
     78748af5-2d5a-4b89-b484-db2e0243dd02: Button # Button
     79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
     87560ba9-9a3d-4aa8-afb4-858c1ec8c119: 'Column Content' # Column Content
     96950bc8-d052-4574-9e24-529f27899d2f: 'Form to Display' # Form to Display
+    101317e6-e1a6-4781-be6d-a81085b5809e: 'Test Nav Collection' # Test Nav Collection
     130672eb-9963-4871-af80-625435582f12: 'Style Adjustments - CTA' # Style Adjustments - CTA
     167456ee-f98a-48a0-8856-c9a090ed215f: 'Icon Asset' # Icon Asset
     344936e3-3b14-4ddd-a3c2-6f556fb9528d: 'Background Color' # Background Color
+    392704c8-7a48-49d5-9b11-677194d1d941: 'Style Set - Caption' # Style Set - Caption
+    689596f7-042c-4a71-a9fb-dc50179596e9: 'Style Set - Repeater' # Style Set - Repeater
     857252fe-f251-456e-ac8d-187a340c8807: 'Letter Spacing' # Letter Spacing
     992412a7-fff9-45d8-af57-43b55750ecdd: 'Style Adjustments - Images' # Style Adjustments - Images
     1371181e-0e3f-44fe-bfdd-4848b6b55d74: 'Page Builder - Sliders' # Page Builder - Sliders
     2157587f-ba0b-4f33-8ff3-29dd650e3bc4: 'Image Asset' # Image Asset
     3908713c-a4c2-4e4d-ab34-8f92abacf276: 'List - Order' # List - Order
     5925614f-5c61-4d48-a905-862a3e29d09f: 'Slide Row Columns' # Slide Row Columns
-    05937322-bebb-45f5-8c1e-2cf8d80e41bc: 'Style Adjustments - Subhead' # Style Adjustments - Subhead
     6237434b-4af7-4d60-97a3-b055764ac5ce: 'Sidebar Content' # Sidebar Content
     7450367a-cdf2-446d-ad60-d78b932299d5: Globals # Globals
+    7478980a-0616-4520-8888-14f12638f436: 'Group Modal Button' # Group Modal Button
     09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
     17007589-f6e2-4b62-849b-e627a43f3063: 'Slide Content Column' # Slide Content Column
     29714022-fcc0-4fd4-b828-5c8687c242e1: 'Container with Sidebar' # Container with Sidebar
+    41270682-d5ba-4ef6-926f-5445b80fe55f: 'Style Set - Video' # Style Set - Video
     43791594-97eb-4702-a55d-9ea41a53d6b8: 'Text Content' # Text Content
+    45293253-b0dc-4cb2-a388-cd234cf28442: 'Style Set - Long Text' # Style Set - Long Text
+    45471281-5b1e-4831-a7c9-3fe43d728275: 'Left Border Size' # Left Border Size
     46469126-9a53-4817-9f4b-ce78d8df108e: 'List - Parent Entry' # List - Parent Entry
     54510867-1090-42cf-9962-0f0da66d1809: Default # Default
     59188785-05ee-4819-af85-d78f4464f118: 'Style Adjustments - Form' # Style Adjustments - Form
@@ -193,13 +215,18 @@ meta:
     a7faa85f-4be1-4101-8d46-c1fc42bbdeeb: 'Page Builder - Accordions' # Page Builder - Accordions
     a36da9f4-1661-4860-b462-766aa2d4e97d: 'Device Size' # Device Size
     a81a50e3-5d81-4206-a7eb-6be69a2cd056: Image # Image
+    a98ae0e4-a423-490c-9e75-2f3fe8a963fb: 'Color Scheme' # Color Scheme
     a207b59b-74c3-4aca-9e81-652173d3785a: 'Style Adjustments - Repeater Item' # Style Adjustments - Repeater Item
     a664d687-8900-46f2-a7ad-172be91e20fc: 'Slider Set' # Slider Set
+    a751dd8a-4610-4da1-bb23-a20811e94d5f: 'All Borders Match?' # All Borders Match?
     a79602ea-bbd9-41c8-9d75-9d134bc6951f: Tabs # Tabs
+    a557370a-4eea-459d-8cd7-d7290b7dfa52: 'Style Adjustments - Standalone Accordion' # Style Adjustments - Standalone Accordion
+    a9923610-5429-4721-849f-a32069ac727d: 'Style Set - Repeater Item' # Style Set - Repeater Item
     aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
     aafa2ab8-b04b-41f3-95b1-7e15b8514a42: 'Style Adjustments - Section' # Style Adjustments - Section
-    abfaf225-b8f2-4839-bd2b-70244a0ec786: Styles # Styles
+    abfaf225-b8f2-4839-bd2b-70244a0ec786: 'Device Style Sets' # Device Style Sets
     ac8a5abf-cb71-4272-8634-0442dff18f5f: 'Half Width Column' # Half Width Column
+    ac594e2f-6124-465e-9b70-d85d3ba149c7: 'Border Style' # Border Style
     acb65621-fdc6-41e3-b982-3f8c5371e3e4: 'Icon Color' # Icon Color
     adafad53-959c-487b-98e7-6df775004a2c: 'Layout Containers' # Layout Containers
     adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
@@ -208,50 +235,66 @@ meta:
     b08ce1f2-612f-4e19-bc14-de46aac5b691: 'Style Adjustments - Header Block' # Style Adjustments - Header Block
     b1f1fe04-0646-4432-9bd3-1b441e294004: 'Sidebar Column' # Sidebar Column
     b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
+    b6d3b3e8-1c0b-4db1-8b10-742d5e4d5120: 'Style Set - Standalone Accordion' # Style Set - Standalone Accordion
     b7b7bc3f-a98f-400f-b54b-1e35e9f26c85: 'Nav List to Display' # Nav List to Display
+    b9bf5946-6b5a-4906-b357-12ca26e1a7c6: 'Style Set - Image' # Style Set - Image
     b53c9f0c-9969-4055-ab99-c8e641179ad2: 'Image Caption' # Image Caption
     b53dd5c2-c363-4ceb-acd2-c871e7324dd7: 'Slider Size' # Slider Size
+    b185c524-c0e7-47b6-8dee-d2b1a6a28343: 'Style Set - CTA Small' # Style Set - CTA Small
     b416175b-b634-4f66-86ca-a58a914c85d8: Header # Header
     b7148740-1499-44bc-a5ba-55492dd9c952: 'Container - 2 Column' # Container - 2 Column
+    b8577516-fcac-40b9-b121-686710d28ef4: 'Show Title in Caption' # Show Title in Caption
+    ba92e6b1-1ae4-479e-b820-836d4fa9bd17: 'Style Set - CTA' # Style Set - CTA
+    bcad12c1-49ff-4c3d-af9d-736955ba378b: 'Style Set - Special Container' # Style Set - Special Container
     bda39666-95a2-4a19-b0a1-f24b1dff1fa3: 'Thumbnail Placeholder Image' # Thumbnail Placeholder Image
     be1a108c-3742-47bf-a723-ec1ddc308790: 'Icon Alignment' # Icon Alignment
     be7bfbf5-0157-44df-a6f5-935aba22dab9: 'Block Layout' # Block Layout
     be59c1e3-e430-409f-8dae-380cee1a446d: 'Container Content' # Container Content
+    be957bc6-632c-4e27-b53b-49c07d0d5815: 'Dot Color' # Dot Color
     be45752b-5950-4495-916b-645055cd1353: Excerpt # Excerpt
     bec10435-8e4b-4dbd-90fa-15ad94e24fd5: 'Reveal Animation' # Reveal Animation
     bf063701-6908-4ca1-aa87-5b19c885f3b7: 'CTA - Standard' # CTA - Standard
     bf87e9c7-6b90-4f9b-95c9-361309b94dde: 'List Item Heading Level' # List Item Heading Level
     bfd09ef3-955d-4497-ad10-acd77efcccc4: 'Content Admin' # Content Admin
+    c1bb8d06-3151-48d5-803a-0141dbd15530: 'Style Set - Tab Panel' # Style Set - Tab Panel
     c1cbe587-fbcb-4f85-b283-9490f65fde90: 'Page Builder - Content Elements' # Page Builder - Content Elements
     c3ae950d-c826-4e68-9ab8-cf9469de1a53: 'Accordion Content' # Accordion Content
     c9e32de2-ee61-4f72-a3b6-8b9dec0e7de0: 'Social Link' # Social Link
+    c26b1b23-1cec-4cf8-9746-e265b07335d6: 'Caption Style' # Caption Style
     c32f95ec-cd66-44d0-9333-b5825adc6357: 'Section Containers' # Section Containers
     c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
     c54b2a49-78b3-43cb-bf40-1f652256611f: 'Repeater Item - Content Link' # Repeater Item - Content Link
+    c68fea6b-214c-4d75-a3c6-9ae6225e0893: 'Button Shadow' # Button Shadow
     c72a1dde-4ae3-46ae-a0b4-8ab01cd15e99: 'Repeater - Nav Collection' # Repeater - Nav Collection
     c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
     c95b389d-885a-4d6c-9b12-6e3e48df0b83: 'Wrapper Content' # Wrapper Content
-    c789bb00-ab5d-4a5a-af3e-99a82bcece7f: 'Style Controls- Background Color' # Style Controls- Background Color
+    c826d302-6590-4881-9bf7-c12d233f3992: 'Border Size' # Border Size
     c1225b8d-2770-40e5-92db-55a8e0acebd8: Accordions # Accordions
     c9973b20-8f48-429c-be55-dd0498255786: 'Page Builder - Repeaters' # Page Builder - Repeaters
     c2036654-1479-4180-9e87-c7cf588d25e8: 'Full Screen Width' # Full Screen Width
     c2160053-ca19-4222-b62f-ae814b3e542f: 'Container Columns - 2 Column Container' # Container Columns - 2 Column Container
     cae8de72-1b59-4faa-9532-102b16d9d3b6: Home # Home
     cb7c5f64-dd68-41d8-b463-02c872472acb: 'Simple Text' # Simple Text
+    cc3a7600-664f-4e93-a933-fb8b3d79fd71: 'Accordion & Tab Button Color' # Accordion & Tab Button Color
     cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d: 'Link URL' # Link URL
     cf7918a9-3b10-481b-a1f0-410a6574cba5: 'Right Padding' # Right Padding
     cfca2aa9-b9da-4c7c-81c6-194322b496af: Slide # Slide
     d02cb798-6a12-410b-bdea-a4d80d1543c5: 'Tab Panel Set' # Tab Panel Set
+    d5e62664-f489-4e15-aa91-33e7750370d0: 'Style Wrapper?' # Style Wrapper?
     d6a8c60a-4514-4573-9e4d-0b594703d113: 'Container Columns - Main & Sidebar' # Container Columns - Main & Sidebar
+    d6f98e6d-c803-4d8c-ad23-d8a284654a84: 'Style Set - Form' # Style Set - Form
+    d9ca4d46-5590-4e35-bc9f-5ccc54122c8a: 'Background Image Opacity' # Background Image Opacity
+    d9cc0dc2-3e69-4f79-b50c-f73d6906f806: 'Column Vertical Alignment' # Column Vertical Alignment
     d86c02d7-08d3-44c2-b76c-aa170103e7db: 'Subhead Level' # Subhead Level
     d533a3e0-1a9b-4190-af12-f6b1a356c25a: 'Bottom Margin' # Bottom Margin
     d559fe04-efd1-43e2-80b1-d4d46c2d2ae2: 'Subhead Text' # Subhead Text
     d1336a2e-90ba-4ab3-b632-a1f61e700c2d: 'Block Controls' # Block Controls
     d7701d3b-7087-4a4d-bd81-52a606ed6e75: Tabs # Tabs
+    dab5bc83-7229-4de4-9a9d-f042de16411a: 'Style Set - Icon & Content' # Style Set - Icon & Content
+    db4d0903-d1b2-4945-bef1-8b8cbba421ee: 'Section Color Scheme' # Section Color Scheme
     db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
-    db9420fc-627a-4ec2-bf8f-058474f480bb: Button # Button
+    db9420fc-627a-4ec2-bf8f-058474f480bb: 'Standalone Button' # Standalone Button
     def70282-b293-46ab-9193-35c6fb708ead: Column # Column
-    e5e5fb70-98d0-40e8-9117-3e5a87c9caf5: 'Style Controls - Padding' # Style Controls - Padding
     e8c93d59-48dc-424d-82b9-331fce7ff16b: 'Icon and Content' # Icon and Content
     e16c576c-c525-440b-8ca8-fcfb71976823: 'Link Name' # Link Name
     e28d1c24-f3ad-42e9-9ddb-f9837ee9f9b4: Entries # Entries
@@ -261,20 +304,21 @@ meta:
     ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
     eb8fb4b6-5d17-4f46-a4be-93e8e32860ce: 'Text Content' # Text Content
     eb783ee2-8b1b-4aed-9e1a-a4b3dd67946e: 'Style Adjustments - Repeater' # Style Adjustments - Repeater
-    eb156870-ab99-4f11-8c63-03c5e16515ef: 'Style Adjustments - Intro Text' # Style Adjustments - Intro Text
+    ec9d05d3-103a-4613-a1f0-6b1960fccaab: 'Style Set - Icon' # Style Set - Icon
     ee8ca78d-7fd4-4a57-9b62-5c9848f07ecc: 'Style Adjustments - Video' # Style Adjustments - Video
-    ee714ecd-7f03-475b-aac8-8b483a18eeac: 'Style Adjustments - Main Header' # Style Adjustments - Main Header
-    ef79f987-9cbf-4db0-afac-598a0eb85601: 'Style Controls - List Image' # Style Controls - List Image
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f2e3acea-f4ac-4967-92ce-a82e4e944990: 'Style Adjustments - Icon & Content' # Style Adjustments - Icon & Content
     f6d84ca5-0262-466c-90b8-d1c1e2c6fab7: 'Accordion Set' # Accordion Set
     f6f7710d-60a4-4b16-88a6-4a9e2bda96e5: 'Style Adjustments - Row' # Style Adjustments - Row
     f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
-    f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Modal Trigger Button' # Modal Trigger Button
-    f66e9217-b742-47b0-a49c-fe679c02685d: 'Style Controls - Row Alignment' # Style Controls - Row Alignment
+    f8db0dbb-d033-4cd4-9556-cd1ae60191c2: 'Style Set - Wrapper' # Style Set - Wrapper
+    f45cfee4-faf9-4e5b-9b15-385251ca84ae: 'Standalone Modal Button' # Standalone Modal Button
     f82ba9bb-67c4-404e-9e5b-e5820caedde4: 'Header Image Class List' # Header Image Class List
+    f115b81c-d4ab-4eff-bd39-91d4bd46bf32: 'Style Set - Group Button' # Style Set - Group Button
     f200de49-4c87-41f9-9a85-725ced12f7ca: 'Modal to Display' # Modal to Display
     f314f126-29d7-43dd-8631-3dff02728310: 'YouTube Video ID' # YouTube Video ID
+    f432a083-0109-4062-909e-e13611c104c3: 'Group Button' # Group Button
+    f493aefd-5bad-4315-8048-ad90bca89919: 'Button Right Margin' # Button Right Margin
     f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2: 'Custom Class List' # Custom Class List
     f5015dd1-01ba-4268-88f1-c5631c0fec06: 'Slide Content Row' # Slide Content Row
     f411052f-1a69-4dc0-bb4a-fa64eb492d54: 'Link Icon' # Link Icon
@@ -288,8 +332,24 @@ meta:
 plugins:
   blitz:
     edition: standard
-    enabled: true    
-    schemaVersion: 4.1.2
+    enabled: true
+    licenseKey: AO97MS5JQC823WTQLQHM3DY9
+    schemaVersion: 4.2.0
+    settings:
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\CommerceIntegration
+  colour-swatches:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.4.3
+  cp-css:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      additionalCss: ''
+      cacheBusting: true
+      cssFile: $NEO_STYLES_PATH
   elements-panel:
     edition: standard
     enabled: true
@@ -304,7 +364,8 @@ plugins:
     schemaVersion: 1.0.0
   freeform:
     edition: pro
-    enabled: true    
+    enabled: true
+    licenseKey: FOPF6QVFGZ7L7KKQS2D92KU9
     schemaVersion: 4.2.2
     settings:
       ajaxByDefault: true
@@ -387,12 +448,13 @@ plugins:
       twigInHtmlIsolatedMode: true
       updateSearchIndexes: true
   guide:
-    edition: pro
+    edition: lite
     enabled: true
     schemaVersion: 3.0.0
   icon-picker:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: FAX2MJE1IPZNUEN6A2EKXKVQ
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -402,7 +464,8 @@ plugins:
       redactorFieldHandle: ''
   imager-x:
     edition: pro
-    enabled: true    
+    enabled: true
+    licenseKey: T3KRO013RJCIA2Y11DDU4UQB
     schemaVersion: 4.0.0
   minify:
     edition: standard
@@ -410,11 +473,13 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: I49YSINKNTCM41D3UU7ZFHPG
     schemaVersion: 2.0.2
   neo:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: LREXT6YVWJWPGZAZSCY1WXMS
     schemaVersion: 3.0.4
   redactor:
     edition: standard
@@ -434,7 +499,8 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: PDYLE0Z2D5I1PQI2N1Z29DAO
     schemaVersion: 3.0.10
   section-and-product-type:
     edition: standard
@@ -442,7 +508,8 @@ plugins:
     schemaVersion: 1.1.1
   seomatic:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: Q2HY7KWEP06IK01M0IWR6YOE
     schemaVersion: 3.0.11
   twigpack:
     edition: standard
@@ -455,7 +522,7 @@ plugins:
 system:
   edition: pro
   live: true
-  name: $SITE_NAME
+  name: 'Boilermaker Craft 4'
   retryDuration: null
   schemaVersion: 4.0.0.9
   timeZone: America/Chicago

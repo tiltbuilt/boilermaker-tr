@@ -6,13 +6,17 @@ fieldLayouts:
   66ea014e-81ad-4f6a-8821-5aee92e9d75a:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
             uid: dcb9d3fa-9b13-4805-8cf9-fa4d00939814
+            userCondition: null
         name: Slides
         uid: a2b18dce-2c93-4b3f-908c-2bb1c741cd78
-group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Child Content Containers
+        userCondition: null
+group: 551e08cb-8e1c-4a13-be36-c5ea51d18d39 # Content Containers
 handle: childrenSlider
 maxBlocks: 0
 maxChildBlocks: 6
