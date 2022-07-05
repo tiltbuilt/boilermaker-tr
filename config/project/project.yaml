@@ -1,4 +1,4 @@
-dateModified: 1656970591
+dateModified: 1657006533
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -95,7 +95,6 @@ meta:
     8f438a7d-e520-49ce-87d6-89fe4651b5f3: 'Page Header Buttons' # Page Header Buttons
     8f277180-6b3f-4530-8f63-0b6ab31bfae8: 'Style Set - Column' # Style Set - Column
     9af802da-9af4-4db1-a824-1c3a26737350: 'Page Builder - Styling' # Page Builder - Styling
-    9c0eeb69-d749-4ce5-837e-3713dfe91dc0: 'Style Set - Video' # Style Set - Video
     9c3c6834-2633-4d89-ae1b-d0897a9bee7c: 'List Item Display Style' # List Item Display Style
     9cc1146d-c859-4330-919e-d8a8da46d8ad: 'Right Margin' # Right Margin
     9e4325cf-f265-4742-8b95-0c66626b9103: 'Background Repeat' # Background Repeat
@@ -200,6 +199,7 @@ meta:
     09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
     17007589-f6e2-4b62-849b-e627a43f3063: 'Slide Content Column' # Slide Content Column
     29714022-fcc0-4fd4-b828-5c8687c242e1: 'Container with Sidebar' # Container with Sidebar
+    41270682-d5ba-4ef6-926f-5445b80fe55f: 'Style Set - Video' # Style Set - Video
     43791594-97eb-4702-a55d-9ea41a53d6b8: 'Text Content' # Text Content
     45293253-b0dc-4cb2-a388-cd234cf28442: 'Style Set - Long Text' # Style Set - Long Text
     45471281-5b1e-4831-a7c9-3fe43d728275: 'Left Border Size' # Left Border Size

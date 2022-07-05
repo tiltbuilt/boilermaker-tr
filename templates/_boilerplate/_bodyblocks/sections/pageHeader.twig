@@ -17,8 +17,6 @@
 {% set buttonGroup = clone(section.children).type('childrenButtonGroup').one() %}
 {% set styleAdjusts = clone(section.children).type('styleAdjustmentsPageHeader').one() %}
 
-{# set section color scheme variable #}
-{% set colorScheme = section.colorScheme %}
 	
 {# Set block id attribute value #}
 {% if section.customId is defined and section.customId != '' %}
@@ -69,7 +67,7 @@
 		{% for fieldItem in styleSetFields %}
 		
 			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
 			{% endif %}
@@ -92,6 +90,11 @@
 				{%- set rowClasses = rowClasses|merge([classItem]) -%}
 			{% endif %}	
 			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
 		{% endfor %}
 			
 		{# Get main header styleset adjustments if any #}			
@@ -101,7 +104,7 @@
 			{% set headerFields = headerFieldLayout.getCustomFields() %}
 			{% for fieldItem in headerFields %}						
 				
-				{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
+				{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
 					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
 					{%- set headerClasses = headerClasses|merge([classItem]) -%}
 				{% endif %}	
@@ -117,6 +120,11 @@
 					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
 				{% endif %}
 				
+				{% if fieldItem.handle == 'displaySetting' and headerStyles[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
+					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
+				{% endif %}
+				
 			{% endfor %}
 		{% endif %}
 		
@@ -128,7 +136,7 @@
 				{% set subheadFields = subheadFieldLayout.getCustomFields() %}
 				{% for fieldItem in subheadFields %}						
 					
-					{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and subStyles[fieldItem.handle]|length %}					
+					{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and subStyles[fieldItem.handle]|length %}					
 						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
 						{%- set subClasses = subClasses|merge([classItem]) -%}
 					{% endif %}	
@@ -144,6 +152,11 @@
 						{%- set subOuterClasses = subOuterClasses|merge([classItem]) -%}
 					{% endif %}
 					
+					{% if fieldItem.handle == 'displaySetting' and subStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ subStyles[fieldItem.handle] %}
+						{%- set subOuterClasses = subOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
 				{% endfor %}
 			{% endif %}
 		{% endif %}
@@ -154,10 +167,10 @@
 			{% set introStyles = clone(styleSet.children).type('styleSetContentText').one() %}
 			{% if introStyles != null %}
 				{% set introFieldLayout = introStyles.getFieldLayout() %}
-				{% set introFields = subheadFieldLayout.getCustomFields() %}
+				{% set introFields = introFieldLayout.getCustomFields() %}
 				{% for fieldItem in introFields %}						
 					
-					{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and introStyles[fieldItem.handle]|length %}
+					{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and introStyles[fieldItem.handle]|length %}
 						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
 						{%- set introClasses = introClasses|merge([classItem]) -%}
 					{% endif %}	
@@ -169,6 +182,11 @@
 					{% endif %}						
 					
 					{% if fieldItem.handle ends with 'Margin' and introStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
+						{%- set introOuterClasses = introOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if fieldItem.handle == 'displaySetting' and introStyles[fieldItem.handle]|length %}
 						{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
 						{%- set introOuterClasses = introOuterClasses|merge([classItem]) -%}
 					{% endif %}
@@ -186,12 +204,17 @@
 				{% set btnGrpFieldLayout = btnGrpStyles.getFieldLayout() %}
 				{% set btnGrpFields = btnGrpFieldLayout.getCustomFields() %}
 				{% for fieldItem in btnGrpFields %}						
-					{% if not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'button') and btnGrpStyles[fieldItem.handle]|length %}
+					{% if not (fieldItem.handle ends with 'Margin') and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'button') and btnGrpStyles[fieldItem.handle]|length %}
 						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
 						{%- set btnGrpClasses = btnGrpClasses|merge([classItem]) -%}
 					{% endif %}									
 					
-					{% if fieldItem.handle ends with 'Padding' and btnGrpStyles[fieldItem.handle]|length %}
+					{% if fieldItem.handle ends with 'Margin' and btnGrpStyles[fieldItem.handle]|length %}
+						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
+						{%- set btnGrpOuterClasses = btnGrpOuterClasses|merge([classItem]) -%}
+					{% endif %}
+					
+					{% if fieldItem.handle == 'displaySetting' and btnGrpStyles[fieldItem.handle]|length %}
 						{% set classItem = devSize ~ btnGrpStyles[fieldItem.handle] %}
 						{%- set btnGrpOuterClasses = btnGrpOuterClasses|merge([classItem]) -%}
 					{% endif %}

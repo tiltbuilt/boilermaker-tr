@@ -22,6 +22,17 @@ settings:
       __assoc__:
         -
           - label
+          - Auto
+        -
+          - value
+          - mt-auto
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - 'Negative 4x (-60px)'
         -
           - value

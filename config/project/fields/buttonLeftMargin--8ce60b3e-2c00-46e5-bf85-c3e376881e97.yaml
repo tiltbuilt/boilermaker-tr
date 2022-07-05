@@ -22,6 +22,17 @@ settings:
       __assoc__:
         -
           - label
+          - Auto
+        -
+          - value
+          - ml-auto
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - 'None (0px)'
         -
           - value

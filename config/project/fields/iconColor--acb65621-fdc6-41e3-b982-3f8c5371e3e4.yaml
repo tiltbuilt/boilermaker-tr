@@ -78,6 +78,20 @@ settings:
         -
           - class
           - icon-gray-dk
+    -
+      __assoc__:
+        -
+          - label
+          - Red
+        -
+          - color
+          - '#FF0000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - icon-red
   palette: null
   useConfigFile: false
 translationKeyFormat: null

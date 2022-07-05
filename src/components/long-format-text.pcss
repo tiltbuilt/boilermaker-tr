@@ -6,6 +6,28 @@
  */
  
  .longFormatText {
+	
+	ul {
+		@apply mt-0 mr-0;
+		list-style-type: none;
+		list-style-position: outside;
+		margin-left: 1.1em;
+		
+		li::before {
+		  content: "\025B8";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+		  display: inline-block; /* Needed to add space between the bullet and the text */
+		  width: 1em; /* Also needed for space (tweak if needed) */
+		  margin-left: -1em;      
+		}
+	  }
+	  
+	  ol {
+		@apply mt-0 mr-0;
+		list-style-type: decimal;
+		list-style-position: outside;
+		margin-left: 1.1em;
+	  }
+	
 	//these styles can inherit because that's the point of the long format text block apply styling that matches the styles throughout the site 
 	/*
 	h1, h2, h3, h4, h5, h6 {		

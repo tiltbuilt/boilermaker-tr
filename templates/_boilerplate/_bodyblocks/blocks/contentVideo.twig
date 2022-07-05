@@ -37,17 +37,137 @@
 	{% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
 	
 		
+	{# set outer tag depending on if element has caption or not #}
+	{% if block.imageCaption != '' %}
+		{% set outerTag = 'figure' %}
+	{% else %}
+		{% set outerTag = 'div' %}
+	{% endif %}
+	
 	{# Sort Out Styling Adjustments to set up class lit arrays #}
 	
 	{# create arrays to collect style changes to primary element and inner and bg #}
 	{% set styleClasses = [] %}
-			
+	{% set outerClasses = [] %}
+	{% set captionClasses = [] %}
+	{% set bgClasses = [] %}
+	{% set bgSizes = [] %}	
+	
 	{% if styleAdjusts != null %}	
 		{# add style changes to array except for padding because it isn't applied to primary element #}
 			
-		{% for styleItem in clone(styleAdjusts.children).collect() %}
-			{% set styleClasses = styleClasses|merge([styleItem]) %}
-		{% endfor %}	
+		{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+		
+		{% for styleSet in clone(styleAdjusts.children).collect() %}
+			{% set devSize = styleSet.deviceSize %}	
+			{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+			{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
+			
+			{% for fieldItem in styleSetFields %}
+				
+				{# Leave out padding since it goes to a different element and leave out background fields #}			
+				{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'imageSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and fieldItem.handle != 'textWrapImagePosition' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+					{%- set styleClasses = styleClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{# add color classes #}
+				{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+					{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+					{%- set styleClasses = styleClasses|merge([classItem]) -%}
+				{% endif %}
+							
+				{# Add outer settings to outerClasses array #}			
+				{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+					{%- set outerClasses = outerClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+					{%- set outerClasses = outerClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'textWrapImagePosition' and styleSet[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+					{%- set outerClasses = outerClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'imageSize' and styleSet[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+					{%- set outerClasses = outerClasses|merge([classItem]) -%}
+				{% endif %}
+						
+			{% endfor %}
+			
+			{% if block.imageCaption|length %}
+				{% set captionStyles = clone(styleSet.children).type('styleSetCaption').one() %}
+				{% if captionStyles != null %}
+					{% set captionFieldLayout = captionStyles.getFieldLayout() %}
+					{% set captionFields = captionFieldLayout.getCustomFields() %}
+					{% for fieldItem in captionFields %}						
+						
+						{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and fieldItem.handle != 'captionStyle' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and not (fieldItem.handle starts with 'border') and captionStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ captionStyles[fieldItem.handle] %}
+							{%- set captionClasses = captionClasses|merge([classItem]) -%}
+						{% endif %}	
+						
+						{# add color classes #}
+						{% if fieldItem.handle == 'textColor' and captionStyles[fieldItem.handle] != null %}
+							{% set classItem = devSize ~ captionStyles[fieldItem.handle].class %}
+							{%- set captionClasses = captionClasses|merge([classItem]) -%}
+						{% endif %}	
+						
+						{% if fieldItem.handle == 'borderColor' and captionStyles[fieldItem.handle] != null %}
+							{% set classItem = devSize ~ captionStyles[fieldItem.handle].class %}
+							{% if captionStyles.captionStyle %}
+								{%- set styleClasses = styleClasses|merge([classItem]) -%}
+							{% else %}
+								{%- set captionClasses = captionClasses|merge([classItem]) -%}
+							{% endif %}
+						{% endif %}						
+						
+						{% if fieldItem.handle ends with 'Padding' and captionStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ captionStyles[fieldItem.handle] %}
+							{% if captionStyles.captionStyle %}
+								{%- set styleClasses = styleClasses|merge([classItem]) -%}
+							{% else %}
+								{%- set captionClasses = captionClasses|merge([classItem]) -%}
+							{% endif %}
+						{% endif %}	
+						
+						{% if fieldItem.handle starts with 'border' and fieldItem.handle != 'borderColor' and captionStyles[fieldItem.handle]|length %}
+							{% set classItem = devSize ~ captionStyles[fieldItem.handle] %}
+							{% if captionStyles.captionStyle %}
+								{%- set styleClasses = styleClasses|merge([classItem]) -%}
+							{% else %}
+								{%- set captionClasses = captionClasses|merge([classItem]) -%}
+							{% endif %}
+					{% endif %}					
+						
+					{% endfor %}
+				{% endif %}
+				
+				{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+				{% if (captionStyles.backgroundColor.class is defined and captionStyles.backgroundColor.class) %}
+					{% set bgItem  = {
+						'devSize': devSize,
+						'bgColor': captionStyles.backgroundColor.class ?? '',
+						'bgImg': captionStyles.backgroundImage[0] ?? null,
+						'bgSize': captionStyles.backgroundSize ?? '',
+						'bgPosition': captionStyles.backgroundPosition ?? '',
+						'bgRepeat': captionStyles.backgroundRepeat ?? '',
+						'bgOpacity': captionStyles.backgroundOpacity ?? '',
+						'bgImgOpacity': captionStyles.backgroundImageOpacity ?? '',
+					}		
+					%}
+					{% set bgClasses = bgClasses|merge([bgItem]) %}	
+					{% set bgSizes = bgSizes|merge([devSize])%}	
+				{% endif %}
+				
+			{% endif %}
+					
+		{% endfor %}			
 		
 	{% endif %}
 	
@@ -81,9 +201,9 @@
 	
 	{# OUTPUT #}
 	
-	<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+	<{{outerTag}} {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-			<div class="{{innerClass}}">	
+			<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
 				<div class="video-frame">
 					<div class="video-play-btn">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewbox="0 0 126 126">
@@ -117,8 +237,18 @@
 					<div class="video-player">
 						<div class="video" id="vid-{{ block.youTubeVideoId }}" data-youtube-id="{{ block.youTubeVideoId }}"></div>
 					</div>
-				</div>								
+				</div>
+				{% if block.imageCaption != '' %}
+					<figcaption {{ gMacros.buildClassList('image-caption', captionClasses, null) -}}>
+						{{ block.imageCaption }}						
+					</figcaption>				  
+				{% endif %}								
+			</div>
+			<div class="background video-default-bg">
+				{% if bgClasses != null %}		
+					{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+				{% endif %}		
 			</div>				
 		</div>     
-	</div>
+	</{{outerTag}}>
 {% endif %}

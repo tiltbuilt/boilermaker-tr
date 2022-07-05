@@ -33,13 +33,6 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            style: tip
-            tip: 'This setting is ignored if the button is in a button group'
-            type: craft\fieldlayoutelements\Tip
-            uid: d03515d8-9654-4627-9491-fd22f8c1107d
-            userCondition: null
-          -
-            elementCondition: null
             fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
             instructions: null
             label: null

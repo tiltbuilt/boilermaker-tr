@@ -14,7 +14,7 @@ settings:
   manualConfig: ''
   purifierConfig: null
   purifyHtml: true
-  redactorConfig: null
+  redactorConfig: HeadingText.json
   removeEmptyTags: false
   removeInlineStyles: false
   removeNbsp: false

@@ -67,30 +67,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            elementCondition: null
-            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d74096bf-4956-40ae-8726-c753496c041f
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: fb81ca0d-9d00-42bd-83bd-0ba4665f2694
-            userCondition: null
-            warning: null
-            width: 100
         name: Animation
         uid: 6a8efe1f-43e7-4b71-bcef-2719381a10c2
         userCondition: null

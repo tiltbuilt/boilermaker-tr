@@ -34,13 +34,6 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            style: tip
-            tip: 'When these adjustments are part of a button group adjustment, the styles are applied to all of the buttons in the group.'
-            type: craft\fieldlayoutelements\Tip
-            uid: 51d86a34-e029-4223-867d-d950e74ca68e
-            userCondition: null
-          -
-            elementCondition: null
             fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
             instructions: null
             label: null
@@ -105,13 +98,6 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
-          -
-            elementCondition: null
-            style: tip
-            tip: 'When these adjustments are part of a button group adjustment, the styles are applied to all of the buttons in the group. To space out buttons in a group, apply margins on the side opposite the alignment setting of the group (so if the group is set to align left, add right margins to the buttons to space them out.)'
-            type: craft\fieldlayoutelements\Tip
-            uid: 358e5721-07db-4997-89ef-ebcc40d05410
-            userCondition: null
           -
             elementCondition: null
             fieldUid: 345c96e3-abd1-4cbd-bcef-8688a9dcd0f3 # Top Padding
@@ -222,13 +208,6 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            style: tip
-            tip: 'When these adjustments are part of a button group adjustment, the styles are applied to all of the buttons in the group.'
-            type: craft\fieldlayoutelements\Tip
-            uid: 3d6827ef-44b6-45b3-b39c-3e61a7da619f
-            userCondition: null
-          -
-            elementCondition: null
             heading: Display
             type: craft\fieldlayoutelements\Heading
             uid: 29067a94-c82e-4b3c-95c1-d2a82bff171c
@@ -254,5 +233,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 6
 name: 'Style Set - Button'
-sortOrder: 122
+sortOrder: 121
 topLevel: false

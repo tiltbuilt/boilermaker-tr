@@ -78,7 +78,7 @@
 		{% for fieldItem in styleSetFields %}
 			
 			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
 			{% endif %}
@@ -94,6 +94,11 @@
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set outerClasses = outerClasses|merge([classItem]) -%}
 			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
 					
 		{% endfor %}
 		
@@ -104,7 +109,7 @@
 			{% set accFields = accFieldLayout.getCustomFields() %}
 			{% for fieldItem in accFields %}						
 				
-				{% if fieldItem.handle != 'allBordersMatch' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and accStyles[fieldItem.handle]|length %}					
+				{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and accStyles[fieldItem.handle]|length %}					
 					{% set classItem = devSize ~ accStyles[fieldItem.handle] %}
 					{%- set panelClasses = panelClasses|merge([classItem]) -%}
 				{% endif %}	
@@ -127,6 +132,11 @@
 				
 				{# add spacing class #}				
 				{% if fieldItem.handle ends with 'Margin' and accStyles[fieldItem.handle]|length %}
+					{% set classItem = devSize ~ accStyles[fieldItem.handle] %}
+					{%- set accOuterClasses = accOuterClasses|merge([classItem]) -%}
+				{% endif %}
+				
+				{% if fieldItem.handle == 'displaySetting' and accStyles[fieldItem.handle]|length %}
 					{% set classItem = devSize ~ accStyles[fieldItem.handle] %}
 					{%- set accOuterClasses = accOuterClasses|merge([classItem]) -%}
 				{% endif %}

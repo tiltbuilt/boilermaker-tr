@@ -47,7 +47,7 @@
 		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}
 		{% for fieldItem in styleSetFields %}
 			{# add button classes to child btn array #}
-			{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
+			{% if (fieldItem.handle starts with 'button') and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set btnInstStyles = btnInstStyles|merge([classItem]) -%}
 			{% endif %}
@@ -63,6 +63,12 @@
 				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
 				{%- set btnInstMarginStyles = btnInstMarginStyles|merge([classItem]) -%}
 			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set btnInstMarginStyles = btnInstMarginStyles|merge([classItem]) -%}
+			{% endif %}
+			
 		{% endfor %}
 	{% endfor %}
 {% endif %}
@@ -81,7 +87,7 @@
 {% endif %}
 
 {% if inGroup is defined and inGroup and spacingStyles is defined and spacingStyles|length %}
-	{% if btnInstStyles|length %}
+	{% if btnInstMarginStyles|length %}
 		{% set wrapperClasses = btnInstMarginStyles %}
 	{% else %}
 		{% set wrapperClasses = spacingStyles %}		
@@ -89,8 +95,6 @@
 {% else %}
 	{% set wrapperClasses = btnInstMarginStyles %}	
 {% endif %}
-
-
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}

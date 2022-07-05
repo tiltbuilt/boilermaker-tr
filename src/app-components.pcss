@@ -10,12 +10,16 @@
 		//standard buttons
 		
 					
-		.btn-standard {
-			@apply uppercase font-semibold;
+		.btn, .btn-standard {
+			// These classes must stay in order to ensure functionality
+			@apply inline-block text-center leading-none;
+			//The default classes and style below can be changed on a per-project basis
+			@apply uppercase font-semibold btn-gray-lt btn-md;
 			border-radius: 0.4rem; 
-			transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-			text-shadow: none;
-		}
+			transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			text-shadow: none !important;		 
+		 }
+		 		 
 				
 		.btn-black {
 			@apply bg-black text-gray-300;
@@ -70,7 +74,7 @@
 		}
 		
 		
-		//tabset buttons
+		//tabset buttons and icon blocks
 		
 		.icon-center {	
 			svg {
@@ -109,7 +113,56 @@
 				width: 15rem;
 				height: 15rem;
 			}
-		} 
+		}
+		
+		.icon-black {
+			@apply text-black;
+			
+			svg {
+				fill: currentColor;
+			}
+		}
+		
+		.icon-white {
+			@apply text-white;
+			
+			svg {
+				fill: currentColor;
+			}
+		}        
+			   
+		.icon-gray-lt {
+			@apply text-gray-300;
+			
+			svg {
+				fill: currentColor;
+			}
+		}
+		
+		.icon-gray-md {
+			@apply text-gray-400;
+			
+			svg {
+				fill: currentColor;
+			}
+		}
+		  
+		.icon-gray-dk {
+			@apply text-gray-800;
+			
+			svg {
+				fill: currentColor;
+			}
+		}	
+		
+		.icon-red {
+			@apply text-red;
+			
+			svg {
+				fill: currentColor;
+			}
+		}		
+		 
 		
 		.btn-tab {
 			@apply relative py-2 px-6 mx-2 btn-gray-lt;
