@@ -42,21 +42,83 @@
 
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
-{# create arrays to collect style changes to primary element and inner and bg #}
 {% set styleClasses = [] %}
-{% set bgClasses = null %}
+{% set outerClasses = [] %}
+{% set btnClasses = [] %}
+{% set bgClasses = [] %}
+{% set bgSizes = [] %}
+{% set dotClasses = [] %}
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
-		
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsBackgroundImage']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
 	
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+	
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
 		
-	{# Set variable for background settings if there are any #}
+		{% for fieldItem in styleSetFields %}
+			
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle == 'borderColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'buttonColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set btnClasses = btnClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'dotColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set dotClasses = dotClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Padding' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}
+					
+		{% endfor %}
 		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}
+				
+	{% endfor %}
 	
 {% endif %}
 
@@ -90,9 +152,9 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString, sliderAttrs) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString, sliderAttrs) -}}> 	
 	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div class="{{innerClass}}">	
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
 			{% if contentKids != null %}
 			
 				{% set slideList = clone(contentKids.children).collect() %}
@@ -121,25 +183,26 @@
 					  	
 						
 					{% endfor %}
-					</div>
+					</div>					
+				</div>
+				{% if (block.sliderControls == 'buttons' or block.sliderControls == 'both') and (slideList|length > 1)  %}
+					<button {{ gMacros.buildClassList('swiper-button-prev', btnClasses, null) -}} data-target="#{{ blockId  ~ '-swiper'}}">
+						<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.sprite }}"></use></svg>
+					</button>
 					
-					{% if (block.sliderControls == 'buttons' or block.sliderControls == 'both') and (slideList|length > 1)  %}
-						<button class="swiper-button-prev" data-target="#{{ blockId  ~ '-swiper'}}">
-							<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.sprite }}"></use></svg>
-						</button>
-						
-						<button class="swiper-button-next" data-target="#{{ blockId  ~ '-swiper'}}">
-							<svg><use xlink:href="#{{ gSettings.sliderNextIcon.sprite }}"></use></svg>
-						</button>
-					{% endif %}  
-					{% if (block.sliderControls == 'dots' or block.sliderControls == 'both') and (slideList|length > 1)  %}
-						<div class="swiper-pagination"></div>
-					{% endif %}
-				</div>					
+					<button {{ gMacros.buildClassList('swiper-button-next', btnClasses, null) -}} data-target="#{{ blockId  ~ '-swiper'}}">
+						<svg><use xlink:href="#{{ gSettings.sliderNextIcon.sprite }}"></use></svg>
+					</button>
+				{% endif %}  
+				{% if (block.sliderControls == 'dots' or block.sliderControls == 'both') and (slideList|length > 1)  %}
+					<div {{ gMacros.buildClassList('swiper-pagination', dotClasses, null) -}}></div>
+				{% endif %}					
 			{% endif %}
 		</div>
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background sliderSet-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>		
 	</div>     
 </div>

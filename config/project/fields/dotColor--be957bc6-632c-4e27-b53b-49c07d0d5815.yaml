@@ -1,0 +1,99 @@
+columnSuffix: buycmdwm
+contentColumnType: text
+fieldGroup: 1371181e-0e3f-44fe-bfdd-4848b6b55d74 # Page Builder - Sliders
+handle: dotColor
+instructions: null
+name: 'Dot Color'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'White/Light Gray'
+        -
+          - color
+          - '#FFFFFF, #d1d5db'
+        -
+          - default
+          - ''
+        -
+          - class
+          - dots-white-gray-lt
+    -
+      __assoc__:
+        -
+          - label
+          - White/Black
+        -
+          - color
+          - '#FFFFFF, #000000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - dots-white-black
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Gray/White'
+        -
+          - color
+          - '#d1d5db, #FFFFFF'
+        -
+          - default
+          - ''
+        -
+          - class
+          - dots-gray-lt-white
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Gray/Black'
+        -
+          - color
+          - '#d1d5db, #000000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - dots-gray-lt-black
+    -
+      __assoc__:
+        -
+          - label
+          - 'Black/Light Gray'
+        -
+          - color
+          - '#000000, #d1d5db'
+        -
+          - default
+          - ''
+        -
+          - class
+          - dots-black-gray-lt
+    -
+      __assoc__:
+        -
+          - label
+          - Black/White
+        -
+          - color
+          - '#000000, #FFFFFF'
+        -
+          - default
+          - ''
+        -
+          - class
+          - dots-black-white
+  palette: null
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

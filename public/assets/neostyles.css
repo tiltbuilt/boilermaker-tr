@@ -1,0 +1,32 @@
+.ni_block > .ni_block_topbar {
+	background-color: #000;
+	color: #fdb913;		
+}
+
+.ni_block > .ni_block_topbar .blocktype {	
+	font-weight: bold;	
+}
+
+.ni_block[data-neo-b-name^="Style Set"] > .ni_block_topbar {
+	background-color: #fdb913;
+	color: #000;		
+}
+
+.ni_block[data-neo-b-name^="Style Adjustment"] > .ni_block_topbar {
+	background-color: #fb8512;
+	color: #000;	
+}
+
+.ni_block[data-neo-b-name^="Style Adjustment"] > .ni_block_topbar .blocktype {	
+	font-weight: normal;	
+}
+
+.ni_block[class*="ni_block--children"] > .ni_block_topbar {
+	background-color: #374151;
+	color: #fdb913;		
+}
+
+.ni_block[class*="ni_block--children"] > .ni_block_topbar .blocktype {	
+	font-weight: normal;	
+}
+

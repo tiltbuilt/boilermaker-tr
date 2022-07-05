@@ -731,6 +731,7 @@ $(document).ready(function() {
 			swiperOptions.autoplay = {
 				delay: timingsetting,
 				disableOnInteraction: false,
+				speed: 600,
 			}
 		}
 		

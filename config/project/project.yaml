@@ -1,4 +1,4 @@
-dateModified: 1657006533
+dateModified: 1657047820
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -104,7 +104,6 @@ meta:
     20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
     22a053a5-a4ce-4380-ba58-45909af57b1f: Container # Container
     29cd508b-77c8-43b8-99ed-97325424e4f3: Borders # Borders
-    29d7b40f-cba4-4fc6-86b9-c8024f4b1790: 'Test Channel' # Test Channel
     33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
     38b2d069-fc9a-47d3-92fe-dda7740ac324: Columns # Columns
     42abf2d9-23e0-4cda-80a9-ff015bc314ea: 'Style Set - Accordion' # Style Set - Accordion
@@ -251,6 +250,7 @@ meta:
     be1a108c-3742-47bf-a723-ec1ddc308790: 'Icon Alignment' # Icon Alignment
     be7bfbf5-0157-44df-a6f5-935aba22dab9: 'Block Layout' # Block Layout
     be59c1e3-e430-409f-8dae-380cee1a446d: 'Container Content' # Container Content
+    be957bc6-632c-4e27-b53b-49c07d0d5815: 'Dot Color' # Dot Color
     be45752b-5950-4495-916b-645055cd1353: Excerpt # Excerpt
     bec10435-8e4b-4dbd-90fa-15ad94e24fd5: 'Reveal Animation' # Reveal Animation
     bf063701-6908-4ca1-aa87-5b19c885f3b7: 'CTA - Standard' # CTA - Standard
@@ -305,7 +305,6 @@ meta:
     eb8fb4b6-5d17-4f46-a4be-93e8e32860ce: 'Text Content' # Text Content
     eb783ee2-8b1b-4aed-9e1a-a4b3dd67946e: 'Style Adjustments - Repeater' # Style Adjustments - Repeater
     ec9d05d3-103a-4613-a1f0-6b1960fccaab: 'Style Set - Icon' # Style Set - Icon
-    ee3faac6-ef68-4557-b72b-0b7dfcfeedca: Default # Default
     ee8ca78d-7fd4-4a57-9b62-5c9848f07ecc: 'Style Adjustments - Video' # Style Adjustments - Video
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f2e3acea-f4ac-4967-92ce-a82e4e944990: 'Style Adjustments - Icon & Content' # Style Adjustments - Icon & Content
@@ -335,11 +334,22 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: AO97MS5JQC823WTQLQHM3DY9
-    schemaVersion: 4.1.2
+    schemaVersion: 4.2.0
+    settings:
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\CommerceIntegration
   colour-swatches:
     edition: standard
     enabled: true
     schemaVersion: 1.4.3
+  cp-css:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      additionalCss: ''
+      cacheBusting: true
+      cssFile: $NEO_STYLES_PATH
   elements-panel:
     edition: standard
     enabled: true

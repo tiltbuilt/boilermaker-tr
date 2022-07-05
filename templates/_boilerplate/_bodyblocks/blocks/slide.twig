@@ -41,34 +41,63 @@
 {% set styleClasses = [] %}
 {% set padClasses = [] %}
 {% set rowClasses = [] %}
-{% set bgClasses = null %}
+{% set bgClasses = [] %}
+{% set bgSizes = [] %}
+
+
 
 {% if styleAdjusts != null %}	
-	{# add style changes to array except for padding because it isn't applied to primary element #}
+	
+	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+	
+	{% for styleSet in clone(styleAdjusts.children).collect() %}
+		{% set devSize = styleSet.deviceSize %}	
+		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
+		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
 		
-	{% for styleItem in clone(styleAdjusts.children).type(['not', 'styleControlsPadding', 'styleControlsBackgroundImage', 'styleControlsRowAlignment']).collect() %}
-		{% set styleClasses = styleClasses|merge([styleItem]) %}
-	{% endfor %}
-	
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for padItem in clone(styleAdjusts.children).type('styleControlsPadding').collect() %}
-		{% set padClasses = padClasses|merge([padItem]) %}
-	{% endfor %}
-	
-	{# Set variable for background settings if there are any #}
+		{% for fieldItem in styleSetFields %}
+			
+			{# Leave out padding since it goes to a different element and leave out background fields #}			
+			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set styleClasses = styleClasses|merge([classItem]) -%}
+			{% endif %}
+			
+			{# add color classes #}
+			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{%- set styleClasses = rowClasses|merge([classItem]) -%}
+			{% endif %}
+						
+			{# Add outer settings to outerClasses array #}			
+			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set rowClasses = outerClasses|merge([classItem]) -%}
+			{% endif %}		
+					
+		{% endfor %}
 		
-	{% set bgClasses = clone(styleAdjusts.children).type('styleControlsBackgroundImage').one() %}
-	
-	{# set classes for internal row to set up slide layout #}
-	
-	
-	{% for rowItem in clone(styleAdjusts.children).type('styleControlsRowAlignment').collect() %}
-		{% set rowClasses = rowClasses|merge([rowItem]) %}
+		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+			{% set bgItem  = {
+				'devSize': devSize,
+				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgSize': styleSet.backgroundSize ?? '',
+				'bgPosition': styleSet.backgroundPosition ?? '',
+				'bgRepeat': styleSet.backgroundRepeat ?? '',
+				'bgOpacity': styleSet.backgroundOpacity ?? '',
+				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
+			}		
+			%}
+			{% set bgClasses = bgClasses|merge([bgItem]) %}	
+			{% set bgSizes = bgSizes|merge([devSize])%}	
+		{% endif %}
+				
 	{% endfor %}
-	
 	
 {% endif %}
+
 
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
@@ -100,9 +129,9 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, styleClasses, customClassString) -}}> 	
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, null, customClassString) -}}> 	
 	
-		<div {{ gMacros.buildClassList(innerClass, padClasses, null) -}}>
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
 			<div {{ gMacros.buildElementAttributes(null, 'slide-layout', rowClasses, null) -}}>	
 				<div class="w-full">
 				{% if contentKids != null %}
@@ -141,8 +170,10 @@
 				</div>
 			</div>
 		</div>
-		{% if bgClasses != null %}		  
-			{{ gMacros.buildElementBackground(bgClasses, {'default': '100vw'}, null) }}
-		{% endif %}		
+		<div class="background slide-default-bg">
+			{% if bgClasses != null %}		
+				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
+			{% endif %}		
+		</div>	
 	     
 </div>

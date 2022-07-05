@@ -37,6 +37,18 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: be957bc6-632c-4e27-b53b-49c07d0d5815 # Dot Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a78042da-4c5d-4d42-a564-87ed4edf2c51
+            userCondition: null
+            warning: null
+            width: 100
         name: Controls
         uid: 64a35be7-1e1c-405c-b164-12e20c10e6b9
         userCondition: null
