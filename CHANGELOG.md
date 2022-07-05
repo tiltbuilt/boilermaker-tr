@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.0 - 2022-07-05
+### Updated
+- Craft to 4.1.1 and plugin updates
+
+### Changed
+- Changed field setup to consolidate style adjustments on a per device size basis rather than per style basis to cut down on UI elements
+
+### Added
+- Color coding to the Neo blocks in the CP to help with finding things
+
 ## 2.0.3 - 2022-06-28
 ### Updated
 - Changed project config setting to allow for easier renaming of the site from the .env file
