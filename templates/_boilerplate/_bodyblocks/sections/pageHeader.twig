@@ -13,7 +13,7 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
+{# set variables for content child and style adjustment containers #} 
 {% set buttonGroup = clone(section.children).type('childrenButtonGroup').one() %}
 {% set styleAdjusts = clone(section.children).type('styleAdjustmentsPageHeader').one() %}
 
@@ -242,11 +242,11 @@
 		{% endif %}	
 		
 		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}				
 			{% set bgItem  = {
 				'devSize': devSize,
 				'bgColor': styleSet.backgroundColor.class ?? '',
-				'bgImg': styleSet.backgroundImage[0] ?? null,
+				'bgImg': styleSet.backgroundImage.one(),
 				'bgSize': styleSet.backgroundSize ?? '',
 				'bgPosition': styleSet.backgroundPosition ?? '',
 				'bgRepeat': styleSet.backgroundRepeat ?? '',

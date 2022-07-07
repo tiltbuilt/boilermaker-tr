@@ -218,7 +218,7 @@
 	
     <div {{ gMacros.buildClassList(null, bgOuterClasses, null) -}}>
 		
-		{% if bgSet.bgImg != null %}
+		{% if bgSet.bgImg != null %}			
 			{% set bgAsset = bgSet.bgImg %}
 			{% set loadClass = null %}
 			{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
@@ -272,7 +272,7 @@
 				{% else %}
 					
 					{% set bgInnerClasses = bgInnerClasses|merge([bgSet.bgRepeat, 'bg-auto', 'bg-' ~ bgSet.bgPosition]) %}
-					<div {{ gMacros.buildClassList(null, bgClasses, null) }} style="background-image:url('{{ bgAsset.url }}');"></div>
+					<div {{ gMacros.buildClassList(null, bgInnerClasses, null) }} style="background-image:url('{{ bgAsset.url }}');"></div>
 					
 				{% endif %}
 				

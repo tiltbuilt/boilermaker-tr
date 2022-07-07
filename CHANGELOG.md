@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.1 - 2022-07-06
+### Changed
+- Updates to Craft and Plugins
+- Fixed project config for easier site naming
+- Fixed twigpack config to use valet urls correctly and not have issues with webfont loading
+- put in temporary correction to page header background issue until more permanent fix is in place
+
+### Changed
+- Changed field setup to consolidate style adjustments on a per device size basis rather than per style basis to cut down on UI elements
+
 ## 2.1.0 - 2022-07-05
 ### Updated
 - Craft to 4.1.1 and plugin updates
