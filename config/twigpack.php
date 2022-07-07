@@ -22,6 +22,7 @@
  * well, so you can have different settings groups for each environment, just as
  * you do for 'general.php'
  */
+use craft\helpers\App;
 
 return [
 	// Global settings
@@ -47,8 +48,8 @@ return [
 		],
 		// webpack-dev-server config
 		'devServer' => [
-			'manifestPath' => 'http://localhost:8080/',
-			'publicPath' => 'http://localhost:8080/',
+			'manifestPath' => 'http://'.App::env('DEV_HOST').':8080/',
+			'publicPath' => 'http://'.App::env('DEV_HOST').':8080/',
 		],
 		// Bundle to use with the webpack-dev-server
 		'devServerBuildType' => 'modern',

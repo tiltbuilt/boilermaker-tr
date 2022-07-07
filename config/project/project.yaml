@@ -1,4 +1,4 @@
-dateModified: 1657047820
+dateModified: 1657169179
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -18,13 +18,6 @@ fs:
       path: $IMAGE_ASSETS_PATH
     type: craft\fs\Local
     url: $IMAGE_ASSETS_URL
-  videos:
-    hasUrls: true
-    name: Videos
-    settings:
-      path: $VIDEO_ASSETS_PATH
-    type: craft\fs\Local
-    url: $VIDEO_ASSETS_URL
 meta:
   __names__:
     0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
@@ -89,7 +82,7 @@ meta:
     8b211e5a-b602-4bdd-b531-777210b608d1: 'Column Order' # Column Order
     8bc830c1-371e-45af-9e26-b2b41f946480: 'Social Media Links' # Social Media Links
     8ce60b3e-2c00-46e5-bf85-c3e376881e97: 'Button Left Margin' # Button Left Margin
-    8e6a8ae9-43d1-49e6-8634-e075f4d87a89: 'Background Image' # Background Image
+    8e6a8ae9-43d1-49e6-8634-e075f4d87a89: 'Background Image or Video' # Background Image
     8f315b09-46cf-425c-8fff-8b052a202dc8: 'Tab Title' # Tab Title
     08f385be-023c-42db-9198-dc4ba042a730: 'Image Size' # Image Size
     8f438a7d-e520-49ce-87d6-89fe4651b5f3: 'Page Header Buttons' # Page Header Buttons
@@ -208,7 +201,6 @@ meta:
     60868356-6cc0-4a9c-9e93-81e431da773d: 'Font Size' # Font Size
     73230320-128c-4692-aa98-aa4092738d56: 'Text Color' # Text Color
     76008123-c60e-47eb-a353-4a30bf254759: 'Line Height' # Line Height
-    80480195-3a87-410a-8a5d-c51dd07e7c59: Videos # Videos
     87483382-9eee-4f7f-955e-be74daf55a00: Default # Default
     a0518828-eb2f-4be1-99b0-414ced253521: 'Nav List' # Nav List
     a3c9dbac-000e-409d-80b1-6a757a2df565: 'Slide Column Content' # Slide Column Content
@@ -332,8 +324,7 @@ meta:
 plugins:
   blitz:
     edition: standard
-    enabled: true
-    licenseKey: AO97MS5JQC823WTQLQHM3DY9
+    enabled: true    
     schemaVersion: 4.2.0
     settings:
       integrations:
@@ -364,8 +355,7 @@ plugins:
     schemaVersion: 1.0.0
   freeform:
     edition: pro
-    enabled: true
-    licenseKey: FOPF6QVFGZ7L7KKQS2D92KU9
+    enabled: true    
     schemaVersion: 4.2.2
     settings:
       ajaxByDefault: true
@@ -454,7 +444,6 @@ plugins:
   icon-picker:
     edition: standard
     enabled: true
-    licenseKey: FAX2MJE1IPZNUEN6A2EKXKVQ
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -464,8 +453,7 @@ plugins:
       redactorFieldHandle: ''
   imager-x:
     edition: pro
-    enabled: true
-    licenseKey: T3KRO013RJCIA2Y11DDU4UQB
+    enabled: true    
     schemaVersion: 4.0.0
   minify:
     edition: standard
@@ -473,13 +461,11 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true
-    licenseKey: I49YSINKNTCM41D3UU7ZFHPG
+    enabled: true    
     schemaVersion: 2.0.2
   neo:
     edition: standard
-    enabled: true
-    licenseKey: LREXT6YVWJWPGZAZSCY1WXMS
+    enabled: true    
     schemaVersion: 3.0.4
   redactor:
     edition: standard
@@ -499,8 +485,7 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true
-    licenseKey: PDYLE0Z2D5I1PQI2N1Z29DAO
+    enabled: true    
     schemaVersion: 3.0.10
   section-and-product-type:
     edition: standard
@@ -508,8 +493,7 @@ plugins:
     schemaVersion: 1.1.1
   seomatic:
     edition: standard
-    enabled: true
-    licenseKey: Q2HY7KWEP06IK01M0IWR6YOE
+    enabled: true    
     schemaVersion: 3.0.11
   twigpack:
     edition: standard
@@ -522,7 +506,7 @@ plugins:
 system:
   edition: pro
   live: true
-  name: 'Boilermaker Craft 4'
+  name: $SITE_NAME
   retryDuration: null
   schemaVersion: 4.0.0.9
   timeZone: America/Chicago

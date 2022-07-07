@@ -80,6 +80,8 @@
 		
 		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
 		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+		
+		{{styleSet.type.handle}}
 			{% set bgItem  = {
 				'devSize': devSize,
 				'bgColor': styleSet.backgroundColor.class ?? '',

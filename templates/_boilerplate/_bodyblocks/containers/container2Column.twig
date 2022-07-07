@@ -78,9 +78,9 @@
 				{%- set outerClasses = outerClasses|merge([classItem]) -%}
 			{% endif %}
 			
-			{% if fieldItem.handle == 'displaySetting' and introStyles[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ introStyles[fieldItem.handle] %}
-				{%- set introOuterClasses = introOuterClasses|merge([classItem]) -%}
+			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
+				{%- set outerClasses = outerClasses|merge([classItem]) -%}
 			{% endif %}
 			
 			{# Add row layout classes to to rowClasses array #}			
