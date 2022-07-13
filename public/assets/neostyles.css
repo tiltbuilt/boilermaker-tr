@@ -1,32 +1,264 @@
+/* GENERAL - BLOCKS */
+
+.ni_block {
+	color: #255473;
+}
+
 .ni_block > .ni_block_topbar {
-	background-color: #000;
-	color: #fdb913;		
+	background-color: #d7edfc;
+	color: #255473;
 }
 
-.ni_block > .ni_block_topbar .blocktype {	
-	font-weight: bold;	
-}
-
-.ni_block[data-neo-b-name^="Style Set"] > .ni_block_topbar {
-	background-color: #fdb913;
-	color: #000;		
-}
-
-.ni_block[data-neo-b-name^="Style Adjustment"] > .ni_block_topbar {
-	background-color: #fb8512;
-	color: #000;	
-}
-
-.ni_block[data-neo-b-name^="Style Adjustment"] > .ni_block_topbar .blocktype {	
-	font-weight: normal;	
+.ni_block > .ni_block_topbar .blocktype {
+	font-weight: bold;
+	font-size: 15px;
 }
 
 .ni_block[class*="ni_block--children"] > .ni_block_topbar {
-	background-color: #374151;
-	color: #fdb913;		
+
 }
 
 .ni_block[class*="ni_block--children"] > .ni_block_topbar .blocktype {	
-	font-weight: normal;	
+	font-weight: bold;	
+}
+
+.ni_block_topbar_item.tabs .tab {
+	color: rgba(0,0,0,0.6);
+}
+
+.ni_block_topbar_item.tabs .tab.is-selected {
+	font-weight: 500;
+}
+
+/* PAGE SECTION */
+
+.ni_block[data-neo-b-name^="Page Section"],
+.ni_block[data-neo-b-name^="Page Header"] {
+	color: #8f2828;
+}
+
+.ni_block[data-neo-b-name^="Page Section"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Page Header"] > .ni_block_topbar {
+	background-color: #ffe6e6;
+	border-bottom: 1px solid #fad4d4;
+	color: #8f2828;
+}
+
+.ni_block[data-neo-b-name^="Page Section"] > .ni_block_topbar .blocktype {
+	color: #733434;
+}
+
+.ni_block[data-neo-b-name^="Section Containers"] > .ni_block_topbar {
+	background-color: #fff;
+	font-weight: bold;
+	color: rgba(115, 52, 52, 0.6);
+}
+
+.ni_block[data-neo-b-name^="Section Containers"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #733434;
+}
+
+/* CONTAINERS */
+
+.ni_block[data-neo-b-name^="Container"] {
+	color: #1e572a;
+}
+
+.ni_block[data-neo-b-name^="Container"] > .ni_block_topbar {
+	background-color: #e3ffe9;
+}
+
+.ni_block[data-neo-b-name^="Container"] > .ni_block_topbar .blocktype {
+	color: #1e572a;
+}
+
+.ni_block[data-neo-b-name^="Container Content"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Container Columns - Main & Sidebar"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Container Columns - 2 Column Container"] > .ni_block_topbar {
+	background-color: #fff;
+	font-weight: bold;
+	color: rgba(30, 87, 42, 0.6);
+}
+
+.ni_block[data-neo-b-name^="Container Content"] > .ni_block_topbar .blocktype,
+.ni_block[data-neo-b-name^="Container Columns - Main & Sidebar"] > .ni_block_topbar .blocktype,
+.ni_block[data-neo-b-name^="Container Columns - 2 Column Container"] > .ni_block_topbar .blocktype  {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/*ROWS & COLUMNS*/
+
+.ni_block[data-neo-b-name^="Multicolumn Layout Row"] {
+	color: #52315e;
+}
+
+.ni_block[data-neo-b-name^="Multicolumn Layout Row"] > .ni_block_topbar {
+	background-color:  #f6e6fc;
+	color: #52315e;
+}
+
+.ni_block[data-neo-b-name^="Row Columns"] {
+	color: #52315e;
+}
+
+.ni_block[data-neo-b-name^="Row Columns"] > .ni_block_topbar {
+	background-color: #fff;
+	font-weight: bold;
+	font-size: 13px;
+	color: #52315e;
+}
+
+.ni_block[data-neo-b-name^="Row Columns"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.ni_block[data-neo-b-name^="Column"],
+.ni_block[data-neo-b-name^="Half Width Column"],
+.ni_block[data-neo-b-name^="Main Column"],
+.ni_block[data-neo-b-name^="Sidebar Column"] {
+	color: #52315e;
+}
+
+.ni_block[data-neo-b-name^="Column"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Half Width Column"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Main Column"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Sidebar Column"] > .ni_block_topbar {
+	background-color:  #f6e6fc;
+	color: #52315e;
+}
+
+.ni_block[data-neo-b-name^="Column Content"] > .ni_block_topbar,
+.ni_block[data-neo-b-name^="Sidebar Content"] > .ni_block_topbar {
+	background-color: #fff;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.ni_block[data-neo-b-name^="Column Content"] > .ni_block_topbar .blocktype,
+.ni_block[data-neo-b-name^="Sidebar Content"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* SLIDER */
+
+.ni_block[data-neo-b-name^="Slides"] > .ni_block_topbar {
+	background-color: #fff;
+}
+
+.ni_block[data-neo-b-name^="Slides"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.ni_block[data-neo-b-name^="Slide Content"] > .ni_block_topbar {
+	background-color: #fff;
+}
+
+.ni_block[data-neo-b-name^="Slide Content"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* STYLE ADJUSTMENTS */
+
+.ni_block[data-neo-b-name^="Style Set"] {
+	color: #7d5e14;	
+}
+
+.ni_block[data-neo-b-name^="Style Set"] > .ni_block_topbar {
+	background-color: #fadd93;
+	color: #614b16;		
+}
+
+.ni_block[data-neo-b-name^="Style Set"] > .ni_block_topbar {
+	background-color: #fadd93;
+	color: #614b16;		
+}
+
+.ni_block[data-neo-b-name^="Style Adjustment"] {
+	color: #7d5e14;		
+}
+
+.ni_block[data-neo-b-name^="Style Adjustment"] > .ni_block_topbar {
+	background-color: #fff2cf;
+	color: #7d5e14;	
+}
+
+.ni_block[data-neo-b-name^="Style Adjustment"] > .ni_block_topbar .blocktype {	
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #4a3911;
+}
+
+/* ACCORDIONS */
+
+.ni_block[data-neo-b-name^="Accordions"] > .ni_block_topbar {
+	background-color: #fff;
+}
+
+.ni_block[data-neo-b-name^="Accordions"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.ni_block[data-neo-b-name^="Accordion Content"] > .ni_block_topbar {
+	background-color: #fff;
+	font-weight: bold;
+}
+
+.ni_block[data-neo-b-name^="Accordion Content"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* TAB PANEL */
+
+.ni_block[data-neo-b-name^="Tabs"] > .ni_block_topbar {
+	background-color: #fff;
+}
+
+.ni_block[data-neo-b-name^="Tabs"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+
+/* BUTTON GROUP */
+
+.ni_block[data-neo-b-name^="Buttons"] > .ni_block_topbar {
+	background-color: #fff;
+}
+
+.ni_block[data-neo-b-name^="Buttons"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* CONTENT WRAPPER */
+
+.ni_block[data-neo-b-name^="Wrapper Content"] > .ni_block_topbar {
+	background-color: #fff;
+}
+
+.ni_block[data-neo-b-name^="Wrapper Content"] > .ni_block_topbar .blocktype {
+	opacity: 0.7;
+	font-size: 12px;
+	text-transform: uppercase;
 }
 

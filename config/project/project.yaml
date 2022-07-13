@@ -1,4 +1,4 @@
-dateModified: 1657169179
+dateModified: 1657731078
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -18,6 +18,13 @@ fs:
       path: $IMAGE_ASSETS_PATH
     type: craft\fs\Local
     url: $IMAGE_ASSETS_URL
+  videos:
+    hasUrls: true
+    name: Videos
+    settings:
+      path: $VIDEO_ASSETS_PATH
+    type: craft\fs\Local
+    url: $VIDEO_ASSETS_URL
 meta:
   __names__:
     0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
@@ -443,7 +450,7 @@ plugins:
     schemaVersion: 3.0.0
   icon-picker:
     edition: standard
-    enabled: true
+    enabled: true    
     schemaVersion: 1.0.1
     settings:
       enableCache: true
@@ -506,7 +513,7 @@ plugins:
 system:
   edition: pro
   live: true
-  name: $SITE_NAME
+  name: 'Boilermaker Craft 4'
   retryDuration: null
   schemaVersion: 4.0.0.9
   timeZone: America/Chicago

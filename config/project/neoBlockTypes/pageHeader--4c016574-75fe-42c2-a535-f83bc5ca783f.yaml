@@ -11,6 +11,25 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            style: tip
+            tip: 'This field determines if the content in the header will be constrained or run the full width of the container. The background of the header will take up the full width regardless. '
+            type: craft\fieldlayoutelements\Tip
+            uid: 38281210-7e23-43f6-a62d-caf00d34224d
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: c2036654-1479-4180-9e87-c7cf588d25e8 # Full Screen Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6795992c-4c29-4a1e-8017-1776b70e5a96
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 3e54e327-a9a9-4587-b91e-4775a1f7dd3f # Header Text
             instructions: null
             label: null

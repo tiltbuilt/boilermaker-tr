@@ -132,41 +132,43 @@
 <div {{ gMacros.buildElementAttributes(blockId, blockClass, null, customClassString) -}}> 	
 	
 		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
-			<div {{ gMacros.buildElementAttributes(null, 'slide-layout', rowClasses, null) -}}>	
-				<div class="w-full">
-				{% if contentKids != null %}
-					{% for child in clone(contentKids.children).collect() %}	  
-						
-						{#-
-						For each child component, attempt to load a custom template for the
-						component handle from the project's files,
-						then the same template from the core Tiltrus files,
-						then a custom default template from the project,
-						and finally the default template for this component type from the core Tiltrus files.
-						-#}
-						
-						{% if child.type.handle starts with 'row' %}
-							  {%
-								include [
-								  '_project/_bodyblocks/rows/' ~ child.type.handle,
-								  '_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
-								  '_project/_bodyblocks/rows/row',
-								  '_boilerplate/_bodyblocks/rows/row'
-								] with { 'row' :  child }
-							  %}					  
-						  {% else %}
-							  {%
-								include [
-								  '_project/_bodyblocks/blocks/' ~ child.type.handle,
-								  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-								  '_project/_bodyblocks/blocks/block',
-								  '_boilerplate/_bodyblocks/blocks/block'
-								] ignore missing with { 'block' :  child, 'loadType' : 1  }
-							  %}
-						  {% endif %}
-						
-					{% endfor %}
-				{% endif %}
+			<div class="container slide-container {% if block.fullScreenWidth is not empty and block.fullScreenWidth == 1 %}container-fullwidth{% endif %}">
+				<div {{ gMacros.buildElementAttributes(null, 'slide-layout', rowClasses, null) -}}>	
+					<div class="w-full">
+					{% if contentKids != null %}
+						{% for child in clone(contentKids.children).collect() %}	  
+							
+							{#-
+							For each child component, attempt to load a custom template for the
+							component handle from the project's files,
+							then the same template from the core Tiltrus files,
+							then a custom default template from the project,
+							and finally the default template for this component type from the core Tiltrus files.
+							-#}
+							
+							{% if child.type.handle starts with 'row' %}
+							  	{%
+									include [
+								  	'_project/_bodyblocks/rows/' ~ child.type.handle,
+								  	'_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
+								  	'_project/_bodyblocks/rows/row',
+								  	'_boilerplate/_bodyblocks/rows/row'
+									] with { 'row' :  child }
+							  	%}					  
+						  	{% else %}
+							  	{%
+									include [
+								  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
+								  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+								  	'_project/_bodyblocks/blocks/block',
+								  	'_boilerplate/_bodyblocks/blocks/block'
+									] ignore missing with { 'block' :  child, 'loadType' : 1  }
+							  	%}
+						  	{% endif %}
+							
+						{% endfor %}
+					{% endif %}
+					</div>
 				</div>
 			</div>
 		</div>
