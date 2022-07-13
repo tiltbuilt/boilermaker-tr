@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.2 - 2022-07-13
+### Changed
+- Updates to Craft and Plugins
+- Removed videos asset group, images will now hold video and images
+- added full width vs constrained mode to page header and slides
+- new improved color coding in Neo fields (thanks Chris!)
+
 ## 2.1.1 - 2022-07-06
 ### Changed
 - Updates to Craft and Plugins

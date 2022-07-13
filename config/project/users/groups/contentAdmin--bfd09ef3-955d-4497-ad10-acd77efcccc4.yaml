@@ -14,15 +14,15 @@ permissions:
   - 'createentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'createfolders:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'createfolders:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'createfolders:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'createfolders:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'deleteassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'deleteassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'deleteassets:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'deleteassets:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'deleteentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'deleteentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'deletepeerassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'deletepeerassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'deletepeerassets:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'deletepeerassets:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'deletepeerentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'deletepeerentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'deletepeerentrydrafts:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
@@ -33,10 +33,10 @@ permissions:
   - 'editglobalset:7a2b6f07-8f44-44eb-a8ab-4045df5aa602' # 404 Page
   - 'editimages:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'editimages:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'editimages:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'editimages:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'editpeerimages:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'editpeerimages:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'editpeerimages:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'editpeerimages:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - editusers
   - freeform-access-quick-export
   - freeform-dashboardaccess
@@ -62,21 +62,21 @@ permissions:
   - registerusers
   - 'replacefiles:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'replacefiles:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'replacefiles:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'replacefiles:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'replacepeerfiles:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'replacepeerfiles:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'replacepeerfiles:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'replacepeerfiles:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'retour:dashboard'
   - 'retour:redirects'
   - 'saveassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'saveassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'saveassets:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'saveassets:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'saveentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'saveentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'saveentries:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
   - 'savepeerassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'savepeerassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'savepeerassets:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'savepeerassets:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'savepeerentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'savepeerentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'savepeerentrydrafts:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
@@ -112,13 +112,13 @@ permissions:
   - 'utility:queue-manager'
   - 'viewassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'viewassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'viewassets:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'viewassets:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'viewentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'viewentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'viewentries:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
   - 'viewpeerassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'viewpeerassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
-  - 'viewpeerassets:80480195-3a87-410a-8a5d-c51dd07e7c59'
+  - 'viewpeerassets:80480195-3a87-410a-8a5d-c51dd07e7c59' # Videos
   - 'viewpeerentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'viewpeerentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
   - 'viewpeerentrydrafts:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages

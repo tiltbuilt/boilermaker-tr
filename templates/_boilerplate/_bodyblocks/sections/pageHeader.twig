@@ -295,86 +295,87 @@
 
 <section {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}>	
 	<div {{ gMacros.buildClassList(null, animClasses, null ) -}}>
-		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>			
-			<div {{ gMacros.buildClassList('pageHeader-layout anim-pass', rowClasses, null) -}}>	
-				<div class="w-full lg:w-3/4 anim-pass">
-					
-					{% if section.subheadText|length and section.subheadPosition == 1 %}
-				  	<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead-outer', subOuterClasses) -}}>
-						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-subhead', subClasses, null) -}}>
-								{{ gMacros.stripTags(section.subheadText) }}
-							</div>
-						</div>
-				  	</div>
-					{% endif %}
-					
-					
-					<div {{ gMacros.buildElementAttributes(headerId, 'elem-block pageHeader-mainheader heading1-outer', headerOuterClasses, null) -}}>
-						<div class="anim-wrapper anim-child">
-							<h1 {{ gMacros.buildClassList('inner pageHeader-mainheader-inner heading1', headerClasses, null) -}}>
-								{% if section.headerText|length %}
-									{{ gMacros.stripTags(section.headerText) }}
-								{% else %}
-									{{entry.title}}
-								{% endif %}
-							</h1>
-						</div>
-					</div>
-					
-					
-					{% if section.subheadText|length and section.subheadPosition == 0 %}
-				  	<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead-outer', subOuterClasses) -}}>
-						<div class="anim-wrapper anim-child">
-							<div {{ gMacros.buildClassList('inner pageHeader-subhead', subClasses, null) -}}>
-								{{ gMacros.stripTags(section.subheadText) }}
-							</div>
-						</div>
-				  	</div>
-					{% endif %}
-					
-					{% if section.simpleText|length %}				
-						<div {{ gMacros.buildElementAttributes(introId, 'elem-block pageHeader-outer', introOuterClasses, null) -}}>
+		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
+			<div class="container slide-container {% if section.fullScreenWidth is not empty and section.fullScreenWidth == 1 %}container-fullwidth{% endif %}">	
+				<div {{ gMacros.buildClassList('pageHeader-layout anim-pass', rowClasses, null) -}}>	
+					<div class="w-full anim-pass">
+						
+						{% if section.subheadText|length and section.subheadPosition == 1 %}
+				  		<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead-outer', subOuterClasses) -}}>
 							<div class="anim-wrapper anim-child">
-								<div {{ gMacros.buildClassList('inner pageHeader-intro ', introClasses, null) -}}>
-									{{section.simpleText}}
+								<div {{ gMacros.buildClassList('inner pageHeader-subhead', subClasses, null) -}}>
+									{{ gMacros.stripTags(section.subheadText) }}
 								</div>
 							</div>
-						</div>
-					{% endif %}  
-					
-					{% if buttonGroup != null %}
-						<div {{ gMacros.buildElementAttributes(btnGrpId, 'elem-block pageHeader-buttonGroup', btnGrpOuterClasses, null) -}}> 	
+				  		</div>
+						{% endif %}
+						
+						
+						<div {{ gMacros.buildElementAttributes(headerId, 'elem-block pageHeader-mainheader heading1-outer', headerOuterClasses, null) -}}>
 							<div class="anim-wrapper anim-child">
-								<div {{ gMacros.buildClassList('inner pageHeader-buttonGroup-inner ', btnGrpClasses, null) -}}>								
-								{% for child in clone(buttonGroup.children).collect() %}	  
-									
-									{#-
-									For each child component, attempt to load a custom template for the
-									component handle from the project's files,
-									then the same template from the core Tiltrus files,
-									then a custom default template from the project,
-									and finally the default template for this component type from the core Tiltrus files.
-									-#}
-																		
-							  	{%
-									include [
-								  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
-								  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-								  	'_project/_bodyblocks/blocks/block',
-								  	'_boilerplate/_bodyblocks/blocks/block'
-									] ignore missing with { 'block' :  child, 'groupStyles': childBtnClasses, 'spacingStyles': childBtnOuterClasses, 'inGroup': true }
-							  	%}									  
-									
-								{% endfor %}							
-								</div>		
-							</div>     
-						</div>			
-					{% endif %}
-					
+								<h1 {{ gMacros.buildClassList('inner pageHeader-mainheader-inner heading1', headerClasses, null) -}}>
+									{% if section.headerText|length %}
+										{{ gMacros.stripTags(section.headerText) }}
+									{% else %}
+										{{entry.title}}
+									{% endif %}
+								</h1>
+							</div>
+						</div>
+						
+						
+						{% if section.subheadText|length and section.subheadPosition == 0 %}
+				  		<div {{ gMacros.buildElementAttributes(subId, 'elem-block pageHeader-subhead-outer', subOuterClasses) -}}>
+							<div class="anim-wrapper anim-child">
+								<div {{ gMacros.buildClassList('inner pageHeader-subhead', subClasses, null) -}}>
+									{{ gMacros.stripTags(section.subheadText) }}
+								</div>
+							</div>
+				  		</div>
+						{% endif %}
+						
+						{% if section.simpleText|length %}				
+							<div {{ gMacros.buildElementAttributes(introId, 'elem-block pageHeader-outer', introOuterClasses, null) -}}>
+								<div class="anim-wrapper anim-child">
+									<div {{ gMacros.buildClassList('inner pageHeader-intro ', introClasses, null) -}}>
+										{{section.simpleText}}
+									</div>
+								</div>
+							</div>
+						{% endif %}  
+						
+						{% if buttonGroup != null %}
+							<div {{ gMacros.buildElementAttributes(btnGrpId, 'elem-block pageHeader-buttonGroup', btnGrpOuterClasses, null) -}}> 	
+								<div class="anim-wrapper anim-child">
+									<div {{ gMacros.buildClassList('inner pageHeader-buttonGroup-inner ', btnGrpClasses, null) -}}>								
+									{% for child in clone(buttonGroup.children).collect() %}	  
+										
+										{#-
+										For each child component, attempt to load a custom template for the
+										component handle from the project's files,
+										then the same template from the core Tiltrus files,
+										then a custom default template from the project,
+										and finally the default template for this component type from the core Tiltrus files.
+										-#}
+																			
+							  		{%
+										include [
+								  		'_project/_bodyblocks/blocks/' ~ child.type.handle,
+								  		'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+								  		'_project/_bodyblocks/blocks/block',
+								  		'_boilerplate/_bodyblocks/blocks/block'
+										] ignore missing with { 'block' :  child, 'groupStyles': childBtnClasses, 'spacingStyles': childBtnOuterClasses, 'inGroup': true }
+							  		%}									  
+										
+									{% endfor %}							
+									</div>		
+								</div>     
+							</div>			
+						{% endif %}
+						
+					</div>
 				</div>
-			</div>
-			
+			</div>			
 		</div> 
 	
 		<div class="background pageHeader-default-bg">
