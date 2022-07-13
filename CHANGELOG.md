@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.3 - 2022-07-13
+### Fixed
+- Problem where turning on dots on the slider set would prevent drag from working
+
 ## 2.1.2 - 2022-07-13
 ### Changed
 - Updates to Craft and Plugins

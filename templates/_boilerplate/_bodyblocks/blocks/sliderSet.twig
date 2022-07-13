@@ -158,7 +158,7 @@
 			{% if contentKids != null %}
 			
 				{% set slideList = clone(contentKids.children).collect() %}
-				<div class="{% if slideList|length > 1 %}swiper{% endif %}" id="{{ blockId  ~ '-swiper'}}">
+				<div class="swiper-elem {% if slideList|length > 1 %}swiper{% endif %}" id="{{ blockId  ~ '-swiper'}}">
 					<div class="swiper-wrapper">
 			
 					{% for child in slideList %}	  
