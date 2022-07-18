@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.4 - 2022-07-18
+### Fixed
+- Corrected issue with .gitignore file in the dist folder
+- Updated Craft and Neo. Neo update fixes issues with copy/paste/clone feature
+
 ## 2.1.3 - 2022-07-13
 ### Fixed
 - Problem where turning on dots on the slider set would prevent drag from working
