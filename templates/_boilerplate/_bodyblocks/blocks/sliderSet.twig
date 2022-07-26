@@ -68,17 +68,17 @@
 			
 			{# add color classes #}
 			{% if fieldItem.handle == 'borderColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].color[0].class %}
 				{%- set styleClasses = styleClasses|merge([classItem]) -%}
 			{% endif %}
 			
 			{% if fieldItem.handle == 'buttonColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].color[0].class %}
 				{%- set btnClasses = btnClasses|merge([classItem]) -%}
 			{% endif %}
 			
 			{% if fieldItem.handle == 'dotColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
+				{% set classItem = devSize ~ styleSet[fieldItem.handle].color[0].class %}
 				{%- set dotClasses = dotClasses|merge([classItem]) -%}
 			{% endif %}
 			
@@ -102,10 +102,10 @@
 		{% endfor %}
 		
 		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
+		{% if (styleSet.backgroundColor.color[0].class is defined and styleSet.backgroundColor.color[0].class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
 			{% set bgItem  = {
 				'devSize': devSize,
-				'bgColor': styleSet.backgroundColor.class ?? '',
+				'bgColor': styleSet.backgroundColor.color[0].class ?? '',
 				'bgImg': styleSet.backgroundImage[0] ?? null,
 				'bgSize': styleSet.backgroundSize ?? '',
 				'bgPosition': styleSet.backgroundPosition ?? '',
@@ -172,30 +172,30 @@
 						-#}
 						
 						
-					  	{%
+						  {%
 							include [
-						  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
-						  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-						  	'_project/_bodyblocks/blocks/block',
-						  	'_boilerplate/_bodyblocks/blocks/block'
+							  '_project/_bodyblocks/blocks/' ~ child.type.handle,
+							  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+							  '_project/_bodyblocks/blocks/block',
+							  '_boilerplate/_bodyblocks/blocks/block'
 							] ignore missing with { 'block' :  child }
-					  	%}
-					  	
+						  %}
+						  
 						
 					{% endfor %}
 					</div>					
 				</div>
 				{% if (block.sliderControls == 'buttons' or block.sliderControls == 'both') and (slideList|length > 1)  %}
-					<button {{ gMacros.buildClassList('swiper-button-prev', btnClasses, null) -}} data-target="#{{ blockId  ~ '-swiper'}}">
+					<button id="{{blockId}}-prev" {{ gMacros.buildClassList('swiper-button-prev', btnClasses, null) -}} data-target="#{{ blockId  ~ '-swiper'}}">
 						<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.sprite }}"></use></svg>
 					</button>
 					
-					<button {{ gMacros.buildClassList('swiper-button-next', btnClasses, null) -}} data-target="#{{ blockId  ~ '-swiper'}}">
+					<button id="{{blockId}}-next" {{ gMacros.buildClassList('swiper-button-next', btnClasses, null) -}} data-target="#{{ blockId  ~ '-swiper'}}">
 						<svg><use xlink:href="#{{ gSettings.sliderNextIcon.sprite }}"></use></svg>
 					</button>
 				{% endif %}  
 				{% if (block.sliderControls == 'dots' or block.sliderControls == 'both') and (slideList|length > 1)  %}
-					<div {{ gMacros.buildClassList('swiper-pagination', dotClasses, null) -}}></div>
+					<div id="{{blockId}}-pagination" {{ gMacros.buildClassList('swiper-pagination', dotClasses, null) -}}></div>
 				{% endif %}					
 			{% endif %}
 		</div>

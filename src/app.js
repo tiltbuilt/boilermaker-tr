@@ -489,26 +489,27 @@ $(document).ready(function() {
 	/* MODAL BEHAVIORS */
 	
 	var modalOpenTL = gsap.timeline({repeat: 0, paused: true});
-	modalOpenTL.fromTo("#modal-overlay", {opacity: 0}, {duration: 0.5, ease: "power1.out", opacity: 1});
+	modalOpenTL.fromTo("#modal-wrapper, #modal-overlay", {opacity: 0}, {duration: 0.5, ease: "power1.out", opacity: 1});
 	modalOpenTL.fromTo("#modal", {opacity: 0, y: 100}, {duration: 0.5, ease: "power1.out", opacity: 1, y: 0});
 	
 	var modalCloseTL = gsap.timeline({repeat: 0, paused: true, onComplete: clearModal});
-	modalCloseTL.fromTo("#modal-overlay", {opacity: 1}, {duration: 0.5, ease: "power1.out", opacity: 0});
+	modalCloseTL.fromTo("#modal-wrapper", {opacity: 1}, {duration: 0.5, ease: "power1.out", opacity: 0});
 	
 	var focusable_selectors = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
 	
 	function clearModal() {
-		$('#modal, #modal-overlay').addClass('closed');	
-		$('body').removeClass('modal-active');
+		$('#modal, #modal-wrapper').addClass('closed');				
+		$('#wrapper').css('top', '0px');	
+		$('body, html').removeClass('modal-active');		
 		$('#modal-content').html('');
 		
 		//accessibility features - restore states prior to modal open				
 		$('#page-wrapper').find(focusable_selectors).removeAttr('tabindex');
 		$('#page-wrapper').removeAttr('aria-hidden');	
 		$('#modal').attr('aria-hidden', 'true');
+		$('#modal').css('height', '0px');
 		//set focus to element that triggered modal if it was a button
-		var focusTarget = '#' + $('#modal').data('trigger-el');
-		console.log(focusTarget);
+		var focusTarget = '#' + $('#modal').data('trigger-el');		
 		$(focusTarget).focus();
 		$('#modal').removeAttr('data-trigger-el');				
 	}
@@ -516,8 +517,11 @@ $(document).ready(function() {
 	function showModal(whichModal, triggerEl) {			
 		console.log(whichModal);
 		//show modal
-		$('body').addClass('modal-active');
-		$('#modal, #modal-overlay').removeClass('closed');
+		var scrollPoint = window.scrollY;
+		var scrollValue = '-' + scrollPoint + 'px';
+		$('body, html').addClass('modal-active');		
+		$('#wrapper').css('top', scrollValue);	
+		$('#modal, #modal-wrapper').removeClass('closed');
 		//set data attribute with triggering element if there is one to set focus to on close of modal
 		if (triggerEl) {
 			$('#modal').attr('data-trigger-el', triggerEl);
@@ -525,7 +529,9 @@ $(document).ready(function() {
 		//load content			
 		$('#modal-content').load(whichModal, function() {
 			var contentHeight = ($('#modal-content-inner-wrapper').innerHeight()) + ($('#modal-title').innerHeight());
-			console.log(contentHeight);			
+			console.log($('#modal-content-inner-wrapper').innerHeight());
+			console.log($('#modal-title').innerHeight());
+			console.log('contentheight: ' + contentHeight);			
 			var modalHeight = (45 + contentHeight) + 'px';
 			$('#modal').css('height', modalHeight);
 		});			
@@ -546,10 +552,7 @@ $(document).ready(function() {
 		closeModal();
 	});
 	
-	$('#modal').click(function(event) {
-		event.stopImmediatePropagation();
-	});
-	
+		
 	$('.btn-modal').click(function(e) {
 		e.preventDefault();
 		var btnId = $(this).attr('id');
@@ -580,6 +583,67 @@ $(document).ready(function() {
 		var loadAnim = gsap.to("#loader", {duration: 0.5, ease: "power1.out", opacity: 0, paused: true, onComplete:turnoffloader});
 		loadAnim.play();			
 	}
+	
+	/* GET WINDOW SIZE AND ADD CLASS TO BODY TAG TO ASSIST IN MENU CONTROL ON MOBILE DEVICES */
+		
+		var menuWidth = $('html').width();
+		
+		function sizeMarker() {
+			var screenWidth = $('html').width();		
+			$('body').removeClass('size-mobile size-tablet size-laptop size-desktop');
+			if (screenWidth < 768) {
+				$('body').addClass('size-mobile');
+				menuWidth = $('html').width();								
+			} else if ((screenWidth >= 768) && (screenWidth < 1024 )) {
+				$('body').addClass('size-tablet');
+				menuWidth = $('html').width();
+			} else if ((screenWidth >= 1024) && (screenWidth < 1280 )) {
+				$('body').addClass('size-laptop');
+			} else {
+				$('body').addClass('size-desktop');
+			}
+		}
+		
+		sizeMarker();	
+		
+		$(window).resize(function() {
+			sizeMarker();
+			$('#mm_wrapper').attr('style','');			
+		});
+		
+		/* MOBILE MENU FUNCTIONALITY */	
+		
+		var menuAnimating = false;
+			
+		$('#btn-mm-open').click(function() {			
+			
+			if (!menuAnimating && (($('body').hasClass('size-mobile'))||($('body').hasClass('size-tablet')))) {
+				menuAnimating = true;								
+				var mobileMenuPanelOpen = gsap.fromTo("#mm_wrapper", {x: menuWidth}, {duration: 0.5, ease: "power1.out", x: 0, paused: true});
+				mobileMenuPanelOpen.play();
+				gsap.fromTo("#mm_wrapper a", {opacity: 0, x: 100}, {duration: 0.2, opacity: 1, x: 0, stagger: 0.1});
+				$('#wrapper').addClass('mmopen');
+				menuAnimating = false;		
+			}
+				
+		});	
+		
+		
+		$('#btn-mm-close').click(function() {			
+			
+			console.log('firing');
+			if (!menuAnimating && ($('#wrapper').hasClass('mmopen')) && (($('body').hasClass('size-mobile')) || ($('body').hasClass('size-tablet')))) {
+				menuAnimating = true;			
+				menuWidth = $('html').width();			
+				var mobileMenuPanelClose = gsap.to("#mm_wrapper", {duration: 0.5, ease: "power1.out", x: menuWidth, paused: true});
+				mobileMenuPanelClose.play();
+				$('#wrapper').removeClass('mmopen');
+				menuAnimating = false;				
+			}
+				
+		});	
+		
+		
 				
 	
 	/* ACCORDION BEHAVIOR */
@@ -657,7 +721,9 @@ $(document).ready(function() {
 	
 	/* CONTENT VIDEO HANDLING */
 	
-	$(document).on('click', '.video-play-btn', function() {
+	$(document).on('click', '.video-play-btn', function(e) {
+		e.preventDefault();
+		console.log('registering');
 		var $parent = $(this).closest('.contentVideo'),
 		fadeOutSelector = '#' + $parent.attr('id') + ' .video-play-btn, ' + '#' + $parent.attr('id') + ' .video-image',
 		fadeInSelector = '#' + $parent.attr('id') + ' .video-player',
@@ -673,7 +739,7 @@ $(document).ready(function() {
 		if(!$parent.hasClass('block-video_-playing')) {
 			tm = new gsap.timeline();
 		
-			// $poster = $parent.find('.blc-vid__poster').first();
+			// $poster = $parent.find('.blc-vid__poster').first();			
 			videoSelector = fadeInSelector + ' > .video';
 			$video = $(videoSelector);
 		
@@ -716,8 +782,11 @@ $(document).ready(function() {
 	
 	
 	$('.sliderSet').each(function() {		
-		var timingsetting, swiperEl, swiperOptions;
-		swiperEl = '#' + $(this).find('.swiper').attr('id');		
+		var timingsetting, swiperEl, swiperOptions, paginationEl, prevEl, nextEl;
+		swiperEl = '#' + $(this).find('.swiper').attr('id');
+		paginationEl = '#' + $(this).find('.swiper-pagination').attr('id');
+		prevEl = '#' + $(this).find('.swiper-button-prev').attr('id');	
+		nextEl = '#' + $(this).find('.swiper-button-next').attr('id');		
 		timingsetting = $(this).data('timing');		
 		
 		swiperOptions = {
@@ -742,16 +811,16 @@ $(document).ready(function() {
 			}
 		} 
 		
-		if (($(this).data('controls') == 'dots') || ($(this).data('controls') == 'both')) {
+		if (($(this).data('controls') == 'dots') || ($(this).data('controls') == 'both')) {			
 			swiperOptions.pagination = {
-				el: '.swiper-pagination',
+				el: paginationEl,
 				clickable: true
 			}
 		}
 		if (($(this).data('controls') == 'buttons') || ($(this).data('controls') == 'both')) {
 			swiperOptions.navigation = {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev'
+				nextEl: nextEl,
+				prevEl: prevEl
 			}
 		}
 		
