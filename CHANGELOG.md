@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.1 - 2022-08-21
+### Fixed
+- Syntax error in page template
+
+
 ## 2.2.0 - 2022-08-21
 ### Changed
 - EVERYTHING!!!!!!
