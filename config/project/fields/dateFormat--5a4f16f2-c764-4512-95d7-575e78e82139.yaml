@@ -1,0 +1,78 @@
+columnSuffix: hmphxiix
+contentColumnType: string
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: dateFormat
+instructions: null
+name: 'Date Format'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full Text Month (January 1, 2022)'
+        -
+          - value
+          - 'F d, Y'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Short Text Month (Jan. 1, 2022)'
+        -
+          - value
+          - 'M. d, Y'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Numeric Slashes No Leading Zeroes (1/1/2022)'
+        -
+          - value
+          - n/j/Y
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Numeric Slashes Leading Zeroes (01/01/2022)'
+        -
+          - value
+          - m/d/Y
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Numeric Dashes No Leading Zeroes (1-1-2022)'
+        -
+          - value
+          - n-j-Y
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Numeric Dashes Leading Zeroes (01-01-2022)'
+        -
+          - value
+          - numericDashesLeadingZeroes01012022
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

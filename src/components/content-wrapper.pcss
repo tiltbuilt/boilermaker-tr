@@ -5,51 +5,13 @@
  *
  */
  
- .contentWrapper {
-	// These classes must stay in order to ensure functionality
-    @apply relative;
-    //The default classes and style below can be changed on a per-project basis
-    @apply mb-normal lg:mb-2x;
- }
- 
- .contentWrapper-default-bg {
-    // These classes must stay in order to ensure functionality
-     
-    //The default classes and style below can be changed on a per-project basis    
-    z-index: 0;
- }
- 
- .contentWrapper-styled-bg {
-   // These classes must stay in order to ensure functionality
-    
-   //The default classes and style below can be changed on a per-project basis    
-   @apply bg-gray-200;
+.contentWrapper {
+  // These classes must stay in order to ensure functionality
+  @apply relative;
+  //The default classes and style below can be changed on a per-project basis
+  @apply mt-normal;
 }
- 
- .contentWrapper-inner-styled {
-     // These classes must stay in order to ensure functionality
-     
-     //The default classes and style below can be changed on a per-project basis
-     @apply p-2x;
-  }
- 
- .contentWrapper-inner {
-    // These classes must stay in order to ensure functionality
-    
-    //The default classes and style below can be changed on a per-project basis
-    
- }
- 
- .contentWrapper-header {
-    // These classes must stay in order to ensure functionality
-    
-    //The default classes and style below can be changed on a per-project basis
-    @apply bg-black px-2x py-normal text-white font-bold uppercase;
- }
- 
- .contentWrapper-header-outer {
-     // These classes must stay in order to ensure functionality
-     
-     //The default classes and style below can be changed on a per-project basis
-     @apply mx-neg2x mt-neg2x text-white mb-2x;
-  }
+
+.contentWrapper-inner {
+  /* this is left blank with regard to padding because this block should not be opinionated or at least as little as possible. If the box will be styled with a background etc. then padding can be applied via the control panel. */
+}

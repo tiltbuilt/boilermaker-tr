@@ -6,14 +6,11 @@
 
 .contentVideo {
 	// These classes must stay in order to ensure functionality
-	@apply w-full;
+	@apply w-full mt-normal;
 	//The default classes and style below can be changed on a per-project basis
-	@apply mb-normal lg:mb-2x;
+	
 }
 
-.video-default-bg {
-	@apply bg-gray-300;
-}
 
 .video-frame {
 	@apply relative bg-black;
@@ -25,6 +22,12 @@
 			fill: theme('colors.white');
 		}
 	}
+}
+
+.video-embed-wrapper {
+	position: relative;
+	height: 0px;
+	width: 100%;
 }
 
 .video-play-btn {

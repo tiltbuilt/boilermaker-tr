@@ -1,0 +1,14 @@
+columnSuffix: jxmlljzn
+contentColumnType: boolean
+fieldGroup: 1371181e-0e3f-44fe-bfdd-4848b6b55d74 # Page Builder - Sliders
+handle: buttons
+instructions: null
+name: Buttons
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,287 @@
+field: 6ab11a93-de62-4840-bcc5-6adf8563fa13 # Image/Video Layout
+fieldLayouts:
+  63bf2d7b-71dc-407e-9db4-2906452edf85:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: cd820604-8a70-4923-a94d-60cb48bafa68 # Device Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da62d316-dd0b-4ea2-818e-2c2405217843
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7bb91d1e-6610-40cf-b3e5-428f86caf0c1 # Image/Video Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 840a86ff-e757-44d7-b282-7218ab771a5a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 597562da-9c14-4e54-a628-bb52807f75ad # Text Wrap Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 795147e7-bb36-43ff-b7a3-ef03e724b2a1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b45bc12d-fc82-4164-8b6b-532551f85593
+        userCondition: null
+fields:
+  7bb91d1e-6610-40cf-b3e5-428f86caf0c1: # Image/Video Size
+    columnSuffix: treaegya
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageVideoSize
+    instructions: null
+    name: 'Image/Video Size'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Default (No Change)'
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Fluid Width (fills container)'
+            -
+              - value
+              - w-full
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 1/4'
+            -
+              - value
+              - w-1/4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 1/3'
+            -
+              - value
+              - w-1/3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 1/2'
+            -
+              - value
+              - w-1/2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 2/3'
+            -
+              - value
+              - w-2/3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 3/4'
+            -
+              - value
+              - w-3/4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Hidden
+            -
+              - value
+              - hidden
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  597562da-9c14-4e54-a628-bb52807f75ad: # Text Wrap Position
+    columnSuffix: mhadefgn
+    contentColumnType: string
+    fieldGroup: null
+    handle: textWrapPosition
+    instructions: null
+    name: 'Text Wrap Position'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Default (No Change)'
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-wrap-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-wrap-right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Remove Text Wrap'
+            -
+              - value
+              - text-wrap-none
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  cd820604-8a70-4923-a94d-60cb48bafa68: # Device Size
+    columnSuffix: lyvphabe
+    contentColumnType: string
+    fieldGroup: null
+    handle: deviceSize
+    instructions: null
+    name: 'Device Size'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Default (Phone Vertical & Above)'
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Phone Horizontal & Above'
+            -
+              - value
+              - 'sm:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Tablet & Above'
+            -
+              - value
+              - 'md:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Laptop & Above'
+            -
+              - value
+              - 'lg:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Desktop & Above'
+            -
+              - value
+              - 'xl:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Hi Res'
+            -
+              - value
+              - '2xl:'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: mediaStyle
+name: 'Media Style'
+sortOrder: 1

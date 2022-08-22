@@ -1,0 +1,92 @@
+field: 114bf113-0d20-4dd6-8e12-f1265063b87c # Blog Content
+fieldLayouts:
+  2d4c0373-29e0-4e3b-8f9f-b92cf147d6ec:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a4a3c790-6fa2-450b-a31c-b8141bcefd59 # Link Settings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 149f58d9-626f-4fd0-88fd-ec022e6bbeed
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e45d6fd1-61f1-48a9-bfeb-83bc03220d39
+        userCondition: null
+fields:
+  a4a3c790-6fa2-450b-a31c-b8141bcefd59: # Link Settings
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkSettings
+    instructions: null
+    name: 'Link Settings'
+    searchable: false
+    settings:
+      allowCustomText: true
+      allowTarget: true
+      autoNoReferrer: true
+      customTextMaxLength: 0
+      customTextRequired: false
+      defaultLinkName: asset
+      defaultText: ''
+      enableAllLinkTypes: false
+      enableAriaLabel: true
+      enableElementCache: true
+      enableTitle: true
+      typeSettings:
+        asset:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: true
+          sources: '*'
+        category:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: true
+          sources: '*'
+        custom:
+          allowAliases: false
+          disableValidation: false
+          enabled: true
+        email:
+          allowAliases: false
+          disableValidation: false
+          enabled: true
+        entry:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: true
+          sources:
+            - singles
+            - 'section:9bdbf9e4-b579-4b3a-bc92-1a6a6610ce12' # News
+            - 'section:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
+        site:
+          enabled: false
+          sites: '*'
+        tel:
+          allowAliases: false
+          disableValidation: false
+          enabled: true
+        url:
+          allowAliases: false
+          disableValidation: false
+          enabled: true
+        user:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: false
+          sources: '*'
+    translationKeyFormat: null
+    translationMethod: none
+    type: lenz\linkfield\fields\LinkField
+handle: button
+name: Button
+sortOrder: 4

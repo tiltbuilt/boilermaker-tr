@@ -1,0 +1,115 @@
+childBlocks: null
+description: ''
+enabled: true
+field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
+fieldLayouts:
+  6f1edef1-b0da-4df0-a737-fc55987c94f6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d124182-8773-4c9e-8321-6265b9074153
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6fec78ad-0872-4c51-ba8d-cb332fb03407 # Open As Modal
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a496be66-9489-4edd-afef-8cbc29029f91
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: eec7fd4b-3bdb-465a-b76f-4c1f5492b2d9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'These settings will be override the settings from group is chosen.'
+            type: craft\fieldlayoutelements\Tip
+            uid: b7a9f63d-cf8c-498f-b1b2-6688d73265f9
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 42709208-fe8c-42ab-8e92-2569780ee9bd
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: c51a76cf-e325-4732-9bf5-a816ca68d07f # Button Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0358afae-8f74-4411-8005-8bdccae7bdd5
+            userCondition: null
+            warning: null
+            width: 50
+        name: Styling
+        uid: 9bb1d5aa-d02f-4220-ad48-04c5b7e3b2f5
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f899f94-bfb0-4ea6-a297-201113b75d7d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9f6b068f-70bc-408c-8582-266bd626fac7
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 988c3b99-5015-4f2c-8fae-2908280ea3ea
+        userCondition: null
+group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
+handle: button
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Button
+sortOrder: 7
+topLevel: false

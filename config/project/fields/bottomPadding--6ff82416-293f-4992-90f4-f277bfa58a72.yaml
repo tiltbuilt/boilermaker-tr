@@ -1,0 +1,132 @@
+columnSuffix: qjcmkbeg
+contentColumnType: string
+fieldGroup: 217da411-10b4-4af2-bd6c-010f5ff3260b # Padding & Margins
+handle: bottomPadding
+instructions: null
+name: 'Bottom Padding'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Scaling Sizes'
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - pb-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Extra
+        -
+          - value
+          - pb-extra
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - pb-0
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Fixed Sizes'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Quarter (3.75px)'
+        -
+          - value
+          - pb-quarter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Half (7.5px)'
+        -
+          - value
+          - pb-half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Base (15px)'
+        -
+          - value
+          - pb-base
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2x (30px)'
+        -
+          - value
+          - pb-2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3x (45px)'
+        -
+          - value
+          - pb-3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4x (60px)'
+        -
+          - value
+          - pb-4x
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

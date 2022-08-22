@@ -7,17 +7,21 @@
  *
  */
  
+.repeater {
+	@apply mt-normal;
+}
+ 
 .repeater-intro {
 	// These classes must stay in order to ensure functionality
 	
 	//The default classes and style below can be changed on a per-project basis
-	@apply mb-normal lg:mb-2x;
+	@apply mt-normal;
 }
 
 /* TEXT LIST REPEATERS */
  
 .repeater-list-text {	
-	@apply mb-normal lg:mb-2x p-0;
+	@apply mt-normal p-0 text-left;
 	list-style: none;
 }
  
@@ -33,19 +37,19 @@ li.repeater-list-text-item {
 /* CARD LIST REPEATERS */
 
  .list-wrapper {
-	 @apply p-0 mb-normal lg:mb-2x
+	 @apply p-0 mt-normal;
  }
 
  .repeater-list-card, .repeater-list-card-img-lg, .repeater-list-card-img-sm {
-	@apply flex flex-wrap justify-center items-stretch mx-negnormal lg:mx-neg2x;
+	@apply flex flex-wrap justify-center items-stretch mx-negbase;
 	/* mx-negnormal sets up normal spacing between cards in the block, but that can be changed for more space if desired. justify-start sets up incomplete card rows to align left. That can be changed also, see the justify setting in Tailwind cheats */
 	
 	.repeater-list-item {
 		/* set cards to be full width on mobile, 1/3 or whatever size you like on tablet up. padding sets up space between items */
-		@apply w-full p-normal lg:p-2x relative md:w-1/3;		
+		@apply p-base relative;		
 		
 		a {
-			@apply block relative; /* makes link a block element inside of list item */
+			@apply block relative h-full; /* makes link a block element inside of list item */
 			/* change this property to fit how you want hover behaviors to work */
 			transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 			/* removes underlines from text in cards */
@@ -69,7 +73,7 @@ li.repeater-list-text-item {
 				left: 0;			
 				
 				/* these styles control the appearance of the card feel free to change them as you see fit */
-				@apply bg-gray-100 shadow-md;
+				
 				
 				
 			}		
@@ -77,12 +81,12 @@ li.repeater-list-text-item {
 			
 			.item-wrapper {
 				/* this element holds the actual content of the card. It is set to relative to float above the background of the card. */
-				@apply relative;
+				@apply relative h-full;
 				z-index: 1;
 			}
 			
 			.repeater-lg-thumbnail {
-				@apply block w-full mb-half;
+				@apply block w-full;
 			}
 			
 			.list-item-thumbnail-column {
@@ -103,12 +107,20 @@ li.repeater-list-text-item {
 	
  }
  
+ .repeater-list-card-item, .repeater-list-card-img-lg-item, .repeater-list-card-img-sm-item {
+	 @apply w-full md:w-1/3;
+ }
+ 
+ .repeater-list-card-img-sm-item {
+	 @apply text-left;
+ }
+ 
  .repeater-list-card-item-card {
-	 @apply p-normal;
+	 @apply p-base;
  }
  
  .repeater-list-card-item-header, .repeater-list-card-img-lg-item-header, .repeater-list-card-img-sm-item-header {
-	@apply font-bold text-lg mb-3;
+	@apply font-bold text-lg mt-half;
  }
  
  .repeater-list-card-img-lg-item-thumbnail {
@@ -116,7 +128,7 @@ li.repeater-list-text-item {
  }
  
  .repeater-list-card-img-lg-item-textcontent {
-	 @apply p-normal;
+	 @apply p-base;
  }
  
  .repeater-list-card-img-sm-item-thumbnail {
@@ -124,7 +136,7 @@ li.repeater-list-text-item {
   }
   
  .repeater-list-card-img-sm-item-card-row {
-	 @apply flex flex-nowrap justify-center items-stretch;
+	 @apply flex flex-nowrap justify-center items-stretch h-full;
  }
    
  .repeater-list-card-img-sm-item-thumbnail-column {
@@ -140,7 +152,7 @@ li.repeater-list-text-item {
  }
  
  .repeater-list-card-img-sm-item-text-column {
-	  @apply p-normal w-3/4;
+	  @apply p-base w-3/4;
   }
  
  .repeater-list-card-sm-img {
@@ -154,7 +166,7 @@ li.repeater-list-text-item {
  /* BUTTON LIST */
  
  .repeater-list-btn-item {
-	 @apply mb-half;
+	 @apply mt-half;
  }
  
  .repeater-list-btn-item-btn {

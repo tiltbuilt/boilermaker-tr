@@ -1,0 +1,100 @@
+{#
+/**
+ * Tilt Boilermaker - Pages entry template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+
+{% do craft.app.elements.eagerLoadElements(
+ className(entry),
+ [entry],
+ [
+ 'seoImage',
+ 'modalToDisplay',
+ 'pageBuilder',
+ 'pageBuilder.sectionStandard:backgroundImagery',
+ 'pageBuilder.column:backgroundImagery',
+ 'pageBuilder.sectionStandard:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.column:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.column:columnDisplay',
+ 'pageBuilder.columnSlide:columnDisplay',
+ 'pageBuilder.contentWrapper:backgroundImagery',
+ 'pageBuilder.contentWrapper:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.contentWrapper:contentWrapperTextStyling',
+ 'pageBuilder.accordionSet:backgroundImagery',
+ 'pageBuilder.tabSet:backgroundImagery',
+ 'pageBuilder.slide:backgroundImagery',
+ 'pageBuilder.ctaStandard:backgroundImagery',
+ 'pageBuilder.accordionSet:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.tabSet:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.slide:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.ctaStandard:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.ctaSmall:backgroundImagery',
+ 'pageBuilder.ctaSmall:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.ctaStandard:imageAsset',
+ 'pageBuilder.image:imageAsset',
+ 'pageBuilder.image:imageVideoLayout',
+ 'pageBuilder.contentVideo:imageVideoLayout',
+ 'pageBuilder.contentVideo:videoContent',
+ 'pageBuilder.repeaterItemContentLink:seoImage',
+ 'pageBuilder.repeaterSelectEntryList:listSpecificEntries',
+ 'pageBuilder.sectionTwoColumnEdgePhoto:imageAsset',
+ 'pageBuilder.repeaterContentLinks:itemsPerRow',
+ 'pageBuilder.repeaterSectionEntryList:itemsPerRow',
+ 'pageBuilder.repeaterNavCollection:itemsPerRow',
+ 'pageBuilder.repeaterSelectEntryList:itemsPerRow',
+ 'pageBuilder.header:mainHeaderAdjustments',
+ 'pageBuilder.header:subheadAdjustments',
+ ]
+) %}
+
+{% set pageBuilderContent = entry.pageBuilder.collect() %}
+
+{# -- Layout template for HTML pages -- #}
+{% extends "_project/_layouts/generic-page-layout.twig" %}
+
+{% block pageId %}page-{{- entry.slug -}}{% endblock %}
+
+{% block bodyAttr %}
+{% endblock %}
+
+{% block globalHeader %}
+{% endblock %}
+
+{% block pageHeader %}
+{% endblock %}
+
+{% block pageContent %}
+		
+	{% for block in pageBuilderContent %}
+		{% do block.useMemoized(pageBuilderContent) %}
+	{% endfor %}
+	
+	{% for block in pageBuilderContent %}
+		{% if block.level == 1 and block.type.handle starts with 'section' %}
+			
+			  {%
+				include [
+				  '_project/_bodyblocks/sections/' ~ block.type.handle,
+				  '_boilerplate/_bodyblocks/sections/' ~ block.type.handle,
+				  '_project/_bodyblocks/sections/section',
+				  '_boilerplate/_bodyblocks/sections/section'
+				] with { 'section' : block,  }
+			  %}
+			
+		{% endif %}  
+	 {% endfor %}    
+
+{% endblock %}
+
+{% block pageFooter %}
+{% endblock %}

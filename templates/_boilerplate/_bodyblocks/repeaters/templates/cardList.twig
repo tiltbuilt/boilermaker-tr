@@ -8,25 +8,35 @@
 
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
-
-<div class="list-wrapper anim-pass">
-<div class="repeater-list-card anim-pass">
+{% set itemClasses = ['anim-child', 'repeater-list-item', 'repeater-list-card-item'] %}
+{% if repeaterRowCount is same as(1) %}
+	{% set itemClasses = itemClasses|merge(['md:w-full']) %}
+{% else %}
+	{% for rowSize in repeaterRowCount %}
+		{% set itemClasses = itemClasses|merge([rowSize.deviceSize ~ 'w-1/' ~ rowSize.itemCount]) %}
+	{% endfor %}
+{% endif %}
+<div class="list-wrapper">
+<div class="repeater-list-card">
 {% for repeaterItem in repeaterData %}	
-  <div class="elem-block repeater-list-item repeater-list-card-item">
-	<div class="anim-wrapper anim-child">
-	  <div class="inner repeater-list-card-item-inner">		          
-		  <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassList('repeater-list-card-item-link', null, null) -}}>
-			<div {{ gMacros.buildClassList('item-wrapper repeater-list-card-item-card', listItemClasses, null) -}}>
-				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-card-item-header', listItemHeaderClasses, null) -}}>
+  <div {{ gMacros.buildClassListBasic(itemClasses) -}}>
+	
+	  <div class="inner repeater-list-card-item-inner h-full">		          
+		  <a href="{{ repeaterItem.url }}" class="repeater-list-card-item-link">
+			<div {{ gMacros.buildClassListBasic(['item-wrapper', 'repeater-list-card-item-card']) -}}>
+				<{{ repeaterHeadingLevel }} class="repeater-list-card-item-header">
 				  {{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
 				</{{ repeaterHeadingLevel }}>
+				{% if repeaterShowDate and repeaterItem.postDate is defined and dateFormat != null %}	  		
+					<div class="repeater-date">{{ repeaterItem.postDate | date(dateFormat) }}</div>	 
+				{% endif %}
 				{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
 					{{ repeaterItem.excerpt }}	  				 
 				{% endif %}
 			</div>
 		  </a>        
 	  </div>
-	</div>
+	
   </div>	
 {% endfor %}
 </div>

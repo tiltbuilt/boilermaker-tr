@@ -9,7 +9,7 @@
 	 // These classes must stay in order to ensure functionality
 	
 	 //The default classes and style below can be changed on a per-project basis
-	 @apply mb-normal lg:mb-2x;
+	@apply mt-normal; 
  }
  
  .accrdionSet-inner {
@@ -22,7 +22,7 @@
 	// These classes must stay in order to ensure functionality
 	overflow: hidden;
 	//The default classes and style below can be changed on a per-project basis
-	@apply mb-half;
+	@apply mt-half relative;
 	
 	&.accordion-button-header {
 		//these classes should not be changed. They affect the header tag that wraps the button and are set this way to prevent gaps between the button and the panel
@@ -37,7 +37,7 @@
 	// These classes must stay in order to ensure functionality
 	@apply m-0 relative w-full block;
 	//The default classes and style below can be changed on a per-project basis
-	@apply text-left pl-16 py-3 pr-3 uppercase text-lg font-bold btn-black;
+	@apply text-left pl-16 py-3 pr-3 uppercase text-lg font-bold;
 	transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	
 	 
@@ -99,14 +99,9 @@
 		height: auto;
 	}
 	
-	//The default classes and style below can be changed on a per-project basis
-	
+	//The default classes and style below can be changed on a per-project basis	
 }
 
 .accordion-inner {
-	@apply p-2x;  
-}
-
-.accordion-default-bg {
-	@apply bg-gray-200;
+	@apply p-normal;
 }

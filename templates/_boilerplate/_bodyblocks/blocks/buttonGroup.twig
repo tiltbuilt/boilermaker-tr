@@ -13,22 +13,11 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
-{% set contentKids = null %}
-{% set styleAdjusts = null %}
-{% for item in block.children.all() %}
-	{% if item.type.handle == 'childrenButtonGroup' %}
-		{% set contentKids = item %}
-	{% elseif item.type.handle == 'styleAdjustmentsButtonGroup' %}
-		{% set styleAdjusts = item %}
-	{% endif %}
-{% endfor %}
-
 {# Set block id attribute value #}
 {% if block.customId is defined and block.customId != '' %}
 	{% set blockId = block.customId %}
 {% else %}
-	{% set blockId = 'buttonGroup-' ~ block.id %}
+	{% set blockId = block.type.handle ~ block.id %}
 {% endif %}
 
 {# Set block type handle as class name for styling #}
@@ -38,68 +27,7 @@
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create arrays to collect style changes to primary element and inner and bg #}
-{% set styleClasses = [] %}
-{% set outerClasses = [] %}
-{% set childBtnClasses = [] %}
-{% set childBtnOuterClasses = [] %}
-
-{% if styleAdjusts != null %}	
-	
-	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
-		
-	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}		  
-		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-		{% for fieldItem in styleSetFields %}
-		
-			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'button') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add color classes #}
-			{% if not (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Color') and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# Add margin settings to outerCLasses array #}			
-			{% if not (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}	
-			
-			{# add button classes to child btn array #}
-			{% if (fieldItem.handle starts with 'button') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set childBtnClasses = childBtnClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add color classes to btn classes #}
-			{% if fieldItem.handle ends with 'Color' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-				{%- set childBtnClasses = childBtnClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add button margin classes to array #}
-			{% if (fieldItem.handle starts with 'button') and (fieldItem.handle ends with 'Margin') and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set childBtnOuterClasses = childBtnOuterClasses|merge([classItem]) -%}
-			{% endif %}
-					
-		{% endfor %}
-			
-	{% endfor %}
-		
-{% endif %}
-
+{% set outerClasses = [colorScheme, block.topMargin, block.bottomMargin] %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
@@ -107,56 +35,92 @@
 
 {# set animation classes for reveal #}
 
-{% set animClasses = [] %}
-{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
-	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
-	{% set revealClass = block.revealAnimation %}
+{% set revealClass = [] %}
+{% if block.revealAnimation == 'anim-child' %}	
 	{% if block.animateChildren is not empty %}
 		{% if block.animateChildren == true %}
-			{% set animClasses = animClasses|merge(['anim-parent']) %}
-			{% if block.staggerChildReveals is not empty %}
-				{% if block.staggerChildReveals == true %}
-					{% set revealClass = revealClass ~ '-stagger' %}
-				{% endif %}
-			{% endif %}
+			{% set revealClass = revealClass|merge(['anim-pass']) %}			
 		{% else %}
-			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+			{% set revealClass = revealClass|merge([block.revealAnimation]) %}		
 		{% endif %}
 	{% else %}
-		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+		{% set revealClass = revealClass|merge([block.revealAnimation]) %}
 	{% endif %}	
-	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% else %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass|merge([block.revealAnimation ~ '-stagger']) %}
+				{% else %}
+					{% set revealClass = revealClass|merge([block.revealAnimation]) %}
+				{% endif %}
+			{% endif %}			
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}
+	{% endif %}			
 {% endif %}
+{% set outerClasses = outerClasses|merge(revealClass) %}
 
 {# OUTPUT #}
 
 <div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
-			{% if contentKids != null %}
-				{% for child in clone(contentKids.children).collect() %}	  
-					
-					{#-
-					For each child component, attempt to load a custom template for the
-					component handle from the project's files,
-					then the same template from the core Tiltrus files,
-					then a custom default template from the project,
-					and finally the default template for this component type from the core Tiltrus files.
-					-#}
-					
-					
-				  {%
-					include [
-					  '_project/_bodyblocks/blocks/' ~ child.type.handle,
-					  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-					  '_project/_bodyblocks/blocks/block',
-					  '_boilerplate/_bodyblocks/blocks/block'
-					] ignore missing with { 'block' :  child, 'groupStyles': childBtnClasses, 'spacingStyles': childBtnOuterClasses, 'inGroup': true }
-				  %}
-					  
-					
-				{% endfor %}
-			{% endif %}
-		</div>		
-	</div>     
+	<div class="{{innerClass}} {{block.contentAlignment}}">	
+		
+		{% for child in clone(block.children).collect() %}
+		
+			<div class="anim-child btn-wrapper">
+			  
+				{% set btnClasses = ['btn'] %}
+				{% set buttonLink = child.linkSettings %}
+				
+				{% if child.buttonStyle != '' %}
+					{% set btnClasses = btnClasses|merge([child.buttonStyle]) %}
+				{% else %}
+					{% set btnClasses = btnClasses|merge([block.buttonStyle]) %}
+				{% endif %}
+				
+				{% if child.buttonSize != '' %}
+					{% set btnClasses = btnClasses|merge([child.buttonSize]) %}
+				{% else %}
+					{% set btnClasses = btnClasses|merge([block.buttonSize]) %}
+				{% endif %}
+				
+				
+				{% set canModal = buttonLink.hasElement() %}
+				{% set buttonEl = buttonLink.getElement() %}
+				{% set useModal = false %}
+				{% if buttonEl != null and buttonLink.getType() == 'asset' %}
+					{% if craft.embeddedAssets.get(buttonEl) %}
+						{% set useModal = true %}
+					{% endif %}
+				{% endif %}
+				{% if child.openAsModal %}
+					{% set useModal = true %}
+				{% endif %}
+				{% if canModal and useModal %}
+					{% if buttonLink.getType() == 'asset' %}										
+						{% set modalUrl = '/resources/assetmodal?assetid=' ~ buttonLink.getElement().id %}						
+					{% else %}
+						{% set modalUrl = buttonLink.url %}
+					{% endif %}
+					{% set btnClasses = btnClasses|merge(['btn-modal']) %}
+					<button data-modal-target="{{ modalUrl}}" {{ gMacros.buildClassListBasic(btnClasses) -}}>
+						<span>{{ buttonLink.getCustomText('More Info') }}</span>
+					</button>								
+				{% else %}
+					<a href="{{ buttonLink.url }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildClassListBasic(btnClasses) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>
+						  <span>{{ buttonLink.getCustomText('More Info') }}</span>
+					</a>
+				{% endif %}
+				
+			</div>
+													
+		{% endfor %}
+		
+	</div>    
 </div>

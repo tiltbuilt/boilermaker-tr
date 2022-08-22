@@ -2,19 +2,23 @@ fieldLayouts:
   0c8717a2-f55f-43a3-a03f-256cc96b196e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
-            fieldUid: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+            elementCondition: null
+            fieldUid: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
             instructions: null
-            label: '404 Page Content'
+            label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6d1c489f-9cdb-4a1b-947a-ce7f2d5f40c3
+            uid: 39031b1d-afc1-4131-aa76-caf951e00086
+            userCondition: null
             warning: null
             width: 100
         name: '404 Page Content'
-        uid: 13ca067d-a019-49df-8e8c-eae5323c45cf
+        uid: 2fbc37b4-fde4-4489-964d-5844bfd79324
+        userCondition: null
 handle: page404
 name: '404 Page'
 sortOrder: 1

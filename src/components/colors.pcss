@@ -1,0 +1,346 @@
+
+.white-black-gray {
+	
+	/* COLOR SCHEMES SET ON ELEMENTS THEMSELVES */
+	
+	&.sectionStandard, &.sectionTwoColumnEdgePhoto, &.column, &.contentWrapper, &.accordionSet, &.tabSet, &.sliderSet, &.slide, &.ctaStandard, &.ctaSmall, &.form, &.pageHeader {
+		
+		@apply bg-black text-white;
+				
+		&.bg-off {
+			color: inherit;
+			background-color: transparent !important;
+		}
+					
+		a {
+			@apply text-gray-300 hover:text-white;	
+		}
+				
+	}
+	
+	/* BUTTONS */
+	
+	&.buttonGroup, &.iconContent, &.ctaSmall, &.ctaStandard {
+		.btn, .btn-standard {
+			@apply bg-gray-300 text-black hover:text-white hover:bg-gray-500;
+		}
+		
+		.btn-text, .btn-text-arrow {
+			@apply text-gray-400 hover:text-white;
+			background: transparent !important;
+		}
+	}
+	
+			
+	/* HEADERS */
+			
+	&.header, &.iconContent, &.ctaSmall, &.ctaStandard {
+		
+		/* put all your header classes here, you can separate the parents if you want the headers to be different colors in an icon block or a CTA */
+		
+		.heading2 {
+			@apply text-gray-400;
+		}
+		
+	}
+	
+	&.pageHeader {
+		
+		.pageHeader-main-header {
+			@apply text-white;
+		}
+		
+		.pageHeader-subhead {
+			@apply text-white;
+		}
+		
+		.pageHeader-intro {
+			@apply text-white;
+		}
+		
+	}
+	
+	/* IMAGE CAPTIONS */
+		
+	&.image-block, &.contentVideo {
+		.image-caption {
+			@apply bg-gray-600 text-white; 
+		}
+	}
+		
+		
+	/* SLIDER CONTROLS */
+	
+	&.sliderSet {
+		.swiper-button-prev, .swiper-button-next {
+			@apply bg-gray-300 text-black hover:bg-gray-600 hover:text-white;
+		}
+		
+		.swiper-pagination-bullet {
+			@apply bg-gray-500 hover:bg-gray-300;       
+			
+			&.swiper-pagination-bullet-active {
+				@apply bg-white;
+			}
+		}
+	}
+		
+	/* ICONS */
+	
+	&.iconContent {
+		.iconContent-icon-block {
+			@apply text-gray-300;
+		}
+	}
+		
+	/* TABS */
+		
+	&.tabSet {
+		.btn-tab {
+			@apply bg-gray-600 text-gray-300 hover:bg-gray-300 hover:text-black;
+			
+			&.active-tab {
+				@apply text-black bg-white;
+			}
+		}
+		
+		.tab-panel-wrapper {
+			@apply bg-white text-black;
+		}
+	}
+		
+		
+	/* ACCORDIONS */
+	
+	
+	&.accordionSet {
+		.btn-accordion {
+			@apply text-gray-300 bg-gray-600 hover:bg-gray-500;
+			
+			&.expanded {
+				@apply text-black bg-gray-300;
+			}
+		}
+		
+		.accordion {
+			@apply text-black bg-white;
+		}
+	}
+	
+	/* REPEATERS */
+		
+	&.repeaterContentLinks, &.repeaterNavCollection, &.repeaterSectionEntryList, &.repeaterSelectEntryList {
+		
+		& > .inner {
+			
+			.btn, .btn-standard {
+				@apply bg-gray-600 text-gray-300 hover:text-white hover:bg-gray-500;
+			}
+			
+			.btn-text, .btn-text-arrow {
+				@apply text-gray-400 hover:text-white;
+				background: transparent !important;
+			}
+			
+			
+			& > .list-wrapper {
+				.repeater-list-card, .repeater-list-card-img-lg, .repeater-list-card-img-sm {
+					.repeater-list-item {
+						a {
+							
+						@apply  text-white hover:text-white;
+						
+							&::after {
+								@apply bg-gray-600;
+							}
+						}	
+					}
+				}
+			}
+			
+		}		
+		
+	}	
+		
+	/* FORMS */
+		
+	&.form {		
+		.freeform-input {
+			@apply bg-gray-600 text-white;	
+		}	
+	}
+			
+}
+	
+
+.black-white-gray {
+	
+	/* COLOR SCHEMES SET ON ELEMENTS THEMSELVES */
+	
+	&.sectionStandard, &.sectionTwoColumnEdgePhoto, &.column, &.contentWrapper, &.accordionSet, &.tabSet, &.sliderSet, &.slide, &.ctaStandard, &.ctaSmall, &.form, &.pageHeader {
+		
+		@apply bg-white text-black;
+				
+		&.bg-off {
+			color: inherit;
+			background-color: transparent !important;
+		}
+					
+		a {
+			@apply text-gray-600 hover:text-gray-300;
+		}		
+		
+	}
+	
+	/* BUTTONS */
+	
+	&.buttonGroup, &.iconContent, &.ctaSmall, &.ctaStandard  {
+		.btn, .btn-standard {
+			@apply bg-gray-300 text-black hover:text-white hover:bg-gray-500;			
+		}
+		
+		.btn-text, .btn-text-arrow {
+			@apply text-gray-600 hover:text-gray-300;
+			background: transparent !important;
+		}
+	}
+	
+			
+	/* HEADERS */
+		
+	&.header, &.iconContent, &.ctaSmall, &.ctaStandard  {
+		
+		/* put all your header classes here */
+		
+		.heading2 {
+			@apply text-gray-600;
+		}
+		
+	}
+	
+	&.pageHeader {
+		
+		.pageHeader-main-header {
+			@apply text-black;
+		}
+		
+		.pageHeader-subhead {
+			@apply text-black;
+		}
+		
+		.pageHeader-intro {
+			@apply text-black;
+		}
+		
+	}
+	
+	/* IMAGE CAPTIONS */
+		
+	&.image-block, &.contentVideo {
+		.image-caption {
+			@apply bg-gray-300 text-black; 
+		}
+	}
+		
+		
+	/* SLIDER CONTROLS */
+	
+	&.sliderSet {
+		.swiper-button-prev, .swiper-button-next {
+			@apply bg-gray-600 text-white hover:bg-gray-300 hover:text-black;
+		}
+		
+		.swiper-pagination-bullet {
+			@apply bg-gray-500 hover:bg-gray-300;       
+			
+			&.swiper-pagination-bullet-active {
+				@apply bg-white;
+			}
+		}
+	}
+		
+	/* ICONS */
+	
+	&.iconContent {
+		.iconContent-icon-block {
+			@apply text-gray-500;
+		}
+	}
+		
+	/* TABS */
+		
+	&.tabSet {
+		.btn-tab {
+			@apply bg-gray-300 text-gray-600 hover:bg-gray-600 hover:text-white;
+			
+			&.active-tab {
+				@apply text-white bg-black;
+			}
+		}
+		
+		.tab-panel-wrapper {
+			@apply bg-gray-300 text-black;
+		}
+	}
+		
+		
+	/* ACCORDIONS */
+	
+	
+	&.accordionSet {
+		.btn-accordion {
+			@apply text-gray-300 bg-gray-600 hover:bg-gray-500;
+			
+			&.expanded {
+				@apply text-black bg-gray-300;
+			}
+		}
+		
+		.accordion {
+			@apply text-black bg-gray-300;
+		}
+	}
+	
+	/* REPEATERS */
+		
+	&.repeaterContentLinks, &.repeaterNavCollection, &.repeaterSectionEntryList, &.repeaterSelectEntryList {
+		
+		& > .inner {
+			.btn, .btn-standard {
+				@apply bg-gray-300 text-black hover:text-white hover:bg-gray-500;			
+			}
+			
+			.btn-text, .btn-text-arrow {
+				@apply text-gray-600 hover:text-gray-300;
+				background: transparent !important;
+			}
+			
+			& > .list-wrapper {
+				& > .repeater-list-card, & > .repeater-list-card-img-lg, & > .repeater-list-card-img-sm {
+					& > .repeater-list-item {
+						a {
+							@apply text-black hover:text-black;
+							
+							&::after {
+								@apply bg-gray-300;
+							}
+						}	
+					}
+				}
+			}		
+			
+		}	
+		
+	}
+		
+		
+	/* FORMS */
+		
+	&.form {		
+		.freeform-input {
+			@apply bg-gray-300 text-black;	
+		}	
+	}
+			
+}
+

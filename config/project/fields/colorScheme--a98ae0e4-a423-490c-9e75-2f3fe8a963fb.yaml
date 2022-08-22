@@ -7,8 +7,51 @@ name: 'Color Scheme'
 searchable: false
 settings:
   default: null
-  palette: 'Color Schemes'
-  useConfigFile: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (Inherit from Parent)'
+        -
+          - color
+          - '#D1D5DB,#FF0000,#D1D5DB'
+        -
+          - default
+          - '1'
+        -
+          - class
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Color Scheme 1'
+        -
+          - color
+          - '#ffffff,#000000,#d1d5db'
+        -
+          - default
+          - ''
+        -
+          - class
+          - white-black-gray
+    -
+      __assoc__:
+        -
+          - label
+          - 'Color Scheme 2'
+        -
+          - color
+          - '#000000,#ffffff,#d1d5db'
+        -
+          - default
+          - ''
+        -
+          - class
+          - black-white-gray
+  palette: null
+  useConfigFile: false
 translationKeyFormat: null
 translationMethod: none
 type: percipiolondon\colourswatches\fields\ColourSwatches

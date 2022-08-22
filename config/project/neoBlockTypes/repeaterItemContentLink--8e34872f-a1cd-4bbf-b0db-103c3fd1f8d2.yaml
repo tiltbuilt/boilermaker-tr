@@ -1,0 +1,60 @@
+childBlocks: null
+description: ''
+enabled: true
+field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
+fieldLayouts:
+  e63f2a80-1399-42fc-bb4f-00168fe64d93:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bc6aab5a-0ca7-4011-9329-6c3d7e89928e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
+            instructions: null
+            label: 'Link Description'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 528f6199-47df-45b8-bc8a-bbc7e32c8a45
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: aaf47b2e-bc87-461d-8aa7-55847fbcaeba # SEO - Image
+            instructions: null
+            label: 'Link Photo'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 421d7397-6d9f-4e1b-8f6a-59b9510d9176
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 66579609-b152-40d6-9065-4c608dc28625
+        userCondition: null
+group: 46b72c49-6f07-4cae-936b-63d8dc62bfde # Repeaters
+handle: repeaterItemContentLink
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Repeater Item - Content Link'
+sortOrder: 29
+topLevel: false

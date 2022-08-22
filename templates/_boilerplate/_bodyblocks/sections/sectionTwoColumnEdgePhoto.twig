@@ -1,0 +1,215 @@
+{#
+/**
+ * Tilt Boilermaker - 2 Column Edge Photo Section Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+
+
+{# Set block id attribute value #}
+{% if section.customId is defined and section.customId != '' %}
+	{% set blockId = section.customId %}
+{% else %}
+	{% set blockId = 'section-' ~ section.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = section.type.handle %}
+{% set innerClass = 'inner ' ~ section.type.handle ~ '-inner' %}
+
+
+{# set styleClasses with classes needed to be applied to container inner div #}
+{% set photoClasses = ['column', 'md:w-1/2', 'p-0'] %}
+{% set contentClasses = ['column', 'md:w-1/2', 'p-0', 'z-10', section.contentColumnVerticalAlignment] %}
+{% set contentInnerClasses = ['content-sizer', 'anim-pass', section.topPadding, section.bottomPadding, section.gutterPadding, section.contentAlignment] %}
+
+{% if section.imagePlacement %}
+	{% set photoClasses = photoClasses|merge(['column-right']) %}
+	{% set contentClasses = contentClasses|merge(['column-left']) %}
+{% else %}
+	{% set photoClasses = photoClasses|merge(['column-left']) %}
+	{% set contentClasses = contentClasses|merge(['column-right']) %}
+{% endif %}
+
+
+{% set colorScheme = section.colorScheme.class %}
+
+{# outerClasses has color scheme class and class if section should have transparent bg instead of bg specified in color scheme #}
+{% set outerClasses = ['elem-block', colorScheme] %}
+
+{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+{% set customClassString = (section['customClassList'] is defined ? section.customClassList : null) %}
+
+{# set animation classes for reveal #}
+
+{% set revealClass = [] %}
+{% if section.revealAnimation == 'anim-child' %}	
+	{% if section.animateChildren is not empty %}
+		{% if section.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-pass']) %}			
+		{% else %}
+			{% set revealClass = revealClass|merge([section.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge([section.revealAnimation]) %}
+	{% endif %}	
+{% else %}
+	{% if section.animateChildren is not empty %}
+		{% if section.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-parent']) %}
+			{% if section.staggerChildReveals is not empty %}
+				{% if section.staggerChildReveals == true %}
+					{% set revealClass = revealClass|merge([section.revealAnimation ~ '-stagger']) %}
+				{% else %}
+					{% set revealClass = revealClass|merge([section.revealAnimation]) %}
+				{% endif %}
+			{% endif %}			
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', section.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge(['anim-elem', section.revealAnimation]) %}
+	{% endif %}			
+{% endif %}
+{% set outerClasses = outerClasses|merge(revealClass) %}
+{# OUTPUT #}
+
+<section {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}>
+	<div class="{{innerClass}}">
+		<div class="container elem-block container-fullwidth">		 		
+			
+				<div class="inner container-inner p-0">
+					<div {{ gMacros.buildClassListBasic(['row', 'anim-pass', 'mx-0', 'items-stretch', 'justify-center']) -}}>
+						<div {{ gMacros.buildClassListBasic(photoClasses) }}>
+							<div class="anim-child w-full h-full">
+								{% set image = section.imageAsset[0] %}
+								{# set alt text #}	
+								{% set imageAltText = image.alt is defined and image.alt|length ? image.alt : image.title %}							
+								{% if image.kind == 'image' %}      
+									{% if image.mimeType == "image/svg+xml" %}		
+								
+										<img src="{{ image.url }}" alt="{{ imageAltText }}" {{ gMacros.buildClassListBasic(['content-image', 'lazyload', 'w-full', 'h-full', 'object-cover']) -}}>
+								
+									{% else %}		
+									
+										{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}
+										
+										{% if craft.imager.serverSupportsWebp() %}
+										  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+										{% endif %}
+										
+										{% if transformedImages|length %}		  
+										  
+											  <picture class="w-full h-full block">			  
+												  
+												  {% if craft.imager.serverSupportsWebp() %}
+													  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+												  {% endif %}
+											  
+												  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+												  width="{{image.width}}"
+												  height="{{image.height}}"
+												  data-sizes="auto"
+												  data-src="{{ transformedImages[0] }}"
+												  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+												  alt="{{ imageAltText }}" {{ gMacros.buildClassListBasic(['content-image', 'lazyload', 'w-full', 'h-full', 'object-cover']) -}}
+												  >
+											  </picture>
+											  
+										{% endif %}			  		  
+									  
+									{% endif %}
+								{% elseif image.kind == 'video' %}
+									<video          
+									  {{ gMacros.buildClassList(imageClass, imageStylingClasses, null) -}}
+									  aria-hidden="true"
+									  role="presentation"
+									  preload=""
+									  width="1600"
+										height="900"
+									  autoplay playsinline muted loop
+									  data-src="{{ image.url }}"
+									  type="{{ image.mimeType }}"
+									></video>
+								{% endif %}
+							</div>
+						</div>
+						<div {{ gMacros.buildClassListBasic(contentClasses) }}>
+							
+							<div {{ gMacros.buildClassListBasic(contentInnerClasses) -}}>
+								{% for child in clone(section.children).collect() %}			
+							
+									{% if child.type.handle starts with 'row' %}
+										  {%
+											include [
+											  '_project/_bodyblocks/rows/' ~ child.type.handle,
+											  '_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
+											  '_project/_bodyblocks/rows/row',
+											  '_boilerplate/_bodyblocks/rows/row'
+											] with { 'row' :  child }
+										  %}
+									  {% elseif child.type.handle starts with 'repeater' %}
+										  {%
+											include [
+											  '_project/_bodyblocks/repeaters/' ~ child.type.handle,
+											  '_boilerplate/_bodyblocks/repeaters/' ~ child.type.handle,
+											  '_project/_bodyblocks/repeaters/repeater',
+											  '_boilerplate/_bodyblocks/repeaters/repeater'
+											] with { 'repeater' :  child }
+										  %}
+									  {% elseif child.type.handle starts with 'accordion' %}
+										{%
+										  include [
+											'_project/_bodyblocks/accordions/' ~ child.type.handle,
+											'_boilerplate/_bodyblocks/accordions/' ~ child.type.handle,
+											'_project/_bodyblocks/accordions/accordion',
+											'_boilerplate/_bodyblocks/accordions/accordion'
+										  ] with { 'accordion' :  child }
+										%}
+									  {% elseif child.type.handle starts with 'tabSet' %}
+										{%
+										  include [
+											'_project/_bodyblocks/tabs/' ~ child.type.handle,
+											'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+											'_project/_bodyblocks/tabs/tabSet',
+											'_boilerplate/_bodyblocks/tabs/tabSet'
+										  ] with { 'tabSet' :  child }
+										%}
+									  {% elseif child.type.handle starts with 'tabPanel' %}
+										{%
+										  include [
+											'_project/_bodyblocks/tabs/' ~ child.type.handle,
+											'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+											'_project/_bodyblocks/tabs/tabPanel',
+											'_boilerplate/_bodyblocks/tabs/tabPanel'
+										  ] with { 'tabPanel' :  child }
+										%}
+									  {% else %}
+										  {%
+											include [
+											  '_project/_bodyblocks/blocks/' ~ child.type.handle,
+											  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+											  '_project/_bodyblocks/blocks/block',
+											  '_boilerplate/_bodyblocks/blocks/block'
+											] ignore missing with { 'block' :  child }
+										  %}
+									  {% endif %}
+									
+								{% endfor %}
+							</div>
+							
+						</div>					
+					</div>
+				</div> 		
+			
+		</div>
+	</div>		   
+</section>

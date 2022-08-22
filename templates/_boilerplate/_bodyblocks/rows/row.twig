@@ -13,16 +13,6 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
-{% set contentKids = null %}
-{% set styleAdjusts = null %}
-{% for item in row.children.all() %}
-	{% if item.type.handle == 'childrenRow' or item.type.handle == 'childrenSlideRow' %}
-		{% set contentKids = item %}
-	{% elseif item.type.handle == 'styleAdjustmentsRow' %}
-		{% set styleAdjusts = item %}
-	{% endif %}
-{% endfor %}
 
 {# Set block id attribute value #}
 {% if row.customId is defined and row.customId != '' %}
@@ -32,7 +22,7 @@
 {% endif %}
 
 {# Set block type handle as class name for styling #}
-{% set blockClass = row.type.handle ~ ' anim-pass' %}
+{% set blockClass = 'row ' ~ row.type.handle %}
 {% set innerClass = 'inner ' ~ row.type.handle ~ '-inner' %}
 
 {# set loadType to null if not defined - for handling lazy load on carousels #}
@@ -43,50 +33,8 @@
 {# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create arrays to collect style changes to primary element and inner and bg #}
-{% set styleClasses = [] %}
-{% set outerClasses = [] %}
-{% set rowClasses = [] %}
-
-
-{% if styleAdjusts != null %}	
-		
-	{# add separate array to add padding classes since they are applied separately to inner #}
-	
-	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}	
-		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-		
-		{% for fieldItem in styleSetFields %}
-			
-			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-									
-			{# Add row layout classes to to rowClasses array #}			
-			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set rowClasses = rowClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# Add margin settings to outerCLasses array #}			
-			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}	
-					
-		{% endfor %}		
-	{% endfor %}
-	
-{% endif %}
-
+{% set outerClasses = ['elem-block', row.topMargin] %}
+{% set rowClasses = ['anim-pass', row.rowHorizontalAlignment, row.rowVerticalAlignment] %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (row['customClassList'] is defined ? row.customClassList : null) %}
@@ -94,56 +42,56 @@
 
 {# set animation classes for reveal #}
 
-{% set animClasses = [] %}
-{% if row.revealAnimation is defined and row.revealAnimation != '' %}  
-	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
-	{% set revealClass = row.revealAnimation %}
+{% set revealClass = [] %}
+{% if row.revealAnimation == 'anim-child' %}	
 	{% if row.animateChildren is not empty %}
 		{% if row.animateChildren == true %}
-			{% set animClasses = animClasses|merge(['anim-parent']) %}
-			{% if row.staggerChildReveals is not empty %}
-				{% if row.staggerChildReveals == true %}
-					{% set revealClass = revealClass ~ '-stagger' %}
-				{% endif %}
-			{% endif %}
+			{% set revealClass = revealClass|merge(['anim-pass']) %}			
 		{% else %}
-			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+			{% set revealClass = revealClass|merge([row.revealAnimation]) %}		
 		{% endif %}
 	{% else %}
-		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+		{% set revealClass = revealClass|merge([row.revealAnimation]) %}
 	{% endif %}	
-	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% else %}
+	{% if row.animateChildren is not empty %}
+		{% if row.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-parent']) %}
+			{% if row.staggerChildReveals is not empty %}
+				{% if row.staggerChildReveals == true %}
+					{% set revealClass = revealClass|merge([row.revealAnimation ~ '-stagger']) %}
+				{% else %}
+					{% set revealClass = revealClass|merge([row.revealAnimation]) %}
+				{% endif %}
+			{% endif %}			
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', row.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge(['anim-elem', row.revealAnimation]) %}
+	{% endif %}			
 {% endif %}
+{% set outerClasses = outerClasses|merge(revealClass) %}
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, 'elem-block row-wrapper', outerClasses, customClassString) -}}> 	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
-			<div {{ gMacros.buildClassList(blockClass, rowClasses, null) -}}>	
-				{% if contentKids != null %}
-					{% for child in clone(contentKids.children).collect() %}	  
-						
-						{#-
-						For each child component, attempt to load a custom template for the
-						component handle from the project's files,
-						then the same template from the core Tiltrus files,
-						then a custom default template from the project,
-						and finally the default template for this component type from the core Tiltrus files.
-						-#}
-						
-						{%
-							include [
-							  '_project/_bodyblocks/columns/' ~ child.type.handle,
-							  '_boilerplate/_bodyblocks/columns/' ~ child.type.handle,
-							  '_project/_bodyblocks/columns/column',
-							  '_boilerplate/_bodyblocks/columns/column'
-							] with { 'column' :  child, 'loadType': loadType }
-						  %}
-						
-					{% endfor %}
-				{% endif %}
-			</div>
-		</div>		
-	</div>     
+<div {{ gMacros.buildElementAttributes(blockId, 'elem-block row-wrapper', outerClasses, customClassString) -}}>	
+	<div class="{{innerClass}}">
+		<div {{ gMacros.buildClassList(blockClass, rowClasses, null) -}}>
+							
+			{% for child in clone(row.children).collect() %}	  
+										
+				{%
+					include [
+					  '_project/_bodyblocks/columns/' ~ child.type.handle,
+					  '_boilerplate/_bodyblocks/columns/' ~ child.type.handle,
+					  '_project/_bodyblocks/columns/column',
+					  '_boilerplate/_bodyblocks/columns/column'
+					] with { 'column' :  child, 'loadType': loadType }
+				  %}
+				
+			{% endfor %}
+			
+		</div>
+	</div>	   
 </div>

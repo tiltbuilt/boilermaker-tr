@@ -14,14 +14,12 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-<div class="repeater-list-btn anim-pass">
+<div class="repeater-list-btn">
 {% for repeaterItem in repeaterData %}	
-  <div {{ gMacros.buildClassList('elem-block repeater-list-btn-item', listItemOuterClasses, null) -}}>
-    <div class="anim-wrapper anim-child">
-      <div {{ gMacros.buildClassList('inner repeater-list-btn-item-inner', null, null) -}}>        
-          <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassList('btn repeater-list-btn-item-btn', listItemBtnClasses, null) -}}>{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>        
-      </div>
-    </div>
+  <div {{ gMacros.buildClassListBasic(['anim-child', 'repeater-list-btn-item']) -}}>   
+    <div {{ gMacros.buildClassListBasic(['inner', 'repeater-list-btn-item-inner']) -}}>        
+        <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassListBasic(['btn', 'repeater-list-btn-item-btn', buttonStyle, buttonSize]) -}}>{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>        
+    </div>   
   </div>	
 {% endfor %}
 </div>

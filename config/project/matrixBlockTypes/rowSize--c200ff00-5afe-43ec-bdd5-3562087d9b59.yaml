@@ -1,0 +1,116 @@
+field: 81647883-c70c-4a4d-917c-b3b007078d21 # Items per Row
+fieldLayouts:
+  99010637-c56b-49ae-95b1-67cbcbedd4a0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b86bab37-08e2-447e-a0b3-b732d2553a42 # Device Size
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95216a0e-38f8-4979-9a11-4d523e8731b6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9bedc752-fb2a-4b10-933c-ecf14a196b1f # Items Count
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bfdab90-a34e-4d71-a58c-5273d0ff495f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f9bc9072-2505-4956-90e4-f457b0cd6004
+        userCondition: null
+fields:
+  9bedc752-fb2a-4b10-933c-ecf14a196b1f: # Items Count
+    columnSuffix: irvwqopi
+    contentColumnType: smallint(1)
+    fieldGroup: null
+    handle: itemCount
+    instructions: null
+    name: 'Items Count'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 3
+      max: 4
+      min: 1
+      prefix: null
+      previewCurrency: null
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  b86bab37-08e2-447e-a0b3-b732d2553a42: # Device Size
+    columnSuffix: fruadiou
+    contentColumnType: string
+    fieldGroup: null
+    handle: deviceSize
+    instructions: null
+    name: 'Device Size'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Tablet & Above'
+            -
+              - value
+              - 'md:'
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Laptop & Above'
+            -
+              - value
+              - 'lg:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Desktop & Above'
+            -
+              - value
+              - 'xl:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Hi Res'
+            -
+              - value
+              - '2xl:'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: rowSize
+name: 'Row Size'
+sortOrder: 1

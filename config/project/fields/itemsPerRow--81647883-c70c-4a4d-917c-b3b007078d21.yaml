@@ -1,0 +1,16 @@
+columnSuffix: ilqrhgjq
+contentColumnType: string
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: itemsPerRow
+instructions: 'This sets the number of repeater items per row for the selected device sizes. It is only applied when the list type is set to card, card with small image or card with large image. The default row sizes are 1 on phones, and 3 on tablet and above. This field allows adjustment of the row size on tablet and above at each size if desired.'
+name: 'Items per Row'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_itemsperrow}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

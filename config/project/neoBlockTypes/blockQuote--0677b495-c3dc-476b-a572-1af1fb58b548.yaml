@@ -1,0 +1,138 @@
+childBlocks: null
+description: ''
+enabled: true
+field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
+fieldLayouts:
+  99163e7a-0a4b-43cd-9cf7-2823b239797f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b120ef6a-6411-43ab-be0a-54fbe722077c # Quote Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 148e0ffa-bb1f-419f-8260-0fbcacf93343
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: da371f6e-1956-4eb2-a0ae-fdec96e8815e # Quote Credit Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 699eef8e-da3f-4770-85dc-0b6ccf4877df
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8875cd45-2f9b-4eb1-bd37-5452b7ac8e61 # Quote Credit Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77b000db-9403-40e1-84fc-305f0f1a182c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9fa94846-e6bd-4e7c-8463-b7afd82487a2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ca4fdfc-908a-462f-8383-bfa60336103c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5eee8db6-5be0-4101-8b6f-2f26b858b793 # Bottom Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 986bf7c8-e2ee-4c09-8fdc-3928ef771312
+            userCondition: null
+            warning: null
+            width: 50
+        name: Spacing
+        uid: 18a5e0a1-03b0-460b-a7df-84a80fada93e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c18459db-2af4-468f-bb4d-3fcc012b65eb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Animation
+        uid: c7dd2372-0efb-4ff3-8ab6-bbc948fd9d51
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c3ffac9-37bc-4f55-93df-4c2fff84ca9f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 198d0f75-4dbd-4f7e-a92b-a89849c50712
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: eb358cd6-257a-41bc-87ff-68b29ca6b9de
+        userCondition: null
+group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
+handle: blockQuote
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Block Quote'
+sortOrder: 5
+topLevel: false

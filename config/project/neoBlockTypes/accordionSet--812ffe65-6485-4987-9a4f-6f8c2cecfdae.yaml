@@ -1,0 +1,329 @@
+childBlocks:
+  - accordion
+description: ''
+enabled: true
+field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
+fieldLayouts:
+  fde7a824-641f-43be-bab3-a196c8d0313c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: b73cd7ba-a526-4a20-9361-3a80d65e0fb3
+            userCondition: null
+        name: 'Child Accordions'
+        uid: e8ad39f8-5b55-4b4a-9953-ff1217a6574b
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'This setting controls the icon used on all of the accordion buttons in the group. If no icon is selected, the site default icon will be used.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 80379351-6793-403a-8415-5546c78b12c2
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 116b0f4f-13b5-47fe-9daa-6716a09821a4 # Accordion Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3fa51c66-04ac-41c4-98d1-e1cdc8e5f791
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17 # Accordion - Start State
+            instructions: null
+            label: 'First Panel Start State'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aeb57872-1556-43e5-861b-ed09460ef9ac
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 6ca71cdf-5677-41f2-a6d0-1b08e4b330c4 # Accordion Set - Allow Multiple Open Panels
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 87268bc7-9a29-470c-b427-b9e4abc8b955
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            style: tip
+            tip: 'This control sets the heading level used in the accordion buttons in the group.'
+            type: craft\fieldlayoutelements\Tip
+            uid: e884fb59-9ad8-4180-8fb6-7921d4b546a8
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d8024cc-8dd9-4048-a4d1-7b27304236d8
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Control Settings'
+        uid: 678833a5-d258-48fb-95a2-7e836ef4d865
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'These styles will be applied to all of the sub accordions'
+            type: craft\fieldlayoutelements\Tip
+            uid: e60485db-8670-4fae-9030-2bc4da462cb8
+            userCondition: null
+          -
+            elementCondition: null
+            heading: Alignment
+            type: craft\fieldlayoutelements\Heading
+            uid: adb423c9-6d43-4444-91f5-0f86706f4446
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: adf07d19-c655-4ed3-810d-ba23eaa068c4 # Content Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab7156d4-0170-4947-9145-fc91eb69fcdf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 5994adf8-7594-4baa-8b62-ab00be7fa2eb
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 15d7dd82-52e9-4cda-812c-f980a9257b5e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Background Imagery'
+            type: craft\fieldlayoutelements\Heading
+            uid: 19559f9d-dbef-4b66-86ad-3647957773af
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49 # Background Imagery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5e5310d-87cb-4685-a485-18b3b7c6b77e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 776bf1a2-609e-4d77-9a48-165859b4c108
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Padding
+            type: craft\fieldlayoutelements\Heading
+            uid: 8eb3537d-922b-45e1-ae6a-bca7219ca6f3
+            userCondition: null
+          -
+            elementCondition: null
+            style: tip
+            tip: 'These styles will be applied to each of the sub accordions, overridden in each accordion'
+            type: craft\fieldlayoutelements\Tip
+            uid: c383271d-90c9-44bc-86ed-4b158c5103ad
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: bf01b1fa-dc4d-4afa-92b8-0ca569d91066 # Top Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e3bfac0a-5c85-4b96-a015-40521686f5dd
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 6ff82416-293f-4992-90f4-f277bfa58a72 # Bottom Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 26c04f46-a3f0-49f0-bfca-c64787863b7f
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: bd81a51b-0982-421c-9070-71d6819abb2e # Gutter Padding
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77d76f3a-9bb5-46b3-914a-ce9da8151a75
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Margins
+            type: craft\fieldlayoutelements\Heading
+            uid: e875e002-8a13-4571-9c73-6d23ef8b54dc
+            userCondition: null
+          -
+            elementCondition: null
+            style: tip
+            tip: 'The margin settings apply to the set itself setting space between it and other elements on the page.'
+            type: craft\fieldlayoutelements\Tip
+            uid: a8e4bd4b-50b8-492a-9821-493930b0894e
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 27d54248-7724-4117-a168-c92c0d940c44
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5eee8db6-5be0-4101-8b6f-2f26b858b793 # Bottom Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 17931d21-0420-4b14-a9a7-a49f84410100
+            userCondition: null
+            warning: null
+            width: 50
+        name: Spacing
+        uid: d6245990-e012-4774-a5ff-8646e08d5a48
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 217c2fb4-3ab9-40b9-890a-d117db0120d4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ea2714e2-b3fd-4731-b372-a1ad3a32c200 # Apply Reveal to Child Elements
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e932a5f8-c926-434f-981a-8a055e381922
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a77c587-da5c-4d69-80e2-999ab0815555
+            userCondition: null
+            warning: null
+            width: 100
+        name: Animation
+        uid: 5c5ecbba-cf5c-45fd-8401-a03f72c857ab
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bd115954-8d18-4b42-a254-835da7947a12
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d53f3bb8-195c-4178-92de-4a8092a12288
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 479dbd27-a4fc-402d-8442-7fb5861bbc67
+        userCondition: null
+group: 68009970-c220-4680-a6b5-f3b6b34c937f # Accordions
+handle: accordionSet
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Accordion Set'
+sortOrder: 20
+topLevel: false

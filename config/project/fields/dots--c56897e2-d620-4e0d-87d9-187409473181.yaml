@@ -1,0 +1,14 @@
+columnSuffix: orneftwq
+contentColumnType: boolean
+fieldGroup: 1371181e-0e3f-44fe-bfdd-4848b6b55d74 # Page Builder - Sliders
+handle: dots
+instructions: null
+name: Dots
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
