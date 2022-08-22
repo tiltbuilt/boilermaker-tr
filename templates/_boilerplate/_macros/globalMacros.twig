@@ -151,162 +151,168 @@
 {%- endmacro -%}
 
 {#-
-  Style Adjustments - Background
+  Background Rendering
   -----
-  Output a background node based on an element's Tiltrus EDC field.
+  Output a background node based on an element's Background Imagery field.
 -#}
-{%- macro buildElementBackground(bgInfo, bgSizes, sizesAtr, loadType) -%}
+{%- macro buildElementBackground(bgSettings, sizesAtr, loadType) -%}
   {% import '_boilerplate/_macros/globalMacros' as gMacros %}
-  
-    {% for bgSet in bgInfo %}
+  	{% set bgSizes = [] %}
+	{% for bgSet in bgSettings %}
+  		{% set bgSize = bgSizes|merge([bgSet.deviceSize]) %}	  
+	{% endfor %} 
+	
+    {% for bgSet in bgSettings %}
   	
-	{% set bgOuterClasses = ['background', bgSet.bgColor, bgSet.bgOpacity] %}
-	
-	{% if bgSet.devSize != '' %}
-		{% set bgOuterClasses = bgOuterClasses|merge(['hidden', bgSet.devSize ~ 'block']) %}
-	{% endif %}
-	
-	{% switch bgSet.devSize %}
-		{% case 'sm:' %}
-			{% if 'md:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
-			{% elseif 'lg:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
-			{% elseif 'xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
-			{% elseif '2xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
-			{% endif %}
-			
-		{% case 'md:' %}			
-			{% if 'lg:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
-			{% elseif 'xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
-			{% elseif '2xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
-			{% endif %}
-			
-		{% case 'lg:' %}			
-			{% if 'xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
-			{% elseif '2xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
-			{% endif %}
+		{% set bgOuterClasses = ['background'] %}
 		
-		{% case 'xl:' %}			
-			{% if '2xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
-			{% endif %}
-			
-		{% case '2xl:' %}
-			
-		{% default %}
-			{% if 'sm:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['sm:hidden']) %}
-			{% elseif 'md:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
-			{% elseif 'lg:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
-			{% elseif 'xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
-			{% elseif '2xl:' in bgSizes %}
-				{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
-			{% endif %}
-			
-	{% endswitch %}	
-	
-    <div {{ gMacros.buildClassList(null, bgOuterClasses, null) -}}>
+		{% if bgSet.deviceSize != '' %}
+			{% set bgOuterClasses = bgOuterClasses|merge(['hidden', bgSet.deviceSize ~ 'block']) %}
+		{% endif %}
 		
-		{% if bgSet.bgImg != null %}			
-			{% set bgAsset = bgSet.bgImg %}
-			{% set loadClass = null %}
-			{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
-			{% if loadType is defined and loadType != null and loadType != 0 %}
-				{% set loadClass = 'swiper-lazy' %}
-			{% else %}
-				{% set loadClass = 'lazyload' %}
-			{% endif %}			
-			{% set bgInnerClasses = ['background', bgSet.bgImgOpacity] %}
-			{% set bgElemClasses = ['background', loadClass] %}
-			
-			{# Check if BG Asset is image or video #}
-			{% if bgAsset.kind == 'image' %}				
-						
-				{% if bgSet.bgRepeat == 'bg-no-repeat' or bgSet.bgRepeat == '' %}
+		{% switch bgSet.deviceSize %}
+			{% case 'sm:' %}
+				{% if 'md:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
+				{% elseif 'lg:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+				{% elseif 'xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+				{% elseif '2xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+				{% endif %}
 				
-					<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>	
-						{% if bgSet.bgSize == 'auto' or bgSet.bgSize == '' %}
-							{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
-						{% else %}
-							{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgSize])%}
-						{% endif %}
-						{% if bgSet.bgPosition != '' %}
-							{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgPosition]) %}
-						{% endif %}
-						
-						{# set image to bgAsset for transformations #}
-						{% set image = bgAsset %}					
-						{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
-						{% if craft.imager.serverSupportsWebp() %}
-						  {% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
-						  
-						  <picture class="background">		  
-									
-							{% if craft.imager.serverSupportsWebp() %}
-							  <source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+			{% case 'md:' %}			
+				{% if 'lg:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+				{% elseif 'xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+				{% elseif '2xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+				{% endif %}
+				
+			{% case 'lg:' %}			
+				{% if 'xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+				{% elseif '2xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+				{% endif %}
+			
+			{% case 'xl:' %}			
+				{% if '2xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+				{% endif %}
+				
+			{% case '2xl:' %}
+				
+			{% default %}
+				{% if 'sm:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['sm:hidden']) %}
+				{% elseif 'md:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['md:hidden']) %}
+				{% elseif 'lg:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['lg:hidden']) %}
+				{% elseif 'xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['xl:hidden']) %}
+				{% elseif '2xl:' in bgSizes %}
+					{% set bgOuterClasses = bgOuterClasses|merge(['2xl:hidden']) %}
+				{% endif %}
+				
+		{% endswitch %}	
+		
+    	<div {{ gMacros.buildClassListBasic(bgOuterClasses) -}}>
+			
+			{% if bgSet.backgroundImage != null %}			
+				{% set bgAsset = bgSet.backgroundImage[0] %}
+				{% set loadClass = null %}
+				{# check loadType, if it is set and value is 1 use owl carousel load class, otherwise use lazyload #}
+				{% if loadType is defined and loadType != null and loadType != 0 %}
+					{% set loadClass = 'swiper-lazy' %}
+				{% else %}
+					{% set loadClass = 'lazyload' %}
+				{% endif %}			
+				{% set bgInnerClasses = ['background', bgSet.backgroundImageOpacity] %}
+				{% set bgElemClasses = ['background', loadClass] %}
+				
+				{# Check if BG Asset is image or video #}
+				{% if bgAsset.kind == 'image' %}				
+							
+					{% if bgSet.backgroundRepeat == 'bg-no-repeat' or bgSet.backgroundRepeat == '' %}
+					
+						<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>	
+							{% if bgSet.backgroundSize == 'auto' or bgSet.backgroundSize == '' %}
+								{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
+							{% else %}
+								{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.backgroundSize])%}
 							{% endif %}
-						  
-							  <img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
-							  width="{{image.width}}"
-							  height="{{image.height}}"
-							  data-sizes="auto"
-							  data-src="{{ transformedImages[0] }}"
-							  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-							  alt="background" {{ gMacros.buildClassList(null, bgElemClasses, null) -}}
-							  >
-						  </picture>
-						{% endif %}
+							{% if bgSet.backgroundPosition != '' %}
+								{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.backgroundPosition]) %}
+							{% endif %}
+							
+							{# set image to bgAsset for transformations #}
+							{% set image = bgAsset %}					
+							{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
+							{% if craft.imager.serverSupportsWebp() %}
+						  	{% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+						  	
+						  	<picture class="background">		  
+										
+								{% if craft.imager.serverSupportsWebp() %}
+							  	<source data-sizes="auto" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+								{% endif %}
+						  	
+							  	<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+							  	width="{{image.width}}"
+							  	height="{{image.height}}"
+							  	data-sizes="auto"
+							  	data-src="{{ transformedImages[0] }}"
+							  	data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+							  	alt="background" {{ gMacros.buildClassListBasic(bgElemClasses) -}}
+							  	>
+						  	</picture>
+							{% endif %}
+						</div>
+						
+					{% else %}
+						
+						{% set bgInnerClasses = bgInnerClasses|merge([bgSet.backgroundRepeat, 'bg-auto', 'bg-' ~ bgSet.backgroundPosition]) %}
+						<div {{ gMacros.buildClassListBasic(bgInnerClasses) }} style="background-image:url('{{ bgAsset.url }}');"></div>
+						
+					{% endif %}
+					
+				{% elseif bgAsset.kind == 'video' %}
+					
+					{% if bgSet.backgroundSize == 'auto' or bgSet.backgroundSize == '' %}
+						{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
+					{% else %}
+						{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.backgroundSize])%}
+					{% endif %}
+					{% if bgSet.bgPosition != '' %}
+						{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.backgroundPosition]) %}
+					{% endif %}
+					
+					<div {{ gMacros.buildClassListBasic(bgInnerClasses) -}}>
+						<video          
+					  	{{ gMacros.buildClassListBasic(bgElemClasses) }}
+					  	aria-hidden="true"
+					  	role="presentation"
+					  	preload=""
+					  	autoplay playsinline muted loop
+					  	data-src="{{ bgAsset.url }}"
+					  	type="{{ bgAsset.mimeType }}"
+						></video>
 					</div>
 					
-				{% else %}
-					
-					{% set bgInnerClasses = bgInnerClasses|merge([bgSet.bgRepeat, 'bg-auto', 'bg-' ~ bgSet.bgPosition]) %}
-					<div {{ gMacros.buildClassList(null, bgInnerClasses, null) }} style="background-image:url('{{ bgAsset.url }}');"></div>
-					
-				{% endif %}
+				{% endif %}		
 				
-			{% elseif bgAsset.kind == 'video' %}
-				
-				{% if bgSet.bgSize == 'auto' or bgSet.bgSize == '' %}
-					{% set bgElemClasses = bgElemClasses|merge(['object-scale-down']) %}
-				{% else %}
-					{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgSize])%}
-				{% endif %}
-				{% if bgSet.bgPosition != '' %}
-					{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.bgPosition]) %}
-				{% endif %}
-				
-				<div {{ gMacros.buildClassList(null, bgInnerClasses, null) -}}>
-					<video          
-					  {{ gMacros.buildClassList(null, bgElemClasses, null) }}
-					  aria-hidden="true"
-					  role="presentation"
-					  preload=""
-					  autoplay playsinline muted loop
-					  data-src="{{ bgAsset.url }}"
-					  type="{{ bgAsset.mimeType }}"
-					></video>
-				</div>
-				
-			{% endif %}		
-			
-		{% endif %}
-	</div>	
+			{% endif %}
+		</div>	
 	  
   {% endfor %}  
   
 {%- endmacro -%}
+
+
 
 
 

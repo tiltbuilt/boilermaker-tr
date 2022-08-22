@@ -10,19 +10,22 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-<ul class="repeater-list-text anim-pass">
+<ul class="repeater-list-text">
 {% for repeaterItem in repeaterData %}	
-	<li {{ gMacros.buildClassList('elem-block repeater-list-item repeater-list-text-item', listItemOuterClasses, null) -}}>
-		<div class="anim-wrapper anim-child">
-			<div {{ gMacros.buildClassList('inner repeater-list-text-item-inner', listItemClasses, null) -}}>
-				<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-text-item-header', listItemHeaderClasses, null) -}}>
-	  			<a href="{{ repeaterItem.url }}">{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>
-				</{{ repeaterHeadingLevel }}>
-				{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
-					<div>{{ repeaterItem.excerpt }}</div>	  				 
-				{% endif %}
-			</div>
+	<li {{ gMacros.buildClassListBasic(['anim-child', 'repeater-list-item', 'repeater-list-text-item']) -}}>
+		
+		<div {{ gMacros.buildClassListBasic(['inner', 'repeater-list-text-item-inner']) -}}>
+			<{{ repeaterHeadingLevel }} {{ gMacros.buildClassListBasic(['repeater-list-text-item-header']) -}}>
+  			<a href="{{ repeaterItem.url }}">{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>
+			</{{ repeaterHeadingLevel }}>
+			{% if repeaterShowDate and repeaterItem.postDate is defined and dateFormat != null %}	  		
+				<div class="repeater-date">{{ repeaterItem.postDate | date(dateFormat) }}</div>	 
+			{% endif %}
+			{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
+				<div>{{ repeaterItem.excerpt }}</div>	  				 
+			{% endif %}
 		</div>
+		
 	</li>	
 {% endfor %}
 </ul>

@@ -7,62 +7,54 @@
 
 .pageHeader {
 	// These classes must stay in order to ensure functionality
-	@apply m-0 overflow-hidden;   
+	@apply m-0 w-screen relative;   
 	//The default classes and style below can be changed on a per-project basis
+	@apply md:rect-16-9;
+	
+	.container, .container-inner {
+		height: 100%;
+	}
 }
 
 .pageHeader-inner {
-	// These classes must stay in order to ensure functionality
-	
-	//The default classes and style below can be changed on a per-project basis
-	@apply relative w-screen text-center p-normal md:p-2x;
+	height: 100%;
 }
 
 .pageHeader-layout {
-	@apply w-full h-full flex justify-center items-center flex-wrap relative;		
+	//use this class to control the layout of the page header. 
+	// These classes must stay in order to ensure functionality
+	@apply w-full h-full flex flex-wrap relative;
+	//The default classes and style below can be changed on a per-project basis	
+	@apply flex-col justify-center items-center text-center;	
 }
 
 .pageHeader-subhead {
 	// These classes must stay in order to ensure functionality
 	
 	//The default classes and style below can be changed on a per-project basis
-	@apply uppercase font-bold text-white tracking-widest text-base text-shadow-sm;
+	@apply uppercase font-bold tracking-widest text-base w-full;
 }
 
-.pageHeader-subhead-outer {
+.pageHeader-main-header {
 	// These classes must stay in order to ensure functionality
 	
 	//The default classes and style below can be changed on a per-project basis
-	@apply mb-half;
+	@apply uppercase font-bold text-4xl md:text-6xl mt-half md:mt-base w-full;
 }
 
 .pageHeader-intro {
 	// These classes must stay in order to ensure functionality
 	
 	//The default classes and style below can be changed on a per-project basis
-	@apply text-white;
+	@apply text-xl mt-base w-full;
 }
 
-.pageHeader-intro-outer {
+
+.pageHeader-button-group {
 	// These classes must stay in order to ensure functionality
 	
 	//The default classes and style below can be changed on a per-project basis
-	@apply mb-normal;
-}
-
-.pageHeader-buttonGroup {
-	// These classes must stay in order to ensure functionality
-	
-	//The default classes and style below can be changed on a per-project basis
+	@apply text-center mt-base w-full;
 }
 		
-.pageHeader-buttonGroup-outer {
-	// These classes must stay in order to ensure functionality
-	
-	//The default classes and style below can be changed on a per-project basis
-	
-}
 
-.pageHeader-default-bg {
-	@apply bg-black;
-}

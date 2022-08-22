@@ -13,26 +13,15 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
-{% set contentKids = null %}
-{% set styleAdjusts = null %}
-{% for item in accordion.children.all() %}
-	{% if item.type.handle == 'childrenAccordionSet' %}
-		{% set contentKids = item %}
-	{% elseif item.type.handle == 'styleAdjustmentsAccordionSet' %}
-		{% set styleAdjusts = item %}
-	{% endif %}
-{% endfor %}
-
 {# Set block id attribute value #}
 {% if accordion.customId is defined and accordion.customId != '' %}
 	{% set blockId = accordion.customId %}
 {% else %}
-	{% set blockId = 'accordionSet-' ~ accordion.id %}
+	{% set blockId = accordion.type.handle ~ accordion.id %}
 {% endif %}
 
 {# Set block type handle as class name for styling #}
-{% set blockClass = 'elem-block ' ~ accordion.type.handle %}
+{% set blockClass = accordion.type.handle %}
 {% set innerClass = 'inner ' ~ accordion.type.handle ~ '-inner' %}
 
 
@@ -51,138 +40,19 @@
 {% endif %}
 
 
-{# Sort Out Styling Adjustments to set up class lit arrays #}
-
-{# create arrays to collect style changes to primary element and inner and bg #}
-{% set styleClasses = [] %}
-{% set outerClasses = [] %}
-{% set bgClasses = [] %}
-{% set bgSizes = [] %}
-
-{# Set styling classes and attributes for accrodion button and panel #}
-{% set accOuterClasses = [] %}
-{% set buttonClasses = ['btn-accordion'] %}
-{% set panelClasses = [] %}
-{% set accBgClasses = [] %}
-{% set accBgSizes = [] %}
-
-{% if styleAdjusts != null %}	
-		
-	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
-	
-	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}	
-		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-		
-		{% for fieldItem in styleSetFields %}
-			
-			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add color classes #}
-			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-						
-			{# Add outer settings to outerClasses array #}			
-			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-					
-		{% endfor %}
-		
-		{# Get accordion button styleset adjustments if any for this devices size #}			
-		{% set accStyles = clone(styleSet.children).type('styleSetAccordion').one() %}
-		{% if accStyles != null %}
-			{% set accFieldLayout = accStyles.getFieldLayout() %}
-			{% set accFields = accFieldLayout.getCustomFields() %}
-			{% for fieldItem in accFields %}						
-				
-				{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and accStyles[fieldItem.handle]|length %}					
-					{% set classItem = devSize ~ accStyles[fieldItem.handle] %}
-					{%- set panelClasses = panelClasses|merge([classItem]) -%}
-				{% endif %}	
-				
-				{# add color classes #}
-				{% if fieldItem.handle == 'buttonColor' and accStyles[fieldItem.handle] != null %}
-					{% set classItem = devSize ~ accStyles[fieldItem.handle].class %}
-					{%- set buttonClasses = buttonClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'textColor' and accStyles[fieldItem.handle] != null %}
-					{% set classItem = devSize ~ accStyles[fieldItem.handle].class %}
-					{%- set panelClasses = panelClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'borderColor' and accStyles[fieldItem.handle] != null %}
-					{% set classItem = devSize ~ accStyles[fieldItem.handle].class %}
-					{%- set panelClasses = panelClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{# add spacing class #}				
-				{% if fieldItem.handle ends with 'Margin' and accStyles[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ accStyles[fieldItem.handle] %}
-					{%- set accOuterClasses = accOuterClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'displaySetting' and accStyles[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ accStyles[fieldItem.handle] %}
-					{%- set accOuterClasses = accOuterClasses|merge([classItem]) -%}
-				{% endif %}
-								
-			{% endfor %}
-			
-			{# set up background objects for accordions and drop into array. If no color and no image are set them skip styleset #}
-			{% if (accStyles.backgroundColor.class is defined and accStyles.backgroundColor.class) or (accStyles.backgroundImage is defined and accStyles.backgroundImage|length) %}
-				{% set bgItem  = {
-					'devSize': devSize,
-					'bgColor': accStyles.backgroundColor.class ?? '',
-					'bgImg': accStyles.backgroundImage[0] ?? null,
-					'bgSize': accStyles.backgroundSize ?? '',
-					'bgPosition': accStyles.backgroundPosition ?? '',
-					'bgRepeat': accStyles.backgroundRepeat ?? '',
-					'bgOpacity': accStyles.backgroundOpacity ?? '',
-					'bgImgOpacity': accStyles.backgroundImageOpacity ?? '',
-				}		
-				%}
-				{% set accBgClasses = accBgClasses|merge([bgItem]) %}	
-				{% set accBgSizes = accBgSizes|merge([devSize])%}	
-			{% endif %}
-			
-		{% endif %}
-		
-		
-		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
-			{% set bgItem  = {
-				'devSize': devSize,
-				'bgColor': styleSet.backgroundColor.class ?? '',
-				'bgImg': styleSet.backgroundImage[0] ?? null,
-				'bgSize': styleSet.backgroundSize ?? '',
-				'bgPosition': styleSet.backgroundPosition ?? '',
-				'bgRepeat': styleSet.backgroundRepeat ?? '',
-				'bgOpacity': styleSet.backgroundOpacity ?? '',
-				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
-			}		
-			%}
-			{% set bgClasses = bgClasses|merge([bgItem]) %}	
-			{% set bgSizes = bgSizes|merge([devSize])%}	
-		{% endif %}
-					
-	{% endfor %}	
-	
+{% if accordion.colorScheme.class != '' %}
+	{% set colorScheme = accordion.colorScheme.class %}
 {% endif %}
+
+{% set outerClasses = [colorScheme, 'bg-off', 'elem-block', accordion.topMargin, accordion.bottomMargin] %}
+
+
+
+{# Set styling classes and attributes for accordion button and panel #}
+{% set accOuterClasses = ['anim-child'] %}
+{% set buttonClasses = ['btn-accordion'] %}
+{% set panelClasses = ['inner', 'accordion-inner', 'elem-block', accordion.topPadding, accordion.bottomPadding, accordion.gutterPadding, accordion.contentAlignment] %}
+{% set bgSettings = accordion.backgroundImagery %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (accordion['customClassList'] is defined ? accordion.customClassList :'') %}
@@ -191,182 +61,177 @@
 	{% set customClassString = customClassString ~ ' accordionSetSingleOpen' %}
 {% endif %}
 
-{# set animation classes for reveal #}
-
-{% set animClasses = [] %}
-{% if accordion.revealAnimation is defined and accordion.revealAnimation != '' %}  
-	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
-	{% set revealClass = accordion.revealAnimation %}
+{% set revealClass = [] %}
+{% if accordion.revealAnimation == 'anim-child' %}	
 	{% if accordion.animateChildren is not empty %}
 		{% if accordion.animateChildren == true %}
-			{% set animClasses = animClasses|merge(['anim-parent']) %}
-			{% if accordion.staggerChildReveals is not empty %}
-				{% if accordion.staggerChildReveals == true %}
-					{% set revealClass = revealClass ~ '-stagger' %}
-				{% endif %}
-			{% endif %}
+			{% set revealClass = revealClass|merge(['anim-pass']) %}			
 		{% else %}
-			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+			{% set revealClass = revealClass|merge([accordion.revealAnimation]) %}		
 		{% endif %}
 	{% else %}
-		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+		{% set revealClass = revealClass|merge([accordion.revealAnimation]) %}
 	{% endif %}	
-	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% else %}
+	{% if accordion.animateChildren is not empty %}
+		{% if accordion.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-parent']) %}
+			{% if accordion.staggerChildReveals is not empty %}
+				{% if accordion.staggerChildReveals == true %}
+					{% set revealClass = revealClass|merge([accordion.revealAnimation ~ '-stagger']) %}
+				{% else %}
+					{% set revealClass = revealClass|merge([accordion.revealAnimation]) %}
+				{% endif %}
+			{% endif %}			
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', accordion.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge(['anim-elem', accordion.revealAnimation]) %}
+	{% endif %}			
 {% endif %}
+{% set outerClasses = outerClasses|merge(revealClass) %}
+
 
 {# OUTPUT #}
 
 <div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>	
-			{% if contentKids != null %}				
-				{% for child in clone(contentKids.children).collect() %}						
-										
-					{# set loop dependent sub accordion settings #}
-					
-					{% if accordion.accordionStartState is defined and accordion.accordionStartState == 1 and loop.first == true %}
-						{% set openStatus = true %}
-					{% else %}
-						{% set openStatus = false %}
-					{% endif %}
-					
-					{# Set block id attribute values #}
-					
-					{% set accId = blockId ~ '-accordion' ~ loop.index %}
-					{% set panelId = accId ~ '-panel' %}
-					{% set buttonId = accId ~ '-button' %}
-					{% set headingId = accId ~ '-heading' %}
-					
-					{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
-					{% set accCustomClassString = (child['customClassList'] is defined ? child.customClassList : null) %}
-					
-					{# set button spacial attributes #}
-					{% set buttonAttrs = {'type': 'button', 'data-toggle': 'expanded', 'data-target': '#' ~ panelId, 'aria-controls': panelId, 'data-parent': '#' ~ blockId} %}
-					{% if openStatus %}
-						{% set buttonCustClasses = 'expanded' %}
-						{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'true'}) %}
-						{% set outerExpClass = 'expanded' %}
-					{% else %}
-						{% set buttonCustClasses = '' %}
-						{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'false'}) %}
-						{% set outerExpClass = '' %}
-					{% endif %}
-					
-					{# outer outerExpClass to custom string #}					
-					{% set accCustomClassString = accCustomClassString ~ ' ' ~ outerExpClass %}
-					
-					{# set button spacial attributes #}
-					{% set panelAttrs = {'aria-labelledby': headingId, 'role': 'region', 'data-parent': '#' ~ blockId} %}
-					{% set panelCustClasses = '' %}
-					{% if openStatus %}
-						{% set panelCustClasses = 'init-expanded' %}
-					{% endif %}
-					
-					{# ACCORDION OUTPUT #}					
-					
-					<div {{ gMacros.buildElementAttributes(accId, 'accordion elem-block', accOuterClasses, accCustomClassString) -}}> 	
-						<div class="anim-wrapper anim-child">
-							<div class="inner">															
-								<{{accHeadingLevel}} id="{{ headingId }}" class="accordion-button-header" >
-									<button {{ gMacros.buildElementAttributes(buttonId, null, buttonClasses, buttonCustClasses, buttonAttrs) -}}>
-										<div class="accordion-icon">
-											<svg><use xlink:href="#{%if child.accordionIcon != null and child.accordionIcon.sprite|length %}{{child.accordionIcon.sprite}}{% else %}{{accIcon}}{% endif %}"></use></svg>
-										</div>
-										{{ gMacros.stripTags(child.headerText) }}
-									</button>
-								</{{accHeadingLevel}}>
+	
+	<div class="{{innerClass}}">	
+						
+		{% for child in clone(accordion.children).collect() %}						
 								
-								<div id="{{ panelId }}" class="accordion-panel {{ panelCustClasses }}" {{- gMacros.buildOtherElementAttributes(panelAttrs) -}}>
-									<div {{ gMacros.buildClassList('inner accordion-inner', panelClasses, null) -}}>	
-										{% set accContentKids = clone(child.children).one() %}
-										{% if accContentKids != null %}																		
-											{% for accChild in clone(accContentKids.children).collect() %}	  
-												
-												{#-
-												For each child component, attempt to load a custom template for the
-												component handle from the project's files,
-												then the same template from the core Tiltrus files,
-												then a custom default template from the project,
-												and finally the default template for this component type from the core Tiltrus files.
-												-#}
-												
-												{% if accChild.type.handle starts with 'row' %}
-													  {%
-														include [
-														  '_project/_bodyblocks/rows/' ~ accChild.type.handle,
-														  '_boilerplate/_bodyblocks/rows/' ~ accChild.type.handle,
-														  '_project/_bodyblocks/rows/row',
-														  '_boilerplate/_bodyblocks/rows/row'
-														] with { 'row' :  accChild }
-													  %}
-												  {% elseif accChild.type.handle starts with 'repeater' %}
-													  {%
-														include [
-														  '_project/_bodyblocks/repeaters/' ~ accChild.type.handle,
-														  '_boilerplate/_bodyblocks/repeaters/' ~ accChild.type.handle,
-														  '_project/_bodyblocks/repeaters/repeater',
-														  '_boilerplate/_bodyblocks/repeaters/repeater'
-														] with { 'repeater' :  accChild }
-													  %}
-												  {% elseif accChild.type.handle starts with 'accordion' %}
-													{%
-													  include [
-														'_project/_bodyblocks/accordions/' ~ accChild.type.handle,
-														'_boilerplate/_bodyblocks/accordions/' ~ accChild.type.handle,
-														'_project/_bodyblocks/accordions/accordion',
-														'_boilerplate/_bodyblocks/accordions/accordion'
-													  ] with { 'accordion' :  accChild }
-													%}
-												  {% elseif accChild.type.handle starts with 'tabSet' %}
-													{%
-													  include [
-														'_project/_bodyblocks/tabs/' ~ accChild.type.handle,
-														'_boilerplate/_bodyblocks/tabs/' ~ accChild.type.handle,
-														'_project/_bodyblocks/tabs/tabSet',
-														'_boilerplate/_bodyblocks/tabs/tabSet'
-													  ] with { 'tabSet' :  accChild }
-													%}
-												  {% elseif accChild.type.handle starts with 'tabPanel' %}
-													{%
-													  include [
-														'_project/_bodyblocks/tabs/' ~ accChild.type.handle,
-														'_boilerplate/_bodyblocks/tabs/' ~ accChild.type.handle,
-														'_project/_bodyblocks/tabs/tabPanel',
-														'_boilerplate/_bodyblocks/tabs/tabPanel'
-													  ] with { 'tabPanel' :  accChild }
-													%}
-												  {% else %}
-													  {%
-														include [
-														  '_project/_bodyblocks/blocks/' ~ accChild.type.handle,
-														  '_boilerplate/_bodyblocks/blocks/' ~ accChild.type.handle,
-														  '_project/_bodyblocks/blocks/block',
-														  '_boilerplate/_bodyblocks/blocks/block'
-														] ignore missing with { 'block' :  accChild }
-													  %}
-												  {% endif %}
-												
-											{% endfor %}										
-										{% endif %}
-									</div>
-								</div>									
-							</div>
-								
-							<div class="background accordion-default-bg">
-								{% if accBgClasses != null %}		  
-									{{ gMacros.buildElementBackground(accBgClasses, accBgSizes, {'default': '100vw'}, null) }}
-								{% endif %}		
-							</div>
-						</div>     
-					</div>
-					
-				{% endfor %}
+			{# set loop dependent sub accordion settings #}
+			
+			{% if accordion.accordionStartState is defined and accordion.accordionStartState == 1 and loop.first == true %}
+				{% set openStatus = true %}
+			{% else %}
+				{% set openStatus = false %}
 			{% endif %}
-		</div>
-		<div class="background accordionSet-default-bg">
-			{% if bgClasses != null %}		
-				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-			{% endif %}		
-		</div>		
-	</div>     
+			
+			{# Set block id attribute values #}
+			
+			{% set accId = blockId ~ '-accordion' ~ loop.index %}
+			{% set panelId = accId ~ '-panel' %}
+			{% set buttonId = accId ~ '-button' %}
+			{% set headingId = accId ~ '-heading' %}
+			
+			{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
+			{% set accCustomClassString = (child['customClassList'] is defined ? child.customClassList : null) %}
+			
+			{# set button spacial attributes #}
+			{% set buttonAttrs = {'type': 'button', 'data-toggle': 'expanded', 'data-target': '#' ~ panelId, 'aria-controls': panelId, 'data-parent': '#' ~ blockId} %}
+			{% if openStatus %}
+				{% set buttonCustClasses = 'expanded' %}
+				{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'true'}) %}
+				{% set outerExpClass = 'expanded' %}
+			{% else %}
+				{% set buttonCustClasses = '' %}
+				{% set buttonAttrs = buttonAttrs|merge({'aria-expanded': 'false'}) %}
+				{% set outerExpClass = '' %}
+			{% endif %}
+			
+			{# outer outerExpClass to custom string #}					
+			{% set accCustomClassString = accCustomClassString ~ ' ' ~ outerExpClass %}
+			
+			{# set button spacial attributes #}
+			{% set panelAttrs = {'aria-labelledby': headingId, 'role': 'region', 'data-parent': '#' ~ blockId} %}
+			{% set panelCustClasses = '' %}
+			{% if openStatus %}
+				{% set panelCustClasses = 'init-expanded' %}
+			{% endif %}
+			
+			{# ACCORDION OUTPUT #}					
+			
+			<div {{ gMacros.buildElementAttributes(accId, 'accordion', accOuterClasses, accCustomClassString) -}}> 	
+				
+				<div class="inner">															
+					<{{accHeadingLevel}} id="{{ headingId }}" class="accordion-button-header" >
+						<button {{ gMacros.buildElementAttributes(buttonId, null, buttonClasses, buttonCustClasses, buttonAttrs) -}}>
+							<div class="accordion-icon">
+								<svg><use xlink:href="#{%if child.accordionIcon != null and child.accordionIcon.sprite|length %}{{child.accordionIcon.sprite}}{% else %}{{accIcon}}{% endif %}"></use></svg>
+							</div>
+							{{ gMacros.stripTags(child.tabTitle) }}
+						</button>
+					</{{accHeadingLevel}}>
+					
+					<div id="{{ panelId }}" class="accordion-panel {{ panelCustClasses }}" {{- gMacros.buildOtherElementAttributes(panelAttrs) -}}>
+						<div {{ gMacros.buildClassListBasic(panelClasses) -}}>	
+																									
+							{% for accChild in clone(child.children).collect() %}	  
+																			
+								{% if accChild.type.handle starts with 'row' %}
+								  {%
+									include [
+									  '_project/_bodyblocks/rows/' ~ accChild.type.handle,
+									  '_boilerplate/_bodyblocks/rows/' ~ accChild.type.handle,
+									  '_project/_bodyblocks/rows/row',
+									  '_boilerplate/_bodyblocks/rows/row'
+									] with { 'row' :  accChild }
+								  %}
+								{% elseif accChild.type.handle starts with 'repeater' %}
+								  {%
+									include [
+									  '_project/_bodyblocks/repeaters/' ~ accChild.type.handle,
+									  '_boilerplate/_bodyblocks/repeaters/' ~ accChild.type.handle,
+									  '_project/_bodyblocks/repeaters/repeater',
+									  '_boilerplate/_bodyblocks/repeaters/repeater'
+									] with { 'repeater' :  accChild }
+								  %}
+								{% elseif accChild.type.handle starts with 'accordion' %}
+								{%
+								  include [
+									'_project/_bodyblocks/accordions/' ~ accChild.type.handle,
+									'_boilerplate/_bodyblocks/accordions/' ~ accChild.type.handle,
+									'_project/_bodyblocks/accordions/accordion',
+									'_boilerplate/_bodyblocks/accordions/accordion'
+								  ] with { 'accordion' :  accChild }
+								%}
+								{% elseif accChild.type.handle starts with 'tabSet' %}
+								{%
+								  include [
+									'_project/_bodyblocks/tabs/' ~ accChild.type.handle,
+									'_boilerplate/_bodyblocks/tabs/' ~ accChild.type.handle,
+									'_project/_bodyblocks/tabs/tabSet',
+									'_boilerplate/_bodyblocks/tabs/tabSet'
+								  ] with { 'tabSet' :  accChild }
+								%}
+								{% elseif accChild.type.handle starts with 'tabPanel' %}
+								{%
+								  include [
+									'_project/_bodyblocks/tabs/' ~ accChild.type.handle,
+									'_boilerplate/_bodyblocks/tabs/' ~ accChild.type.handle,
+									'_project/_bodyblocks/tabs/tabPanel',
+									'_boilerplate/_bodyblocks/tabs/tabPanel'
+								  ] with { 'tabPanel' :  accChild }
+								%}
+								{% else %}
+								  {%
+									include [
+									  '_project/_bodyblocks/blocks/' ~ accChild.type.handle,
+									  '_boilerplate/_bodyblocks/blocks/' ~ accChild.type.handle,
+									  '_project/_bodyblocks/blocks/block',
+									  '_boilerplate/_bodyblocks/blocks/block'
+									] ignore missing with { 'block' :  accChild }
+								  %}
+								{% endif %}
+								
+							{% endfor %}										
+							
+						</div>
+					</div>									
+				</div>
+					
+				<div class="background">
+					{% if bgSettings|length %}		
+						{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+					{% endif %}	
+				</div>
+				    
+			</div>
+			
+		{% endfor %}
+		
+	</div>				
+	
 </div>

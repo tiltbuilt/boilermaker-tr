@@ -1,0 +1,34 @@
+columnSuffix: sodaxvie
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: mainHeaderStyle
+instructions: null
+name: 'Main Header Style'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Page Header'
+        -
+          - value
+          - .pageHeader-main-header
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Heading 2'
+        -
+          - value
+          - heading2
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

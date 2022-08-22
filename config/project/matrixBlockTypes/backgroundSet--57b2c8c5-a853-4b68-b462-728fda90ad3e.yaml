@@ -1,0 +1,563 @@
+field: eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49 # Background Imagery
+fieldLayouts:
+  dec3e03e-aef8-4975-a3b5-2d0d1c887d1d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bb167aed-8f2a-4fea-b65b-cabe5d44a47d # Device Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dd5090b8-96ca-42f9-b3d2-4c3cf8bfa83d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c9dd0921-10a9-4e5e-b168-a1d6437210c7 # Background Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e47bf339-f6ac-4588-a157-9208f967ebc6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bbfe8cf7-c136-4bf2-839c-b94772136fef # Background Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b64f3324-c466-46ed-845e-2c236fda63c4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: f43aea4b-4b7f-4e38-8ccb-26a69c52fae2 # Background Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 523665bd-5e94-4479-8554-b99cb2fc7a76
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5e83d097-283f-488e-b2fb-64b1b3d0ce1b # Background Repeat
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6995d497-a8d1-438d-ae42-9bd487249ed9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8c82fa9d-b260-483f-b79f-926f955b7142 # Background Image Opacity
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2a020390-f264-47c6-bae2-446b9ee9112f
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 810df195-b68a-413c-a134-1962eff9eee1
+        userCondition: null
+fields:
+  5e83d097-283f-488e-b2fb-64b1b3d0ce1b: # Background Repeat
+    columnSuffix: exphbatn
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundRepeat
+    instructions: null
+    name: 'Background Repeat'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'No Repeat'
+            -
+              - value
+              - bg-no-repeat
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Repeat
+            -
+              - value
+              - bg-repeat
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Repeat Horizontally'
+            -
+              - value
+              - bg-repeat-x
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Repeat Vertically'
+            -
+              - value
+              - bg-repeat-y
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  8c82fa9d-b260-483f-b79f-926f955b7142: # Background Image Opacity
+    columnSuffix: jroruixg
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundImageOpacity
+    instructions: null
+    name: 'Background Image Opacity'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 100%
+            -
+              - value
+              - opacity-100
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 90%
+            -
+              - value
+              - opacity-90
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 80%
+            -
+              - value
+              - opacity-80
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 70%
+            -
+              - value
+              - opacity-70
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 60%
+            -
+              - value
+              - opacity-60
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 50%
+            -
+              - value
+              - opacity-50
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 40%
+            -
+              - value
+              - opacity-40
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 30%
+            -
+              - value
+              - opacity-30
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 20%
+            -
+              - value
+              - opacity-20
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 10%
+            -
+              - value
+              - opacity-10
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 0%
+            -
+              - value
+              - opacity-0
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bb167aed-8f2a-4fea-b65b-cabe5d44a47d: # Device Size
+    columnSuffix: lpigoubk
+    contentColumnType: string
+    fieldGroup: null
+    handle: deviceSize
+    instructions: null
+    name: 'Device Size'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Default (Phone Vertical and Above)'
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Phone Horizontal & Above'
+            -
+              - value
+              - 'sm:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Tablet and Above'
+            -
+              - value
+              - 'md:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Laptop & Above'
+            -
+              - value
+              - 'lg:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Desktop & Above'
+            -
+              - value
+              - 'xl:'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Hi Res'
+            -
+              - value
+              - '2xl:'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bbfe8cf7-c136-4bf2-839c-b94772136fef: # Background Size
+    columnSuffix: muewgsmf
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundSize
+    instructions: null
+    name: 'Background Size'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Auto
+            -
+              - value
+              - auto
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Fill Container With Cropping (Cover)'
+            -
+              - value
+              - cover
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Largest Size With No Cropping (Contain)'
+            -
+              - value
+              - contain
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  c9dd0921-10a9-4e5e-b168-a1d6437210c7: # Background Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundImage
+    instructions: null
+    name: 'Background Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+        - video
+      defaultUploadLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f43aea4b-4b7f-4e38-8ccb-26a69c52fae2: # Background Position
+    columnSuffix: qahyjjgp
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundPosition
+    instructions: null
+    name: 'Background Position'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - bottom
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Left Top'
+            -
+              - value
+              - left-top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Left Bottom'
+            -
+              - value
+              - left-bottom
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Right Top'
+            -
+              - value
+              - right-top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Right Bottom'
+            -
+              - value
+              - right-bottom
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: backgroundSet
+name: 'Background Set'
+sortOrder: 1

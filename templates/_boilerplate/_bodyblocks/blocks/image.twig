@@ -17,7 +17,7 @@
 {% if block.imageAsset|length %}
 
 	{% set image = block.imageAsset[0] %}	
-	{% set styleAdjusts = block.children.one() %}
+	
 	{# Set block id attribute value #}
 	{% if block.customId is defined and block.customId != '' %}
 	  {% set blockId = block.customId %}
@@ -28,11 +28,11 @@
 	{% endif %}
 	
 	{# Set block type handle as class name for styling #}
-	{% set blockClass = 'elem-block image-block' %}
+	{% set blockClass = 'image-block' %}
 	{% set innerClass = 'inner image-block-inner' %}
 	{% set imageClass = 'content-image' %}	
 	{% set loadClass = 'lazyload' %}
-	{% set imageStyles = [imageClass, 'w-full', loadClass] %}	
+	{% set imageStyles = [imageClass, loadClass] %}	
 	
 			
 	{# set alt text #}	
@@ -47,174 +47,67 @@
 	
 	{# Sort Out Styling Adjustments to set up class lit arrays #}
 	
-	{# create arrays to collect style changes to primary element and inner and bg #}
-	{% set styleClasses = [] %}
-	{% set outerClasses = [] %}
-	{% set captionClasses = [] %}
-	{% set bgClasses = [] %}
-	{% set bgSizes = [] %}	
+	{# create arrays to collect style changes to primary element #}
 	
-	{% if styleAdjusts != null %}	
-		{# add style changes to array except for padding because it isn't applied to primary element #}
-			
-		{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
+	{% set outerClasses = [colorScheme, block.topMargin, block.bottomMargin] %}
+	{% for mediaStyle in block.imageVideoLayout %}
+		{% if mediaStyle.imageVideoSize != '' %}
+			{% set outerClasses = outerClasses|merge([mediaStyle.deviceSize ~ mediaStyle.imageVideoSize]) %}
+		{% endif %}
+		{% if mediaStyle.textWrapPosition != '' %}
+			{% set outerClasses = outerClasses|merge([mediaStyle.deviceSize ~ mediaStyle.textWrapPosition]) %}
+		{% endif %}
+	{% endfor %}	
 		
-		{% for styleSet in clone(styleAdjusts.children).collect() %}
-			{% set devSize = styleSet.deviceSize %}	
-			{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-			{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-			
-			{% for fieldItem in styleSetFields %}
-				
-				{# Leave out padding since it goes to a different element and leave out background fields #}			
-				{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'imageSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and fieldItem.handle != 'textWrapImagePosition' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-					{%- set styleClasses = styleClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{# add color classes #}
-				{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
-					{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-					{%- set styleClasses = styleClasses|merge([classItem]) -%}
-				{% endif %}
-							
-				{# Add outer settings to outerClasses array #}			
-				{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-					{%- set outerClasses = outerClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-					{%- set outerClasses = outerClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'textWrapImagePosition' and styleSet[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-					{%- set outerClasses = outerClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'imageSize' and styleSet[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-					{%- set outerClasses = outerClasses|merge([classItem]) -%}
-				{% endif %}
-						
-			{% endfor %}
-			
-			{% if block.imageCaption|length %}
-				{% set captionStyles = clone(styleSet.children).type('styleSetCaption').one() %}
-				{% if captionStyles != null %}
-					{% set captionFieldLayout = captionStyles.getFieldLayout() %}
-					{% set captionFields = captionFieldLayout.getCustomFields() %}
-					{% for fieldItem in captionFields %}						
-						
-						{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and fieldItem.handle != 'captionStyle' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Padding') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and not (fieldItem.handle starts with 'border') and captionStyles[fieldItem.handle]|length %}
-							{% set classItem = devSize ~ captionStyles[fieldItem.handle] %}
-							{%- set captionClasses = captionClasses|merge([classItem]) -%}
-						{% endif %}	
-						
-						{# add color classes #}
-						{% if fieldItem.handle == 'textColor' and captionStyles[fieldItem.handle] != null %}
-							{% set classItem = devSize ~ captionStyles[fieldItem.handle].class %}
-							{%- set captionClasses = captionClasses|merge([classItem]) -%}
-						{% endif %}	
-						
-						{% if fieldItem.handle == 'borderColor' and captionStyles[fieldItem.handle] != null %}
-							{% set classItem = devSize ~ captionStyles[fieldItem.handle].class %}
-							{% if captionStyles.captionStyle %}
-								{%- set styleClasses = styleClasses|merge([classItem]) -%}
-							{% else %}
-								{%- set captionClasses = captionClasses|merge([classItem]) -%}
-							{% endif %}
-						{% endif %}						
-						
-						{% if fieldItem.handle ends with 'Padding' and captionStyles[fieldItem.handle]|length %}
-							{% set classItem = devSize ~ captionStyles[fieldItem.handle] %}
-							{% if captionStyles.captionStyle %}
-								{%- set styleClasses = styleClasses|merge([classItem]) -%}
-							{% else %}
-								{%- set captionClasses = captionClasses|merge([classItem]) -%}
-							{% endif %}
-						{% endif %}	
-						
-						{% if fieldItem.handle starts with 'border' and fieldItem.handle != 'borderColor' and captionStyles[fieldItem.handle]|length %}
-							{% set classItem = devSize ~ captionStyles[fieldItem.handle] %}
-							{% if captionStyles.captionStyle %}
-								{%- set styleClasses = styleClasses|merge([classItem]) -%}
-							{% else %}
-								{%- set captionClasses = captionClasses|merge([classItem]) -%}
-							{% endif %}
-					{% endif %}					
-						
-					{% endfor %}
-				{% endif %}
-				
-				{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-				{% if (captionStyles.backgroundColor.class is defined and captionStyles.backgroundColor.class) %}
-					{% set bgItem  = {
-						'devSize': devSize,
-						'bgColor': captionStyles.backgroundColor.class ?? '',
-						'bgImg': captionStyles.backgroundImage[0] ?? null,
-						'bgSize': captionStyles.backgroundSize ?? '',
-						'bgPosition': captionStyles.backgroundPosition ?? '',
-						'bgRepeat': captionStyles.backgroundRepeat ?? '',
-						'bgOpacity': captionStyles.backgroundOpacity ?? '',
-						'bgImgOpacity': captionStyles.backgroundImageOpacity ?? '',
-					}		
-					%}
-					{% set bgClasses = bgClasses|merge([bgItem]) %}	
-					{% set bgSizes = bgSizes|merge([devSize])%}	
-				{% endif %}
-				
-			{% endif %}
-					
-		{% endfor %}			
-		
-	{% endif %}
-	
-	
-	
 	{# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 	{% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
 	
-	{# add widthClass to custom string to ensure it is added to container class list #}
-	{% set customClassString = customClassString ~ ' ' ~ widthClass %}
-	
+		
 	{# set animation classes for reveal #}
 	
-	{% set animClasses = [] %}
-	{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
-		{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
-		{% set revealClass = block.revealAnimation %}
+	{% set revealClass = [] %}
+	{% if block.revealAnimation == 'anim-child' %}	
 		{% if block.animateChildren is not empty %}
 			{% if block.animateChildren == true %}
-				{% set animClasses = animClasses|merge(['anim-parent']) %}
-				{% if block.staggerChildReveals is not empty %}
-					{% if block.staggerChildReveals == true %}
-						{% set revealClass = revealClass ~ '-stagger' %}
-					{% endif %}
-				{% endif %}
+				{% set revealClass = revealClass|merge(['anim-pass']) %}			
 			{% else %}
-				{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+				{% set revealClass = revealClass|merge([block.revealAnimation]) %}		
 			{% endif %}
 		{% else %}
-			{% set animClasses = animClasses|merge(['anim-elem']) %} 
+			{% set revealClass = revealClass|merge([block.revealAnimation]) %}
 		{% endif %}	
-		{% set animClasses = animClasses|merge([revealClass]) %}	
+	{% else %}
+		{% if block.animateChildren is not empty %}
+			{% if block.animateChildren == true %}
+				{% set revealClass = revealClass|merge(['anim-parent']) %}
+				{% if block.staggerChildReveals is not empty %}
+					{% if block.staggerChildReveals == true %}
+						{% set revealClass = revealClass|merge([block.revealAnimation ~ '-stagger']) %}
+					{% else %}
+						{% set revealClass = revealClass|merge([block.revealAnimation]) %}
+					{% endif %}
+				{% endif %}			
+			{% else %}
+				{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}		
+			{% endif %}
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}
+		{% endif %}			
 	{% endif %}
+	{% set outerClasses = outerClasses|merge(revealClass) %}
 	
 	{# OUTPUT #}
 	
 	<{{outerTag}} {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
-		<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-			<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
-				{% if block['linkSettings'].isEmpty() == false %}
-					{% set imageLink = block.linkSettings %}
-					<a href="{{ imageLink.url }}" title="{{ imageLink.text }}" {{- imageLink.target|length ? ' target="_blank"' : '' -}}>
-			  	{% endif %}
-				
-				{% if image.mimeType == "image/svg+xml" %}		
-	
+		
+		<div class="{{innerClass}}">
+			{% if block['linkSettings'].isEmpty() == false %}
+				{% set imageLink = block.linkSettings %}
+				<a href="{{ imageLink.url }}" title="{{ imageLink.text }}" {{- imageLink.target|length ? ' target="_blank"' : '' -}}>
+		  	{% endif %}
+			
+			{% if image.mimeType == "image/svg+xml" %}		
+
 				<img src="{{ image.url }}" alt="{{imageAltText}}" {{ gMacros.buildClassListBasic(imageStyles) -}}>
 		
 			{% else %}		
@@ -245,22 +138,17 @@
 				{% endif %}			  		  
 			  
 			{% endif %} 
-				  
-				{% if block['linkSettings'] is defined and block.linkSettings|length %}			
-					</a>
-				{% endif %}
-				
-				{% if block.imageCaption != '' %}
-					<figcaption {{ gMacros.buildClassList('image-caption', captionClasses, null) -}}>
-						{{ block.imageCaption }}						
-					</figcaption>				  
-				{% endif %}  
-			</div>
-			<div class="background image-default-bg">
-				{% if bgClasses != null %}		
-					{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-				{% endif %}		
-			</div>						
-		</div>     
+			  
+			{% if block['linkSettings'] is defined and block.linkSettings|length %}			
+				</a>
+			{% endif %}
+			
+			{% if block.imageCaption != '' %}
+				<figcaption class="image-caption">
+					{{ block.imageCaption }}						
+				</figcaption>				  
+			{% endif %}  
+		</div>							
+		     
 	</{{outerTag}}>
 {% endif %}

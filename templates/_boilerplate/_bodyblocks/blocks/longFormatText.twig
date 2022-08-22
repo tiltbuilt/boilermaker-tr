@@ -13,101 +13,65 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
-{% set styleAdjusts = block.children.one() %}
 
 {# Set block id attribute value #}
 {% if block.customId is defined and block.customId != '' %}
 	{% set blockId = block.customId %}
 {% else %}
-	{% set blockId = 'longFormatText-' ~ block.id %}
+	{% set blockId = block.type.handle ~ block.id %}
 {% endif %}
 
 {# Set block type handle as class name for styling #}
-{% set blockClass = 'elem-block ' ~ block.type.handle %}
+{% set blockClass = block.type.handle %}
+{% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
 
 
-{# Sort Out Styling Adjustments to set up class lit arrays #}
-
-{# create arrays to collect style changes to primary element and inner and bg #}
-{% set styleClasses = [] %}
-{% set outerClasses = [] %}
-
-{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
-
-{% if styleAdjusts != null %}	
-
-	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}	
-		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-		
-		{% for fieldItem in styleSetFields %}
-			
-			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add color classes #}
-			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-						
-			{# Add outer settings to outerClasses array #}			
-			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-					
-		{% endfor %}
-		
-					
-	{% endfor %}
-
-{% endif %}
+{# create arrays for margin styles #}
+{% set outerClasses = [colorScheme, block.topMargin, block.bottomMargin] %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
 
 
-
 {# set animation classes for reveal #}
 
-{% set animClasses = [] %}
-{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
-	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
-	{% set revealClass = block.revealAnimation %}
+{% set revealClass = [] %}
+{% if block.revealAnimation == 'anim-child' %}	
 	{% if block.animateChildren is not empty %}
 		{% if block.animateChildren == true %}
-			{% set animClasses = animClasses|merge(['anim-parent']) %}
-			{% if block.staggerChildReveals is not empty %}
-				{% if block.staggerChildReveals == true %}
-					{% set revealClass = revealClass ~ '-stagger' %}
-				{% endif %}
-			{% endif %}
+			{% set revealClass = revealClass|merge(['anim-pass']) %}			
 		{% else %}
-			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+			{% set revealClass = revealClass|merge([block.revealAnimation]) %}		
 		{% endif %}
 	{% else %}
-		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+		{% set revealClass = revealClass|merge([block.revealAnimation]) %}
 	{% endif %}	
-	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% else %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass|merge([block.revealAnimation ~ '-stagger']) %}
+				{% else %}
+					{% set revealClass = revealClass|merge([block.revealAnimation]) %}
+				{% endif %}
+			{% endif %}			
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}
+	{% endif %}			
 {% endif %}
+{% set outerClasses = outerClasses|merge(revealClass) %}
 
 {# OUTPUT #}
 
 <div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
-		<div {{ gMacros.buildClassList('inner', styleClasses, null) -}}>	
-			{{ block.longFormatText }}
-		</div>		
-	</div>     
+	
+	<div class="{{innerClass}}">	
+		{{ block.longFormatText }}
+	</div>		
+	     
 </div>

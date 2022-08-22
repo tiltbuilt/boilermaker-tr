@@ -11,11 +11,7 @@
 	// These classes must stay in order to ensure functionality
 	@apply block;
 	//The default classes and style below can be changed on a per-project basis
-	@apply mb-normal lg:mb-2x;
-	 
-	&:last-child {
-		@apply mb-0;
-	}	    
+	@apply mt-half;	  
  }
  
  .buttonGroup-inner {
@@ -29,7 +25,7 @@
 	// These classes must stay in order to ensure functionality
 	@apply inline-block;
 	//The default classes and style below can be changed on a per-project basis
-	@apply mr-half mb-half;	 
+	@apply mr-half mt-half;	 
  }
  
  .btn-wrapper-inner {
@@ -38,32 +34,55 @@
  
  /* SET DEFAULT BUTTON STYLE, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON STYLE CLASSES IN APP-UTILITIES.PCSS */
  
- .btn, .btn-standard {
-	// These classes must stay in order to ensure functionality
-	@apply inline-block leading-none;
-	//The default classes and style below can be changed on a per-project basis
-	@apply uppercase font-semibold btn-gray-lt;
-	border-radius: 0.4rem; 
-	transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	text-shadow: none !important;
-	
-  // place general hover styles for all buttons here LEAVE IT OUT IF YOU SET CUSTOM HOVERS IN APP-UTILITIES.PCSS
-  /*
-  &:hover {		
-  		opacity: 0.7;
-  }*/	
- }
- 
- /* SET DEFAULT BUTTON SIZE, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON SIZE CLASSES IN APP-UTILITIES.PCSS */
- .btn {
-	 @apply text-base py-4 px-8;	 
+.btn, .btn-standard {
+  // These classes must stay in order to ensure functionality
+  @apply inline-block leading-none;
+  //The default classes and style below can be changed on a per-project basis	
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @apply font-semibold;
+  border-radius: 0.4rem;
+}
+
+.btn-text {  
+  border-radius: 0px;
+}
+
+.btn-text-arrow {
+  &::after {
+    font: var(--fa-font-solid);
+    /* the free version of font aweosme is loaded so you can change the icon for the arrow to anything in their collection */
+    content: "\f105";
+    display: inline-block;
+    margin-left: 0.25em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;     
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);    
   }
   
-/* SET DEFAULT BUTTON COLOR, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON COLOR CLASSES IN APP-UTILITIES.PCSS */  
- .btn {
-	@apply bg-gray-300 text-black;  
+  &:hover {
+    &::after {      
+      transform: translateX(0.35em);
+    }
   }
+}
  
+
+ 
+/* SET DEFAULT BUTTON SIZES */
+
+.btn, .btn-md {
+  @apply text-base py-4 px-8;	 
+}
+
+.btn-sm {
+  @apply text-sm py-2 px-4;	 
+}
+
+.btn-lg {
+  @apply text-lg py-6 px-12;	 
+}
+  
+
 
 
  

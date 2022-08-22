@@ -13,17 +13,6 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
-{% set contentKids = null %}
-{% set styleAdjusts = null %}
-{% for item in block.children.all() %}
-	{% if item.type.handle == 'childrenWrapper' %}
-		{% set contentKids = item %}
-	{% elseif item.type.handle == 'styleAdjustmentsWrapper' %}
-		{% set styleAdjusts = item %}
-	{% endif %}
-{% endfor %}
-
 {# Set block id attribute value #}
 {% if block.customId is defined and block.customId != '' %}
 	{% set blockId = block.customId %}
@@ -34,229 +23,158 @@
 {% endif %}
 
 {# Set block type handle as class name for styling #}
-{% set blockClass = 'elem-block ' ~ block.type.handle %}
+{% set blockClass = block.type.handle %}
 {% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
 
-{% if block.styleWrapper %}
-	{% set innerClass = innerClass ~ ' ' ~ block.type.handle ~ '-inner-styled' %}
+{% if block.headingLevel == '' %}
+	{% set headingTag = 'div' %}
+{% else %}
+	{% set headingTag = block.headingLevel %}
 {% endif %}
 
-{# Sort Out Styling Adjustments to set up class lit arrays #}
 
 {# create arrays to collect style changes to primary element and inner and bg #}
-{% set styleClasses = [] %}
-{% set bgClasses = [] %}
-{% set headerClasses = [] %}
-{% set headerOuterClasses = [] %}
-{% set bgSizes = [] %}
-{% set outerClasses = [] %}
+{# set styleClasses with classes needed to be applied to container inner div #}
+{% set styleClasses = [block.topPadding, block.bottomPadding, block.gutterPadding, block.contentAlignment] %}
 
-{% if styleAdjusts != null %}	
+{% if block.contentWrapperTextStyling|length %}
+
+	{% for textStyle in block.contentWrapperTextStyling %}
+		{% set styleClasses = styleClasses|merge([textStyle.font, textStyle.fontSize, textStyle.lineHeight, textStyle.fontWeight, textStyle.italic, textStyle.textCase, textStyle.letterSpacing]) %}
+	{% endfor %}
 	
-	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
-	
-	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}	
-		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-		
-		{% for fieldItem in styleSetFields %}
-			
-			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add color classes #}
-			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-						
-			{# Add outer settings to outerClasses array #}			
-			{% if fieldItem.handle ends with 'Margin' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{% if fieldItem.handle == 'displaySetting' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set outerClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}
-					
-		{% endfor %}
-		
-		{# Get main header styleset adjustments if any #}			
-		{% set headerStyles = clone(styleSet.children).type('styleSetMainHeader').one() %}
-		{% if headerStyles != null %}
-			{% set headerFieldLayout = headerStyles.getFieldLayout() %}
-			{% set headerFields = headerFieldLayout.getCustomFields() %}
-			{% for fieldItem in headerFields %}						
-				
-				{% if fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'background') and headerStyles[fieldItem.handle]|length %}					
-					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
-					{%- set headerClasses = headerClasses|merge([classItem]) -%}
-				{% endif %}	
-				
-				{# add color classes #}
-				{% if fieldItem.handle ends with 'Color' and headerStyles[fieldItem.handle] != null %}
-					{% set classItem = devSize ~ headerStyles[fieldItem.handle].class %}
-					{%- set headerClasses = styleClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle ends with 'Margin' and headerStyles[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
-					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
-				{% endif %}
-				
-				{% if fieldItem.handle == 'displaySetting' and headerStyles[fieldItem.handle]|length %}
-					{% set classItem = devSize ~ headerStyles[fieldItem.handle] %}
-					{%- set headerOuterClasses = headerOuterClasses|merge([classItem]) -%}
-				{% endif %}
-				
-			{% endfor %}
-		{% endif %}
-		
-		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
-			{% set bgItem  = {
-				'devSize': devSize,
-				'bgColor': styleSet.backgroundColor.class ?? '',
-				'bgImg': styleSet.backgroundImage[0] ?? null,
-				'bgSize': styleSet.backgroundSize ?? '',
-				'bgPosition': styleSet.backgroundPosition ?? '',
-				'bgRepeat': styleSet.backgroundRepeat ?? '',
-				'bgOpacity': styleSet.backgroundOpacity ?? '',
-				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
-			}		
-			%}
-			{% set bgClasses = bgClasses|merge([bgItem]) %}	
-			{% set bgSizes = bgSizes|merge([devSize])%}	
-		{% endif %}
-				
-	{% endfor %}	
 {% endif %}
 
+{% if block.colorScheme.class != '' %}
+	{% set colorScheme = block.colorScheme.class %}
+{% endif %}
+
+{# outerClasses has color scheme class and class if section should have transparent bg instead of bg specified in color scheme #}
+{% set outerClasses = ['elem-block', colorScheme, block.topMargin, block.bottomMargin] %}
+{% if block.transparentBackground %}
+	{% set outerClasses = outerClasses|merge(['bg-off']) %}
+{% endif %}
+
+
+{% set bgSettings = block.backgroundImagery %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (block['customClassList'] is defined ? block.customClassList : null) %}
 
-
 {# set animation classes for reveal #}
 
-{% set animClasses = [] %}
-{% if block.revealAnimation is defined and block.revealAnimation != '' %}  
-	{% set animClasses = animClasses|merge(['anim-wrapper', 'anim-child']) %}
-	{% set revealClass = block.revealAnimation %}
+{% set revealClass = [] %}
+{% if block.revealAnimation == 'anim-child' %}	
 	{% if block.animateChildren is not empty %}
 		{% if block.animateChildren == true %}
-			{% set animClasses = animClasses|merge(['anim-parent']) %}
-			{% if block.staggerChildReveals is not empty %}
-				{% if block.staggerChildReveals == true %}
-					{% set revealClass = revealClass ~ '-stagger' %}
-				{% endif %}
-			{% endif %}
+			{% set revealClass = revealClass|merge(['anim-pass']) %}			
 		{% else %}
-			{% set animClasses = animClasses|merge(['anim-elem']) %}  		
+			{% set revealClass = revealClass|merge([block.revealAnimation]) %}		
 		{% endif %}
 	{% else %}
-		{% set animClasses = animClasses|merge(['anim-elem']) %} 
+		{% set revealClass = revealClass|merge([block.revealAnimation]) %}
 	{% endif %}	
-	{% set animClasses = animClasses|merge([revealClass]) %}	
+{% else %}
+	{% if block.animateChildren is not empty %}
+		{% if block.animateChildren == true %}
+			{% set revealClass = revealClass|merge(['anim-parent']) %}
+			{% if block.staggerChildReveals is not empty %}
+				{% if block.staggerChildReveals == true %}
+					{% set revealClass = revealClass|merge([block.revealAnimation ~ '-stagger']) %}
+				{% else %}
+					{% set revealClass = revealClass|merge([block.revealAnimation]) %}
+				{% endif %}
+			{% endif %}			
+		{% else %}
+			{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}		
+		{% endif %}
+	{% else %}
+		{% set revealClass = revealClass|merge(['anim-elem', block.revealAnimation]) %}
+	{% endif %}			
 {% endif %}
+{% set outerClasses = outerClasses|merge(revealClass) %}
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
-	<div {{ gMacros.buildClassListBasic(animClasses) -}}>
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 
 		
-		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
-						
-			{% if block.headerText|length and block.headingLevel and block.styleWrapper %} 
-			<div {{ gMacros.buildElementAttributes(headerId, 'elem-block contentWrapper-header-outer', headerOuterClasses, null) -}}>
-				
-				<{{block.headingLevel}} {{ gMacros.buildClassList('inner contentWrapper-header', headerClasses, null) -}}>
-					{{ gMacros.stripTags(block.headerText) }}
-				</{{block.headingLevel}}>
-				
+	<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
+					
+		{% if block.headerText|length and block.headingLevel %} 
+			<div {{ gMacros.buildElementAttributes(headerId, 'contentWrapper-mainheader', ['elem-block', block.mainHeaderStyle ~ '-outer'], null) -}}>
+				<div class="anim-wrapper anim-child">
+					<{{ headingTag }} {{ gMacros.buildClassListBasic(['inner', 'contentWrapper-mainheader-inner',  block.mainHeaderStyle]) -}}>
+						<span>{{ gMacros.stripTags(block.headerText) }}</span>
+					</{{ headingTag }}>
+				</div>
 			</div>
-			{% endif %}
+		{% endif %}
+					
+		{% for child in clone(block.children).collect() %}					
+			
+			{% if child.type.handle starts with 'row' %}
+				  {%
+					include [
+					  '_project/_bodyblocks/rows/' ~ child.type.handle,
+					  '_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
+					  '_project/_bodyblocks/rows/row',
+					  '_boilerplate/_bodyblocks/rows/row'
+					] with { 'row' :  child }
+				  %}
+			  {% elseif child.type.handle starts with 'repeater' %}
+				  {%
+					include [
+					  '_project/_bodyblocks/repeaters/' ~ child.type.handle,
+					  '_boilerplate/_bodyblocks/repeaters/' ~ child.type.handle,
+					  '_project/_bodyblocks/repeaters/repeater',
+					  '_boilerplate/_bodyblocks/repeaters/repeater'
+					] with { 'repeater' :  child }
+				  %}
+			  {% elseif child.type.handle starts with 'accordion' %}
+				{%
+				  include [
+					'_project/_bodyblocks/accordions/' ~ child.type.handle,
+					'_boilerplate/_bodyblocks/accordions/' ~ child.type.handle,
+					'_project/_bodyblocks/accordions/accordion',
+					'_boilerplate/_bodyblocks/accordions/accordion'
+				  ] with { 'accordion' :  child }
+				%}
+			  {% elseif child.type.handle starts with 'tabSet' %}
+				{%
+				  include [
+					'_project/_bodyblocks/tabs/' ~ child.type.handle,
+					'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+					'_project/_bodyblocks/tabs/tabSet',
+					'_boilerplate/_bodyblocks/tabs/tabSet'
+				  ] with { 'tabSet' :  child }
+				%}
+			  {% elseif child.type.handle starts with 'tabPanel' %}
+				{%
+				  include [
+					'_project/_bodyblocks/tabs/' ~ child.type.handle,
+					'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
+					'_project/_bodyblocks/tabs/tabPanel',
+					'_boilerplate/_bodyblocks/tabs/tabPanel'
+				  ] with { 'tabPanel' :  child }
+				%}
+			  {% else %}
+				  {%
+					include [
+					  '_project/_bodyblocks/blocks/' ~ child.type.handle,
+					  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+					  '_project/_bodyblocks/blocks/block',
+					  '_boilerplate/_bodyblocks/blocks/block'
+					] ignore missing with { 'block' :  child }
+				  %}
+			  {% endif %}
+			
+		{% endfor %}
 				
-			{% if contentKids != null %}
-				{% for child in clone(contentKids.children).collect() %}	  
-					
-					{#-
-					For each child component, attempt to load a custom template for the
-					component handle from the project's files,
-					then the same template from the core Tiltrus files,
-					then a custom default template from the project,
-					and finally the default template for this component type from the core Tiltrus files.
-					-#}
-					
-					{% if child.type.handle starts with 'row' %}
-						  {%
-							include [
-							  '_project/_bodyblocks/rows/' ~ child.type.handle,
-							  '_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
-							  '_project/_bodyblocks/rows/row',
-							  '_boilerplate/_bodyblocks/rows/row'
-							] with { 'row' :  child }
-						  %}
-					  {% elseif child.type.handle starts with 'repeater' %}
-						  {%
-							include [
-							  '_project/_bodyblocks/repeaters/' ~ child.type.handle,
-							  '_boilerplate/_bodyblocks/repeaters/' ~ child.type.handle,
-							  '_project/_bodyblocks/repeaters/repeater',
-							  '_boilerplate/_bodyblocks/repeaters/repeater'
-							] with { 'repeater' :  child }
-						  %}
-					  {% elseif child.type.handle starts with 'accordion' %}
-						{%
-						  include [
-							'_project/_bodyblocks/accordions/' ~ child.type.handle,
-							'_boilerplate/_bodyblocks/accordions/' ~ child.type.handle,
-							'_project/_bodyblocks/accordions/accordion',
-							'_boilerplate/_bodyblocks/accordions/accordion'
-						  ] with { 'accordion' :  child }
-						%}
-					  {% elseif child.type.handle starts with 'tabSet' %}
-						{%
-						  include [
-							'_project/_bodyblocks/tabs/' ~ child.type.handle,
-							'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
-							'_project/_bodyblocks/tabs/tabSet',
-							'_boilerplate/_bodyblocks/tabs/tabSet'
-						  ] with { 'tabSet' :  child }
-						%}
-					  {% elseif child.type.handle starts with 'tabPanel' %}
-						{%
-						  include [
-							'_project/_bodyblocks/tabs/' ~ child.type.handle,
-							'_boilerplate/_bodyblocks/tabs/' ~ child.type.handle,
-							'_project/_bodyblocks/tabs/tabPanel',
-							'_boilerplate/_bodyblocks/tabs/tabPanel'
-						  ] with { 'tabPanel' :  child }
-						%}
-					  {% else %}
-						  {%
-							include [
-							  '_project/_bodyblocks/blocks/' ~ child.type.handle,
-							  '_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-							  '_project/_bodyblocks/blocks/block',
-							  '_boilerplate/_bodyblocks/blocks/block'
-							] ignore missing with { 'block' :  child }
-						  %}
-					  {% endif %}
-					
-				{% endfor %}
-			{% endif %}			
-		</div>
-		<div class="background contentWrapper-default-bg {% if block.styleWrapper %}contentWrapper-styled-bg{% endif %}">
-			{% if bgClasses != null %}		
-				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-			{% endif %}		
-		</div>			
-	</div>     
+	</div>
+	<div class="background">
+		{% if bgSettings|length %}		
+			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+		{% endif %}		
+	</div>			
+	     
 </div>

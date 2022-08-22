@@ -13,17 +13,6 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-{# set variables for content child and style adjustment containers  #}
-{% set contentKids = null %}
-{% set styleAdjusts = null %}
-{% for item in block.children.all() %}
-	{% if item.type.handle == 'childrenSlide' %}
-		{% set contentKids = item %}
-	{% elseif item.type.handle == 'styleAdjustmentsSlide' %}
-		{% set styleAdjusts = item %}
-	{% endif %}
-{% endfor %}
-
 {# Set block id attribute value #}
 {% if block.customId is defined and block.customId != '' %}
 	{% set blockId = block.customId %}
@@ -35,70 +24,17 @@
 {% set blockClass = block.type.handle ~ ' swiper-slide' %}
 {% set innerClass = block.type.handle ~ '-inner' %}
 
-{# Sort Out Styling Adjustments to set up class lit arrays #}
 
-{# create arrays to collect style changes to primary element and inner and bg #}
-{% set styleClasses = [] %}
-{% set padClasses = [] %}
-{% set rowClasses = [] %}
-{% set bgClasses = [] %}
-{% set bgSizes = [] %}
-
-
-
-{% if styleAdjusts != null %}	
-	
-	{# Iterate through style sets in adjustment block and write out style adjustment classes to an array. #}
-	
-	{% for styleSet in clone(styleAdjusts.children).collect() %}
-		{% set devSize = styleSet.deviceSize %}	
-		{% set styleSetFieldLayout = styleSet.getFieldLayout() %}
-		{% set styleSetFields = styleSetFieldLayout.getCustomFields() %}		
-		
-		{% for fieldItem in styleSetFields %}
-			
-			{# Leave out padding since it goes to a different element and leave out background fields #}			
-			{% if fieldItem.handle != 'deviceSize' and fieldItem.handle != 'allBordersMatch' and fieldItem.handle != 'displaySetting' and not (fieldItem.handle ends with 'Margin') and not (fieldItem.handle starts with 'row') and not (fieldItem.handle ends with 'Color') and not (fieldItem.handle starts with 'column') and not (fieldItem.handle starts with 'background') and styleSet[fieldItem.handle]|length %}				
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set styleClasses = styleClasses|merge([classItem]) -%}
-			{% endif %}
-			
-			{# add color classes #}
-			{% if fieldItem.handle ends with 'Color' and fieldItem.handle != 'backgroundColor' and styleSet[fieldItem.handle] != null %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle].class %}
-				{%- set styleClasses = rowClasses|merge([classItem]) -%}
-			{% endif %}
-						
-			{# Add outer settings to outerClasses array #}			
-			{% if fieldItem.handle starts with 'row' and styleSet[fieldItem.handle]|length %}
-				{% set classItem = devSize ~ styleSet[fieldItem.handle] %}
-				{%- set rowClasses = outerClasses|merge([classItem]) -%}
-			{% endif %}		
-					
-		{% endfor %}
-		
-		{# set up background objects and drop into array. If no color and no image are set them skip styleset #}
-		{% if (styleSet.backgroundColor.class is defined and styleSet.backgroundColor.class) or (styleSet.backgroundImage is defined and styleSet.backgroundImage|length) %}
-			{% set bgItem  = {
-				'devSize': devSize,
-				'bgColor': styleSet.backgroundColor.class ?? '',
-				'bgImg': styleSet.backgroundImage[0] ?? null,
-				'bgSize': styleSet.backgroundSize ?? '',
-				'bgPosition': styleSet.backgroundPosition ?? '',
-				'bgRepeat': styleSet.backgroundRepeat ?? '',
-				'bgOpacity': styleSet.backgroundOpacity ?? '',
-				'bgImgOpacity': styleSet.backgroundImageOpacity ?? '',
-			}		
-			%}
-			{% set bgClasses = bgClasses|merge([bgItem]) %}	
-			{% set bgSizes = bgSizes|merge([devSize])%}	
-		{% endif %}
-				
-	{% endfor %}
-	
+{% if block.colorScheme.class != '' %}
+	{% set colorScheme = block.colorScheme.class %}
 {% endif %}
 
+{% set outerClasses = [colorScheme] %}
+{% set styleClasses = [block.topPadding, block.bottomPadding, block.gutterPadding, block.contentAlignment] %}
+{% set rowClasses = ['slide-layout', block.rowHorizontalAlignment, block.rowVerticalAlignment] %}
 
+
+{% set bgSettings = block.backgroundImagery %}
 
 {# Get the component's "Custom Class List" setting, thru which arbitrary classes can be added to the component #}
 {% set customClassString = (container['customClassList'] is defined ? block.customClassList : null) %}
@@ -129,53 +65,44 @@
 
 {# OUTPUT #}
 
-<div {{ gMacros.buildElementAttributes(blockId, blockClass, null, customClassString) -}}> 	
-	
-		<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
-			<div class="container slide-container {% if block.fullScreenWidth is not empty and block.fullScreenWidth == 1 %}container-fullwidth{% endif %}">
-				<div {{ gMacros.buildElementAttributes(null, 'slide-layout', rowClasses, null) -}}>	
-					<div class="w-full">
-					{% if contentKids != null %}
-						{% for child in clone(contentKids.children).collect() %}	  
-							
-							{#-
-							For each child component, attempt to load a custom template for the
-							component handle from the project's files,
-							then the same template from the core Tiltrus files,
-							then a custom default template from the project,
-							and finally the default template for this component type from the core Tiltrus files.
-							-#}
-							
-							{% if child.type.handle starts with 'row' %}
-							  	{%
-									include [
-								  	'_project/_bodyblocks/rows/' ~ child.type.handle,
-								  	'_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
-								  	'_project/_bodyblocks/rows/row',
-								  	'_boilerplate/_bodyblocks/rows/row'
-									] with { 'row' :  child }
-							  	%}					  
-						  	{% else %}
-							  	{%
-									include [
-								  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
-								  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
-								  	'_project/_bodyblocks/blocks/block',
-								  	'_boilerplate/_bodyblocks/blocks/block'
-									] ignore missing with { 'block' :  child, 'loadType' : 1  }
-							  	%}
-						  	{% endif %}
-							
-						{% endfor %}
-					{% endif %}
-					</div>
+<div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
+	<div {{ gMacros.buildClassList(innerClass, styleClasses, null) -}}>
+		<div class="container slide-container {% if block.fullScreenWidth is not empty and block.fullScreenWidth == 1 %}container-fullwidth{% endif %}">
+			<div {{ gMacros.buildClassListBasic(rowClasses) -}}>	
+				<div class="w-full">
+				
+					{% for child in clone(block.children).collect() %}	  
+																		
+						{% if child.type.handle starts with 'row' %}
+						  	{%
+								include [
+							  	'_project/_bodyblocks/rows/' ~ child.type.handle,
+							  	'_boilerplate/_bodyblocks/rows/' ~ child.type.handle,
+							  	'_project/_bodyblocks/rows/row',
+							  	'_boilerplate/_bodyblocks/rows/row'
+								] with { 'row' :  child }
+						  	%}					  
+					  	{% else %}
+						  	{%
+								include [
+							  	'_project/_bodyblocks/blocks/' ~ child.type.handle,
+							  	'_boilerplate/_bodyblocks/blocks/' ~ child.type.handle,
+							  	'_project/_bodyblocks/blocks/block',
+							  	'_boilerplate/_bodyblocks/blocks/block'
+								] ignore missing with { 'block' :  child, 'loadType' : 1  }
+						  	%}
+					  	{% endif %}
+						
+					{% endfor %}
+				
 				</div>
 			</div>
 		</div>
-		<div class="background slide-default-bg">
-			{% if bgClasses != null %}		
-				{{ gMacros.buildElementBackground(bgClasses, bgSizes, {'default': '100vw'}, null) }}
-			{% endif %}		
-		</div>	
+	</div>
+	<div class="background">
+		{% if bgSettings|length %}		
+			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+		{% endif %}		
+	</div>	
 	     
 </div>

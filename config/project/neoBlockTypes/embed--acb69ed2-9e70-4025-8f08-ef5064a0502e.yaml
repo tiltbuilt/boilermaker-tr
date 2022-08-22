@@ -1,0 +1,66 @@
+childBlocks: null
+description: ''
+enabled: true
+field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
+fieldLayouts:
+  83d40fde-e54c-4e7c-bf13-2c08d326cf3c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 06ebfcbe-5ce4-466d-b32d-d18f5c98c099 # Embed Code
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9883b814-9247-47b3-b729-f6d93312111d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 14d2f1bd-70eb-45c9-bb2b-88f795e3fc48
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c0440d11-d14d-47ff-95e4-63eb109c1f00
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a24e6de-57d4-4d75-aab4-127943f1dc35
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: a2be0b6c-9617-4dfe-9cb9-c2f113df23d2
+        userCondition: null
+group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
+handle: embed
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Embed
+sortOrder: 11
+topLevel: false

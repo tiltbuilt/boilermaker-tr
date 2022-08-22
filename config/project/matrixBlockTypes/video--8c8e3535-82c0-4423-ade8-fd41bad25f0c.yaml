@@ -1,0 +1,73 @@
+field: 114bf113-0d20-4dd6-8e12-f1265063b87c # Blog Content
+fieldLayouts:
+  cbeb10bd-b96a-4267-99d1-a7c5dfe3e0d2:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 10327a6e-6b3d-4770-bcec-1e9104804f00 # Video Asset
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5c0c66f0-f33c-4b2e-bb2a-c1a94a7ee272
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1ee1d6be-da4d-4778-8256-548bdc9cd0d8
+        userCondition: null
+fields:
+  10327a6e-6b3d-4770-bcec-1e9104804f00: # Video Asset
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: videoAsset
+    instructions: null
+    name: 'Video Asset'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: true
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: '{owner.slug}'
+      restrictedLocationSource: 'volume:0a5f2a0c-d670-45c7-b405-3a7c6a3c1366' # Embeds
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: video
+name: Video
+sortOrder: 3

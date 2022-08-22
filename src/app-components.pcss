@@ -4,301 +4,267 @@
  */
 @tailwind components;
 
-@layer components {
-	@variants responsive {
+@layer components {	
+	
 		
-		//standard buttons
-		
-					
-		.btn, .btn-standard {
-			// These classes must stay in order to ensure functionality
-			@apply inline-block text-center leading-none;
-			//The default classes and style below can be changed on a per-project basis
-			@apply uppercase font-semibold btn-gray-lt btn-md;
-			border-radius: 0.4rem; 
-			transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-			text-shadow: none !important;		 
-		 }
-		 		 
-				
-		.btn-black {
-			@apply bg-black text-gray-300;
-			
-			&:hover {
-				@apply bg-gray-800 text-white;
-			}
-		}
-		
-		.btn-white {
-			@apply bg-white text-black;
-			
-			&:hover {
-				@apply bg-gray-300 text-black;
-			}
-		}        
-			   
-		.btn-gray-lt {
-			@apply bg-gray-300 text-black;
-			
-			&:hover {
-				@apply bg-gray-400 text-black;
-			}  
-		}
-		
-		.btn-gray-md {
-			@apply bg-gray-400 text-black;
-			
-			&:hover {
-				@apply bg-gray-500 text-black;
-			} 
-		}
-		  
-		.btn-gray-dk {
-			@apply bg-gray-800 text-white;
-			
-			&:hover {
-				@apply bg-gray-700 text-white;
-			} 
-		}
-		
-		.btn-md {
-			@apply text-base py-4 px-8;	 
-		}
-		
-		.btn-lg {
-			@apply text-lg py-5 px-10;
-		}
-		 
-		.btn-sm {
-			@apply text-sm py-3 px-6;
-		}
-		
-		
-		//tabset buttons and icon blocks
-		
-		.icon-center {	
+	/* ICON SIZES */
+	
+		.icon-center {
 			svg {
 				@apply mx-auto;
 			}
 		}
-		
+	
 		.icon-left {
 			svg {
 				@apply ml-0 mr-auto;
 			}
 		}
-		
+	
 		.icon-right {
 			svg {
 				@apply mr-0 ml-auto;
 			}
 		}
-		
+	
 		.icon-sm {
 			svg {
 				width: 3.5rem;
 				height: 3.5rem;
 			}
 		}
-		
+	
 		.icon-md {
 			svg {
 				width: 7.5rem;
 				height: 7.5rem;
 			}
 		}
-		
+	
 		.icon-lg {
 			svg {
 				width: 15rem;
 				height: 15rem;
 			}
 		}
+	
+	@variants responsive {
 		
-		.icon-black {
-			@apply text-black;
-			
-			svg {
-				fill: currentColor;
-			}
+		/* PADDING */
+		
+		.p-normal {
+			@apply p-2x lg:p-3x;
 		}
 		
-		.icon-white {
-			@apply text-white;
-			
-			svg {
-				fill: currentColor;
-			}
-		}        
-			   
-		.icon-gray-lt {
-			@apply text-gray-300;
-			
-			svg {
-				fill: currentColor;
-			}
+		.px-normal {
+			@apply px-2x lg:px-3x;
 		}
 		
-		.icon-gray-md {
-			@apply text-gray-400;
-			
-			svg {
-				fill: currentColor;
-			}
+		.py-normal {
+			@apply py-2x lg:py-3x;
 		}
-		  
-		.icon-gray-dk {
-			@apply text-gray-800;
-			
-			svg {
-				fill: currentColor;
-			}
-		}	
 		
-		.icon-red {
-			@apply text-red;
-			
-			svg {
-				fill: currentColor;
-			}
-		}		
-		 
+		.pt-normal {
+			@apply pt-2x lg:pt-3x;
+		}
 		
-		.btn-tab {
-			@apply relative py-2 px-6 mx-2 btn-gray-lt;
-			max-width: 20%;
-			display: flex;
-			text-align: center;
-			font-weight: 700;
-			align-items: center;
-			flex-direction: column;
-			overflow: hidden;
-			position: relative;
-			border-radius: 0.5rem 0.5rem 0 0;		 
-			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-			
-			&:focus {
-				outline: none;
-			}
-			
-			.tab-icon-wrapper {
-				@apply icon-sm icon-center;
-				position: relative;
-				display: block !important;			
-				padding: 1rem 0;
-				z-index: 1;
-			}
-			
-			svg {			
-				display: block;
-				fill: currentColor;			
-			}
-			
-			.tab-title {
-				@apply block w-full text-center;			
-				z-index: 1;			
-			}		  			  			  
-			
-						  
-			&.active-tab {
-				/* put styles for the active mode of the button here */ 
-				@apply btn-black;
-			}			  
-			
+		.pb-normal {
+			@apply pb-2x lg:pb-3x;
+		}
+		
+		.pl-normal {
+			@apply pl-2x lg:pl-3x;
+		}
+		
+		.pr-normal {
+			@apply pr-2x lg:pr-3x;
+		}
+		
+		.p-extra {
+			@apply p-3x lg:p-4x;
+		}
+		
+		.px-extra {
+			@apply px-3x lg:px-4x;
+		}
+		
+		.py-extra {
+			@apply py-3x lg:py-4x;
+		}
+		
+		.pt-extra {
+			@apply pt-3x lg:pt-4x;
+		}
+		
+		.pb-extra {
+			@apply pb-3x lg:pb-4x;
+		}
+		
+		.pl-extra{
+			@apply pl-3x lg:pl-4x;
+		}
+		
+		.pr-extra {
+			@apply pr-3x lg:pr-4x;
 		}
 		
 		
-		/* SLIDER DOTS */
+		/* MARGINS */
 		
-		.swiper-pagination-bullet {
-			opacity: 1;
+		.m-normal {
+			@apply m-2x lg:m-3x;
 		}
 		
-		.dots-gray-lt-white {
-			.swiper-pagination-bullet {
-				@apply border-2 border-solid bg-transparent border-gray-300;
-				
-				&:hover {
-					@apply bg-gray-300;
-				}
-				
-				&.swiper-pagination-bullet-active {
-					@apply border-white bg-white;
-				}
-			}
+		.mx-normal {
+			@apply mx-2x lg:mx-3x;
 		}
 		
-		.dots-white-gray-lt {
-			.swiper-pagination-bullet {
-				@apply border-2 border-solid bg-transparent border-white;
-				
-				&:hover {
-					@apply bg-white;
-				}
-				
-				&.swiper-pagination-bullet-active {
-					@apply border-gray-300 bg-gray-300;
-				}
-			}
+		.my-normal {
+			@apply my-2x lg:my-3x;
 		}
 		
-		.dots-gray-lt-black {
-			.swiper-pagination-bullet {
-				@apply border-2 border-solid bg-transparent border-gray-300;
-				
-				&:hover {
-					@apply bg-gray-300;
-				}
-				
-				&.swiper-pagination-bullet-active {
-					@apply border-black bg-black;
-				}
-			}
+		.mt-normal {
+			@apply mt-2x lg:mt-3x;
 		}
 		
-		.dots-black-gray-lt {
-			.swiper-pagination-bullet {
-				@apply border-2 border-solid bg-transparent border-black;
-				
-				&:hover {
-					@apply bg-black;
-				}
-				
-				&.swiper-pagination-bullet-active {
-					@apply border-gray-300 bg-gray-300;
-				}
-			}
+		.mb-normal {
+			@apply mb-2x lg:mb-3x;
 		}
 		
-		.dots-black-white {
-			.swiper-pagination-bullet {
-				@apply border-2 border-solid bg-transparent border-black;
-				
-				&:hover {
-					@apply bg-black;
-				}
-				
-				&.swiper-pagination-bullet-active {
-					@apply border-white bg-white;
-				}
-			}
+		.ml-normal {
+			@apply ml-2x lg:ml-3x;
 		}
 		
-		.dots-white-black {
-			.swiper-pagination-bullet {
-				@apply border-2 border-solid bg-transparent border-white;
-				
-				&:hover {
-					@apply bg-white;
-				}
-				
-				&.swiper-pagination-bullet-active {
-					@apply border-black bg-black;
-				}
-			}
+		.mr-normal {
+			@apply mr-2x lg:mr-3x;
 		}
-				
-		        
+		
+		.m-extra {
+			@apply m-3x lg:m-4x;
+		}
+		
+		.mx-extra {
+			@apply mx-3x lg:mx-4x;
+		}
+		
+		.my-extra {
+			@apply my-3x lg:my-4x;
+		}
+		
+		.mt-extra {
+			@apply mt-3x lg:mt-4x;
+		}
+		
+		.mb-extra {
+			@apply mb-3x lg:mb-4x;
+		}
+		
+		.ml-extra{
+			@apply ml-3x lg:ml-4x;
+		}
+		
+		.mr-extra {
+			@apply mr-3x lg:mr-4x;
+		}
+		
+		.m-negnormal {
+			@apply -m-2x lg:-m-3x;
+		}
+		
+		.mx-negnormal {
+			@apply -mx-2x lg:-mx-3x;
+		}
+		
+		.my-negnormal {
+			@apply -my-2x lg:-my-3x;
+		}
+		
+		.mt-negnormal {
+			@apply -mt-2x lg:-mt-3x;
+		}
+		
+		.mb-negnormal {
+			@apply -mb-2x lg:-mb-3x;
+		}
+		
+		.ml-negnormal {
+			@apply -ml-2x lg:-ml-3x;
+		}
+		
+		.mr-negnormal {
+			@apply -mr-2x lg:-mr-3x;
+		}
+		
+		.m-negextra {
+			@apply- m-3x lg:-m-4x;
+		}
+		
+		.mx-negextra {
+			@apply -mx-3x lg:-mx-4x;
+		}
+		
+		.my-negextra {
+			@apply -my-3x lg:-my-4x;
+		}
+		
+		.mt-negextra {
+			@apply -mt-3x lg:-mt-4x;
+		}
+		
+		.mb-negextra {
+			@apply -mb-3x lg:-mb-4x;
+		}
+		
+		.ml-negextra{
+			@apply -ml-3x lg:-ml-4x;
+		}
+		
+		.mr-negextra {
+			@apply -mr-3x lg:-mr-4x;
+		}
+						
+	 	/* ASPECT RATIOS FOR FIXED RATIO BLOCKS */
+		
+		.rect-4-1 {
+			aspect-ratio: 3/1;
+		}
+		
+		.rect-3-1 {
+			aspect-ratio: 3/1;
+		}
+		
+		.rect-16-9 {
+			aspect-ratio: 16/9;
+		}
+		
+		.rect-4-3 {
+			aspect-ratio: 4/3;
+		}
+		
+		.rect-3-2 {
+			aspect-ratio: 3/2;
+		}
+		
+		.square-1-1 {
+			aspect-ratio: 1/1;
+		}
+		
+		
+		/* TEXT WRAP */
+		
+		.text-wrap-left {
+			@apply float-left mr-normal mb-normal;		
+		}
+		
+		.text-wrap-right {
+			@apply float-right ml-normal mb-normal;			
+		}
+		
+		.text-wrap-none {
+			@apply float-none;		
+		}
+			
+	  	          
 	}	    
 	
 }

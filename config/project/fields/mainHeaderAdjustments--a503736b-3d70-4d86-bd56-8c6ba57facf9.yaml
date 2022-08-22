@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: mainHeaderAdjustments
+instructions: null
+name: 'Main Header Text Styling Adjustments'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_mainheaderadjustments}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

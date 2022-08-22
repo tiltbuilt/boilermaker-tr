@@ -29,36 +29,36 @@ $(document).ready(function() {
 	/* REVEAL ANIMATIONS */
 	
 	// collect parent triggered reveals
-	var fadeIns = gsap.utils.toArray('.elem-block > .anim-elem.fade-in, .elem-block > .anim-parent.fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	var fadeIns = gsap.utils.toArray('.anim-elem.fade-in, .anim-parent.fade-in > .inner > .anim-child, .anim-parent.fade-in > .inner > p, section.anim-parent.fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.fade-in > .inner > .container > .inner > p, .anim-parent.fade-in > .inner > .anim-pass .anim-child, section.anim-parent.fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.fade-in > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.fade-in > .inner > .container > .inner .content-sizer > p');
 		
-	var slideUps = gsap.utils.toArray('.elem-block > .anim-elem.slide-up-fade-in, .elem-block > .anim-parent.slide-up-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-up-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	var slideUps = gsap.utils.toArray('.anim-elem.slide-up-fade-in, .anim-parent.slide-up-fade-in > .inner > .anim-child, .anim-parent.slide-up-fade-in > .inner > p, section.anim-parent.slide-up-fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.slide-up-fade-in > .inner > .container > .inner > p, .anim-parent.slide-up-fade-in > .inner > .anim-pass .anim-child, section.anim-parent.slide-up-fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-up-fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.slide-up-fade-in > .inner > .container > .inner > .anim-pass > .inner > .p, section.anim-parent.slide-up-fade-in > .inner > .container > .inner .content-sizer > p');
 	
-	var slideDowns = gsap.utils.toArray('.elem-block > .anim-elem.slide-down-fade-in, .elem-block > .anim-parent.slide-down-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-down-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	var slideDowns = gsap.utils.toArray('.anim-elem.slide-down-fade-in, .anim-parent.slide-down-fade-in > .inner > .anim-child, .anim-parent.slide-down-fade-in > .inner > p, section.anim-parent.slide-down-fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.slide-down-fade-in > .inner > .container > .inner > p, .anim-parent.slide-down-fade-in > .inner > .anim-pass .anim-child, section.anim-parent.slide-down-fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-down-fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.slide-down-fade-in > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-down-fade-in > .inner > .container > .inner .content-sizer > p');
 	
-	var slideLefts = gsap.utils.toArray('.elem-block > .anim-elem.slide-left-fade-in, .elem-block > .anim-parent.slide-left-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-left-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	var slideLefts = gsap.utils.toArray('.anim-elem.slide-left-fade-in, .anim-parent.slide-left-fade-in > .inner > .anim-child, .anim-parent.slide-left-fade-in > .inner > p, section.anim-parent.slide-left-fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.slide-left-fade-in > .inner > .container > .inner > p, .anim-parent.slide-left-fade-in > .inner > .anim-pass .anim-child, section.anim-parent.slide-left-fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-left-fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.slide-left-fade-in > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-left-fade-in > .inner > .container > .inner .content-sizer > p');
 	
-	var slideRights = gsap.utils.toArray('.elem-block > .anim-elem.slide-right-fade-in, .elem-block > .anim-parent.slide-right-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-right-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	var slideRights = gsap.utils.toArray('.anim-elem.slide-right-fade-in, .anim-parent.slide-right-fade-in > .inner > .anim-child, .anim-parent.slide-right-fade-in > .inner > p, section.anim-parent.slide-right-fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.slide-right-fade-in > .inner > .container > .inner > p, .anim-parent.slide-right-fade-in > .inner > .anim-pass .anim-child, section.anim-parent.slide-right-fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-right-fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.slide-right-fade-in > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-right-fade-in > .inner > .container > .inner .content-sizer > p');
 	
-	var scaleDowns = gsap.utils.toArray('.elem-block > .anim-elem.scale-down-fade-in, .elem-block > .anim-parent.scale-down-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-down-fade-in > .inner .anim-pass > .elem-block > .anim-child');
+	var scaleDowns = gsap.utils.toArray('.anim-elem.scale-down-fade-in, .anim-parent.scale-down-fade-in > .inner > .anim-child, .anim-parent.scale-down-fade-in > .inner > p, section.anim-parent.scale-down-fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.scale-down-fade-in > .inner > .container > .inner > p, .anim-parent.scale-down-fade-in > .inner > .anim-pass .anim-child, section.anim-parent.scale-down-fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.scale-down-fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.scale-down-fade-in > .inner > .container > .inner > .anim-pass > .inner > psection.anim-parent.scale-down-fade-in > .inner > .container > .inner .content-sizer > p');
 	
-	var scaleUps = gsap.utils.toArray('.elem-block > .anim-elem.scale-up-fade-in, .elem-block > .anim-parent.scale-up-fade-in > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-up-fade-in > .inner .anim-pass > .elem-block > .anim-child');	
+	var scaleUps = gsap.utils.toArray('.anim-elem.scale-up-fade-in, .anim-parent.scale-up-fade-in > .inner > .anim-child, .anim-parent.scale-up-fade-in > .inner > p, section.anim-parent.scale-up-fade-in > .inner > .container > .inner > .anim-child, section.anim-parent.scale-up-fade-in > .inner > .container > .inner > p, .anim-parent.scale-up-fade-in > .inner > .anim-pass .anim-child, section.anim-parent.scale-up-fade-in > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.scale-up-fade-in > .inner > .anim-pass > .inner > p, section.anim-parent.scale-up-fade-in > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.scale-up-fade-in > .inner > .container > .inner .content-sizer > p');	
 	
 	
 	// collect parent triggered reveals with staggering
 	
-	var fadeInsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var fadeInsSubsStagger = gsap.utils.toArray('.anim-parent.fade-in-stagger > .inner > .anim-child, .anim-parent.fade-in-stagger > .inner > p, section.anim-parent.fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.fade-in-stagger > .inner > .container > .inner > p, .anim-parent.fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 		
-	var slideUpsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-up-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-up-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var slideUpsSubsStagger = gsap.utils.toArray('.anim-parent.slide-up-fade-in-stagger > .inner > .anim-child, .anim-parent.slide-up-fade-in-stagger > .inner > p, section.anim-parent.slide-up-fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.slide-up-fade-in-stagger > .inner > .container > .inner > p, .anim-parent.slide-up-fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.slide-up-fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-up-fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.slide-up-fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-up-fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 	
-	var slideDownsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-down-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-down-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var slideDownsSubsStagger = gsap.utils.toArray('.anim-parent.slide-down-fade-in-stagger > .inner > .anim-child, .anim-parent.slide-down-fade-in-stagger > .inner > p, section.anim-parent.slide-down-fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.slide-down-fade-in-stagger > .inner > .container > .inner > p, .anim-parent.slide-down-fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.slide-down-fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-down-fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.slide-down-fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-down-fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 	
-	var slideLeftsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-left-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-left-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var slideLeftsSubsStagger = gsap.utils.toArray('.anim-parent.slide-left-fade-in-stagger > .inner > .anim-child, .anim-parent.slide-left-fade-in-stagger > .inner > p, section.anim-parent.slide-left-fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.slide-left-fade-in-stagger > .inner > .container > .inner > p, .anim-parent.slide-left-fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.slide-left-fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-left-fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.slide-left-fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-left-fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 	
-	var slideRightsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.slide-right-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.slide-right-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var slideRightsSubsStagger = gsap.utils.toArray('.anim-parent.slide-right-fade-in-stagger > .inner > .anim-child, .anim-parent.slide-right-fade-in-stagger > .inner > p, section.anim-parent.slide-right-fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.slide-right-fade-in-stagger > .inner > .container > .inner > p, .anim-parent.slide-right-fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.slide-right-fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.slide-right-fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.slide-right-fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.slide-right-fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 	
-	var scaleDownsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.scale-down-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-down-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var scaleDownsSubsStagger = gsap.utils.toArray('.anim-parent.scale-down-fade-in-stagger > .inner > .anim-child, .anim-parent.scale-down-fade-in-stagger > .inner > p, section.anim-parent.scale-down-fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.scale-down-fade-in-stagger > .inner > .container > .inner > p, .anim-parent.scale-down-fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.scale-down-fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.scale-down-fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.scale-down-fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.scale-down-fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 	
-	var scaleUpsSubsStagger = gsap.utils.toArray('.elem-block > .anim-parent.scale-up-fade-in-stagger > .inner > .elem-block > .anim-child, .elem-block > .anim-parent.scale-up-fade-in-stagger > .inner .anim-pass > .elem-block > .anim-child');
+	var scaleUpsSubsStagger = gsap.utils.toArray('.anim-parent.scale-up-fade-in-stagger > .inner > .anim-child, .anim-parent.scale-up-fade-in-stagger > .inner > p, section.anim-parent.scale-up-fade-in-stagger > .inner > .container > .inner > .anim-child, section.anim-parent.scale-up-fade-in-stagger > .inner > .container > .inner > p, .anim-parent.scale-up-fade-in-stagger > .inner > .anim-pass .anim-child, section.anim-parent.scale-up-fade-in-stagger > .inner > .container > .inner > .anim-pass .anim-child, .anim-parent.scale-up-fade-in-stagger > .inner > .anim-pass > .inner > p, section.anim-parent.scale-up-fade-in-stagger > .inner > .container > .inner > .anim-pass > .inner > p, section.anim-parent.scale-up-fade-in-stagger > .inner > .container > .inner .content-sizer > p');
 	
 	
 	// set initial animation states for reveal elements
@@ -488,7 +488,7 @@ $(document).ready(function() {
 	
 	/* MODAL BEHAVIORS */
 	
-	var modalOpenTL = gsap.timeline({repeat: 0, paused: true});
+	var modalOpenTL = gsap.timeline({repeat: 0, paused: true, onComplete: modalSliderInit});
 	modalOpenTL.fromTo("#modal-wrapper, #modal-overlay", {opacity: 0}, {duration: 0.5, ease: "power1.out", opacity: 1});
 	modalOpenTL.fromTo("#modal", {opacity: 0, y: 100}, {duration: 0.5, ease: "power1.out", opacity: 1, y: 0});
 	
@@ -514,8 +514,13 @@ $(document).ready(function() {
 		$('#modal').removeAttr('data-trigger-el');				
 	}
 	
+	function modalSizer() {
+		var contentHeight = ($('#modal-content-inner-wrapper').innerHeight()) + ($('#modal-title').innerHeight());						
+		var modalHeight = (45 + contentHeight) + 'px';
+		$('#modal').css('height', modalHeight);
+	}
+	
 	function showModal(whichModal, triggerEl) {			
-		console.log(whichModal);
 		//show modal
 		var scrollPoint = window.scrollY;
 		var scrollValue = '-' + scrollPoint + 'px';
@@ -528,12 +533,7 @@ $(document).ready(function() {
 		}		
 		//load content			
 		$('#modal-content').load(whichModal, function() {
-			var contentHeight = ($('#modal-content-inner-wrapper').innerHeight()) + ($('#modal-title').innerHeight());
-			console.log($('#modal-content-inner-wrapper').innerHeight());
-			console.log($('#modal-title').innerHeight());
-			console.log('contentheight: ' + contentHeight);			
-			var modalHeight = (45 + contentHeight) + 'px';
-			$('#modal').css('height', modalHeight);
+			modalSizer()
 		});			
 		modalOpenTL.play(0);
 		
@@ -548,6 +548,12 @@ $(document).ready(function() {
 		modalCloseTL.play(0);	
 	}
 	
+	function swapModal(whichModal) {
+		$('#modal-content').load(whichModal, function() {
+			modalSizer()
+		});
+	}
+	
 	$('#modal-overlay, #btn-modal-close').click(function() {
 		closeModal();
 	});
@@ -559,6 +565,15 @@ $(document).ready(function() {
 		var btnTarget = $(this).data('modal-target');
 		showModal(btnTarget, btnId);
 	});
+	
+	$(document).on('click', '#modal-content-inner-wrapper .btn-modal', function(e) {
+		e.preventDefault();
+		var btnId = $(this).attr('id');
+		var btnTarget = $(this).data('modal-target');
+		swapModal(btnTarget, btnId);
+	});
+	
+	$(window).resize(modalSizer);
 	
 	/* LOADER FUNCTIONALITY */
 		
@@ -583,67 +598,6 @@ $(document).ready(function() {
 		var loadAnim = gsap.to("#loader", {duration: 0.5, ease: "power1.out", opacity: 0, paused: true, onComplete:turnoffloader});
 		loadAnim.play();			
 	}
-	
-	/* GET WINDOW SIZE AND ADD CLASS TO BODY TAG TO ASSIST IN MENU CONTROL ON MOBILE DEVICES */
-		
-		var menuWidth = $('html').width();
-		
-		function sizeMarker() {
-			var screenWidth = $('html').width();		
-			$('body').removeClass('size-mobile size-tablet size-laptop size-desktop');
-			if (screenWidth < 768) {
-				$('body').addClass('size-mobile');
-				menuWidth = $('html').width();								
-			} else if ((screenWidth >= 768) && (screenWidth < 1024 )) {
-				$('body').addClass('size-tablet');
-				menuWidth = $('html').width();
-			} else if ((screenWidth >= 1024) && (screenWidth < 1280 )) {
-				$('body').addClass('size-laptop');
-			} else {
-				$('body').addClass('size-desktop');
-			}
-		}
-		
-		sizeMarker();	
-		
-		$(window).resize(function() {
-			sizeMarker();
-			$('#mm_wrapper').attr('style','');			
-		});
-		
-		/* MOBILE MENU FUNCTIONALITY */	
-		
-		var menuAnimating = false;
-			
-		$('#btn-mm-open').click(function() {			
-			
-			if (!menuAnimating && (($('body').hasClass('size-mobile'))||($('body').hasClass('size-tablet')))) {
-				menuAnimating = true;								
-				var mobileMenuPanelOpen = gsap.fromTo("#mm_wrapper", {x: menuWidth}, {duration: 0.5, ease: "power1.out", x: 0, paused: true});
-				mobileMenuPanelOpen.play();
-				gsap.fromTo("#mm_wrapper a", {opacity: 0, x: 100}, {duration: 0.2, opacity: 1, x: 0, stagger: 0.1});
-				$('#wrapper').addClass('mmopen');
-				menuAnimating = false;		
-			}
-				
-		});	
-		
-		
-		$('#btn-mm-close').click(function() {			
-			
-			console.log('firing');
-			if (!menuAnimating && ($('#wrapper').hasClass('mmopen')) && (($('body').hasClass('size-mobile')) || ($('body').hasClass('size-tablet')))) {
-				menuAnimating = true;			
-				menuWidth = $('html').width();			
-				var mobileMenuPanelClose = gsap.to("#mm_wrapper", {duration: 0.5, ease: "power1.out", x: menuWidth, paused: true});
-				mobileMenuPanelClose.play();
-				$('#wrapper').removeClass('mmopen');
-				menuAnimating = false;				
-			}
-				
-		});	
-		
-		
 				
 	
 	/* ACCORDION BEHAVIOR */
@@ -673,9 +627,9 @@ $(document).ready(function() {
 		}
 	}
 	
-	$('.accordion .btn-accordion').click(function() {		
+	$(document).on('click', '.accordion .btn-accordion', function() {			
 		var mySet, myAcc, myTarget, myId;
-		myAcc = '#' + ($(this).parent('.accordion-button-header').parent('.inner').parent('.anim-wrapper').parent('.accordion').attr('id')); /* id of the accordion the clicked button is in */
+		myAcc = '#' + ($(this).parent('.accordion-button-header').parent('.inner').parent('.accordion').attr('id')); /* id of the accordion the clicked button is in */
 		myId = '#' + ($(this).attr('id')); /* the id of the button that was clicked */
 		myTarget = $(this).data('target'); /* the id of the panel that is triggered by the button */
 		mySet = $(this).data('parent'); /* the id of the set containing the accordion if there is one */
@@ -699,8 +653,7 @@ $(document).ready(function() {
 	
 	
 	/* TABSET BEHAVIORS */
-	
-	$('.btn-tab').click(function() {		
+	$(document).on('click', '.btn-tab', function() {		
 		if (!($(this).hasClass('active-tab'))) {
 			var prevPanel, myTabSet, myPanel;
 			myTabSet = $(this).data('parent');
@@ -720,10 +673,8 @@ $(document).ready(function() {
 	
 	
 	/* CONTENT VIDEO HANDLING */
-	
-	$(document).on('click', '.video-play-btn', function(e) {
-		e.preventDefault();
-		console.log('registering');
+	/*
+	$(document).on('click', '.video-play-btn', function() {
 		var $parent = $(this).closest('.contentVideo'),
 		fadeOutSelector = '#' + $parent.attr('id') + ' .video-play-btn, ' + '#' + $parent.attr('id') + ' .video-image',
 		fadeInSelector = '#' + $parent.attr('id') + ' .video-player',
@@ -739,7 +690,7 @@ $(document).ready(function() {
 		if(!$parent.hasClass('block-video_-playing')) {
 			tm = new gsap.timeline();
 		
-			// $poster = $parent.find('.blc-vid__poster').first();			
+			// $poster = $parent.find('.blc-vid__poster').first();
 			videoSelector = fadeInSelector + ' > .video';
 			$video = $(videoSelector);
 		
@@ -776,63 +727,67 @@ $(document).ready(function() {
 			$parent.addClass('block-video_-playing');
 		}
 	});
-	
+	*/
 	
 	/* SLIDER SETUP AND FUNCTIONALITY */
 	
+	function sliderInit(sliders) {
+		sliders.each(function() {		
+			var timingsetting, swiperEl, swiperOptions;
+			swiperEl = '#' + $(this).find('.swiper').attr('id');		
+			timingsetting = $(this).data('timing');		
+			
+			swiperOptions = {
+				loop: true,
+				slidesPerView: 1,
+				spaceBetween: 0,
+				centeredSlides: true,									
+			};
+			
+			if ($(this).data('autoplay') == '1') {
+				swiperOptions.autoplay = {
+					delay: timingsetting,
+					disableOnInteraction: false,
+					speed: 600,
+				}
+			}
+			
+			if ($(this).data('effect') == 'fade') {
+				swiperOptions.effect = 'fade';
+				swiperOptions.fadeEffect = {
+					crossFade: true
+				}
+			} 
+			
+			if ($(this).data('dots')) {
+				swiperOptions.pagination = {
+					el: '.swiper-pagination',
+					clickable: true
+				}
+			}
+			if ($(this).data('buttons')) {
+				swiperOptions.navigation = {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				}
+			}
+			
+			const mySwiper = new Swiper(swiperEl, swiperOptions);
+			mySwiper.init();					
+		});
+	}
 	
-	$('.sliderSet').each(function() {		
-		var timingsetting, swiperEl, swiperOptions, paginationEl, prevEl, nextEl;
-		swiperEl = '#' + $(this).find('.swiper').attr('id');
-		paginationEl = '#' + $(this).find('.swiper-pagination').attr('id');
-		prevEl = '#' + $(this).find('.swiper-button-prev').attr('id');	
-		nextEl = '#' + $(this).find('.swiper-button-next').attr('id');		
-		timingsetting = $(this).data('timing');		
-		
-		swiperOptions = {
-			loop: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			centeredSlides: true,									
-		};
-		
-		if ($(this).data('autoplay') == '1') {
-			swiperOptions.autoplay = {
-				delay: timingsetting,
-				disableOnInteraction: false,
-				speed: 600,
-			}
-		}
-		
-		if ($(this).data('effect') == 'fade') {
-			swiperOptions.effect = 'fade';
-			swiperOptions.fadeEffect = {
-				crossFade: true
-			}
-		} 
-		
-		if (($(this).data('controls') == 'dots') || ($(this).data('controls') == 'both')) {			
-			swiperOptions.pagination = {
-				el: paginationEl,
-				clickable: true
-			}
-		}
-		if (($(this).data('controls') == 'buttons') || ($(this).data('controls') == 'both')) {
-			swiperOptions.navigation = {
-				nextEl: nextEl,
-				prevEl: prevEl
-			}
-		}
-		
-		const mySwiper = new Swiper(swiperEl, swiperOptions);
-		mySwiper.init();
-		
-				
-	});
+	function modalSliderInit() {
+		var modalSliders = $('#modal-content-inner-wrapper .sliderSet');
+		sliderInit(modalSliders);
+	}
+	
+	sliderInit($('.sliderSet'));
+	
 	
 	/* FIX FORMS TO WORK WITH BLITZ CACHE BY DYNAMICALLY RESETTING CSRF TOKENS AND HASH VALUES */
 	
-	$( "form" ).each(function() {
+	$("form").each(function() {
 		var form = $(this);
 		var formhandle = form.data('handle');
 		

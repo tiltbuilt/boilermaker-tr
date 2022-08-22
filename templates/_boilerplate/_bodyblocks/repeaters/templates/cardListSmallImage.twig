@@ -9,14 +9,23 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-<div class="list-wrapper anim-pass">
-<div class="repeater-list-card-img-sm anim-pass">
+{% set itemClasses = ['anim-child', 'repeater-list-item', 'repeater-list-card-img-sm-item'] %}
+{% if repeaterRowCount is same as(1) %}
+	{% set itemClasses = itemClasses|merge(['md:w-full']) %}
+{% else %}
+	{% for rowSize in repeaterRowCount %}
+		{% set itemClasses = itemClasses|merge([rowSize.deviceSize ~ 'w-1/' ~ rowSize.itemCount]) %}
+	{% endfor %}
+{% endif %}
+
+<div class="list-wrapper">
+<div class="repeater-list-card-img-sm">
 {% for repeaterItem in repeaterData %}
-<div class="elem-block repeater-list-item repeater-list-card-img-sm-item">
-	<div class="anim-wrapper anim-child">
-		<div class="inner repeater-list-card-img-sm-item-inner">		          
-			<a href="{{ repeaterItem.url }}" {{ gMacros.buildClassList('repeater-list-card-img-lg-item-link', null, null) -}}>
-				<div {{ gMacros.buildClassList('item-wrapper repeater-list-card-img-sm-item-card', listItemClasses, null) -}}>
+<div {{ gMacros.buildClassListBasic(itemClasses) -}}>
+	
+		<div class="inner repeater-list-card-img-sm-item-inner h-full">		          
+			<a href="{{ repeaterItem.url }}" class="repeater-list-card-img-lg-item-link">
+				<div {{ gMacros.buildClassListBasic(['item-wrapper', 'repeater-list-card-img-sm-item-card']) -}}>
 					<div class="repeater-list-card-img-sm-item-card-row">
 						<div class="repeater-list-card-img-sm-item-thumbnail-column">
 							{% if repeaterItem.seoImage|length %}
@@ -44,15 +53,18 @@
 								  data-sizes="auto"
 								  data-src="{{ transformedImages[0] }}"
 								  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-								  alt="{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}" {{ gMacros.buildClassList('repeater-list-card-img-sm-item-thumbnail lazyload', listItemImgClasses, null) -}}
+								  alt="{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}" {{ gMacros.buildClassListBasic(['repeater-list-card-img-sm-item-thumbnail lazyload']) -}}
 								  >
 							</picture>
 							{% endif %}  
 						</div>
 						<div class="repeater-list-card-img-sm-item-text-column">
-							<{{ repeaterHeadingLevel }} {{ gMacros.buildClassList('repeater-list-card-img-sm-item-header', listItemHeaderClasses, null) -}}>
+							<{{ repeaterHeadingLevel }} class="repeater-list-card-img-sm-item-header">
 							  {{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
 							</{{ repeaterHeadingLevel }}>
+							{% if repeaterShowDate and repeaterItem.postDate is defined and dateFormat != null %}	  		
+								<div class="repeater-date">{{ repeaterItem.postDate | date(dateFormat) }}</div>	 
+							{% endif %}
 							{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
 								{{ repeaterItem.excerpt }}	  				 
 							{% endif %}	  
@@ -61,7 +73,7 @@
 				</div>
 			</a>
 		</div>
-	</div>
+	
 </div>
 {% endfor %}
 </div>

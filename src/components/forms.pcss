@@ -7,103 +7,108 @@
  *
  */
  
- .form-intro {
+ 
+ 
+.form-intro {
     // These classes must stay in order to ensure functionality
    
-    //The default classes and style below can be changed on a per-project basis
-    @apply mb-normal lg:mb-2x;
- }
+   //The default classes and style below can be changed on a per-project basis
+   @apply mt-normal;
+}
  
- .form-default-bg {
-    
- }
  
  /* Style inputs */
  
  #main.main {
-    .form-wrapper {
-        ul.freeform-pages {            
-            list-style-position: inside;
-            margin-left: 0px;
-            flex-wrap: wrap;
+   
+   .form {
+      @apply mt-normal;
+   } 
+   
+   .form-wrapper {
+      @apply mt-normal;
+      
+      ul.freeform-pages {            
+         list-style-position: inside;
+         margin-left: 0px;
+         flex-wrap: wrap;
             
-            li {               
-                @apply w-full mb-2 text-left;
+         li {               
+            @apply w-full mt-2 text-left;
                 
-                &::before {
-                    display: none;
-                }               
+            &::before {
+               display: none;
+            }               
+         }
+            
+         @media (min-width: 768px) {
+            @apply flex-nowrap;
+                
+            li {
+               @apply w-auto py-0 px-3 text-center;                    
+                    
+               &:first-child {
+                  border-left: none;
+                  padding-left: 0px;
+               }                    
             }
-            
-            @media (min-width: 768px) {
-                @apply flex-nowrap;
-                
-                li {
-                    @apply w-auto py-0 px-3 text-center;                    
-                    
-                    &:first-child {
-                        border-left: none;
-                        padding-left: 0px;
-                    }               
-                    
-                }
-            }            
-        }
-    }
+         }            
+      }
+   }
     
-    .ff-errors  {
+   .ff-errors  {
       @apply ml-0;
       
       li {
-        &::before {
-          display: none;
+         &::before {
+            display: none;
+         }
       }
-      }
-    }
+   }
  }
  
  
 .freeform-input {
-    /* Freeform applies this class to all the inputs and textareas except for the submit button. If you need to target a particular type individually you can use the &[type='bla'] selector inside of this selector */   
-    padding: 0.5rem;
-    @apply bg-gray-200 text-black;
- }
+   /* Freeform applies this class to all the inputs and textareas except for the submit button. If you need to target a particular type individually you can use the &[type='bla'] selector inside of this selector */   
+   padding: 0.5rem;
+   @apply mt-3;
+}
  
- .freeform-label {
-   @apply mb-3;
- }
+.freeform-label {
+   @apply text-left;
+}
  
  /* fix to make select dropdown consistent with height of text inputs */
  select.freeform-input {	
-    line-height: 24px;
-    min-height: 36px;
+   line-height: 24px;
+   min-height: 36px;
  }
  
  
  form {
-     .ff-form-success {
-         @apply pb-normal;
-     }
-     
-     .ff-form-errors {
-         @apply mb-normal bg-transparent text-red pt-none px-none;
-         border: none;
-     }
-     
-     .ff-errors {
-         @apply text-red w-full pt-normal px-none;
-         flex-basis: 100%;
-     }
- }
+   .ff-form-success {
+      @apply pb-normal;
+   }
+   
+   .ff-form-errors {
+      @apply mt-normal bg-transparent text-red pt-none px-none;
+      border: none;
+   }
+   
+   .ff-errors {
+      @apply text-red w-full pt-normal px-none;
+      flex-basis: 100%;
+   }
+}
  
  
  /* fix for lack of responsive layout change in freeform flexbox template */
  
  @media (max-width: 767px) {
-     .freeform-row {
-         display: block !important;
-     }
- }
+   .freeform-row {
+      display: block !important;
+   }
+}
  
  
  /* for any styles that need to be applied specifically to the submit buttons in the forms, use this selector: .btn.btn-formsubmit */

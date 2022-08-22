@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 7250fbbb-07b2-4c31-a5b0-5f586c469ce2 # Page Builder - Rows & Columns
+handle: columnDisplay
+instructions: null
+name: 'Column Display'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_columndisplay}}'
+  maxBlocks: 5
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

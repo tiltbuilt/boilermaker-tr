@@ -1,0 +1,204 @@
+childBlocks:
+  - slide
+description: ''
+enabled: true
+field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
+fieldLayouts:
+  a305439d-5f59-4eff-b38e-fe387a322a60:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            type: benf\neo\fieldlayoutelements\ChildBlocksUiElement
+            uid: 8b3fd707-622d-45d0-a4b3-e37b0f75b5e7
+            userCondition: null
+        name: Slides
+        uid: 7a897db7-c696-4555-ad0e-159c30ac8ac3
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b53dd5c2-c363-4ceb-acd2-c871e7324dd7 # Slider Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 04c66dc7-0017-4b4b-aaa7-60cdff47e8f8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9fefc367-79dc-4588-9172-e28038d436cf # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1c597b3e-84ed-4a9c-bc0e-8a83d691c164
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c56897e2-d620-4e0d-87d9-187409473181 # Dots
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ec5971e-b00b-4467-b84f-fd422f3f17fc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c72b4e48-ad6f-48d6-890b-dc2274f1e3c5 # Slide Transition Delay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7f13c68c-2be4-4108-adb3-0fe41b354d12
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9105dd5d-53c1-4975-8d20-082c952a8f04 # Slider Effect
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ecdcbb5b-d806-4ac4-8101-29421d2552b9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4c8a1b99-37ef-424c-9a73-26d40caccc9d # Autoplay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a330c507-19f9-44bb-adf5-cd2a85b222f1
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Control Settings'
+        uid: df78d31a-6ecb-4dbd-aeef-fca065f71687
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2f49ebd8-325a-471d-9075-58a0eabb883e # Top Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3aeb7654-9240-456d-b7b6-4fb6220ea86c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5eee8db6-5be0-4101-8b6f-2f26b858b793 # Bottom Margin
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e1e0a69d-c6b1-470c-bdca-54d1fdb4ce19
+            userCondition: null
+            warning: null
+            width: 50
+        name: Spacing
+        uid: 3cb1021d-c88f-42b6-be23-d576fdbb10ef
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b7678c0c-faa5-4ea0-9d92-9bcacc4668e3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 7769e0dd-7303-4069-99eb-f3384051ae10
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bec10435-8e4b-4dbd-90fa-15ad94e24fd5 # Reveal Animation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 579e0f08-bca2-4e89-a1ff-fbe7d5ae9d67
+            userCondition: null
+            warning: null
+            width: 100
+        name: Animation
+        uid: 86fde3b0-29ba-454d-adc8-fc396675527f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ff7c33c9-5640-4dda-a7ec-0e342b77adb7 # Custom Id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b2bf7f4e-8eab-46da-9999-71ed77124204
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2 # Custom Class List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0e9a52ae-913a-4bad-91f6-10f60b86d9fe
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Block Settings'
+        uid: 45ff0bc9-ab75-4cc5-97ac-1872b80a8ab4
+        userCondition: null
+group: d4a36f44-e497-4a31-9bda-6277d5c820af # Sliders
+handle: sliderSet
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Slider Set'
+sortOrder: 34
+topLevel: false

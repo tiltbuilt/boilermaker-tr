@@ -2,6 +2,7 @@ fieldLayouts:
   1fdba040-f99e-4364-b7a8-5afd4315a1b3:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,9 +27,11 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 408b2204-d3e9-4704-97e8-0756ffb43eac
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: be45752b-5950-4495-916b-645055cd1353 # Excerpt
             instructions: null
             label: 'Modal Description'
@@ -35,20 +39,24 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f51b04ea-6924-4bde-b303-204a2dfb0fe0
+            userCondition: null
             warning: null
             width: 100
           -
-            fieldUid: 7aa9c7c8-fac9-4744-b0fa-fe76f8ea34dd # Page Builder
+            elementCondition: null
+            fieldUid: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fe9be918-0f07-4bff-b97c-3036883e5ecf
+            uid: 5954aad6-ca03-47c3-a01b-76bb373e55fc
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: bfa6423b-dccb-4440-91c5-bf9b01bd4b66
+        userCondition: null
 handle: default
 hasTitleField: true
 name: Default

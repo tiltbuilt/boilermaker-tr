@@ -1,0 +1,14 @@
+columnSuffix: lxkfjfnv
+contentColumnType: boolean
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: transparentBackground
+instructions: null
+name: 'Transparent Background'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

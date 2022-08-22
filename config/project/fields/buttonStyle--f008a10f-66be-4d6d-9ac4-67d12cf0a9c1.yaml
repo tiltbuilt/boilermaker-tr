@@ -29,6 +29,28 @@ settings:
         -
           - default
           - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Button'
+        -
+          - value
+          - btn-text
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Button with Arrow'
+        -
+          - value
+          - btn-text-arrow
+        -
+          - default
+          - ''
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Dropdown

@@ -17,16 +17,69 @@
 {% do craft.app.elements.eagerLoadElements(
  className(entry),
  [entry],
- ['seoImage', 'modalToDisplay', 'pageBuilder', 'pageBuilder.styleSetSection:backgroundImage', 'pageBuilder.styleSetPageHeader:backgroundImage', 'pageBuilder.styleSetContainer:backgroundImage', 'pageBuilder.styleSetSpecialContainer:backgroundImage', 'pageBuilder.styleSetColumn:backgroundImage', 'pageBuilder.styleSetCtaSmall:backgroundImage', 'pageBuilder.styleSetCta:backgroundImage', 'pageBuilder.styleSetStandaloneAccordion:backgroundImage', 'pageBuilder.styleSetAccordion:backgroundImage', 'pageBuilder.styleSetAccordionSet:backgroundImage', 'pageBuilder.styleSetTabSet:backgroundImage', 'pageBuilder.styleSetTabPanel:backgroundImage', 'pageBuilder.styleSetForm:backgroundImage', 'pageBuilder.styleSetSliderSet:backgroundImage', 'pageBuilder.styleSetSlide:backgroundImage', 'pageBuilder.styleSetWrapper:backgroundImage', 'pageBuilder.ctaStandard:imageAsset', 'pageBuilder.image:imageAsset', 'pageBuilder.contentVideo:imageAsset', 'pageBuilder.repeaterItemContentLink:imageAsset', 'pageBuilder.repeaterEntryChildList:listParentEntry', 'pageBuilder.repeaterSectionEntryList.listEntriesSections', 'pageBuilder.repeaterSelectEntryList.listSpecificEntries']
+ [
+ 'seoImage',
+ 'modalToDisplay',
+ 'backgroundImagery',
+ 'backgroundImagery.backgroundSet:backgroundImage'',
+ 'pageBuilder',
+ 'pageBuilder.sectionStandard:backgroundImagery',
+ 'pageBuilder.column:backgroundImagery',
+ 'pageBuilder.sectionStandard:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.column:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.column:columnDisplay',
+ 'pageBuilder.columnSlide:columnDisplay',
+ 'pageBuilder.contentWrapper:backgroundImagery',
+ 'pageBuilder.contentWrapper:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.contentWrapper:contentWrapperTextStyling',
+ 'pageBuilder.accordionSet:backgroundImagery',
+ 'pageBuilder.tabSet:backgroundImagery',
+ 'pageBuilder.slide:backgroundImagery',
+ 'pageBuilder.ctaStandard:backgroundImagery',
+ 'pageBuilder.accordionSet:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.tabSet:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.slide:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.ctaStandard:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.ctaSmall:backgroundImagery',
+ 'pageBuilder.ctaSmall:backgroundImagery.backgroundSet:backgroundImage',
+ 'pageBuilder.ctaStandard:imageAsset',
+ 'pageBuilder.image:imageAsset',
+ 'pageBuilder.image:imageVideoLayout',
+ 'pageBuilder.contentVideo:imageVideoLayout',
+ 'pageBuilder.contentVideo:videoContent',
+ 'pageBuilder.repeaterItemContentLink:seoImage',
+ 'pageBuilder.repeaterSelectEntryList:listSpecificEntries',
+ 'pageBuilder.sectionTwoColumnEdgePhoto:imageAsset',
+ 'pageBuilder.repeaterContentLinks:itemsPerRow',
+ 'pageBuilder.repeaterSectionEntryList:itemsPerRow',
+ 'pageBuilder.repeaterNavCollection:itemsPerRow',
+ 'pageBuilder.repeaterSelectEntryList:itemsPerRow',
+ 'pageBuilder.header:mainHeaderAdjustments',
+ 'pageBuilder.header:subheadAdjustments',
+ ]
 ) %}
 
 {% set pageBuilderContent = entry.pageBuilder.collect() %}
 
 {% set buttonModalList = [] %}
 {% for block in entry.pageBuilder %}
-    {% if block.type == 'standaloneButtonModal' or block.type == 'groupModalButton' %}
+   {% if block.type == 'button' %}
+      {% set buttonLink = block.linkSettings %}     
+      {% set canModal = buttonLink.hasElement() %}
+      {% set buttonEl = buttonLink.getElement() %}
+      {% set useModal = false %}
+      {% if buttonEl != null and buttonLink.getType() == 'asset' %}
+         {% if craft.embeddedAssets.get(buttonEl) %}
+            {% set useModal = true %}
+         {% endif %}
+      {% endif %}
+      {% if block.openAsModal %}
+         {% set useModal = true %}
+      {% endif %}
+      {% if canModal and useModal %}
         {% set buttonModalList = buttonModalList|merge([block]) %}
-    {% endif %}
+      {% endif %}
+   {% endif %}
 {% endfor %}
 
 
@@ -41,7 +94,7 @@
 
 {% block globalHeader %}
 
-    {% if entry.showPageHeader %}	
+    {% if entry.showPageHeader or (entry.showPageHeader == false and entry.showGlobalHeader == true) %}	
       {% include '_project/_partials/global-header' %}
     {% endif %}
      
@@ -49,20 +102,11 @@
 
 {% block pageHeader %}
 
-    {% if entry.showPageHeader %}	
-      {% for block in pageBuilderContent %}
-          {% if block.level == 1 and block.type.handle == 'pageHeader' %}
-              
-                {%
-                  include [
-                    '_project/_bodyblocks/sections/pageHeader',
-                    '_boilerplate/_bodyblocks/sections/pageHeader'
-                  ] with { 'section' : block }
-                %}
-              
-          {% endif %}  
-       {% endfor %} 
-     
+   {% if entry.showPageHeader %}	
+      {% include [
+         '_project/_partials/page-header',
+         '_boilerplate/_partials/page-header'           
+       ] %}       
    {% endif %}
      
 {% endblock %}
@@ -74,17 +118,15 @@
     {% endfor %}
     
     {% for block in pageBuilderContent %}
-        {% if block.level == 1 and block.type.handle starts with 'section' %}
-            
-              {%
-                include [
-                  '_project/_bodyblocks/sections/' ~ block.type.handle,
-                  '_boilerplate/_bodyblocks/sections/' ~ block.type.handle,
-                  '_project/_bodyblocks/sections/section',
-                  '_boilerplate/_bodyblocks/sections/section'
-                ] with { 'section' : block,  }
-              %}
-            
+        {% if block.level == 1 and block.type.handle starts with 'section' %}               
+           {%
+             include [
+               '_project/_bodyblocks/sections/' ~ block.type.handle,
+               '_boilerplate/_bodyblocks/sections/' ~ block.type.handle,
+               '_project/_bodyblocks/sections/section',
+               '_boilerplate/_bodyblocks/sections/section'
+             ] with { 'section' : block,  }
+           %}            
         {% endif %}  
      {% endfor %}    
 
@@ -99,19 +141,19 @@
 {% endblock %}
 
 {% block modalContent %}	
-   {% if entry.modalToDisplay|length or buttonModalList|length %}		
-      <div id="modal-wrapper" class="closed">       
-        <div id="modal" class="closed" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-            <button id="btn-modal-close" class="btn-modal-close">			  
-                <svg><use xlink:href="#icon-close"></use></svg>
-            </button>
-            <div id="modal-content">
-                <div class="modal-spinner">
-                    <img src="/dist/img/ajax-loader-gray-300.gif" alt="Loading" />
-                </div>
-            </div>
-        </div>
-        <div id="modal-overlay"></div>	
-      </div>	
-    {% endif %}
+ {% if entry.modalToDisplay|length or buttonModalList|length %}		
+   <div id="modal-wrapper" class="closed">       
+     <div id="modal" class="closed" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+         <button id="btn-modal-close" class="btn-modal-close">			  
+             <svg><use xlink:href="#icon-close"></use></svg>
+         </button>
+         <div id="modal-content">
+             <div class="modal-spinner">
+                 <img src="/dist/img/ajax-loader-gray-300.gif" alt="Loading" />
+             </div>
+         </div>
+     </div>
+     <div id="modal-overlay"></div>	
+   </div>	
+ {% endif %}
 {% endblock %}

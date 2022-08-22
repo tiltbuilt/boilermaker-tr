@@ -15,7 +15,15 @@
 
 .inner {
     position: relative;
-    z-index: 10;    
+    z-index: 10;
+    
+    &::after {
+      content: '';
+      clear: both;
+      height: 0px;
+      width: 0px;
+      display: table;
+    }    
 }
 
 
@@ -32,28 +40,16 @@
     bottom: 0px;
 }
 
-/* IMAGE WRAPS */
 
-.image-wrap-left {
-    @apply float-left mr-normal mb-normal;
-}
-
-.image-wrap-right {
-    @apply float-right ml-normal mb-normal;
-}
 
 /* GENERAL TEXT STYLES */
 
 .main {
   p, ul, ol {
-    @apply mb-normal lg:mb-2x;;   
-    
-    &:last-child {
-      @apply mb-0;
-    }
-    
+    @apply mt-normal;    
+       
     & > li {
-      @apply m-0 mb-half;
+      @apply m-0 mt-half;
     }
     
     ul, ol {
@@ -61,10 +57,21 @@
     }
   }
   
-  p {
-    @apply mt-0 mx-0;
+  *:first-child {
+    margin-top: 0px !important;
   }
   
+  p {
+    @apply mb-0 mx-0;
+  }
+  
+  [class*='text-wrap-left'] + p {
+    @apply mt-0;
+  }
+  
+  [class*='text-wrap-right'] + p {
+    @apply mt-0;
+  }
   
   ul.bullet-list {
     @apply mt-0 mr-0;
@@ -81,7 +88,7 @@
   }
   
   ol {
-    @apply mt-0 mr-0;
+    @apply mb-0 mr-0;
     list-style-type: decimal;
     list-style-position: outside;
     margin-left: 1.1em;
@@ -94,7 +101,7 @@
   @apply flex justify-start content-center items-center;
   
   .share-header {
-    @apply block uppercase mr-normal text-lg;
+    @apply block uppercase mr-base text-lg;
   }
   
   a {
@@ -118,29 +125,16 @@
   @apply justify-center;
 }
 
-/* ASPECT RATIOS FOR FIXED RATIO BLOCKS */
-
-.rect-4-1 {
-  aspect-ratio: 3/1;
-}
-
-.rect-3-1 {
-  aspect-ratio: 3/1;
-}
-
-.rect-16-9 {
-  aspect-ratio: 16/9;
-}
-
-.rect-4-3 {
-  aspect-ratio: 4/3;
-}
-
-.rect-3-2 {
-  aspect-ratio: 3/2;
-}
-
-.square-1-1 {
-  aspect-ratio: 1/1;
+.elem-block {
+  clear: both;
+  position: relative;
+  
+  &::after {
+    content: '';
+    clear: both;
+    height: 0px;
+    width: 0px;
+    display: table;
+  }
 }
 
