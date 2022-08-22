@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.0 - 2022-08-21
+### Changed
+- EVERYTHING!!!!!!
+- Removed Adjustments Layer setup in Neo Field - We Hardly Knew Ye - For UI Improvements to Editing Experience
+- Simplified Animation Setup
+### Updated
+- Craft and all plugins
+### Added
+- Ability to have embedded assets which can include YouTube videos, Vimeo videos, and Google Maps among other things
+
 ## 2.1.4 - 2022-07-18
 ### Fixed
 - Corrected issue with .gitignore file in the dist folder
