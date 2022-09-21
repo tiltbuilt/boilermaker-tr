@@ -1,0 +1,89 @@
+columnSuffix: omstpxgb
+contentColumnType: string
+fieldGroup: bc7f3170-5aac-42e6-9e39-45312c49ab0a # Menu Items
+handle: menuItemType
+instructions: null
+name: 'Menu Item Type'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Choose
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Wine
+        -
+          - value
+          - wine
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Cocktail
+        -
+          - value
+          - cocktail
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Pizza
+        -
+          - value
+          - pizza
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Entree
+        -
+          - value
+          - entree
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Small Bite'
+        -
+          - value
+          - smallBite
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Soup or Salad'
+        -
+          - value
+          - soupSalad
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

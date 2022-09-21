@@ -5,7 +5,7 @@
     "type": "project",
     "require": {
         "carlcs/craft-redactorcustomstyles": "4.0.2",
-        "craftcms/cms": "4.2.5",
+        "craftcms/cms": "4.2.4",
         "craftcms/feed-me": "5.0.4",
         "craftcms/redactor": "3.0.2",
         "doublesecretagency/craft-cpcss": "2.5.0",

@@ -19,25 +19,25 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 84c584f6-eb14-4cb1-9107-e5d9d9cae56b # Quote Credit
+            fieldUid: 27e30a49-d608-40e6-adc6-a66d57da7087 # Quote Credit
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 9eaf9a3d-0ce4-4fe0-a6bf-9bc2863c1d32
+            uid: 56a46887-5e55-4b81-98fb-f69825084821
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: c21f3cc2-98e2-4fe6-a5e3-b4179dd74f69 # Quote Credit Title
+            fieldUid: adb1d11a-0741-4035-99bb-b876413808ba # Quote Credit Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2b1c8c2a-8ef7-47e1-9659-3f9eb5d18350
+            uid: d9bfe0a1-bfe1-4420-a170-90f5662f4b5d
             userCondition: null
             warning: null
             width: 100
@@ -45,6 +45,26 @@ fieldLayouts:
         uid: a6d3e142-52c1-4dfb-84e6-7f2ed364deec
         userCondition: null
 fields:
+  27e30a49-d608-40e6-adc6-a66d57da7087: # Quote Credit
+    columnSuffix: pfrqnmms
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteCredit
+    instructions: null
+    name: 'Quote Credit'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   57ecb807-9701-4046-8fbd-b0c5e7fbf4c3: # Quote Content
     columnSuffix: tdbauomu
     contentColumnType: text
@@ -73,28 +93,8 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  84c584f6-eb14-4cb1-9107-e5d9d9cae56b: # Quote Credit
-    columnSuffix: fmimzkco
-    contentColumnType: text
-    fieldGroup: null
-    handle: quoteCredit
-    instructions: null
-    name: 'Quote Credit'
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: false
-      columnType: null
-      initialRows: 4
-      multiline: false
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  c21f3cc2-98e2-4fe6-a5e3-b4179dd74f69: # Quote Credit Title
-    columnSuffix: kcmimysf
+  adb1d11a-0741-4035-99bb-b876413808ba: # Quote Credit Title
+    columnSuffix: zvrkvgbx
     contentColumnType: text
     fieldGroup: null
     handle: quoteCreditTitle

@@ -6,6 +6,7 @@ import './app-base.pcss';
 import './app-components.pcss';
 import './app-utilities.pcss';
 import $ from 'jquery';
+import Cookies from 'js-cookie';
 import 'lazysizes';
 import { gsap } from "gsap";
 import { ExpoScaleEase, RoughEase, SlowMo } from "gsap/EasePack";
@@ -13,6 +14,7 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as YTPlayer from 'yt-player';
+import Inputmask from "inputmask";
 
 
 window.$ = window.jQuery = $;
@@ -486,6 +488,8 @@ $(document).ready(function() {
 	}
 	
 	
+	
+	
 	/* MODAL BEHAVIORS */
 	
 	var modalOpenTL = gsap.timeline({repeat: 0, paused: true, onComplete: modalSliderInit});
@@ -573,13 +577,13 @@ $(document).ready(function() {
 		swapModal(btnTarget, btnId);
 	});
 	
-	$(window).resize(modalSizer);
-	
+		
 	/* LOADER FUNCTIONALITY */
 		
 	function turnoffloader() {
-		$('body').addClass('pageloaded');
+		//headerPadFix();		
 		addReveals();
+		$('body').addClass('pageloaded');		
 		if ($('body').hasClass('load-modal')) {
 			var modalUrl = $('body').data('load-modal');
 			showModal(modalUrl);
@@ -591,13 +595,135 @@ $(document).ready(function() {
 	
 	if (!($('body').hasClass('ispreview'))) {
 		
-		/* GET LOGIN STATUS AND POPULATE CLOGIN BAR IF LOGGED IN */
+		/* GET LOGIN STATUS AND POPULATE LOGIN BAR IF LOGGED IN */
 		
 		$("#login-status-bar-wrapper").load("/resources/loginbar");		
 				
 		var loadAnim = gsap.to("#loader", {duration: 0.5, ease: "power1.out", opacity: 0, paused: true, onComplete:turnoffloader});
 		loadAnim.play();			
 	}
+	
+	/* GET WINDOW SIZE AND ADD CLASS TO BODY TAG TO ASSIST IN MENU CONTROL ON MOBILE DEVICES */
+			
+	var menuWidth = $('html').width();
+	
+	function sizeMarker() {
+		var screenWidth = $('html').width();		
+		$('body').removeClass('size-mobile size-tablet size-laptop size-desktop');
+		if (screenWidth < 768) {
+			$('body').addClass('size-mobile');
+			menuWidth = $('html').width();								
+		} else if ((screenWidth >= 768) && (screenWidth < 1024 )) {
+			$('body').addClass('size-tablet');
+			menuWidth = $('html').width();
+		} else if ((screenWidth >= 1024) && (screenWidth < 1280 )) {
+			$('body').addClass('size-laptop');
+		} else {
+			$('body').addClass('size-desktop');
+		}
+	}
+	
+	/*
+	function headerPadFix() {
+		var padSize = $('#site-header').outerHeight() + 'px';
+		//console.log(padSize);
+		if ($('body').attr('id') != 'page-home') {
+			$('#page-wrapper').css('paddingTop', padSize);	
+		}		
+	}
+	*/
+	
+	sizeMarker();
+	
+	
+	
+	$(window).resize(function() {
+		sizeMarker();		
+		$('#mm_wrapper').attr('style','');
+		//headerPadFix();	
+		modalSizer();
+		$('body').removeClass('fixed');			
+	});
+	
+	/* HOME PAGE SCROLL FUNCTION */
+	
+	
+	// Hide Header on on scroll down
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;	
+		
+	$(window).scroll(function(){		
+		didScroll = true;
+	});
+	
+	setInterval(function() {
+		if (didScroll) {
+			hasScrolled();
+			didScroll = false;
+		}
+	}, 250);
+	
+	function hasScrolled() {		
+		if ($('body').attr('id') == 'page-home') {
+			var homeScrollHeight = $('.pageHeaderHome').outerHeight();
+			var st = $(window).scrollTop();	
+			console.log(homeScrollHeight);	
+			// Make sure they scroll more than delta
+			if(Math.abs(lastScrollTop - st) <= delta)
+				return;
+			
+			// If they scrolled down and are past the page header, add class .nav-show.
+			// This is necessary so you never see what is "behind" the navbar.
+			if ((st > lastScrollTop && st > homeScrollHeight) && ($('#wrapper').hasClass('mmopen') == false )){
+				// Scroll Down			
+				$('body#page-home').removeClass('nav-hide').addClass('nav-show');
+			} else {
+				// Scroll Up
+				if((st < lastScrollTop && st < homeScrollHeight) && ($('#wrapper').hasClass('mmopen') == false )) {				
+					$('body#page-home').removeClass('nav-show').addClass('nav-hide');
+				}
+			}
+			
+			lastScrollTop = st;
+		}		
+	}
+	
+	
+	
+	/* MOBILE MENU FUNCTIONALITY */	
+	
+	var menuAnimating = false;
+		
+	$('#btn-mm-open, #btn-mm-open-home-header').click(function() {			
+		
+		if (!menuAnimating && (($('body').hasClass('size-mobile'))||($('body').hasClass('size-tablet')))) {
+			menuAnimating = true;								
+			var mobileMenuPanelOpen = gsap.fromTo("#mm_wrapper", {x: menuWidth}, {duration: 0.5, ease: "power1.out", x: 0, paused: true});
+			mobileMenuPanelOpen.play();
+			gsap.fromTo("#mm_wrapper a", {opacity: 0, x: 100}, {duration: 0.2, opacity: 1, x: 0, stagger: 0.1});
+			$('#wrapper').addClass('mmopen');
+			$('body').addClass('fixed');
+			menuAnimating = false;					
+		}
+			
+	});	
+	
+	
+	$('#btn-mm-close').click(function() {			
+		
+		//console.log('firing');
+		if (!menuAnimating && ($('#wrapper').hasClass('mmopen')) && (($('body').hasClass('size-mobile')) || ($('body').hasClass('size-tablet')))) {
+			menuAnimating = true;			
+			menuWidth = $('html').width();			
+			var mobileMenuPanelClose = gsap.to("#mm_wrapper", {duration: 0.5, ease: "power1.out", x: menuWidth, paused: true});
+			mobileMenuPanelClose.play();
+			$('#wrapper').removeClass('mmopen');
+			$('body').removeClass('fixed');
+			menuAnimating = false;				
+		}
+			
+	});	
 				
 	
 	/* ACCORDION BEHAVIOR */
@@ -733,8 +859,14 @@ $(document).ready(function() {
 	
 	function sliderInit(sliders) {
 		sliders.each(function() {		
-			var timingsetting, swiperEl, swiperOptions;
-			swiperEl = '#' + $(this).find('.swiper').attr('id');		
+			var timingsetting, swiperEl, swiperOptions, paginationEl, prevEl, nextEl;		
+			swiperEl = '#' + $(this).find('.swiper').attr('id');
+			paginationEl = '#' + $(this).find('.swiper-pagination').attr('id');
+			console.log(paginationEl);
+			prevEl = '#' + $(this).find('.swiper-button-prev').attr('id');
+			console.log(prevEl);							
+			nextEl = '#' + $(this).find('.swiper-button-next').attr('id');
+			console.log(nextEl);					
 			timingsetting = $(this).data('timing');		
 			
 			swiperOptions = {
@@ -759,16 +891,17 @@ $(document).ready(function() {
 				}
 			} 
 			
-			if ($(this).data('dots')) {
+			if ($(this).data('dots')) {			
 				swiperOptions.pagination = {
-					el: '.swiper-pagination',
+					el: paginationEl,
 					clickable: true
 				}
 			}
+			
 			if ($(this).data('buttons')) {
 				swiperOptions.navigation = {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev'
+					nextEl: nextEl,
+					prevEl: prevEl
 				}
 			}
 			
@@ -782,12 +915,14 @@ $(document).ready(function() {
 		sliderInit(modalSliders);
 	}
 	
-	sliderInit($('.sliderSet'));
+	sliderInit($('.sliderSet, .repeaterSlider'));
 	
+	
+		
 	
 	/* FIX FORMS TO WORK WITH BLITZ CACHE BY DYNAMICALLY RESETTING CSRF TOKENS AND HASH VALUES */
 	
-	$("form").each(function() {
+	$("form:not('.embedform')").each(function() {
 		var form = $(this);
 		var formhandle = form.data('handle');
 		
@@ -812,12 +947,29 @@ $(document).ready(function() {
 				// Locate and update the CSRF input
 				var csrf = response.csrf;
 				form.children('input[name=' + csrf.name + ']').val(csrf.value);
-				
+				if (formhandle == 'rentalRequestForm') {
+					var urlParams = new URLSearchParams(window.location.search);
+					if (urlParams.has('spaceid')) {
+						var whichspace = urlParams.get('spaceid');
+						switch (whichspace) {
+						  case 'the-loft':
+							$('#form-input-spaceRequested').val('The Loft').change();
+							break;
+						  case 'the-upper-deck':
+							$('#form-input-spaceRequested').val('The Upper Deck').change();
+							break;
+						  case 'the-lower-deck':
+							$('#form-input-spaceRequested').val('The Lower Deck').change();
+							break;
+						}
+					}
+				}
 			},
 		});
 	});
 	
-
+	
+	
 	/* FIX ERROR DISPLAY ON NEWSLETTER FORM */
 	
 	document.addEventListener("freeform-render-field-errors", function (event) {

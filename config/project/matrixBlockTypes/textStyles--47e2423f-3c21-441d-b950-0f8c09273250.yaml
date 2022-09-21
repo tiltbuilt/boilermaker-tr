@@ -43,13 +43,13 @@ fieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: fd14f19a-40bb-4ec0-94e1-613a9a658d0c
+            fieldUid: a9ff8aa5-82d2-4284-8886-3c4170f5a4e6 # Alignment
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5d3150f3-d514-426c-a46d-bf032b29d323
+            uid: 8ca7c1fe-9cf6-40f5-a872-ec608b042651
             userCondition: null
             warning: null
             width: 50
@@ -154,6 +154,74 @@ fields:
             -
               - value
               - '2xl:'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a9ff8aa5-82d2-4284-8886-3c4170f5a4e6: # Alignment
+    columnSuffix: mazuqrol
+    contentColumnType: string
+    fieldGroup: null
+    handle: alignment
+    instructions: null
+    name: Alignment
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Default (No Change)'
+            -
+              - value
+              - ''
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - text-center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Justify
+            -
+              - value
+              - text-justify
             -
               - default
               - ''
@@ -808,74 +876,6 @@ fields:
             -
               - value
               - mt-4x
-            -
-              - default
-              - ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Dropdown
-  fd14f19a-40bb-4ec0-94e1-613a9a658d0c:
-    columnSuffix: fsjghydl
-    contentColumnType: string
-    fieldGroup: null
-    handle: alignment
-    instructions: null
-    name: Alignment
-    searchable: false
-    settings:
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - 'Default (No Change)'
-            -
-              - value
-              - ''
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - Left
-            -
-              - value
-              - text-left
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Center
-            -
-              - value
-              - text-center
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Right
-            -
-              - value
-              - text-right
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Justify
-            -
-              - value
-              - text-justify
             -
               - default
               - ''

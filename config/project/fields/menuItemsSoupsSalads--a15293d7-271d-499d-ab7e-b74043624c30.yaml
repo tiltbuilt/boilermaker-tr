@@ -1,0 +1,55 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: bc7f3170-5aac-42e6-9e39-45312c49ab0a # Menu Items
+handle: menuItemsSoupsSalads
+instructions: null
+name: 'Menu Items - Soups & Salads'
+searchable: false
+settings:
+  allowSelfRelations: false
+  localizeRelations: false
+  maxRelations: null
+  minRelations: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
+      -
+        - conditionRules
+        -
+          -
+            __assoc__:
+              -
+                - class
+                - craft\fields\conditions\OptionsFieldConditionRule
+              -
+                - uid
+                - 98fa2385-c639-4055-b7a1-0651c9749ca3
+              -
+                - operator
+                - in
+              -
+                - values
+                -
+                  - soupSalad
+              -
+                - fieldUid
+                - b1f8fc79-8472-424c-a5a2-83477606b2b7 # Menu Item Type
+  selectionLabel: null
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:ae367fc5-c51a-4061-8bc2-852eda25f32f'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

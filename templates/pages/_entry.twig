@@ -13,49 +13,63 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
+{% do craft.app.elements.eagerLoadElements(
+    className(companyInfo),
+    [companyInfo],
+    ['socialMediaLinks']
+) %}
+
+{% do craft.app.elements.eagerLoadElements(
+    className(gSettings),
+    [gSettings],
+    ['thumbnailPlaceholderImage']
+) %}
+
 
 {% do craft.app.elements.eagerLoadElements(
  className(entry),
  [entry],
  [
  'seoImage',
- 'modalToDisplay',
- 'backgroundImagery',
- 'backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder',
- 'pageBuilder.sectionStandard:backgroundImagery',
- 'pageBuilder.column:backgroundImagery',
- 'pageBuilder.sectionStandard:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.column:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.column:columnDisplay',
- 'pageBuilder.columnSlide:columnDisplay',
- 'pageBuilder.contentWrapper:backgroundImagery',
- 'pageBuilder.contentWrapper:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.contentWrapper:contentWrapperTextStyling',
- 'pageBuilder.accordionSet:backgroundImagery',
- 'pageBuilder.tabSet:backgroundImagery',
- 'pageBuilder.slide:backgroundImagery',
- 'pageBuilder.ctaStandard:backgroundImagery',
- 'pageBuilder.accordionSet:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.tabSet:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.slide:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.ctaStandard:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.ctaSmall:backgroundImagery',
- 'pageBuilder.ctaSmall:backgroundImagery.backgroundSet:backgroundImage',
- 'pageBuilder.ctaStandard:imageAsset',
- 'pageBuilder.image:imageAsset',
- 'pageBuilder.image:imageVideoLayout',
- 'pageBuilder.contentVideo:imageVideoLayout',
- 'pageBuilder.contentVideo:videoContent',
- 'pageBuilder.repeaterItemContentLink:seoImage',
- 'pageBuilder.repeaterSelectEntryList:listSpecificEntries',
- 'pageBuilder.sectionTwoColumnEdgePhoto:imageAsset',
- 'pageBuilder.repeaterContentLinks:itemsPerRow',
- 'pageBuilder.repeaterSectionEntryList:itemsPerRow',
- 'pageBuilder.repeaterNavCollection:itemsPerRow',
- 'pageBuilder.repeaterSelectEntryList:itemsPerRow',
- 'pageBuilder.header:mainHeaderAdjustments',
- 'pageBuilder.header:subheadAdjustments',
+  'modalToDisplay',
+  'backgroundImagery',
+  'backgroundImagery.backgroundSet:backgroundImage',
+  'pageHeaderSlidePhotos',
+  'pageBuilder',
+  'pageBuilder.sectionStandard:backgroundImagery',
+  'pageBuilder.column:backgroundImagery',
+  'pageBuilder.sectionStandard:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.column:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.column:columnDisplay',
+  'pageBuilder.columnSlide:columnDisplay',
+  'pageBuilder.contentWrapper:backgroundImagery',
+  'pageBuilder.contentWrapper:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.contentWrapper:contentWrapperTextStyling',
+  'pageBuilder.accordionSet:backgroundImagery',
+  'pageBuilder.tabSet:backgroundImagery',
+  'pageBuilder.slide:backgroundImagery',
+  'pageBuilder.ctaStandard:backgroundImagery',
+  'pageBuilder.accordionSet:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.tabSet:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.slide:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.ctaStandard:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.ctaSmall:backgroundImagery',
+  'pageBuilder.ctaSmall:backgroundImagery.backgroundSet:backgroundImage',
+  'pageBuilder.ctaStandard:imageAsset',
+  'pageBuilder.image:imageAsset',
+  'pageBuilder.image:imageVideoLayout',
+  'pageBuilder.contentVideo:imageVideoLayout',
+  'pageBuilder.contentVideo:videoContent',
+  'pageBuilder.repeaterItemContentLink:seoImage', 
+  'pageBuilder.sectionTwoColumnEdgePhoto:imageAsset',
+  'pageBuilder.repeaterContentLinks:itemsPerRow',
+  'pageBuilder.repeaterSectionEntryList:itemsPerRow',
+  'pageBuilder.repeaterNavCollection:itemsPerRow',
+  'pageBuilder.repeaterSelectEntryList:itemsPerRow',
+  'pageBuilder.header:mainHeaderAdjustments',
+  'pageBuilder.header:subheadAdjustments',
+  'pageBuilder.sectionTwoColumnEdgePhoto:backgroundImagery',
+  'pageBuilder.sectionTwoColumnEdgePhoto:backgroundImagery.backgroundSet:backgroundImage',
  ]
 ) %}
 
@@ -78,7 +92,7 @@
       {% endif %}
       {% if canModal and useModal %}
         {% set buttonModalList = buttonModalList|merge([block]) %}
-      {% endif %}
+      {% endif %}   
    {% endif %}
 {% endfor %}
 
@@ -138,22 +152,4 @@
       {% include '_project/_partials/global-footer' %}
     {% endif %}
     
-{% endblock %}
-
-{% block modalContent %}	
- {% if entry.modalToDisplay|length or buttonModalList|length %}		
-   <div id="modal-wrapper" class="closed">       
-     <div id="modal" class="closed" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
-         <button id="btn-modal-close" class="btn-modal-close">			  
-             <svg><use xlink:href="#icon-close"></use></svg>
-         </button>
-         <div id="modal-content">
-             <div class="modal-spinner">
-                 <img src="/dist/img/ajax-loader-gray-300.gif" alt="Loading" />
-             </div>
-         </div>
-     </div>
-     <div id="modal-overlay"></div>	
-   </div>	
- {% endif %}
 {% endblock %}

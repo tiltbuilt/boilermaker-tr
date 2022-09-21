@@ -21,18 +21,14 @@
 <div class="list-wrapper">
 <div class="repeater-list-card-img-sm">
 {% for repeaterItem in repeaterData %}
-<div {{ gMacros.buildClassListBasic(itemClasses) -}}>
-	
-		<div class="inner repeater-list-card-img-sm-item-inner h-full">		          
-			<a href="{{ repeaterItem.url }}" class="repeater-list-card-img-lg-item-link">
-				<div {{ gMacros.buildClassListBasic(['item-wrapper', 'repeater-list-card-img-sm-item-card']) -}}>
+<div {{ gMacros.buildClassListBasic(itemClasses) -}}>	
+	<div class="inner repeater-list-card-img-sm-item-inner h-full">		          
+		{% if repeaterItem.url|length %}<a href="{{ repeaterItem.url }}" {% if repeaterItem.newTab %}target="_blank"{% endif %} class="repeater-list-card-img-lg-item-link">{% endif %}
+			<div {{ gMacros.buildClassListBasic(['item-wrapper', 'repeater-list-card-img-sm-item-card']) -}}>
+				<div class="inner">
 					<div class="repeater-list-card-img-sm-item-card-row">
 						<div class="repeater-list-card-img-sm-item-thumbnail-column">
-							{% if repeaterItem.seoImage|length %}
-								{% set image = repeaterItem.seoImage[0] %}
-							{% else %}
-								{% set image = siteGlobals.thumbnailPlaceholderImage[0] %}
-							{% endif %}
+							{% set image = repeaterItem.image[0] %}
 							
 							{%- set transformedImages = craft.imagerx.transformImage(image, 'thumbnail')	%}
 							  
@@ -62,17 +58,18 @@
 							<{{ repeaterHeadingLevel }} class="repeater-list-card-img-sm-item-header">
 							  {{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
 							</{{ repeaterHeadingLevel }}>
-							{% if repeaterShowDate and repeaterItem.postDate is defined and dateFormat != null %}	  		
-								<div class="repeater-date">{{ repeaterItem.postDate | date(dateFormat) }}</div>	 
+							{% if repeaterShowDate and repeaterItem.date|length %}	  		
+								<div class="repeater-date">{{ repeaterItem.date }}</div>	 
 							{% endif %}
 							{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
 								{{ repeaterItem.excerpt }}	  				 
 							{% endif %}	  
 						</div>
-					</div>	
-				</div>
-			</a>
-		</div>
+					</div>
+				</div>	
+			</div>
+		{% if repeaterItem.url|length %}</a>{% endif %}
+	</div>
 	
 </div>
 {% endfor %}

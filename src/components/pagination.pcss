@@ -61,7 +61,7 @@
 		}
 		
 		@media (min-width: 768px) {
-			@apply pt-none w-auto;
+			@apply pt-none;
 		}
 	}
 	
@@ -69,10 +69,12 @@
 		
 		.pagination-prev {
 			@apply order-first;	
+			min-width: 100px;
 		}
 		
 		.pagination-next {
-			@apply order-last;	
+			@apply order-last;
+			min-width: 100px;	
 		}
 		
 		

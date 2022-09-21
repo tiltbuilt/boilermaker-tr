@@ -8,7 +8,7 @@ searchable: false
 settings:
   default: null
   options:
-    -
+    0:
       __assoc__:
         -
           - label
@@ -22,28 +22,14 @@ settings:
         -
           - class
           - ''
-    -
+    3:
       __assoc__:
         -
           - label
-          - 'Color Scheme 1'
+          - 'Black Text, White Background, Gray Accents'
         -
           - color
-          - '#ffffff,#000000,#d1d5db'
-        -
-          - default
-          - ''
-        -
-          - class
-          - white-black-gray
-    -
-      __assoc__:
-        -
-          - label
-          - 'Color Scheme 2'
-        -
-          - color
-          - '#000000,#ffffff,#d1d5db'
+          - '#000000,#ffffff,#4b5563'
         -
           - default
           - ''

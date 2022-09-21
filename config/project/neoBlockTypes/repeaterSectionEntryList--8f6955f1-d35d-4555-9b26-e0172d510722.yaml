@@ -58,54 +58,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 9c3c6834-2633-4d89-ae1b-d0897a9bee7c # List Item Display Style
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f6f2530a-e385-413d-8d25-da560a326ea3
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 777e85ac-66fd-40e7-a639-d57a48ee452c
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: c51a76cf-e325-4732-9bf5-a816ca68d07f # Button Size
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 16d98967-5a22-49c1-8ed1-ddebfd5d8ea6
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 81647883-c70c-4a4d-917c-b3b007078d21 # Items per Row
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 1dbbb07f-ea1a-4e14-b90b-955b86504056
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 7cfd4f7d-3f60-4509-94f6-2ff20ffbf96d # Show Excerpt
             instructions: null
             label: null
@@ -137,6 +89,193 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e6521a16-29f3-4ea6-9a21-9fc08ee564eb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9c3c6834-2633-4d89-ae1b-d0897a9bee7c # List Item Display Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6f2530a-e385-413d-8d25-da560a326ea3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Text List Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: d4ebbef8-2021-465f-9304-80265f176ddf
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 2e0fafb7-fc39-4497-8eb6-9a072c3cfc7e # Text List Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6061d33d-0a46-4409-b65c-c3762f46835c
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            elementCondition: null
+            fieldUid: ce49ac6e-915d-4e4b-b355-baba95079f9a # Multi-Column
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4991806c-d5a9-49a8-aca0-80116a99bbac
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Button List Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: eb3b33d2-d204-480c-ae60-33213f760295
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f008a10f-66be-4d6d-9ac4-67d12cf0a9c1 # Button Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 777e85ac-66fd-40e7-a639-d57a48ee452c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: c51a76cf-e325-4732-9bf5-a816ca68d07f # Button Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 16d98967-5a22-49c1-8ed1-ddebfd5d8ea6
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Card List Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 4138ce27-12d1-4241-9d3c-0b674dd37417
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 81647883-c70c-4a4d-917c-b3b007078d21 # Items per Row
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1dbbb07f-ea1a-4e14-b90b-955b86504056
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Slider Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 9a0f22a5-3304-4062-9d22-a75bec331b12
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 9fefc367-79dc-4588-9172-e28038d436cf # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 09189e8b-1f23-4295-9fa5-1fb2a40c0788
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: c56897e2-d620-4e0d-87d9-187409473181 # Dots
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c53e0c52-c27c-4eea-a52e-a63eb20cad0c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: b53dd5c2-c363-4ceb-acd2-c871e7324dd7 # Slider Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 45c4290c-46c5-41f2-82a1-6c50fa55fba6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c72b4e48-ad6f-48d6-890b-dc2274f1e3c5 # Slide Transition Delay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df99f6d6-9bca-4998-82cc-973fbb0df74b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4c8a1b99-37ef-424c-9a73-26d40caccc9d # Autoplay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d054611b-c30c-46c0-8b72-1e68ffa74dff
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9105dd5d-53c1-4975-8d20-082c952a8f04 # Slider Effect
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3383ea75-f7b3-46c7-b401-7528d9d240ee
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            style: tip
+            tip: 'This field sets the text for the link button to the view the full post from the slider'
+            type: craft\fieldlayoutelements\Tip
+            uid: 9ee5ebab-8002-44ca-9675-00386834bf4e
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: e19df32e-9528-42e7-8b69-8c1e0db65f4d # Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9f95e636-6acf-4f56-a961-3ee992872098
             userCondition: null
             warning: null
             width: 100
@@ -199,7 +338,7 @@ fieldLayouts:
             uid: af37734e-ace8-4483-95ee-e7f22e7081de
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
@@ -211,7 +350,7 @@ fieldLayouts:
             uid: be6597f2-3646-495b-baed-a89d325d1669
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Animation
         uid: 991e2d7c-8b0c-4b70-a6a6-f11789fb752c
         userCondition: null

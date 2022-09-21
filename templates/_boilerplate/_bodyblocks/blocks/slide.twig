@@ -25,8 +25,8 @@
 {% set innerClass = block.type.handle ~ '-inner' %}
 
 
-{% if block.colorScheme.class != '' %}
-	{% set colorScheme = block.colorScheme.class %}
+{% if block.slideColorScheme.class != '' %}
+	{% set colorScheme = block.slideColorScheme.class %}
 {% endif %}
 
 {% set outerClasses = [colorScheme] %}
@@ -101,7 +101,7 @@
 	</div>
 	<div class="background">
 		{% if bgSettings|length %}		
-			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, aspectSize, null) }}
 		{% endif %}		
 	</div>	
 	     

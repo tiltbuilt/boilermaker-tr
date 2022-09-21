@@ -11,9 +11,12 @@
   //The default classes and style below can be changed on a per-project basis   
 }
 
-.px-normal .row-wrapper > .inner > .row > .column > .inner {  
-  @apply px-2x lg:px-3x;
-} 
+.container-inner, .px-normal {
+  .row-wrapper > .inner > .row > .column > .inner {  
+    @apply px-2x lg:px-3x;
+  } 
+}
+
 
 .px-extra .row-wrapper > .inner > .row > .column > .inner {
   @apply px-3x lg:px-4x;

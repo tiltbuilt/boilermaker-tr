@@ -122,7 +122,33 @@
 			#}
 			{% set repeaterData = [] %}
 			{% for item in itemList %}
-			  {% set repeaterData = repeaterData|merge([item]) %}
+				{% if item.linkSettings is not empty %}
+					{% set itemLink = item.linkSettings.url %}
+					{% set itemTab = item.linkSettings.target|length %}					
+				{% elseif item.contentLink is not empty %}
+					{% set itemLink = item.contentLink %}
+					{% set itemTab = true %}
+				{% else %}
+					{% set itemLink = item.url %}
+					{% set itemTab = false %}
+				{% endif %}
+				{% if item.seoImage|length %}
+				  {% set image = item.seoImage %}
+				{% elseif item.imageAsset is defined and item.imageAsset|length %}
+				  {% set image = item.imageAsset %}
+				{% else %}
+				  {% set image = siteGlobals.thumbnailPlaceholderImage %}
+				{% endif %}
+				{% set listItem = {
+					'title' : item.title,
+					'excerpt' : item.excerpt,
+					'url': itemLink,
+					'newTab': itemTab,
+					'image': image,
+					'date': item.postDate|date(repeater.dateFormat)
+				}
+				%}
+				{% set repeaterData = repeaterData|merge([listItem]) %}
 			{% endfor %}
 			  
 			  {# determine list display style setting and include necessary list template #}

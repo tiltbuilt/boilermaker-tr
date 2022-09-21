@@ -270,7 +270,7 @@ fieldLayouts:
             uid: e932a5f8-c926-434f-981a-8a055e381922
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: b2a0c32e-b867-448b-984a-c5bfa4b86118 # Stagger Child Reveals
@@ -282,7 +282,7 @@ fieldLayouts:
             uid: 3a77c587-da5c-4d69-80e2-999ab0815555
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Animation
         uid: 5c5ecbba-cf5c-45fd-8401-a03f72c857ab
         userCondition: null

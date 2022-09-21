@@ -5,77 +5,30 @@
  *
  */
 
-/* SCALING TEXT SIZES - Create a responsive font size that starts at the base size, but enlarges at larger sizes or shrinks at smaller. feel free to adjust the breakpoints/sizes as needed */
-.text-scaling-xs {
-    @apply text-xs; 
+.letterSpacedSubhead {
+    @apply uppercase text-lg leading-none tracking-widest font-din font-normal;
 }
 
-.text-scaling-sm {
-    @apply text-sm; 
+.letterSpacedSubhead-outer {
+    @apply mt-normal;
 }
 
-.text-scaling-base {
-    @apply text-base; 
+/* set up default spacing between headers, subheads, etc. */
+
+h2, h3, h4, h5, h6 {
+    @apply mt-2x;
 }
-
-.text-scaling-lg {
-    @apply text-lg; 
-}
-
-.text-scaling-xl {
-    @apply text-xl; 
-}
-
-.text-scaling-2xl {
-    @apply text-2xl; 
-}
-
-.text-scaling-3xl {
-    @apply text-3xl; 
-}
-
-.text-scaling-4xl {
-    @apply text-4xl; 
-}
-
-.text-scaling-5xl {
-    @apply text-5xl; 
-}
-
-.text-scaling-6xl {
-    @apply text-5xl md:text-6xl; 
-}
-
-.text-scaling-7xl {
-    @apply text-5xl md:text-7xl; 
-}
-
-.text-scaling-8xl {
-    @apply text-6xl md:text-8xl; 
-}
-
-
-/* Heading Classes - define the base appearance classes of the different header styles here */
 
 .header-subhead-outer + .header-mainheader-outer {
     @apply mt-half;
 }
 
 .header-mainheader-outer + .header-subhead-outer{
-    @apply mt-half;
+    @apply mt-base;
 }
 
-.header-subhead-outer + .header-intro. .header-mainheader-outer + .header-intro {
-    @apply mt-half;
-}
-
-/* this is just an example and is not tied to the h1 tag at all make sure to include a class for the outer to set default margins.  */
-.heading1 {
-    @apply text-scaling-6xl;
-}
-
-.heading1-outer {
-    @apply mt-normal;
+.header-subhead-outer + .header-intro, .header-mainheader-outer + .header-intro {
+    @apply mt-2x;
 }
 
 .header + p {
@@ -84,6 +37,12 @@
 }
 
 .header-intro {
-    @apply text-xl mt-half;
+    @apply text-xl mt-base;
+}
+
+h2, h3, h4, h5, h6 {
+    & + p {
+        @apply mt-half;
+    }
 }
 

@@ -1,0 +1,43 @@
+columnSuffix: mafxcqwb
+contentColumnType: text
+fieldGroup: 1371181e-0e3f-44fe-bfdd-4848b6b55d74 # Page Builder - Sliders
+handle: slideColorScheme
+instructions: null
+name: 'Slide Color Scheme'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'White Text Black Background White Accents'
+        -
+          - color
+          - '#FFFFFF,#000000,#FFFFFF'
+        -
+          - default
+          - '1'
+        -
+          - class
+          - white-black-white
+    -
+      __assoc__:
+        -
+          - label
+          - 'Black Text White Background Red Accents'
+        -
+          - color
+          - '#000000,#FFFFFF,#9D2920'
+        -
+          - default
+          - ''
+        -
+          - class
+          - black-white-red
+  palette: null
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

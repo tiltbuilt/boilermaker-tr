@@ -22,19 +22,21 @@
   <div {{ gMacros.buildClassListBasic(itemClasses) -}}>
 	
 	  <div class="inner repeater-list-card-item-inner h-full">		          
-		  <a href="{{ repeaterItem.url }}" class="repeater-list-card-item-link">
+		{% if repeaterItem.url|length %}<a href="{{ repeaterItem.url }}" {% if repeaterItem.newTab %}target="_blank"{% endif %} class="repeater-list-card-item-link">{% endif %}
 			<div {{ gMacros.buildClassListBasic(['item-wrapper', 'repeater-list-card-item-card']) -}}>
-				<{{ repeaterHeadingLevel }} class="repeater-list-card-item-header">
-				  {{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
-				</{{ repeaterHeadingLevel }}>
-				{% if repeaterShowDate and repeaterItem.postDate is defined and dateFormat != null %}	  		
-					<div class="repeater-date">{{ repeaterItem.postDate | date(dateFormat) }}</div>	 
-				{% endif %}
-				{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
-					{{ repeaterItem.excerpt }}	  				 
-				{% endif %}
+				<div class="inner">
+					<{{ repeaterHeadingLevel }} class="repeater-list-card-item-header">
+					  {{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
+					</{{ repeaterHeadingLevel }}>
+					{% if repeaterShowDate and repeaterItem.date|length %}	  		
+						<div class="repeater-date">{{ repeaterItem.date }}</div>	 
+					{% endif %}
+					{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
+						{{ repeaterItem.excerpt }}	  				 
+					{% endif %}
+				</div>
 			</div>
-		  </a>        
+		{% if repeaterItem.url|length %}</a>{% endif %}        
 	  </div>
 	
   </div>	

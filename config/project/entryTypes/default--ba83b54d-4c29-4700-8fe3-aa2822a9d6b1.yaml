@@ -32,10 +32,22 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
+            fieldUid: 2157587f-ba0b-4f33-8ff3-29dd650e3bc4 # Image Asset
+            instructions: null
+            label: 'Main Entry Image'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a05dbc25-3349-4801-9d60-7033b6cdcc0c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: be45752b-5950-4495-916b-645055cd1353 # Excerpt
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 036cbc8d-d519-4787-9ae6-740b400e9df5
@@ -44,13 +56,93 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 114bf113-0d20-4dd6-8e12-f1265063b87c # Blog Content
+            fieldUid: 7833136e-eb04-4336-98b0-b8e63ca02799 # News Entry Type
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 605ec839-6896-44c0-a460-5c095093e704
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 1f96291b-7ede-4b66-b144-0f523f65d035
+            userCondition: null
+          -
+            elementCondition: null
+            heading: 'Entry Content'
+            type: craft\fieldlayoutelements\Heading
+            uid: d0a060a0-e9d9-436e-91db-c7ca8d2e0040
+            userCondition: null
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 7833136e-eb04-4336-98b0-b8e63ca02799 # News Entry Type
+                  operator: in
+                  uid: 0adff918-4824-4ac9-ba8c-71da4f451c33
+                  values:
+                    - article
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 114bf113-0d20-4dd6-8e12-f1265063b87c # Blog Content
+            instructions: null
+            label: 'Article Content'
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
             uid: 685cd0fe-a83f-4e78-9075-6de44528b06e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 7833136e-eb04-4336-98b0-b8e63ca02799 # News Entry Type
+                  operator: in
+                  uid: 786112f9-37e0-4556-870f-ec0de097048d
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 55da8c44-d26a-4a2c-94eb-43b1a095365e # Video Asset
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3ebdf04c-28d1-49d4-95d0-695b368ea177
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 7833136e-eb04-4336-98b0-b8e63ca02799 # News Entry Type
+                  operator: in
+                  uid: dfe99090-a03b-4421-ad04-0a38863cfabd
+                  values:
+                    - link
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 944f6f36-d431-4c98-b852-61e0fe017d47 # Content Link
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dbb48120-336a-4d65-9c88-d07711a6fd11
             userCondition: null
             warning: null
             width: 100

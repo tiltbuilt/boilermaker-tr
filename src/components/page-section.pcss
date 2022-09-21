@@ -12,21 +12,13 @@
    
 }
 
-.container {	
-    // These classes must stay in order to ensure functionality
-    @apply mx-auto;
-    //The default classes and style below can be changed on a per-project basis    
-    
-   &.container-fullwidth {
-      // These classes must stay in order to ensure functionality
-      @apply max-w-full;
-      //The default classes and style below can be changed on a per-project basis
-   }    
-}
+.container-inner {
+    @apply p-normal;
+} 
 
 .content-sizer {
     
-   @apply p-normal;
+   @apply p-normal h-full;
            
    @media (min-width: theme('screens.md')) {
       max-width: 384px;
@@ -66,7 +58,3 @@
         }
     }
 } 
-
-
-
-

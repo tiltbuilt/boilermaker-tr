@@ -1,9 +1,230 @@
 
-.white-black-gray {
+.black-white-gray {
 	
 	/* COLOR SCHEMES SET ON ELEMENTS THEMSELVES */
 	
-	&.sectionStandard, &.sectionTwoColumnEdgePhoto, &.column, &.contentWrapper, &.accordionSet, &.tabSet, &.sliderSet, &.slide, &.ctaStandard, &.ctaSmall, &.form, &.pageHeader {
+	&.sectionStandard, &.sectionTwoColumnEdgePhoto, &.column, &.contentWrapper, &.accordionSet, &.tabSet, &.sliderSet, &.sliderBeer, &.slide, &.ctaStandard, &.ctaSmall, &.form-wrapper, &.pageHeader {
+		
+		@apply bg-white text-black;
+				
+		&.bg-off {
+			color: inherit;
+			background-color: transparent !important;
+		}
+					
+		a {
+			@apply text-gray-600 hover:text-gray-800;	
+		}
+		
+		ul.lined-list {
+			li {
+				@apply border-gray-300;
+			}
+		}
+				
+	}
+	
+	/* BUTTONS */
+	
+	&.buttonGroup, &.iconContent, &.ctaSmall, &.ctaStandard, &.form-wrapper {
+		.btn, .btn-standard {
+			@apply bg-black text-white hover:text-white hover:bg-gray-600;
+		}
+		
+		.btn.btn-text, .btn.btn-text-arrow {
+			@apply text-gray-800 hover:text-gray-600;
+			background: transparent !important;
+		}
+	}
+	
+			
+	/* HEADERS */
+			
+	&.header, &.iconContent, &.ctaSmall, &.ctaStandard {
+		
+		/* put all your header classes here, you can separate the parents if you want the headers to be different colors in an icon block or a CTA */
+				
+		
+		.letterSpacedSubhead {
+			@apply text-black;
+		}
+		
+	}
+	
+	&.pageHeader {
+		
+		.pageHeader-main-header {
+			@apply text-white;
+		}
+		
+		.pageHeader-subhead {
+			@apply text-white;
+		}
+		
+		.pageHeader-intro {
+			@apply text-white;
+		}
+		
+	}
+	
+	/* IMAGE CAPTIONS */
+		
+	&.image-block, &.contentVideo {
+		.image-caption {
+			@apply bg-gray-100 text-black; 
+		}
+	}
+		
+		
+	/* SLIDER CONTROLS */
+	
+	&.sliderSet {
+		.swiper-button-prev, .swiper-button-next {
+			@apply bg-gray-800 text-gray-300 hover:text-gray-600;
+		}
+		
+		.swiper-pagination-bullet {
+			@apply bg-gray-800 hover:bg-gray-600;       
+			
+			&.swiper-pagination-bullet-active {
+				@apply bg-gray-300;
+			}
+		}
+	}
+	
+	
+	/* BLOCK QUOTES */
+	
+	.blockQuote {
+		@apply text-black;
+		
+		.quote-credit {
+			@apply text-black;
+		}
+	}
+				
+	/* ICONS */
+	
+	&.iconContent {
+		.iconContent-icon-block {
+			@apply text-gray-600;
+		}
+	}
+		
+	/* TABS */
+		
+	&.tabSet {
+		.btn-tab {
+			@apply bg-transparent text-gray-800 hover:text-gray-600;
+			
+			&.active-tab {
+				@apply text-white bg-black;
+			}
+		}
+		
+		.tab-panel-wrapper {
+			@apply bg-gray-100 text-black;
+		}
+	}
+		
+		
+	/* ACCORDIONS */
+	
+	
+	&.accordionSet {
+		.btn-accordion {
+			@apply text-gray-800 bg-transparent hover:text-gray-600;
+			
+			&.expanded {
+				@apply text-gray-600;
+			}
+		}
+		
+		.accordion {
+			@apply text-black bg-gray-100;
+		}
+	}
+	
+	/* REPEATERS */
+		
+	&.repeaterContentLinks, &.repeaterNavCollection, &.repeaterSectionEntryList, &.repeaterSelectEntryList, &.repeaterDrinkSpecials {
+		
+		& > .inner {
+			
+			.btn, .btn-standard {
+				@apply bg-black text-white hover:text-white hover:bg-gray-600;
+			}
+			
+			.btn.btn-text, .btn.btn-text-arrow {
+				@apply text-gray-800 hover:text-gray-600;
+				background: transparent !important;
+			}
+			
+			
+			& > .list-wrapper {
+				.repeater-list-card, .repeater-list-card-img-lg, .repeater-list-card-img-sm {
+					.repeater-list-item {						
+						
+						.item-wrapper::after {
+							@apply bg-gray-100;
+						}
+						
+						.repeater-list-card-img-lg-item-header, .repeater-list-card-img-sm-item-header, .repeater-list-card-item-header {
+							@apply text-gray-800;							
+						}
+						
+						a {							
+							@apply  text-black hover:text-black;
+							
+							&:hover {
+								.repeater-list-card-img-lg-item-header, .repeater-list-card-img-sm-item-header, .repeater-list-card-item-header {
+									@apply text-gray-600;
+								}
+							}
+						}
+						
+							
+					}
+				}
+			}
+			
+			& > .repeaterSlider {
+				.repeater-lg-slide {
+					@apply text-black bg-gray-100;
+					
+					a {
+						@apply text-gray-800 hover:text-gray-600;
+					}
+				}
+				
+				.swiper-elem {
+					@apply bg-gray-100;
+				}
+			}
+			
+		}		
+		
+	}	
+		
+	/* FORMS */
+		
+	&.form-wrapper {		
+		.freeform-input {
+			@apply bg-gray-100 text-black;	
+		}	
+	}
+	
+}
+
+	
+
+
+
+.white-black-white {
+	
+	/* COLOR SCHEMES SET ON ELEMENTS THEMSELVES */
+	
+	&.sectionStandard, &.sectionTwoColumnEdgePhoto, &.column, &.contentWrapper, &.accordionSet, &.tabSet, &.sliderSet, &.sliderBeer, &.slide, &.ctaStandard, &.ctaSmall, &.form-wrapper, &.pageHeader {
 		
 		@apply bg-black text-white;
 				
@@ -13,7 +234,13 @@
 		}
 					
 		a {
-			@apply text-gray-300 hover:text-white;	
+			@apply text-white hover:text-gray-300;	
+		}
+		
+		ul.lined-list {
+			li {
+				@apply border-gray-800;
+			}
 		}
 				
 	}
@@ -22,11 +249,11 @@
 	
 	&.buttonGroup, &.iconContent, &.ctaSmall, &.ctaStandard {
 		.btn, .btn-standard {
-			@apply bg-gray-300 text-black hover:text-white hover:bg-gray-500;
+			@apply border-white text-white bg-transparent hover:text-black hover:bg-white;
 		}
 		
-		.btn-text, .btn-text-arrow {
-			@apply text-gray-400 hover:text-white;
+		.btn.btn-text, .btn.btn-text-arrow {
+			@apply text-white hover:text-gray-300;
 			background: transparent !important;
 		}
 	}
@@ -38,8 +265,20 @@
 		
 		/* put all your header classes here, you can separate the parents if you want the headers to be different colors in an icon block or a CTA */
 		
-		.heading2 {
-			@apply text-gray-400;
+		.decoHeader {
+			@apply text-white;
+			
+			&::before, &::after {
+				@apply bg-gray-800;
+			}
+		}
+		
+		.titleHeader {
+			@apply text-white;
+		}
+		
+		.letterSpacedSubhead {
+			@apply text-white;
 		}
 		
 	}
@@ -64,283 +303,8 @@
 		
 	&.image-block, &.contentVideo {
 		.image-caption {
-			@apply bg-gray-600 text-white; 
+			@apply bg-transparent text-white; 
 		}
-	}
-		
-		
-	/* SLIDER CONTROLS */
-	
-	&.sliderSet {
-		.swiper-button-prev, .swiper-button-next {
-			@apply bg-gray-300 text-black hover:bg-gray-600 hover:text-white;
-		}
-		
-		.swiper-pagination-bullet {
-			@apply bg-gray-500 hover:bg-gray-300;       
-			
-			&.swiper-pagination-bullet-active {
-				@apply bg-white;
-			}
-		}
-	}
-		
-	/* ICONS */
-	
-	&.iconContent {
-		.iconContent-icon-block {
-			@apply text-gray-300;
-		}
-	}
-		
-	/* TABS */
-		
-	&.tabSet {
-		.btn-tab {
-			@apply bg-gray-600 text-gray-300 hover:bg-gray-300 hover:text-black;
-			
-			&.active-tab {
-				@apply text-black bg-white;
-			}
-		}
-		
-		.tab-panel-wrapper {
-			@apply bg-white text-black;
-		}
-	}
-		
-		
-	/* ACCORDIONS */
-	
-	
-	&.accordionSet {
-		.btn-accordion {
-			@apply text-gray-300 bg-gray-600 hover:bg-gray-500;
-			
-			&.expanded {
-				@apply text-black bg-gray-300;
-			}
-		}
-		
-		.accordion {
-			@apply text-black bg-white;
-		}
-	}
-	
-	/* REPEATERS */
-		
-	&.repeaterContentLinks, &.repeaterNavCollection, &.repeaterSectionEntryList, &.repeaterSelectEntryList {
-		
-		& > .inner {
-			
-			.btn, .btn-standard {
-				@apply bg-gray-600 text-gray-300 hover:text-white hover:bg-gray-500;
-			}
-			
-			.btn-text, .btn-text-arrow {
-				@apply text-gray-400 hover:text-white;
-				background: transparent !important;
-			}
-			
-			
-			& > .list-wrapper {
-				.repeater-list-card, .repeater-list-card-img-lg, .repeater-list-card-img-sm {
-					.repeater-list-item {
-						a {
-							
-						@apply  text-white hover:text-white;
-						
-							&::after {
-								@apply bg-gray-600;
-							}
-						}	
-					}
-				}
-			}
-			
-		}		
-		
-	}	
-		
-	/* FORMS */
-		
-	&.form {		
-		.freeform-input {
-			@apply bg-gray-600 text-white;	
-		}	
 	}
 			
 }
-	
-
-.black-white-gray {
-	
-	/* COLOR SCHEMES SET ON ELEMENTS THEMSELVES */
-	
-	&.sectionStandard, &.sectionTwoColumnEdgePhoto, &.column, &.contentWrapper, &.accordionSet, &.tabSet, &.sliderSet, &.slide, &.ctaStandard, &.ctaSmall, &.form, &.pageHeader {
-		
-		@apply bg-white text-black;
-				
-		&.bg-off {
-			color: inherit;
-			background-color: transparent !important;
-		}
-					
-		a {
-			@apply text-gray-600 hover:text-gray-300;
-		}		
-		
-	}
-	
-	/* BUTTONS */
-	
-	&.buttonGroup, &.iconContent, &.ctaSmall, &.ctaStandard  {
-		.btn, .btn-standard {
-			@apply bg-gray-300 text-black hover:text-white hover:bg-gray-500;			
-		}
-		
-		.btn-text, .btn-text-arrow {
-			@apply text-gray-600 hover:text-gray-300;
-			background: transparent !important;
-		}
-	}
-	
-			
-	/* HEADERS */
-		
-	&.header, &.iconContent, &.ctaSmall, &.ctaStandard  {
-		
-		/* put all your header classes here */
-		
-		.heading2 {
-			@apply text-gray-600;
-		}
-		
-	}
-	
-	&.pageHeader {
-		
-		.pageHeader-main-header {
-			@apply text-black;
-		}
-		
-		.pageHeader-subhead {
-			@apply text-black;
-		}
-		
-		.pageHeader-intro {
-			@apply text-black;
-		}
-		
-	}
-	
-	/* IMAGE CAPTIONS */
-		
-	&.image-block, &.contentVideo {
-		.image-caption {
-			@apply bg-gray-300 text-black; 
-		}
-	}
-		
-		
-	/* SLIDER CONTROLS */
-	
-	&.sliderSet {
-		.swiper-button-prev, .swiper-button-next {
-			@apply bg-gray-600 text-white hover:bg-gray-300 hover:text-black;
-		}
-		
-		.swiper-pagination-bullet {
-			@apply bg-gray-500 hover:bg-gray-300;       
-			
-			&.swiper-pagination-bullet-active {
-				@apply bg-white;
-			}
-		}
-	}
-		
-	/* ICONS */
-	
-	&.iconContent {
-		.iconContent-icon-block {
-			@apply text-gray-500;
-		}
-	}
-		
-	/* TABS */
-		
-	&.tabSet {
-		.btn-tab {
-			@apply bg-gray-300 text-gray-600 hover:bg-gray-600 hover:text-white;
-			
-			&.active-tab {
-				@apply text-white bg-black;
-			}
-		}
-		
-		.tab-panel-wrapper {
-			@apply bg-gray-300 text-black;
-		}
-	}
-		
-		
-	/* ACCORDIONS */
-	
-	
-	&.accordionSet {
-		.btn-accordion {
-			@apply text-gray-300 bg-gray-600 hover:bg-gray-500;
-			
-			&.expanded {
-				@apply text-black bg-gray-300;
-			}
-		}
-		
-		.accordion {
-			@apply text-black bg-gray-300;
-		}
-	}
-	
-	/* REPEATERS */
-		
-	&.repeaterContentLinks, &.repeaterNavCollection, &.repeaterSectionEntryList, &.repeaterSelectEntryList {
-		
-		& > .inner {
-			.btn, .btn-standard {
-				@apply bg-gray-300 text-black hover:text-white hover:bg-gray-500;			
-			}
-			
-			.btn-text, .btn-text-arrow {
-				@apply text-gray-600 hover:text-gray-300;
-				background: transparent !important;
-			}
-			
-			& > .list-wrapper {
-				& > .repeater-list-card, & > .repeater-list-card-img-lg, & > .repeater-list-card-img-sm {
-					& > .repeater-list-item {
-						a {
-							@apply text-black hover:text-black;
-							
-							&::after {
-								@apply bg-gray-300;
-							}
-						}	
-					}
-				}
-			}		
-			
-		}	
-		
-	}
-		
-		
-	/* FORMS */
-		
-	&.form {		
-		.freeform-input {
-			@apply bg-gray-300 text-black;	
-		}	
-	}
-			
-}
-

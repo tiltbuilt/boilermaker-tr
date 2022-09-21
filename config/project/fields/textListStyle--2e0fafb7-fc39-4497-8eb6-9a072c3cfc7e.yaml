@@ -1,0 +1,45 @@
+columnSuffix: gdqnbweg
+contentColumnType: string
+fieldGroup: c9973b20-8f48-429c-be55-dd0498255786 # Page Builder - Repeaters
+handle: textListStyle
+instructions: null
+name: 'Text List Style'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Lined List'
+        -
+          - value
+          - lined-list
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bullet List'
+        -
+          - value
+          - bullet-list
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

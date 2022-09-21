@@ -1,8 +1,78 @@
-dateModified: 1663726715
+dateModified: 1663797371
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      disabled: false
+      key: singles
+      tableAttributes:
+        - link
+        - id
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      key: 'section:cadb59ac-699f-43a7-baf1-780c86161c62'
+      type: native
+    -
+      key: 'section:62f91b75-0147-4328-baff-bd8258697429'
+      type: native
+    -
+      key: 'section:ae367fc5-c51a-4061-8bc2-852eda25f32f'
+      type: native
+    -
+      disabled: false
+      key: 'section:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+        - id
+      type: native
+    -
+      key: 'section:9bdbf9e4-b579-4b3a-bc92-1a6a6610ce12' # News
+      type: native
+    -
+      disabled: false
+      key: 'section:cbab6b20-e82f-488d-af94-ffd5d37e4f2e'
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+        - slug
+        - id
+      type: native
+    -
+      heading: Structures
+      type: heading
+    -
+      key: 'section:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
+      type: native
+    -
+      heading: ''
+      type: heading
+    -
+      key: 'section:9fc42b2f-e12f-40a7-b684-96213d42eb15'
+      type: native
 email:
-  fromEmail: brian@tiltthis.com
-  fromName: 'Boilermaker Craft 4'
-  transportType: craft\mail\transportadapters\Sendmail
+  fromEmail: $SITE_EMAIL
+  fromName: $SITE_NAME
+  replyToEmail: $REPLY_EMAIL
+  template: ''
+  transportSettings:
+    encryptionMethod: tls
+    host: $SMTP_HOSTNAME
+    password: $SMTP_PASSWORD
+    port: $SMTP_PORT
+    timeout: '10'
+    useAuthentication: '1'
+    username: $SMTP_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
 fs:
   documents:
     hasUrls: true
@@ -25,6 +95,13 @@ fs:
       path: $IMAGE_ASSETS_PATH
     type: craft\fs\Local
     url: $IMAGE_ASSETS_URL
+  userUploads:
+    hasUrls: true
+    name: 'User Uploads'
+    settings:
+      path: $USERASSETS_PATH
+    type: craft\fs\Local
+    url: $USER_ASSETS_URL
 meta:
   __names__:
     0a5f2a0c-d670-45c7-b405-3a7c6a3c1366: Embeds # Embeds
@@ -37,13 +114,17 @@ meta:
     1f33e4cf-8008-4dda-85e1-336b12bea75c: 'Media Style' # Media Style
     2b7b7773-f001-45f4-9ef7-83e1f70c0814: 'Column Display' # Column Display
     2bd882c5-a5b9-4492-9696-62f61b41ea33: 'Link Settings' # Link Settings
+    2e0fafb7-fc39-4497-8eb6-9a072c3cfc7e: 'Text List Style' # Text List Style
     2f49ebd8-325a-471d-9075-58a0eabb883e: 'Top Margin' # Top Margin
     2f93c55e-6499-4b31-9961-854a868769e1: 'Quote Size' # Quote Size
+    2fcb9760-1e9e-4fa7-af3a-5aa2fa12e026: 'Page Header Slide Photos' # Page Header Slide Photos
     03ab034d-edb4-4efb-b319-52e7e5093f03: 'List - Specific Entries' # List - Specific Entries
     3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35: 'Long Format Text' # Long Format Text
     3bfd1d3c-2f9c-4340-a794-89896b7bcdf6: 'Content Elements' # Content Elements
+    3df28179-3c10-4af6-86b1-be0af8a0be50: 'Menu Items - Pizza' # Menu Items - Pizza
     3e54e327-a9a9-4587-b91e-4775a1f7dd3f: 'Header Text' # Header Text
     4a4e791f-ac07-41a6-aed8-a8b3e3afdbc1: 'Tab Panel' # Tab Panel
+    4b1e5669-6b94-4c36-89a1-de373c17021a: 'Secondary Menu' # Secondary Menu
     4c5a287b-8078-4d62-8619-08e152ce576e: Documents # Documents
     4c8a1b99-37ef-424c-9a73-26d40caccc9d: Autoplay # Autoplay
     4ce407c8-ea88-4cf8-92de-cf0257213995: 'Font Size' # Font Size
@@ -56,7 +137,9 @@ meta:
     5e83d097-283f-488e-b2fb-64b1b3d0ce1b: 'Background Repeat' # Background Repeat
     5e360ac1-6f30-4195-8b49-c1ab4a38e5a3: 'CTA - Small' # CTA - Small
     5eee8db6-5be0-4101-8b6f-2f26b858b793: 'Bottom Margin' # Bottom Margin
+    5f9e597f-b330-4888-916f-26bab2b9b0c5: 'Text Wrap Position' # Text Wrap Position
     6ab11a93-de62-4840-bcc5-6adf8563fa13: 'Image/Video Layout' # Image/Video Layout
+    6b83b422-f34d-4d22-b1b9-75b68b6a08d7: 'Button Size' # Button Size
     6b175c77-e00a-468d-b930-025488a8778e: 'Footer Embeds' # Footer Embeds
     6be8dbce-de0e-47d0-a0a1-888c876cc403: 'Heading Level' # Heading Level
     6c30e75d-414c-4693-af1f-8c0bb3ac4a92: 'Text Case' # Text Case
@@ -94,17 +177,20 @@ meta:
     018cb2e1-bf90-4fcb-a468-3a5f096c8a67: Text # Text
     20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
     25b0022d-febf-468d-a918-77448e3d43fb: 'Repeater - Content Links' # Repeater - Content Links
+    27e30a49-d608-40e6-adc6-a66d57da7087: 'Quote Credit' # Quote Credit
     29e80cd8-c8f0-45fe-8d22-66b4b70fcfca: 'Font Weight' # Font Weight
-    31b78f2a-eb5b-40aa-9ff0-f477df4745a6: 'Button Style' # Button Style
     33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
     42ed3a6e-60bd-447b-84ab-5057c4ebe215: 'Show Page Footer' # Show Page Footer
+    44f618bc-1d3d-49ba-9dd0-57513d7b88bd: 'User Uploads' # User Uploads
     46b72c49-6f07-4cae-936b-63d8dc62bfde: Repeaters # Repeaters
     47e2423f-3c21-441d-b950-0f8c09273250: 'Text Styles' # Text Styles
     48b8fee7-c04a-4678-9a5b-7940a6b3df25: 'Page Section Blocks' # Page Section Blocks
     48c2f8ae-30c7-4f88-b072-940b5cbafa3f: 'Text Styles' # Text Styles
+    49bebac5-0ae0-4d84-b780-b3b343b5b25b: 'Menu Items - Small Bites' # Menu Items - Small Bites
     49dce972-4d55-4e23-92f4-69ab4d4a7c39: Font # Font
     50c41aa0-a307-4f48-b863-57a0326ccfd7: 'Link Settings' # Link Settings
     50ee1dec-9804-4904-8190-b32b197340ad: 'Text Content' # Text Content
+    55da8c44-d26a-4a2c-94eb-43b1a095365e: 'Video Asset' # Video Asset
     57b2c8c5-a853-4b68-b462-728fda90ad3e: 'Background Set' # Background Set
     57ecb807-9701-4046-8fbd-b0c5e7fbf4c3: 'Quote Content' # Quote Content
     62a75024-d55d-4399-bacd-2e5c946d5767: 'Icon & Content' # Icon & Content
@@ -112,8 +198,7 @@ meta:
     76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
     76cb0e82-e2b7-494e-804a-24e01dda1a76: 'Column Adjustment' # Column Adjustment
     77aa974b-1bc6-4a80-8ed0-ab754780a184: 'Button Group' # Button Group
-    78ef2b00-4540-4348-b08c-b1110778bb35: 'Text Wrap Position' # Text Wrap Position
-    84c584f6-eb14-4cb1-9107-e5d9d9cae56b: 'Quote Credit' # Quote Credit
+    97f100f8-f0c8-46b0-816f-bf0502d4e7a3: 'Menu Item Price' # Menu Item Price
     98d3b01b-e786-42de-a09d-4ca33c93f3f2: 'Multicolumn Layout Row' # Multicolumn Layout Row
     114bf113-0d20-4dd6-8e12-f1265063b87c: 'Blog Content' # Blog Content
     116b0f4f-13b5-47fe-9daa-6716a09821a4: 'Accordion Icon' # Accordion Icon
@@ -121,10 +206,12 @@ meta:
     146b1105-58ed-47c7-bca1-b6df9980d37d: 'Full Width on Mobile' # Full Width on Mobile
     200f9abd-1678-4075-903d-84e7ba2ad8cb: 'Layout Elements' # Layout Elements
     217da411-10b4-4af2-bd6c-010f5ff3260b: 'Padding & Margins' # Padding & Margins
+    231a296a-0423-4b02-9ed8-bf24fba42db9: 'Slide Color Scheme' # Slide Color Scheme
     236aecd2-c7e3-4f5c-a930-ce89418ec30a: Header # Header
     291aeebd-5376-4a88-8bc5-dcbc98ae4f8f: 'List - Items per Page' # List - Items per Page
     315a5a65-c63f-4a6c-8b96-9817783d8d4b: Modals # Modals
     461d3bb2-ca2e-4d5b-b4b6-e3267f264492: 'Column Size' # Column Size
+    471a0733-9bf2-4ca1-b26c-16da1358f972: Amenity # Amenity
     472dab51-5b42-4e66-ae7a-9dfb80cb6f7e: 'Text Content' # Text Content
     602e2d73-2428-44f0-9371-d73d8d71f894: 'Transparent Background' # Transparent Background
     616d3f20-6be2-43a3-87a9-0a0d54e89f20: 'Icon Size' # Icon Size
@@ -132,17 +219,23 @@ meta:
     0677b495-c3dc-476b-a572-1af1fb58b548: 'Block Quote' # Block Quote
     812ffe65-6485-4987-9a4f-6f8c2cecfdae: 'Accordion Set' # Accordion Set
     938c6226-2dee-4440-a989-1741df63e4e4: 'Boilermaker Craft 4' # Boilermaker Craft 4
+    944f6f36-d431-4c98-b852-61e0fe017d47: 'Content Link' # Content Link
     982b6185-6d4a-4655-b767-aa8cc325e579: 'Image Placement' # Image Placement
     992fdc9f-2866-4456-904e-2e593d650b13: Button # Button
     1639e03b-4d6f-4b71-9526-59969de6560e: 'Device Size' # Device Size
     1781b5c1-16cf-4b02-b340-aa62d22c5797: 'Body Tag Embeds' # Body Tag Embeds
+    2513e84c-0fcf-43f2-ad48-7380d8cc5769: 'Hours to Display' # Hours to Display
     2794a61e-7d0d-4137-ad1e-cd400325138b: Pages # Pages
     2911d2a2-06b2-4b4e-b4c9-437d891d053d: Italic # Italic
     3141f47f-3a41-4480-824f-46c94a3b8eb1: Font # Font
+    4050bac8-6f74-4748-bad5-8171fb10e879: 'Related Location' # Related Location
+    4110b1d3-6f32-4f4b-ae21-1a6f3cb064b9: 'Menu Item Description' # Menu Item Description
     5500e883-dbe3-4ae9-b04d-4e6bfeb0a5ee: 'Line Height' # Line Height
     5553a528-f723-48bf-965f-6d720f5df686: 'SEO - Description' # SEO - Description
+    6364e0fe-681a-4800-8eb6-795f9a639fec: 'Button Style' # Button Style
     6890bd2e-8a1e-49f7-bcd5-f9814de0d2c0: 'Content Column Vertical Alignment' # Content Column Vertical Alignment
     7250fbbb-07b2-4c31-a5b0-5f586c469ce2: 'Page Builder - Rows & Columns' # Page Builder - Rows & Columns
+    8610cee3-613a-4c83-bb5d-b651634fa44a: 'Menu Items - Wine' # Menu Items - Wine
     8875cd45-2f9b-4eb1-bd37-5452b7ac8e61: 'Quote Credit Title' # Quote Credit Title
     9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
     09915f4d-93d8-4cdb-8982-84d97366a327: 'Text Case' # Text Case
@@ -153,6 +246,7 @@ meta:
     45213c38-1942-43ff-bdfa-a7d0802ae3e7: 'Video Content' # Video Content
     56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
     79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
+    84926a4b-f881-4b15-8c95-3b959ad89d4a: Alignment # Alignment
     96950bc8-d052-4574-9e24-529f27899d2f: 'Form to Display' # Form to Display
     167456ee-f98a-48a0-8856-c9a090ed215f: 'Icon Asset' # Icon Asset
     213094d3-baa2-4b48-b189-631125e3e28a: 'Standard Section' # Standard Section
@@ -165,6 +259,7 @@ meta:
     6628984b-2533-4480-b457-244d72167263: 'Text Styles' # Text Styles
     6956057b-d4c6-4a6a-a7b4-454fc0cef8b5: 'Font Size' # Font Size
     7450367a-cdf2-446d-ad60-d78b932299d5: Globals # Globals
+    7833136e-eb04-4336-98b0-b8e63ca02799: 'News Entry Type' # News Entry Type
     09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
     23334036-40df-4901-af54-8ff0970ddb43: 'Tab Sets' # Tab Sets
     43791594-97eb-4702-a55d-9ea41a53d6b8: 'Text Content' # Text Content
@@ -178,15 +273,19 @@ meta:
     a0656ab9-5120-4145-881e-f557eb83966f: 'Repeater - Nav Collection' # Repeater - Nav Collection
     a4a3c790-6fa2-450b-a31c-b8141bcefd59: 'Link Settings' # Link Settings
     a7faa85f-4be1-4101-8d46-c1fc42bbdeeb: 'Page Builder - Accordions' # Page Builder - Accordions
+    a9ff8aa5-82d2-4284-8886-3c4170f5a4e6: Alignment # Alignment
     a66f6874-a2d6-4e3f-beb1-9d24d4559318: 'Image Width' # Image Width
     a98ae0e4-a423-490c-9e75-2f3fe8a963fb: 'Color Scheme' # Color Scheme
+    a15293d7-271d-499d-ab7e-b74043624c30: 'Menu Items - Soups & Salads' # Menu Items - Soups & Salads
     a503736b-3d70-4d86-bd56-8c6ba57facf9: 'Main Header Text Styling Adjustments' # Main Header Text Styling Adjustments
     aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
     acb69ed2-9e70-4025-8f08-ef5064a0502e: Embed # Embed
+    adb1d11a-0741-4035-99bb-b876413808ba: 'Quote Credit Title' # Quote Credit Title
     add62801-2b55-458c-97c0-da439779c00e: Image # Image
     adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
     ae0aeb55-9dcb-405b-b34f-6780487542a5: 'Content Wrapper Text Styling' # Content Wrapper Text Styling
     b0376ebf-fea7-4112-9e73-1a7ba1f3757b: 'Slide Column' # Slide Column
+    b1f8fc79-8472-424c-a5a2-83477606b2b7: 'Menu Item Type' # Menu Item Type
     b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
     b7b7bc3f-a98f-400f-b54b-1e35e9f26c85: 'Nav List to Display' # Nav List to Display
     b9cf1179-cdb2-4340-a6c4-4188cd8b155b: 'Top Margin' # Top Margin
@@ -199,6 +298,8 @@ meta:
     bb167aed-8f2a-4fea-b65b-cabe5d44a47d: 'Device Size' # Device Size
     bb136509-26da-4d34-bab0-fcf67764b3f2: 'Show Site Header' # Show Site Header
     bbfe8cf7-c136-4bf2-839c-b94772136fef: 'Background Size' # Background Size
+    bc7f3170-5aac-42e6-9e39-45312c49ab0a: 'Menu Items' # Menu Items
+    bc444b49-bd82-4022-9e18-148b2775cbad: 'Menu Items - Cocktails' # Menu Items - Cocktails
     bc34289a-9826-4a33-b920-ddc46f9759cc: 'Device Size' # Device Size
     bcf227fe-b45d-4f37-bb6d-307c2b8f6d7f: 'Font Weight' # Font Weight
     bd81a51b-0982-421c-9070-71d6819abb2e: 'Gutter Padding' # Gutter Padding
@@ -217,7 +318,6 @@ meta:
     c6aba18a-1c95-4082-98b8-3a8de83f838a: 'Font Weight' # Font Weight
     c9dd0921-10a9-4e5e-b168-a1d6437210c7: 'Background Image' # Background Image
     c9e32de2-ee61-4f72-a3b6-8b9dec0e7de0: 'Social Link' # Social Link
-    c21f3cc2-98e2-4fe6-a5e3-b4179dd74f69: 'Quote Credit Title' # Quote Credit Title
     c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
     c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
     c200ff00-5afe-43ec-bdd5-3562087d9b59: 'Row Size' # Row Size
@@ -232,6 +332,8 @@ meta:
     cd820604-8a70-4923-a94d-60cb48bafa68: 'Device Size' # Device Size
     cdaa6755-9d92-444b-9074-703cfbcd53d8: 'Top Margin' # Top Margin
     cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d: 'Link URL' # Link URL
+    cdf2d596-c911-4fa0-8b6e-b07139f6d3b1: 'Menu Items - Entrees' # Menu Items - Entrees
+    ce49ac6e-915d-4e4b-b355-baba95079f9a: Multi-Column # Multi-Column
     cf71cfec-b1c5-43b1-8bee-f9db77544e1c: 'Text Case' # Text Case
     d2f828ff-144d-44ce-bffb-969915102acd: Italic # Italic
     d4a36f44-e497-4a31-9bda-6277d5c820af: Sliders # Sliders
@@ -243,6 +345,7 @@ meta:
     da620640-2372-4a74-9250-dffbb4c14a2e: 'Image Asset' # Image Asset
     db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
     db77c128-239b-462f-bbbf-7c6e94b6af15: 'Image Caption' # Image Caption
+    de2d4026-57d5-4b37-a8d0-197a7827676b: Default # Default
     e9e22bd5-a443-4cb8-8e93-fabdddc72ea6: Slide # Slide
     e16c576c-c525-440b-8ca8-fcfb71976823: 'Link Name' # Link Name
     e19df32e-9528-42e7-8b69-8c1e0db65f4d: 'Button Text' # Button Text
@@ -267,7 +370,7 @@ meta:
     fa86d142-2ef4-4394-98e8-09cfb6601be2: 'Header Embeds' # Header Embeds
     fb4f5400-b06f-4a57-9a15-52632e74f9fc: 'Modal Link Settings' # Modal Link Settings
     fc93ecb1-bb39-435b-8625-59b622356ae7: 'Line Height' # Line Height
-    fd14f19a-40bb-4ec0-94e1-613a9a658d0c: Alignment
+    fd46b410-254c-4ea4-9322-a71e8592f500: 'Page Header Button Settings' # Page Header Button Settings
     fd542a6b-8f0d-4fe8-9bbe-3cf73903876b: 'Content Wrapper' # Content Wrapper
     fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17: 'Accordion - Start State' # Accordion - Start State
     ff7c33c9-5640-4dda-a7ec-0e342b77adb7: 'Custom Id' # Custom Id
@@ -278,8 +381,91 @@ plugins:
     licenseKey: 6SBJ0VDLLF0ROEVTN9WKIXUP
     schemaVersion: 4.2.0
     settings:
+      apiKey: ''
+      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheDuration: null
+      cacheElementQueries: true
+      cacheElements: true
+      cacheGeneratorSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cacheNonHtmlResponses: false
+      cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
+      cacheStorageSettings:
+        __assoc__:
+          -
+            - folderPath
+            - '@webroot/cache/blitz'
+          -
+            - createGzipFiles
+            - ''
+          -
+            - createBrotliFiles
+            - ''
+      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cachingEnabled: true
+      debug: false
+      deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      driverJobPriority: 100
+      excludedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - gclid
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - fbclid
+      excludedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '/resources/*'
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - /swag
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - /loyalty-program
+      generatePagesWithQueryStringParams: true
+      hintsEnabled: true
+      includedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - '.*'
+      includedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '.*'
+      injectScriptEvent: DOMContentLoaded
       integrations:
         - putyourlightson\blitz\drivers\integrations\CommerceIntegration
+      maxRetryAttempts: 10
+      mutexTimeout: 1
+      outputComments: true
+      queryStringCaching: 0
+      queueJobTtr: 300
+      refreshCacheAutomaticallyForGlobals: true
+      refreshCacheJobPriority: 10
+      refreshCacheWhenElementMovedInStructure: true
+      refreshCacheWhenElementSavedNotLive: false
+      refreshCacheWhenElementSavedUnchanged: false
+      refreshMode: 3
+      sendPoweredByHeader: true
   colour-swatches:
     edition: standard
     enabled: true
@@ -392,8 +578,8 @@ plugins:
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
-      autoScroll: true
-      autoScrollToErrors: true
+      autoScroll: '1'
+      autoScrollToErrors: '1'
       badgeType: all
       blockedEmails: null
       blockedEmailsError: 'Invalid Email Address'
@@ -411,14 +597,16 @@ plugins:
       digestOnlyOnProduction: false
       digestRecipients: null
       displayFeed: true
+      emailTemplateDefault: files
       emailTemplateDirectory: null
+      emailTemplateStorageType: files_database
       exportHandlesAsNames: false
       exportLabels: false
       fieldDisplayOrder: name
-      fillWithGet: false
+      fillWithGet: ''
       footerScripts: false
       formFieldShowOnlyAllowedForms: false
-      formSubmitDisable: true
+      formSubmitDisable: '1'
       formSubmitExpiration: null
       formTemplateDirectory: null
       formattingTemplate: flexbox.twig
@@ -441,21 +629,21 @@ plugins:
       recaptchaSize: normal
       recaptchaTheme: light
       recaptchaType: v2_checkbox
-      rememberPageSubmitOrder: true
+      rememberPageSubmitOrder: '1'
       removeNewlines: false
       renderFormHtmlInCpViews: true
       salesforce_client_id: null
       salesforce_client_secret: null
       salesforce_password: null
       salesforce_username: null
-      saveFormSessionLimit: 10
-      saveFormTtl: 30
-      scriptInsertLocation: footer
+      saveFormSessionLimit: '10'
+      saveFormTtl: '30'
+      scriptInsertLocation: manual
       scriptInsertType: pointers
       sessionContext: payload
-      sessionContextCount: 100
+      sessionContextCount: '100'
       sessionContextSecret: ''
-      sessionContextTimeToLiveMinutes: 180
+      sessionContextTimeToLiveMinutes: '180'
       sessionEntryMaxCount: 50
       sessionEntryTTL: 10800
       showErrorsForBlockedEmails: false

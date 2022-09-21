@@ -44,32 +44,33 @@
 
 /* GENERAL TEXT STYLES */
 
-.main {
-  p, ul, ol {
-    @apply mt-normal;    
-       
-    & > li {
-      @apply m-0 mt-half;
-    }
-    
-    ul, ol {
-      @apply mb-0;
-    }
+p, ul, ol {
+  @apply mt-base;    
+     
+  & > li {
+    @apply m-0 mt-half;
   }
   
-  *:first-child {
-    margin-top: 0px !important;
+  ul, ol {
+    @apply mb-0;
   }
+}
+
+*:first-child {
+  margin-top: 0px !important;
+}
+
+p {
+  @apply mb-0 mx-0;
+}
+
+.main {  
   
-  p {
-    @apply mb-0 mx-0;
-  }
-  
-  [class*='text-wrap-left'] + p {
+  [class*='text-wrap-left']:first-child + p {
     @apply mt-0;
   }
   
-  [class*='text-wrap-right'] + p {
+  [class*='text-wrap-right']:first-child + p {
     @apply mt-0;
   }
   
@@ -84,6 +85,17 @@
       display: inline-block; /* Needed to add space between the bullet and the text */
       width: 1em; /* Also needed for space (tweak if needed) */
       margin-left: -1em;      
+    }
+  }
+  
+  ul.lined-list {
+    li {
+      @apply pt-half;
+      border-top: solid 2px;
+      
+      &:first-child {
+        border-top: none;
+      }      
     }
   }
   
@@ -136,5 +148,22 @@
     width: 0px;
     display: table;
   }
+}
+
+/* LOAD SPINNER */
+
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: conic-gradient(#0000 10%,#e1e1e2);
+   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+   animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+   to {
+      transform: rotate(360deg);
+   }
 }
 

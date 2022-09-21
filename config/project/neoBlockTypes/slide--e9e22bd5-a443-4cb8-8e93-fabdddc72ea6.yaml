@@ -142,13 +142,13 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
-            fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
+            fieldUid: 231a296a-0423-4b02-9ed8-bf24fba42db9 # Slide Color Scheme
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0534e037-4139-4c1b-be1e-3b54a7383900
+            uid: c7d20eb5-8414-47b6-af3c-78e87b8f1bb8
             userCondition: null
             warning: null
             width: 100

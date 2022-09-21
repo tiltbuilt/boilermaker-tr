@@ -15,11 +15,13 @@
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
 <div class="repeater-list-btn">
-{% for repeaterItem in repeaterData %}	
-  <div {{ gMacros.buildClassListBasic(['anim-child', 'repeater-list-btn-item']) -}}>   
-    <div {{ gMacros.buildClassListBasic(['inner', 'repeater-list-btn-item-inner']) -}}>        
-        <a href="{{ repeaterItem.url }}" {{ gMacros.buildClassListBasic(['btn', 'repeater-list-btn-item-btn', buttonStyle, buttonSize]) -}}>{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>        
-    </div>   
-  </div>	
+{% for repeaterItem in repeaterData %}  
+  {% if repeaterItem.url|length %}
+    <div {{ gMacros.buildClassListBasic(['anim-child', 'repeater-list-btn-item']) -}}>   
+      <div {{ gMacros.buildClassListBasic(['inner', 'repeater-list-btn-item-inner']) -}}>        
+          <a href="{{ repeaterItem.url }}" {% if repeaterItem.newTab %}target="_blank"{% endif %} {{ gMacros.buildClassListBasic(['btn', 'repeater-list-btn-item-btn', buttonStyle, buttonSize]) -}}>{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>        
+      </div>   
+    </div>
+  {% endif %}	
 {% endfor %}
 </div>

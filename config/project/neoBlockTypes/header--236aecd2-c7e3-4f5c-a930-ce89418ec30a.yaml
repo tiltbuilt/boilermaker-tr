@@ -26,7 +26,7 @@ fieldLayouts:
             fieldUid: 6be8dbce-de0e-47d0-a0a1-888c876cc403 # Heading Level
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 192212c0-554c-4003-b0bb-f3320186c053
