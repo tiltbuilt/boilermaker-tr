@@ -1,4 +1,4 @@
-dateModified: 1661131266
+dateModified: 1663726715
 email:
   fromEmail: brian@tiltthis.com
   fromName: 'Boilermaker Craft 4'
@@ -95,6 +95,7 @@ meta:
     20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
     25b0022d-febf-468d-a918-77448e3d43fb: 'Repeater - Content Links' # Repeater - Content Links
     29e80cd8-c8f0-45fe-8d22-66b4b70fcfca: 'Font Weight' # Font Weight
+    31b78f2a-eb5b-40aa-9ff0-f477df4745a6: 'Button Style' # Button Style
     33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
     42ed3a6e-60bd-447b-84ab-5057c4ebe215: 'Show Page Footer' # Show Page Footer
     46b72c49-6f07-4cae-936b-63d8dc62bfde: Repeaters # Repeaters
@@ -111,6 +112,8 @@ meta:
     76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
     76cb0e82-e2b7-494e-804a-24e01dda1a76: 'Column Adjustment' # Column Adjustment
     77aa974b-1bc6-4a80-8ed0-ab754780a184: 'Button Group' # Button Group
+    78ef2b00-4540-4348-b08c-b1110778bb35: 'Text Wrap Position' # Text Wrap Position
+    84c584f6-eb14-4cb1-9107-e5d9d9cae56b: 'Quote Credit' # Quote Credit
     98d3b01b-e786-42de-a09d-4ca33c93f3f2: 'Multicolumn Layout Row' # Multicolumn Layout Row
     114bf113-0d20-4dd6-8e12-f1265063b87c: 'Blog Content' # Blog Content
     116b0f4f-13b5-47fe-9daa-6716a09821a4: 'Accordion Icon' # Accordion Icon
@@ -214,6 +217,7 @@ meta:
     c6aba18a-1c95-4082-98b8-3a8de83f838a: 'Font Weight' # Font Weight
     c9dd0921-10a9-4e5e-b168-a1d6437210c7: 'Background Image' # Background Image
     c9e32de2-ee61-4f72-a3b6-8b9dec0e7de0: 'Social Link' # Social Link
+    c21f3cc2-98e2-4fe6-a5e3-b4179dd74f69: 'Quote Credit Title' # Quote Credit Title
     c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
     c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
     c200ff00-5afe-43ec-bdd5-3562087d9b59: 'Row Size' # Row Size
@@ -263,6 +267,7 @@ meta:
     fa86d142-2ef4-4394-98e8-09cfb6601be2: 'Header Embeds' # Header Embeds
     fb4f5400-b06f-4a57-9a15-52632e74f9fc: 'Modal Link Settings' # Modal Link Settings
     fc93ecb1-bb39-435b-8625-59b622356ae7: 'Line Height' # Line Height
+    fd14f19a-40bb-4ec0-94e1-613a9a658d0c: Alignment
     fd542a6b-8f0d-4fe8-9bbe-3cf73903876b: 'Content Wrapper' # Content Wrapper
     fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17: 'Accordion - Start State' # Accordion - Start State
     ff7c33c9-5640-4dda-a7ec-0e342b77adb7: 'Custom Id' # Custom Id
@@ -492,7 +497,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: T4AWZVCX3MRT4M205XO8JAM5
-    schemaVersion: 2.0.2
+    schemaVersion: 2.0.3
   neo:
     edition: standard
     enabled: true

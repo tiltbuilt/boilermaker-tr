@@ -7,18 +7,6 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            fieldUid: a66f6874-a2d6-4e3f-beb1-9d24d4559318 # Image Width
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 047983e8-751a-4d35-b746-cca219885871
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: da620640-2372-4a74-9250-dffbb4c14a2e # Image Asset
             instructions: null
             label: null
@@ -53,10 +41,80 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: a66f6874-a2d6-4e3f-beb1-9d24d4559318 # Image Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 047983e8-751a-4d35-b746-cca219885871
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 78ef2b00-4540-4348-b08c-b1110778bb35 # Text Wrap Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 454ed113-bb12-4de4-afab-ee52386411c3
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: ca0b7dab-a0a7-4050-ad6f-08efc6601d01
         userCondition: null
 fields:
+  78ef2b00-4540-4348-b08c-b1110778bb35: # Text Wrap Position
+    columnSuffix: mlcdsxcc
+    contentColumnType: string
+    fieldGroup: null
+    handle: textWrapPosition
+    instructions: null
+    name: 'Text Wrap Position'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'No Wrap'
+            -
+              - value
+              - text-wrap-none
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-wrap-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-wrap-right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
   237171d3-d028-48a4-91ec-2bcbacd208a1: # Alt Text
     columnSuffix: ykpthqbl
     contentColumnType: text
@@ -91,10 +149,10 @@ fields:
           __assoc__:
             -
               - label
-              - 'Content Width'
+              - 'Full Width'
             -
               - value
-              - contentWidth
+              - w-full
             -
               - default
               - '1'
@@ -102,10 +160,10 @@ fields:
           __assoc__:
             -
               - label
-              - Half
+              - 'Width: 1/4'
             -
               - value
-              - half
+              - w-1/4
             -
               - default
               - ''
@@ -113,10 +171,10 @@ fields:
           __assoc__:
             -
               - label
-              - Large
+              - 'Width: 1/3'
             -
               - value
-              - large
+              - w-1/3
             -
               - default
               - ''
@@ -124,10 +182,32 @@ fields:
           __assoc__:
             -
               - label
-              - 'Full Width'
+              - 'Width: 1/2'
             -
               - value
-              - fullWidth
+              - w-1/2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 2/3'
+            -
+              - value
+              - w-2/3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Width: 3/4'
+            -
+              - value
+              - w-3/4
             -
               - default
               - ''
@@ -171,7 +251,7 @@ fields:
             - class
             - craft\elements\conditions\assets\AssetCondition
       selectionLabel: null
-      showSiteMenu: false
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       source: null

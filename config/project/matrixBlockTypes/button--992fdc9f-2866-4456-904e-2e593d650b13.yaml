@@ -10,10 +10,22 @@ fieldLayouts:
             fieldUid: a4a3c790-6fa2-450b-a31c-b8141bcefd59 # Link Settings
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 149f58d9-626f-4fd0-88fd-ec022e6bbeed
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 31b78f2a-eb5b-40aa-9ff0-f477df4745a6 # Button Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35e02efc-5e9d-4857-923b-01ff3a9033e5
             userCondition: null
             warning: null
             width: 100
@@ -21,6 +33,52 @@ fieldLayouts:
         uid: e45d6fd1-61f1-48a9-bfeb-83bc03220d39
         userCondition: null
 fields:
+  31b78f2a-eb5b-40aa-9ff0-f477df4745a6: # Button Style
+    columnSuffix: wfaweedl
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonStyle
+    instructions: null
+    name: 'Button Style'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Standard Button'
+            -
+              - value
+              - btn-standard
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Text Link'
+            -
+              - value
+              - btn-text
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Text Link with Arrow '
+            -
+              - value
+              - btn-text-arrow
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
   a4a3c790-6fa2-450b-a31c-b8141bcefd59: # Link Settings
     columnSuffix: null
     contentColumnType: string

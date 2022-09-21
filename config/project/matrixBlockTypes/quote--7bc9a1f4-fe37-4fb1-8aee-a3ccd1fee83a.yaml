@@ -10,7 +10,7 @@ fieldLayouts:
             fieldUid: 57ecb807-9701-4046-8fbd-b0c5e7fbf4c3 # Quote Content
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ae218cae-0d27-4971-8359-808ce799f6c0
@@ -19,13 +19,25 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 2f93c55e-6499-4b31-9961-854a868769e1 # Quote Size
+            fieldUid: 84c584f6-eb14-4cb1-9107-e5d9d9cae56b # Quote Credit
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5dd2ea30-456c-4f39-9ee0-b2a283d50349
+            uid: 9eaf9a3d-0ce4-4fe0-a6bf-9bc2863c1d32
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c21f3cc2-98e2-4fe6-a5e3-b4179dd74f69 # Quote Credit Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b1c8c2a-8ef7-47e1-9659-3f9eb5d18350
             userCondition: null
             warning: null
             width: 100
@@ -33,21 +45,6 @@ fieldLayouts:
         uid: a6d3e142-52c1-4dfb-84e6-7f2ed364deec
         userCondition: null
 fields:
-  2f93c55e-6499-4b31-9961-854a868769e1: # Quote Size
-    columnSuffix: wmiqbasa
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: quoteSize
-    instructions: null
-    name: 'Quote Size'
-    searchable: false
-    settings:
-      default: false
-      offLabel: Default
-      onLabel: Large
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   57ecb807-9701-4046-8fbd-b0c5e7fbf4c3: # Quote Content
     columnSuffix: tdbauomu
     contentColumnType: text
@@ -76,6 +73,46 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  84c584f6-eb14-4cb1-9107-e5d9d9cae56b: # Quote Credit
+    columnSuffix: fmimzkco
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteCredit
+    instructions: null
+    name: 'Quote Credit'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c21f3cc2-98e2-4fe6-a5e3-b4179dd74f69: # Quote Credit Title
+    columnSuffix: kcmimysf
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteCreditTitle
+    instructions: null
+    name: 'Quote Credit Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 handle: quote
 name: Quote
 sortOrder: 6
