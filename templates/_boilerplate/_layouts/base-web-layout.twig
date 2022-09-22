@@ -59,7 +59,7 @@
 					</style>
 				</noscript>
 				{{ craft.twigpack.includeJsModule("/js/app.js") }}
-				
+				{{ craft.freeform.loadFreeformPlugin() }}
 				{# -- Any JavaScript that should be included before </body> -- #}
 				{% block footerJs %}
 					{{ gSettings.footerEmbeds|raw }}

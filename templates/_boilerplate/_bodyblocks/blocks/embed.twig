@@ -24,6 +24,6 @@
 {% set blockClass = block.type.handle %}
 
 
-<div {{ edcMacros.buildElementAttributes(blockId, blockClass) -}}>  
+<div {{ gMacros.buildElementAttributes(blockId, blockClass) -}}>  
 	{{ block.embedCode|raw }}  
 </div>

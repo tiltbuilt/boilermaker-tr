@@ -7,22 +7,24 @@
 
 
 .row {
-	// These classes must stay in order to ensure functionality
-	@apply flex flex-wrap;
-	//The default classes and style below can be changed on a per-project basis
-	@apply justify-center items-stretch;	  
+  // These classes must stay in order to ensure functionality
+  @apply flex flex-wrap;
+  //The default classes and style below can be changed on a per-project basis
+  @apply justify-center items-stretch;	  
 }
 
 .row-wrapper {
-	@apply mt-normal;
+  @apply mt-normal;
 }
 
-.px-normal .row-wrapper > .inner > .row {
-	@apply mx-negnormal;
+.container-inner, .px-normal {
+  .row-wrapper > .inner > .row {
+    @apply mx-negnormal;
+  } 
 } 
 
 .px-extra .row-wrapper > .inner > .row {
-	@apply mx-negextra;
+  @apply mx-negextra;
 } 
 
 .px-quarter .row-wrapper > .inner > .row {  
@@ -57,4 +59,4 @@
 
 
 
-	
+  

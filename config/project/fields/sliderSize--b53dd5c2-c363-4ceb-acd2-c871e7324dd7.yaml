@@ -14,7 +14,7 @@ settings:
           - 'Rectangle - 16/9'
         -
           - value
-          - rect-16-9
+          - 16-9
         -
           - default
           - '1'
@@ -25,7 +25,7 @@ settings:
           - 'Rectangle - 4/3'
         -
           - value
-          - rect-4-3
+          - 4-3
         -
           - default
           - ''
@@ -36,7 +36,7 @@ settings:
           - 'Rectangle - 3/2'
         -
           - value
-          - rect-3-2
+          - 3-2
         -
           - default
           - ''
@@ -47,7 +47,7 @@ settings:
           - 'Rectangle - 3/1'
         -
           - value
-          - rect-3-1
+          - 3-1
         -
           - default
           - ''
@@ -58,7 +58,18 @@ settings:
           - Square
         -
           - value
-          - square-1-1
+          - 1-1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Natural
+        -
+          - value
+          - ''
         -
           - default
           - ''

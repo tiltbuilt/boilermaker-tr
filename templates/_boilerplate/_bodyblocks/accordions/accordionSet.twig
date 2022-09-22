@@ -40,7 +40,7 @@
 {% endif %}
 
 
-{% if accordion.colorScheme.class != '' %}
+{% if accordion.colorScheme != null and accordion.colorScheme.class != '' %}
 	{% set colorScheme = accordion.colorScheme.class %}
 {% endif %}
 
@@ -224,7 +224,7 @@
 					
 				<div class="background">
 					{% if bgSettings|length %}		
-						{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+						{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null, null) }}
 					{% endif %}	
 				</div>
 				    

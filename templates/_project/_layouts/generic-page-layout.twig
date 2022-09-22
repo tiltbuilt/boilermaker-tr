@@ -164,9 +164,22 @@
 		</div>
 	</div>
 	
-	{% if block('modalContent') is defined %}
-		{{ block('modalContent') }}
-	{% endif %}	
-	
+	{% block modalContent %}	
+	 {% if entry.modalToDisplay|length or buttonModalList|length %}		
+	   <div id="modal-wrapper" class="closed">       
+		 <div id="modal" class="closed" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+			 <button id="btn-modal-close" class="btn-modal-close">			  
+				 <svg><use xlink:href="#icon-close"></use></svg>
+			 </button>
+			 <div id="modal-content">
+				 <div class="modal-spinner">
+					 <img src="/dist/img/ajax-loader-gray-300.gif" alt="Loading" />
+				 </div>
+			 </div>
+		 </div>
+		 <div id="modal-overlay"></div>	
+	   </div>	
+	 {% endif %}
+	{% endblock %}	
 			
 {% endblock bodyHtml %}

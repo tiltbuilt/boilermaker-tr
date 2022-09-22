@@ -14,21 +14,10 @@ settings:
           - 'Page Header'
         -
           - value
-          - .pageHeader-main-header
+          - pageHeader-main-header
         -
           - default
           - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Heading 2'
-        -
-          - value
-          - heading2
-        -
-          - default
-          - '1'
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Dropdown

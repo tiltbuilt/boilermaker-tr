@@ -18,7 +18,7 @@ propagationMethod: all
 siteSettings:
   12c30846-c1db-40fd-aa5a-3af9bc56847f: # $SITE_NAME
     enabledByDefault: true
-    hasUrls: true
-    template: modals/_entry.twig
-    uriFormat: 'modals/{slug}'
+    hasUrls: false
+    template: null
+    uriFormat: null
 type: channel

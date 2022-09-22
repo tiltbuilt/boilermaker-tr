@@ -14,6 +14,7 @@
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
 {# -- Base HTML layout template that all HTML requests inherit from -- #}
+
 {% extends craft.app.request.isAjax() and not craft.app.request.getIsPreview()
 	? "_boilerplate/_layouts/base-ajax-layout.twig"
 	: "_boilerplate/_layouts/base-web-layout.twig"
@@ -53,9 +54,9 @@
 	{% block bodyJs %}
 		{{ gSettings.bodyTagEmbeds|raw }}
 		{{ gMacros.entryBodyEmbeds(entry ??? category ??? null) }}
-	{% endblock bodyJs %}
+	{% endblock bodyJs %}	
 	{{ parent() }}
 	
-	{% block bodyHtml %}		
+	{% block bodyHtml %}			
 	{% endblock bodyHtml %}
 {% endblock bodyContent %}

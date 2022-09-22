@@ -34,11 +34,18 @@
 
 {% set itemList = [] %}
 {% for child in clone(repeater.children).collect() %}
+	{% if child.seoImage|length %}
+	  {% set image = child.seoImage %}	
+	{% else %}
+	  {% set image = siteGlobals.thumbnailPlaceholderImage %}
+	{% endif %}
 	{% set listItem = {
 		'title' : child.linkSettings.text,
 		'excerpt' : child.simpleText,
 		'url': child.linkSettings.url,
-		'seoImage': child.seoImage.collect()
+		'newTab': child.linkSettings.target|length,
+		'image': image,
+		'date': ''
 	}
 	%}
 	{% set itemList = itemList|merge([listItem]) %}	

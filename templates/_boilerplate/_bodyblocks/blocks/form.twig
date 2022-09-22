@@ -32,7 +32,7 @@
 {% set innerClass = 'inner ' ~ block.type.handle ~ '-inner' %}
 
 
-{% if block.colorScheme.class != '' %}
+{% if block.colorScheme != null and block.colorScheme.class != '' %}
 	{% set colorScheme = block.colorScheme.class %}
 {% endif %}
 
@@ -86,32 +86,37 @@
 
 <div {{ gMacros.buildElementAttributes(blockId, blockClass, outerClasses, customClassString) -}}> 	
 	
-	<div  {{ gMacros.buildClassListBasic(styleClasses) -}}>	
-		{% if block.headerText|length %}
+	<div {{ gMacros.buildClassListBasic(styleClasses) -}}>	
+		{% if block.headerText|length or block.simpleText|length %}			
 			{% if block.headingLevel == '' %}
 				{% set headingTag = 'div' %}
 			{% else %}
 				{% set headingTag = block.headingLevel %}
-			{% endif %}					
-			<div {{ gMacros.buildElementAttributes(headerId, 'form-mainheader', ['anim-child', block.mainHeaderStyle ~ '-outer'], null) -}}>				
-				<{{ headingTag }} {{ gMacros.buildClassListBasic(['inner', 'form-mainheader-inner',  block.mainHeaderStyle]) -}}>
-					<span>{{ gMacros.stripTags(block.headerText) }}</span>
-				</{{ headingTag }}>				
-			</div>			
-		{% endif %}
+			{% endif %}								
+			<div class="header {{colorScheme}} mt-normal anim-pass">		
+				<div class="inner header-inner">			
+				{% if block.headerText|length %}		
+					<div class="anim-child header-mainheader-outer decoHeader-outer">										
+						<{{headingTag}} class="inner header-mainheader-inner decoHeader {{block.contentAlignment}}">
+							<span>{{ gMacros.stripTags(block.headerText) }}</span>
+						</{{headingTag}}>											
+					</div>	
+				{% endif %}
+				{% if block.simpleText|length %}	
+					<div class="anim-child header-intro">												
+						<div class="inner header-intro-inner ">
+							{{block.simpleText}}
+						</div>												
+					</div>
+				{% endif %}	
+				</div>     
+			</div>  			
+		{% endif %}	
 		
-		{% if block.simpleText|length %}				
-			<div id="{{introId}}" class="anim-child form-intro">				
-				<div class="inner form-intro-inner">
-					{{block.simpleText}}
-				</div>				
-			</div>
-		{% endif %}  
-		
-		<div class="elem-block form-wrapper anim-child">			
+		<div class="elem-block form-wrapper {{colorScheme}} anim-child">			
 			<div class="inner">
 				{{ block.formToDisplay.render({submitClass: 'btn btn-standard'}) }}
-				<small>* Required Field</small>
+				<small class="mt-2x">* Required Field</small>
 			</div>			
 		</div>
 		

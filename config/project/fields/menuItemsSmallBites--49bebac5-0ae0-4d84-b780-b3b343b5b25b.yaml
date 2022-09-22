@@ -1,0 +1,55 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: bc7f3170-5aac-42e6-9e39-45312c49ab0a # Menu Items
+handle: menuItemsSmallBites
+instructions: null
+name: 'Menu Items - Small Bites'
+searchable: false
+settings:
+  allowSelfRelations: false
+  localizeRelations: false
+  maxRelations: null
+  minRelations: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
+      -
+        - conditionRules
+        -
+          -
+            __assoc__:
+              -
+                - class
+                - craft\fields\conditions\OptionsFieldConditionRule
+              -
+                - uid
+                - d0c6dde2-c76d-4104-900b-a4f2f2c43571
+              -
+                - operator
+                - in
+              -
+                - values
+                -
+                  - smallBite
+              -
+                - fieldUid
+                - b1f8fc79-8472-424c-a5a2-83477606b2b7 # Menu Item Type
+  selectionLabel: null
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:ae367fc5-c51a-4061-8bc2-852eda25f32f'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

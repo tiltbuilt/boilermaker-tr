@@ -105,10 +105,28 @@ fieldLayouts:
             fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9da4add8-adf1-432c-89ff-641dcea031d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Background Imagery'
+            type: craft\fieldlayoutelements\Heading
+            uid: 9fdb1fea-13c8-44cd-b3aa-446c2805ca3f
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49 # Background Imagery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a177798-0db4-4463-a55d-f39b6fe21c9b
             userCondition: null
             warning: null
             width: 100

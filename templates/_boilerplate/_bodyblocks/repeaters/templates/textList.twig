@@ -10,16 +10,18 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
 
-<ul class="repeater-list-text">
-{% for repeaterItem in repeaterData %}	
+<ul class="repeater-list-text {% if repeater.multiColumn %}multi-column-list{% endif %} {{repeater.textListStyle}}">
+{% for repeaterItem in repeaterData %}
 	<li {{ gMacros.buildClassListBasic(['anim-child', 'repeater-list-item', 'repeater-list-text-item']) -}}>
 		
 		<div {{ gMacros.buildClassListBasic(['inner', 'repeater-list-text-item-inner']) -}}>
 			<{{ repeaterHeadingLevel }} {{ gMacros.buildClassListBasic(['repeater-list-text-item-header']) -}}>
-  			<a href="{{ repeaterItem.url }}">{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}</a>
+  			  {% if repeaterItem.url|length %}<a href="{{ repeaterItem.url }}" {% if repeaterItem.newTab %}target="_blank"{% endif %}>{% endif %}
+					{{ gMacros.stripTags(repeaterItem.title, '<b><strong><i><em><br>') }}
+			  {% if repeaterItem.url|length %}</a>{% endif %}
 			</{{ repeaterHeadingLevel }}>
 			{% if repeaterShowDate and repeaterItem.postDate is defined and dateFormat != null %}	  		
-				<div class="repeater-date">{{ repeaterItem.postDate | date(dateFormat) }}</div>	 
+				<div class="repeater-date">{{ repeaterItem.date }}</div>	 
 			{% endif %}
 			{% if repeaterShowExcerpt and repeaterItem.excerpt|length %}	  		
 				<div>{{ repeaterItem.excerpt }}</div>	  				 

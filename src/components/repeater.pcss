@@ -26,8 +26,29 @@
 }
  
 li.repeater-list-text-item {
-	 @apply mb-half flex items-start justify-start; 
+	 @apply mt-base flex items-start justify-start; 
 	 /* adjust this to increase/decrease spacing between list items in text list by default, or create a custom class for a particular list */
+}
+
+.multi-column-list {
+   @media(min-width: theme('screens.md')){
+	  column-count: 2;
+	  column-gap: 3rem;
+   }
+   
+   @media(min-width: theme('screens.lg')){
+	  column-count: 2;
+	  column-gap: 6rem;
+   }
+   
+   @media(min-width: theme('screens.xl')){
+	  column-count: 2;
+	  column-gap: 9rem;
+   }
+   
+   p, li {
+	  break-inside: avoid-column;
+   }	
 }
 
 .repeater-list-text-item-header {
@@ -59,47 +80,48 @@ li.repeater-list-text-item {
 				/* add any hover styles for cards here, use nesting to apply styles to inner items as needed) */
 				transform: scale(1.05);
 				
-			}
+			}		
+			
+		}
+			
+		
+		.item-wrapper {
+			/* this element holds the actual content of the card. It is set to relative to float above the background of the card. */
+			@apply relative h-full;
+			z-index: 1;
 			
 			&::after {
 				/* this pseudo element is used to create the box background for the cards. */
-				@apply block absolute z-0; 
+				@apply block absolute z-0 shadow-md; 
 				content: '';			 
 				/* set the positioning to the same value being used for the padding of the repeater-list-item class */
 				
 				top: 0;
 				right: 0;
 				bottom: 0;
-				left: 0;			
+				left: 0;							
 				
 				/* these styles control the appearance of the card feel free to change them as you see fit */
 				
 				
 				
 			}		
+		}
+		
+		.repeater-lg-thumbnail {
+			@apply block w-full;
+		}
+		
+		.list-item-thumbnail-column {
+			@apply w-1/3 pr-half;
 			
-			
-			.item-wrapper {
-				/* this element holds the actual content of the card. It is set to relative to float above the background of the card. */
-				@apply relative h-full;
-				z-index: 1;
-			}
-			
-			.repeater-lg-thumbnail {
+			.repeater-sm-thumbnail {
 				@apply block w-full;
 			}
-			
-			.list-item-thumbnail-column {
-				@apply w-1/3 pr-half;
-				
-				.repeater-sm-thumbnail {
-					@apply block w-full;
-				}
-			}
-			
-			.list-item-text-column {
-				@apply w-2/3 pl-half;
-			}
+		}
+		
+		.list-item-text-column {
+			@apply w-2/3 pl-half;
 		}		
 		
 		
@@ -121,6 +143,7 @@ li.repeater-list-text-item {
  
  .repeater-list-card-item-header, .repeater-list-card-img-lg-item-header, .repeater-list-card-img-sm-item-header {
 	@apply font-bold text-lg mt-half;
+	transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
  }
  
  .repeater-list-card-img-lg-item-thumbnail {
@@ -172,3 +195,51 @@ li.repeater-list-text-item {
  .repeater-list-btn-item-btn {
 	 @apply block;
  }
+ 
+ 
+/* LARGE SLIDER REPEATER */
+
+.repeaterSlider {
+	
+	.swiper-button-prev {
+		left:-1.5rem;
+		
+		@media (min-width: theme('screens.lg')) {
+			left:-3.5rem;
+		}
+	}
+	
+	.swiper-button-next {
+		right:-1.5rem;
+			
+		@media (min-width: theme('screens.lg')) {
+			right:-3.5rem;
+		}
+	}
+	
+	.swiper-pagination {
+		@apply absolute py-base;
+		bottom: auto;
+		top: 100%;
+	}
+	
+	.swiper-elem {
+		@apply shadow-lg;
+	}
+}
+
+.slide.repeater-lg-slide {
+	@apply flex flex-wrap justify-center;
+	
+	.repeater-lg-slide-headline {
+		@apply text-2xl font-bold w-full
+	}
+	
+	.repeater-lg-slide-img-wrapper {
+		@apply w-full md:w-1/2;
+	}
+	
+	.repeater-lg-slide-content-wrapper {
+		@apply w-full md:w-1/2 p-2x text-left flex flex-wrap content-center justify-start;
+	}
+}

@@ -1,0 +1,14 @@
+columnSuffix: ugyetozc
+contentColumnType: string(255)
+fieldGroup: 76b3d98a-158e-47e8-bbc1-fe6c38968b57 # Common
+handle: contentLink
+instructions: null
+name: 'Content Link'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

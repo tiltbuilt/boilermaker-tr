@@ -10,7 +10,7 @@ settings:
   allowTarget: true
   autoNoReferrer: true
   customTextMaxLength: 0
-  customTextRequired: true
+  customTextRequired: false
   defaultLinkName: asset
   defaultText: ''
   enableAllLinkTypes: false
@@ -44,6 +44,11 @@ settings:
     site:
       enabled: false
       sites: '*'
+    solspaceCalendar-event:
+      allowCrossSiteLink: false
+      allowCustomQuery: false
+      enabled: false
+      sources: '*'
     tel:
       allowAliases: false
       disableValidation: false

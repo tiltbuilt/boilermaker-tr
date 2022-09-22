@@ -6,47 +6,109 @@
 
 @layer components {	
 	
+	.container {	
+		// These classes must stay in order to ensure functionality
+		@apply mx-auto max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl;
+		//The default classes and style below can be changed on a per-project basis    
+		
+	   &.container-fullwidth {
+		  // These classes must stay in order to ensure functionality
+		  @apply xl:max-w-full;
+		  //The default classes and style below can be changed on a per-project basis
+	   }    
+	}
+	
+	/* SCALING TEXT SIZES - Create a responsive font size that starts at the base size, but enlarges at larger sizes or shrinks at smaller. feel free to adjust the breakpoints/sizes as needed */
+	.text-scaling-xs {
+		@apply text-xs; 
+	}
+	
+	.text-scaling-sm {
+		@apply text-sm; 
+	}
+	
+	.text-scaling-base {
+		@apply text-base; 
+	}
+	
+	.text-scaling-lg {
+		@apply text-lg; 
+	}
+	
+	.text-scaling-xl {
+		@apply text-xl; 
+	}
+	
+	.text-scaling-2xl {
+		@apply text-2xl; 
+	}
+	
+	.text-scaling-3xl {
+		@apply text-3xl; 
+	}
+	
+	.text-scaling-4xl {
+		@apply text-4xl; 
+	}
+	
+	.text-scaling-5xl {
+		@apply text-5xl; 
+	}
+	
+	.text-scaling-6xl {
+		@apply text-5xl md:text-6xl; 
+	}
+	
+	.text-scaling-7xl {
+		@apply text-5xl md:text-7xl; 
+	}
+	
+	.text-scaling-8xl {
+		@apply text-6xl md:text-8xl; 
+	}
+	
+	
 		
 	/* ICON SIZES */
 	
-		.icon-center {
-			svg {
-				@apply mx-auto;
-			}
+	.icon-center {
+		svg {
+			@apply mx-auto;
 		}
-	
-		.icon-left {
-			svg {
-				@apply ml-0 mr-auto;
-			}
+	}
+
+	.icon-left {
+		svg {
+			@apply ml-0 mr-auto;
 		}
-	
-		.icon-right {
-			svg {
-				@apply mr-0 ml-auto;
-			}
+	}
+
+	.icon-right {
+		svg {
+			@apply mr-0 ml-auto;
 		}
-	
-		.icon-sm {
-			svg {
-				width: 3.5rem;
-				height: 3.5rem;
-			}
+	}
+
+	.icon-sm {
+		svg {
+			width: 3.5rem;
+			height: 3.5rem;
 		}
-	
-		.icon-md {
-			svg {
-				width: 7.5rem;
-				height: 7.5rem;
-			}
+	}
+
+	.icon-md {
+		svg {
+			width: 7.5rem;
+			height: 7.5rem;
 		}
-	
-		.icon-lg {
-			svg {
-				width: 15rem;
-				height: 15rem;
-			}
+	}
+
+	.icon-lg {
+		svg {
+			width: 15rem;
+			height: 15rem;
 		}
+	}
 	
 	@variants responsive {
 		
@@ -223,7 +285,7 @@
 			@apply -mr-3x lg:-mr-4x;
 		}
 						
-	 	/* ASPECT RATIOS FOR FIXED RATIO BLOCKS */
+		 /* ASPECT RATIOS FOR FIXED RATIO BLOCKS */
 		
 		.rect-4-1 {
 			aspect-ratio: 3/1;
@@ -245,7 +307,7 @@
 			aspect-ratio: 3/2;
 		}
 		
-		.square-1-1 {
+		.rect-1-1 {
 			aspect-ratio: 1/1;
 		}
 		
@@ -264,7 +326,7 @@
 			@apply float-none;		
 		}
 			
-	  	          
+					
 	}	    
 	
 }

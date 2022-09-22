@@ -4,7 +4,7 @@ fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elemen
 handle: simpleText
 instructions: null
 name: 'Simple Text'
-searchable: false
+searchable: true
 settings:
   availableTransforms: '*'
   availableVolumes: ''

@@ -1,0 +1,19 @@
+columnSuffix: tphsqamr
+contentColumnType: text
+fieldGroup: bc7f3170-5aac-42e6-9e39-45312c49ab0a # Menu Items
+handle: menuItemDescription
+instructions: null
+name: 'Menu Item Description'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

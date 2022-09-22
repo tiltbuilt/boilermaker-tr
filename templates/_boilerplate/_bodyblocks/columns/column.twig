@@ -33,13 +33,13 @@
 {# set styleClasses with classes needed to be applied to inner div #}
 {% set styleClasses = [column.contentAlignment] %}
 
-{% if column.colorScheme.class != '' %}
+{% if column.colorScheme !=  null and column.colorScheme.class != '' %}
 	{% set colorScheme = column.colorScheme.class %}
 {% endif %}
 
 {# outerClasses has color scheme class and class if column should have transparent bg instead of bg specified in color scheme #}
 {% set outerClasses = [colorScheme, column.topMargin] %}
-{% if column.transparentBackground and column.colorScheme.class|length %}
+{% if column.transparentBackground %}
 	{% set outerClasses = outerClasses|merge(['bg-off']) %}
 {% endif %}
 
@@ -171,7 +171,7 @@
 	</div>
 	<div class="background">
 		{% if bgSettings|length %}		
-			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null, null) }}
 		{% endif %}		
 	</div>	    
 </div>

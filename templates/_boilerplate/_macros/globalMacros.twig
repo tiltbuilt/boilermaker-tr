@@ -155,12 +155,20 @@
   -----
   Output a background node based on an element's Background Imagery field.
 -#}
-{%- macro buildElementBackground(bgSettings, sizesAtr, loadType) -%}
+{%- macro buildElementBackground(bgSettings, sizesAtr, aspect, loadType) -%}
   {% import '_boilerplate/_macros/globalMacros' as gMacros %}
   	{% set bgSizes = [] %}
 	{% for bgSet in bgSettings %}
   		{% set bgSize = bgSizes|merge([bgSet.deviceSize]) %}	  
-	{% endfor %} 
+	{% endfor %}
+	
+	{% if aspect|length %}
+		{% set tfSize = 'headerImage-' ~ aspect %}
+		{% set tfSizeWebp = 'headerImageWebp-' ~ aspect %}
+	{% else %}
+		{% set tfSize = 'contentImage' %}
+		{% set tfSizeWebp = 'contentImageWebp' %}
+	{% endif %} 
 	
     {% for bgSet in bgSettings %}
   	
@@ -251,9 +259,9 @@
 							
 							{# set image to bgAsset for transformations #}
 							{% set image = bgAsset %}					
-							{%- set transformedImages = craft.imagerx.transformImage(image, 'contentImage')	%}					
+							{%- set transformedImages = craft.imagerx.transformImage(image, tfSize)	%}					
 							{% if craft.imager.serverSupportsWebp() %}
-						  	{% set transformedImagesWebp = craft.imagerx.transformImage(image, 'contentImageWebp') %}
+						  	{% set transformedImagesWebp = craft.imagerx.transformImage(image, tfSizeWebp) %}
 						  	
 						  	<picture class="background">		  
 										

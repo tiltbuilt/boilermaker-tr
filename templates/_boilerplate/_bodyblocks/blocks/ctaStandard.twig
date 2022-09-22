@@ -46,7 +46,7 @@
 	{% set subheadTag = block.subheadLevel %}
 {% endif %}
 
-{% if block.colorScheme.class != '' %}
+{% if block.colorScheme != null and block.colorScheme.class != '' %}
 	{% set colorScheme = block.colorScheme.class %}
 {% endif %}
 
@@ -186,7 +186,7 @@
 	</div>
 	<div class="background">
 		{% if bgSettings|length %}		
-			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null) }}
+			{{ gMacros.buildElementBackground(bgSettings, {'default': '100vw'}, null, null) }}
 		{% endif %}		
 	</div>				
     

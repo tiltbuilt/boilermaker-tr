@@ -7,7 +7,9 @@
  *
  */
  
+/* STYLES FROM FREEFORM FLEXBOX TEMPLATE */ 
  
+button[type=submit].ff-loading{display:inline-flex;flex-wrap:nowrap;align-items:center}button[type=submit].ff-loading:before{content:"";display:block;flex:1 0 11px;width:11px;height:11px;margin-right:10px;border-style:solid;border-width:2px;border-color:transparent transparent #fff #fff;border-radius:50%;animation:ff-loading .5s linear infinite}@keyframes ff-loading{0%{transform:rotate(0)}100%{transform:rotate(1turn)}}.freeform-pages{display:flex;padding:0;margin:0 0 10px;list-style:none}.freeform-pages li{margin:0 10px 0 0}.freeform-row{display:flex;justify-content:space-between;margin:0 -15px}.freeform-row .freeform-column{flex:1 0;padding:10px 0;margin:0 15px;box-sizing:border-box}.freeform-row .freeform-column>.freeform-row:first-child{margin-top:-10px}.freeform-row .freeform-column label{display:block}.freeform-row .freeform-column .input-group-one-line{display:flex;flex-wrap:wrap}.freeform-row .freeform-column .input-group-one-line label{padding-right:10px}.freeform-row .freeform-column .freeform-label{font-weight:bold}.freeform-row .freeform-column .freeform-label.freeform-required:after{content:"*";margin-left:5px;color:red}.freeform-row .freeform-column .freeform-input{width:100%;display:block;box-sizing:border-box}.freeform-row .freeform-column .freeform-input[type=checkbox],.freeform-row .freeform-column .freeform-input[type=radio]{width:auto;display:inline;margin-right:5px}.freeform-row .freeform-column .freeform-input.StripeElement{padding:4px 2px;border:1px solid #ccc;height:30px}.freeform-row .freeform-column .freeform-input-only-label{font-weight:normal}.freeform-row .freeform-column .freeform-input-only-label>.freeform-input{display:inline-block;width:auto;margin-right:5px}.freeform-row .freeform-column .freeform-errors,.freeform-row .freeform-column .ff-errors{list-style:none;padding:0;margin:5px 0 0}.freeform-row .freeform-column .freeform-errors>li,.freeform-row .freeform-column .ff-errors>li{color:red}.freeform-row .freeform-column .freeform-instructions{margin:0 0 5px;font-size:13px;color:#aba7a7}.freeform-row .freeform-column.freeform-column-content-align-left{display:flex;justify-content:flex-start}.freeform-row .freeform-column.freeform-column-content-align-left>button:not(:first-of-type){margin-left:5px}.freeform-row .freeform-column.freeform-column-content-align-center{display:flex;justify-content:center}.freeform-row .freeform-column.freeform-column-content-align-center>button:not(:first-of-type){margin-left:5px}.freeform-row .freeform-column.freeform-column-content-align-right{display:flex;justify-content:flex-end}.freeform-row .freeform-column.freeform-column-content-align-right>button:not(:first-of-type){margin-left:5px}.freeform-row .freeform-column.freeform-column-content-align-spread{display:flex;justify-content:space-between}.freeform-row .freeform-column.freeform-column-content-align-spread>button:not(:first-of-type){margin-left:5px}.ff-form-errors{padding:15px;border:1px solid #f5c6cb;background:#f8d7da;border-radius:5px;color:#721c24}.ff-form-errors>p{margin:0}.freeform-form-has-errors{color:#721c24}
  
 .form-intro {
     // These classes must stay in order to ensure functionality
@@ -19,14 +21,14 @@
  
  /* Style inputs */
  
- #main.main {
+ #main.main, #modal-wrapper {
    
    .form {
       @apply mt-normal;
    } 
    
    .form-wrapper {
-      @apply mt-normal;
+      @apply mt-base;
       
       ul.freeform-pages {            
          list-style-position: inside;
@@ -87,18 +89,36 @@
  
  form {
    .ff-form-success {
-      @apply pb-normal;
+      @apply mt-normal p-base font-bold;
+      background-color: #ECFDF5;
+      color: #047857;
    }
    
    .ff-form-errors {
-      @apply mt-normal bg-transparent text-red pt-none px-none;
+      @apply mt-normal bg-transparent pt-none px-none;
       border: none;
+      color: #ff0000;
    }
    
    .ff-errors {
-      @apply text-red w-full pt-normal px-none;
+      @apply w-full px-none text-left;
       flex-basis: 100%;
+      color: #ff0000;
    }
+}
+
+#loyaltyform-message {
+   
+   .ff-errors {
+      @apply w-full px-none text-center mb-2x;
+      flex-basis: 100%;
+      color: #ff0000;
+   }
+}
+
+
+label {
+   text-align: left;
 }
  
  
@@ -109,69 +129,10 @@
       display: block !important;
    }
 }
+
+
+.freeform-row .freeform-column.ff-mini-fields .freeform-input {
+   width: auto;
+   display: inline-block;
+}
  
- 
- /* for any styles that need to be applied specifically to the submit buttons in the forms, use this selector: .btn.btn-formsubmit */
- 
- /*
- #newsletter-form { 
-   
-    label {
-      display: none;
-    }
-    
-    .freeform-row {
-      @apply justify-center;
-      max-width: 90%;
-      margin: 0px auto;
-      
-      .freeform-column {
-        @apply p-0 m-0;
-        flex-grow: 0;
-        
-        
-        &:first-child {
-          flex-grow: 2;
-        }
-      }
-    }   
-      
-    #form-input-email {
-        @apply text-gray-700 uppercase text-left font-acme mb-normal block mx-auto;        
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-left: solid 2px;
-        border-right: solid 2px;
-        border-top: solid 2px;
-        border-bottom: solid 2px;
-        border-color: theme('colors.green.light');        
-        
-        &:focus {           
-           outline: none;
-        } 
-        
-        @media (min-width: 768px) {
-            @apply mx-0 mb-0;
-            border-radius: 0.5rem 0px 0px 0.5rem;
-            border-right: none;
-            
-        }      
-    }
-    
-    .btn-formsubmit {
-        @apply px-6 block;
-        border-radius: 0.5rem;
-        white-space: nowrap;
-        margin: 0px auto;
-        
-        &:focus {           
-           outline: none;
-        }
-        
-        @media (min-width: 768px) {
-            border-radius: 0px 0.5rem 0.5rem 0px;            
-        } 
-    }
- }
- 
- */

@@ -8,42 +8,14 @@ searchable: false
 settings:
   default: null
   options:
-    -
+    3:
       __assoc__:
         -
           - label
-          - 'Default (Inherit from Parent)'
+          - 'Black Text, White Background, Gray Accents'
         -
           - color
-          - '#D1D5DB,#FF0000,#D1D5DB'
-        -
-          - default
-          - '1'
-        -
-          - class
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Color Scheme 1'
-        -
-          - color
-          - '#ffffff,#000000,#d1d5db'
-        -
-          - default
-          - ''
-        -
-          - class
-          - white-black-gray
-    -
-      __assoc__:
-        -
-          - label
-          - 'Color Scheme 2'
-        -
-          - color
-          - '#000000,#ffffff,#d1d5db'
+          - '#000000,#ffffff,#4b5563'
         -
           - default
           - ''

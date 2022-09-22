@@ -6,13 +6,13 @@
  */
  
  
-.sliderSet {
-	@apply relative overflow-hidden mt-normal;
+.sliderSet, .repeaterSlider {
+	@apply relative mt-normal;
 	
 }
 
 .sliderSet-inner {
-	overflow: hidden;
+	@apply w-full h-full;
 }
 
 .swiper-elem {
@@ -100,6 +100,7 @@
 	}
 }
 
+/*
 .swiper-button-prev {
 	left: 0px;
 }
@@ -107,9 +108,42 @@
 .swiper-button-next {
 	right: 0px;
 }
-			
+
 .swiper-pagination {
-	//@apply dots-white-gray-lt;
+	@apply relative py-normal;
+	bottom: 0px;
+}
+*/
+
+.swiper-button-prev {
+	left:0rem;
+	
+	@media (min-width: theme('screens.lg')) {
+		left:0rem;
+	}
 }
 
+.swiper-button-next {
+	right:0rem;
+		
+	@media (min-width: theme('screens.lg')) {
+		right:0rem;
+	}
+}
+
+.swiper-pagination {
+	@apply absolute py-base;
+	bottom: auto;
+	top: 100%;
+}
+
+.swiper-pagination-bullet {	
+	border: 0px none;
+	border-radius: 0px;
+	width: 8%;
+	height: 8px;
+	opacity: 1;	
+	transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+			
 

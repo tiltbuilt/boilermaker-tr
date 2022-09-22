@@ -160,7 +160,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: cb7c5f64-dd68-41d8-b463-02c872472acb # Simple Text
             instructions: null
-            label: null
+            label: 'Intro Text'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -170,13 +170,13 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 50c41aa0-a307-4f48-b863-57a0326ccfd7 # Link Settings
+            fieldUid: fd46b410-254c-4ea4-9322-a71e8592f500 # Page Header Button Settings
             instructions: null
-            label: 'Page Header Button Settings'
+            label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7f60faab-8f09-4942-8d07-9fabc2d8b90d
+            uid: c7f72b19-6922-46c4-b0f9-39d3a53ff350
             userCondition: null
             warning: null
             width: 100
@@ -188,13 +188,13 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
-            fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
+            fieldUid: 231a296a-0423-4b02-9ed8-bf24fba42db9 # Slide Color Scheme
             instructions: null
-            label: null
+            label: 'Page Header Color Scheme'
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b189f4e0-3e4e-45e2-bcf1-03822eca787e
+            uid: b2ac02dc-991c-4096-a798-765a8d271387
             userCondition: null
             warning: null
             width: 100
@@ -206,7 +206,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fe6cc4f4-be9a-4e9c-8887-590a781fc7da
+            uid: 47f45af6-26c7-43bf-ad16-7011db340213
             userCondition: null
             warning: null
             width: 100

@@ -193,7 +193,7 @@ fieldLayouts:
             fieldUid: a98ae0e4-a423-490c-9e75-2f3fe8a963fb # Color Scheme
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 8ea93cc2-ef55-4974-be93-1af6688b1dcb

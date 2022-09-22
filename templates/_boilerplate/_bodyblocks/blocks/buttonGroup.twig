@@ -106,7 +106,7 @@
 					{% if buttonLink.getType() == 'asset' %}										
 						{% set modalUrl = '/resources/assetmodal?assetid=' ~ buttonLink.getElement().id %}						
 					{% else %}
-						{% set modalUrl = buttonLink.url %}
+						{% set modalUrl = '/resources/entrymodal?entryid=' ~ buttonLink.getElement().id %}
 					{% endif %}
 					{% set btnClasses = btnClasses|merge(['btn-modal']) %}
 					<button data-modal-target="{{ modalUrl}}" {{ gMacros.buildClassListBasic(btnClasses) -}}>

@@ -47,6 +47,9 @@
 		{% if textStyle.lineHeight != '' %}
 			{% set mainHeaderClasses = mainHeaderClasses|merge([textStyle.deviceSize ~ textStyle.lineHeight]) %}
 		{% endif %}
+		{% if textStyle.alignment != '' %}
+			{% set mainHeaderClasses = mainHeaderClasses|merge([textStyle.deviceSize ~ textStyle.alignment]) %}
+		{% endif %}
 		{% if textStyle.topMargin != '' %}
 			{% set mainHeaderOuterClasses = mainHeaderOuterClasses|merge([textStyle.deviceSize ~ textStyle.topMargin]) %}
 		{% endif %}
@@ -63,6 +66,9 @@
 		{% endif %}
 		{% if textStyle.lineHeight != '' %}
 			{% set subheadClasses = subheadClasses|merge([textStyle.deviceSize ~ textStyle.lineHeight]) %}
+		{% endif %}
+		{% if textStyle.alignment != '' %}
+			{% set subheadClasses = subheadClasses|merge([textStyle.deviceSize ~ textStyle.alignment]) %}
 		{% endif %}
 		{% if textStyle.topMargin != '' %}
 			{% set subheadOuterClasses = subheadOuterClasses|merge([textStyle.deviceSize ~ textStyle.topMargin]) %}

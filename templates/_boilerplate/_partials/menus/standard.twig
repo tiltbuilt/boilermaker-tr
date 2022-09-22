@@ -52,12 +52,7 @@
 	  {%- set nodeClasses = nodeClasses|merge(['menu_item_children']) -%}
   {%- endif -%}
   
-  {# If Link Styling for buttons is set, override nodeClasses #}
-  {% if node.nodeStyling is defined and node.nodeStyling|length %}
-	{% set nodeClasses = nodeClasses|merge([node.nodeStyling]) %}
-  {% else %}
-
-  {% endif %}
+  
 
   <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>	
 	{% if node.level == 1 and headingLevel != null %}
