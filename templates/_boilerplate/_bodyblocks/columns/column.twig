@@ -33,7 +33,7 @@
 {# set styleClasses with classes needed to be applied to inner div #}
 {% set styleClasses = [column.contentAlignment] %}
 
-{% if column.colorScheme.class != '' %}
+{% if column.colorScheme !=  null and column.colorScheme.class != '' %}
 	{% set colorScheme = column.colorScheme.class %}
 {% endif %}
 

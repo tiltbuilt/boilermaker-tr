@@ -8,20 +8,6 @@ searchable: false
 settings:
   default: null
   options:
-    0:
-      __assoc__:
-        -
-          - label
-          - 'Default (Inherit from Parent)'
-        -
-          - color
-          - '#D1D5DB,#FF0000,#D1D5DB'
-        -
-          - default
-          - '1'
-        -
-          - class
-          - ''
     3:
       __assoc__:
         -

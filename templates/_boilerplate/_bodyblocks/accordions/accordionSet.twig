@@ -40,7 +40,7 @@
 {% endif %}
 
 
-{% if accordion.colorScheme.class != '' %}
+{% if accordion.colorScheme != null and accordion.colorScheme.class != '' %}
 	{% set colorScheme = accordion.colorScheme.class %}
 {% endif %}
 

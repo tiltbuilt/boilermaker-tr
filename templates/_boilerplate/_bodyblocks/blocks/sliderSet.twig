@@ -29,7 +29,7 @@
 {% set sliderAttrs = {'data-autoplay': block.autoplay, 'data-timing': block.slideTransitionDelay, 'data-buttons': block.buttons, 'data-dots': block.dots, 'data-effect': block.sliderEffect} %}
 
 
-{% if block.colorScheme.class != '' %}
+{% if block.colorScheme != null block.colorScheme.class != '' %}
 	{% set colorScheme = block.colorScheme.class %}
 {% endif %}
 

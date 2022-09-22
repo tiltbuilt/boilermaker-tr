@@ -25,15 +25,12 @@
 {% set blockClass = tabSet.type.handle %}
 {% set innerClass = 'inner ' ~ tabSet.type.handle ~ '-inner' %}
 
-{% if tabSet.colorScheme.class != '' %}
+{% if tabSet.colorScheme != null and tabSet.colorScheme.class != '' %}
 	{% set colorScheme = tabSet.colorScheme.class %}
 {% endif %}
 
 {# create arrays to collect style changes to primary element and inner and bg #}
 {% set outerClasses = ['elem-block', colorScheme, 'bg-off'] %}
-{% if block.colorScheme.class != '' %}
-	{% set outerClasses = outerClasses|merge(['color-break']) %}
-{% endif %}
 
 {% set bgSettings = tabSet.backgroundImagery %}
 

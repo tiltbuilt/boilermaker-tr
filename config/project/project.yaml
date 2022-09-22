@@ -1,4 +1,4 @@
-dateModified: 1663797371
+dateModified: 1663873587
 elementSources:
   craft\elements\Entry:
     -
@@ -406,7 +406,7 @@ plugins:
             - createBrotliFiles
             - ''
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
-      cachingEnabled: true
+      cachingEnabled: false
       debug: false
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
       driverJobPriority: 100
@@ -427,16 +427,6 @@ plugins:
             -
               - uriPattern
               - '/resources/*'
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - /swag
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - /loyalty-program
       generatePagesWithQueryStringParams: true
       hintsEnabled: true
       includedQueryStringParams:

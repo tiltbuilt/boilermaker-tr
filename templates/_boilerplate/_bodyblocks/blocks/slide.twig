@@ -25,7 +25,7 @@
 {% set innerClass = block.type.handle ~ '-inner' %}
 
 
-{% if block.slideColorScheme.class != '' %}
+{% if block.slideColorScheme.class != null and block.slideColorScheme.class != '' %}
 	{% set colorScheme = block.slideColorScheme.class %}
 {% endif %}
 

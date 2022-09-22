@@ -14,7 +14,6 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as YTPlayer from 'yt-player';
-import Inputmask from "inputmask";
 
 
 window.$ = window.jQuery = $;

@@ -47,7 +47,7 @@
 {% endif %}
 
 
-{% if block.colorScheme.class != '' %}
+{% if block.colorScheme != null and block.colorScheme.class != '' %}
 	{% set colorScheme = block.colorScheme.class %}
 {% endif %}
 
