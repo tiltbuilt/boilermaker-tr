@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.0 - 2022-09-22
+### Changed
+- Incorporated various improvements gleaned from use on projects
+- Made color scheme field required on section level elements and slides and CTAs, inherited on others if not selected.
+### Updated
+- Craft and all plugins
+
+
 ## 2.2.1 - 2022-08-21
 ### Fixed
 - Syntax error in page template
