@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.1 - 2022-09-29
+### Changed
+- Switched notification bar alerts from global field to entry type to allow scheduling
+### Updated
+- Craft and all plugins
+
+
 ## 2.3.0 - 2022-09-22
 ### Changed
 - Incorporated various improvements gleaned from use on projects
