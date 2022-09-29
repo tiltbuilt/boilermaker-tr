@@ -128,17 +128,9 @@
 		<div id="login-status-bar-wrapper"></div>
 		<div class="wrapper" id="wrapper">
 	
-			{% if gSettings.notificationBarText|length %}
-		  	<div class="header_topbar">
-				<div class="topbar">
-			  	<div class="inner">
-					<div class="topbar__content">
-				  	{{ gSettings.notificationBarText }}
-					</div>
-			  	</div>
-				</div>
-		  	</div>
-			{% endif %}			
+			
+		  	<div id="header_topbar"></div>
+			
 			
 			{% if block('globalHeader') is defined %}
 			  {{ block('globalHeader') }}

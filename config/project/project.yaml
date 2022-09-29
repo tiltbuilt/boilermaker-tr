@@ -1,4 +1,4 @@
-dateModified: 1663873587
+dateModified: 1664463132
 elementSources:
   craft\elements\Entry:
     -
@@ -298,6 +298,7 @@ meta:
     bb167aed-8f2a-4fea-b65b-cabe5d44a47d: 'Device Size' # Device Size
     bb136509-26da-4d34-bab0-fcf67764b3f2: 'Show Site Header' # Show Site Header
     bbfe8cf7-c136-4bf2-839c-b94772136fef: 'Background Size' # Background Size
+    bc2c7dd5-944f-4180-b730-8d939da0aa73: 'Notification Bar Alerts' # Notification Bar Alerts
     bc7f3170-5aac-42e6-9e39-45312c49ab0a: 'Menu Items' # Menu Items
     bc444b49-bd82-4022-9e18-148b2775cbad: 'Menu Items - Cocktails' # Menu Items - Cocktails
     bc34289a-9826-4a33-b920-ddc46f9759cc: 'Device Size' # Device Size
@@ -356,6 +357,7 @@ meta:
     ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
     eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49: 'Background Imagery' # Background Imagery
     ee2a623a-e58b-41cd-9b23-5787db5a4a9f: '2 Column Edge Photo' # 2 Column Edge Photo
+    efd060e3-bbca-40d7-90b1-56f368a5bf92: Default # Default
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f6dbd613-57d2-4f78-971b-6b01213f6ac2: 'Subhead Text Styling Adjustments' # Subhead Text Styling Adjustments
     f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
@@ -675,7 +677,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: T4AWZVCX3MRT4M205XO8JAM5
-    schemaVersion: 2.0.3
+    schemaVersion: 2.0.4
   neo:
     edition: standard
     enabled: true
