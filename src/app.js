@@ -644,6 +644,15 @@ $(document).ready(function() {
 		$('body').removeClass('fixed');			
 	});
 	
+	
+	/* NOTIFICATION ALERT LOADING */
+		
+	$('#header_topbar').load('/resources/notificationbaralerts', function() {
+		//headerPadFix();
+	});
+		
+	
+	
 	/* HOME PAGE SCROLL FUNCTION */
 	
 	
@@ -687,8 +696,6 @@ $(document).ready(function() {
 			lastScrollTop = st;
 		}		
 	}
-	
-	
 	
 	/* MOBILE MENU FUNCTIONALITY */	
 	
