@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.2 - 2022-10-06
+### Fixed
+- Error with backgroundPosition variable in video background block
+
 ## 2.3.1 - 2022-09-29
 ### Changed
 - Switched notification bar alerts from global field to entry type to allow scheduling
