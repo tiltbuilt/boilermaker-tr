@@ -295,7 +295,7 @@
 					{% else %}
 						{% set  bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.backgroundSize])%}
 					{% endif %}
-					{% if bgSet.bgPosition != '' %}
+					{% if bgSet.backgroundPosition != '' %}
 						{% set bgElemClasses = bgElemClasses|merge(['object-' ~ bgSet.backgroundPosition]) %}
 					{% endif %}
 					
