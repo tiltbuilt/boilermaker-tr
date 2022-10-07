@@ -75,7 +75,7 @@
 		
 			<div class="anim-child btn-wrapper">
 			  
-				{% set btnClasses = ['btn'] %}
+				{% set btnClasses = [child.customClassList, 'btn'] %}
 				{% set buttonLink = child.linkSettings %}
 				
 				{% if child.buttonStyle != '' %}
@@ -109,11 +109,11 @@
 						{% set modalUrl = '/resources/entrymodal?entryid=' ~ buttonLink.getElement().id %}
 					{% endif %}
 					{% set btnClasses = btnClasses|merge(['btn-modal']) %}
-					<button data-modal-target="{{ modalUrl}}" {{ gMacros.buildClassListBasic(btnClasses) -}}>
+					<button {% if child.customId|length %}id="{{child.customId}}"{% endif %} data-modal-target="{{ modalUrl}}" {{ gMacros.buildClassListBasic(btnClasses) -}}>
 						<span>{{ buttonLink.getCustomText('More Info') }}</span>
 					</button>								
 				{% else %}
-					<a href="{{ buttonLink.url }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildClassListBasic(btnClasses) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>
+					<a href="{{ buttonLink.url }}" {% if child.customId|length %}id="{{child.customId}}"{% endif %} {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildClassListBasic(btnClasses) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>
 						  <span>{{ buttonLink.getCustomText('More Info') }}</span>
 					</a>
 				{% endif %}
