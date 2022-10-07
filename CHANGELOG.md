@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.3 - 2022-10-07
+### Fixed
+- error where individual buttons in button group would not have their custom ids or custom class fields output in the template
+
 ## 2.3.2 - 2022-10-06
 ### Fixed
 - Error with backgroundPosition variable in video background block
