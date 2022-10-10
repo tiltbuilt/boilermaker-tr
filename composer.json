@@ -1,7 +1,7 @@
 {
     "name": "tiltbuilt/boilermaker-tr",
     "description": "Starter Craft setup for site built by Tilt.",
-    "version": "2.3.3",
+    "version": "2.3.4",
     "type": "project",
     "require": {
         "carlcs/craft-redactorcustomstyles": "4.0.2",

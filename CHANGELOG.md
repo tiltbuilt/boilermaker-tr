@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.4 - 2022-10-10
+### Fixed
+- template mistakes in page header, entry and sliderSet
+
 ## 2.3.3 - 2022-10-07
 ### Fixed
 - error where individual buttons in button group would not have their custom ids or custom class fields output in the template
