@@ -26,7 +26,8 @@
 {% set contInnerClasses = ['inner', 'container-inner', 'p-normal', 'pt-4x', 'md:pt-normal'] %}
 
 {# outerClasses has color scheme class and class if section should have transparent bg instead of bg specified in color scheme #}
-{% set outerClasses = ['elem-block', 'white-black-white'] %}
+{% set colorScheme = entry.slideColorScheme.class %}
+{% set outerClasses = ['elem-block', colorScheme] %}
 
 {% set bgSettings = entry.backgroundImagery %}
 
