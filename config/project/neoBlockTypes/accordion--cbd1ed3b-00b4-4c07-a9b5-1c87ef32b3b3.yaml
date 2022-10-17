@@ -1,6 +1,6 @@
 childBlocks:
   - blockQuote
-  - button
+  - buttonGroup
   - contentWrapper
   - ctaStandard
   - ctaSmall
