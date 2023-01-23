@@ -1,4 +1,4 @@
-dateModified: 1664463132
+dateModified: 1674499083
 elementSources:
   craft\elements\Entry:
     -
@@ -677,12 +677,12 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: T4AWZVCX3MRT4M205XO8JAM5
-    schemaVersion: 2.0.4
+    schemaVersion: 2.0.7
   neo:
     edition: standard
     enabled: true
     licenseKey: AQIGW6LIH7F1X51CM86UWZHQ
-    schemaVersion: 3.3.0
+    schemaVersion: 3.5.2
   redactor:
     edition: standard
     enabled: true
@@ -703,11 +703,11 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: R0YVH3623EJMNPXV91RFM09M
-    schemaVersion: 3.0.10
+    schemaVersion: 3.0.11
   section-and-product-type:
     edition: standard
     enabled: true
-    schemaVersion: 1.1.1
+    schemaVersion: 2.0.1
   seomatic:
     edition: standard
     enabled: true
