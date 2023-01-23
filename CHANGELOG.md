@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.0 - 2023-01-23
+### Updated
+- Craft and Plugins
+### Fixed
+- User permissions for content admin group
+
 ## 2.3.4 - 2022-10-10
 ### Fixed
 - template mistakes in page header, entry and sliderSet
