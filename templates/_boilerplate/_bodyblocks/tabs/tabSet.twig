@@ -115,9 +115,9 @@
 			  {% set buttonAttrs = {'role': 'tab', 'data-target': '#' ~ panelId, 'aria-controls': panelId, 'data-parent': '#' ~ blockId} %}
 			  				  
 				<button id="{{buttonId}}" {{ gMacros.buildclassListBasic(buttonClasses) -}} {{- gMacros.buildOtherElementAttributes(buttonAttrs) -}}>
-					{% if child.iconAsset is not empty and child.iconAsset.sprite|length %}
+					{% if child.iconAsset is not empty and child.iconAsset.valuee|length %}
 						<div {{ gMacros.buildClassListBasic(iconClasses) -}}>									
-							<svg><use xlink:href="#{{ child.iconAsset.sprite }}"></use></svg>
+							<svg><use xlink:href="#{{ child.iconAsset.value }}"></use></svg>
 						</div>
 					{% endif %}
 					<{{ tabSet.headingLevel }} id="{{headingId}}" class="tab-title">{{child.tabTitle}}</{{ tabSet.headingLevel }}>

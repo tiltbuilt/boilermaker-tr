@@ -102,11 +102,11 @@
 			</div>
 			{% if (block.buttons) and (slideList|length > 1)  %}
 				<button class="swiper-button-prev" data-target="#{{ blockId  ~ '-swiper'}}" id="{{blockId}}-prev">
-					<svg><use xlink:href="#{% if gSettings.sliderPreviousIcon.sprite|length %}{{ gSettings.sliderPreviousIcon.sprite }}{% else %}icon-angle-left{% endif %}"></use></svg>
+					<svg><use xlink:href="#{% if gSettings.sliderPreviousIcon.value|length %}{{ gSettings.sliderPreviousIcon.value }}{% else %}icon-angle-left{% endif %}"></use></svg>
 				</button>
 				
 				<button class="swiper-button-next" data-target="#{{ blockId  ~ '-swiper'}}" id="{{blockId}}-next">
-					<svg><use xlink:href="#{% if gSettings.sliderNextIcon.sprite|length %}{{ gSettings.sliderNextIcon.sprite }}{% else %}icon-angle-right{% endif %}"></use></svg>
+					<svg><use xlink:href="#{% if gSettings.sliderNextIcon.value|length %}{{ gSettings.sliderNextIcon.valuee }}{% else %}icon-angle-right{% endif %}"></use></svg>
 				</button>
 			{% endif %}  
 			{% if (block.dots) and (slideList|length > 1)  %}
