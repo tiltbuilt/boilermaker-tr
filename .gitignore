@@ -28,7 +28,6 @@ prepros-6.config
 /config/license.key
 /web/cpresources/*
 /public/cpresources/*
-composer.lock
 /public/imager/*
 /public/blitz/*
 /public/cache/blitz/*

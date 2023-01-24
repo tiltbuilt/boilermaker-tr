@@ -1,4 +1,4 @@
-dateModified: 1674588131
+dateModified: 1674588539
 elementSources:
   craft\elements\Entry:
     -
@@ -174,6 +174,7 @@ meta:
     9bedc752-fb2a-4b10-933c-ecf14a196b1f: 'Items Count' # Items Count
     9c3c6834-2633-4d89-ae1b-d0897a9bee7c: 'List Item Display Style' # List Item Display Style
     9fefc367-79dc-4588-9172-e28038d436cf: Buttons # Buttons
+    11a4b42b-e8a2-43ab-85ea-4276b11be2cb: ui-svg-sprites # ui-svg-sprites
     11e6ba3a-dd3d-4951-a3a2-083f6cc4e505: Image # Image
     12c30846-c1db-40fd-aa5a-3af9bc56847f: $SITE_NAME # $SITE_NAME
     13cdbf3c-d282-437b-954b-37f4b42e4469: 'Bottom Margin' # Bottom Margin
@@ -224,6 +225,7 @@ meta:
     812ffe65-6485-4987-9a4f-6f8c2cecfdae: 'Accordion Set' # Accordion Set
     938c6226-2dee-4440-a989-1741df63e4e4: 'Boilermaker Craft 4' # Boilermaker Craft 4
     944f6f36-d431-4c98-b852-61e0fe017d47: 'Content Link' # Content Link
+    960fee32-ef5b-4f95-98b9-a8be3a6265aa: font-awesome-all # font-awesome-all
     982b6185-6d4a-4655-b767-aa8cc325e579: 'Image Placement' # Image Placement
     992fdc9f-2866-4456-904e-2e593d650b13: Button # Button
     1639e03b-4d6f-4b71-9526-59969de6560e: 'Device Size' # Device Size
@@ -274,6 +276,7 @@ meta:
     81647883-c70c-4a4d-917c-b3b007078d21: 'Items per Row' # Items per Row
     87483382-9eee-4f7f-955e-be74daf55a00: Default # Default
     94823971-3a2b-484b-a381-5a0f84657b14: 'Page Builder' # Page Builder
+    a03bdcc1-a0ac-4f1a-9ad7-b5806f65ad2f: '[root]' # [root]
     a0656ab9-5120-4145-881e-f557eb83966f: 'Repeater - Nav Collection' # Repeater - Nav Collection
     a4a3c790-6fa2-450b-a31c-b8141bcefd59: 'Link Settings' # Link Settings
     a7faa85f-4be1-4101-8d46-c1fc42bbdeeb: 'Page Builder - Accordions' # Page Builder - Accordions
@@ -288,7 +291,7 @@ meta:
     add62801-2b55-458c-97c0-da439779c00e: Image # Image
     adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
     ae0aeb55-9dcb-405b-b34f-6780487542a5: 'Content Wrapper Text Styling' # Content Wrapper Text Styling
-    afda5fce-7076-40da-b22e-7e9fd94d32c6: 'Public Schema'
+    afda5fce-7076-40da-b22e-7e9fd94d32c6: 'Public Schema' # Public Schema
     b0376ebf-fea7-4112-9e73-1a7ba1f3757b: 'Slide Column' # Slide Column
     b1f8fc79-8472-424c-a5a2-83477606b2b7: 'Menu Item Type' # Menu Item Type
     b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
@@ -362,6 +365,7 @@ meta:
     ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
     eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49: 'Background Imagery' # Background Imagery
     ee2a623a-e58b-41cd-9b23-5787db5a4a9f: '2 Column Edge Photo' # 2 Column Edge Photo
+    eed5fe80-7e08-423c-a8c7-84b8774b0e14: 'Public Schema'
     efd060e3-bbca-40d7-90b1-56f368a5bf92: Default # Default
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f6dbd613-57d2-4f78-971b-6b01213f6ac2: 'Subhead Text Styling Adjustments' # Subhead Text Styling Adjustments
@@ -662,7 +666,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: AX74DPQJIAL1VY9DF9UYU74D
-    schemaVersion: 1.0.1
+    schemaVersion: 1.2.3
     settings:
       enableCache: true
       iconSetsPath: '@webroot/dist/icons/'
