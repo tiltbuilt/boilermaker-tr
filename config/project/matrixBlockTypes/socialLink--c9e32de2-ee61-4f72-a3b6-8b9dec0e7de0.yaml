@@ -3,8 +3,10 @@ fieldLayouts:
   766c6b5c-035b-47a7-9c2b-4947d38d7a49:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e16c576c-c525-440b-8ca8-fcfb71976823 # Link Name
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3477a268-bd0d-42c4-a70a-bc3525bee871
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d # Link URL
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 48bebb8f-be94-43ba-a3ef-2741a7038361
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f411052f-1a69-4dc0-bb4a-fa64eb492d54 # Link Icon
             instructions: null
             label: null
@@ -32,10 +38,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 105d8773-9f88-4da3-8c68-32e4ad53cb4d
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: 5f58ddcc-0e4b-4e74-bcd2-a109d54a092e
+        userCondition: null
 fields:
   cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d: # Link URL
     columnSuffix: jemqbbdw

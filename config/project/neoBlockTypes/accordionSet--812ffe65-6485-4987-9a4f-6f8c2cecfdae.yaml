@@ -1,6 +1,7 @@
 childBlocks:
   - accordion
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -317,7 +318,9 @@ fieldLayouts:
         uid: 479dbd27-a4fc-402d-8442-7fb5861bbc67
         userCondition: null
 group: 68009970-c220-4680-a6b5-f3b6b34c937f # Accordions
+groupChildBlockTypes: true
 handle: accordionSet
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0

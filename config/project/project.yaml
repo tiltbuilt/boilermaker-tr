@@ -1,4 +1,4 @@
-dateModified: 1674499083
+dateModified: 1674588131
 elementSources:
   craft\elements\Entry:
     -
@@ -102,6 +102,10 @@ fs:
       path: $USERASSETS_PATH
     type: craft\fs\Local
     url: $USER_ASSETS_URL
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
 meta:
   __names__:
     0a5f2a0c-d670-45c7-b405-3a7c6a3c1366: Embeds # Embeds
@@ -284,6 +288,7 @@ meta:
     add62801-2b55-458c-97c0-da439779c00e: Image # Image
     adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
     ae0aeb55-9dcb-405b-b34f-6780487542a5: 'Content Wrapper Text Styling' # Content Wrapper Text Styling
+    afda5fce-7076-40da-b22e-7e9fd94d32c6: 'Public Schema'
     b0376ebf-fea7-4112-9e73-1a7ba1f3757b: 'Slide Column' # Slide Column
     b1f8fc79-8472-424c-a5a2-83477606b2b7: 'Menu Item Type' # Menu Item Type
     b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals

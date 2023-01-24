@@ -3,6 +3,7 @@ fieldLayouts:
   cebd0c63-462d-483e-9b63-3bc76f0e51db:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -10,6 +11,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -26,18 +28,22 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\TitleField
             uid: e5287730-055d-40ca-96a1-6923c09d544d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             instructions: null
             label: null
             required: false
             tip: null
             type: verbb\navigation\fieldlayoutelements\NodeTypeElements
             uid: c1c84170-3673-4402-8326-c0bce7617a81
+            userCondition: null
             warning: null
           -
             attribute: newWindow
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -49,11 +55,14 @@ fieldLayouts:
             translatable: false
             type: verbb\navigation\fieldlayoutelements\NewWindowField
             uid: d0cb741d-874b-471d-b648-08791ef18d49
+            userCondition: null
             warning: null
             width: 100
         name: Node
         uid: 21f9bdca-1367-4bb6-be66-f960b80b1fbe
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
             attribute: urlSuffix
@@ -63,6 +72,7 @@ fieldLayouts:
             autofocus: false
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -83,6 +93,7 @@ fieldLayouts:
             translatable: false
             type: verbb\navigation\fieldlayoutelements\UrlSuffixField
             uid: e8e74017-2ca9-49a2-846b-c054d9401c1b
+            userCondition: null
             warning: null
             width: 100
           -
@@ -93,6 +104,7 @@ fieldLayouts:
             autofocus: false
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -113,10 +125,12 @@ fieldLayouts:
             translatable: false
             type: verbb\navigation\fieldlayoutelements\ClassesField
             uid: d3396908-a0c9-4472-8df6-9a22de3dc169
+            userCondition: null
             warning: null
             width: 100
           -
             attribute: customAttributes
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -128,12 +142,14 @@ fieldLayouts:
             translatable: false
             type: verbb\navigation\fieldlayoutelements\CustomAttributesField
             uid: de4d5cdd-85a1-4682-bf33-4334030271b6
+            userCondition: null
             warning: null
             width: 100
         name: Advanced
         uid: 8fefebaa-99a9-4a46-846e-e31eaf3e1a0f
+        userCondition: null
 handle: mainMenu
-instructions: ''
+instructions: null
 maxNodes: null
 name: 'Main Menu'
 permissions:

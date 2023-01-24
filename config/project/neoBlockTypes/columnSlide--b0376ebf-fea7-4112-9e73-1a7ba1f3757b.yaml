@@ -4,7 +4,8 @@ childBlocks:
   - image
   - textContent
   - contentVideo
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -148,7 +149,9 @@ fieldLayouts:
         uid: d2c104d1-8d4c-4fc6-a71a-b39c4cc7929e
         userCondition: null
 group: 200f9abd-1678-4075-903d-84e7ba2ad8cb # Layout Elements
+groupChildBlockTypes: true
 handle: columnSlide
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0

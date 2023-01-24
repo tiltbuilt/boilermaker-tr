@@ -20,7 +20,8 @@ childBlocks:
   - repeaterNavCollection
   - sliderSet
   - tabSet
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -224,7 +225,9 @@ fieldLayouts:
         uid: 0d4fdc9c-653e-4d17-9a31-ef6ec1e4aed0
         userCondition: null
 group: 200f9abd-1678-4075-903d-84e7ba2ad8cb # Layout Elements
+groupChildBlockTypes: true
 handle: column
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
