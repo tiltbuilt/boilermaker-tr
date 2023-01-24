@@ -1,6 +1,7 @@
 childBlocks:
   - column
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -151,7 +152,9 @@ fieldLayouts:
         uid: 9c4e48d0-b832-445c-9112-6517e79b216a
         userCondition: null
 group: 200f9abd-1678-4075-903d-84e7ba2ad8cb # Layout Elements
+groupChildBlockTypes: true
 handle: row
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 5
 maxSiblingBlocks: 0

@@ -149,7 +149,7 @@
 					<{{accHeadingLevel}} id="{{ headingId }}" class="accordion-button-header" >
 						<button {{ gMacros.buildElementAttributes(buttonId, null, buttonClasses, buttonCustClasses, buttonAttrs) -}}>
 							<div class="accordion-icon">
-								<svg><use xlink:href="#{%if child.accordionIcon != null and child.accordionIcon.sprite|length %}{{child.accordionIcon.sprite}}{% else %}{{accIcon}}{% endif %}"></use></svg>
+								<svg><use xlink:href="#{%if child.accordionIcon != null and child.accordionIcon.value|length %}{{child.accordionIcon.value}}{% else %}{{accIcon}}{% endif %}"></use></svg>
 							</div>
 							{{ gMacros.stripTags(child.tabTitle) }}
 						</button>

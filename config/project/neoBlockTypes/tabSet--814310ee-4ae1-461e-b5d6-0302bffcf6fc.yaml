@@ -1,6 +1,7 @@
 childBlocks:
   - tabPanel
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -230,7 +231,9 @@ fieldLayouts:
         uid: 02aca3e7-6d59-41c9-9ac5-126ac7e736d2
         userCondition: null
 group: 23334036-40df-4901-af54-8ff0970ddb43 # Tab Sets
+groupChildBlockTypes: true
 handle: tabSet
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0

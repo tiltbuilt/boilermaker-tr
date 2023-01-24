@@ -44,11 +44,6 @@ settings:
     site:
       enabled: false
       sites: '*'
-    solspaceCalendar-event:
-      allowCrossSiteLink: false
-      allowCustomQuery: false
-      enabled: false
-      sources: '*'
     tel:
       allowAliases: false
       disableValidation: false

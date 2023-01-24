@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.1 - 2023-01-24
+### Updated
+- Icon Picker Plugin
+### Fixed
+- issue with project config related to icon picker version that was preventing config from loading
+
 ## 2.4.0 - 2023-01-23
 ### Updated
 - Craft and Plugins

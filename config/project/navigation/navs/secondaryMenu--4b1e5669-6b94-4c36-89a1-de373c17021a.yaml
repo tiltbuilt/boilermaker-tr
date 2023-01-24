@@ -149,7 +149,7 @@ fieldLayouts:
         uid: bcba43ee-e6dd-4395-9155-89f08d6169be
         userCondition: null
 handle: secondaryMenu
-instructions: ''
+instructions: null
 maxNodes: null
 name: 'Secondary Menu'
 permissions:

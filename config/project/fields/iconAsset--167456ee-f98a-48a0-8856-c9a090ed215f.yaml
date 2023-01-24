@@ -8,8 +8,7 @@ searchable: false
 settings:
   columnType: text
   iconSets:
-    - 'sprite:ui-svg-sprites.svg'
-  remoteSets: null
+    - 11a4b42b-e8a2-43ab-85ea-4276b11be2cb # ui-svg-sprites
   showLabels: true
 translationKeyFormat: null
 translationMethod: none

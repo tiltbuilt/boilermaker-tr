@@ -1,5 +1,6 @@
 childBlocks: null
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -48,7 +49,9 @@ fieldLayouts:
         uid: 66579609-b152-40d6-9065-4c608dc28625
         userCondition: null
 group: 46b72c49-6f07-4cae-936b-63d8dc62bfde # Repeaters
+groupChildBlockTypes: true
 handle: repeaterItemContentLink
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0

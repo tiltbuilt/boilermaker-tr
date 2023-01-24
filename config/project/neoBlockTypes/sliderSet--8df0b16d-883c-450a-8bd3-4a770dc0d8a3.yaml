@@ -1,6 +1,7 @@
 childBlocks:
   - slide
-description: ''
+conditions: null
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -192,7 +193,9 @@ fieldLayouts:
         uid: 45ff0bc9-ab75-4cc5-97ac-1872b80a8ab4
         userCondition: null
 group: d4a36f44-e497-4a31-9bda-6277d5c820af # Sliders
+groupChildBlockTypes: true
 handle: sliderSet
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
