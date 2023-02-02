@@ -48,7 +48,7 @@ fieldLayouts:
 handle: default
 hasTitleField: true
 name: Default
-section: bc2c7dd5-944f-4180-b730-8d939da0aa73
+section: bc2c7dd5-944f-4180-b730-8d939da0aa73 # Notification Bar Alerts
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

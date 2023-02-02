@@ -11,10 +11,10 @@ settings:
     __assoc__:
       -
         - 0
-        - 11a4b42b-e8a2-43ab-85ea-4276b11be2cb
+        - 11a4b42b-e8a2-43ab-85ea-4276b11be2cb # ui-svg-sprites
       -
         - font-awesome-all
-        - 960fee32-ef5b-4f95-98b9-a8be3a6265aa
+        - 960fee32-ef5b-4f95-98b9-a8be3a6265aa # font-awesome-all
   showLabels: true
 translationKeyFormat: null
 translationMethod: none
