@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.2 - 2023-02-01
+### Updated
+- Plugins
+### Fixed
+- sprite vs value issue in Global Macros with Icon Picker
+
 ## 2.4.1 - 2023-01-24
 ### Updated
 - Icon Picker Plugin

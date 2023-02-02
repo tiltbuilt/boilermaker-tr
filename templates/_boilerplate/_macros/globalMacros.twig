@@ -74,7 +74,7 @@
 {% macro socialIconLinks() %}
   {% if companyInfo.socialMediaLinks is defined and companyInfo.socialMediaLinks|length %}
 	{% for socialLink in companyInfo.socialMediaLinks.all() %}
-		<a href="{{ socialLink.linkUrl }}" class="social-icon-link" title="{{ socialLink.linkName }}" target="_blank"><svg><use xlink:href="#{{ socialLink.linkIcon.sprite }}"></use></svg></a>
+		<a href="{{ socialLink.linkUrl }}" class="social-icon-link" title="{{ socialLink.linkName }}" target="_blank"><svg><use xlink:href="#{{ socialLink.linkIcon.value }}"></use></svg></a>
 	{% endfor %}
   {% endif %}
 {% endmacro %}

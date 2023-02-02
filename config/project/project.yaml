@@ -1,4 +1,4 @@
-dateModified: 1674588539
+dateModified: 1675297021
 elementSources:
   craft\elements\Entry:
     -
@@ -102,10 +102,6 @@ fs:
       path: $USERASSETS_PATH
     type: craft\fs\Local
     url: $USER_ASSETS_URL
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 meta:
   __names__:
     0a5f2a0c-d670-45c7-b405-3a7c6a3c1366: Embeds # Embeds
@@ -362,10 +358,11 @@ meta:
     e90e752a-e16f-4480-b60e-93e60b4ce211: 'Long Format Text' # Long Format Text
     e76476c3-0516-4766-932d-cff2b07934a8: 'Subhead Style' # Subhead Style
     e86087fc-c0c1-4f13-895c-8ac461fd3a1c: Font # Font
+    e166358b-d703-4754-a2cc-5554ce45be74: 'Public Schema' # Public Schema
     ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
     eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49: 'Background Imagery' # Background Imagery
     ee2a623a-e58b-41cd-9b23-5787db5a4a9f: '2 Column Edge Photo' # 2 Column Edge Photo
-    eed5fe80-7e08-423c-a8c7-84b8774b0e14: 'Public Schema'
+    eed5fe80-7e08-423c-a8c7-84b8774b0e14: 'Public Schema' # Public Schema
     efd060e3-bbca-40d7-90b1-56f368a5bf92: Default # Default
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f6dbd613-57d2-4f78-971b-6b01213f6ac2: 'Subhead Text Styling Adjustments' # Subhead Text Styling Adjustments
@@ -691,7 +688,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: AQIGW6LIH7F1X51CM86UWZHQ
-    schemaVersion: 3.5.2
+    schemaVersion: 3.6.0
   redactor:
     edition: standard
     enabled: true
