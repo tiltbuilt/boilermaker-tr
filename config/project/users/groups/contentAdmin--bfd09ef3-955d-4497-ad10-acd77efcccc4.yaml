@@ -12,7 +12,7 @@ permissions:
   - 'blitz:refresh'
   - 'createentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'createentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'createentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'createentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'createfolders:0a5f2a0c-d670-45c7-b405-3a7c6a3c1366' # Embeds
   - 'createfolders:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'createfolders:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
@@ -21,16 +21,16 @@ permissions:
   - 'deleteassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   - 'deleteentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'deleteentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'deleteentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'deleteentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'deletepeerassets:0a5f2a0c-d670-45c7-b405-3a7c6a3c1366' # Embeds
   - 'deletepeerassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'deletepeerassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   - 'deletepeerentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'deletepeerentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'deletepeerentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'deletepeerentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'deletepeerentrydrafts:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'deletepeerentrydrafts:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'deletepeerentrydrafts:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'deletepeerentrydrafts:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'deletepeerentrydrafts:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
   - 'editglobalset:4d60bd72-6857-44f7-a62e-e36f9cf061b4' # Company Info
   - 'editglobalset:79134eda-bc6c-4005-b522-af37f79f0bf9' # Globals
@@ -79,17 +79,17 @@ permissions:
   - 'saveassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   - 'saveentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'saveentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'saveentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'saveentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'saveentries:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
   - 'savepeerassets:0a5f2a0c-d670-45c7-b405-3a7c6a3c1366' # Embeds
   - 'savepeerassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'savepeerassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   - 'savepeerentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'savepeerentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'savepeerentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'savepeerentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'savepeerentrydrafts:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'savepeerentrydrafts:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'savepeerentrydrafts:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'savepeerentrydrafts:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'savepeerentrydrafts:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
   - 'seomatic:content-meta'
   - 'seomatic:content-meta:facebook'
@@ -124,15 +124,15 @@ permissions:
   - 'viewassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   - 'viewentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'viewentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'viewentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'viewentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'viewentries:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
   - 'viewpeerassets:0a5f2a0c-d670-45c7-b405-3a7c6a3c1366' # Embeds
   - 'viewpeerassets:4c5a287b-8078-4d62-8619-08e152ce576e' # Documents
   - 'viewpeerassets:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   - 'viewpeerentries:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'viewpeerentries:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'viewpeerentries:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'viewpeerentries:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'viewpeerentrydrafts:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
   - 'viewpeerentrydrafts:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
-  - 'viewpeerentrydrafts:bc2c7dd5-944f-4180-b730-8d939da0aa73' # Notification Bar Alerts
+  - 'viewpeerentrydrafts:bc2c7dd5-944f-4180-b730-8d939da0aa73'
   - 'viewpeerentrydrafts:cae8de72-1b59-4faa-9532-102b16d9d3b6' # Home
