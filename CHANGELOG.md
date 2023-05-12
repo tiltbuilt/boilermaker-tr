@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.0 - 2023-05-11
+### Updated
+- Craft and Plugins
+
 ## 2.4.2 - 2023-02-01
 ### Updated
 - Plugins
