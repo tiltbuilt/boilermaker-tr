@@ -1,4 +1,4 @@
-dateModified: 1683853669
+dateModified: 1691003875
 elementSources:
   craft\elements\Entry:
     -
@@ -387,7 +387,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 6SBJ0VDLLF0ROEVTN9WKIXUP
-    schemaVersion: 4.4.0
+    schemaVersion: 4.5.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -572,7 +572,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: D4MJQSKZLHIJHEGYLT442CIA
-    schemaVersion: 4.2.4
+    schemaVersion: 4.2.6
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -713,12 +713,12 @@ plugins:
   section-and-product-type:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.1
+    schemaVersion: 2.0.3
   seomatic:
     edition: standard
     enabled: true
     licenseKey: R2HKSCM468JMLCZ420Z2HG5Y
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
   twigpack:
     edition: standard
     enabled: true

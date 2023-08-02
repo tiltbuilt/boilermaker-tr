@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.6.0 - 2023-08-02
+## Updated
+
+- craft 4.4.10.1 => 4.4.16.1
+- blitz 4.4.4 => 4.5.0
+- embeddedassets 3.1.5 => 3.1.6
+- feed-me 5.1.3.1 => 5.2.0
+- field-manager 3.0.5 => 3.0.7
+- freeform 4.0.23 => 4.1.6
+- imager-x 4.1.13 => 4.2.1
+- navigation 2.0.17 => 2.0.19
+- neo 3.7.8 => 3.8.3
+- retcon 2.6.1 => 2.7.3
+- section-and-product-type 2.0.1 => 2.0.3
+- seomatic 4.0.24 => 4.0.30
+
 ## 2.5.0 - 2023-05-11
 ### Updated
 - Craft and Plugins
