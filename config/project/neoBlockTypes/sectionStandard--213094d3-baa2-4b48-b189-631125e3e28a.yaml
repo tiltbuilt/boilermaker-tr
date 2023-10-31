@@ -21,7 +21,7 @@ childBlocks:
   - sliderSet
   - tabSet
 conditions: null
-description: null
+description: ''
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -239,6 +239,7 @@ fieldLayouts:
 group: 48b8fee7-c04a-4678-9a5b-7940a6b3df25 # Page Section Blocks
 groupChildBlockTypes: true
 handle: sectionStandard
+icon: null
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0

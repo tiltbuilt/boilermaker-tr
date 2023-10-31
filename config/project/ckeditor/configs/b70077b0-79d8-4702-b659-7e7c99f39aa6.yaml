@@ -1,0 +1,26 @@
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+listPlugin: List
+name: 'Heading Text'
+options:
+  link:
+    addTargetToExternalLinks: false
+    decorators:
+      openInNewTab:
+        attributes:
+          rel: 'noopener noreferrer'
+          target: _blank
+        label: 'Open in a new tab'
+        mode: manual
+toolbar:
+  - bold
+  - italic
+  - link
+  - superscript
+  - subscript
+  - sourceEditing

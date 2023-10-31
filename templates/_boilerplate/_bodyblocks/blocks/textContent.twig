@@ -12,5 +12,9 @@
 
 {# Load in global macros for use across all Twig templates #}
 {% import '_boilerplate/_macros/globalMacros' as gMacros %}
-
-{{ block.textContent }}
+{% set classList = ['mt-base', 'anim-pass', 'text-content' ] %}
+{% set classListUl = ['bullet-list', 'anim-child', block.numberOfColumnsTablet, block.numberOfColumnsLaptop, block.numberOfColumnsDesktop ] %}
+    
+{#<div {{ gMacros.buildClassListBasic(classList) -}}>#}
+{{ block.textContent | retconAttr('*:not(li) > ul', { class: classListUl }) | retconAttr('p', { class: 'anim-child' }) | retconAttr('ol', { class: 'anim-child' }) }}
+{#</div>#}
