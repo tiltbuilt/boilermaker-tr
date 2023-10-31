@@ -1,6 +1,6 @@
 childBlocks: null
 conditions: null
-description: null
+description: ''
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -40,6 +40,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dismissible: false
             elementCondition: null
             style: tip
             tip: 'These settings will be override the settings from group is chosen.'
@@ -106,6 +107,7 @@ fieldLayouts:
 group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
 groupChildBlockTypes: true
 handle: button
+icon: null
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0

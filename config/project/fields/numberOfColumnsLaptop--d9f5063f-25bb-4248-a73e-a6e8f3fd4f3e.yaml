@@ -1,0 +1,68 @@
+columnSuffix: unvlzpbw
+contentColumnType: string(12)
+fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
+handle: numberOfColumnsLaptop
+instructions: null
+name: 'Number of Columns - Laptop'
+searchable: false
+settings:
+  columnType: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Change (Use Default)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '1'
+        -
+          - value
+          - columns-lg-1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2'
+        -
+          - value
+          - columns-lg-2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3'
+        -
+          - value
+          - columns-lg-3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4'
+        -
+          - value
+          - columns-lg-4
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

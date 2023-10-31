@@ -1,0 +1,64 @@
+css: ".ck.ck-content .text-sm {\r\n  font-size: 0.875rem;\r\n}\r\n\r\n.ck.ck-content ul.multicol2 {\r\n  column-count: 2;\r\n  column-gap: 30px;\r\n}\r\n\r\n.ck.ck-content ul.multicol3 {\r\n  column-count: 3;\r\n  column-gap: 30px;\r\n}"
+headingLevels:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+listPlugin: List
+name: Default
+options:
+  heading:
+    options:
+      -
+        class: ck-heading_paragraph
+        model: paragraph
+        title: Paragraph
+      -
+        class: ck-heading_heading2
+        model: heading2
+        title: 'Heading 2'
+        view: h2
+      -
+        class: ck-heading_heading3
+        model: heading3
+        title: 'Heading 3'
+        view: h3
+  link:
+    addTargetToExternalLinks: false
+    decorators:
+      openInNewTab:
+        attributes:
+          rel: 'noopener noreferrer'
+          target: _blank
+        label: 'Open in a new tab'
+        mode: manual
+  style:
+    definitions:
+      -
+        classes:
+          - text-sm
+        element: span
+        name: 'Small Text'
+      -
+        classes:
+          - multicol2
+        element: ul
+        name: 'Two Column List'
+      -
+        classes:
+          - multicol3
+        element: ul
+        name: 'Three Column List'
+toolbar:
+  - heading
+  - bold
+  - italic
+  - link
+  - '|'
+  - bulletedList
+  - numberedList
+  - '|'
+  - superscript
+  - subscript
+  - sourceEditing

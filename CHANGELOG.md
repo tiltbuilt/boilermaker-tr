@@ -1,5 +1,35 @@
 # Changelog
 
+## 2.7.0 - 2023-10-31
+## Updated
+- craft 4.4.16.1 => 4.5.9
+- blitz 4.5.0 => 4.7.0
+- embeddedassets 3.1.6 => 3.1.8
+- feed-me 5.1.3.1 => 5.2.0
+- field-manager 3.0.7 => 3.0.8
+- freeform 4.1.6 => 4.1.11
+- imager-x 4.2.1 => 4.2.3
+- navigation 2.0.19 => 2.0.22
+- neo 3.8.3 => 3.9.8
+- retcon 2.7.3 => 2.7.4
+- retour 4.1.12 => 4.1.14
+- seomatic 4.0.30 => 4.0.33
+- icon-picker 2.0.13 => 2.0.15
+
+## Removed
+- Redactor and related plugins
+
+## Added
+- CKeditor
+
+## Changed
+- Changed Redactor Configs to work with CKEditor
+- Changed text content block to automatically make bullet lists and also allow for multi-column ul lists
+- Fixed icon picker value issues in accordion block
+- Fixed error in Imager-X transform list that caused square images to misrender
+
+
+
 ## 2.6.0 - 2023-08-02
 ## Updated
 

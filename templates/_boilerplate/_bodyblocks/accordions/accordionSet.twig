@@ -34,9 +34,9 @@
 
 
 {% if accordion.accordionIcon.sprite|length %}
-	{% set accIcon = accordion.accordionIcon.sprite %}
+	{% set accIcon = accordion.accordionIcon.value %}
 {% else %}
-	{% set accIcon = gSettings.accordionIcon.sprite %}
+	{% set accIcon = gSettings.accordionIcon.value %}
 {% endif %}
 
 

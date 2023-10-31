@@ -141,7 +141,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 3/1,
+			'ratio' => 1/1,
 			'format' => 'jpg'
 		],
 		'configOverrides' => [
@@ -150,7 +150,7 @@ return [
 		]
 	],
 	'headerImageWebp-1-1' => [
-		'transforms' => 'headerImage-3-1',
+		'transforms' => 'headerImage-1-1',
 		'defaults' => [
 			'format' => 'webp',
 		]
