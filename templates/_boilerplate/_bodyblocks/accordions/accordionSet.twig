@@ -33,13 +33,6 @@
 {% endif %}
 
 
-{% if accordion.accordionIcon.sprite|length %}
-	{% set accIcon = accordion.accordionIcon.value %}
-{% else %}
-	{% set accIcon = gSettings.accordionIcon.value %}
-{% endif %}
-
-
 {% if accordion.colorScheme != null and accordion.colorScheme.class != '' %}
 	{% set colorScheme = accordion.colorScheme.class %}
 {% endif %}
@@ -149,7 +142,28 @@
 					<{{accHeadingLevel}} id="{{ headingId }}" class="accordion-button-header" >
 						<button {{ gMacros.buildElementAttributes(buttonId, null, buttonClasses, buttonCustClasses, buttonAttrs) -}}>
 							<div class="accordion-icon">
-								<svg><use xlink:href="#{%if child.accordionIcon != null and child.accordionIcon.value|length %}{{child.accordionIcon.value}}{% else %}{{accIcon}}{% endif %}"></use></svg>
+								
+								{% if child.accordionIcon|length %}
+									{% set accIcon = child.accordionIcon %}
+								{% elseif accordion.accordionIcon|length %}
+									{% set accIcon = accordion.accordionIcon %}
+								{% elseif gSettings.accordionIcon|length %}
+									{% set accIcon = gSettings.accordionIcon %}
+								{% else %}
+									{% set accIcon = null %}
+								{% endif %}
+								
+								{% if accIcon %}
+									{% if accIcon.type == 'svg' %}
+										{{ accIcon.inline }}
+									{% elseif accIcon.type == 'css' %}
+										<i class="{{ accIcon.value }}"></i>								
+									{% else %}
+										<svg><use xlink:href="#{{ accIcon.value }}"></use></svg>
+									{% endif %}
+								{% else %}
+									<svg><use xlink:href="#icon-caret-right"></use></svg>
+								{% endif %}	
 							</div>
 							{{ gMacros.stripTags(child.tabTitle) }}
 						</button>

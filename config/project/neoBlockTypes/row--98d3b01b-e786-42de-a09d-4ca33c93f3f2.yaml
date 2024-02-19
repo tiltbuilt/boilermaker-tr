@@ -156,6 +156,7 @@ group: 200f9abd-1678-4075-903d-84e7ba2ad8cb # Layout Elements
 groupChildBlockTypes: true
 handle: row
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 5
@@ -164,5 +165,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Multicolumn Layout Row'
-sortOrder: 23
 topLevel: false

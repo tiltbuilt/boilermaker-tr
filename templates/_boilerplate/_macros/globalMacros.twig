@@ -159,7 +159,7 @@
   {% import '_boilerplate/_macros/globalMacros' as gMacros %}
   	{% set bgSizes = [] %}
 	{% for bgSet in bgSettings %}
-  		{% set bgSize = bgSizes|merge([bgSet.deviceSize]) %}	  
+  		{% set bgSizes = bgSizes|merge([bgSet.deviceSize]) %}	  
 	{% endfor %}
 	
 	{% if aspect|length %}

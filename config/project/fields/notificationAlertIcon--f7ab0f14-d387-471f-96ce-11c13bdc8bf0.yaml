@@ -1,9 +1,9 @@
-columnSuffix: byvnokpb
+columnSuffix: gnfjbtec
 contentColumnType: string
-fieldGroup: c1cbe587-fbcb-4f85-b283-9490f65fde90 # Page Builder - Content Elements
-handle: iconAsset
+fieldGroup: 7450367a-cdf2-446d-ad60-d78b932299d5 # Globals
+handle: notificationAlertIcon
 instructions: null
-name: 'Icon Asset'
+name: 'Notification Alert Icon'
 searchable: false
 settings:
   columnType: text

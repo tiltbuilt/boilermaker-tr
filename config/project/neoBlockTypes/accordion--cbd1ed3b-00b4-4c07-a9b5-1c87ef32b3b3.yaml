@@ -24,7 +24,7 @@ description: ''
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
-  aba6794b-fd8b-4c2c-adce-f8661486434c:
+  e37ca15d-b7ff-4c26-a80f-69d7400d68ca:
     tabs:
       -
         elementCondition: null
@@ -38,6 +38,18 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 1d08f179-1e4d-40d0-b828-1affce79e3d7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 116b0f4f-13b5-47fe-9daa-6716a09821a4 # Accordion Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d94b16be-6f61-49f4-95ae-62f13fa26e9b
             userCondition: null
             warning: null
             width: 100
@@ -83,6 +95,7 @@ group: 68009970-c220-4680-a6b5-f3b6b34c937f # Accordions
 groupChildBlockTypes: true
 handle: accordion
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -91,5 +104,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: Accordion
-sortOrder: 21
 topLevel: false

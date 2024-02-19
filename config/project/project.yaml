@@ -1,4 +1,4 @@
-dateModified: 1698769225
+dateModified: 1708112138
 elementSources:
   craft\elements\Entry:
     -
@@ -218,6 +218,7 @@ meta:
     472dab51-5b42-4e66-ae7a-9dfb80cb6f7e: 'Text Content' # Text Content
     602e2d73-2428-44f0-9371-d73d8d71f894: 'Transparent Background' # Transparent Background
     616d3f20-6be2-43a3-87a9-0a0d54e89f20: 'Icon Size' # Icon Size
+    640fed13-e2e8-4295-932e-7e281dedb7e6: 'Notification Bar Color' # Notification Bar Color
     670b5abf-edf9-484c-a6bb-b817a00336f0: 'Display Setting' # Display Setting
     0677b495-c3dc-476b-a572-1af1fb58b548: 'Block Quote' # Block Quote
     812ffe65-6485-4987-9a4f-6f8c2cecfdae: 'Accordion Set' # Accordion Set
@@ -373,6 +374,7 @@ meta:
     efd060e3-bbca-40d7-90b1-56f368a5bf92: Default # Default
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f6dbd613-57d2-4f78-971b-6b01213f6ac2: 'Subhead Text Styling Adjustments' # Subhead Text Styling Adjustments
+    f7ab0f14-d387-471f-96ce-11c13bdc8bf0: 'Notification Alert Icon' # Notification Alert Icon
     f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
     f43aea4b-4b7f-4e38-8ccb-26a69c52fae2: 'Background Position' # Background Position
     f86c3e73-0c45-4315-9a91-64f2025a0fb5: 'Column Vertical Alignment' # Column Vertical Alignment
@@ -393,8 +395,8 @@ plugins:
   blitz:
     edition: standard
     enabled: true
-    licenseKey: 
-    schemaVersion: 4.5.0
+    licenseKey: 6SBJ0VDLLF0ROEVTN9WKIXUP
+    schemaVersion: 4.11.1
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -582,8 +584,8 @@ plugins:
   freeform:
     edition: pro
     enabled: true
-    licenseKey: 
-    schemaVersion: 4.2.7
+    licenseKey: D4MJQSKZLHIJHEGYLT442CIA
+    schemaVersion: 5.0.21
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -673,7 +675,7 @@ plugins:
   icon-picker:
     edition: standard
     enabled: true
-    licenseKey: 
+    licenseKey: AX74DPQJIAL1VY9DF9UYU74D
     schemaVersion: 1.2.3
     settings:
       enableCache: true
@@ -684,7 +686,7 @@ plugins:
   imager-x:
     edition: pro
     enabled: true
-    licenseKey:
+    licenseKey: YEZJPYEXD6PNDBM8PGD6GD7X
     schemaVersion: 4.0.0
   minify:
     edition: standard
@@ -693,13 +695,13 @@ plugins:
   navigation:
     edition: standard
     enabled: true
-    licenseKey: 
+    licenseKey: T4AWZVCX3MRT4M205XO8JAM5
     schemaVersion: 2.0.7
   neo:
     edition: standard
     enabled: true
-    licenseKey: 
-    schemaVersion: 3.6.2
+    licenseKey: AQIGW6LIH7F1X51CM86UWZHQ
+    schemaVersion: 4.0.0
   retcon:
     edition: standard
     enabled: true
@@ -707,7 +709,7 @@ plugins:
   retour:
     edition: standard
     enabled: true
-    licenseKey: 
+    licenseKey: R0YVH3623EJMNPXV91RFM09M
     schemaVersion: 3.0.12
   section-and-product-type:
     edition: standard
@@ -716,7 +718,7 @@ plugins:
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: 
+    licenseKey: R2HKSCM468JMLCZ420Z2HG5Y
     schemaVersion: 3.0.12
   twigpack:
     edition: standard

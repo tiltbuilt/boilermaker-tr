@@ -130,6 +130,7 @@ group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
 groupChildBlockTypes: true
 handle: blockQuote
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -138,5 +139,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Block Quote'
-sortOrder: 5
 topLevel: false

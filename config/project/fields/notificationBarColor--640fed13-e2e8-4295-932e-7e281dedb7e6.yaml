@@ -1,0 +1,30 @@
+columnSuffix: yfhtpjmy
+contentColumnType: text
+fieldGroup: 7450367a-cdf2-446d-ad60-d78b932299d5 # Globals
+handle: notificationBarColor
+instructions: null
+name: 'Notification Bar Color'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Red
+        -
+          - color
+          - '#b91c1c'
+        -
+          - default
+          - '1'
+        -
+          - class
+          - bg-red
+  palette: null
+  setRandom: false
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

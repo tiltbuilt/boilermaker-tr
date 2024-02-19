@@ -953,23 +953,7 @@ $(document).ready(function() {
 				// Locate and update the CSRF input
 				var csrf = response.csrf;
 				form.children('input[name=' + csrf.name + ']').val(csrf.value);
-				if (formhandle == 'rentalRequestForm') {
-					var urlParams = new URLSearchParams(window.location.search);
-					if (urlParams.has('spaceid')) {
-						var whichspace = urlParams.get('spaceid');
-						switch (whichspace) {
-						  case 'the-loft':
-							$('#form-input-spaceRequested').val('The Loft').change();
-							break;
-						  case 'the-upper-deck':
-							$('#form-input-spaceRequested').val('The Upper Deck').change();
-							break;
-						  case 'the-lower-deck':
-							$('#form-input-spaceRequested').val('The Lower Deck').change();
-							break;
-						}
-					}
-				}
+				
 			},
 		});
 	});
@@ -987,12 +971,11 @@ $(document).ready(function() {
 			var errors = event.errors;	
 			
 			var errorEl = document.createElement('div');
-			errorEl.className = 'ff-errors';
+			errorEl.className = 'freeform-errors';
 			
 			for (var fieldHandle in errors) {
 				errorEl.appendChild(document.createTextNode(errors[fieldHandle]));
-			}
-			
+			}			
 			form.appendChild(errorEl);
 		}		
 	});

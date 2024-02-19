@@ -252,6 +252,7 @@ group: 48b8fee7-c04a-4678-9a5b-7940a6b3df25 # Page Section Blocks
 groupChildBlockTypes: true
 handle: sectionTwoColumnEdgePhoto
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -260,5 +261,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: '2 Column Edge Photo'
-sortOrder: 3
 topLevel: true

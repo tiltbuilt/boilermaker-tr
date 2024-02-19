@@ -95,6 +95,7 @@ group: 23334036-40df-4901-af54-8ff0970ddb43 # Tab Sets
 groupChildBlockTypes: true
 handle: tabPanel
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -103,5 +104,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Tab Panel'
-sortOrder: 38
 topLevel: false

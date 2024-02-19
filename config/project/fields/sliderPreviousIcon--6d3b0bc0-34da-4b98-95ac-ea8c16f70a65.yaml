@@ -7,8 +7,8 @@ name: 'Slider Previous Icon'
 searchable: false
 settings:
   columnType: text
-  iconSets:
-    - 11a4b42b-e8a2-43ab-85ea-4276b11be2cb # ui-svg-sprites
+  iconSets: '*'
+  renderId: null
   showLabels: true
 translationKeyFormat: null
 translationMethod: none
