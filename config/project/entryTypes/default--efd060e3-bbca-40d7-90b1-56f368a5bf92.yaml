@@ -12,7 +12,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            inputType: null
             instructions: null
             label: null
             max: null
@@ -43,30 +42,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            elementCondition: null
-            fieldUid: f7ab0f14-d387-471f-96ce-11c13bdc8bf0 # Notification Alert Icon
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8528c909-32e8-44c0-96fc-3287b9f53862
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 640fed13-e2e8-4295-932e-7e281dedb7e6 # Notification Bar Color
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 10f2ff69-01bd-4e6f-b020-3e0c3fdb50d1
-            userCondition: null
-            warning: null
-            width: 100
         name: Content
         uid: d0434e27-84a6-4fe2-ad91-834272ca4ec5
         userCondition: null
@@ -74,9 +49,6 @@ handle: default
 hasTitleField: true
 name: Default
 section: bc2c7dd5-944f-4180-b730-8d939da0aa73 # Notification Bar Alerts
-showStatusField: true
-slugTranslationKeyFormat: null
-slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

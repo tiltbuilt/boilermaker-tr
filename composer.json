@@ -1,7 +1,7 @@
 {
     "name": "tiltbuilt/boilermaker-tr",
     "description": "Starter Craft setup for site built by Tilt.",
-    "version": "2.7.0",
+    "version": "2.8.0",
     "type": "project",
     "require": {
         "craftcms/ckeditor": "3.7.3",
@@ -17,7 +17,7 @@
         "putyourlightson/craft-blitz": "4.11.1",
         "putyourlightson/craft-elements-panel": "2.0.0",
         "sebastianlenz/linkfield": "2.1.5",
-        "solspace/craft-freeform": "5.0.10",
+        "solspace/craft-freeform": "5.0.11",
         "spacecatninja/imager-x": "4.3.1",
         "spicyweb/craft-embedded-assets": "3.2.0",
         "spicyweb/craft-neo": "4.0.5",

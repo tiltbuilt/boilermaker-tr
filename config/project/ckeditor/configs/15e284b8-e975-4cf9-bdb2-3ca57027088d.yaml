@@ -1,11 +1,10 @@
-css: ".ck.ck-content .text-sm {\r\n  font-size: 0.875rem;\r\n}\r\n\r\n.ck.ck-content ul.multicol2 {\r\n  column-count: 2;\r\n  column-gap: 30px;\r\n}\r\n\r\n.ck.ck-content ul.multicol3 {\r\n  column-count: 3;\r\n  column-gap: 30px;\r\n}"
+css: ".ck.ck-content .text-sm {\r\n  font-size: 0.875rem;\r\n}"
 headingLevels:
   - 2
   - 3
   - 4
   - 5
   - 6
-listPlugin: List
 name: 'Long Format'
 options:
   code:
@@ -51,17 +50,8 @@ options:
           - text-sm
         element: span
         name: 'Small Text'
-      -
-        classes:
-          - multicol2
-        element: ul
-        name: 'Two Column List'
-      -
-        classes:
-          - multicol3
-        element: ul
-        name: 'Three Column List'
 toolbar:
+  - '|'
   - heading
   - '|'
   - style
@@ -73,7 +63,4 @@ toolbar:
   - link
   - insertImage
   - mediaEmbed
-  - '|'
-  - superscript
-  - subscript
   - sourceEditing

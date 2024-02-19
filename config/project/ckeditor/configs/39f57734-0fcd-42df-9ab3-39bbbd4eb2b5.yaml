@@ -1,12 +1,6 @@
-headingLevels:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-listPlugin: List
-name: 'Heading Text'
+css: ".ck.ck-content .text-sm {\r\n  font-size: 0.875rem;\r\n}"
+headingLevels: false
+name: Simple
 options:
   link:
     addTargetToExternalLinks: false
@@ -17,10 +11,18 @@ options:
           target: _blank
         label: 'Open in a new tab'
         mode: manual
+  style:
+    definitions:
+      -
+        classes:
+          - text-sm
+        element: span
+        name: 'Small Text'
 toolbar:
   - bold
   - italic
   - link
-  - superscript
-  - subscript
+  - bulletedList
+  - numberedList
+  - style
   - sourceEditing

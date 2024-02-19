@@ -1,0 +1,35 @@
+css: ".ck.ck-content .text-sm {\r\n  font-size: 0.875rem;\r\n}"
+headingLevels: false
+name: Default
+options:
+  heading:
+    options:
+      -
+        class: ck-heading_paragraph
+        model: paragraph
+        title: Paragraph
+  link:
+    addTargetToExternalLinks: false
+    decorators:
+      openInNewTab:
+        attributes:
+          rel: 'noopener noreferrer'
+          target: _blank
+        label: 'Open in a new tab'
+        mode: manual
+  style:
+    definitions:
+      -
+        classes:
+          - text-sm
+        element: span
+        name: 'Small Text'
+toolbar:
+  - heading
+  - style
+  - bold
+  - italic
+  - link
+  - bulletedList
+  - numberedList
+  - sourceEditing

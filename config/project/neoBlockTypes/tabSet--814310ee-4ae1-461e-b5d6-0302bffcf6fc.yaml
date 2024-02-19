@@ -1,7 +1,7 @@
 childBlocks:
   - tabPanel
 conditions: null
-description: ''
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -100,7 +100,6 @@ fieldLayouts:
             uid: 17fc4519-3c35-4820-9014-b4b356861a92
             userCondition: null
           -
-            dismissible: false
             elementCondition: null
             style: tip
             tip: 'These settings will be applied to each of the tab panels in the set.'
@@ -150,7 +149,6 @@ fieldLayouts:
             uid: 4622b0fd-f30d-4772-9e7d-f5124f7af8f1
             userCondition: null
           -
-            dismissible: false
             elementCondition: null
             style: tip
             tip: 'Margins are applied to the entire set as a group'
@@ -235,8 +233,6 @@ fieldLayouts:
 group: 23334036-40df-4901-af54-8ff0970ddb43 # Tab Sets
 groupChildBlockTypes: true
 handle: tabSet
-icon: null
-iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -245,4 +241,5 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Tab Set'
+sortOrder: 37
 topLevel: false

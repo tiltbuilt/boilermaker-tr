@@ -1,6 +1,6 @@
 childBlocks: null
 conditions: null
-description: ''
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -28,7 +28,6 @@ fieldLayouts:
             uid: c8930d4a-c8b4-488b-abb8-4bc86308a9e9
             userCondition: null
           -
-            dismissible: false
             elementCondition: null
             style: tip
             tip: 'These elements are not necessary to use the block, but can be added to simplify content entry if desired.'
@@ -275,8 +274,6 @@ fieldLayouts:
 group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
 groupChildBlockTypes: true
 handle: iconContent
-icon: null
-iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -285,4 +282,5 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Icon & Content'
+sortOrder: 14
 topLevel: false
