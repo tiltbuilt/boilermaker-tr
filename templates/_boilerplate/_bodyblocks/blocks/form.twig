@@ -115,7 +115,14 @@
 		
 		<div class="elem-block form-wrapper {{colorScheme}} anim-child">			
 			<div class="inner">
-				{{ block.formToDisplay.render({submitClass: 'btn btn-standard'}) }}
+				{{ block.formToDisplay.render({
+					buttons: {
+						attributes: {
+							submit: { class: 'btn btn-standard'},
+						},						
+					},
+				}) 
+				}}
 				<small class="mt-2x">* Required Field</small>
 			</div>			
 		</div>

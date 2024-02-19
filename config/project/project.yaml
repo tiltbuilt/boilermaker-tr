@@ -1,4 +1,4 @@
-dateModified: 1698769225
+dateModified: 1708361692
 elementSources:
   craft\elements\Entry:
     -
@@ -106,7 +106,6 @@ meta:
   __names__:
     0a5f2a0c-d670-45c7-b405-3a7c6a3c1366: Embeds # Embeds
     0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
-    0b9f1a81-c0ac-4a14-b388-6534c2e00e21: 'Long Format' # Long Format
     0dca6734-7fae-4eb5-9080-642e901fd4fb: 'Slide Content Row' # Slide Content Row
     1acfdc52-cb76-4bd9-9286-5e59bc27def6: 'Slider Next Icon' # Slider Next Icon
     1bf643d4-1bb3-4e85-abe5-0a6510c964a4: Animations # Animations
@@ -176,13 +175,14 @@ meta:
     12c30846-c1db-40fd-aa5a-3af9bc56847f: $SITE_NAME # $SITE_NAME
     13cdbf3c-d282-437b-954b-37f4b42e4469: 'Bottom Margin' # Bottom Margin
     15e02460-e8b5-47da-98ed-78bdb8544472: 'Page Header' # Page Header
+    15e284b8-e975-4cf9-bdb2-3ca57027088d: 'Long Format' # Long Format
     018cb2e1-bf90-4fcb-a468-3a5f096c8a67: Text # Text
     20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
-    23d9a741-390d-4faf-ba07-d3081867217f: 'Number of Columns - Desktop' # Number of Columns - Desktop
     25b0022d-febf-468d-a918-77448e3d43fb: 'Repeater - Content Links' # Repeater - Content Links
     27e30a49-d608-40e6-adc6-a66d57da7087: 'Quote Credit' # Quote Credit
     29e80cd8-c8f0-45fe-8d22-66b4b70fcfca: 'Font Weight' # Font Weight
     33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
+    39f57734-0fcd-42df-9ab3-39bbbd4eb2b5: Simple # Simple
     42ed3a6e-60bd-447b-84ab-5057c4ebe215: 'Show Page Footer' # Show Page Footer
     44f618bc-1d3d-49ba-9dd0-57513d7b88bd: 'User Uploads' # User Uploads
     46b72c49-6f07-4cae-936b-63d8dc62bfde: Repeaters # Repeaters
@@ -197,6 +197,7 @@ meta:
     57b2c8c5-a853-4b68-b462-728fda90ad3e: 'Background Set' # Background Set
     57ecb807-9701-4046-8fbd-b0c5e7fbf4c3: 'Quote Content' # Quote Content
     62a75024-d55d-4399-bacd-2e5c946d5767: 'Icon & Content' # Icon & Content
+    66ec20f9-7e5f-449d-aa1f-50485e7a9b0e: 'Heading Text' # Heading Text
     69de199e-8337-4836-a446-cb00cd81b78d: Home # Home
     76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
     76cb0e82-e2b7-494e-804a-24e01dda1a76: 'Column Adjustment' # Column Adjustment
@@ -238,6 +239,7 @@ meta:
     5553a528-f723-48bf-965f-6d720f5df686: 'SEO - Description' # SEO - Description
     6364e0fe-681a-4800-8eb6-795f9a639fec: 'Button Style' # Button Style
     6890bd2e-8a1e-49f7-bcd5-f9814de0d2c0: 'Content Column Vertical Alignment' # Content Column Vertical Alignment
+    7181c723-5fb4-427a-8262-e4d67fc96f48: Default # Default
     7250fbbb-07b2-4c31-a5b0-5f586c469ce2: 'Page Builder - Rows & Columns' # Page Builder - Rows & Columns
     8610cee3-613a-4c83-bb5d-b651634fa44a: 'Menu Items - Wine' # Menu Items - Wine
     8875cd45-2f9b-4eb1-bd37-5452b7ac8e61: 'Quote Credit Title' # Quote Credit Title
@@ -251,12 +253,10 @@ meta:
     56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
     79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
     84926a4b-f881-4b15-8c95-3b959ad89d4a: Alignment # Alignment
-    88500a40-18f5-433e-933f-8bc12606fd84: Default # Default
     96950bc8-d052-4574-9e24-529f27899d2f: 'Form to Display' # Form to Display
     167456ee-f98a-48a0-8856-c9a090ed215f: 'Icon Asset' # Icon Asset
     213094d3-baa2-4b48-b189-631125e3e28a: 'Standard Section' # Standard Section
     237171d3-d028-48a4-91ec-2bcbacd208a1: 'Alt Text' # Alt Text
-    279987d9-8812-4dc5-9906-603947e546ff: 'Number of Columns - Tablet' # Number of Columns - Tablet
     597562da-9c14-4e54-a628-bb52807f75ad: 'Text Wrap Position' # Text Wrap Position
     814310ee-4ae1-461e-b5d6-0302bffcf6fc: 'Tab Set' # Tab Set
     1371181e-0e3f-44fe-bfdd-4848b6b55d74: 'Page Builder - Sliders' # Page Builder - Sliders
@@ -302,7 +302,6 @@ meta:
     b86bab37-08e2-447e-a0b3-b732d2553a42: 'Device Size' # Device Size
     b88c25ba-3eb5-466b-98f6-59055018e32d: 'Bottom Margin' # Bottom Margin
     b120ef6a-6411-43ab-be0a-54fbe722077c: 'Quote Text' # Quote Text
-    b70077b0-79d8-4702-b659-7e7c99f39aa6: 'Heading Text' # Heading Text
     ba83b54d-4c29-4700-8fe3-aa2822a9d6b1: Default # Default
     bb167aed-8f2a-4fea-b65b-cabe5d44a47d: 'Device Size' # Device Size
     bb136509-26da-4d34-bab0-fcf67764b3f2: 'Show Site Header' # Show Site Header
@@ -348,7 +347,6 @@ meta:
     d2f828ff-144d-44ce-bffb-969915102acd: Italic # Italic
     d4a36f44-e497-4a31-9bda-6277d5c820af: Sliders # Sliders
     d6de3a74-4147-4c98-abef-1de4f8e746f7: Button # Button
-    d9f5063f-25bb-4248-a73e-a6e8f3fd4f3e: 'Number of Columns - Laptop' # Number of Columns - Laptop
     d86c02d7-08d3-44c2-b76c-aa170103e7db: 'Subhead Level' # Subhead Level
     d559fe04-efd1-43e2-80b1-d4d46c2d2ae2: 'Subhead Text' # Subhead Text
     d1336a2e-90ba-4ab3-b632-a1f61e700c2d: 'Block Controls' # Block Controls
@@ -362,7 +360,6 @@ meta:
     e19df32e-9528-42e7-8b69-8c1e0db65f4d: 'Button Text' # Button Text
     e28d1c24-f3ad-42e9-9ddb-f9837ee9f9b4: Entries # Entries
     e90e752a-e16f-4480-b60e-93e60b4ce211: 'Long Format Text' # Long Format Text
-    e2163e3f-a460-4aa2-9ddc-970dfc80994c: Simple # Simple
     e76476c3-0516-4766-932d-cff2b07934a8: 'Subhead Style' # Subhead Style
     e86087fc-c0c1-4f13-895c-8ac461fd3a1c: Font # Font
     e166358b-d703-4754-a2cc-5554ce45be74: 'Public Schema' # Public Schema
@@ -394,7 +391,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 
-    schemaVersion: 4.5.0
+    schemaVersion: 4.4.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -582,8 +579,8 @@ plugins:
   freeform:
     edition: pro
     enabled: true
-    licenseKey: 
-    schemaVersion: 4.2.7
+    licenseKey:
+    schemaVersion: 4.2.4
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -684,7 +681,7 @@ plugins:
   imager-x:
     edition: pro
     enabled: true
-    licenseKey:
+    licenseKey: 
     schemaVersion: 4.0.0
   minify:
     edition: standard
@@ -708,16 +705,16 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 
-    schemaVersion: 3.0.12
+    schemaVersion: 3.0.11
   section-and-product-type:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.3
+    schemaVersion: 2.0.1
   seomatic:
     edition: standard
     enabled: true
     licenseKey: 
-    schemaVersion: 3.0.12
+    schemaVersion: 3.0.11
   twigpack:
     edition: standard
     enabled: true
@@ -731,5 +728,5 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 4.5.3.0
+  schemaVersion: 4.4.0.4
   timeZone: America/Chicago

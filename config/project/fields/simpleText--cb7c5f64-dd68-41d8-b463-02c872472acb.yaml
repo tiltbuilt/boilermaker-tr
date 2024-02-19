@@ -8,7 +8,7 @@ searchable: true
 settings:
   availableTransforms: '*'
   availableVolumes: ''
-  ckeConfig: e2163e3f-a460-4aa2-9ddc-970dfc80994c # Simple
+  ckeConfig: 39f57734-0fcd-42df-9ab3-39bbbd4eb2b5 # Simple
   columnType: text
   defaultTransform: ''
   enableSourceEditingForNonAdmins: false

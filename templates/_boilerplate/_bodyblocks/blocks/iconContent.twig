@@ -95,7 +95,13 @@
 		
 		<div id="{{iconId}}" class="anim-child iconContent-icon-block">			
 			<div class="inner iconContent-icon-block-inner">
-				<svg><use xlink:href="#{{ block.iconAsset.value }}"></use></svg>
+				{% if  block.iconAsset.type == 'svg' %}
+					{{  block.iconAsset.inline }}
+				{% elseif block.iconAsset.type == 'css' %}
+					<i class="{{ block.iconAsset }}"></i>								
+				{% else %}
+					<svg><use xlink:href="#{{ block.iconAsset.value }}"></use></svg>
+				{% endif %}		
 			</div>			
 		</div>
 		
@@ -128,7 +134,7 @@
 			
 			{% set buttonLink = block.linkSettings %} {# no link settings, no button #}
 			
-			{% if buttonLink %}
+			{% if buttonLink.url|length %}
 				<div class="iconContent-btn-wrapper anim-child">					
 					<div class="inner">	
 						<a href="{{ buttonLink.url }}" id="{{btnId}}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} {{ gMacros.buildClassListBasic(['btn', 'btn-iconContent',  block.buttonStyle, block.buttonSize]) -}} {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %} {% if buttonLink.title|length %} title="{{buttonLink.title}}"{% endif %}>

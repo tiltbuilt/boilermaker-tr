@@ -6,7 +6,7 @@ childBlocks:
   - contentVideo
   - rowSlide
 conditions: null
-description: ''
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -57,7 +57,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dismissible: false
             elementCondition: null
             style: tip
             tip: 'The default layout for slides is set in the style sheet. These controls can override that setting.'
@@ -208,7 +207,6 @@ fieldLayouts:
 group: d4a36f44-e497-4a31-9bda-6277d5c820af # Sliders
 groupChildBlockTypes: true
 handle: slide
-icon: null
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0

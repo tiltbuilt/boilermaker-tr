@@ -1,7 +1,7 @@
 childBlocks:
   - repeaterItemContentLink
 conditions: null
-description: ''
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -226,7 +226,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dismissible: false
             elementCondition: null
             style: tip
             tip: 'This field sets the text for the link button to the view the full post from the slider'
@@ -353,7 +352,6 @@ fieldLayouts:
 group: 46b72c49-6f07-4cae-936b-63d8dc62bfde # Repeaters
 groupChildBlockTypes: true
 handle: repeaterContentLinks
-icon: null
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0

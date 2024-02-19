@@ -1,10 +1,10 @@
 childBlocks: null
 conditions: null
-description: ''
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
-  f89bdd28-97f8-4b8a-bd30-586d1db43e84:
+  af34f763-0756-4bb6-81f7-a3d3c68718f2:
     tabs:
       -
         elementCondition: null
@@ -24,52 +24,9 @@ fieldLayouts:
         name: Content
         uid: 14b23576-8aaa-492f-b319-f32362a81fad
         userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            fieldUid: 279987d9-8812-4dc5-9906-603947e546ff # Number of Columns - Tablet
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 00110e52-b7aa-470b-9514-77b54ad6c85a
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: d9f5063f-25bb-4248-a73e-a6e8f3fd4f3e # Number of Columns - Laptop
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: aadeca40-827b-4e59-b1ba-07ce8dc25298
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 23d9a741-390d-4faf-ba07-d3081867217f # Number of Columns - Desktop
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8bbb3445-f753-4754-ab85-d788c8819a2d
-            userCondition: null
-            warning: null
-            width: 100
-        name: 'List Multi Column Settings'
-        uid: 4f5da162-ccc7-4246-807c-9493ce762bcd
-        userCondition: null
 group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
 groupChildBlockTypes: true
 handle: textContent
-icon: null
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0

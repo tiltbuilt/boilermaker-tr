@@ -20,7 +20,7 @@ childBlocks:
   - sliderSet
   - tabSet
 conditions: null
-description: ''
+description: null
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -82,7 +82,6 @@ fieldLayouts:
 group: 68009970-c220-4680-a6b5-f3b6b34c937f # Accordions
 groupChildBlockTypes: true
 handle: accordion
-icon: null
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0

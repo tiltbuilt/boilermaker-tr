@@ -1,4 +1,35 @@
 # Changelog
+## 2.7.0 - 2024-02-19
+## Updated
+- craft 4.5.9 => 4.7.3
+- blitz 4.7.0 => 4.11.1
+- embeddedassets 3.1.8 => 3.2.0
+- feed-me 5.2.0 => 5.3.0
+- freeform 4.1.11 => 5.0.11
+- imager-x 4.2.3 => 4.3.1
+- navigation 2.0.22 => 2.0.25
+- neo 3.9.8 => 4.0.5
+- retcon 2.7.4 => 2.7.5
+- retour 4.1.14 => 4.1.15
+- seomatic 4.0.33 => 4.0.40
+- icon-picker 2.0.15 => 2.0.16
+- ckeditor 3.6.0 => 3.7.3
+- minify 4.0.0-beta.2 => 4.0.1
+
+## Removed
+- Redactor and related plugins
+
+## Added
+- CKeditor
+
+## Changed
+- Changed Redactor Configs to work with CKEditor
+- Updated templates to work new version of freeform
+- Changed icon picker fields to handle different types of icons
+
+### Fixed
+- bug in global macro that cause multi-image backgrounds to fail
+
 
 ## 2.7.0 - 2023-10-31
 ## Updated
