@@ -34,12 +34,14 @@ fields:
       availableVolumes: '*'
       ckeConfig: 15e284b8-e975-4cf9-bdb2-3ca57027088d # Long Format
       columnType: text
-      defaultTransform: ''
+      defaultTransform: null
       enableSourceEditingForNonAdmins: false
       purifierConfig: null
       purifyHtml: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\ckeditor\Field

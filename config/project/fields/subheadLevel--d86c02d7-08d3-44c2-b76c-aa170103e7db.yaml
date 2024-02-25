@@ -6,6 +6,7 @@ instructions: null
 name: 'Subhead Level'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

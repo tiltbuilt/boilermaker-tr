@@ -23,6 +23,7 @@ settings:
           - class
           - black-white-gray
   palette: null
+  setRandom: false
   useConfigFile: false
 translationKeyFormat: null
 translationMethod: none

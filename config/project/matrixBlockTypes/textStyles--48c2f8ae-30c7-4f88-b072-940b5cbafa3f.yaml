@@ -102,6 +102,7 @@ fields:
     name: 'Font Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -400,6 +401,7 @@ fields:
     name: 'Line Height'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -490,6 +492,7 @@ fields:
     name: 'Font Weight'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -536,6 +539,7 @@ fields:
     name: Font
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -560,6 +564,7 @@ fields:
     name: 'Letter Spacing'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -650,6 +655,7 @@ fields:
     name: Italic
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -696,6 +702,7 @@ fields:
     name: 'Text Case'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:

@@ -37,6 +37,7 @@ settings:
           - class
           - black-white-red
   palette: null
+  setRandom: false
   useConfigFile: false
 translationKeyFormat: null
 translationMethod: none

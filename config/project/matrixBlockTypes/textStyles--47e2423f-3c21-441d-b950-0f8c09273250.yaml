@@ -90,6 +90,7 @@ fields:
     name: 'Device Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -169,6 +170,7 @@ fields:
     name: Alignment
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -237,6 +239,7 @@ fields:
     name: 'Bottom Margin'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -370,6 +373,7 @@ fields:
     name: 'Font Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -668,6 +672,7 @@ fields:
     name: 'Line Height'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -758,6 +763,7 @@ fields:
     name: 'Top Margin'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:

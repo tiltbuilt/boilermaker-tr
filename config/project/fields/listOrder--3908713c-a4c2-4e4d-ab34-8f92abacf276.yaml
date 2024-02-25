@@ -6,6 +6,7 @@ instructions: null
 name: 'List - Order'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

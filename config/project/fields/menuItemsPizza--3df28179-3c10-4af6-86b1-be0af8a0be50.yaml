@@ -7,7 +7,9 @@ name: 'Menu Items - Pizza'
 searchable: false
 settings:
   allowSelfRelations: false
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
   maxRelations: null
   minRelations: null
   selectionCondition:
@@ -44,7 +46,6 @@ settings:
                 - b1f8fc79-8472-424c-a5a2-83477606b2b7 # Menu Item Type
   selectionLabel: null
   showSiteMenu: false
-  source: null
   sources:
     - 'section:ae367fc5-c51a-4061-8bc2-852eda25f32f'
   targetSiteId: null

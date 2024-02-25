@@ -10,12 +10,14 @@ settings:
   availableVolumes: ''
   ckeConfig: 7181c723-5fb4-427a-8262-e4d67fc96f48 # Default
   columnType: text
-  defaultTransform: ''
+  defaultTransform: null
   enableSourceEditingForNonAdmins: false
   purifierConfig: null
   purifyHtml: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
+  showWordCount: false
+  wordLimit: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\ckeditor\Field
