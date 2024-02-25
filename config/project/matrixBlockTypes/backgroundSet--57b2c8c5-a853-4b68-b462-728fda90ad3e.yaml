@@ -90,6 +90,7 @@ fields:
     name: 'Background Repeat'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -147,6 +148,7 @@ fields:
     name: 'Background Image Opacity'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -281,6 +283,7 @@ fields:
     name: 'Device Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -360,6 +363,7 @@ fields:
     name: 'Background Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -412,9 +416,11 @@ fields:
       allowedKinds:
         - image
         - video
+      branchLimit: null
       defaultUploadLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
       defaultUploadLocationSubpath: null
       localizeRelations: false
+      maintainHierarchy: false
       maxRelations: 1
       minRelations: null
       previewMode: full
@@ -423,22 +429,10 @@ fields:
       restrictedDefaultUploadSubpath: null
       restrictedLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
       restrictedLocationSubpath: null
-      selectionCondition:
-        __assoc__:
-          -
-            - elementType
-            - craft\elements\Asset
-          -
-            - fieldContext
-            - global
-          -
-            - class
-            - craft\elements\conditions\assets\AssetCondition
       selectionLabel: null
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      source: null
       sources: '*'
       targetSiteId: null
       validateRelatedElements: false
@@ -455,6 +449,7 @@ fields:
     name: 'Background Position'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:

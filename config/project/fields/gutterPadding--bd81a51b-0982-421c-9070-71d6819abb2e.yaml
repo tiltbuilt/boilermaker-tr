@@ -6,6 +6,7 @@ instructions: 'This setting sets the padding on the sides of the element and in 
 name: 'Gutter Padding'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

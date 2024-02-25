@@ -10,9 +10,11 @@ settings:
   allowSubfolders: false
   allowUploads: true
   allowedKinds: null
+  branchLimit: null
   defaultUploadLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   defaultUploadLocationSubpath: null
   localizeRelations: false
+  maintainHierarchy: false
   maxRelations: null
   minRelations: null
   previewMode: full
@@ -21,22 +23,10 @@ settings:
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   restrictedLocationSubpath: null
-  selectionCondition:
-    __assoc__:
-      -
-        - elementType
-        - craft\elements\Asset
-      -
-        - fieldContext
-        - global
-      -
-        - class
-        - craft\elements\conditions\assets\AssetCondition
   selectionLabel: null
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  source: null
   sources:
     - 'volume:5deec8ca-f41a-4b0d-bb57-8a4a83895bb6' # Images
   targetSiteId: null

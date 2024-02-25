@@ -1,4 +1,4 @@
-dateModified: 1708361692
+dateModified: 1708886192
 elementSources:
   craft\elements\Entry:
     -
@@ -113,10 +113,8 @@ meta:
     1f8ef387-169a-42f8-aeaa-dd39e40c99b1: 'Embed Code' # Embed Code
     1f33e4cf-8008-4dda-85e1-336b12bea75c: 'Media Style' # Media Style
     2b7b7773-f001-45f4-9ef7-83e1f70c0814: 'Column Display' # Column Display
-    2bd882c5-a5b9-4492-9696-62f61b41ea33: 'Link Settings' # Link Settings
     2e0fafb7-fc39-4497-8eb6-9a072c3cfc7e: 'Text List Style' # Text List Style
     2f49ebd8-325a-471d-9075-58a0eabb883e: 'Top Margin' # Top Margin
-    2f93c55e-6499-4b31-9961-854a868769e1: 'Quote Size' # Quote Size
     2fcb9760-1e9e-4fa7-af3a-5aa2fa12e026: 'Page Header Slide Photos' # Page Header Slide Photos
     03ab034d-edb4-4efb-b319-52e7e5093f03: 'List - Specific Entries' # List - Specific Entries
     3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35: 'Long Format Text' # Long Format Text
@@ -142,7 +140,6 @@ meta:
     6b83b422-f34d-4d22-b1b9-75b68b6a08d7: 'Button Size' # Button Size
     6b175c77-e00a-468d-b930-025488a8778e: 'Footer Embeds' # Footer Embeds
     6be8dbce-de0e-47d0-a0a1-888c876cc403: 'Heading Level' # Heading Level
-    6c30e75d-414c-4693-af1f-8c0bb3ac4a92: 'Text Case' # Text Case
     6c77230b-ffe2-4e96-addf-e1638ac6cb58: 'SEO - Robots' # SEO - Robots
     6ca71cdf-5677-41f2-a6d0-1b08e4b330c4: 'Accordion Set - Allow Multiple Open Panels' # Accordion Set - Allow Multiple Open Panels
     6d3b0bc0-34da-4b98-95ac-ea8c16f70a65: 'Slider Previous Icon' # Slider Previous Icon
@@ -215,7 +212,6 @@ meta:
     291aeebd-5376-4a88-8bc5-dcbc98ae4f8f: 'List - Items per Page' # List - Items per Page
     315a5a65-c63f-4a6c-8b96-9817783d8d4b: Modals # Modals
     461d3bb2-ca2e-4d5b-b4b6-e3267f264492: 'Column Size' # Column Size
-    471a0733-9bf2-4ca1-b26c-16da1358f972: Amenity # Amenity
     472dab51-5b42-4e66-ae7a-9dfb80cb6f7e: 'Text Content' # Text Content
     602e2d73-2428-44f0-9371-d73d8d71f894: 'Transparent Background' # Transparent Background
     616d3f20-6be2-43a3-87a9-0a0d54e89f20: 'Icon Size' # Icon Size
@@ -231,8 +227,6 @@ meta:
     1781b5c1-16cf-4b02-b340-aa62d22c5797: 'Body Tag Embeds' # Body Tag Embeds
     2513e84c-0fcf-43f2-ad48-7380d8cc5769: 'Hours to Display' # Hours to Display
     2794a61e-7d0d-4137-ad1e-cd400325138b: Pages # Pages
-    2911d2a2-06b2-4b4e-b4c9-437d891d053d: Italic # Italic
-    3141f47f-3a41-4480-824f-46c94a3b8eb1: Font # Font
     4050bac8-6f74-4748-bad5-8171fb10e879: 'Related Location' # Related Location
     4110b1d3-6f32-4f4b-ae21-1a6f3cb064b9: 'Menu Item Description' # Menu Item Description
     5500e883-dbe3-4ae9-b04d-4e6bfeb0a5ee: 'Line Height' # Line Height
@@ -244,8 +238,6 @@ meta:
     8610cee3-613a-4c83-bb5d-b651634fa44a: 'Menu Items - Wine' # Menu Items - Wine
     8875cd45-2f9b-4eb1-bd37-5452b7ac8e61: 'Quote Credit Title' # Quote Credit Title
     9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
-    09915f4d-93d8-4cdb-8982-84d97366a327: 'Text Case' # Text Case
-    9944fe6b-a842-410e-b5d0-8d36e8d7f200: 'Letter Spacing' # Letter Spacing
     10327a6e-6b3d-4770-bcec-1e9104804f00: 'Video Asset' # Video Asset
     13662d93-bce6-47d1-b655-28788cfec494: 'Main Menu' # Main Menu
     44683fa3-9b93-4d7a-8835-3b46fdab682c: 'Slider Controls' # Slider Controls
@@ -263,7 +255,6 @@ meta:
     2157587f-ba0b-4f33-8ff3-29dd650e3bc4: 'Image Asset' # Image Asset
     3908713c-a4c2-4e4d-ab34-8f92abacf276: 'List - Order' # List - Order
     6628984b-2533-4480-b457-244d72167263: 'Text Styles' # Text Styles
-    6956057b-d4c6-4a6a-a7b4-454fc0cef8b5: 'Font Size' # Font Size
     7450367a-cdf2-446d-ad60-d78b932299d5: Globals # Globals
     7833136e-eb04-4336-98b0-b8e63ca02799: 'News Entry Type' # News Entry Type
     09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
@@ -272,7 +263,6 @@ meta:
     54510867-1090-42cf-9962-0f0da66d1809: Default # Default
     68009970-c220-4680-a6b5-f3b6b34c937f: Accordions # Accordions
     71098459-76d4-42f4-829e-5c7fbb1c1640: Embed # Embed
-    78027479-7a7b-41d3-8e50-83a395a94c1f: 'Letter Spacing' # Letter Spacing
     81647883-c70c-4a4d-917c-b3b007078d21: 'Items per Row' # Items per Row
     87483382-9eee-4f7f-955e-be74daf55a00: Default # Default
     94823971-3a2b-484b-a381-5a0f84657b14: 'Page Builder' # Page Builder
@@ -291,7 +281,6 @@ meta:
     add62801-2b55-458c-97c0-da439779c00e: Image # Image
     adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
     ae0aeb55-9dcb-405b-b34f-6780487542a5: 'Content Wrapper Text Styling' # Content Wrapper Text Styling
-    afda5fce-7076-40da-b22e-7e9fd94d32c6: 'Public Schema' # Public Schema
     b0376ebf-fea7-4112-9e73-1a7ba1f3757b: 'Slide Column' # Slide Column
     b1f8fc79-8472-424c-a5a2-83477606b2b7: 'Menu Item Type' # Menu Item Type
     b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
@@ -310,7 +299,6 @@ meta:
     bc7f3170-5aac-42e6-9e39-45312c49ab0a: 'Menu Items' # Menu Items
     bc444b49-bd82-4022-9e18-148b2775cbad: 'Menu Items - Cocktails' # Menu Items - Cocktails
     bc34289a-9826-4a33-b920-ddc46f9759cc: 'Device Size' # Device Size
-    bcf227fe-b45d-4f37-bb6d-307c2b8f6d7f: 'Font Weight' # Font Weight
     bd81a51b-0982-421c-9070-71d6819abb2e: 'Gutter Padding' # Gutter Padding
     bda39666-95a2-4a19-b0a1-f24b1dff1fa3: 'Thumbnail Placeholder Image' # Thumbnail Placeholder Image
     be1a108c-3742-47bf-a723-ec1ddc308790: 'Icon Alignment' # Icon Alignment
@@ -324,7 +312,6 @@ meta:
     c0d579ec-2a00-45c0-96dc-cf0580f7c28c: Italic # Italic
     c0463688-448f-476f-a17b-563f837c7c9e: 'Font Size' # Font Size
     c1cbe587-fbcb-4f85-b283-9490f65fde90: 'Page Builder - Content Elements' # Page Builder - Content Elements
-    c6aba18a-1c95-4082-98b8-3a8de83f838a: 'Font Weight' # Font Weight
     c9dd0921-10a9-4e5e-b168-a1d6437210c7: 'Background Image' # Background Image
     c9e32de2-ee61-4f72-a3b6-8b9dec0e7de0: 'Social Link' # Social Link
     c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
@@ -344,7 +331,6 @@ meta:
     cdf2d596-c911-4fa0-8b6e-b07139f6d3b1: 'Menu Items - Entrees' # Menu Items - Entrees
     ce49ac6e-915d-4e4b-b355-baba95079f9a: Multi-Column # Multi-Column
     cf71cfec-b1c5-43b1-8bee-f9db77544e1c: 'Text Case' # Text Case
-    d2f828ff-144d-44ce-bffb-969915102acd: Italic # Italic
     d4a36f44-e497-4a31-9bda-6277d5c820af: Sliders # Sliders
     d6de3a74-4147-4c98-abef-1de4f8e746f7: Button # Button
     d86c02d7-08d3-44c2-b76c-aa170103e7db: 'Subhead Level' # Subhead Level
@@ -354,19 +340,16 @@ meta:
     da620640-2372-4a74-9250-dffbb4c14a2e: 'Image Asset' # Image Asset
     db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
     db77c128-239b-462f-bbbf-7c6e94b6af15: 'Image Caption' # Image Caption
-    de2d4026-57d5-4b37-a8d0-197a7827676b: Default # Default
     e9e22bd5-a443-4cb8-8e93-fabdddc72ea6: Slide # Slide
     e16c576c-c525-440b-8ca8-fcfb71976823: 'Link Name' # Link Name
     e19df32e-9528-42e7-8b69-8c1e0db65f4d: 'Button Text' # Button Text
     e28d1c24-f3ad-42e9-9ddb-f9837ee9f9b4: Entries # Entries
     e90e752a-e16f-4480-b60e-93e60b4ce211: 'Long Format Text' # Long Format Text
     e76476c3-0516-4766-932d-cff2b07934a8: 'Subhead Style' # Subhead Style
-    e86087fc-c0c1-4f13-895c-8ac461fd3a1c: Font # Font
     e166358b-d703-4754-a2cc-5554ce45be74: 'Public Schema' # Public Schema
     ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
     eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49: 'Background Imagery' # Background Imagery
     ee2a623a-e58b-41cd-9b23-5787db5a4a9f: '2 Column Edge Photo' # 2 Column Edge Photo
-    eed5fe80-7e08-423c-a8c7-84b8774b0e14: 'Public Schema' # Public Schema
     efd060e3-bbca-40d7-90b1-56f368a5bf92: Default # Default
     f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
     f6dbd613-57d2-4f78-971b-6b01213f6ac2: 'Subhead Text Styling Adjustments' # Subhead Text Styling Adjustments
@@ -381,7 +364,6 @@ meta:
     fa9f4a56-8938-45a8-94e1-e7048f8f6f1c: Video # Video
     fa86d142-2ef4-4394-98e8-09cfb6601be2: 'Header Embeds' # Header Embeds
     fb4f5400-b06f-4a57-9a15-52632e74f9fc: 'Modal Link Settings' # Modal Link Settings
-    fc93ecb1-bb39-435b-8625-59b622356ae7: 'Line Height' # Line Height
     fd46b410-254c-4ea4-9322-a71e8592f500: 'Page Header Button Settings' # Page Header Button Settings
     fd542a6b-8f0d-4fe8-9bbe-3cf73903876b: 'Content Wrapper' # Content Wrapper
     fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17: 'Accordion - Start State' # Accordion - Start State
@@ -389,9 +371,8 @@ meta:
 plugins:
   blitz:
     edition: standard
-    enabled: true
-    licenseKey: 
-    schemaVersion: 4.4.0
+    enabled: true    
+    schemaVersion: 4.11.1
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -578,9 +559,8 @@ plugins:
     schemaVersion: 1.0.0
   freeform:
     edition: pro
-    enabled: true
-    licenseKey:
-    schemaVersion: 4.2.4
+    enabled: true    
+    schemaVersion: 5.0.21
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -669,8 +649,7 @@ plugins:
     schemaVersion: 3.0.0
   icon-picker:
     edition: standard
-    enabled: true
-    licenseKey: 
+    enabled: true    
     schemaVersion: 1.2.3
     settings:
       enableCache: true
@@ -680,8 +659,7 @@ plugins:
       redactorFieldHandle: ''
   imager-x:
     edition: pro
-    enabled: true
-    licenseKey: 
+    enabled: true    
     schemaVersion: 4.0.0
   minify:
     edition: standard
@@ -689,32 +667,28 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true
-    licenseKey: 
+    enabled: true    
     schemaVersion: 2.0.7
   neo:
     edition: standard
-    enabled: true
-    licenseKey: 
-    schemaVersion: 3.6.2
+    enabled: true    
+    schemaVersion: 4.0.0
   retcon:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true
-    licenseKey: 
-    schemaVersion: 3.0.11
+    enabled: true    
+    schemaVersion: 3.0.12
   section-and-product-type:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.1
+    schemaVersion: 2.0.3
   seomatic:
     edition: standard
-    enabled: true
-    licenseKey: 
-    schemaVersion: 3.0.11
+    enabled: true    
+    schemaVersion: 3.0.12
   twigpack:
     edition: standard
     enabled: true
@@ -728,5 +702,5 @@ system:
   live: true
   name: $SITE_NAME
   retryDuration: null
-  schemaVersion: 4.4.0.4
+  schemaVersion: 4.5.3.0
   timeZone: America/Chicago

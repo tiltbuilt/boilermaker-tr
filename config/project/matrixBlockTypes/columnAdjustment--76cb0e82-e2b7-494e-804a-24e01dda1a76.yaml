@@ -66,6 +66,7 @@ fields:
     name: 'Column Order'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -167,6 +168,7 @@ fields:
     name: 'Column Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -323,6 +325,7 @@ fields:
     name: 'Device Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -402,6 +405,7 @@ fields:
     name: 'Column Vertical Alignment'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:

@@ -7,23 +7,13 @@ name: 'Modal to Display'
 searchable: false
 settings:
   allowSelfRelations: false
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
   maxRelations: 1
   minRelations: 0
-  selectionCondition:
-    __assoc__:
-      -
-        - elementType
-        - craft\elements\Entry
-      -
-        - fieldContext
-        - global
-      -
-        - class
-        - craft\elements\conditions\entries\EntryCondition
   selectionLabel: null
   showSiteMenu: true
-  source: null
   sources:
     - 'section:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
     - 'section:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages

@@ -7,23 +7,13 @@ name: 'Related Location'
 searchable: false
 settings:
   allowSelfRelations: false
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
   maxRelations: 1
   minRelations: null
-  selectionCondition:
-    __assoc__:
-      -
-        - elementType
-        - craft\elements\Entry
-      -
-        - fieldContext
-        - global
-      -
-        - class
-        - craft\elements\conditions\entries\EntryCondition
   selectionLabel: null
   showSiteMenu: false
-  source: null
   sources:
     - 'section:62f91b75-0147-4328-baff-bd8258697429'
   targetSiteId: null

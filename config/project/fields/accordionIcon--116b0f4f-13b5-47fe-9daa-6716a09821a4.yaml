@@ -15,6 +15,7 @@ settings:
       -
         - font-awesome-all
         - 960fee32-ef5b-4f95-98b9-a8be3a6265aa # font-awesome-all
+  renderId: null
   showLabels: true
 translationKeyFormat: null
 translationMethod: none

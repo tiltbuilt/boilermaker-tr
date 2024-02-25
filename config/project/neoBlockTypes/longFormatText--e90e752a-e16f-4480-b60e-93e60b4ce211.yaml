@@ -1,6 +1,6 @@
 childBlocks: null
 conditions: null
-description: null
+description: ''
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -105,6 +105,8 @@ fieldLayouts:
 group: 3bfd1d3c-2f9c-4340-a794-89896b7bcdf6 # Content Elements
 groupChildBlockTypes: true
 handle: longFormatText
+icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -113,5 +115,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Long Format Text'
-sortOrder: 16
 topLevel: false

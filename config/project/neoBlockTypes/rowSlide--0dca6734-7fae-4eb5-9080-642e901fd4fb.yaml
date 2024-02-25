@@ -1,7 +1,7 @@
 childBlocks:
   - columnSlide
 conditions: null
-description: null
+description: ''
 enabled: true
 field: 94823971-3a2b-484b-a381-5a0f84657b14 # Page Builder
 fieldLayouts:
@@ -28,6 +28,7 @@ fieldLayouts:
             uid: 3c466009-ca4e-4b14-83cb-35625626c944
             userCondition: null
           -
+            dismissible: false
             elementCondition: null
             style: tip
             tip: 'The default alignment for columns is to keep them to the center and match their heights. Any settings in these fields will override that normal behavior.'
@@ -154,6 +155,8 @@ fieldLayouts:
 group: 200f9abd-1678-4075-903d-84e7ba2ad8cb # Layout Elements
 groupChildBlockTypes: true
 handle: rowSlide
+icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 5
@@ -162,5 +165,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Slide Content Row'
-sortOrder: 25
 topLevel: false

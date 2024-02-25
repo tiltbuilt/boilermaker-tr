@@ -54,6 +54,7 @@ fields:
     name: 'Image/Video Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -155,6 +156,7 @@ fields:
     name: 'Text Wrap Position'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:
@@ -212,6 +214,7 @@ fields:
     name: 'Device Size'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:

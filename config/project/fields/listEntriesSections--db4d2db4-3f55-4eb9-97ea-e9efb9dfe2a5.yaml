@@ -12,6 +12,7 @@ settings:
     - '3'
     - '4'
   multiple: true
+  partOfHandle: ''
   selectAll: true
 translationKeyFormat: null
 translationMethod: none

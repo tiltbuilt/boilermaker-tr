@@ -92,6 +92,7 @@ fields:
       columnType: text
       iconSets:
         - 11a4b42b-e8a2-43ab-85ea-4276b11be2cb # ui-svg-sprites
+      renderId: null
       showLabels: true
     translationKeyFormat: null
     translationMethod: none

@@ -1,4 +1,16 @@
 # Changelog
+## 2.8.2 - 2024-02-25
+### Fixed
+- issue with project config not being applied on install
+
+## Updated
+- craft 4.7.3 => 4.7.4
+- blitz 4.11.1 => 4.11.2
+- ckeditor 3.7.3 => 3.8.0
+- freeform 5.0.11 => 5.0.14.1
+- neo 4.0.5 => 4.0.6
+- seomatic 4.0.40 => 4.0.42
+
 ## 2.8.1 - 2024-02-19
 ### Fixed
 - version numbers
