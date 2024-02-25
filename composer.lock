@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b20678d31b76f7608bbcf66822d8023",
+    "content-hash": "c59dc962c9f20035900dd887f41cfc14",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1469,11 +1469,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "3.7.3",
+            "version": "3.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/62610a7e0509a18b434ab302c919569be4059676",
-                "reference": "62610a7e0509a18b434ab302c919569be4059676",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/0fcc9b06296d46ea3299293fcaff8462a72975f1",
+                "reference": "0fcc9b06296d46ea3299293fcaff8462a72975f1",
                 "shasum": ""
             },
             "require": {
@@ -1517,15 +1517,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2024-02-08T14:04:47+00:00"
+            "time": "2024-02-21T19:26:46+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "4.7.3",
+            "version": "4.7.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/7b6762d1af2d9f110c810ea822d88f1767781c2e",
-                "reference": "7b6762d1af2d9f110c810ea822d88f1767781c2e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/2f0a760227fcc2fb816efbe3a066efb9696c452c",
+                "reference": "2f0a760227fcc2fb816efbe3a066efb9696c452c",
                 "shasum": ""
             },
             "require": {
@@ -1613,7 +1613,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-02-15T20:41:30+00:00"
+            "time": "2024-02-22T21:44:49+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -4782,11 +4782,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "4.0.40",
+            "version": "4.0.42",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/72407287f388aea450ac77c684ce2ff7afeeed22",
-                "reference": "72407287f388aea450ac77c684ce2ff7afeeed22",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/81628e6442efa57e2c8ed02edb1fa178d785bf17",
+                "reference": "81628e6442efa57e2c8ed02edb1fa178d785bf17",
                 "shasum": ""
             },
             "require": {
@@ -4838,7 +4838,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2024-02-13T20:40:28+00:00"
+            "time": "2024-02-20T23:12:59+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -5188,16 +5188,18 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.6.2",
+            "version": "1.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/48f445a408c131e38cab1c235aa6d2bb7a0bb20d",
-                "reference": "48f445a408c131e38cab1c235aa6d2bb7a0bb20d",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/153ae662783729388a584b4361f2545e4d841e3c",
+                "reference": "153ae662783729388a584b4361f2545e4d841e3c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "phpdocumentor/reflection-common": "^2.0"
+                "doctrine/deprecations": "^1.0",
+                "php": "^7.3 || ^8.0",
+                "phpdocumentor/reflection-common": "^2.0",
+                "phpstan/phpdoc-parser": "^1.13"
             },
             "type": "library",
             "extra": {
@@ -5220,7 +5222,7 @@
                 }
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
-            "time": "2022-10-14T12:47:21+00:00"
+            "time": "2024-02-23T11:10:43+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -5354,6 +5356,32 @@
                 "type"
             ],
             "time": "2023-11-12T21:59:55+00:00"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "1.26.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/231e3186624c03d7e7c890ec662b81e6b0405227",
+                "reference": "231e3186624c03d7e7c890ec662b81e6b0405227",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\PhpDocParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPDoc parser with support for nullable, intersection and generic types",
+            "time": "2024-02-23T16:05:55+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -5824,11 +5852,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.11.1",
+            "version": "4.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/65efb05563ad269ac4dee203948d2bba3676710b",
-                "reference": "65efb05563ad269ac4dee203948d2bba3676710b",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/84fe78825722bd0eb6582af3b5cb79fda7c4be05",
+                "reference": "84fe78825722bd0eb6582af3b5cb79fda7c4be05",
                 "shasum": ""
             },
             "require": {
@@ -5873,7 +5901,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-02-12T23:38:26+00:00"
+            "time": "2024-02-19T13:35:37+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -6454,11 +6482,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.0.11",
+            "version": "5.0.14.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/f59f6137d347910b4fdcc8359288f2540724c7a8",
-                "reference": "f59f6137d347910b4fdcc8359288f2540724c7a8",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/93207272a1e427347fc4dca1c585da783abf066e",
+                "reference": "93207272a1e427347fc4dca1c585da783abf066e",
                 "shasum": ""
             },
             "require": {
@@ -6517,7 +6545,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-02-16T21:48:59+00:00"
+            "time": "2024-02-23T21:19:10+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -6667,11 +6695,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.0.5",
+            "version": "4.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/396643930c737e5c39610c15110e1e39c210912c",
-                "reference": "396643930c737e5c39610c15110e1e39c210912c",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/19d7e6df46a01818c1e38a9f8773b1512ecc1463",
+                "reference": "19d7e6df46a01818c1e38a9f8773b1512ecc1463",
                 "shasum": ""
             },
             "require": {
@@ -6685,7 +6713,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.0.5.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.0.6.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -6713,10 +6741,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.0.5/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.0.6/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-02-13T23:51:39+00:00"
+            "time": "2024-02-23T11:10:09+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -8145,11 +8173,11 @@
         },
         {
             "name": "symfony/serializer",
-            "version": "v6.0.19",
+            "version": "v6.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/6aff9e2894ff0dcfa7aca38f9d0396ed65627d07",
-                "reference": "6aff9e2894ff0dcfa7aca38f9d0396ed65627d07",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/d3bea0f239aca9589224a84150066da5495e9e11",
+                "reference": "d3bea0f239aca9589224a84150066da5495e9e11",
                 "shasum": ""
             },
             "require": {
@@ -8159,7 +8187,7 @@
             "conflict": {
                 "doctrine/annotations": "<1.12",
                 "phpdocumentor/reflection-docblock": "<3.2.2",
-                "phpdocumentor/type-resolver": "<1.4.0|>=1.7.0",
+                "phpdocumentor/type-resolver": "<1.4.0",
                 "symfony/dependency-injection": "<5.4",
                 "symfony/property-access": "<5.4",
                 "symfony/property-info": "<5.4",
@@ -8199,7 +8227,7 @@
             ],
             "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
             "homepage": "https://symfony.com",
-            "time": "2023-01-15T17:21:41+00:00"
+            "time": "2022-10-11T15:20:43+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -10087,5 +10115,5 @@
     "platform-overrides": {
         "php": "8.0.2"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.6.0"
 }
