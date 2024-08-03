@@ -1,4 +1,8 @@
 # Changelog
+## 3.0.1 - 2024-08-03
+### Fixed
+- issue with name of example env file preventing it from being copied on project initiation
+
 ## 3.0.0 - 2024-08-03
 
 ## Updated
