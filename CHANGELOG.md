@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.3 - 2024-08-03
+### Fixed
+- Fixed deployment issue with version number
+
+
+
 ## 3.0.2 - 2024-08-03
 ### Fixed
 - Fixed issue with installing GSAP paid plugins
