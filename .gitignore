@@ -11,5 +11,3 @@ node_modules
 package-lock.json
 /config/license.key
 /web/dist
-
-.npmrc
