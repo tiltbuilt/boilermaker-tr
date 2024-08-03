@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: imageStyleAdjustments
+instructions: null
+name: 'Image Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - e8d249f8-2c18-4b51-b311-baabbd94f999 # Style Adjustment - Image
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

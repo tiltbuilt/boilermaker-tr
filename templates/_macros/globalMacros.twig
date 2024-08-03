@@ -1,0 +1,358 @@
+{#
+/**
+ * Global macros
+ * -----
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ * @package   tiltrus
+ */
+#}
+
+{# Strip tags from a string except for a certain subset #}
+
+{% macro stripTags(string, safeTagsString) %}
+  {% set safeTagsString = (safeTagsString ? safeTagsString : '<b><strong><i><em><a><br>') %}
+  {{- string|striptags(safeTagsString)|raw -}}
+{% endmacro stripTags %}
+
+
+{# EMBED RENDERING #}
+
+{# Render any header embeds for the current entry/category #}
+
+{% macro entryHeaderEmbeds(object) %}
+  {% if object|length and object['headerEmbeds'] is defined and object.headerEmbeds|length %}
+	{{ object.headerEmbeds|raw }}
+  {% endif %}
+{% endmacro entryHeaderEmbeds %}
+
+{# Render any body tag embeds for the current entry/category #}
+{% macro entryBodyEmbeds(object) %}
+  {% if object|length and object['bodyTagEmbeds'] is defined and object.bodyTagEmbeds|length %}
+	{{ object.bodyTagEmbeds|raw }}
+  {% endif %}
+{% endmacro entryBodyEmbeds %}
+
+{# Render any footer embeds for the current entry/category #}
+{% macro entryFooterEmbeds(object) %}
+  {% if object|length and object['footerEmbeds'] is defined and object.footerEmbeds|length %}
+	{{ object.footerEmbeds|raw }}
+  {% endif %}
+{% endmacro entryFooterEmbeds %}
+
+
+{# Social Link Rendering #}
+
+{# Render social icon links #}
+{% macro socialIconLinks() %}
+  {% if companyInfo.socialMediaLinks is defined and companyInfo.socialMediaLinks|length %}
+	{% for socialLink in companyInfo.socialMediaLinks.all() %}
+		<a href="{{ socialLink.linkUrl }}" class="social-icon-link" title="{{ socialLink.linkName }}" target="_blank"><svg><use xlink:href="#{{ socialLink.linkIcon.value }}"></use></svg></a>
+	{% endfor %}
+  {% endif %}
+{% endmacro socialIconLinks %}
+
+
+{# Class and Attribute Rendering #}
+
+{# General Classes by Tab #}	
+{% macro classesOut(adjustments, tabName, useFieldName) %}
+	{% set classList = [] %}
+	{% for adjSet in adjustments %}
+		{# Get Device Size for Adjustments #}
+		{% set devSize = adjSet.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ ':' %}	
+		{% endif %}
+				
+		{% set fLayout = adjSet.getFieldLayout() %}
+		{% for tabObj in fLayout.tabs %}
+			{% if tabObj.name == tabName %}
+				{% for tabEl in tabObj.elements %}				
+					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+						{% if adjSet.getFieldValue(tabEl.field.handle)|length %}
+							{% if useFieldName %}
+								{% set classItem = devSize ~ tabEl.field.handle ~ '-' ~adjSet.getFieldValue(tabEl.field.handle) %}
+							{% else %}
+								{% set classItem = devSize ~ adjSet.getFieldValue(tabEl.field.handle) %}
+							{% endif %}
+							{% set classList = classList|merge([classItem]) %}
+						{% endif %}
+					{% endif %}				
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	{{ classList|join(' ') }}	
+{% endmacro classesOut %}
+
+{# Width Classes #}
+{% macro widthClasses(adjustments) %}
+	{% set classList = [] %}
+	{% for adjSet in adjustments %}
+		{# Get Device Size for Adjustments #}
+		{% set devSize = adjSet.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ ':' %}	
+		{% endif %}
+				
+		{% if adjSet.width|length %}
+			{% set classItem = devSize ~ 'w-' ~ adjSet.width %}
+			{% set classList = classList|merge([classItem]) %}
+		{% endif %}	
+	{% endfor %}
+	{{ classList|join(' ') }}	
+{% endmacro widthClasses %}
+
+{# Text Wrap Classes #}
+{% macro textWrapClasses(adjustments) %}
+	{% set classList = [] %}
+	{% for adjSet in adjustments %}
+		{# Get Device Size for Adjustments #}
+		{% set devSize = adjSet.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ ':' %}	
+		{% endif %}
+				
+		{% if adjSet.textWrap|length %}
+			{% set classItem = devSize ~ adjSet.textWrap %}
+			{% set classList = classList|merge([classItem]) %}
+		{% endif %}	
+	{% endfor %}
+	{{ classList|join(' ') }}	
+{% endmacro textWrapClasses %}
+
+
+{# Attributes #}
+{% macro attributesOut(attributes) %}
+	{% set attrList = [] %}
+	{% for attrItem in attributes %}
+		{% if attrItem.attribute|length and attrItem.value|length %}
+			{% set attrList = attrList|merge([attrItem.attribute|replace({' ': '-'})|trim ~ '=' ~ attrItem.value|trim]) %}
+		{% endif %}
+	{% endfor %}
+	{{ attrList|join(' ') }}
+{% endmacro attributesOut %}
+
+
+{# Background Rendering
+  -----  
+#}
+
+{# Sets Up Background Output By Setting Up BG Data Object in order by size and passes them to output macros #}
+{%- macro buildElementBackground(adjustments, aspect) -%}	
+	{% import '_macros/globalMacros' as gMacros %}
+	{# Create an array with a slot for each possible layout size and then write in an object with the info for each background. Slots are named to match layuot sizes with @df for default phone vert size, write each object to its appropriate slot based on device size setting. That way the bgs are always written in the correct order #}
+	{% set bgOrder = ['@df', '@sm', '@md', '@lg', '@xl', '@2xl'] %}
+	{% set bgSet = {
+		'@df': null,
+		'@sm': null,
+		'@md': null,
+		'@lg': null,
+		'@xl': null,
+		'@2xl': null,
+	} %}	
+	{# set null variable outside of loop to store the bg asset so that if there is a change in aspect or position settings etc. but not the asset it can still set the asset without it having to be uploaded to the field in each case #}
+	{% set bgCurrent = null %}
+				
+	{% for adjSet in adjustments %}
+		{# determine which size setting we are dealing with and set the slot name for the bgSet object #}
+		{% if adjSet.deviceSize == '' %}
+			{% set bgObj = '@df' %}
+		{% else %}
+			{% set bgObj = adjSet.deviceSize.value %}
+		{% endif %}
+		
+		{% if aspect != null %}
+			{% set aspectSetting = aspect %}
+		{% else %}
+			{% set aspectSetting = adjSet.aspectRatio.value %}
+		{% endif %}
+			
+		{# check bg Type on adjustment set. If set to no change, set the bgSet object to null otherwise, it sets a value #}
+		{% switch adjSet.bgType %}
+			{% case 'image' %}
+				{# check to see if bg asset is set on adjustment set. If it is then pass in the id of the asset. If not, set to "" #}
+				{% if adjSet.bgImg|length %}
+					{% set assetId = adjSet.bgImg[0].id %}					
+				{% else %}
+					{% set assetId = '' %}
+				{% endif %}	
+				{% set bgSet = bgSet|merge({(bgObj):{
+					'layoutSize': bgObj,
+					'type': 'image',
+					'aspect': aspectSetting,
+					'asset': assetId,
+					'bgSize': adjSet.backgroundSize.value,
+					'repeat': adjSet.backgroundRepeat.value,
+					'position': adjSet.backgroundPosition.value,
+					'opacity': adjSet.opacity.value,
+				}}) %}
+			{% case 'video' %}
+				{# check to see if bg asset is set on adjustment set. If it is then pass in the id of the asset. If not, set to "" #}
+				{% if adjSet.bgVideo|length %}
+					{% set assetId = adjSet.bgVideo[0].id %}					
+				{% else %}
+					{% set assetId = '' %}
+				{% endif %}	
+				{% set bgSet = bgSet|merge({(bgObj):{
+					'layoutSize': bgObj,
+					'type': 'video',
+					'asset': assetId,
+					'aspect': 'video',
+					'bgSize': 'cover',
+					'repeat': 'bg-no-repeat',
+					'position': adjSet.backgroundPosition.value,
+					'opacity': adjSet.opacity.value,
+				}}) %}
+			{% case 'none' %}
+				{% set bgSet = bgSet|merge({(bgObj):{
+					'layoutSize': bgObj,
+					'type': 'none',
+					'asset': null,
+					'aspect': null,
+					'bgSize': null,
+					'repeat': null,
+					'position': null,
+					'opacity': null,
+				}}) %}
+			{% default %}
+				{% set bgSet = bgSet|merge({(bgObj): null }) %}
+		{% endswitch %}				
+	{% endfor %}
+	
+	{# iterate through bgSet in order setting up data variables to pass for output #}	
+	{% for i in bgOrder %}	
+		{% if bgSet[(i)] != null %}
+			
+			{# Build class list for each background div #}	
+			{% set divClasses = ['background'] %}			
+			{% if bgSet[(i)].layoutSize != '@df' %}
+				{% set divClasses = divClasses|merge(['hidden', bgSet[(i)].layoutSize ~ ':block']) %}
+			{% endif %}			
+			{# add classes to hide background div on appropriate device sites by checking to see what other sizes are present above this one - look forward to turn off divs that should not be showing at sizes larger then their layout size #}
+			{% set searchStart = loop.index %}
+			{% set searchFlag = false %}
+			{% for j in bgOrder|slice(searchStart, 5) %}
+				{% if searchFlag == false %}
+					{% if bgSet[(j)] != null %}
+						{% set divClasses= divClasses|merge([bgSet[(j)].layoutSize ~ ':hidden']) %}
+						{% set searchFlag = true %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+			
+			{# check bgCurrent status, if null, means there is no background on the element at any of the smaller sizes or the current yet, so apply the new one as the current #}
+			{% if bgCurrent == null %}
+				{% set bgCurrent = bgSet[(i)] %}
+			{% else %}
+				{# check bgCurrent status, if not null, means there is a background on the element so we update the current state tracker to reflect the new background settings. #}
+				
+				{% if bgSet[(i)].type != null %}					
+					{% if bgSet[(i)].type == 'none' %}
+						{% set bgCurrent = bgCurrent|merge({'type': 'none'}) %}					
+					{% else %}
+						{% for key, value in bgSet[(i)] %}
+							{% if bgCurrent[(key)] != bgSet[(i)][(key)] and bgSet[(i)][(key)] != '' %}
+								{% set bgCurrent = bgCurrent|merge({(key): bgSet[(i)][(key)]}) %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endif %}
+			{% endif %}
+						
+			{# OUTPUT #}			
+			{% if bgCurrent.type == 'image' %}
+				{{ gMacros.backgroundImage(bgCurrent, divClasses) }}							
+			{% elseif bgCurrent.type == 'video' %}
+				{{ gMacros.backgroundVideo(bgCurrent, divClasses) }}				
+			{% endif %}
+			
+		{% endif %}
+	{% endfor %}	
+{%- endmacro buildElementBackground -%}
+
+{# Output for Image Background #}
+{%- macro backgroundImage(bgCurrent, divClasses) -%}
+	
+	
+	{# set classes for the background div #}
+	{% if bgCurrent.bgSize != 'contain' and bgCurrent.bgSize != 'cover' %}
+		{# output for tiling repeating image background #}
+		{% set divClasses = divClasses|merge([bgCurrent.repeat, 'bg-' ~ bgCurrent.position, 'bg-auto', bgCurrent.opacity]) %}
+		{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
+		{% if bgAsset != null %}			
+			{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}
+				{%- set xForm = 'contentImage' %}								
+			{% else %}
+				{%- set xForm = 'image-' ~ bgCurrent.aspect %}
+			{% endif %}
+			{% if craft.imager.serverSupportsWebp() %}
+				{%- set xForm = xForm ~ '-webp' %}
+			{% endif %}				
+			{% set bgImage = craft.imagerx.transformImage(bgAsset, xForm) %}
+			<div class="{{- divClasses|join(' ') }}" style="background-image:url('{{bgImage[0].url}}')"></div>
+		{% endif %}
+	{% else %}
+		{% set divClasses = divClasses|merge([bgCurrent.opacity]) %}
+		{% set objClasses = ['background'] %}
+		{% if bgCurrent.bgSize == 'auto' %}
+			{% set objClasses = objClasses|merge() %}
+		{% else %}
+			{% if bgCurrent.bgSize == 'auto' or bgCurrent.bgSize == '' %}
+				{% set objClasses = objClasses|merge(['object-scale-down']) %}
+			{% else %}
+				{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.bgSize])%}
+			{% endif %}
+			{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.position])%}	
+		{% endif %}
+		{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
+		{% if bgAsset != null %}			
+			{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}
+				{%- set xForm = 'contentImage' %}								
+			{% else %}
+				{%- set xForm = 'image-' ~ bgCurrent.aspect %}
+			{% endif %}
+			{% set bgImage = craft.imagerx.transformImage(bgAsset, xForm) %}
+						
+			<div class="{{- divClasses|join(' ') }}">
+				<img src="{{ craft.imager.placeholder({width: bgImage[0].width, height: bgImage[0].height}) }}"
+				  width="{{bgImage[0].width}}"
+				  height="{{bgImage[0].height}}"
+				  sizes="auto"
+				  src="{{ bgImage[0].url }}"
+				  srcset="{{ craft.imager.srcset(bgImage) }}"
+				  alt=""
+				  class="{{- objClasses|join(' ') }} lazyload"
+				  loading="lazy"
+				>		
+			</div>
+		{% endif %}	
+	{% endif %}			
+{%- endmacro backgroundImage -%}
+
+
+{# Output for Video Background #}
+{%- macro backgroundVideo(bgCurrent, divClasses) -%}
+	{% set divClasses = divClasses|merge([bgCurrent.opacity]) %}
+	{% set objClasses = ['background', 'object-' ~ bgCurrent.bgSize, 'object-' ~ bgCurrent.position, 'lazyload'] %}
+		
+	{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
+	{% if bgAsset != null %}							
+		<div class="{{- divClasses|join(' ') }}">
+			<video          
+			  class="{{- objClasses|join(' ') }}"
+			  aria-hidden="true"
+			  role="presentation"
+			  preload=""
+			  autoplay playsinline muted loop
+			  data-src="{{ bgAsset.url }}"
+			  type="{{ bgAsset.mimeType }}"
+			  loading="lazy"			  
+			></video>		
+		</div>
+	{% endif %}
+{%- endmacro backgroundVideo -%}
+

@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: subheadPosition
+instructions: null
+name: 'Subhead Position'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Below Headline'
+  onLabel: 'Above Headline'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

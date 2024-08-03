@@ -1,0 +1,60 @@
+{#
+/**
+ * Tilt Boilermaker - Partial - Pagination
+ * -----
+ * 
+#}
+
+{% if pageInfo.totalPages > 1 %}
+	<nav class="pagination">	
+		
+		{# first button #}
+		{% if pageInfo.currentPage != 1 %}
+		<a href="{{ pageInfo.getFirstUrl() }}" title=First Page" class="btn btn-text btn-pagination">
+			<i class="fa-regular fa-chevrons-left"></i>
+			<span class="pagination-btn-text">First</span>
+		</a>
+		{% endif %}
+		
+		{# prev button #}
+		{% if pageInfo.getPrevUrl() %}
+			<a href="{{ pageInfo.getPrevUrl() }}" title="Previous Page" class="btn btn-text btn-pagination">
+				<i class="fa-regular fa-chevron-left"></i>
+				<span class="pagination-btn-text">Prev</span>
+			</a>
+		{% endif %}
+		
+		{# page link list, only displays on tablet plus #}		
+		<div class="pagination-pages hidden @md/list:block">
+			{% for page, url in pageInfo.getPrevUrls(3) %}
+				<a href="{{ url }}">{{ page }}</a>
+			{% endfor %}
+			
+			<span class="current">{{ pageInfo.currentPage }}</span>
+			
+			{% for page, url in pageInfo.getNextUrls(3) %}
+				<a href="{{ url }}">{{ page }}</a>
+			{% endfor %}
+		</div>
+		
+		{# current/total, only displays on tablet plus #}	
+		<div class="pagination-pages-abbreviated @md/list:hidden">
+			{{ pageInfo.currentPage }}/{{pageInfo.totalPages}}	
+		</div>
+		{# next button #}
+		{% if pageInfo.getNextUrl() %}
+			<a href="{{ pageInfo.getNextUrl() }}" title="Next Page" class="btn btn-text btn-pagination">
+				<span class="pagination-btn-text">Next</span>
+				<i class="fa-regular fa-chevron-right"></i>
+			</a>
+		{% endif %}
+		
+		{# last button #}
+		{% if pageInfo.currentPage != pageInfo.totalPages %}
+		<a href="{{ pageInfo.getFirstUrl() }}" title="Previous Page" class="btn btn-text btn-pagination">
+			<span class="pagination-btn-text">Last</span>
+			<i class="fa-regular fa-chevrons-right"></i>
+		</a>
+		{% endif %}
+	</nav>
+{% endif %}

@@ -1,0 +1,81 @@
+.icon-wrapper {	
+	
+	svg, i {
+		width: 8rem;
+		height: 8rem;
+		font-size: 8rem;
+		line-height: 1;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		fill: currentColor;
+	}
+	
+}
+
+.icon-content-wrapper {
+	margin-top: theme('spacing.normal');
+	
+	/* class specific to icon block headline, adjust accordingly */
+	text-align: center;
+}
+
+
+
+/* Layout for this block type is based upon layout size, the following styles */
+
+.icon-block-vertical {
+	display: block;
+}
+
+
+.icon-block-horizontal {
+	@apply block @md/component:flex @md/component:justify-start @md/component:items-center @md/component:flex-nowrap;
+	
+	
+	/* the width settings on the icon-wrapper class take into account the different icon size settings and the built in padding of 1.5 rem on one side. If you change the base icon sizes in the css, you need to adjust these sizes accordingly. */
+	
+	.icon-wrapper {
+		@apply @md/component:pr-base @md/component:block @md/component:w-[9.5rem];
+		
+		&.icon-large {
+			@apply @md/component:w-[13.5rem];
+		}
+		
+		&.icon-small {
+			@apply @md/component:w-[5.5rem];
+		}
+	}
+	
+		
+	.icon-content-wrapper {
+		@apply @md/component:pl-base @md/component:block @md/component:mt-none @md/component:text-left;
+		
+		
+	}
+	
+	
+}
+
+/* calculations are needed to determine the size of the content wrapper div to prevent it from wrapping to a new line undesirably */
+
+@container component (width > theme('containers.md')) {
+	
+	.icon-block-horizontal {
+		.icon-content-wrapper {
+			width: calc(100% - 9.5rem);
+			
+			&.icon-content-wrapper-large {
+				width: calc(100% - 13.5rem);
+			}
+			
+			&.icon-content-wrapper-small {
+				width: calc(100% - 5.5rem);
+			}
+		}
+	}
+
+}
+
+
+

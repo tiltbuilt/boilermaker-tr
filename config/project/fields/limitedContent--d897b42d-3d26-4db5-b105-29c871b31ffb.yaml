@@ -1,0 +1,24 @@
+columnSuffix: null
+handle: limitedContent
+instructions: null
+name: 'Limited Content'
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 073c9d03-dcc0-4435-99fe-2df91703e911 # Limited
+  createButtonLabel: 'New Content Element'
+  defaultTransform: null
+  enableSourceEditingForNonAdmins: false
+  entryTypes:
+    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
+    - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

@@ -1,0 +1,200 @@
+color: lime
+fieldLayouts:
+  1f5b8072-a4f6-4e9c-96c8-42fd1d85e322:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e9ad5662-9537-4ace-b3cd-0d41a2558649
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 936b666e-ee7b-492d-b3ae-8490b5597276
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0306909a-922b-4bf4-a624-87a9539e833d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 67dbaf8c-d352-485f-a230-5ba94ad31c07 # Column Layout
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6be6ff17-8445-48be-9caf-99a95385dca9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Layout
+        uid: 14bcf414-e632-4f2f-abb9-82dc87814ef0
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 333d425e-9b0a-41d7-be00-56226ce25572
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 928f2229-fe71-4ebc-9e3b-a492ef21b5ce
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d12df536-921c-4ee2-b0bc-84a97d7c9e95 # Column Background Color
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2a2c363-478b-4d0e-8f04-3e8c1d6dccb3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 7062acdf-be77-4bfc-869c-095aed067fd9
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f7dc9df7-f17d-4c82-9b2e-2bd2986c309f # Column Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 74347b4f-0ae9-4eb2-b4fd-03c930b60c3d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 0437ae50-b181-4d1b-9f84-982d75b2df06
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 78b7e7f5-933b-4ef9-87d1-dd81cad4d0e4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aab24cd7-9f55-4b79-9b93-9fbac9f58fea
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5add3acb-48ba-4f05-a381-8699db781713
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: dd9772a9-92b7-4017-a3eb-82715b3b2249
+        userCondition: null
+handle: column
+hasTitleField: true
+icon: table-columns
+name: 'Layout Column'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

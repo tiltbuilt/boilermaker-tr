@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: repeaterStyleAdjustments
+instructions: null
+name: 'Repeater Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - 57d8551d-6bb8-45ac-a118-25f3bf7c5b6a # Style Adjustment - Repeaters
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

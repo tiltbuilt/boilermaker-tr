@@ -1,0 +1,87 @@
+columnSuffix: null
+handle: slideTimingOverride
+instructions: null
+name: 'Slide Timing Override'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '5 Seconds'
+        -
+          - value
+          - '5000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '6 Seconds'
+        -
+          - value
+          - '6000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '7 Seconds'
+        -
+          - value
+          - '7000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '8 Seconds'
+        -
+          - value
+          - '8000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '9 Seconds'
+        -
+          - value
+          - '9000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '10 Seconds'
+        -
+          - value
+          - '10000'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

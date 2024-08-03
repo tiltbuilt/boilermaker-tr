@@ -1,390 +1,293 @@
-dateModified: 1708886192
+dateModified: 1722661381
 elementSources:
   craft\elements\Entry:
     -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
       key: '*'
-      type: native
-    -
-      disabled: false
-      key: singles
       tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - authors
         - link
-        - id
       type: native
     -
-      heading: Channels
+      heading: 'Page Level Content'
       type: heading
     -
-      key: 'section:cadb59ac-699f-43a7-baf1-780c86161c62'
-      type: native
-    -
-      key: 'section:62f91b75-0147-4328-baff-bd8258697429'
-      type: native
-    -
-      key: 'section:ae367fc5-c51a-4061-8bc2-852eda25f32f'
-      type: native
-    -
+      defaultSort:
+        - title
+        - asc
       disabled: false
-      key: 'section:315a5a65-c63f-4a6c-8b96-9817783d8d4b' # Modals
+      key: 'single:b696e4a1-c7cf-4e07-a0be-b9f4f18a2f53' # Home
       tableAttributes:
         - postDate
         - expiryDate
-        - author
         - link
-        - id
       type: native
     -
-      key: 'section:9bdbf9e4-b579-4b3a-bc92-1a6a6610ce12' # News
+      key: 'section:589d7e58-f378-455e-b073-055e9221964b' # Pages
       type: native
     -
-      disabled: false
-      key: 'section:cbab6b20-e82f-488d-af94-ffd5d37e4f2e'
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-        - slug
-        - id
-      type: native
-    -
-      heading: Structures
+      heading: 'Content Elements'
       type: heading
     -
-      key: 'section:2794a61e-7d0d-4137-ad1e-cd400325138b' # Pages
+      key: 'section:acec3806-c4ac-4430-a8d9-24915eacc052' # Modals
+      type: native
+    -
+      key: 'section:558fedab-c14e-4f41-a438-ba8c394113a5' # Notification Bar Alerts
       type: native
     -
       heading: ''
       type: heading
-    -
-      key: 'section:9fc42b2f-e12f-40a7-b684-96213d42eb15'
-      type: native
 email:
   fromEmail: $SITE_EMAIL
   fromName: $SITE_NAME
-  replyToEmail: $REPLY_EMAIL
+  replyToEmail: $SITE_EMAIL
   template: ''
   transportSettings:
-    encryptionMethod: tls
-    host: $SMTP_HOSTNAME
-    password: $SMTP_PASSWORD
-    port: $SMTP_PORT
-    timeout: '10'
-    useAuthentication: '1'
-    username: $SMTP_USERNAME
-  transportType: craft\mail\transportadapters\Smtp
+    messageStream: $PM_MESSAGE_STREAM
+    token: $PM_API_TOKEN
+  transportType: craftcms\postmark\Adapter
 fs:
-  documents:
+  backgroundVideos:
     hasUrls: true
-    name: Documents
+    name: 'Background Videos'
+    settings:
+      path: $BG_VIDEO_ASSETS_PATH
+    type: craft\fs\Local
+    url: $BG_VIDEO_ASSETS_URL
+  contentVideos:
+    hasUrls: true
+    name: 'Content Videos'
+    settings:
+      path: $CONTENT_VIDEO_ASSETS_PATH
+    type: craft\fs\Local
+    url: $CONTENT_VIDEO_ASSETS_URL
+  docs:
+    hasUrls: true
+    name: Docs
     settings:
       path: $DOC_ASSETS_PATH
     type: craft\fs\Local
     url: $DOC_ASSETS_URL
-  embeds:
-    hasUrls: true
-    name: Embeds
-    settings:
-      path: $EMBED_ASSETS_PATH
-    type: craft\fs\Local
-    url: $EMBED_ASSETS_URL
   images:
     hasUrls: true
     name: Images
     settings:
-      path: $IMAGE_ASSETS_PATH
+      path: $IMAGE_UPLOADS_PATH
     type: craft\fs\Local
-    url: $IMAGE_ASSETS_URL
-  userUploads:
-    hasUrls: true
-    name: 'User Uploads'
-    settings:
-      path: $USERASSETS_PATH
-    type: craft\fs\Local
-    url: $USER_ASSETS_URL
+    url: $IMAGE_UPLOADS_URL
 meta:
   __names__:
-    0a5f2a0c-d670-45c7-b405-3a7c6a3c1366: Embeds # Embeds
-    0a8920fd-618b-427b-93a3-713c1f123cb4: 'Show Page Header' # Show Page Header
-    0dca6734-7fae-4eb5-9080-642e901fd4fb: 'Slide Content Row' # Slide Content Row
-    1acfdc52-cb76-4bd9-9286-5e59bc27def6: 'Slider Next Icon' # Slider Next Icon
-    1bf643d4-1bb3-4e85-abe5-0a6510c964a4: Animations # Animations
-    1c4cc556-9b9a-4eaa-b6be-7b9fc1468ca8: 'Column Order' # Column Order
-    1f8ef387-169a-42f8-aeaa-dd39e40c99b1: 'Embed Code' # Embed Code
-    1f33e4cf-8008-4dda-85e1-336b12bea75c: 'Media Style' # Media Style
-    2b7b7773-f001-45f4-9ef7-83e1f70c0814: 'Column Display' # Column Display
-    2e0fafb7-fc39-4497-8eb6-9a072c3cfc7e: 'Text List Style' # Text List Style
-    2f49ebd8-325a-471d-9075-58a0eabb883e: 'Top Margin' # Top Margin
-    2fcb9760-1e9e-4fa7-af3a-5aa2fa12e026: 'Page Header Slide Photos' # Page Header Slide Photos
-    03ab034d-edb4-4efb-b319-52e7e5093f03: 'List - Specific Entries' # List - Specific Entries
-    3abac2fe-f2e5-44d6-a737-3fbcdbfe4c35: 'Long Format Text' # Long Format Text
-    3bfd1d3c-2f9c-4340-a794-89896b7bcdf6: 'Content Elements' # Content Elements
-    3df28179-3c10-4af6-86b1-be0af8a0be50: 'Menu Items - Pizza' # Menu Items - Pizza
-    3e54e327-a9a9-4587-b91e-4775a1f7dd3f: 'Header Text' # Header Text
-    4a4e791f-ac07-41a6-aed8-a8b3e3afdbc1: 'Tab Panel' # Tab Panel
-    4b1e5669-6b94-4c36-89a1-de373c17021a: 'Secondary Menu' # Secondary Menu
-    4c5a287b-8078-4d62-8619-08e152ce576e: Documents # Documents
-    4c8a1b99-37ef-424c-9a73-26d40caccc9d: Autoplay # Autoplay
-    4ce407c8-ea88-4cf8-92de-cf0257213995: 'Font Size' # Font Size
-    4d60bd72-6857-44f7-a62e-e36f9cf061b4: 'Company Info' # Company Info
-    4faaa72c-d045-44d2-8c1a-632149c6e4e9: 'Show Post Date' # Show Post Date
-    5a4f16f2-c764-4512-95d7-575e78e82139: 'Date Format' # Date Format
-    5be0f654-b4af-4c4a-811a-d51d305965d9: 'Notification Bar Text' # Notification Bar Text
-    5d28feeb-44a2-43ec-8d31-49a92bfd8d9a: Form # Form
-    5deec8ca-f41a-4b0d-bb57-8a4a83895bb6: Images # Images
-    5e83d097-283f-488e-b2fb-64b1b3d0ce1b: 'Background Repeat' # Background Repeat
-    5e360ac1-6f30-4195-8b49-c1ab4a38e5a3: 'CTA - Small' # CTA - Small
-    5eee8db6-5be0-4101-8b6f-2f26b858b793: 'Bottom Margin' # Bottom Margin
-    5f9e597f-b330-4888-916f-26bab2b9b0c5: 'Text Wrap Position' # Text Wrap Position
-    6ab11a93-de62-4840-bcc5-6adf8563fa13: 'Image/Video Layout' # Image/Video Layout
-    6b83b422-f34d-4d22-b1b9-75b68b6a08d7: 'Button Size' # Button Size
-    6b175c77-e00a-468d-b930-025488a8778e: 'Footer Embeds' # Footer Embeds
-    6be8dbce-de0e-47d0-a0a1-888c876cc403: 'Heading Level' # Heading Level
-    6c77230b-ffe2-4e96-addf-e1638ac6cb58: 'SEO - Robots' # SEO - Robots
-    6ca71cdf-5677-41f2-a6d0-1b08e4b330c4: 'Accordion Set - Allow Multiple Open Panels' # Accordion Set - Allow Multiple Open Panels
-    6d3b0bc0-34da-4b98-95ac-ea8c16f70a65: 'Slider Previous Icon' # Slider Previous Icon
-    6d8725fd-8c43-4cd7-957a-fdcf53c72f22: 'Line Height' # Line Height
-    06ebfcbe-5ce4-466d-b32d-d18f5c98c099: 'Embed Code' # Embed Code
-    6fec78ad-0872-4c51-ba8d-cb332fb03407: 'Open As Modal' # Open As Modal
-    6ff82416-293f-4992-90f4-f277bfa58a72: 'Bottom Padding' # Bottom Padding
-    7a2b6f07-8f44-44eb-a8ab-4045df5aa602: '404 Page' # 404 Page
-    7ae87f5b-e876-4721-98c9-d451d9789d84: 'Device Size' # Device Size
-    7b80b96c-716d-401c-9940-9808b70632fd: 'Page Builder - Containers' # Page Builder - Containers
-    7bb91d1e-6610-40cf-b3e5-428f86caf0c1: 'Image/Video Size' # Image/Video Size
-    7bc9a1f4-fe37-4fb1-8aee-a3ccd1fee83a: Quote # Quote
-    7cfd4f7d-3f60-4509-94f6-2ff20ffbf96d: 'Show Excerpt' # Show Excerpt
-    8a6b948b-44e3-47e6-b851-f1c803b13395: Column # Column
-    8ac59828-bbaa-46a3-84ba-7b731dffe1a7: 'Repeater - Select Entry List' # Repeater - Select Entry List
-    8bc830c1-371e-45af-9e26-b2b41f946480: 'Social Media Links' # Social Media Links
-    8c8e3535-82c0-4423-ade8-fd41bad25f0c: Video # Video
-    8c82fa9d-b260-483f-b79f-926f955b7142: 'Background Image Opacity' # Background Image Opacity
-    8df0b16d-883c-450a-8bd3-4a770dc0d8a3: 'Slider Set' # Slider Set
-    8e34872f-a1cd-4bbf-b0db-103c3fd1f8d2: 'Repeater Item - Content Link' # Repeater Item - Content Link
-    8f315b09-46cf-425c-8fff-8b052a202dc8: 'Tab Title' # Tab Title
-    8f6955f1-d35d-4555-9b26-e0172d510722: 'Repeater - All Entry by Section' # Repeater - All Entry by Section
-    9af802da-9af4-4db1-a824-1c3a26737350: 'Page Builder - Styling' # Page Builder - Styling
-    9bdbf9e4-b579-4b3a-bc92-1a6a6610ce12: News # News
-    9bedc752-fb2a-4b10-933c-ecf14a196b1f: 'Items Count' # Items Count
-    9c3c6834-2633-4d89-ae1b-d0897a9bee7c: 'List Item Display Style' # List Item Display Style
-    9fefc367-79dc-4588-9172-e28038d436cf: Buttons # Buttons
-    11a4b42b-e8a2-43ab-85ea-4276b11be2cb: ui-svg-sprites # ui-svg-sprites
-    11e6ba3a-dd3d-4951-a3a2-083f6cc4e505: Image # Image
-    12c30846-c1db-40fd-aa5a-3af9bc56847f: $SITE_NAME # $SITE_NAME
-    13cdbf3c-d282-437b-954b-37f4b42e4469: 'Bottom Margin' # Bottom Margin
-    15e02460-e8b5-47da-98ed-78bdb8544472: 'Page Header' # Page Header
-    15e284b8-e975-4cf9-bdb2-3ca57027088d: 'Long Format' # Long Format
-    018cb2e1-bf90-4fcb-a468-3a5f096c8a67: Text # Text
-    20f7930f-8c26-46a6-a6c5-218d9f97b7de: 'Row Horizontal Alignment' # Row Horizontal Alignment
-    25b0022d-febf-468d-a918-77448e3d43fb: 'Repeater - Content Links' # Repeater - Content Links
-    27e30a49-d608-40e6-adc6-a66d57da7087: 'Quote Credit' # Quote Credit
-    29e80cd8-c8f0-45fe-8d22-66b4b70fcfca: 'Font Weight' # Font Weight
-    33bdf607-ff20-47b4-9903-a658afbb72c5: 'Subhead Position' # Subhead Position
-    39f57734-0fcd-42df-9ab3-39bbbd4eb2b5: Simple # Simple
-    42ed3a6e-60bd-447b-84ab-5057c4ebe215: 'Show Page Footer' # Show Page Footer
-    44f618bc-1d3d-49ba-9dd0-57513d7b88bd: 'User Uploads' # User Uploads
-    46b72c49-6f07-4cae-936b-63d8dc62bfde: Repeaters # Repeaters
-    47e2423f-3c21-441d-b950-0f8c09273250: 'Text Styles' # Text Styles
-    48b8fee7-c04a-4678-9a5b-7940a6b3df25: 'Page Section Blocks' # Page Section Blocks
-    48c2f8ae-30c7-4f88-b072-940b5cbafa3f: 'Text Styles' # Text Styles
-    49bebac5-0ae0-4d84-b780-b3b343b5b25b: 'Menu Items - Small Bites' # Menu Items - Small Bites
-    49dce972-4d55-4e23-92f4-69ab4d4a7c39: Font # Font
-    50c41aa0-a307-4f48-b863-57a0326ccfd7: 'Link Settings' # Link Settings
-    50ee1dec-9804-4904-8190-b32b197340ad: 'Text Content' # Text Content
-    55da8c44-d26a-4a2c-94eb-43b1a095365e: 'Video Asset' # Video Asset
-    57b2c8c5-a853-4b68-b462-728fda90ad3e: 'Background Set' # Background Set
-    57ecb807-9701-4046-8fbd-b0c5e7fbf4c3: 'Quote Content' # Quote Content
-    62a75024-d55d-4399-bacd-2e5c946d5767: 'Icon & Content' # Icon & Content
-    66ec20f9-7e5f-449d-aa1f-50485e7a9b0e: 'Heading Text' # Heading Text
-    69de199e-8337-4836-a446-cb00cd81b78d: Home # Home
-    76b3d98a-158e-47e8-bbc1-fe6c38968b57: Common # Common
-    76cb0e82-e2b7-494e-804a-24e01dda1a76: 'Column Adjustment' # Column Adjustment
-    77aa974b-1bc6-4a80-8ed0-ab754780a184: 'Button Group' # Button Group
-    97f100f8-f0c8-46b0-816f-bf0502d4e7a3: 'Menu Item Price' # Menu Item Price
-    98d3b01b-e786-42de-a09d-4ca33c93f3f2: 'Multicolumn Layout Row' # Multicolumn Layout Row
-    114bf113-0d20-4dd6-8e12-f1265063b87c: 'Blog Content' # Blog Content
-    116b0f4f-13b5-47fe-9daa-6716a09821a4: 'Accordion Icon' # Accordion Icon
-    133bbdba-eb78-4a0e-924c-dfc4af50bb53: 'Main Header Style' # Main Header Style
-    146b1105-58ed-47c7-bca1-b6df9980d37d: 'Full Width on Mobile' # Full Width on Mobile
-    200f9abd-1678-4075-903d-84e7ba2ad8cb: 'Layout Elements' # Layout Elements
-    217da411-10b4-4af2-bd6c-010f5ff3260b: 'Padding & Margins' # Padding & Margins
-    231a296a-0423-4b02-9ed8-bf24fba42db9: 'Slide Color Scheme' # Slide Color Scheme
-    236aecd2-c7e3-4f5c-a930-ce89418ec30a: Header # Header
-    291aeebd-5376-4a88-8bc5-dcbc98ae4f8f: 'List - Items per Page' # List - Items per Page
-    315a5a65-c63f-4a6c-8b96-9817783d8d4b: Modals # Modals
-    461d3bb2-ca2e-4d5b-b4b6-e3267f264492: 'Column Size' # Column Size
-    472dab51-5b42-4e66-ae7a-9dfb80cb6f7e: 'Text Content' # Text Content
-    602e2d73-2428-44f0-9371-d73d8d71f894: 'Transparent Background' # Transparent Background
-    616d3f20-6be2-43a3-87a9-0a0d54e89f20: 'Icon Size' # Icon Size
-    670b5abf-edf9-484c-a6bb-b817a00336f0: 'Display Setting' # Display Setting
-    0677b495-c3dc-476b-a572-1af1fb58b548: 'Block Quote' # Block Quote
-    812ffe65-6485-4987-9a4f-6f8c2cecfdae: 'Accordion Set' # Accordion Set
-    938c6226-2dee-4440-a989-1741df63e4e4: 'Boilermaker Craft 4' # Boilermaker Craft 4
-    944f6f36-d431-4c98-b852-61e0fe017d47: 'Content Link' # Content Link
-    960fee32-ef5b-4f95-98b9-a8be3a6265aa: font-awesome-all # font-awesome-all
-    982b6185-6d4a-4655-b767-aa8cc325e579: 'Image Placement' # Image Placement
-    992fdc9f-2866-4456-904e-2e593d650b13: Button # Button
-    1639e03b-4d6f-4b71-9526-59969de6560e: 'Device Size' # Device Size
-    1781b5c1-16cf-4b02-b340-aa62d22c5797: 'Body Tag Embeds' # Body Tag Embeds
-    2513e84c-0fcf-43f2-ad48-7380d8cc5769: 'Hours to Display' # Hours to Display
-    2794a61e-7d0d-4137-ad1e-cd400325138b: Pages # Pages
-    4050bac8-6f74-4748-bad5-8171fb10e879: 'Related Location' # Related Location
-    4110b1d3-6f32-4f4b-ae21-1a6f3cb064b9: 'Menu Item Description' # Menu Item Description
-    5500e883-dbe3-4ae9-b04d-4e6bfeb0a5ee: 'Line Height' # Line Height
-    5553a528-f723-48bf-965f-6d720f5df686: 'SEO - Description' # SEO - Description
-    6364e0fe-681a-4800-8eb6-795f9a639fec: 'Button Style' # Button Style
-    6890bd2e-8a1e-49f7-bcd5-f9814de0d2c0: 'Content Column Vertical Alignment' # Content Column Vertical Alignment
-    7181c723-5fb4-427a-8262-e4d67fc96f48: Default # Default
-    7250fbbb-07b2-4c31-a5b0-5f586c469ce2: 'Page Builder - Rows & Columns' # Page Builder - Rows & Columns
-    8610cee3-613a-4c83-bb5d-b651634fa44a: 'Menu Items - Wine' # Menu Items - Wine
-    8875cd45-2f9b-4eb1-bd37-5452b7ac8e61: 'Quote Credit Title' # Quote Credit Title
-    9105dd5d-53c1-4975-8d20-082c952a8f04: 'Slider Effect' # Slider Effect
-    10327a6e-6b3d-4770-bcec-1e9104804f00: 'Video Asset' # Video Asset
-    13662d93-bce6-47d1-b655-28788cfec494: 'Main Menu' # Main Menu
-    44683fa3-9b93-4d7a-8835-3b46fdab682c: 'Slider Controls' # Slider Controls
-    45213c38-1942-43ff-bdfa-a7d0802ae3e7: 'Video Content' # Video Content
-    56731b1e-2d56-4a18-88eb-658cd4b01109: 'SEO - Title' # SEO - Title
-    79134eda-bc6c-4005-b522-af37f79f0bf9: Globals # Globals
-    84926a4b-f881-4b15-8c95-3b959ad89d4a: Alignment # Alignment
-    96950bc8-d052-4574-9e24-529f27899d2f: 'Form to Display' # Form to Display
-    167456ee-f98a-48a0-8856-c9a090ed215f: 'Icon Asset' # Icon Asset
-    213094d3-baa2-4b48-b189-631125e3e28a: 'Standard Section' # Standard Section
-    237171d3-d028-48a4-91ec-2bcbacd208a1: 'Alt Text' # Alt Text
-    597562da-9c14-4e54-a628-bb52807f75ad: 'Text Wrap Position' # Text Wrap Position
-    814310ee-4ae1-461e-b5d6-0302bffcf6fc: 'Tab Set' # Tab Set
-    1371181e-0e3f-44fe-bfdd-4848b6b55d74: 'Page Builder - Sliders' # Page Builder - Sliders
-    2157587f-ba0b-4f33-8ff3-29dd650e3bc4: 'Image Asset' # Image Asset
-    3908713c-a4c2-4e4d-ab34-8f92abacf276: 'List - Order' # List - Order
-    6628984b-2533-4480-b457-244d72167263: 'Text Styles' # Text Styles
-    7450367a-cdf2-446d-ad60-d78b932299d5: Globals # Globals
-    7833136e-eb04-4336-98b0-b8e63ca02799: 'News Entry Type' # News Entry Type
-    09255349-cc33-4075-b5b0-b86d29b453ab: SEO # SEO
-    23334036-40df-4901-af54-8ff0970ddb43: 'Tab Sets' # Tab Sets
-    43791594-97eb-4702-a55d-9ea41a53d6b8: 'Text Content' # Text Content
-    54510867-1090-42cf-9962-0f0da66d1809: Default # Default
-    68009970-c220-4680-a6b5-f3b6b34c937f: Accordions # Accordions
-    71098459-76d4-42f4-829e-5c7fbb1c1640: Embed # Embed
-    81647883-c70c-4a4d-917c-b3b007078d21: 'Items per Row' # Items per Row
-    87483382-9eee-4f7f-955e-be74daf55a00: Default # Default
-    94823971-3a2b-484b-a381-5a0f84657b14: 'Page Builder' # Page Builder
-    a03bdcc1-a0ac-4f1a-9ad7-b5806f65ad2f: '[root]' # [root]
-    a0656ab9-5120-4145-881e-f557eb83966f: 'Repeater - Nav Collection' # Repeater - Nav Collection
-    a4a3c790-6fa2-450b-a31c-b8141bcefd59: 'Link Settings' # Link Settings
-    a7faa85f-4be1-4101-8d46-c1fc42bbdeeb: 'Page Builder - Accordions' # Page Builder - Accordions
-    a9ff8aa5-82d2-4284-8886-3c4170f5a4e6: Alignment # Alignment
-    a66f6874-a2d6-4e3f-beb1-9d24d4559318: 'Image Width' # Image Width
-    a98ae0e4-a423-490c-9e75-2f3fe8a963fb: 'Color Scheme' # Color Scheme
-    a15293d7-271d-499d-ab7e-b74043624c30: 'Menu Items - Soups & Salads' # Menu Items - Soups & Salads
-    a503736b-3d70-4d86-bd56-8c6ba57facf9: 'Main Header Text Styling Adjustments' # Main Header Text Styling Adjustments
-    aaf47b2e-bc87-461d-8aa7-55847fbcaeba: 'SEO - Image' # SEO - Image
-    acb69ed2-9e70-4025-8f08-ef5064a0502e: Embed # Embed
-    adb1d11a-0741-4035-99bb-b876413808ba: 'Quote Credit Title' # Quote Credit Title
-    add62801-2b55-458c-97c0-da439779c00e: Image # Image
-    adf07d19-c655-4ed3-810d-ba23eaa068c4: 'Content Alignment' # Content Alignment
-    ae0aeb55-9dcb-405b-b34f-6780487542a5: 'Content Wrapper Text Styling' # Content Wrapper Text Styling
-    b0376ebf-fea7-4112-9e73-1a7ba1f3757b: 'Slide Column' # Slide Column
-    b1f8fc79-8472-424c-a5a2-83477606b2b7: 'Menu Item Type' # Menu Item Type
-    b2a0c32e-b867-448b-984a-c5bfa4b86118: 'Stagger Child Reveals' # Stagger Child Reveals
-    b7b7bc3f-a98f-400f-b54b-1e35e9f26c85: 'Nav List to Display' # Nav List to Display
-    b9cf1179-cdb2-4340-a6c4-4188cd8b155b: 'Top Margin' # Top Margin
-    b53c9f0c-9969-4055-ab99-c8e641179ad2: 'Image Caption' # Image Caption
-    b53dd5c2-c363-4ceb-acd2-c871e7324dd7: 'Slider Size' # Slider Size
-    b86bab37-08e2-447e-a0b3-b732d2553a42: 'Device Size' # Device Size
-    b88c25ba-3eb5-466b-98f6-59055018e32d: 'Bottom Margin' # Bottom Margin
-    b120ef6a-6411-43ab-be0a-54fbe722077c: 'Quote Text' # Quote Text
-    ba83b54d-4c29-4700-8fe3-aa2822a9d6b1: Default # Default
-    bb167aed-8f2a-4fea-b65b-cabe5d44a47d: 'Device Size' # Device Size
-    bb136509-26da-4d34-bab0-fcf67764b3f2: 'Show Site Header' # Show Site Header
-    bbfe8cf7-c136-4bf2-839c-b94772136fef: 'Background Size' # Background Size
-    bc2c7dd5-944f-4180-b730-8d939da0aa73: 'Notification Bar Alerts' # Notification Bar Alerts
-    bc7f3170-5aac-42e6-9e39-45312c49ab0a: 'Menu Items' # Menu Items
-    bc444b49-bd82-4022-9e18-148b2775cbad: 'Menu Items - Cocktails' # Menu Items - Cocktails
-    bc34289a-9826-4a33-b920-ddc46f9759cc: 'Device Size' # Device Size
-    bd81a51b-0982-421c-9070-71d6819abb2e: 'Gutter Padding' # Gutter Padding
-    bda39666-95a2-4a19-b0a1-f24b1dff1fa3: 'Thumbnail Placeholder Image' # Thumbnail Placeholder Image
-    be1a108c-3742-47bf-a723-ec1ddc308790: 'Icon Alignment' # Icon Alignment
-    be7bfbf5-0157-44df-a6f5-935aba22dab9: 'Block Layout' # Block Layout
-    be298f4b-1a26-48da-a891-38e8feb5bbd8: 'Letter Spacing' # Letter Spacing
-    be45752b-5950-4495-916b-645055cd1353: Excerpt # Excerpt
-    bec10435-8e4b-4dbd-90fa-15ad94e24fd5: 'Reveal Animation' # Reveal Animation
-    bf01b1fa-dc4d-4afa-92b8-0ca569d91066: 'Top Padding' # Top Padding
-    bf87e9c7-6b90-4f9b-95c9-361309b94dde: 'List Item Heading Level' # List Item Heading Level
-    bfd09ef3-955d-4497-ad10-acd77efcccc4: 'Content Admin' # Content Admin
-    c0d579ec-2a00-45c0-96dc-cf0580f7c28c: Italic # Italic
-    c0463688-448f-476f-a17b-563f837c7c9e: 'Font Size' # Font Size
-    c1cbe587-fbcb-4f85-b283-9490f65fde90: 'Page Builder - Content Elements' # Page Builder - Content Elements
-    c9dd0921-10a9-4e5e-b168-a1d6437210c7: 'Background Image' # Background Image
-    c9e32de2-ee61-4f72-a3b6-8b9dec0e7de0: 'Social Link' # Social Link
-    c51a76cf-e325-4732-9bf5-a816ca68d07f: 'Button Size' # Button Size
-    c72b4e48-ad6f-48d6-890b-dc2274f1e3c5: 'Slide Transition Delay' # Slide Transition Delay
-    c200ff00-5afe-43ec-bdd5-3562087d9b59: 'Row Size' # Row Size
-    c2898f99-0a53-49fa-a52f-ab706675251b: 'Line Height' # Line Height
-    c9973b20-8f48-429c-be55-dd0498255786: 'Page Builder - Repeaters' # Page Builder - Repeaters
-    c56897e2-d620-4e0d-87d9-187409473181: Dots # Dots
-    c2036654-1479-4180-9e87-c7cf588d25e8: 'Full Screen Width' # Full Screen Width
-    cae8de72-1b59-4faa-9532-102b16d9d3b6: Home # Home
-    cb7c5f64-dd68-41d8-b463-02c872472acb: 'Simple Text' # Simple Text
-    cbd1ed3b-00b4-4c07-a9b5-1c87ef32b3b3: Accordion # Accordion
-    cc42f0ab-32ba-442d-8cd0-4bf05bcc50d0: 'CTA - Standard' # CTA - Standard
-    cd820604-8a70-4923-a94d-60cb48bafa68: 'Device Size' # Device Size
-    cdaa6755-9d92-444b-9074-703cfbcd53d8: 'Top Margin' # Top Margin
-    cdb0f810-9ecc-4ad0-82c9-a1a1363dd24d: 'Link URL' # Link URL
-    cdf2d596-c911-4fa0-8b6e-b07139f6d3b1: 'Menu Items - Entrees' # Menu Items - Entrees
-    ce49ac6e-915d-4e4b-b355-baba95079f9a: Multi-Column # Multi-Column
-    cf71cfec-b1c5-43b1-8bee-f9db77544e1c: 'Text Case' # Text Case
-    d4a36f44-e497-4a31-9bda-6277d5c820af: Sliders # Sliders
-    d6de3a74-4147-4c98-abef-1de4f8e746f7: Button # Button
-    d86c02d7-08d3-44c2-b76c-aa170103e7db: 'Subhead Level' # Subhead Level
-    d559fe04-efd1-43e2-80b1-d4d46c2d2ae2: 'Subhead Text' # Subhead Text
-    d1336a2e-90ba-4ab3-b632-a1f61e700c2d: 'Block Controls' # Block Controls
-    da371f6e-1956-4eb2-a0ae-fdec96e8815e: 'Quote Credit Name' # Quote Credit Name
-    da620640-2372-4a74-9250-dffbb4c14a2e: 'Image Asset' # Image Asset
-    db4d2db4-3f55-4eb9-97ea-e9efb9dfe2a5: 'List - Entries - Section(s)' # List - Entries - Section(s)
-    db77c128-239b-462f-bbbf-7c6e94b6af15: 'Image Caption' # Image Caption
-    e9e22bd5-a443-4cb8-8e93-fabdddc72ea6: Slide # Slide
-    e16c576c-c525-440b-8ca8-fcfb71976823: 'Link Name' # Link Name
-    e19df32e-9528-42e7-8b69-8c1e0db65f4d: 'Button Text' # Button Text
-    e28d1c24-f3ad-42e9-9ddb-f9837ee9f9b4: Entries # Entries
-    e90e752a-e16f-4480-b60e-93e60b4ce211: 'Long Format Text' # Long Format Text
-    e76476c3-0516-4766-932d-cff2b07934a8: 'Subhead Style' # Subhead Style
-    e166358b-d703-4754-a2cc-5554ce45be74: 'Public Schema' # Public Schema
-    ea2714e2-b3fd-4731-b372-a1ad3a32c200: 'Apply Reveal to Child Elements' # Apply Reveal to Child Elements
-    eb0eb072-ba73-48a0-b1a3-dd3a7d22ca49: 'Background Imagery' # Background Imagery
-    ee2a623a-e58b-41cd-9b23-5787db5a4a9f: '2 Column Edge Photo' # 2 Column Edge Photo
-    efd060e3-bbca-40d7-90b1-56f368a5bf92: Default # Default
-    f008a10f-66be-4d6d-9ac4-67d12cf0a9c1: 'Button Style' # Button Style
-    f6dbd613-57d2-4f78-971b-6b01213f6ac2: 'Subhead Text Styling Adjustments' # Subhead Text Styling Adjustments
-    f8c0e88c-b8e4-4b28-8631-86132b814062: 'Row Vertical Alignment' # Row Vertical Alignment
-    f43aea4b-4b7f-4e38-8ccb-26a69c52fae2: 'Background Position' # Background Position
-    f86c3e73-0c45-4315-9a91-64f2025a0fb5: 'Column Vertical Alignment' # Column Vertical Alignment
-    f200de49-4c87-41f9-9a85-725ced12f7ca: 'Modal to Display' # Modal to Display
-    f314f126-29d7-43dd-8631-3dff02728310: 'YouTube Video ID' # YouTube Video ID
-    f917bb5c-ae7c-4b1d-baf1-1aca02ff12e2: 'Custom Class List' # Custom Class List
-    f411052f-1a69-4dc0-bb4a-fa64eb492d54: 'Link Icon' # Link Icon
-    f1118757-7769-4d14-90e7-3ada38369196: 'Font Size' # Font Size
-    fa9f4a56-8938-45a8-94e1-e7048f8f6f1c: Video # Video
-    fa86d142-2ef4-4394-98e8-09cfb6601be2: 'Header Embeds' # Header Embeds
-    fb4f5400-b06f-4a57-9a15-52632e74f9fc: 'Modal Link Settings' # Modal Link Settings
-    fd46b410-254c-4ea4-9322-a71e8592f500: 'Page Header Button Settings' # Page Header Button Settings
-    fd542a6b-8f0d-4fe8-9bbe-3cf73903876b: 'Content Wrapper' # Content Wrapper
-    fdb6a567-4f4a-4a8f-a81f-4bb4f0808a17: 'Accordion - Start State' # Accordion - Start State
-    ff7c33c9-5640-4dda-a7ec-0e342b77adb7: 'Custom Id' # Custom Id
+    0a94a9c4-7b94-408c-919b-9c4a6c070e37: 'Header Block' # Header Block
+    0a727c99-d7ce-4920-b1db-ce06d0647067: 'Letter Spacing' # Letter Spacing
+    0f72b724-e0a8-4044-a3aa-12255ade6ea1: 'Basic Text with Search' # Basic Text with Search
+    0fe2ca3f-eb30-4294-96a2-1154bd95e41e: 'Background Position' # Background Position
+    1ef67107-0265-4563-8344-695b0a016e56: Form # Form
+    2ac55b2e-329b-4793-af25-3d158c1a4682: 'Accordion Style Adjustments' # Accordion Style Adjustments
+    2bf5d5a7-249a-42a4-ae56-79ea7f679bcc: 'Modal to Display' # Modal to Display
+    2dc9eeb7-914f-40a8-a177-d21efc54153e: 'Link Settings' # Link Settings
+    2e638127-2263-4e53-b71d-89eadcf405b0: 'Main Menu' # Main Menu
+    3aa14a6e-dabc-42ae-8954-e10f19c53441: Accordions # Accordions
+    3bcfa1bb-bcae-4957-b813-c81aa2061bfd: 'Text List Style' # Text List Style
+    3c147a0d-440a-4850-b41a-98bf61c16df6: Globals # Globals
+    3f041b04-6fce-4165-ab3a-d234dabaa7bd: 'Embed Code' # Embed Code
+    3fa40ffc-bcf8-4f2f-9462-19c808265175: 'Multiline Text With Search' # Multiline Text With Search
+    4a803a3b-ac9b-4ecc-b439-0815fb18e053: 'Tab Set' # Tab Set
+    4b3b9d20-aab3-4438-b3cd-970c301db971: 'Public Schema' # Public Schema
+    4c3b1224-ae0a-41b2-b608-0ad42c53ffb5: 'Slider Set' # Slider Set
+    4ccd8d3b-ddf4-4ac6-89c4-8d344eb6a427: 'Row Style Adjustments' # Row Style Adjustments
+    4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73: 'Button Color' # Button Color
+    5ad5f513-b34c-48ac-80bf-b573ed1e1f78: 'On Off' # On Off
+    5ced14c8-e41a-4186-99ba-01c331a7e430: 'Style Adjustment - Header' # Style Adjustment - Header
+    5d95a350-fb34-496c-8c66-da3952eb4373: 'Text Alignment' # Text Alignment
+    05fecf3b-4603-46ea-9e54-4612defd70e9: 'Layout Row' # Layout Row
+    5feec917-01fb-4987-bd1a-c38c337de8cf: Font # Font
+    6a43a3aa-97db-498c-b938-2d84a3519729: Pages # Pages
+    6b484609-7d28-4f55-990e-f5212885d922: 'Custom ID' # Custom ID
+    6f54afc7-9741-4a74-9500-6ac9ecabb1e9: 'SEO - Robots' # SEO - Robots
+    6f85f87f-2394-4346-8cc1-3c89dbc64756: 'Style Adjustment - Row' # Style Adjustment - Row
+    7c366b82-7c53-4dd2-a425-1c416a3e1464: 'Content Videos' # Content Videos
+    7f182d27-ea6e-4a71-a3f8-5c9d0f147eed: 'Device Size' # Device Size
+    7ff3d23a-91a6-4110-a3b0-b131dd2c3ee3: 'Style Adjustment - Accordion' # Style Adjustment - Accordion
+    8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300: 'Background Image Small' # Background Image Small
+    8cea45ff-f3ed-4c12-b8d2-ed1d8140b912: 'Social Media Links' # Social Media Links
+    9cc69c32-6fb9-465d-b7ce-b805d00f5449: 'Row Margins' # Row Margins
+    9ceecee1-0248-4ae3-a12a-c90171e5f42f: Content # Content
+    09d61ba7-f8dd-4e73-bc8f-d580cffbcc1e: 'Boilermaker 3' # Boilermaker 3
+    13b06d24-aa17-46e3-89b9-c895a68df851: 'Repeater Display Type' # Repeater Display Type
+    23f01ca6-c4de-4346-a8a1-75a6b95d1f53: 'Form Style Adjustments' # Form Style Adjustments
+    37a64193-e3ef-4a2d-aa91-555b436b1d7d: 'Italic?' # Italic?
+    37ce7ac2-f596-4d6f-9181-3f4d9fa4d692: 'Block Layout' # Block Layout
+    40a37d8a-41c1-47af-bc27-28d08f99a909: Slides # Slides
+    47acc143-9347-4976-bd50-02778ffeabf1: 'Button Styles' # Button Styles
+    049ec87b-57e9-4b3e-8d53-44cb8874474b: Width # Width
+    55cb62d2-f02a-4bd8-849c-695f3a2e92b1: Columns # Columns
+    56d80f6e-2a67-464f-af70-0d46d267a0e2: 'Items Per Page' # Items Per Page
+    57d8551d-6bb8-45ac-a118-25f3bf7c5b6a: 'Style Adjustment - Repeaters' # Style Adjustment - Repeaters
+    57eb287d-cdc2-4fba-8588-5dc66ff28c86: 'Line Height' # Line Height
+    62bb1cf0-026e-410e-a685-701783c6ae9e: 'Header Style Adjustments' # Header Style Adjustments
+    65c293ae-ed92-4c10-b2d3-1251a63c1402: Modal # Modal
+    66d93990-df90-491e-9f27-29da78847eb3: 'Icon Size' # Icon Size
+    67dbaf8c-d352-485f-a230-5ba94ad31c07: 'Column Layout' # Column Layout
+    69b9aab4-6d39-462c-b88a-8d4971791897: Simple # Simple
+    71ab40f6-9c7f-41cc-9887-255aa3c9603a: 'Style Adjustment - Tab Panel' # Style Adjustment - Tab Panel
+    72b1f013-8778-4308-a355-29b6088c7162: 'Background Type' # Background Type
+    073c9d03-dcc0-4435-99fe-2df91703e911: Limited # Limited
+    79d28a86-5f89-45cb-99a4-a97fa0992c73: 'Video Asset' # Video Asset
+    79fb09c5-0e2c-49d7-bfe6-a9b38820b56a: 'Social Link' # Social Link
+    82c290d4-2826-4d74-bcc2-8f94ddc4b0b0: 'Accordion Set' # Accordion Set
+    82cdb5ee-7722-4897-8e26-fb817c98e85e: Embed # Embed
+    85d1b6aa-228a-4340-bf82-fbdbeec66ee9: 'Icon Style Adjustments' # Icon Style Adjustments
+    91d05e51-ee38-4e73-af4c-ebed7e7572d3: Spacing # Spacing
+    93bf7bd8-1004-4c0c-be4d-7b59aa97021e: 'List Order' # List Order
+    206d3220-640b-4b20-a440-faaa801a11d9: Display # Display
+    335fab75-2107-4c96-80b2-14808539eadd: 'Button Group' # Button Group
+    400ed272-3701-4004-b0e0-a74db3d25030: Accordion # Accordion
+    413dfe3a-277c-4fba-a7ed-27de63a9a93f: 'Vertical Alignment' # Vertical Alignment
+    486d3e65-7880-4e2e-803e-daecc6657a1d: 'Content Wrapper' # Content Wrapper
+    487ec441-2218-43e8-8a96-652a0649e437: 'Color Picker' # Color Picker
+    524fa6fd-cc9f-4e7a-8791-a28ce1bb3c97: 'Single URL' # Single URL
+    554d8669-e659-48d2-a13d-a32598ca78cb: 'Side by Side Photo Style Adjustments' # Side by Side Photo Style Adjustments
+    558fedab-c14e-4f41-a438-ba8c394113a5: 'Notification Bar Alerts' # Notification Bar Alerts
+    569d975f-7001-40dd-b088-6f9614f17e06: 'Content Wrapper Style Adjustments' # Content Wrapper Style Adjustments
+    589d7e58-f378-455e-b073-055e9221964b: Pages # Pages
+    732c729f-8dbb-4f01-a463-c163ddc13eab: 'Left Right' # Left Right
+    0888a226-1804-4ac8-a00d-8b539fdd3483: '404 Page Content' # 404 Page Content
+    938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Photo Section' # Side by Side Photo Section
+    3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c: 'Background Image' # Background Image
+    3388d3b4-cb9f-47ee-8874-09e50df3c0bb: 'Section Style Adjustments' # Section Style Adjustments
+    3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25: 'Background Repeat' # Background Repeat
+    4296db0d-d5cc-4ca0-a1b3-08c226ac2224: 'Video Style Adjustments' # Video Style Adjustments
+    4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed: 'Phone Number' # Phone Number
+    5514a63a-0a23-42f9-9333-5576b0e95462: 'Color Scheme' # Color Scheme
+    5947f640-92a3-49d6-adfa-45816ba49d25: 'Slide Horizontal Layout' # Slide Horizontal Layout
+    8125ecc7-14a0-48fa-beb2-ae316b8c9c0d: 'Entries to List' # Entries to List
+    8977ed51-c96b-4f56-acf0-7b95d3182220: 'Slide Vertical Layout' # Slide Vertical Layout
+    15890ba2-38e4-4bce-9ccc-45ed62101d3e: Section # Section
+    60656df7-fedd-4651-ae29-cf30fdef7f08: 'Style Adjustment - Slider Set' # Style Adjustment - Slider Set
+    68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
+    93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
+    481490a1-1752-4ffc-b455-f05dadea8141: 'Slider Set Style Adjustments' # Slider Set Style Adjustments
+    699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
+    738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
+    781363bc-1fd0-4fcc-83b2-80a20c416f57: 'Content Cards' # Content Cards
+    1274916c-2577-42bf-a9be-c2a1d3ea5336: New # New
+    03773267-1517-45c4-9a3e-c92f4340a1b2: 'Style Adjustment - CTA' # Style Adjustment - CTA
+    4720320b-f7d0-49ec-a327-0db0e3a2dd7c: 'Aspect Ratio - Forced' # Aspect Ratio - Forced
+    05601664-3d38-4def-9b37-d9ccaf72ed5c: 'Reveal Animation' # Reveal Animation
+    6283122d-7dc0-4b8d-8895-140bc4e66973: 'Page Builder' # Page Builder
+    13258500-9385-4fb0-a11a-826fcd6a69f4: 'Nav List Display Type' # Nav List Display Type
+    13531367-46d6-4c50-8ec6-9bb2a6ab5ab1: 'Number of Columns' # Number of Columns
+    24664393-bbfc-46d1-baab-46bef56260a7: 'Slide Timing Override' # Slide Timing Override
+    31960640-d715-4966-93ba-b66e61df5207: 'Style Adjustment - Accordion Set' # Style Adjustment - Accordion Set
+    53829185-3375-470c-80cf-a50b1733a8c4: 'Slide Effect' # Slide Effect
+    54321551-57ae-4812-8a1d-c491760d59ad: 'Multi-Column Settings' # Multi-Column Settings
+    67336236-2b0e-4d01-bb98-029a923a6932: 'Tab Set Style Adjustments' # Tab Set Style Adjustments
+    77532772-badf-4ce5-a93b-6752273d81bb: 'Subhead Position' # Subhead Position
+    86544431-ce27-4263-b49f-b814ff50fcfb: 'Date Format' # Date Format
+    96056087-af4e-42ba-a559-9152ba279d35: 'Accordion Set Style Adjustments' # Accordion Set Style Adjustments
+    a2da31ae-7341-4dd1-b245-5ee55d44cbc2: 'Yes No' # Yes No
+    a6e56255-d417-4ac8-9a3f-256c30684cd0: Image # Image
+    a7d4ee4f-543c-4209-b4fd-5df98550137d: 'Cards Per Row' # Cards Per Row
+    a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5: 'Custom Classes' # Custom Classes
+    a547c85e-ce84-4cd3-9a43-5727af411343: 'Style Adjustment - Side by Side Photo Section' # Style Adjustment - Side by Side Photo Section
+    a387115c-e26a-48c1-88b4-11f64ea1772d: 'Font Weight' # Font Weight
+    acdcfd1c-89a2-4090-989d-17db6ad24060: Icon # Icon
+    acec3806-c4ac-4430-a8d9-24915eacc052: Modals # Modals
+    ad1fd6cd-1d72-49dd-82fc-6a604b11a71c: 'Icon Content Block' # Icon Content Block
+    ad2e8ad9-d9ae-4fee-a8f8-de0e8680707c: Quote # Quote
+    adca13f3-4ae5-49c5-83c4-cab3dd9f5ece: 'Button Size' # Button Size
+    aeeead9c-f591-4d95-a990-f8bea54fb0ef: 'Heading Style' # Heading Style
+    b1dd9550-b7de-4c8d-ac15-30a80aef59ff: 'Text Case' # Text Case
+    b1e1aad8-a87c-4914-9445-bbbbb92076ee: Heading # Heading
+    b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f: 'Row Layout' # Row Layout
+    b81cc92d-9e5b-440d-8461-cdf9ab64807e: Opacity # Opacity
+    b352c451-ed85-4679-8a36-8e473facf8a0: 'Style Adjustment - Button Group' # Style Adjustment - Button Group
+    b644bda8-1050-46f5-9453-0b3d19812289: Documents # Documents
+    b688f2ad-48f2-460c-ad2c-ad3dc97599ca: 'Layout Size' # Layout Size
+    b696e4a1-c7cf-4e07-a0be-b9f4f18a2f53: Home # Home
+    b6075a2a-820f-44f0-857b-358c60cb2bcb: 'Layout Column' # Layout Column
+    b422915f-1867-4c28-bb32-280178fab390: 'Multi Card Slider Cards Per Layout Size' # Multi Card Slider Cards Per Layout Size
+    b7035329-8f0c-4f1c-985b-104b44d6b235: 'CTA Type' # CTA Type
+    ba9877c7-223a-4c59-b461-4cf1a5068a34: 'Font Size' # Font Size
+    bae3f95d-8506-49cb-891a-048c975b11d4: 'Heading Level' # Heading Level
+    bb8a7c17-de8b-4008-bcca-10c9a30824b5: 'Notification Alerts' # Notification Alerts
+    bb89e543-0de1-4a53-9480-2e7c0e8a69a5: 'Aspect Ratio' # Aspect Ratio
+    bbe3f16b-50e0-4f6a-9db0-bb6359934f84: 'CTA Style Adjustments' # CTA Style Adjustments
+    bcc81e37-c9a5-4aaa-a456-847dd36ebf95: CTA # CTA
+    bea4db36-ae23-4382-ad57-5031c47c5ab6: 'Nav List to Display' # Nav List to Display
+    c025e168-6f53-4831-9433-670f03c62851: Buttons # Buttons
+    c3d75796-b930-48a0-b387-b5469be4094b: 'Full Listing Button' # Full Listing Button
+    c9cf2b48-b578-41dd-ae7f-82d0ce5a4241: 'Image Style Adjustments' # Image Style Adjustments
+    c17b0219-a22c-422c-a2f1-4e557eed8c4e: 'Content Column Layout' # Content Column Layout
+    c22c74d6-c1ba-4d51-af9b-d38a798a1e30: 'Text Wrap' # Text Wrap
+    c43e08b0-14a5-4aee-adb4-4e78e9c3d9fe: 'Main Content' # Main Content
+    c43e9602-b393-4012-b9c3-c4b391c74cd6: Video # Video
+    cc44dfc3-f9d6-4fcc-9940-621e8a3981f0: 'Quote Style Adjustments' # Quote Style Adjustments
+    cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
+    d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1: 'Slide Transition Delay' # Slide Transition Delay
+    d7a280bb-af78-455c-9bd1-1fc2f7e4018d: OpenClosed # OpenClosed
+    d7b08a46-def6-44b3-9d7d-4ef745756fca: 'Style Adjustment - Slide' # Style Adjustment - Slide
+    d12df536-921c-4ee2-b0bc-84a97d7c9e95: 'Column Background Color' # Column Background Color
+    d85e2e7b-6380-4c46-8ebd-36ad0a2eee46: 'Tab Panel' # Tab Panel
+    d136f8d9-17af-4766-82b7-9c58403b6446: ui-svg-sprites # ui-svg-sprites
+    d897b42d-3d26-4db5-b105-29c871b31ffb: 'Limited Content' # Limited Content
+    d81788e7-2fa5-4804-876d-57de4924e46f: 'Style Adjustment - Icon' # Style Adjustment - Icon
+    d91935cd-7812-422b-9f9f-0317ed62a03b: 'Style Adjustment - Video' # Style Adjustment - Video
+    dbe6c627-9b3d-4c00-9b60-25f1964d8a29: 'Background Videos' # Background Videos
+    dc77699b-4b92-46d2-bd7c-d70bc8319d04: font-awesome-all # font-awesome-all
+    dd25301d-9012-41dd-aa43-19f023540545: 'Button Group Style Adjustment' # Button Group Style Adjustment
+    ddb8108e-63a9-4567-80ba-7ab621baad89: 'Style Adjustment - Quote' # Style Adjustment - Quote
+    de6881eb-f48b-4119-889c-95d3bf6692e5: 'Style Adjustment - Tab Set' # Style Adjustment - Tab Set
+    df144842-8cb5-4008-8427-22974b6fe49c: 'Icon Vertical Alignment' # Icon Vertical Alignment
+    e2f8e7ee-d666-4bd1-bfe9-ece40a043b3e: Repeater # Repeater
+    e3f9e59c-e941-404e-8bc8-b4c57ff28d5c: 'YesNo - Yes' # YesNo - Yes
+    e5bff211-8719-442c-8ca7-caf236c14273: 'Subhead Style' # Subhead Style
+    e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
+    e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
+    e8d249f8-2c18-4b51-b311-baabbd94f999: 'Style Adjustment - Image' # Style Adjustment - Image
+    e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
+    e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
+    ea38d6d4-055b-43b8-b876-2bcab46e11c8: 'Company Info' # Company Info
+    eb38218b-e090-4cec-807f-ab70934109ba: 'First Last' # First Last
+    ecb5f699-34c7-440c-bb60-a045e0e28b18: 'Slide Style Adjustments' # Slide Style Adjustments
+    ee6d1ced-9ba0-4c31-9f10-d3e6057ae634: 'Style Adjustment - Column' # Style Adjustment - Column
+    ee64f702-a8f1-46ee-8dea-79f8ad82e25b: 'Custom Attributes' # Custom Attributes
+    f0c10f75-8d5e-43c0-83a1-2321c04a2ebd: 'Form to Display' # Form to Display
+    f1b466ce-fb41-471a-90d4-5d0fd23f346d: 'Image Asset' # Image Asset
+    f4d725e6-48b8-4083-a921-ecc0925a0bff: 'Background Size' # Background Size
+    f7dc9df7-f17d-4c82-9b2e-2bd2986c309f: 'Column Style Adjustments' # Column Style Adjustments
+    f13a58c0-cc0e-41c6-b75b-f014f8de92a6: 'Tab Panel Style Adjustments' # Tab Panel Style Adjustments
+    f22d8a3b-9296-4b9a-b338-0d599eaa364a: 'Section to List' # Section to List
+    f103b592-617a-4840-8a3b-ce98a171eb09: 'Style Adjustment - Content Wrapper' # Style Adjustment - Content Wrapper
+    f162c9c9-8174-4ba1-a691-5b2e30f57c37: Root # Root
+    f7399346-9a4c-44e7-99c4-ca44c88fbb0f: 'Content Links' # Content Links
+    fa819c1c-abac-42ac-b1e5-3de37862ccf3: Images # Images
+    fd3b49a5-f45c-4fff-9e83-efae0bfb34d4: 'Style Adjustment - Section' # Style Adjustment - Section
+    fdc69893-7848-4bd4-8f1d-3df385771a84: 'Repeater Style Adjustments' # Repeater Style Adjustments
+    fe981b00-296b-4916-816f-a8e2670638e3: 'Style Adjustment - Form' # Style Adjustment - Form
+    ff110645-b126-49e5-9ed9-a720a1a9d3d2: 'Notification Bar Color' # Notification Bar Color
 plugins:
   blitz:
     edition: standard
     enabled: true    
-    schemaVersion: 4.11.1
+    schemaVersion: 5.5.0
     settings:
       apiKey: ''
-      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheControlHeader: 'public, max-age=31536000'
+      cacheControlHeaderExpired: 'public, max-age=5'
       cacheDuration: null
-      cacheElementQueries: true
-      cacheElements: true
       cacheGeneratorSettings:
         __assoc__:
           -
             - concurrency
             - '3'
-      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\LocalGenerator
       cacheNonHtmlResponses: false
       cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
       cacheStorageSettings:
@@ -393,16 +296,17 @@ plugins:
             - folderPath
             - '@webroot/cache/blitz'
           -
-            - createGzipFiles
-            - ''
-          -
-            - createBrotliFiles
-            - ''
+            - compressCachedValues
+            - '1'
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
       cachingEnabled: false
-      debug: false
+      debug: true
+      defaultCacheControlHeader: no-store
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      detectSsiEnabled: true
+      driverJobBatchSize: 100
       driverJobPriority: 100
+      esiEnabled: false
       excludedQueryStringParams:
         -
           __assoc__:
@@ -435,20 +339,34 @@ plugins:
               - uriPattern
               - '.*'
       injectScriptEvent: DOMContentLoaded
+      injectScriptPosition: 3
       integrations:
         - putyourlightson\blitz\drivers\integrations\CommerceIntegration
+        - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
+        - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
       maxRetryAttempts: 10
+      maxUriLength: 255
       mutexTimeout: 1
       outputComments: true
+      purgeAssetImagesWhenChanged: true
       queryStringCaching: 0
       queueJobTtr: 300
       refreshCacheAutomaticallyForGlobals: true
+      refreshCacheEnabled: true
       refreshCacheJobPriority: 10
       refreshCacheWhenElementMovedInStructure: true
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
       refreshMode: 3
       sendPoweredByHeader: true
+      ssiEnabled: false
+      ssiTagFormat: '<!--#include virtual="{uri}" -->'
+      trackElementQueries: true
+      trackElements: true
+  buttonbox:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
   ckeditor:
     edition: standard
     enabled: true
@@ -457,15 +375,15 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.4.3
-  cp-css:
+  craft-color-mixer:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
-    settings:
-      additionalCss: ''
-      cacheBusting: true
-      cssFile: $NEO_STYLES_PATH
-  elements-panel:
+    schemaVersion: 1.0.0
+  default-dashboard:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  element-index-defaults:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -473,194 +391,51 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-    settings:
-      cacheDuration: 300
-      disableVimeoTracking: true
-      embedlyKey: ''
-      enableAutoRefresh: true
-      facebookKey: ''
-      googleKey: ''
-      iframelyKey: ''
-      maxAssetNameLength: 50
-      maxFileNameLength: 50
-      minImageSize: 16
-      parameters:
-        -
-          __assoc__:
-            -
-              - param
-              - maxwidth
-            -
-              - value
-              - '1920'
-        -
-          __assoc__:
-            -
-              - param
-              - maxheight
-            -
-              - value
-              - '1080'
-      referer: $PRIMARY_SITE_URL
-      showThumbnailsInCp: true
-      soundcloudKey: ''
-      useYouTubeNoCookie: true
-      whitelist:
-        - 'amazon.*'
-        - 'amazon.co.*'
-        - amcharts.com
-        - baidu.com
-        - collegehumor.com
-        - dailymotion.com
-        - deviantart.com
-        - embed.ly
-        - 'facebook.*'
-        - 'facebook.co.*'
-        - 'facebook.com.*'
-        - fb.com
-        - 'google.*'
-        - 'google.co.*'
-        - 'google.com.*'
-        - hulu.com
-        - iframely.com
-        - imgur.com
-        - instagr.am
-        - instagram.com
-        - kickstarter.com
-        - meetup.com
-        - meetupstatic.com
-        - netflix.com
-        - pbs.org
-        - nhpbs.org
-        - reddit.com
-        - soundcloud.com
-        - tiktok.com
-        - t.co
-        - 'twitter.*'
-        - 'twitter.co.*'
-        - 'twitter.com.*'
-        - twimg.com
-        - vimeo.com
-        - vine.co
-        - wikipedia.org
-        - wikimedia.org
-        - wordpress.com
-        - yahoo.com
-        - youtu.be
-        - youtube.com
-        - youtube-nocookie.com
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   feed-me:
     edition: standard
     enabled: true
-    schemaVersion: 5.1.0.0
+    schemaVersion: 5.1.1
   field-manager:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  freeform:
-    edition: pro
+  formie:
+    edition: standard
     enabled: true    
-    schemaVersion: 5.0.21
-    settings:
-      ajaxByDefault: true
-      alertNotificationRecipients: null
-      autoScroll: '1'
-      autoScrollToErrors: '1'
-      badgeType: all
-      blockedEmails: null
-      blockedEmailsError: 'Invalid Email Address'
-      blockedIpAddresses: null
-      blockedKeywords: null
-      blockedKeywordsError: 'Invalid Entry Data'
-      bypassSpamCheckOnLoggedInUsers: false
-      clientDigestFrequency: 1
-      clientDigestRecipients: null
-      customErrorMessage: null
-      customHoneypotName: null
-      defaultTemplates: true
-      defaultView: dashboard
-      digestFrequency: 1
-      digestOnlyOnProduction: false
-      digestRecipients: null
-      displayFeed: true
-      emailTemplateDefault: files
-      emailTemplateDirectory: null
-      emailTemplateStorageType: files_database
-      exportHandlesAsNames: false
-      exportLabels: false
-      fieldDisplayOrder: name
-      fillWithGet: ''
-      footerScripts: false
-      formFieldShowOnlyAllowedForms: false
-      formSubmitDisable: '1'
-      formSubmitExpiration: null
-      formTemplateDirectory: null
-      formattingTemplate: flexbox.twig
-      freeformHoneypot: true
-      freeformHoneypotEnhancement: false
-      hideBannerDemo: false
-      hideBannerOldFreeform: false
-      minimumSubmitTime: null
-      pluginName: null
-      purgableSpamAgeInDays: null
-      purgableSubmissionAgeInDays: null
-      purgableUnfinalizedAssetAgeInMinutes: 180
-      recaptchaBehaviour: display_error
-      recaptchaEnabled: false
-      recaptchaErrorMessage: 'Please verify that you are not a robot.'
-      recaptchaKey: null
-      recaptchaLazyLoad: false
-      recaptchaMinScore: 0.5
-      recaptchaSecret: null
-      recaptchaSize: normal
-      recaptchaTheme: light
-      recaptchaType: v2_checkbox
-      rememberPageSubmitOrder: '1'
-      removeNewlines: false
-      renderFormHtmlInCpViews: true
-      salesforce_client_id: null
-      salesforce_client_secret: null
-      salesforce_password: null
-      salesforce_username: null
-      saveFormSessionLimit: '10'
-      saveFormTtl: '30'
-      scriptInsertLocation: manual
-      scriptInsertType: pointers
-      sessionContext: payload
-      sessionContextCount: '100'
-      sessionContextSecret: ''
-      sessionContextTimeToLiveMinutes: '180'
-      sessionEntryMaxCount: 50
-      sessionEntryTTL: 10800
-      showErrorsForBlockedEmails: false
-      showErrorsForBlockedKeywords: false
-      showTutorial: false
-      spamFolderEnabled: true
-      spamProtectionBehaviour: simulate_success
-      submissionThrottlingCount: null
-      submissionThrottlingTimeFrame: null
-      successTemplateDirectory: null
-      twigInHtml: true
-      twigInHtmlIsolatedMode: true
-      updateSearchIndexes: true
-  guide:
-    edition: lite
-    enabled: true
-    schemaVersion: 3.0.0
+    schemaVersion: 3.4.6
+  hyper:
+    edition: standard
+    enabled: true    
+    schemaVersion: 1.0.0
   icon-picker:
     edition: standard
     enabled: true    
     schemaVersion: 1.2.3
     settings:
-      enableCache: true
-      iconSetsPath: '@webroot/dist/icons/'
-      iconSetsUrl: '@web/dist/icons/'
-      maxIconsShown: 100
-      redactorFieldHandle: ''
+      enableCache: false
+      iconItemSize: 32
+      iconItemSizeLarge: 40
+      iconItemWrapperSize: 56
+      iconItemWrapperSizeLarge: 72
+      iconSetsPath: '@webroot/dist/svg/'
+      iconSetsUrl: '@web/dist/svg/'
+      redactorFieldHandle: icon
   imager-x:
     edition: pro
     enabled: true    
     schemaVersion: 4.0.0
+  imager-x-power-pack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  knock-knock:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.1
   minify:
     edition: standard
     enabled: true
@@ -668,11 +443,11 @@ plugins:
   navigation:
     edition: standard
     enabled: true    
-    schemaVersion: 2.0.7
-  neo:
+    schemaVersion: 2.1.0
+  postmark:
     edition: standard
-    enabled: true    
-    schemaVersion: 4.0.0
+    enabled: true
+    schemaVersion: 2.0.1
   retcon:
     edition: standard
     enabled: true
@@ -684,23 +459,34 @@ plugins:
   section-and-product-type:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.3
+    schemaVersion: 2.0.8
   seomatic:
     edition: standard
     enabled: true    
     schemaVersion: 3.0.12
-  twigpack:
+  shortcodes:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  typedlinkfield:
+  social-share:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
+    schemaVersion: 1.0.0
+  tablemaker:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: pro
   live: true
-  name: $SITE_NAME
-  retryDuration: null
-  schemaVersion: 4.5.3.0
-  timeZone: America/Chicago
+  name: 'Boilermaker 3'
+  schemaVersion: 5.0.0.21
+  timeZone: America/Los_Angeles

@@ -1,0 +1,256 @@
+{#
+/**
+ * Tilt Boilermaker - Tab Set Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set tabSetClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'tab-set-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+{# Set color classes for set #}
+{% if entry.colorScheme != null %}
+	{% set colorScheme = entry.colorScheme.class %}	
+{% endif %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.tabSetStyleAdjustments.eagerly().all() %}
+
+{# set default heading level for set #}
+{% set setHeaderLevel = entry.headingLevel %}
+
+
+<!-- Tabs -->
+
+<div
+  x-data="{
+	selectedId: null,
+	init() {
+	  // Set the first available tab on the page on page load.
+	  this.$nextTick(() => this.select(this.$id('tab', 1)))
+	},
+	select(id) {
+	  this.selectedId = id
+	},
+	isSelected(id) {
+	  return this.selectedId === id
+	},
+	whichChild(el, parent) {
+	  return Array.from(parent.children).indexOf(el) + 1
+	}
+  }"
+  x-id="['tab']"
+  id="{{blockId}}"
+  class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- tabSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}" >
+  <!-- Tab List -->
+  <ul
+	x-ref="tablist"
+	@keydown.right.prevent.stop="$focus.wrap().next()"
+	@keydown.home.prevent.stop="$focus.first()"
+	@keydown.page-up.prevent.stop="$focus.first()"
+	@keydown.left.prevent.stop="$focus.wrap().prev()"
+	@keydown.end.prevent.stop="$focus.last()"
+	@keydown.page-down.prevent.stop="$focus.last()"
+	role="tablist"
+	{#class="-mb-px flex items-stretch"#}
+	class="tab-list"
+  >
+  
+	{% set tabs = entry.tabs.eagerly().all() %}
+	{% for tab in tabs %}
+	  {# set colors for accordion #}
+	  {% set colorClasses = [] %}
+	  {% if tab.colorScheme != null %}
+		  {% set tabColorScheme = tab.colorScheme.class %}			
+	  {% else %}
+		  {% set tabColorScheme = colorScheme %}
+	  {% endif %}
+	  {% set colorClasses = colorClasses|merge([tabColorScheme]) %}
+	  {% if tab.bgColor|length %}
+		  {% set colorClasses = colorClasses|merge(['bg-' ~ tab.bgColor]) %}
+	  {% else %}
+		  {% if entry.bgColor|length %}
+			  {% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+		  {% endif %}
+	  {% endif %}
+	  
+	  <!-- Tab -->
+	  <li>
+		<button
+		  :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+		  @click="select($el.id)"
+		  @mousedown.prevent
+		  @focus="select($el.id)"
+		  type="button"
+		  :tabindex="isSelected($el.id) ? 0 : -1"
+		  :aria-selected="isSelected($el.id)"
+		  :class="isSelected($el.id) ? 'tab-active' "
+		  class="tab-set-btn {{ colorClasses|join(' ') }}"
+		  role="tab"
+		>
+		{% if tab.icon|length %}
+			<div class="tab-icon">
+			{% if tab.icon.type == 'svg' %}
+				{{ tab.icon.inline }}
+			{% elseif tab.icon.type == 'css' %}
+				<i class="{{ tab.icon.value }}"></i>								
+			{% else %}
+				<svg><use xlink:href="/sprites.svg#{{ tab.icon.value }}"></use></svg>
+			{% endif %}
+			</div>
+		{% endif %}
+		<span>{{tab.title}}</span></button>
+	  </li>
+	{% endfor %}      
+  </ul> 
+  <!-- Panels -->
+  <div role="tabpanels" class="tab-panel-wrapper">
+	{% for tab in tabs %}
+	
+		{% set tabClassList = ['tab-panel'] %}				
+		{% set colorClasses = [] %}		
+		
+		{# Set tab id attribute value #}
+		{% if tab.customId is defined and tab.customId != '' %}
+			{% set tabId = tab.customId|replace({' ': '-'})|trim %}
+		{% else %}
+			{% set tabId = 'tab-' ~ tab.id ~ '-tabSet-' ~ entry.id %}
+		{% endif %}
+		
+		{# set colors for accordion #}
+		{% if tab.colorScheme != null %}
+			{% set tabColorScheme = tab.colorScheme.class %}			
+		{% else %}
+			{% set tabColorScheme = colorScheme %}
+		{% endif %}
+		{% set colorClasses = colorClasses|merge([tabColorScheme]) %}
+		{% if tab.bgColor|length %}
+			{% set colorClasses = colorClasses|merge(['bg-' ~ tab.bgColor]) %}
+		{% else %}
+			{% if entry.bgColor|length %}
+				{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+			{% endif %}
+		{% endif %}
+		{% set tabClassList = tabClassList|merge(colorClasses) %}
+				
+		{# sort out content styling #}
+		{% set tabAdjustments = tab.tabPanelStyleAdjustments.eagerly().all() %}
+		{% set styleListMaster = [] %}
+		{% set styleObj = {} %}		
+		{% for adj in tabAdjustments %}
+			{% set devSize = adj.deviceSize %}
+			{% if devSize|length %}
+				{% set devSize = devSize ~ ':' %}	
+			{% endif %}		
+			{# loop through the tabs in the accordion adjustments and add to the style object, accordion adjustments get priority, so set class name to key and value to compare against set adjustments so the set adjustments that don't have conflicts get added but not the ones with accordion overrides #}
+			{% set fLayout = adj.getFieldLayout() %}
+			{% for tabObj in fLayout.tabs %}
+				{% if tabObj.name != "Device Size" %}
+					{% if tabObj.name == "Padding" %}
+						{% for tabEl in tabObj.elements %}				
+							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+								{% if adj.getFieldValue(tabEl.field.handle)|length %}
+									{% set styleHandle = devSize ~ tabEl.field.handle %}
+									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ adj.getFieldValue(tabEl.field.handle)}) %}
+								{% endif %}
+							{% endif %}				
+						{% endfor %}
+					{% else %}
+						{% for tabEl in tabObj.elements %}	
+							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+								{% if adj.getFieldValue(tabEl.field.handle)|length %}
+									{% set styleHandle = devSize ~ tabEl.field.handle %}
+									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ adj.getFieldValue(tabEl.field.handle)}) %}
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}					
+		{% endfor %}
+		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
+		{% for setAdj in adjustments %}			
+			{% set devSize = setAdj.deviceSize %}
+			{% if devSize|length %}
+				{% set devSize = devSize ~ ':' %}	
+			{% endif %}
+			{% set fLayout = setAdj.getFieldLayout() %}
+			{% for tabObj in fLayout.tabs %}
+				{% if tabObj.name != "Device Size" %}
+					{% if tabObj.name == "Padding" %}
+						{% for tabEl in tabObj.elements %}				
+							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+								{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
+									{% set styleHandle = devSize ~ tabEl.field.handle %}
+									{% if styleObj[styleHandle] is not defined %}
+										{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
+									{% endif %}
+								{% endif %}
+							{% endif %}				
+						{% endfor %}
+					{% else %}
+						{% for tabEl in tabObj.elements %}
+							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}						
+								{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
+									{% set styleHandle = devSize ~ tabEl.field.handle %}
+									{% if styleObj[styleHandle] is not defined %}
+										{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
+									{% endif %}
+								{% endif %}						
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+		{% for key, value in styleObj %}
+			{% set styleListMaster = styleListMaster|merge([value]) %}
+		{% endfor %}
+		{% set tabClassList = tabClassList|merge(styleListMaster) %}
+	
+	  <!-- Panel -->
+	  <div
+		x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+		:aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+		role="tabpanel"
+		class="{{- tabClassList|join(' ') }}" {{- gMacros.attributesOut(tab.customAttributes) -}}
+	  >     
+		{% for chunk in tab.elementContent %}
+			{% if chunk.type == 'markup' %}
+				{{chunk|raw}}
+			{% else %}
+				{{ chunk.entry.render({
+					'animSetting': null,
+					'colorScheme': tabColorScheme
+				}) }}
+			{% endif %}
+		{% endfor %}
+	  </div>
+	{% endfor %}          
+  </div>
+</div>

@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: headerStyleAdjustments
+instructions: null
+name: 'Header Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - 5ced14c8-e41a-4186-99ba-01c331a7e430 # Style Adjustment - Header
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

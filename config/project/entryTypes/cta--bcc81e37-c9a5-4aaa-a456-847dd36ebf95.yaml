@@ -1,0 +1,344 @@
+color: cyan
+fieldLayouts:
+  ba07b883-e18f-40ca-91f4-256b0c93bf6a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 2f001096-f579-4b3b-a768-e4937c46b053
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
+            handle: ctaContent
+            includeInCards: false
+            instructions: null
+            label: 'CTA Content'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 892f5b7d-18ce-4136-b8de-3b1a8f266a55
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: c7601f20-d89d-4f19-be77-ff9b6c583be7
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: ctaImg
+            includeInCards: false
+            instructions: null
+            label: 'CTA Image'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7fd6a404-e781-4839-8678-bc31ba9e91ec
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 8da6a59a-4193-4220-8d90-15f5e2073487
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: ctaImgAspect
+            includeInCards: false
+            instructions: 'Sets the aspect ratio to be used for the image in the CTA content'
+            label: 'CTA Image Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5751701-1992-4b68-b08b-4fa6952d54ee
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: a1ae26ae-0204-48fd-8f70-a2b865529f23
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: eb38218b-e090-4cec-807f-ab70934109ba # First Last
+            handle: contentPositionSmall
+            includeInCards: false
+            instructions: null
+            label: 'Content Position - Small Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d05e74a-be8c-420e-816d-b0bd79c0fd50
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: cd39096b-e59a-4e58-b1bc-162e294a65bd
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 732c729f-8dbb-4f01-a463-c163ddc13eab # Left Right
+            handle: contentPositionLarge
+            includeInCards: false
+            instructions: null
+            label: 'Content Position - Large Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 953a92f0-1b68-483f-af55-3dfacce04e67
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 58599678-dd21-476e-8cfa-49edbdce6b47
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+            handle: contentWidthLarge
+            includeInCards: false
+            instructions: 'Set the width of the CTA Content column when in large (side by side with image) layouts'
+            label: 'Content Width - Large Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3a89327-4c2b-4106-ba64-c2da57b378a2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 1836d284-afff-4ab3-93c2-e5c5a08fff05
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
+            handle: contentVerticalAlignment
+            includeInCards: false
+            instructions: ' This field sets the vertical alignment of the content relative to its image when the CTA Type is in large CTA mode.'
+            label: 'Content Vertical Alignment'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8a66fc1-e15a-4c96-8b30-82c8d264ce07
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b8294f03-74f9-4555-8f79-babcc782cefe
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 34051c35-cc92-4be3-8b34-d4fc1e5d0154
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ea251d93-314c-46a3-bffa-8c0c87ee8bdf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 55566b7c-c110-4430-b85f-bb2f47d0693f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: fb6b1286-07dc-4871-9859-652c44886a89
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: bbe3f16b-50e0-4f6a-9db0-bb6359934f84 # CTA Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 301d1ed7-c91e-4677-8fd8-2fe4a9e07705
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 8d56bf96-5139-44b4-a84b-daa262606f0c
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 88610853-e6ec-4328-87e5-9baf59884062
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8be37790-e8e5-484f-a7b8-178baf7c077e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 36977329-bea0-4166-a522-928e5fd85bb3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: 57109434-1a80-47df-b091-2ea23ea07e24
+        userCondition: null
+handle: cta
+hasTitleField: true
+icon: bullhorn
+name: CTA
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

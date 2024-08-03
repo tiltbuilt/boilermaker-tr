@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - bb8a7c17-de8b-4008-bcca-10c9a30824b5 # Notification Alerts
+handle: notificationBarAlerts
+maxAuthors: 1
+name: 'Notification Bar Alerts'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - refresh
+        - '1'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  e6aadd12-c632-4735-b22d-b5a758ab5003: # Boilermaker 3
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

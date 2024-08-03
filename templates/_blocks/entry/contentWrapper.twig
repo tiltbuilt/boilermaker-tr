@@ -1,0 +1,68 @@
+{#
+/**
+ * Tilt Boilermaker - Content Wrapper Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set wrapperClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'wrapper-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+	
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% if entry.colorScheme != null %}
+	{% set colorScheme = entry.colorScheme.class %}	
+{% endif %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set wrapperClassList = wrapperClassList|merge(colorClasses) %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.contentWrapperStyleAdjustments.eagerly().with('bgImg').all() %}
+
+<div id="{{blockId}}" class="{{- blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- wrapperClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+	<div class="inner content-wrapper-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+		{% for chunk in entry.elementContent %}
+			{% if chunk.type == 'markup' %}
+				{{chunk|raw}}
+			{% else %}
+				{{ chunk.entry.render({
+					'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
+					'colorScheme': colorScheme
+				}) }}
+			{% endif %}
+		{% endfor %}							
+	</div>
+	<div class="background">
+		{{ gMacros.buildElementBackground(adjustments) }}
+	</div>		
+</div>
+
+	

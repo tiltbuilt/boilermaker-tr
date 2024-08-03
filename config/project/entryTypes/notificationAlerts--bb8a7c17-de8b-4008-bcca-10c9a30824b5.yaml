@@ -1,0 +1,110 @@
+color: red
+fieldLayouts:
+  77642883-89cb-4b4c-8f4d-89d2e0b1f880:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c932dc7b-a160-4fd0-a843-2f086943dd72
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5aab943f-2a90-4419-a9e0-432581773499
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3fa40ffc-bcf8-4f2f-9462-19c808265175 # Multiline Text With Search
+            handle: notificationText
+            includeInCards: false
+            instructions: null
+            label: 'Notification Text'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f2bef5ab-d168-415d-a33c-30627d1a3ac3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c025e168-6f53-4831-9433-670f03c62851 # Buttons
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f25c9e6-510a-45a8-a905-25eea906382a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ff110645-b126-49e5-9ed9-a720a1a9d3d2 # Notification Bar Color
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b7d0c855-5bce-4a05-b964-2722d5ca7f7e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d74e3717-a50d-4380-8bf0-625bedb5fd0e
+        userCondition: null
+handle: notificationAlerts
+hasTitleField: true
+icon: triangle-exclamation
+name: 'Notification Alerts'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

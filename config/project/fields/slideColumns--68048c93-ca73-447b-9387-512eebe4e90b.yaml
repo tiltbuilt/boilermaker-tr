@@ -1,0 +1,18 @@
+columnSuffix: null
+handle: slideColumns
+instructions: null
+name: 'Slide Columns'
+searchable: false
+settings:
+  createButtonLabel: 'Add Column'
+  includeTableView: false
+  maxEntries: 5
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

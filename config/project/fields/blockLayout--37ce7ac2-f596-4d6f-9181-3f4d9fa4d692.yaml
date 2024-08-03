@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: blockLayout
+instructions: null
+name: 'Block Layout'
+searchable: false
+settings:
+  default: false
+  offLabel: Vertical
+  onLabel: Horizontal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

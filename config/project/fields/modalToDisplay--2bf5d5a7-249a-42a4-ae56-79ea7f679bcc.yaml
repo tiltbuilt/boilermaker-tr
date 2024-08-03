@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: modalToDisplay
+instructions: null
+name: 'Modal to Display'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: 'Select Modal'
+  showCardsInGrid: false
+  showSiteMenu: true
+  sources:
+    - 'section:acec3806-c4ac-4430-a8d9-24915eacc052' # Modals
+    - 'section:589d7e58-f378-455e-b073-055e9221964b' # Pages
+    - singles
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

@@ -1,0 +1,292 @@
+{#
+/**
+ * Tilt Boilermaker -Repeater Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set repeaterClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'repeater-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+	
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% if entry.colorScheme != null %}
+	{% set colorScheme = entry.colorScheme.class %}	
+{% endif %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set repeaterClassList = repeaterClassList|merge(colorClasses) %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.repeaterStyleAdjustments.eagerly().all() %}
+
+
+{#
+  ----
+  Prepare the query parameters
+  -----
+#}
+
+{# get order setting from field and match to appropriate parameter syntax #}
+{%
+  set orderOptions = {
+	'dd' : 'postDate desc',
+	'da' : 'postDate asc',
+	'r'  : 'RAND()',
+	'az' : 'title asc',
+	'za' : 'title desc',
+	'cp' : '',
+  }
+%}
+
+
+{% set listOrder = orderOptions[entry.listOrder.value] %}
+
+
+{# Set variables for list display type and content type #}
+{% set contentType = entry.repeaterContent %}
+{% if contentType == 'navList' %}
+	{% set displayType = entry.navListDisplayType %}
+{% else %}
+	{% set displayType = entry.repeaterDisplay %}
+{% endif %}
+
+{# set variables to handle situations where control/display settings aren't compatible with list type #}
+
+{# Determine whether to use pagination or not #}
+{% set paginateItems = false %}
+{% if contentType != 'navList' %}
+	{% if displayType != "buttonList" and displayType != "largeSlider" and displayType != "multiCardSlider" %}	
+		{% if entry.itemsPerPage != 0 %}
+			{% set paginateItems = true %}
+		{% endif %}	
+	{% endif %}
+{% endif %}
+
+{# don't show dates on nav lists #}
+{% if contentType == 'navList' %}
+	{% set showDate = false %}
+{% else %}
+	{% set showDate = entry.showPostDate %}
+{% endif %}
+
+{# get Row Size Settings for Card Lists #}
+{% if entry.cardsPerRow|length %}
+	{% set cardRowSizes = entry.cardsPerRow %}
+{% else %}
+	{% switch displayType %}
+		{% case "cardList" %}
+			{% set cardRowSizes = gSettings.cprCard %}
+		{% case "cardListSideImage" %}
+			{% set cardRowSizes = gSettings.cprCardSmImg %}
+		{% case "cardListTopImage" %}
+			{% set cardRowSizes = gSettings.cprCardLgImg %}
+		{% default %}
+			{% set cardRowSizes = null %}
+	{% endswitch %}
+{% endif %}
+
+{# get card counts for layout sizes for multi card slider #}
+{% if entry.cardsPerSizeSlider|length %}
+	{% set cardSliderSizes = entry.cardsPerSizeSlider %}
+{% else %}
+	{% set cardSliderSizes = gSettings.cardsPerSizeSlider %}
+{% endif %}
+
+{# Set Aspect Setting for Images if Large Repeater is Display Type #}
+{% if displayType == 'largeSlider' %}
+	{% if entry.sliderSizeSm != '' %}
+		{% set slideImgAspectSm = entry.sliderSizeSm %}
+	{% else %}
+		{% set slideImgAspectSm = gSettings.thumbAspectLg %}
+	{% endif %}	
+	{% if entry.sliderSizeLg != '' %}
+		{% set slideImgAspectLg = entry.sliderSizeLg %}
+	{% else %}
+		{% set slideImgAspectLg = gSettings.thumbAspectSm %}
+	{% endif %}
+{% endif %}
+
+
+
+{# Gather list Content #}
+{% set listContent = [] %}
+{% set listData = [] %}
+
+
+{% switch contentType %}
+	{# logic for querying the content for the list based on content type and pagination setting #}
+				
+	{% case "contentCards" %}
+		{% if paginateItems %}
+			{% paginate entry.contentCards.orderBy(listOrder).limit(entry.itemsPerPage).with(['imageAsset']) as pageInfo, listData %}
+			{% do seomatic.helper.paginate(pageInfo) %}
+		{% else %}
+			{% set listData = entry.contentCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}
+		{% endif %}
+		{% set listData = entry.contentCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}	
+	
+	{% case "allInSection" %}
+		{% if paginateItems %}
+			{% paginate craft.entries().sectionId(entry.sectionToList).orderBy(listOrder).limit(entry.itemsPerPage).with(['seoImage', 'headerImgSm', 'headerImg', 'imageAsset']) as pageInfo, listData %}
+			{% do seomatic.helper.paginate(pageInfo) %}
+		{% else %}
+			{% set listData = craft.entries().sectionId(entry.sectionToList).orderBy(listOrder).with(['seoImage','headerImgSm', 'headerImg', 'imageAsset']).eagerly().all() %}
+		{% endif %}
+	
+	{% case "selectEntry" %}
+		{% if paginateItems %}
+			{% paginate  entry.entriesToList.orderBy(listOrder).limit(entry.itemsPerPage).with(['seoImage','headerImgSm','headerImg', 'imageAsset']) as pageInfo, listData %}
+			{% do seomatic.helper.paginate(pageInfo) %}
+		{% else %}
+			{% set listData = entry.entriesToList.orderBy(listOrder).with(['seoImage','headerImgSm', 'headerImg', 'imageAsset']).eagerly().all() %}
+		{% endif %}
+	
+	{% case "navList" %}	
+		{% set listData = craft.navigation.nodes().handle(entry.navListToDisplay).eagerly().all() %}			
+						
+{% endswitch %}
+
+{# content list population by normalizing content data into data objects that can be passed to any of the repeater layout templates and work. #}
+
+{% set siteThumb = gSettings.thumbnailPlaceholder %}
+{% for item in listData %}	
+	{% if item.title is defined %}
+		{% set itemTitle = item.title %}
+	{% else %}
+		{% set itemTitle = null %}
+	{% endif %}
+	{% if item.url is defined %}
+		{% if item.url|length %}
+			{% set itemUrl = item.url %}
+		{% else %}
+			{% set itemUrl = null %}
+		{% endif %}
+		{% if item.target.value is defined %}
+			{% set itemTab = item.target|length ? true : false %}
+		{% else %}
+			{% set itemTab = false %}
+		{% endif %}
+	{% else %}
+		{% set itemUrl = null %}
+		{% set itemTab = false %}
+	{% endif %}
+	{% if item.excerpt is defined %}
+		{% set itemExcerpt = item.excerpt %}
+	{% elseif item.cardContent is defined %}
+		{% set itemExcerpt = item.cardContent|raw %}
+	{% else %}
+		{% set itemExcerpt = '' %}
+	{% endif %}
+	{% if item.seoImage|length %}
+		{% set itemImage = item.seoImage %}
+	{% elseif item.headerImgSm|length %}
+		{% set itemImage = item.headerImgSm %}
+	{% elseif item.headerImg|length %}
+		{% set itemImage = item.headerImg %}
+	{% elseif item.imageAsset|length %}
+		{% set itemImage = item.imageAsset %}
+	{% else %}
+		{% set itemImage = siteThumb %}
+	{% endif %}
+	{% if showDate and item.postDate is defined %}
+		{% set itemDate = item.postDate|date(entry.dateFormat) %}
+	{% else %}
+		{% set itemDate = '' %}
+	{% endif %}		
+	
+	{% set contentItem = {
+		'title': itemTitle,
+		'excerpt': itemExcerpt,
+		'url': itemUrl,
+		'newTab': itemTab,
+		'image': itemImage,
+		'date': itemDate
+	} %}
+	{% set listContent = listContent|merge([contentItem]) %}
+	
+{% endfor %}
+
+{# begin rendering #}
+
+<div id="{{blockId}}" class="{{ blockClass }} @container/list {{ gMacros.classesOut(adjustments, 'Display') }} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- repeaterClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+	
+	{% if listContent|length %}
+	
+		{% switch displayType %}								
+			
+			{% case 'textList' %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'listStyle': entry.textListStyle, 'multiColSettings': entry.multiColumnSettings, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'animate': animate} %}
+				
+			{% case 'buttonList' %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'btnStyles': entry.btnStyles, 'btnSize': entry.btnSize, 'fullWidthSmall': entry.fullWidthSmall, 'animate': animate} %}
+				
+			{% case 'cardList' %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
+				
+			{% case 'cardListSideImage' %}	
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
+				
+			{% case 'cardListTopImage' %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
+				
+			{% case 'largeSlider' %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'sliderButtons': entry.buttons, 'sliderDots': entry.dots, 'sliderTiming': entry.slideTransitionDelay, 'sliderEffect': entry.slideEffect, 'sliderAutoPlay': entry.autoplay, 'sliderSizeSm': entry.sliderSizeSm, 'sliderSizeLg':entry.sliderSizeLg, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'blockId': blockId, 'slideImgAspectSm': slideImgAspectSm, 'slideImgAspectLg': slideImgAspectLg, 'animate': animate} %}
+				
+			{% case 'multiCardSlider' %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'sliderButtons': entry.buttons, 'sliderDots': entry.dots, 'sliderTiming': entry.slideTransitionDelay, 'sliderEffect': entry.slideEffect, 'sliderAutoPlay': entry.autoplay, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'blockId': blockId, 'cardSliderSizes': cardSliderSizes, 'animate': animate} %}
+				
+		{% endswitch %}
+		
+		
+		{% if paginateItems %}
+			{% if pageInfo.totalPages > 1 %}
+				{% if entry.showPagination %}
+					{% include ['_partials/_boiler/pagination'] %}
+				{% else %}
+					{% if entry.fullListingButton.url|length %}
+						<div class="full-listing-btn-wrapper {{entry.fullListingButton.btnAlignment}}">
+							<a {% if entry.fullListingButton.customId|length %}id="{{entry.fullListingButton.customId}}"{% endif %} href="{{entry.fullListingButton.url}}" class="btn btn-full-listings {{entry.fullListingButton.btnStyles}} {{entry.fullListingButton.btnSize}} {{colorScheme}} {{entry.fullListingButton.customClasses}}" {{ gMacros.attributesOut(entry.fullListingButton.customAttributes) -}}>
+								{{entry.fullListingButton.linkText|length ? entry.fullListingButton.linkText : 'View Full Listings'}}
+							</a>
+						</div>
+					{% endif %}
+				{% endif %}		
+			{% endif %}
+		{% endif %}
+		
+	{% else %}		
+	
+		<div class="list-no-items">
+			  <b>No items found.</b>
+		</div>
+		
+	{% endif %}				
+</div>

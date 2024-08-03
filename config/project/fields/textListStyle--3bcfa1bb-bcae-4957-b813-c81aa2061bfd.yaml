@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: textListStyle
+instructions: null
+name: 'Text List Style'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bullet List'
+        -
+          - value
+          - bullet-list
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Lined List'
+        -
+          - value
+          - lined-list
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

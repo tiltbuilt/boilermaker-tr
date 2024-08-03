@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: italic
+instructions: null
+name: 'Italic?'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - not-italic
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Italic
+        -
+          - value
+          - italic
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

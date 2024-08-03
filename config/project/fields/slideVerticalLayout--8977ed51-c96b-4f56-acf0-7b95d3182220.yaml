@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: slideVerticalLayout
+instructions: null
+name: 'Slide Vertical Layout'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Top
+        -
+          - value
+          - items-start
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Center
+        -
+          - value
+          - items-center
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Bottom
+        -
+          - value
+          - items-end
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

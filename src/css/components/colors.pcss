@@ -1,0 +1,795 @@
+/* color scheme classes are applied to every element so inheritance issues are avoided background color overrides may be needed for scenarios where a background color class and colorscheme are applied together */
+
+/* LIGHT COLORMODE */
+
+.colormode-light {	
+	
+	--textColor: theme('colors.black');
+	--linkColor: theme('colors.red.500');
+	--linkHover: theme('colors.red.300');
+	--bgPrimary: theme('colors.white');
+	--bgSecondary: theme('colors.gray.300');
+	--btnColor: theme('colors.gray.500');
+	--btnTextColor: theme('colors.white');
+	--btnHoverColor: theme('colors.gray.700');
+	--iconColor: theme('colors.red.500');
+	
+	a {
+		color: var(--linkColor);
+		
+		&:hover {
+			color: var(--linkHover);
+		}
+	}
+	
+	&.section-standard, &.section-side-photo, &.page-header {
+		color: var(--textColor);
+		background-color: var(--bgPrimary);
+	}
+	
+	/* accordions */
+	&.accordion {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+		
+		/* adjust these styles if you want the button to be a different color, etc. */
+		& > .accordion-header > .accordion-button {
+			
+			&:hover {
+				background-color: theme('colors.gray.400');
+				color: var(--textColor);
+			}
+		}
+	}
+	
+	/* tab sets */
+	&.tab-panel {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+	}
+	
+	&.tab-set-btn {
+		background-color: var(--btnColor);
+		color: var(--btnTextColor);
+		
+		&:hover {
+			background-color: var(--btnHoverColor);
+			color: var(--btnTextColor);
+		}
+		
+		&[aria-selected=true] {
+			background-color: var(--bgSecondary);
+			color: var(--textColor);
+		}
+	}
+	
+	/* Buttons */
+	
+	&.btn, &.btn.btn-standard {
+		background-color: var(--btnColor);
+		color: var(--btnTextColor);
+		
+		&:hover {
+			background-color: var(--btnHoverColor);
+			color: var(--btnTextColor);
+		}
+	}
+	
+	&.btn.btn-text {
+		color: var(--linkColor);
+		background-color: transparent;
+		
+		&:hover {
+			color: var(--linkHover);
+		}
+	}
+	
+	&.btn.btn-text-arrow {
+		color: var(--linkColor);
+		background-color: transparent;
+		
+		&:hover {
+			color: var(--linkHover);
+		}
+	}
+	
+	/* Media */
+	
+	&.content-image, &.content-video {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+	}
+	
+	/* Forms */
+	
+	&.form-block {
+		
+		.form-field-input, .form-dropdown {
+			background-color: var(--bgSecondary);
+			border-color: var(--bgSecondary);
+			color: var(--textColor);
+			
+			&:focus {
+				border-color: theme('colors.gray.500');
+			}
+		}
+		
+		.form-checkbox, .form-radio {
+			border-color: theme('colors.gray.400');
+			color: theme('colors.gray.600');
+			
+			&:focus {
+				border-color: theme('colors.gray.500');
+			}
+		}	
+		
+	}
+	
+	/* SLIDERS */
+	
+	&.slider-set {
+		.swiper-button-prev, .swiper-button-next {
+			color: var(--linkColor);
+			
+			&:hover {
+				color: var(--linkHover);
+			}
+		}
+		
+		.swiper-pagination-bullet {
+			background-color: var(--linkColor);
+			
+			&:hover {
+				background-color: var(--linkHover);
+			}
+			
+			&.swiper-pagination-bullet-active {
+				background-color: theme('colors.white');
+				
+				&:hover {
+					background-color: theme('colors.white');
+				}
+			}
+		}		
+	}
+	
+	&.slide {
+		background-color: var(--bgSecondary);
+		
+		.slide-content-wrapper {
+			@apply bg-gray-300 @md:bg-gray-300/70;
+			color: var(--textColor);			
+		}
+	}
+	
+	/* REPEATERS */
+	
+	&.repeater {
+		a.repeater-card-inner, div.repeater-card-inner {
+			color: var(--textColor);
+			background-color: var(--bgSecondary);
+			
+			.repeater-list-card-header {
+				color: var(--linkColor); 
+			}
+		}
+		
+		a.repeater-card-inner:hover {
+			color: var(--textColor);
+			
+			.repeater-list-card-header {
+				color: var(--linkHover); 
+			}
+		}
+		
+		
+		
+		.slider-set {		
+			
+			.swiper-pagination-bullet {
+								
+				&.swiper-pagination-bullet-active {
+					background-color: theme('colors.black');
+					
+					&:hover {
+						background-color: theme('colors.black');
+					}
+				}
+			}		
+		}
+	}
+	
+	
+	/* ICONS */
+	
+	&.icon-wrapper {
+		color: var(--iconColor);
+	}
+	
+	
+	/* CTAs */
+	
+	&.cta {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+	}
+	
+	
+	/* TEXT COLOR OVERRIDES */
+	/* Make a style rule for every color available in the text color picker in the CP. These need to be at the end of a color scheme definition */
+	
+	&.text-white {
+		color: theme('colors.white');
+	}
+	
+	&.text-black {
+		color: theme('colors.black');
+	}
+	
+	&.text-red {
+		color: theme('colors.red.600');
+	}	
+	
+	/* BACKGROUND COLOR OVERRIDES */
+	/* Make a style rule for every color available in the bg color picker in the CP. These need to be at the end of a color scheme definition */
+	
+	&.bg-transparent {
+		background-color: transparent;
+	}
+	
+	&.bg-white {
+		background-color: theme('colors.white');
+	}
+	
+	&.bg-black {
+		background-color: theme('colors.black');
+	}
+	
+	&.bg-red {
+		background-color: theme('colors.red.600');
+	}
+	
+}
+
+/* DARK COLORMODE */
+
+.colormode-dark {
+	
+	--textColor: theme('colors.white');
+	--linkColor: theme('colors.red.500');
+	--linkHover: theme('colors.red.300');
+	--bgPrimary: theme('colors.black');
+	--bgSecondary: theme('colors.gray.700');
+	--btnColor: theme('colors.white');
+	--btnTextColor: theme('colors.gray.700');
+	--btnHoverColor: theme('colors.gray.400');
+	--iconColor: theme('colors.white');
+	
+	a {
+		color: var(--linkColor);
+		
+		&:hover {
+			color: var(--linkHover);
+		}
+	}
+	
+	&.section-standard, &.section-side-photo, &.page-header {
+		color: var(--textColor);
+		background-color: var(--bgPrimary);
+	}
+	
+	/* accordions */
+	&.accordion {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+		
+		/* adjust these styles if you want the button to be a different color, etc. */
+		& > .accordion-header > .accordion-button {
+			
+			&:hover {
+				background-color: theme('colors.gray.400');
+				color: var(--textColor);
+			}
+		}
+	}
+	
+	/* tab sets */
+	&.tab-panel {
+		background-color: var(--bgSecondary);
+		color: var(--ltextColor);
+	}
+	
+	&.tab-set-btn {
+		background-color: var(--btnColor);
+		color: var(--btnTextColor);
+		
+		&:hover {
+			background-color: var(--btnHoverColor);
+			color: var(--btnTextColor);
+		}
+		
+		&[aria-selected=true] {
+			background-color: var(--bgSecondary);
+			color: var(--textColor);
+		}
+	}
+	
+	/* Buttons */
+	
+	&.btn, &.btn.btn-standard {
+		background-color: var(--btnColor);
+		color: var(--btnTextColor);
+		
+		&:hover {
+			background-color: var(--btnHoverColor);
+			color: var(--btnTextColor);
+		}
+	}
+	
+	&.btn.btn-text {
+		color: var(--linkColor);
+		background-color: transparent;
+		
+		&:hover {
+			color: var(--linkHover);
+		}
+	}
+	
+	&.btn.btn-text-arrow {
+		color: var(--linkColor);
+		background-color: transparent;
+		
+		&:hover {
+			color: var(--linkHover);
+		}
+	}
+	
+	/* Media */
+	
+	&.content-image, &.content-video {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+	}
+	
+	/* Forms */
+	
+	&.form-block {
+		
+		.form-field-input, .form-dropdown {
+			background-color: var(--bgSecondary);
+			border-color: var(--bgSecondary);
+			color: var(--textColor);
+			
+			&:focus {
+				border-color: theme('colors.gray.500');
+			}
+		}
+		
+		.form-checkbox, .form-radio {
+			border-color: theme('colors.gray.400');
+			color: theme('colors.gray.600');
+			
+			&:focus {
+				border-color: theme('colors.gray.500');
+			}
+		}	
+		
+	}
+	
+	/* SLIDERS */
+	
+	&.slider-set {
+		.swiper-button-prev, .swiper-button-next {
+			color: var(--linkColor);
+			
+			&:hover {
+				color: var(--linkHover);
+			}
+		}
+		
+		.swiper-pagination-bullet {
+			background-color: var(--linkColor);
+			
+			&:hover {
+				background-color: var(--linkHover);
+			}
+			
+			&.swiper-pagination-bullet-active {
+				background-color: theme('colors.white');
+				
+				&:hover {
+					background-color: theme('colors.white');
+				}
+			}
+		}		
+	}
+	
+	&.slide {
+		background-color: var(--bgSecondary);
+		
+		.slide-content-wrapper {
+			@apply bg-gray-700 @md:bg-gray-700/70;
+			color: var(--textColor);			
+		}
+	}
+	
+	/* REPEATERS */
+	
+	&.repeater {
+		a.repeater-card-inner, div.repeater-card-inner {
+			color: var(--textColor);
+			background-color: var(--bgSecondary);
+			
+			.repeater-list-card-header {
+				color: var(--linkColor); 
+			}
+		}
+		
+		a.repeater-card-inner:hover {
+			color: var(--textColor);
+			
+			.repeater-list-card-header {
+				color: var(--linkHover); 
+			}
+		}
+		
+		
+		
+		.slider-set {		
+			
+			.swiper-pagination-bullet {
+								
+				&.swiper-pagination-bullet-active {
+					background-color: theme('colors.black');
+					
+					&:hover {
+						background-color: theme('colors.black');
+					}
+				}
+			}		
+		}
+	}
+	
+	/* ICONS */
+	
+	&.icon-wrapper {
+		color: var(--iconColor);
+	}
+	
+	
+	/* CTAs */
+	
+	&.cta {
+		background-color: var(--bgSecondary);
+		color: var(--textColor);
+	}
+	
+	
+	/* TEXT COLOR OVERRIDES */
+	/* Make a style rule for every color available in the text color picker in the CP. These need to be at the end of a color scheme definition */
+	
+	&.text-white {
+		color: theme('colors.white');
+	}
+	
+	&.text-black {
+		color: theme('colors.black');
+	}
+	
+	&.text-red {
+		color: theme('colors.red.600');
+	}	
+	
+	/* BACKGROUND COLOR OVERRIDES */
+	/* Make a style rule for every color available in the bg color picker in the CP. These need to be at the end of a color scheme definition */
+	
+	&.bg-transparent {
+		background-color: transparent;
+	}
+	
+	&.bg-white {
+		background-color: theme('colors.white');
+	}
+	
+	&.bg-black {
+		background-color: theme('colors.black');
+	}
+	
+	&.bg-red {
+		background-color: theme('colors.red.600');
+	}
+	
+}
+
+
+/* RED COLORMODE */
+
+.colormode-red {
+	
+	--textColor: theme('colors.black');
+	--linkColor: theme('colors.red.500');
+	--linkHover: theme('colors.red.300');
+	--bgPrimary: theme('colors.white');
+	--bgSecondary: theme('colors.red.600');
+	--btnColor: theme('colors.red.600');
+	--btnTextColor: theme('colors.white');
+	--btnHoverColor: theme('colors.gray.400');
+	
+	&.section-standard {
+		color: var(--textColor);
+		background-color: var(--bgPrimary);
+	}
+	
+	/* accordions */
+	&.accordion {
+		background-color: var(--bgSecondary);
+		color: theme('colors.white');
+		
+		/* adjust these styles if you want the button to be a different color, etc. */
+		& > .accordion-header > .accordion-button {
+			
+			&:hover {
+				background-color: lighten(theme('colors.red.600'), 20%);
+				color: theme('colors.white');
+			}
+		}
+	}
+	
+	/* tab sets */
+	&.tab-panel {
+		background-color: theme('colors.red.600');
+		color: theme('colors.white');
+	}
+	
+	&.tab-set-btn {
+		background-color: theme('colors.gray.300');
+		color: theme('colors.black');
+		
+		&:hover {
+			background-color: theme('colors.gray.400');
+		}
+		
+		&[aria-selected=true] {
+			background-color: theme('colors.red.600');
+			color: theme('colors.white');
+		}
+	}
+	
+	/* Buttons */
+	
+	&.btn, &.btn.btn-standard {
+		background-color: theme('colors.red.600');
+		color: theme('colors.white');
+		
+		&:hover {
+			background-color: lighten(theme('colors.red.600'), 20%);
+			color: theme('colors.white');
+		}
+	}
+	
+	&.btn.btn-text {
+		color: theme('colors.red.600');
+		background-color: transparent;
+		
+		&:hover {
+			color: lighten(theme('colors.red.600'), 20%);
+		}
+	}
+	
+	&.btn.btn-text-arrow {
+		color: theme('colors.red.600');
+		background-color: transparent;
+		
+		&:hover {
+			color: lighten(theme('colors.red.600'), 20%);
+		}
+	}
+	
+	/* Media */
+	
+	&.content-image, &.content-video {
+		background-color: theme('colors.gray.700');
+		color: theme('colors.white');
+	}
+	
+	/* Forms */
+	
+	&.form-block {
+		
+		.form-field-input, .form-dropdown {
+			background-color: theme('colors.gray.300');
+			border-color: theme('colors.gray.300');
+			color: theme('colors.black');
+			
+			&:focus {
+				border-color: theme('colors.gray.500');
+			}
+		}
+		
+		.form-checkbox, .form-radio {
+			border-color: theme('colors.gray.300');
+			color: theme('colors.gray.600');
+			
+			&:focus {
+				border-color: theme('colors.gray.500');
+			}
+		}
+		
+	}
+	
+	/* SLIDERS */
+	
+	&.slider-set {
+		.swiper-button-prev, .swiper-button-next {
+			color: theme('colors.white');
+			
+			&:hover {
+				color: theme('colors.gray.500');
+			}
+		}
+		
+		.swiper-pagination-bullet {
+			background-color: theme('colors.white');
+			
+			&:hover {
+				background-color: theme('colors.gray.500');
+			}
+			
+			&.swiper-pagination-bullet-active {
+				background-color: theme('colors.black');
+				
+				&:hover {
+					background-color: theme('colors.black');
+				}
+			}
+		}		
+	}
+	
+	&.slide {
+		background-color: theme('colors.red.800');
+		
+		.slide-content-wrapper {
+			@apply bg-red-800 @md:bg-red-800/70;
+			color: theme('colors.white');			
+		}
+	}
+	
+	/* REPEATERS */
+	
+	&.repeater {
+		a.repeater-card-inner, div.repeater-card-inner {
+			color: var(--textColor);
+			background-color: var(--bgSecondary);
+			
+			.repeater-list-card-header {
+				color: var(--linkColor); 
+			}
+		}
+		
+		a.repeater-card-inner:hover {
+			color: var(--textColor);
+			
+			.repeater-list-card-header {
+				color: var(--linkHover); 
+			}
+		}
+		
+		
+		
+		.slider-set {		
+			
+			.swiper-pagination-bullet {
+								
+				&.swiper-pagination-bullet-active {
+					background-color: theme('colors.black');
+					
+					&:hover {
+						background-color: theme('colors.black');
+					}
+				}
+			}		
+		}
+	}
+	
+	/* ICONS */
+	
+	&.icon-wrapper {
+		color: var(--iconColor);
+	}
+	
+	
+	/* TEXT COLOR OVERRIDES */
+	/* Make a style rule for every color available in the text color picker in the CP. These need to be at the end of a color scheme definition */
+	
+	&.text-white {
+		color: theme('colors.white');
+	}
+	
+	&.text-black {
+		color: theme('colors.black');
+	}
+	
+	&.text-red {
+		color: theme('colors.red.600');
+	}	
+	
+	/* BACKGROUND COLOR OVERRIDES */
+	/* Make a style rule for every color available in the bg color picker in the CP. These need to be at the end of a color scheme definition */
+	
+	&.bg-transparent {
+		background-color: transparent;
+	}
+	
+	&.bg-white {
+		background-color: theme('colors.white');
+	}
+	
+	&.bg-black {
+		background-color: theme('colors.black');
+	}
+	
+	&.bg-red {
+		background-color: theme('colors.red.600');
+	}
+	
+}
+
+
+/* Button Colors */
+
+.btn {
+	&.btn-standard.btn-red, &.btn-red {
+		background-color: theme('colors.red.600');
+		color: theme('colors.white');
+		
+		&:hover {
+			background-color: lighten(theme('colors.red.600'), 20%);
+			color: theme('colors.white');
+		}
+	}
+}
+
+/* Icon Colors */
+
+.icon-white {
+	color: theme('colors.white');
+}
+
+.icon-black {
+	color: theme('colors.black');
+}
+
+.icon-red {
+	color: theme('colors.red.500');
+}
+
+.icon-transparent {
+	color: transparent;
+}
+
+
+/* UNIVERSAL FORM STYLES */
+
+.alert-error {
+	background-color: theme('colors.red.200');			
+	color: theme('colors.red.600');		
+}
+
+.field-error {
+	color: theme('colors.red.600');
+}
+
+.alert-success {
+	background-color: theme('colors.green.200');			
+	color: theme('colors.green.600');			
+}
+
+.field-required {
+	color: theme('colors.red.600');
+}
+
+
+
+
+
+

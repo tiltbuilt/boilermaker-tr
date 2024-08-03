@@ -1,0 +1,87 @@
+columnSuffix: null
+handle: headingLevel
+instructions: null
+name: 'Heading Level'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Choose
+        -
+          - value
+          - div
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - H1
+        -
+          - value
+          - h1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h2
+        -
+          - value
+          - h2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h3
+        -
+          - value
+          - h3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h4
+        -
+          - value
+          - h4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h5
+        -
+          - value
+          - h5
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - h6
+        -
+          - value
+          - h6
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

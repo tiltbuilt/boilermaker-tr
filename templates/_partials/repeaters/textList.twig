@@ -1,0 +1,39 @@
+{#
+/**
+ * Tilt Boilermaker - Repeater Template - Text 
+ * -----
+ * Simple cards with title, excerpt and link
+ * 
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{% set repeaterStyles = ['repeater-list-text', listStyle, colorScheme] %}
+{% if multiColSettings|length %}
+	{% set repeaterStyles = repeaterStyles|merge(['multi-column-list']) %}
+	{% for columnSetting in multiColSettings %}
+		{% set repeaterStyles = repeaterStyles|merge([columnSetting.layoutSize ~'/list:columns-' ~ columnSetting.numberOfColumns]) %}
+	{% endfor %}
+{% endif %}
+
+<ul class="{{- repeaterStyles|join(' ') }}">
+{% for listItem in listContent %}
+	<li class="repeater-list-text-item {% if animate %}animate{% endif %}">
+		<div class="list-item-content">	
+			<{{ headingLvl}} class="repeater-list-text-item-header">
+				{% if listItem.url|length %}<a href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %}>{% endif %}
+					{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><sup><sub><br>') }}
+		  	{% if listItem.url|length %}</a>{% endif %}
+			</{{ headingLvl }}>
+			{% if showDate and listItem.date|length %}	  		
+				<div class="repeater-date">{{ listItem.date }}</div>	 
+			{% endif %}
+			{% if showExcerpt and listItem.excerpt|length %}	  		
+				<div>{{ listItem.excerpt }}</div>	  				 
+			{% endif %}	
+		</div>	
+	</li>	
+{% endfor %}
+</ul>

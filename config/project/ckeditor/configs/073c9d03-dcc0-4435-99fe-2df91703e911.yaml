@@ -1,0 +1,8 @@
+headingLevels: false
+name: Limited
+toolbar:
+  - createEntry
+  - '|'
+  - bold
+  - italic
+  - link

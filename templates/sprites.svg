@@ -1,0 +1,1 @@
+{{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }}

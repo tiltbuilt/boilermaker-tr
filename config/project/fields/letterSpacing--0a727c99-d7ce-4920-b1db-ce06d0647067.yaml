@@ -1,0 +1,87 @@
+columnSuffix: null
+handle: letterSpacing
+instructions: null
+name: 'Letter Spacing'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Tighter
+        -
+          - value
+          - tracking-tighter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tight
+        -
+          - value
+          - tracking-tight
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - tracking-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Wide
+        -
+          - value
+          - tracking-wide
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Wider
+        -
+          - value
+          - tracking-wider
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Widest
+        -
+          - value
+          - tracking-widest
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

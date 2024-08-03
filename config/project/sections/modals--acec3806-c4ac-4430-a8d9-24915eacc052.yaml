@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 65c293ae-ed92-4c10-b2d3-1251a63c1402 # Modal
+handle: modals
+maxAuthors: 1
+name: Modals
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - refresh
+        - '1'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  e6aadd12-c632-4735-b22d-b5a758ab5003: # Boilermaker 3
+    enabledByDefault: true
+    hasUrls: true
+    template: modals/_entry
+    uriFormat: 'modals/{slug}'
+type: channel

@@ -1,0 +1,142 @@
+columnSuffix: null
+handle: multiColumnSettings
+instructions: 'If you want you text list to have multiple columns on some device sizes, specify the number of columns here. Default is one column, so if you only want one just leave the field blank.'
+name: 'Multi-Column Settings'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Layout Size'
+            -
+              - handle
+              - layoutSize
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Extra Small (Phone Vertical)'
+                    -
+                      - value
+                      - '@xs'
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Small (Phone Horizontal)'
+                    -
+                      - value
+                      - '@sm'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Medium (Tablet)'
+                    -
+                      - value
+                      - '@md'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Large (Laptop+)'
+                    -
+                      - value
+                      - '@lg'
+                    -
+                      - default
+                      - false
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Number of Columns'
+            -
+              - handle
+              - numberOfColumns
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '1'
+                    -
+                      - value
+                      - '1'
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '2'
+                    -
+                      - value
+                      - '2'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '3'
+                    -
+                      - value
+                      - '3'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '4'
+                    -
+                      - value
+                      - '4'
+                    -
+                      - default
+                      - false
+  defaults: null
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

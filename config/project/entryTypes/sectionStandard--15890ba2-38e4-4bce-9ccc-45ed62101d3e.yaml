@@ -1,0 +1,265 @@
+color: lime
+fieldLayouts:
+  8e0b7593-10b1-4c4c-bb45-45678f2b5cd2:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: cc0ca11c-390d-435b-b3e6-aefee68fb132
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dad94ce8-3508-4e54-9e50-e513ddc4aa61
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 24f3a0aa-3613-423f-8e2b-e4ae439cf922
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: fullscreen
+            includeInCards: false
+            instructions: null
+            label: 'Full Screen Width?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5ec895d-edcd-4799-8efe-530cacd102c7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: ce0adc81-91e4-409d-98bc-6b2cbd087e11
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc950807-a3d5-43f6-9798-92be0edfef12
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94d60eb6-d57b-4a0a-b34c-15cb2e3cf84b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 759d1107-9906-41b8-aa40-921f8aa4d237
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 3388d3b4-cb9f-47ee-8874-09e50df3c0bb # Section Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0a359598-d7da-4ae6-a06e-77227d986be4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 77da9b51-8b4c-493b-88fb-ce41b30264d6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: animate
+            includeInCards: false
+            instructions: 'Activate this switch to animate the reveal of the section.'
+            label: 'Animate Reveal?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: caa28ec8-82dd-4af4-bf36-cb0ffc42883d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: caa28ec8-82dd-4af4-bf36-cb0ffc42883d
+                  uid: cd30a28a-6774-4b25-ae8a-6edbf3f8494a
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: animateContent
+            includeInCards: false
+            instructions: 'Activate this switch if you want to animate the content of the section, but leave the background in place.'
+            label: 'Animate Content Only'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5c10d250-4f45-4e85-8253-5aeb84ac0de9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: 5c10d250-4f45-4e85-8253-5aeb84ac0de9
+                  uid: 03cf43a7-fffe-4c4b-85c5-c6783c9fc53b
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
+            handle: staggerAnimations
+            includeInCards: false
+            instructions: 'Activate this switch if you want to have the content animations stagger.'
+            label: 'Stagger Content Animations?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ce3569f-24a6-4334-abe6-3cc7b406e8ed
+            userCondition: null
+            warning: null
+            width: 100
+        name: Animation
+        uid: b7b07ed8-f5cc-4c71-9cb8-7cb6382b7774
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5630917c-85c1-4109-a096-527212072556
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b890854b-d3c1-4b56-a483-93c6405c6d64
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8a204f6-7dc3-42fa-aa11-d4d86bb6cbf4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: 01de6442-98bd-40cb-ade1-f631cacf8722
+        userCondition: null
+handle: sectionStandard
+hasTitleField: true
+icon: block-brick
+name: Section
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

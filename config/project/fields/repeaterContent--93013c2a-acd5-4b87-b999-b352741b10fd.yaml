@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: repeaterContent
+instructions: null
+name: 'Repeater Content'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Content Cards'
+        -
+          - value
+          - contentCards
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full Section List'
+        -
+          - value
+          - allInSection
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Select Entry List'
+        -
+          - value
+          - selectEntry
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Nav List'
+        -
+          - value
+          - navList
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

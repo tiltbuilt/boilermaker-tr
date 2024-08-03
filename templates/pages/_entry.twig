@@ -11,145 +11,78 @@
 #}
 
 {# Load in global macros for use across all Twig templates #}
-{% import '_boilerplate/_macros/globalMacros' as gMacros %}
+{% import '_macros/globalMacros' as gMacros %}
 
-{% do craft.app.elements.eagerLoadElements(
-    className(companyInfo),
-    [companyInfo],
-    ['socialMediaLinks']
-) %}
-
-{% do craft.app.elements.eagerLoadElements(
-    className(gSettings),
-    [gSettings],
-    ['thumbnailPlaceholderImage']
-) %}
-
-
-{% do craft.app.elements.eagerLoadElements(
- className(entry),
- [entry],
- [
- 'seoImage',
-  'modalToDisplay',
-  'backgroundImagery',
-  'backgroundImagery.backgroundSet:backgroundImage',
-  'pageHeaderSlidePhotos',
-  'pageBuilder',
-  'pageBuilder.sectionStandard:backgroundImagery',
-  'pageBuilder.column:backgroundImagery',
-  'pageBuilder.sectionStandard:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.column:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.column:columnDisplay',
-  'pageBuilder.columnSlide:columnDisplay',
-  'pageBuilder.contentWrapper:backgroundImagery',
-  'pageBuilder.contentWrapper:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.contentWrapper:contentWrapperTextStyling',
-  'pageBuilder.accordionSet:backgroundImagery',
-  'pageBuilder.tabSet:backgroundImagery',
-  'pageBuilder.slide:backgroundImagery',
-  'pageBuilder.ctaStandard:backgroundImagery',
-  'pageBuilder.accordionSet:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.tabSet:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.slide:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.ctaStandard:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.ctaSmall:backgroundImagery',
-  'pageBuilder.ctaSmall:backgroundImagery.backgroundSet:backgroundImage',
-  'pageBuilder.ctaStandard:imageAsset',
-  'pageBuilder.image:imageAsset',
-  'pageBuilder.image:imageVideoLayout',
-  'pageBuilder.contentVideo:imageVideoLayout',
-  'pageBuilder.contentVideo:videoContent',
-  'pageBuilder.repeaterItemContentLink:seoImage', 
-  'pageBuilder.sectionTwoColumnEdgePhoto:imageAsset',
-  'pageBuilder.repeaterContentLinks:itemsPerRow',
-  'pageBuilder.repeaterSectionEntryList:itemsPerRow',
-  'pageBuilder.repeaterNavCollection:itemsPerRow',
-  'pageBuilder.repeaterSelectEntryList:itemsPerRow',
-  'pageBuilder.header:mainHeaderAdjustments',
-  'pageBuilder.header:subheadAdjustments',
-  'pageBuilder.sectionTwoColumnEdgePhoto:backgroundImagery',
-  'pageBuilder.sectionTwoColumnEdgePhoto:backgroundImagery.backgroundSet:backgroundImage',
- ]
-) %}
-
-{% set pageBuilderContent = entry.pageBuilder.collect() %}
-
-{% set buttonModalList = [] %}
-{% for block in entry.pageBuilder %}
-   {% if block.type == 'button' %}
-      {% set buttonLink = block.linkSettings %}     
-      {% set canModal = buttonLink.hasElement() %}
-      {% set buttonEl = buttonLink.getElement() %}
-      {% set useModal = false %}
-      {% if buttonEl != null and buttonLink.getType() == 'asset' %}
-         {% if craft.embeddedAssets.get(buttonEl) %}
-            {% set useModal = true %}
-         {% endif %}
-      {% endif %}
-      {% if block.openAsModal %}
-         {% set useModal = true %}
-      {% endif %}
-      {% if canModal and useModal %}
-        {% set buttonModalList = buttonModalList|merge([block]) %}
-      {% endif %}   
-   {% endif %}
-{% endfor %}
-
+{% set pageContent = entry.pageBuilder.eagerly().all() %}
 
 {# -- Layout template for HTML pages -- #}
-{% extends "_project/_layouts/generic-page-layout.twig" %}
+{% extends "_layouts/genericPageLayout.twig" %}
 
 {% block pageId %}page-{{- entry.slug -}}{% endblock %}
 
-{% block bodyAttr %}	
-    {% if entry.modalToDisplay|length or buttonModalList|length %}class="has-modal{% if entry.modalToDisplay|length %} load-modal{% endif %}"{% endif %} {% if entry.modalToDisplay|length %}{% set loadModal = entry.modalToDisplay[0] %}data-load-modal="{{loadModal.url}}"{% endif %}	
+{% block bodyAttr %}
+	x-data="{ 
+		modalOpen: false,
+		modalHtml: '',
+		modalTitle: '',
+		focusEl: '',
+		showLoading: false,
+		loadModalOpened: $persist(false).as('loadModalOpened_{{entry.id}}').using(sessionStorage),
+	}"	
+
+	{% if entry.modalToDisplay|length %}
+		{% set modalEntry = entry.modalToDisplay.eagerly().one() %}
+		{% set modalUrl = '/resources/entrymodal?entryid=' ~ modalEntry.id %}
+		{% set modalEntryTitle = modalEntry.title %}
+		
+		x-init="
+		if (!loadModalOpened) {
+			$nextTick(() => { 
+				modalHtml='loading...'; 
+				showLoading = true; 
+				modalOpen = true; 
+				loadModalOpened = true;
+				modalTitle='{{modalEntryTitle}}';
+				fetch('{{ modalUrl }}', {
+					method: 'GET',
+					headers: {
+						'X-Requested-With': 'XMLHttpRequest',
+					},
+				})
+				.then(response => response.text())
+				.then(text => {
+					modalHtml = text
+					showLoading = false;			   
+				})
+			})
+		}"		
+	{% endif %}		
 {% endblock %}
 
 {% block globalHeader %}
-
-    {% if entry.showPageHeader or (entry.showPageHeader == false and entry.showSiteHeader == true) %}	
-      {% include '_project/_partials/global-header' %}
-    {% endif %}
-     
+	{% if entry.showPageHeader or (entry.showPageHeader == false and entry.showSiteHeader == true) %}	
+	  {% include '_partials/globalHeader' %}
+	{% endif %}	 
 {% endblock %}
 
 {% block pageHeader %}
-
    {% if entry.showPageHeader %}	
-      {% include [
-         '_project/_partials/page-header',
-         '_boilerplate/_partials/page-header'           
-       ] %}       
-   {% endif %}
-     
+	  {% include [
+		 '_partials/pageHeader'           
+	   ] %}       
+   {% endif %}	 
 {% endblock %}
 
-{% block pageContent %}
-        
-    {% for block in pageBuilderContent %}
-        {% do block.useMemoized(pageBuilderContent) %}
-    {% endfor %}
-    
-    {% for block in pageBuilderContent %}
-        {% if block.level == 1 and block.type.handle starts with 'section' %}               
-           {%
-             include [
-               '_project/_bodyblocks/sections/' ~ block.type.handle,
-               '_boilerplate/_bodyblocks/sections/' ~ block.type.handle,
-               '_project/_bodyblocks/sections/section',
-               '_boilerplate/_bodyblocks/sections/section'
-             ] with { 'section' : block,  }
-           %}            
-        {% endif %}  
-     {% endfor %}    
-
+{% block pageContent %}		
+	
+	{% for block in pageContent %}
+		{{block.render()}}
+	{% endfor %}
+	
 {% endblock %}
 
 {% block pageFooter %}
-
-    {% if entry.showPageFooter %}
-      {% include '_project/_partials/global-footer' %}
-    {% endif %}
-    
+	{% if entry.showPageFooter %}
+	  {% include '_partials/globalFooter' %}
+	{% endif %}	
 {% endblock %}

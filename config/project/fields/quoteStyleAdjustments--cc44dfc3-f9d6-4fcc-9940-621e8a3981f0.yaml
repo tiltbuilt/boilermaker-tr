@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: quoteStyleAdjustments
+instructions: null
+name: 'Quote Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - ddb8108e-63a9-4567-80ba-7ab621baad89 # Style Adjustment - Quote
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

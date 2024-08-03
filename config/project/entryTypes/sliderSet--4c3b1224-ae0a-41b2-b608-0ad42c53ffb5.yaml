@@ -1,0 +1,275 @@
+color: green
+fieldLayouts:
+  aa0c56fc-31e5-40f7-a90d-57074a3dd470:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: da83b732-3ba7-495f-b524-66ba63f91649
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 40a37d8a-41c1-47af-bc27-28d08f99a909 # Slides
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bea5098d-f6e5-4987-99ea-87a754a36229
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f4a40c97-6fc7-424a-85a9-b230be5bf6f0
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: slidePhotoSizeSm
+            includeInCards: false
+            instructions: 'This control overrides the default slider photo aspect ratio for small layout sizes'
+            label: 'Slide Photo Size-Small'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b674c5b-4761-41ca-b22b-2775c8d7ee61
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: slidePhotoSizeLg
+            includeInCards: false
+            instructions: 'This control overrides the default slider photo aspect ratio for large layout sizes'
+            label: 'Slide Photo Size-Large'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ced9f785-8511-499a-9e38-84767b59c5d1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
+            handle: buttons
+            includeInCards: false
+            instructions: null
+            label: 'Slider Control Buttons?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b6f1f2da-6ee9-4135-9c21-fef154dd8e0c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
+            handle: dots
+            includeInCards: false
+            instructions: null
+            label: 'Control Dots?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f7453ad8-cbf8-4d90-b201-cec4739f38ce
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1 # Slide Transition Delay
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1efd91ae-d148-4130-b4ef-d67548d1f903
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 53829185-3375-470c-80cf-a50b1733a8c4 # Slide Effect
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5993ed95-9983-43be-a3b2-ef7798ab43d9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: autoplay
+            includeInCards: false
+            instructions: null
+            label: 'Autoplay?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6bafac26-bac6-46f2-9cb6-705443971464
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Control Settings'
+        uid: 1191b7e0-3d1d-4af0-ad44-2b3e68012618
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: abf2a981-5c94-47e8-884f-d6ccaeb043ca
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10028daf-64e6-48f9-a239-32318d57acd8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 0826a161-652b-4962-a4d6-d80ff07cdb7b
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 481490a1-1752-4ffc-b455-f05dadea8141 # Slider Set Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab0b5e5c-c769-4cfb-95b5-39d78b9ed1df
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 5759cff1-b617-4af3-979c-3c3743f1ecb9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e8b773c0-6213-46c5-9c9b-13a0415b8e1e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5687f895-c83a-42ef-9e0f-f25b3118d253
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 763973ee-3273-4300-b8c1-4f8d9792cdfd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: 1eeda2c0-8bb4-4edf-9f93-7c2a80a96ad3
+        userCondition: null
+handle: sliderSet
+hasTitleField: true
+icon: rectangle-history
+name: 'Slider Set'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

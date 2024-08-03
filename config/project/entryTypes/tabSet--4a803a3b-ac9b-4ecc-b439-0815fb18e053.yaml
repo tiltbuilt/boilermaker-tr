@@ -1,0 +1,202 @@
+color: green
+fieldLayouts:
+  127037a8-fd77-403e-9e0e-99113480c117:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 6f0a96b9-4b5b-4ae9-9429-f12ae0d44b3b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11cab771-1c52-47f2-ba78-c4a1c07b2327
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e15525d6-6952-4e06-992e-6cf63f053365 # Tabs
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ccb4e82-9350-4dd7-a99c-8fb5af21942f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: cae4f76c-446a-4c0d-9350-aeeb8761d539
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: bb890500-09df-476d-885d-908b47d37f4a
+            userCondition: null
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'The color settings here are applied to all of the sub tabs'
+            type: craft\fieldlayoutelements\Tip
+            uid: cbb0a133-086e-4ecb-aff7-fbcd8994d1eb
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a1cfaa8b-df74-4370-b426-a82cc9d5eff1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8dc185fb-3f6b-4cf1-9bad-465b35e6336c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 7897ee90-32bc-442b-93fa-e2b974e63b56
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 67336236-2b0e-4d01-bb98-029a923a6932 # Tab Set Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 104cf2fd-5865-484e-810d-b4c59d6a22ad
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 619c2012-3046-4173-995b-4ffdf604866e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 32b6cc70-6f48-41d3-a5f1-40145e5febcf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a9a9ce61-bca9-42f1-aa11-5ffef586138e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 639a5e85-7578-407e-b9fe-84eddf7f7a14
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: 17f816a6-97ba-4306-a727-49a97c4c1f6d
+        userCondition: null
+handle: tabSet
+hasTitleField: true
+icon: folder-plus
+name: 'Tab Set'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-styles-{ object.deviceSize }'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

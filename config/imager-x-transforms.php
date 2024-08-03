@@ -16,16 +16,16 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 300,
+			'fillInterval' => 200,
 		]
 	],
-	'contentImageWebp' => [
+	'contentImage-webp' => [
 		'transforms' => 'contentImage',
 		'defaults' => [
 			'format' => 'webp',
 		]
 	],
-	'headerImage-16-9' => [
+	'image-video' => [
 		'transforms' => [
 			['width' => 320],
 			['width' => 640],
@@ -42,16 +42,16 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 300,
+			'fillInterval' => 200,
 		]
 	],
-	'headerImageWebp-16-9' => [
-		'transforms' => 'headerImage-16-9',
+	'image-video-webp' => [
+		'transforms' => 'image-video',
 		'defaults' => [
 			'format' => 'webp',
 		]
 	],
-	'headerImage-4-3' => [
+	'image-4/3' => [
 		'transforms' => [
 			['width' => 320],
 			['width' => 640],
@@ -68,16 +68,16 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 300,
+			'fillInterval' => 200,
 		]
 	],
-	'headerImageWebp-4-3' => [
-		'transforms' => 'headerImage-4-3',
+	'image-4/3-webp' => [
+		'transforms' => 'image-4/3',
 		'defaults' => [
 			'format' => 'webp',
 		]
 	],
-	'headerImage-3-2' => [
+	'image-3/2' => [
 		'transforms' => [
 			['width' => 320],
 			['width' => 640],
@@ -94,16 +94,16 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 300,
+			'fillInterval' => 200,
 		]
 	],
-	'headerImageWebp-3-2' => [
-		'transforms' => 'headerImage-3-2',
+	'image-3/2-webp' => [
+		'transforms' => 'image-3/2',
 		'defaults' => [
 			'format' => 'webp',
 		]
 	],
-	'headerImage-3-1' => [
+	'image-2/1' => [
 		'transforms' => [
 			['width' => 320],
 			['width' => 640],
@@ -120,16 +120,68 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 300,
+			'fillInterval' => 200,
 		]
 	],
-	'headerImageWebp-3-1' => [
-		'transforms' => 'headerImage-3-1',
+	'image-2/1-webp' => [
+		'transforms' => 'image-3/1',
 		'defaults' => [
 			'format' => 'webp',
 		]
 	],
-	'headerImage-1-1' => [
+	'image-3/1' => [
+		'transforms' => [
+			['width' => 320],
+			['width' => 640],
+			['width' => 768],
+			['width' => 1024],
+			['width' => 1280],
+			['width' => 1600],
+		],
+		'defaults' => [
+			'webpQuality' => 70,
+			'jpegQuality' => 70,
+			'ratio' => 3/1,
+			'format' => 'jpg'
+		],
+		'configOverrides' => [
+			'fillTransforms' => true,
+			'fillInterval' => 200,
+		]
+	],
+	'image-3/1-webp' => [
+		'transforms' => 'image-3/1',
+		'defaults' => [
+			'format' => 'webp',
+		]
+	],
+	'image-4/1' => [
+		'transforms' => [
+			['width' => 320],
+			['width' => 640],
+			['width' => 768],
+			['width' => 1024],
+			['width' => 1280],
+			['width' => 1600],
+		],
+		'defaults' => [
+			'webpQuality' => 70,
+			'jpegQuality' => 70,
+			'ratio' => 4/1,
+			'format' => 'jpg'
+		],
+		'configOverrides' => [
+			'fillTransforms' => true,
+			'fillInterval' => 200,
+		]
+	],
+	'image-4/1-webp' => [
+		'transforms' => 'image-4/1',
+		'defaults' => [
+			'format' => 'webp',
+		]
+	],
+	'image-square' => [
 		'transforms' => [
 			['width' => 320],
 			['width' => 640],
@@ -146,11 +198,11 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 300,
+			'fillInterval' => 200,
 		]
 	],
-	'headerImageWebp-1-1' => [
-		'transforms' => 'headerImage-1-1',
+	'image-square-webp' => [
+		'transforms' => 'image-square',
 		'defaults' => [
 			'format' => 'webp',
 		]
@@ -163,8 +215,12 @@ return [
 			['width' => 640],			
 		],
 		'defaults' => [
-			'ratio' => 16/9,
+			'ratio' => 3/2,
 			'format' => 'jpg'
+		],
+		'configOverrides' => [
+			'fillTransforms' => true,
+			'fillInterval' => 200,
 		]
 	],
 	'thumbnailWebp' => [
@@ -172,25 +228,7 @@ return [
 		'defaults' => [
 			'format' => 'webp',
 		]
-	],
-	'rentalImg' => [
-		'transforms' => [
-			['width' => 200],
-			['width' => 320],
-			['width' => 400],
-			['width' => 640],			
-		],
-		'defaults' => [
-			'ratio' => 4/3,
-			'format' => 'jpg'
-		]
-	],
-	'rentalImgWebp' => [
-		'transforms' => 'rentalImg',
-		'defaults' => [
-			'format' => 'webp',
-		]
-	],
+	],	
 	'seoGenericImage' => [
 		'transforms' => [
 			['width' => 200],
@@ -198,9 +236,8 @@ return [
 			['width' => 600],
 		],
 		'defaults' => [
-			'ratio' => 16/9,
-			'format' => 'jpg'
-		]
+			'ratio' => 16/9,			
+		],		
 	],
 	'seoFacebookImage' => [
 		'transforms' => [
@@ -209,8 +246,7 @@ return [
 			['width' => 1200],
 		],
 		'defaults' => [
-			'ratio' => 300/157,
-			'format' => 'jpg'
+			'ratio' => 300/157,			
 		]
 	],
 	'seoTwitterImage' => [
@@ -220,8 +256,7 @@ return [
 			['width' => 1200],			
 		],
 		'defaults' => [
-			'ratio' => 2/1,
-			'format' => 'jpg'
+			'ratio' => 2/1,			
 		]
 	]
 ];

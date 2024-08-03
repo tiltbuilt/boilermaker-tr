@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: columnStyleAdjustments
+instructions: null
+name: 'Column Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - ee6d1ced-9ba0-4c31-9f10-d3e6057ae634 # Style Adjustment - Column
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,438 @@
+{#
+/**
+ * Tilt Boilermaker -Form Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set formClassList = [] %}
+{% set btnClasses = ['btn', entry.btnStyles, entry.btnSize] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'form-block-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = "form-block" %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+	
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% if entry.colorScheme != null %}
+	{% set colorScheme = entry.colorScheme.class %}	
+{% endif %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set formClassList = formClassList|merge(colorClasses) %}
+
+{% if entry.btnColor != '' %}
+	{% set btnClasses = btnClasses|merge([entry.btnColor]) %}
+{% else %}
+	{% set btnClasses = btnClasses|merge([colorScheme]) %}
+{% endif %}
+
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.formStyleAdjustments.eagerly().all() %}
+
+<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	{% set form = entry.formToDisplay.eagerly().one() %}	
+	{{ craft.formie.renderForm(form, {
+		themeConfig: {
+				resetClasses: true,
+		
+				formTitle: {
+					attributes: {
+						class: 'text-lg leading-6 font-medium text-gray-900',
+					},
+				},
+		
+				alertError: {
+					attributes: {
+						class: 'alert-error',
+					},
+				},
+		
+				alertSuccess: {
+					attributes: {
+						class: 'alert-success',
+					},
+				},
+		
+				buttonWrapper: {
+					attributes: {
+						class: [
+							'flex justify-start mt-base',
+							"{{ buttonsPosition == 'right' ? 'justify-end' }}",
+							"{{ buttonsPosition == 'center' ? 'justify-center' }}",
+							"{{ buttonsPosition == 'left-right' ? 'justify-between' }}",
+							"{{ buttonsPosition == 'right-save-left' ? 'justify-start flex-row-reverse' }}",
+							"{{ buttonsPosition == 'center-save-left' ? 'justify-center flex-row-reverse' }}",
+							"{{ buttonsPosition == 'center-save-right' ? 'justify-center' }}",
+							"{{ buttonsPosition == 'save-right' ? 'justify-between' }}",
+							"{{ buttonsPosition == 'save-left' ? 'justify-between flex-row-reverse' }}",
+						],
+					},
+				},
+		
+				buttonContainer: {
+					attributes: {
+						class: 'form-btn-wrapper',
+					},
+				},
+		
+				saveButton: {
+					attributes: {
+						class: [
+							'btn btn-text' ~ colorScheme,
+						],
+					},
+				},
+		
+				backButton: {
+					attributes: {
+						class: [
+							'btn btn-text' ~ colorScheme,
+						],
+					},
+				},
+		
+				submitButton: {
+					attributes: {
+						class: btnClasses,
+					},
+				},
+		
+				page: {
+					attributes: {
+						class: [
+							"{{ form.hasMultiplePages() and page.id != currentPage.id ? 'hidden' : false }}",
+						],
+					},
+				},
+		
+				pageTabs: {
+					attributes: {
+						class: 'border-b border-gray-200 -mb-px flex space-x-8 mb-6',
+					},
+				},
+		
+				pageTab: {
+					attributes: {
+						class: 'py-4 px-1',
+					},
+				},
+		
+				pageTabLink: {
+					attributes: {
+						class: [
+							'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm',
+							"{{ (page.id == currentPage.id) ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}",
+							"{{ page.getFieldErrors(submission) ? 'text-red-500' : false }}",
+						],
+					},
+				},
+		
+				pageTitle: {
+					attributes: {
+						class: 'text-lg leading-6 font-medium text-gray-900 mb-4',
+					},
+				},
+		
+				progress: {
+					attributes: {
+						class: 'flex h-[1.2rem] text-sm text-white bg-slate-200 mt-4',
+					},
+				},
+		
+				progressContainer: {
+					attributes: {
+						class: 'flex flex-col justify-center text-center font-medium bg-indigo-600',
+					},
+				},
+		
+				subFieldRow: {
+					attributes: {
+						class: 'form-row',
+					},
+				},
+		
+				nestedFieldRows: {
+					attributes: {
+						class: 'border py-4',
+					},
+				},
+		
+				nestedFieldRow: {
+					attributes: {
+						class: 'form-row',
+					},
+				},
+		
+				row: {
+					attributes: {
+						class: [
+							'form-row',
+							"{{ not row.getIsHidden() ? 'hidden' }}",
+						],
+					},
+				},
+		
+				field: {
+					attributes: {
+						class: 'form-field-wrapper',
+					},
+				},
+		
+				fieldLabel: {
+					attributes: {
+						class: 'form-label',
+					},
+				},
+		
+				fieldRequired: {
+					attributes: {
+						class: 'field-required',
+					},
+				},
+		
+				fieldInstructions: {
+					attributes: {
+						class: 'mt-2',
+					},
+				},
+		
+				fieldInput: {
+					attributes: {
+						class: [
+							'form-field-input',
+							"{{ (submission.getErrors(field.handle) ?? null) ? 'border-red-600' }}",
+						],
+					},
+				},
+		
+				fieldError: {
+					attributes: {
+						class: 'field-error',
+					},
+				},
+		
+				fieldAddButton: {
+					attributes: {
+						class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+					},
+				},
+		
+				fieldRemoveButton: {
+					attributes: {
+						class: 'inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+					},
+				},
+		
+				fieldLimit: {
+					attributes: {
+						class: 'mt-2 text-sm text-gray-500',
+					},
+				},
+		
+				agree: {
+					fieldOption: {
+						attributes: {
+							class: 'flex items-start mb-2',
+						},
+					},
+		
+					fieldOptionLabel: {
+						attributes: {
+							class: 'ml-2 text-sm leading-4',
+						},
+					},
+		
+					fieldInput: {
+						resetClass: true,
+		
+						attributes: {
+							class: 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded',
+						},
+					},
+				},
+		
+				checkboxes: {
+					fieldOption: {
+						attributes: {
+							class: [
+								"{{ field.layout == 'horizontal' ? 'inline-block mr-4' : 'flex items-center mt-2' }}",
+							],
+						},
+					},
+		
+					fieldOptionLabel: {
+						attributes: {
+							class: 'ml-4',
+						},
+					},
+		
+					fieldInput: {
+						resetClass: true,
+		
+						attributes: {
+							class: 'form-checkbox',
+						},
+					},
+				},
+		
+				dropdown: {
+					fieldInput: {
+						resetClass: true,
+		
+						attributes: {
+							class: 'form-dropdown',
+						},
+					},
+				},
+		
+				fileUpload: {
+					fieldInput: {
+						resetClass: true,
+		
+						attributes: {
+							class: 'block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-slate-200 file:text-slate-700 hover:file:bg-slate-300',
+						},
+					},
+				},
+		
+				hiddenField: {
+					field: {
+						resetClass: true,
+		
+						attributes: {
+							class: 'hidden',
+						},
+					},
+				},
+		
+				radioButtons: {
+					fieldOption: {
+						attributes: {
+							class: [
+								"{{ field.layout == 'horizontal' ? 'inline-block mr-4' : 'flex items-center mt-2' }}",
+							],
+						},
+					},
+		
+					fieldOptionLabel: {
+						attributes: {
+							class: 'ml-4',
+						},
+					},
+		
+					fieldInput: {
+						resetClass: true,
+		
+						attributes: {
+							class: 'form-radio',
+						},
+					},
+				},
+		
+				recipients: {
+					field: {
+						attributes: {
+							class: [
+								"{{ field.getIsHidden() ? 'hidden' : false }}",
+							],
+						},
+					},
+				},
+		
+				repeater: {
+					nestedField: {
+						attributes: {
+							class: 'relative',
+						},
+					},
+		
+					nestedFieldWrapper: {
+						attributes: {
+							class: 'mb-4',
+						},
+					},
+		
+					fieldRemoveButton: {
+						attributes: {
+							class: 'absolute top-0 right-0 m-1 inline-flex items-center px-2 py-1.5 border border-transparent text-xs font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+						},
+					},
+				},
+		
+				signature: {
+					fieldInputContainer: {
+						attributes: {
+							class: 'relative',
+						},
+					},
+		
+					fieldCanvas: {
+						attributes: {
+							class: 'w-full h-[8rem] border bg-slate-100',
+						},
+					},
+		
+					fieldRemoveButton: {
+						attributes: {
+							class: 'absolute top-0 right-0 m-1 inline-flex items-center px-2 py-1 border border-slate-300 text-xs font-medium rounded-md text-slate-700 bg-slate-200 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500',
+						},
+					},
+				},
+		
+				table: {
+					fieldTable: {
+						attributes: {
+							class: 'min-w-full divide-y divide-gray-300',
+						},
+					},
+		
+					fieldTableHeaderColumn: {
+						attributes: {
+							class: 'px-3 py-3.5 text-left text-sm font-semibold text-gray-900',
+						},
+					},
+		
+					fieldTableBody: {
+						attributes: {
+							class: 'divide-y divide-gray-200 bg-white',
+						},
+					},
+		
+					fieldTableBodyColumn: {
+						attributes: {
+							class: 'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
+						},
+					},
+				},
+			},
+		}) }}			
+</div>
+
+	

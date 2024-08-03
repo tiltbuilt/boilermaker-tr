@@ -1,0 +1,38 @@
+/**
+ * components/typography.css
+ * 
+ * Typography rules. 
+ *
+ */
+
+/* set up default spacing between headers, subheads, etc. */
+
+h2, h3, h4, h5, h6 {
+	margin-top: theme('spacing.normal');
+}
+
+.subhead {
+	display: block;
+}
+
+.subhead + .header-main-text {
+	margin-top: theme('spacing.half');
+}
+
+.header-main-text + .subhead {
+	margin-top: theme('spacing.base');
+}
+
+.heading + p {
+	/* use this selector for each header class you create to adjust the spacing between the header/subhead and the first content paragraph below it. */
+	margin-top: theme('spacing.base');
+}
+
+
+/* site specific headline and subhead styles - can be overriden by adjustments */
+
+.headline-default {
+	font-family: serif;
+	font-weight: bold;
+	font-size: theme('fontSize.scaling-2xl');
+}

@@ -1,7 +1,0 @@
-enabled: '1'
-handle: '[root]1150089305'
-name: '[root]'
-settings:
-  folder: '[root]'
-sortOrder: 3
-type: verbb\iconpicker\iconsets\SvgFolder

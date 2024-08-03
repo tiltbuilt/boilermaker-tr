@@ -1,0 +1,117 @@
+/**
+* components/form.css
+*
+*Form Block component specific styles
+*
+*/
+
+.form-block {
+	/* These classes must stay in order to ensure functionality */
+	position: relative;
+	/* The default classes and style below can be changed on a per-project basis */
+	margin-top: theme('spacing.normal');
+	  
+	&:first-child {
+		margin-top: 0;
+	}
+	
+	.form-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: theme('spacing.base');
+		margin-left: theme('spacing.neg-base');
+		margin-right: theme('spacing.neg-base');
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+	.form-field-wrapper {
+		width: 100%;
+		padding-left: theme('spacing.base');
+		padding-right: theme('spacing.base');
+		
+		@media (min-width: theme('screens.md')) {
+			flex: 1 1 0%;
+		}
+	}
+	
+	.form-label {		
+		@apply mt-2;
+		display: block;
+		font-weight: bold;
+	}
+	
+	.form-field-input {
+		@apply p-3;
+		display: block;
+		width: 100%;
+		border-width: 2px;
+		font-size: 100%;		
+		margin-top: theme('spacing.half');
+		
+	}
+	
+	textarea.form-field-input {
+		height: 10vh;
+		min-height: 250px;
+	}
+	
+	.form-checkbox, .form-radio {		
+		@apply h-5 w-5;
+	}
+	
+	.form-radio {
+		border-radius: 50%;
+	}
+	
+	fieldset > legend + div {
+		margin-top: theme('spacing.half');
+	}
+	
+	.iti {
+		margin-top: theme('spacing.half');
+		width: 100%;
+	}
+	
+	.form-dropdown {
+		@apply p-3;
+		display: block;
+		width: 100%;
+		border-width: 2px;
+		font-size: 100%;		
+		margin-top: theme('spacing.half');
+		line-height: inherit;		
+	}
+	
+	.form-btn-wrapper {
+		margin-left: 1rem;
+		margin-right: 1rem;
+		
+		&:first-child {
+			margin-left: 0px;
+		}
+		
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	
+	.alert-error {
+		font-weight: bold;
+		padding: theme('spacing.base');
+		margin-bottom: theme('spacing.normal');	
+	}
+	
+	.field-error {
+		margin-top: theme('spacing.half');	
+	}
+	
+	.alert-success {
+		font-weight: bold;
+		padding: theme('spacing.base');	
+		margin-bottom: theme('spacing.normal');		
+	}
+	
+}

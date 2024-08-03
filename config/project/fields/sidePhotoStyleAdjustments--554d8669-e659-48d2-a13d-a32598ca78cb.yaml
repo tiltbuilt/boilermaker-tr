@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: sidePhotoStyleAdjustments
+instructions: null
+name: 'Side by Side Photo Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - a547c85e-ce84-4cd3-9a43-5727af411343 # Style Adjustment - Side by Side Photo Section
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

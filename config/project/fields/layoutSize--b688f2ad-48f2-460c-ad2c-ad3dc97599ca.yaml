@@ -1,0 +1,76 @@
+columnSuffix: null
+handle: layoutSize
+instructions: null
+name: 'Layout Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (Phone Vertical and Above)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Small (Phone Horizontal and Above)'
+        -
+          - value
+          - '@sm'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Medium (Tablet and Above)'
+        -
+          - value
+          - '@md'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Large (Laptop and Above)'
+        -
+          - value
+          - '@lg'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'X-Large (Desktop and Above)'
+        -
+          - value
+          - '@xl'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2XL (Hi-Res Display)'
+        -
+          - value
+          - '@2xl'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

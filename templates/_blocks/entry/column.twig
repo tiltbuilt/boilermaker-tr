@@ -1,0 +1,91 @@
+{#
+/**
+ * Tilt Boilermaker - Standard Layout Column Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set columnClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'column-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% if entry.colorScheme != null %}
+	{% set colorScheme = entry.colorScheme.class %}	
+{% endif %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set columnClassList = columnClassList|merge(colorClasses) %}
+
+{# Set Layout Styles #}
+{% for layoutItem in entry.columnLayout %}
+	{% set devSize = layoutItem.deviceSize %}
+	{% if devSize|length %}
+		{% set devSize = devSize ~ ':' %}	
+	{% endif %}
+	{% if layoutItem.columnWidth|length %}
+		{% set columnClassList = columnClassList|merge([devSize ~ 'w-' ~ layoutItem.columnWidth]) %}
+	{% endif %}
+	{% if layoutItem.display|length %}
+		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.display]) %}
+	{% endif %}
+	{% if layoutItem.columnOrder|length %}
+		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.columnOrder]) %}
+	{% endif %}
+	{% if layoutItem.verticalAlignment|length %}
+		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.verticalAlignment]) %}
+	{% endif %}
+{% endfor %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.columnStyleAdjustments.eagerly().with('bgImg').all() %}
+
+<div id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- columnClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>	
+	<div class="inner column-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+		{% for chunk in entry.elementContent %}
+			{% if chunk.type == 'markup' %}
+				{% if animate %}
+					{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)}}
+				{% else %}
+					{{chunk|raw}}
+				{% endif %}
+			{% else %}
+				{{ chunk.entry.render({
+					'animSetting': animSetting,
+					'colorScheme': colorScheme
+				}) }}
+			{% endif %}
+		{% endfor %}							
+	</div>
+	<div class="background">
+		{{ gMacros.buildElementBackground(adjustments) }}
+	</div>		
+</div>
+

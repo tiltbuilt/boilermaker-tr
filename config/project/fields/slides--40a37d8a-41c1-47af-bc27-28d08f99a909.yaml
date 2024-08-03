@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: slides
+instructions: null
+name: Slides
+searchable: false
+settings:
+  createButtonLabel: 'Add Slide'
+  entryTypes:
+    - 699240f2-b35b-4fad-b00a-f24ec0b8d982 # Slide
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

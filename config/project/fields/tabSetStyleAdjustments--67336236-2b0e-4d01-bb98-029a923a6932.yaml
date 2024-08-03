@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: tabSetStyleAdjustments
+instructions: null
+name: 'Tab Set Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - de6881eb-f48b-4119-889c-95d3bf6692e5 # Style Adjustment - Tab Set
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

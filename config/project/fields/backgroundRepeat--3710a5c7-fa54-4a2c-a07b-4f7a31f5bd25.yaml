@@ -1,0 +1,65 @@
+columnSuffix: null
+handle: backgroundRepeat
+instructions: null
+name: 'Background Repeat'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Repeat'
+        -
+          - value
+          - bg-no-repeat
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Repeat
+        -
+          - value
+          - bg-repeat
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Repeat Horizontally'
+        -
+          - value
+          - bg-repeat-x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Repeat Vertically'
+        -
+          - value
+          - bg-repeat-y
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,13 @@
+enabled: '1'
+handle: font-awesome-all
+name: font-awesome-all
+settings:
+  apiKey: null
+  cdnCollections:
+    - '*'
+  cdnLicense: free
+  cdnVersion: 6.2.0
+  styles: '*'
+  type: cdn
+sortOrder: 2
+type: verbb\iconpicker\iconsets\FontAwesome

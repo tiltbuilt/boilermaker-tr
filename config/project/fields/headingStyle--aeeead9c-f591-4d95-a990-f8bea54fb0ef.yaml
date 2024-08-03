@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: headingStyle
+instructions: null
+name: 'Heading Style'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - headline-default
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

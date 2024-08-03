@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: buttonGroupStyleAdjustments
+instructions: null
+name: 'Button Group Style Adjustment'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - b352c451-ed85-4679-8a36-8e473facf8a0 # Style Adjustment - Button Group
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

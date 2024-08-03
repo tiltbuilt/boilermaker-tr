@@ -1,0 +1,217 @@
+color: cyan
+fieldLayouts:
+  c175c6e1-c81e-467f-baab-fe3052dc4e9f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9a37ac36-861f-46b3-bb48-ca5fb2526d97
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bfb2691f-54f9-48bd-b5d6-4ce1e7f691e1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: imageCaption
+            includeInCards: false
+            instructions: null
+            label: 'Image Caption'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5924486-0fbc-48f3-808b-659f3ca81eae
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2dc9eeb7-914f-40a8-a177-d21efc54153e # Link Settings
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e51e3047-575f-415e-8462-8b7a3231e9c7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 00f30005-4f29-4c62-b0b6-3cdd8c790959
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 2f10191e-c623-4bb8-bc93-94b121babd01
+            userCondition: null
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'These fields can be used to override the colors of the caption from the color scheme.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 107d61a4-d4cb-40f8-a7a4-e1633b8edf9e
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: captionColor
+            includeInCards: false
+            instructions: null
+            label: 'Caption Text Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1763ddce-1f3c-4ab9-9013-c11f2f051c1e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Caption Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4cdb7d45-d618-4456-be6f-95e7fe7716d8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 161a62c9-38f4-4219-8e7b-d290bc4b8ed8
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: c9cf2b48-b578-41dd-ae7f-82d0ce5a4241 # Image Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 56c8c10b-b7dc-4cbc-9ce8-0b2cca834404
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: d1235c5c-76a1-4742-a3c3-2e56b5711392
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e51bb91-f52a-4214-b86d-17e7739a5680
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a4a4c2a0-f1cc-42d3-b1a6-edf52ec0d8b0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b77e1a87-e262-45ad-b0de-d84cd8d9fc3f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: 11758821-2b81-476b-a61c-7a1609f66115
+        userCondition: null
+handle: image
+hasTitleField: true
+icon: image
+name: Image
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

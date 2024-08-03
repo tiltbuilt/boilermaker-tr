@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: textWrap
+instructions: null
+name: 'Text Wrap'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Left
+        -
+          - value
+          - text-wrap-left
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Right
+        -
+          - value
+          - text-wrap-
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Remove Text Wrap'
+        -
+          - value
+          - text-wrap-none
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

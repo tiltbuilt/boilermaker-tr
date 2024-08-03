@@ -1,0 +1,37 @@
+{#
+/**
+ * Tilt Boilermaker - Global Variables Template
+ * -----
+ * Loads variables that you want available sitewide
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# -- Root global variables that all templates inherit from -- #}
+{# -- This allows for defining site-wide Twig variables as needed -- #}
+
+
+{# -- General global variables -- #}
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{%- set siteGlobals = craft.globalSets()
+.handle('gSettings')
+.with(['thumbnailPlaceholderImage'])
+.one()
+-%}
+
+{%- set coSocialLinks = craft.globalSets()
+.handle('companyInfo')
+.with(['socialLinks'])
+.one()
+-%}
+
+
+
+{# -- Twig output from the render; this must be in a block -- #}
+{% block htmlPage %}
+{% endblock %}

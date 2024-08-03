@@ -1,0 +1,264 @@
+color: cyan
+fieldLayouts:
+  f3589bbe-232b-4610-91e0-458e9a97c5ef:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Main Headline Text'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 0dc960e4-f068-4e83-b8af-cd6593e1e406
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 999bdee3-ba97-4ca8-9fa4-f50e7a6bde8d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: subheadText
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1d6104a-7887-4f72-96a0-5e15a7d7852f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 77532772-badf-4ce5-a93b-6752273d81bb # Subhead Position
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 287f346b-8868-40e8-a7e0-408fa444e7c0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a70d97af-159d-463f-ac71-a8066ef1f2c6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: 'Type Style'
+            type: craft\fieldlayoutelements\Heading
+            uid: 0516af06-0a83-4846-890e-d08beb3e72fa
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: aeeead9c-f591-4d95-a990-f8bea54fb0ef # Heading Style
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e554bb46-5847-4596-ad6e-af34b33fd73c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\TextFieldConditionRule
+                  fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+                  layoutElementUid: f1d6104a-7887-4f72-96a0-5e15a7d7852f
+                  operator: notempty
+                  uid: 75f97ee2-587b-4230-b172-a7345ea47514
+                  value: ''
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: e5bff211-8719-442c-8ca7-caf236c14273 # Subhead Style
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 34775be6-9c0e-4d7c-964f-2f86afd255f8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 9df28174-ab49-4f7a-8b90-c7d9063797fb
+            userCondition: null
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Use these fields to override the colors from the color scheme if desired.'
+            type: craft\fieldlayoutelements\Tip
+            uid: c46c10c2-5eee-4c37-90b1-4df50f10a8b9
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: headlineColor
+            includeInCards: false
+            instructions: null
+            label: 'Headline Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8bc08470-059f-42d0-8bda-5f0d65784b4d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: subheadColor
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 97b31351-cea6-44b5-a858-34fbb595aa4c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 1342e631-8c9b-4bfe-a268-a85427a0cbbb
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 62bb1cf0-026e-410e-a685-701783c6ae9e # Header Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f4d34e91-c076-4554-97c2-0e92eaedacca
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 7bbb70b5-68f5-43d1-b90f-a4e04dd31342
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a32e6b7-91d7-40f3-8f96-1a6b5f985b1f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e53597c5-5b2c-4993-91ec-2e0350454682
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bf3824f1-d669-439a-b5d0-047c342cb20f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: b4a609f4-ddc5-4065-83d4-7b8b3f98bd77
+        userCondition: null
+handle: heading
+hasTitleField: true
+icon: helicopter-symbol
+name: Heading
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

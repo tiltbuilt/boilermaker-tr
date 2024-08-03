@@ -1,0 +1,109 @@
+{#
+/**
+ * Tilt Boilermaker - Heading Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'icon-block-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = 'icon-block' %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.iconStyleAdjustments.eagerly().all() %}
+
+{# set Layout Class #}
+{% if entry.blockLayout %}
+	{% set layoutClass = 'icon-block-horizontal' %}
+{% else %}
+	{% set layoutClass = 'icon-block-vertical' %}
+{% endif %}
+
+{# set classes for icon #}
+{% set iconClasses = ['icon-wrapper'] %}
+{% if entry.iconColor != '' %}
+	{% set iconClasses = iconClasses|merge(['icon-' ~ entry.iconColor]) %}
+{% else %}
+	{% set iconClasses = iconClasses|merge([colorScheme]) %}
+{% endif %}
+{% if entry.iconSize != '' %}
+	{% set iconClasses = iconClasses|merge(['icon-' ~ entry.iconSize]) %}
+{% endif %}
+{% for adjSet in adjustments %}
+	{# Get Device Size for Adjustments #}
+	{% set devSize = adjSet.deviceSize %}
+	{% if devSize|length %}
+		{% set devSize = devSize ~ '/component:' %}	
+	{% endif %}	
+	{% if entry.blockLayout and adjSet.iconVerticalAlignment != '' %}
+		{% set iconClasses = iconClasses|merge([devSize ~ 'self-' ~ adjSet.iconVerticalAlignment]) %}
+	{% endif %}
+{% endfor %}
+
+{# set classes for content wrapper #}
+{% set contentClasses = ['icon-content-wrapper'] %}
+{% if entry.iconSize != '' %}
+	{% set contentClasses = contentClasses|merge(['icon-content-wrapper-' ~ entry.iconSize]) %}
+{% endif %}
+{% for adjSet in adjustments %}
+	{# Get Device Size for Adjustments #}
+	{% set devSize = adjSet.deviceSize %}
+	{% if devSize|length %}
+		{% set devSize = devSize ~ '/component:' %}	
+	{% endif %}
+	{% if adjSet.contentMt != '' %}
+		{% set contentClasses = contentClasses|merge([devSize ~ 'mt-' ~ adjSet.contentMt]) %}
+	{% endif %}	
+{% endfor %}
+
+
+<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+	<div class="{{layoutClass}}">
+		<div class="{{- iconClasses|join(' ') }}">
+			{% if  entry.icon.type == 'svg' %}
+				{{  entry.icon.inline }}
+			{% elseif entry.icon.type == 'css' %}
+				<i class="{{ entry.icon }}"></i>								
+			{% else %}
+				<svg><use xlink:href="/sprites.svg#{{ entry.icon.value }}"></use></svg>
+			{% endif %}
+		</div>	
+		{% if entry.blockContent|length %}
+			<div class="{{- contentClasses|join(' ') }} {{ gMacros.classesOut(adjustments, 'Text') -}} ">
+				
+				{% for chunk in entry.blockContent %}
+					{% if chunk.type == 'markup' %}
+						{{chunk|raw}}					
+					{% else %}
+						{{ chunk.entry.render({
+							'animSetting': animSetting,
+							'colorScheme': colorScheme,							
+						}) }}
+					{% endif %}
+				{% endfor %}
+				
+			</div>
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: subheadStyle
+instructions: null
+name: 'Subhead Style'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - subhead-default
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

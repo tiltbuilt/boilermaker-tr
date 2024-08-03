@@ -1,0 +1,62 @@
+{#
+/**
+ * Tilt Boilermaker - Base HTML Template - Extends Base Web or Ajax Layouts in Boilerplate folder
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# -- Base HTML layout template that all HTML requests inherit from -- #}
+
+{% extends craft.app.request.isAjax() and not craft.app.request.getIsPreview()
+	? "_layouts/_boiler/baseAjaxLayout.twig"
+	: "_layouts/_boiler/baseWebLayout.twig"
+%}
+
+{% block htmlTag %}	
+{% endblock htmlTag %}
+
+{# -- Page content that should be included in the <head> -- #}
+{% block headContent %}
+	{# -- Any <meta> tags that should be included in the <head> #}
+	{% block headMeta %}
+	{% endblock headMeta %}
+
+	{# -- Any <link> tags that should be included in the <head> #}
+	{% block headLinks %}
+	{% endblock headLinks %}
+	
+	{% block headCss %}
+	{% endblock headCss %}
+
+	{# -- Inline and polyfill JS #}
+	{% include "_partials/_boiler/headJs.twig" %}
+
+	{# -- Any JavaScript that should be included before </head> -- #}
+	{% block headJs %}
+		{{ gSettings.headerEmbeds|raw }}		
+		{{ gMacros.entryHeaderEmbeds(entry ??? category ??? null) }}
+	{% endblock headJs %}
+
+	
+{% endblock headContent %}
+
+{# -- Page content that should be included in the <body> -- #}
+{% block bodyContent %}
+	{# -- Page content that should be included in the <body> -- #}
+	{% block bodyJs %}
+		{{ gSettings.bodyTagEmbeds|raw }}
+		{{ gMacros.entryBodyEmbeds(entry ??? category ??? null) }}
+	{% endblock bodyJs %}	
+	{{ parent() }}
+	
+	{% block bodyHtml %}			
+	{% endblock bodyHtml %}
+{% endblock bodyContent %}

@@ -1,0 +1,380 @@
+color: pink
+fieldLayouts:
+  2d86ce01-93e7-4300-8f31-9ca5e1a5ac73:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 432ec8a1-39fa-4037-ae96-89b4dc15a221
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Layout Size
+            handle: deviceSize
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: afa1172e-ebc7-4011-94fd-aaf3277db8a9
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Device Size'
+        uid: dc1ae93d-aa2b-49f7-b388-498d81a9128e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
+            handle: headlineFont
+            includeInCards: false
+            instructions: null
+            label: 'Headline Font'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83da6014-f857-400c-b1cd-581b46f5a2b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
+            handle: headlineFontSize
+            includeInCards: false
+            instructions: null
+            label: 'Headline Font Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4e282ad0-9082-4a92-a01c-e97a89519cb7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
+            handle: headlineLineHeight
+            includeInCards: false
+            instructions: null
+            label: 'Headline Line Height'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f13edf0a-5cf7-4df6-9c01-4a31e1ebab94
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
+            handle: headlineFontWeight
+            includeInCards: false
+            instructions: null
+            label: 'Headline Font Weight'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b0664d86-874e-4dc5-b567-c1f46f061715
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
+            handle: headlineItalic
+            includeInCards: false
+            instructions: null
+            label: 'Headline Italic?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e735f8f-ab16-439b-9171-8df62e6bc6e8
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
+            handle: headlineTextCase
+            includeInCards: false
+            instructions: null
+            label: 'Headline Text Case'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 320ab24b-5f96-4617-be4a-97553a0d6b1d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
+            handle: headlineLetterSpacing
+            includeInCards: false
+            instructions: null
+            label: 'Headline Letter Spacing'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ab940a3-d65a-4b10-b11b-510953bd2102
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: Alignment
+            type: craft\fieldlayoutelements\Heading
+            uid: 27199440-1218-41b3-bbe9-d9d88e7491f2
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 97cc4c30-4b32-42ad-b5bf-cede5be0e941
+            userCondition: null
+            warning: null
+            width: 100
+        name: Headline
+        uid: 0b3d629c-fdf3-4d1e-853b-a3739d51deb9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
+            handle: subheadFont
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Font'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7866b1c6-e265-4037-96e4-5a641f1ef4a6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
+            handle: subheadFontSize
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Font Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a6798e90-e82a-40b3-a8b5-259e00575abb
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
+            handle: subheadLineHeight
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Line Height'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f2c7cb97-ce4c-4865-8715-06d12761b4bd
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
+            handle: subheadFontWeight
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Font Weight'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4def65c4-2fda-4f32-a0e6-fad9ee8cd746
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
+            handle: subheadItalic
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Italic?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd0f5e5b-f538-441a-8e92-e44313d67ebc
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
+            handle: subheadTextCase
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Text Case'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72d800da-01b2-484c-91cf-40f74e458248
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
+            handle: subheadLetterSpacing
+            includeInCards: false
+            instructions: null
+            label: 'Subhead Letter Spacing'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0c9a347a-e21c-4d62-9c46-41092433e62e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: subheadSpacing
+            includeInCards: false
+            instructions: 'This field adjusts the space between the subhead and the headline if needed.It is applied as top margin if the subhead is set to be below the headline and bottom margin if it is above the headline.'
+            label: 'Subhead Spacing'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 91a4d856-6bf3-46bd-b42e-d0a91cc51db9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Subhead
+        uid: 7ce6b076-73cd-42cf-9cc1-007622f2e5c3
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mt
+            includeInCards: false
+            instructions: null
+            label: 'Top Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77db0964-6164-45eb-8000-f14cc18aa7fa
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mb
+            includeInCards: false
+            instructions: null
+            label: 'Bottom Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0c0b2887-6ed5-413d-9a69-a8ba16c3279e
+            userCondition: null
+            warning: null
+            width: 50
+        name: Margins
+        uid: f514a90e-3f23-47c3-80ab-4326664d8565
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8afc329e-b44e-43bd-885c-5b16d493cb2f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Display
+        uid: 0372ffa2-ef0b-44e4-9bb8-528a1106bc93
+        userCondition: null
+handle: styleAdjustmentHeader
+hasTitleField: false
+icon: palette
+name: 'Style Adjustment - Header'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-styles-{ object.deviceSize }'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

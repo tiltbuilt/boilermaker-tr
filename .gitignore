@@ -1,48 +1,15 @@
-# Editor files
-/.idea
-.DS_Store
-.cache
-.project
-.settings
-*.esproj
-*.sublime-workspace
-*.sublime-project
-*.tmproj
-*.tmproject
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-config.codekit3
-prepros-6.config
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw*
-.nova
-.nova/*
-
-# Craft instance specific files and vendor files
-/config/license.key
-/web/cpresources/*
-/public/cpresources/*
-/public/imager/*
-/public/blitz/*
-/public/cache/blitz/*
-/node_modules
-/vendor
-/public/dist/mix-manifest.json
-
-# local env files
 /.env
-.env.local
-.env.*.local
+/.idea
+/.nova
+/vendor
+node_modules
+.DS_Store
+.env.php
+.env.sh
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Don't save package-lock, when we're fresh installing.
+package-lock.json
+/config/license.key
+/web/dist
 
-
+.npmrc

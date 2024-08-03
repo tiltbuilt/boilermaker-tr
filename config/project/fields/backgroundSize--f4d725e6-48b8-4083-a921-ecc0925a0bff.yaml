@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: backgroundSize
+instructions: null
+name: 'Background Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Auto
+        -
+          - value
+          - auto
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Cover
+        -
+          - value
+          - cover
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Contain
+        -
+          - value
+          - contain
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

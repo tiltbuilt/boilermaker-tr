@@ -1,0 +1,48 @@
+{#
+/**
+* Tilt Boilermaker - Repeater Template - Cards
+* -----
+* Simple cards with title, excerpt and link
+* 
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{% set cardClasses = ['repeater-card', 'w-full'] %}
+
+{% if animate %}
+	{% set cardClasses = cardClasses|merge(["animate"]) %}
+{% endif %}
+
+{% if cardRowSizes != null and cardRowSizes|length %}
+	{% for rowSize in cardRowSizes %}
+		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/list:w-1/' ~ rowSize.numberOfCards]) %}
+	{% endfor %}
+{% endif %}
+
+<div class="repeater-list-card-wrapper @container/list">	
+	{% for listItem in listContent %}	
+   		{% if listItem.url != null and listItem.url|length %}
+		   {% set outerTag = 'a' %}
+		{% else %}
+			{% set outerTag = 'div' %}
+		{% endif %}
+		
+		<{{outerTag}} {% if listItem.url != null and listItem.url|length %}href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} {% endif %} class="{{ cardClasses|join(' ') }}">			
+			<div class="repeater-card-inner">
+				<div class="repeater-card-content">
+					<{{ headingLvl}} class="repeater-list-card-header">					
+						{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><sup><sub><br>') }}					  
+					</{{ headingLvl }}>
+					{% if showDate and listItem.date|length %}	  		
+						<div class="repeater-date">{{ listItem.date }}</div>	 
+					{% endif %}
+					{% if showExcerpt and listItem.excerpt|length %}	  		
+						<div>{{ listItem.excerpt }}</div>	  				 
+					{% endif %}	
+				</div>
+			</div>			        
+		</{{outerTag}}>	
+	{% endfor %}
+</div>

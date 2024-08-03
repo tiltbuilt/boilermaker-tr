@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: notificationBarColor
+instructions: null
+name: 'Notification Bar Color'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Red
+        -
+          - value
+          - red
+        -
+          - cssColour
+          - ''
+        -
+          - default
+          - '1'
+  placeholderText: 'Select an option'
+translationKeyFormat: null
+translationMethod: none
+type: verbb\buttonbox\fields\Colours

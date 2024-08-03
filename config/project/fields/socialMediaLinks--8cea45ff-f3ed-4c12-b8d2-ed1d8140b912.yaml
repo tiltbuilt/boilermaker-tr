@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: socialMediaLinks
+instructions: null
+name: 'Social Media Links'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 79fb09c5-0e2c-49d7-bfe6-a9b38820b56a # Social Link
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
