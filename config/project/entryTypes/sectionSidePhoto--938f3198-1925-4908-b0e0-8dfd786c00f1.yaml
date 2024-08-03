@@ -1,0 +1,391 @@
+color: lime
+fieldLayouts:
+  fa6e25ce-c2c5-44bf-af5c-a82c459145b9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9ba7ef40-4462-4afe-9b2e-d12e71ae7223
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: mainPhoto
+            includeInCards: false
+            instructions: null
+            label: 'Main Photo'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f656522e-23f6-47f9-aab5-15280eeb92ed
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: null
+            includeInCards: false
+            instructions: 'Sets the aspect ratio of the photo to be used. Select a size close to what the dimensions are in the layout to reduce cropping.'
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff551936-da17-48b8-b0da-ca1cd8659145
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300 # Background Image Small
+            handle: photoSm
+            includeInCards: false
+            instructions: 'Select an image to use in smaller layout scenarios if the main photo is not cropping well. You should use an image as close to the dimensions of the space in the layout as possible.'
+            label: 'Photo - Small Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e41438ce-228b-4d65-a1ce-eadff2cf210a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: aspectRatioSm
+            includeInCards: false
+            instructions: 'Sets the aspect ratio of the photo to be used in small layouts. Select a size close to what the dimensions are in the layout to reduce cropping.'
+            label: 'Aspect Ratio - Small Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 246ea23e-8d6f-4d0b-82aa-aaa9650b2266
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: mainPhotoAlt
+            includeInCards: false
+            instructions: null
+            label: 'Main Photo Alt Text'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 28452f1d-0612-42df-af7c-9707a309091d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d7b06ee-0853-4a63-b698-1647b1844a55
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b3e248e3-6b5d-4c4a-afec-3c228b721887
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: fullscreen
+            includeInCards: false
+            instructions: null
+            label: 'Full Screen Width?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0c626548-19a0-4346-9f76-85402ecf9165
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: eb38218b-e090-4cec-807f-ab70934109ba # First Last
+            handle: contentPositionSmall
+            includeInCards: false
+            instructions: null
+            label: 'Content Position - Small Devices'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c925ca02-b02f-480b-8f3c-f42db0c308ca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c17b0219-a22c-422c-a2f1-4e557eed8c4e # Content Column Layout
+            handle: null
+            includeInCards: false
+            instructions: 'By Default the content column and photo column are full width on mobile devices. On tablet and above they default to being half the screenwidth unless you change it here.'
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0984adaf-97d2-430c-96d1-5c191d74ed0f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: imgPosition
+            includeInCards: false
+            instructions: 'Positions the focal point of the image to help control cropping more effectively'
+            label: 'Image Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95693e69-f708-4888-83f1-6923c0330e54
+            userCondition: null
+            warning: null
+            width: 100
+        name: Layout
+        uid: 374dc81b-1af9-449d-a6dc-97eeac784474
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 44609db2-bb94-42e2-a4a5-9ba2c0754587
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 194d15f4-73f4-4cbb-9708-651709ca5699
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c4cdfd58-6796-4b56-b7b6-d14e334025f9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: aa5d81f2-5346-4bc6-9a97-f58aa835c494
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 554d8669-e659-48d2-a13d-a32598ca78cb # Side by Side Photo Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 424de470-0aa0-48c1-b5f4-2b62df139b85
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 51ce697d-3ab4-46e0-b479-e81d6a66ae1a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: animate
+            includeInCards: false
+            instructions: 'Activate this switch to animate the reveal of the section.'
+            label: 'Animate Reveal?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d3015da-4858-4761-a3d6-bdd013ea5af6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: 6d3015da-4858-4761-a3d6-bdd013ea5af6
+                  uid: d8b47339-5774-418a-a5b3-e864e02eb27d
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: animateContent
+            includeInCards: false
+            instructions: 'Activate this switch if you want to animate the content of the section, but leave the background in place.'
+            label: 'Animate Content'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3ea6add7-251d-4c7a-aa06-9ebb7c138834
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: 3ea6add7-251d-4c7a-aa06-9ebb7c138834
+                  uid: c4964006-e7fa-40cc-b21e-740e35bb0fb9
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
+            handle: staggerAnimations
+            includeInCards: false
+            instructions: 'Activate this switch if you want to have the content animations stagger.'
+            label: 'Stagger Content Animations?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83b45e4c-6989-4cdf-b5cd-c70a589c9852
+            userCondition: null
+            warning: null
+            width: 100
+        name: Animation
+        uid: 7d5f1938-386f-40b2-b8be-0245a0fa3c2d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aff5008f-7857-42a0-ac87-5a9960d400a5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2c2fea1-6f49-419d-ae83-ebde726a60d7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9626c35e-85b0-4106-bbbf-8e48c2f0ae71
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: 19688c00-f44b-4f0e-b507-72b502a4c6ae
+        userCondition: null
+handle: sectionSidePhoto
+hasTitleField: true
+icon: id-card
+name: 'Side by Side Photo Section'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

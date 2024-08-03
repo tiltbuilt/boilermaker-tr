@@ -1,0 +1,42 @@
+columnSuffix: null
+handle: pageHeaderColorScheme
+instructions: null
+name: 'Page Header Color Scheme'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Mode'
+        -
+          - color
+          - '#FFF, #000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - colormode-light
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dark Mode'
+        -
+          - color
+          - '#000, #FFF'
+        -
+          - default
+          - '1'
+        -
+          - class
+          - colormode-dark
+  palette: null
+  setRandom: false
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

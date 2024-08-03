@@ -1,7 +1,0 @@
-enabled: '1'
-handle: uiSvgSprites1180156754
-name: ui-svg-sprites
-settings:
-  spriteFile: ui-svg-sprites.svg
-sortOrder: 1
-type: verbb\iconpicker\iconsets\SvgSprite

@@ -1,0 +1,65 @@
+columnSuffix: null
+handle: textCase
+instructions: null
+name: 'Text Case'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Normal Case'
+        -
+          - value
+          - normal-case
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Capitalize
+        -
+          - value
+          - capitalize
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'UPPER CASE'
+        -
+          - value
+          - uppercase
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'lower case'
+        -
+          - value
+          - lowercase
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

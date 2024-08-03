@@ -1,0 +1,212 @@
+{#
+/**
+ * Tilt Boilermaker - Image Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set imgClassList = [] %}
+
+{% set image = entry.imageAsset.eagerly().one() %}
+
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'image-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = "content-image" %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.captionColor|length %}
+	{% set colorClasses = colorClasses|merge(['text-' ~ entry.captionColor]) %}
+{% endif %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set imgClassList = imgClassList|merge(colorClasses) %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.imageStyleAdjustments.eagerly().all() %}
+
+{# Work on Aspect Ratio Setup #}
+{% set hasAspectChange = false %}
+{% set defAspect = 'contentImage' %}
+{% set transformData = {} %}
+{% for adjSet in adjustments %}	
+	{% if adjSet.aspectRatio != '' %}
+		{% set hasAspectChange = true %}
+		{% if adjSet.deviceSize == '' %}
+			{% set defAspect = adjSet.aspectRatio %}
+		{% endif %}			
+	{% endif %}	
+{% endfor %}
+
+{# set outer tag depending on if element has caption or not #}
+{% if entry.imageCaption != '' %}
+	{% set outerTag = 'figure' %}
+{% else %}
+	{% set outerTag = 'div' %}
+{% endif %}
+
+{# OUTPUT #}
+{% if image != null %}
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.widthClasses(adjustments) -}} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+		
+		{% if entry.linkSettings.url|length %}
+			{% if entry.linkSettings.getLinkType().label == 'Modal' %}
+				{# modal #}
+				{% set modalUrl = '/resources/entrymodal?entryid=' ~ entry.linkSettings.linkValue %}
+				{% set modalEntry = craft.entries().id(entry.linkSettings.linkValue).one() %}
+				{% if not craft.app.request.isAjax() %}
+					<a id="{{blockId}}-link" x-ref="{{blockId}}-link" type="button" class="img-link {{ entry.linkSettings.customClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkSettings.customAttributes) -}}
+					x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{{blockId}}-link';
+					fetch('{{ modalUrl }}', {
+						method: 'GET',
+						headers: {
+							'X-Requested-With': 'XMLHttpRequest',
+						},
+					})
+					.then(response => response.text())
+					.then(text => {
+						modalHtml = text
+						showLoading = false;			   
+					});"			 
+					>						
+				{% elseif modalEntry.section.handle == "pages" %}
+					<a href="{{modalEntry.url}}" id="{{blockId}}-link" type="button" class="img-link {{ entry.linkSettings.customClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkSettings.customAttributes) -}}>
+				{% endif %}			
+			{% else %}
+				{# everything else #}
+				<a href="{{entry.linkSettings.url}}" id="{{blockId}}-link" type="button" class="img-link {{ entry.linkSettings.customClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{-  entry.linkSettings.target|length ? ' target="_blank"' : '' }} {{- gMacros.attributesOut(entry.linkSettings.customAttributes) -}}>
+			{% endif %}		
+		{% endif %}
+		
+		{% if image.mimeType == "image/svg+xml" %}		
+		
+			{# for svg images just drop image in, don't mess with aspect ratio or transforms #}
+			<img src="{{ image.url }}" alt="{{entry.title}}" class="lazyload block">
+		
+		{% else %}		
+			{% if hasAspectChange %}
+				{% set aspectClasses = [] %}
+				{% set aspectData = {'df': 'contentImage'} %}
+				{% set minSizes = {
+					'df': 0,
+					'@sm': 600,
+					'@md': 750,
+					'@lg': 1000,
+					'@xl': 1200,
+					'@2xl': 1500,
+				} %}
+								
+				{% for adjSet in adjustments %}
+					{% if adjSet.aspectRatio != '' %}
+						{# add class to aspect classes array to size picture element #}
+						{% set devSize = adjSet.deviceSize %}
+						{% if devSize|length %}
+							{% set devSize = devSize ~ ':' %}	
+						{% endif %}
+						{% set aspectClasses = aspectClasses|merge([devSize ~ 'aspect-' ~ adjSet.aspectRatio]) %}
+						
+						{# Add Aspect Ratio Info for each aspect change to aspectData object for creation of source attributes #}
+						{% if adjSet.deviceSize == '' %}
+							{% set deviceLabel = 'df' %}
+						{% else %}
+							{% set deviceLabel = adjSet.deviceSize.value %}
+						{% endif %}
+						{% set aspectObj = {(deviceLabel) : adjSet.aspectRatio} %}						
+						{% set aspectData = aspectData|merge(aspectObj) %}
+					{% endif %}					
+				{% endfor %}
+				
+				<picture class="block relative {{ aspectClasses|join(' ') }}">									
+					{% set dfMaxSize = null %}				
+					{# output source tag for each size/aspect #}					
+					{% set dfImg = null %}
+					{% for key,value in minSizes %}
+						{% if key != 'df' and aspectData[key] is defined %}
+							{% if dfMaxSize == null %}
+								{% set dfMaxSize = minSizes[key] - 1 %}
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					{% for key,value in minSizes %}
+						{% if aspectData[key] is defined %}														
+							{% if aspectData[key] != '' and aspectData[key] != 'auto' %} 
+								{%- set xForm = 'image-' ~ aspectData[key]	%}
+							{% else %}
+								{%- set xForm = 'contentImage' %}
+							{% endif %}
+							{% if craft.imager.serverSupportsWebp() %}
+								{%- set xForm = xForm ~ '-webp' %}
+							{% endif %}
+							{%- set transformedImages = craft.imagerx.transformImage(image, xForm) %}
+							{# set variable for default image to use in img tag #}
+							{% if key == 'df' %}
+								{% set dfImg = transformedImages[0] %}
+							{% endif %}							
+							<source data-sizes="auto" {% if aspectData|length > 1 %}media="{% if key == 'df' %}(max-width: {{dfMaxSize}}px){% else %}(min-width: {{value}}px){% endif %}"{% endif %} data-srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+						{% endif %}						
+					{% endfor %}
+					
+					<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"		  
+					  data-sizes="auto"
+					  data-src="{{ dfImg }}"					 
+					  alt="{{ entry.title }}" 
+					  class="lazyload"
+					>									
+				</picture>				
+			{% else %}
+				{% if craft.imager.serverSupportsWebp() %}
+					{%- set xForm = 'contentImage-webp' %}
+				{% else %}
+					{%- set xForm = 'contentImage'	%}
+				{% endif %}
+				
+				{%- set transformedImages = craft.imagerx.transformImage(image, xForm)	%}
+				
+				<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
+				  width="{{image.width}}"
+				  height="{{image.height}}"
+				  data-sizes="auto"
+				  data-src="{{ transformedImages[0] }}"
+				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+				  alt="{{ entry.title }}"
+				  class="lazyload block"
+				>			
+			{% endif %}		  
+		{% endif %}
+		
+		{% if entry.linkSettings.url|length %}
+			</a>		
+		{% endif %}
+		
+		{% if entry.imageCaption != '' %}
+			<figcaption class="image-caption {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+				{{ entry.imageCaption }}						
+			</figcaption>				  
+		{% endif %}
+	</{{outerTag}}>
+{% endif %}

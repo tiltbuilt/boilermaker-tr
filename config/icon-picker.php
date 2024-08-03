@@ -2,8 +2,8 @@
 
 return [
 	'*' => [
-		'iconSetsPath' => '@webroot/dist/icons/',
-		'iconSetsUrl' => '@web/dist/icons/',
+		'iconSetsPath' => '@webroot/dist/svg/',
+		'iconSetsUrl' => '@web/dist/svg/',
 		'maxIconsShown' => 100,
 		'redactorFieldHandle' => '',
 		'enableCache' => false,

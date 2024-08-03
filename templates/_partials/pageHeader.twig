@@ -1,0 +1,173 @@
+{#
+/**
+ * Tilt Boilermaker - Page Headern Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Non-modal button code macro #}
+{% macro linkCode (button, btnClasses) %}
+    <a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ button.url }}" {{- button.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
+        <span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+    </a>
+{% endmacro linkCode %}
+
+{# set aspect ratio of small photo img block itself NOT the photo transform. This is set to make it easy to set/change the ratio on a per project basis. The small size image has the header content stacked below it. The large size becomes a background behind the header content #}
+{% set smallPhotoAspect = 'aspect-3/2' %}
+
+<div id="{{entry.slug}}-page-header" class="page-header @container {{entry.pageHeaderColorScheme.class}} " x-data="sectionStandard(true, true)"	
+x-ref="animparent">
+	<div class="page-header-photo-wrapper  {{entry.opacity}}">
+        {% set mainPhoto = entry.headerImg.eagerly().one() %}
+        {% set smPhoto = entry.headerImgSm.eagerly().one() %}
+        {% if smPhoto == null %}			
+            {% set smPhoto = mainPhoto %}
+        {% endif %}
+        {% if entry.aspectRatioSm  != '' and entry.aspectRatioSm != 'auto' %} 
+            {%- set smXForm = 'image-' ~ entry.aspectRatioSm	%}
+        {% else %}
+            {%- set smXForm = 'contentImage' %}
+        {% endif %}
+        {% if entry.aspectRatio  != '' and entry.aspectRatio != 'auto' %} 
+            {%- set xForm = 'image-' ~ entry.aspectRatio	%}
+        {% else %}
+            {%- set xForm = 'contentImage' %}
+        {% endif %}
+        {% if craft.imager.serverSupportsWebp() %}
+            {%- set smXForm = smXForm ~ '-webp' %}
+            {%- set xForm = xForm ~ '-webp' %}
+        {% endif %}
+        {%- set smImages = craft.imagerx.transformImage(smPhoto,smXForm) %}
+        {%- set smStartImage = smImages[0] %}
+        {%- set lgImages = craft.imagerx.transformImage(mainPhoto, xForm) %}
+        {%- set lgStartImage = lgImages[0] %}
+        
+        <img src="{{ craft.imager.placeholder({width: smStartImage.width, height: smStartImage.height}) }}"
+          width="{{smStartImage.width}}"
+          height="{{smStartImage.height}}"
+          sizes="auto"
+          src="{{ smStartImage }}"
+          srcset="{{ craft.imager.srcset(smImages) }}"
+          alt="header background image"
+          class="block @md:hidden w-full smallPhotoAspect object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
+          loading="lazy"
+        >
+                
+        <img src="{{ craft.imager.placeholder({width: lgStartImage.width, height: lgStartImage.height}) }}"
+          width="{{lgStartImage.width}}"
+          height="{{lgStartImage.height}}"
+          sizes="auto"
+          src="{{ lgStartImage }}"
+          srcset="{{ craft.imager.srcset(lgImages) }}"
+          alt="header background image"
+          class="hidden @md:block absolute w-full h-full inset-0 object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
+          loading="lazy"
+        >
+    </div>
+    <div class="page-header-layout">
+		<h1 class="page-header-headline animate">
+            {% if entry.subheadText|length and entry.subheadPosition == 1 %}
+                <div class="page-header-subhead">{{ gMacros.stripTags(entry.subheadText) }}</div>
+            {% endif %}
+            
+            <span class="page-header-headline-text">{{ entry.headerText|length ? entry.headerText : entry.title }}</span>
+            
+            {% if entry.subheadText|length and entry.subheadPosition == 0 %}
+                <div class="page-header-subhead">{{ gMacros.stripTags(entry.subheadText) }}</div>
+            {% endif %}
+        </h1>
+        {% if entry.introText|length %}
+        <p class="page-header-intro animate">{{ entry.introText }}</p>
+        {% endif %} 
+        {% if entry.buttons|length %}
+            {# Set color class #}
+            {% if entry.btnColor.value|length %}
+                {% set btnColorClass = 'btn-' ~ entry.btnColor %}
+            {% else %}
+                {% set btnColorClass = entry.pageHeaderColorScheme.class %}
+            {% endif %}            
+            
+            {% set linkOverride = 0 %}            
+            
+            {# create object with btn set preset styles to grab from as needed if buttons do not have custom styles different from the set #}
+            {% set btnSetStyles = {
+                'size': entry.btnSize,
+                'style': entry.btnStyles,
+                'fullWidthSmall': entry.fullWidthSmall,
+                'color': btnColorClass,
+            }
+            %}
+            <div class="button-group animate">
+                {% set buttons = entry.buttons %}
+                {% for button in buttons %}
+                    {# get styles for button or if not set, use styles from the set #}
+                    {% set btnClasses = ['btn'] %}
+                    {% if button.btnStyles|length %}
+                        {% set btnClasses = btnClasses|merge([button.btnStyles]) %}
+                    {% else %}
+                        {% set btnClasses = btnClasses|merge([btnSetStyles.style]) %}
+                    {% endif %}
+                    {% if button.btnSize|length %}
+                        {% set btnClasses = btnClasses|merge([button.btnSize]) %}
+                    {% else %}
+                        {% set btnClasses = btnClasses|merge([btnSetStyles.size]) %}
+                    {% endif %}
+                    {% if button.btnColor|length %}
+                        {% set btnClasses = btnClasses|merge([button.btnColor]) %}
+                    {% else %}
+                        {% set btnClasses = btnClasses|merge([btnSetStyles.color]) %}
+                    {% endif %}
+                    {% if btnSetStyles.fullWidthSmall %}
+                        {% set btnClasses = btnClasses|merge(['w-full mt-half @md:w-auto @md:mt-none']) %}
+                    {% endif %}
+                    
+                    {% if linkOverride %}
+                        {# if linkOverride is true, then button is inside a whole slide link in a slider, so the button just needs to look like a button, but not actually do anything because the slide will handle the click event #}
+                        <button {% if button.customId|length %}id="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}>
+                            <span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+                        </button>
+                    {% else %}
+                        {# if button is a modal button do one thing, if not do the other #}		
+                        {% if button.getLinkType().label == 'Modal' %}
+                            {# modal #}
+                            {% set modalUrl = '/resources/entrymodal?entryid=' ~ button.linkValue %}
+                            {% set modalEntry = craft.entries().id(button.linkValue).one() %}
+                            {% if not craft.app.request.isAjax() %}
+                                <button {% if button.customId|length %}id="{{button.customId}}" x-ref="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}" x-ref="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}
+                                x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{% if button.customId|length %}{{button.customId}}{% else %}{{blockId}}-button{{loop.index}}{% endif %}';
+                                fetch('{{ modalUrl }}', {
+                                    method: 'GET',
+                                    headers: {
+                                        'X-Requested-With': 'XMLHttpRequest',
+                                    },
+                                })
+                                .then(response => response.text())
+                                .then(text => {
+                                    modalHtml = text
+                                    showLoading = false;			   
+                                });"			 
+                                >
+                                    <span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+                                </button>
+                            {% elseif modalEntry.section.handle == "pages" %}
+                                {{- _self.linkCode(button, btnClasses) -}}
+                            {% endif %}			
+                        {% else %}
+                            {# everything else #}
+                            {{- _self.linkCode(button, btnClasses) -}}
+                        {% endif %}
+                    {% endif %}			
+                {% endfor %}
+            </div>
+
+        {% endif %}   
+	</div>	
+</div>

@@ -1,0 +1,130 @@
+columnSuffix: null
+handle: spacing
+instructions: null
+name: Spacing
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Scaling Sizes'
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Extra
+        -
+          - value
+          - extra
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Fixed Sizes'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Quarter (3.75px)'
+        -
+          - value
+          - quarter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Half (7.5px)'
+        -
+          - value
+          - half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Base (15px)'
+        -
+          - value
+          - base
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 2x
+        -
+          - value
+          - 2x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 3x
+        -
+          - value
+          - 3x
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 4x
+        -
+          - value
+          - 4x
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

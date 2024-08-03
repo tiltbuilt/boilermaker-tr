@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: tabs
+instructions: null
+name: Tabs
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - d85e2e7b-6380-4c46-8ebd-36ad0a2eee46 # Tab Panel
+  includeTableView: false
+  maxEntries: 5
+  minEntries: 1
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

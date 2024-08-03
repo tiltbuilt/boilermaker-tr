@@ -1,0 +1,80 @@
+color: amber
+fieldLayouts:
+  633cde7d-9883-40ee-a53d-05ab77a40b5b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5865295a-02ca-4801-983c-f95e007ec7e8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1b9da05f-7d45-48c0-b990-b683dd7ae194
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 524fa6fd-cc9f-4e7a-8791-a28ce1bb3c97 # Single URL
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0e511951-6bda-454d-a1b1-dcb8326948d3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b03413f8-ea23-4ae0-9bae-c37e293f23dc
+        userCondition: null
+handle: socialLink
+hasTitleField: true
+icon: globe
+name: 'Social Link'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

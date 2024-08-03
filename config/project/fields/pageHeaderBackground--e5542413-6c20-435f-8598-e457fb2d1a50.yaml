@@ -1,0 +1,18 @@
+columnSuffix: null
+handle: pageHeaderBackground
+instructions: null
+name: 'Page Header Background'
+searchable: false
+settings:
+  createButtonLabel: null
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,65 @@
+columnSuffix: null
+handle: verticalAlignment
+instructions: null
+name: 'Vertical Alignment'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Match Heights'
+        -
+          - value
+          - items-stretch
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Top
+        -
+          - value
+          - items-start
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Middle
+        -
+          - value
+          - items-center
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bottom
+        -
+          - value
+          - items-end
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

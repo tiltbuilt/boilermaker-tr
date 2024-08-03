@@ -1,0 +1,209 @@
+color: cyan
+fieldLayouts:
+  262b0049-b5f8-4ffd-8dcc-4347b71a3e63:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d289c527-3796-4c67-8e6e-0901f48e6c75
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3fa40ffc-bcf8-4f2f-9462-19c808265175 # Multiline Text With Search
+            handle: quoteText
+            includeInCards: false
+            instructions: null
+            label: 'Quote Text'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b43a0aa2-8efc-4ced-a5cb-df0a63461fab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: quoteCredit
+            includeInCards: false
+            instructions: null
+            label: 'Quote Credit'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 63c65c89-4d71-4c46-a919-848ceaa003bb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: quoteCreditTitle
+            includeInCards: false
+            instructions: null
+            label: 'Quote Credit Title'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a1bbb51-1624-4c62-8ef0-c29d1594afdd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 82a9237b-4304-4f34-8718-d8e92243f686
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 0b27b140-d7a8-429f-9640-ede5b3a1dd5b
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: quoteColor
+            includeInCards: false
+            instructions: null
+            label: 'Quote Text Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 497b3737-5e4d-4b66-b998-3e6a46e619f1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: creditColor
+            includeInCards: false
+            instructions: null
+            label: 'Quote Credit Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2edb9745-5d7e-48b6-a6be-7990b9b2217f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustment
+            type: craft\fieldlayoutelements\Heading
+            uid: ee8bcba8-4214-458b-a534-6f00715d5cf2
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: cc44dfc3-f9d6-4fcc-9940-621e8a3981f0 # Quote Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aaae68d1-4e48-47c4-b7a7-860f69a04487
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: ec51c722-f780-477a-a65a-dcfcb50c16a3
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e5d14ba1-05de-4d86-b984-61e260ca4c73
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3345bae5-aaa1-458b-acfa-b6b719df499d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 20b2bc22-c831-4239-a60e-0ecfd559d2c9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: ae8a600c-89ec-4dbc-a08f-7a8eeccfac99
+        userCondition: null
+handle: quote
+hasTitleField: true
+icon: quote-right
+name: Quote
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

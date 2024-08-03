@@ -1,0 +1,188 @@
+color: pink
+fieldLayouts:
+  dea97ba6-7fc9-41dc-a8e1-edd5579df7c6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f6e0949a-94cc-40b4-a8c5-2b49ea67591a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 942e7d04-e832-4164-91ad-63b9a937b10e
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Device Size'
+        uid: 7039b369-184f-4aa9-a67f-a15ad65f773a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pt
+            includeInCards: false
+            instructions: null
+            label: 'Top Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d6f6db2-8fc7-4692-ab34-d2d3ed0e4f66
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pb
+            includeInCards: false
+            instructions: null
+            label: 'Bottom Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7407ed6c-06ed-425c-9d47-54b3d933c8d1
+            userCondition: null
+            warning: null
+            width: 50
+        name: Padding
+        uid: f0d2f66b-5769-4e21-8d17-0c71604df985
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mt
+            includeInCards: false
+            instructions: null
+            label: 'Top Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3c8b7d83-cf8d-4a58-8fda-e3047e6b77c8
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mb
+            includeInCards: false
+            instructions: null
+            label: 'Bottom Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 88347619-5ab5-477e-8aca-159fdbf4bd20
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 9cc69c32-6fb9-465d-b7ce-b805d00f5449 # Row Margins
+            handle: ml
+            includeInCards: false
+            instructions: null
+            label: 'Left Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a64598fa-d8bf-4d72-8166-4a68f7952bbd
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 9cc69c32-6fb9-465d-b7ce-b805d00f5449 # Row Margins
+            handle: mr
+            includeInCards: false
+            instructions: null
+            label: 'Right Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d16196de-cdf2-4526-84ea-4d68b30dfa45
+            userCondition: null
+            warning: null
+            width: 50
+        name: Margins
+        uid: c126a8b8-be7d-454b-ba10-24cada9ad0e9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9072963e-75ab-4000-a021-07222f081ad0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Display
+        uid: 517b6548-de19-47ba-a8ed-891f60f958ff
+        userCondition: null
+handle: styleAdjustmentRow
+hasTitleField: false
+icon: palette
+name: 'Style Adjustment - Row'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-styles-{ object.deviceSize }'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

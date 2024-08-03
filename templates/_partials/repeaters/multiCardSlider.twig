@@ -1,0 +1,173 @@
+{#
+/**
+ * Tilt Boilermaker -Multi Card Slider Repeater Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{% set cardClasses = ['repeater-card', 'w-full'] %}
+
+{% if cardRowSizes != null and cardRowSizes|length %}
+	{% for rowSize in cardRowSizes %}
+		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/list:w-1/' ~ rowSize.numberOfCards]) %}
+	{% endfor %}
+{% endif %}
+
+
+<div id="{{blockId}}" class="slider-set repeater-slider {{colorScheme}} {% if animate %}animate{% endif %}"
+{% if listContent|length > 1 %}
+x-data="{swiper: null}"
+x-init="swiper = new Swiper($refs.container, {
+	loop: true,
+	slidesPerView: 1,
+	breakpointsBase: 'container',
+	spaceBetween: 0,
+	centeredSlides: true,
+	noSwipingSelector: 'a',
+	breakpoints: {
+	{% for size in cardSliderSizes %}
+		{{size.layoutSize}}: {
+			slidesPerView: {{size.numberOfCards}},
+			{% if size.numberOfCards is even %}
+				centeredSlides: false,
+			{% else %}
+				centeredSlides: true,
+			{% endif %}
+		},
+	{% endfor %}
+	},
+	{% if sliderAutoPlay %}
+		autoplay: {
+			delay: {{sliderTiming}},
+			disableOnInteraction: false,
+			speed: 600,
+		},
+	{% endif %}
+	{% if sliderEffect == 'fade' %}
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+	{% endif %}
+	{% if (sliderButtons) and (listContent|length > 1)  %}
+		navigation: {
+			nextEl: '#{{blockId}}-next',
+			prevEl: '#{{blockId}}-prev',
+		},
+	{% endif %}
+	{% if (sliderDots) and (listContent|length > 1)  %}
+		pagination: {
+			el: '#{{blockId}}-pagination',
+			clickable: true,
+		}
+	{% endif %}  
+	});"
+{% endif %}
+>
+	<div class="relative">
+	<div class="swiper-container" {% if listContent|length > 1 %}x-ref="container"{% endif %} id="{{ blockId  ~ '-swiper'}}">
+		<div class="swiper-wrapper">
+			{% for listItem in listContent %}
+				<div id="{{blockId}}-slide{{loop.index}}" class="repeater-card w-full swiper-slide">					
+					{% if listItem.url != null and listItem.url|length %}
+					   {% set outerTag = 'a' %}
+					{% else %}
+						{% set outerTag = 'div' %}
+					{% endif %}
+					<{{outerTag}} {% if listItem.url|length %}href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} {% endif %} class="repeater-card-inner">			
+						<div class="repeater-card-sm-img w-full">					
+							{% set image = listItem.image[0] %}
+							{% set mobileXForm = 'image-' ~ gSettings.thumbAspectSm %}
+							{% set xForm = 'image-' ~ gSettings.thumbAspectLg %}
+							{% if craft.imager.serverSupportsWebp() %}
+								{%- set mobileXForm = mobileXForm ~ '-webp' %}
+								{%- set xForm = xForm ~ '-webp' %}
+							{% endif %}
+							{%- set mobileImages = craft.imagerx.transformImage(image, mobileXForm) %}
+							{%- set mobileStartImage = mobileImages[0] %}
+							{%- set largerImages = craft.imagerx.transformImage(image, xForm) %}
+							{%- set largerStartImage = largerImages[0] %}
+													
+							<img src="{{ craft.imager.placeholder({width: mobileStartImage.width, height: mobileStartImage.height}) }}"
+							  width="{{mobileStartImage.width}}"
+							  height="{{mobileStartImage.height}}"
+							  data-sizes="auto"
+							  data-src="{{ mobileStartImage }}"
+							  data-srcset="{{ craft.imager.srcset(mobileImages) }}"
+							  alt="{{ entry.title }}"
+							  class="lazyload block object-cover w-full @md/list:hidden"
+							  loading="lazy"
+							>
+									
+							<img src="{{ craft.imager.placeholder({width: largerStartImage.width, height: largerStartImage.height}) }}"
+							  width="100%"
+							  height="100%"
+							  data-sizes="auto"
+							  data-src="{{ largerStartImage }}"
+							  data-srcset="{{ craft.imager.srcset(largerImages) }}"
+							  alt="{{ entry.title }}"
+							  class="lazyload hidden w-full h-full object-cover @md/list:block"
+							  loading="lazy"
+							>
+						</div>
+						
+						<div class="repeater-card-content w-full">
+							<{{ headingLvl}} class="repeater-list-card-header">					
+								{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><sup><sub><br>') }}					  
+							</{{ headingLvl }}>
+							{% if showDate and listItem.date|length %}	  		
+								<div class="repeater-date">{{ listItem.date }}</div>	 
+							{% endif %}
+							{% if showExcerpt and listItem.excerpt|length %}	  		
+								<div>{{ listItem.excerpt }}</div>	  				 
+							{% endif %}	
+						</div>				
+					</{{outerTag}}>	
+									
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+	{% if (sliderButtons) and (listContent|length > 1)  %}
+		<button class="swiper-button-prev" @click="swiper.slidePrev()" id="{{blockId}}-prev">
+			{% if gSettings.sliderPreviousIcon|length %}
+				{% if gSettings.sliderPreviousIcon.type == 'svg' %}
+					{{ gSettings.sliderPreviousIcon.inline }}
+				{% elseif gSettings.sliderPreviousIcon.type == 'css' %}
+					<i class="{{ gSettings.sliderPreviousIcon }}"></i>								
+				{% else %}
+					<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.value }}"></use></svg>
+				{% endif %}
+			{% else %}
+				<svg><use xlink:href="#icon-angle-left"></use></svg>
+			{% endif %}
+		</button>
+		
+		<button class="swiper-button-next" @click="swiper.slideNext()" id="{{blockId}}-next">
+			{% if gSettings.sliderNextIcon|length %}
+				{% if gSettings.sliderNextIcon.type == 'svg' %}
+					{{ gSettings.sliderNextIcon.inline }}
+				{% elseif gSettings.sliderNextIcon.type == 'css' %}
+					<i class="{{ gSettings.sliderNextIcon }}"></i>								
+				{% else %}
+					<svg><use xlink:href="#{{ gSettings.sliderNextIcon.value }}"></use></svg>
+				{% endif %}
+			{% else %}
+				<svg><use xlink:href="#icon-angle-right"></use></svg>
+			{% endif %}
+		</button>
+	{% endif %}
+	</div>
+	{% if (sliderDots) and (listContent|length > 1)  %}
+		<div class="swiper-pagination" id="{{blockId}}-pagination"></div>
+	{% endif %}
+</div>

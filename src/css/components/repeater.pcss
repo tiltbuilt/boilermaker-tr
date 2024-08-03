@@ -1,0 +1,94 @@
+/**
+*
+* Repeater component specific styles
+*
+*/
+ 
+.repeater {
+	/* These classes must stay in order to ensure functionality */
+	position: relative;
+	/* The default classes and style below can be changed on a per-project basis */
+	margin-top: theme('spacing.normal');
+	
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.repeater-date {
+	font-style: italic;
+	font-size: theme('fontSize.scaling-sm');
+}
+
+.full-listing-btn-wrapper {
+	display: flex;
+	margin-top: theme('spacing.normal');
+}
+
+/* TEXT LIST */
+
+.repeater-list-text {
+	list-style: none;
+}
+ 
+li.repeater-list-text-item {
+	
+}
+
+.multi-column-list {
+	p, li {
+		break-inside: avoid-column;
+	}
+}
+
+.repeater-list-text-item-header {	
+	font-weight: bold;
+	font-size: theme('fontSize.lg');
+}
+
+/* CARD LISTS */
+
+.repeater-list-card-wrapper {
+	display: flex;
+	flex-wrap: wrap;	
+	margin-left: theme('spacing.neg-base');
+	margin-right: theme('spacing.neg-base');
+	justify-content: start;
+	align-items: stretch;
+}
+
+.repeater-card {
+	/* this class sets up the spacing. Sizing is handled in the template itself by adding classes to control the number of items per row */
+	padding: theme('spacing.base');		
+}
+
+.repeater-card-inner {
+	/* this class makes the cards look like cards. Add padding here to create a frame around card content if you don't want images to go to the edge of the card */
+	width: 100%;
+	height: 100%;
+	display: block;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+	position: relative;		
+}
+
+a.repeater-card-inner {
+	transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);	
+		
+	&:hover {
+		transform: scale(1.05);			
+	}
+}
+
+.repeater-card-content {
+	/* this class wraps the text content of the card. Add padding to create space around the text, or if padding on the card-inner class to make a frame, set the padding to 0 to make the text flush with images */
+	padding: theme('spacing.normal'); 	
+}
+
+.repeater-list-card-header {
+	font-weight: bold;
+	font-size: theme('fontSize.lg');
+	transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* LARGE SLIDER */
+

@@ -1,0 +1,81 @@
+columnSuffix: null
+handle: columnBackgroundColor
+instructions: null
+name: 'Column Background Color'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (Transparent)'
+        -
+          - value
+          - transparent
+        -
+          - cssColour
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Use Color Scheme Background Color'
+        -
+          - value
+          - ''
+        -
+          - cssColour
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - white
+        -
+          - cssColour
+          - FFF
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Black
+        -
+          - value
+          - black
+        -
+          - cssColour
+          - '000'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Red
+        -
+          - value
+          - red-500
+        -
+          - cssColour
+          - FF0000
+        -
+          - default
+          - ''
+  placeholderText: 'Select an option'
+translationKeyFormat: null
+translationMethod: none
+type: verbb\buttonbox\fields\Colours

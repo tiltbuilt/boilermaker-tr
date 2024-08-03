@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: formToDisplay
+instructions: null
+name: 'Form to Display'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: 'Select Form'
+  showCardsInGrid: false
+  showSiteMenu: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: verbb\formie\fields\Forms

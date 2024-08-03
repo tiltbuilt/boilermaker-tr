@@ -16,15 +16,15 @@
  * well, so you can have different settings groups for each environment, just as
  * you do for 'general.php'
  */
-
-use craft\helpers\App;
  
-$isDev = App::env('CRAFT_ENVIRONMENT') === 'dev';
-$notDev = App::env('CRAFT_ENVIRONMENT') !== 'dev';
-$isStage = App::env('CRAFT_ENVIRONMENT') === 'staging';
-$isProd = App::env('CRAFT_ENVIRONMENT') === 'production';
-$isNotProd = App::env('CRAFT_ENVIRONMENT') !== 'production';
-$whichGen = (App::env('CRAFT_ENVIRONMENT') === 'dev') ? 'putyourlightson\blitz\drivers\generators\LocalGenerator' : 'putyourlightson\blitz\drivers\generators\HttpGenerator';
+use craft\helpers\App;
+  
+ $isDev = App::env('CRAFT_ENVIRONMENT') === 'dev';
+ $notDev = App::env('CRAFT_ENVIRONMENT') !== 'dev';
+ $isStage = App::env('CRAFT_ENVIRONMENT') === 'staging';
+ $isProd = App::env('CRAFT_ENVIRONMENT') === 'production';
+ $isNotProd = App::env('CRAFT_ENVIRONMENT') !== 'production';
+ $whichGen = (App::env('CRAFT_ENVIRONMENT') === 'dev') ? 'putyourlightson\blitz\drivers\generators\LocalGenerator' : 'putyourlightson\blitz\drivers\generators\HttpGenerator'; 
 
 return [
 	'*' => [
@@ -37,12 +37,15 @@ return [
 		// With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
 		'cachingEnabled' => $isProd,
 
+		//With this setting enabled, Blitz will refresh cached pages whenever content changes or an integration triggers it. Disable this setting to prevent Blitz from refreshing cached pages.
+		//'refreshCacheEnabled' => true,
+
 		// Determines when and how the cache should be refreshed.
-		// - `0`: Expire the cache, regenerate manually
-		// - `1`: Clear the cache, regenerate manually or organically
-		// - `2`: Expire the cache and regenerate in a queue job
-		// - `3`: Clear the cache and regenerate in a queue job
-		//'refreshMode' => 3,
+		// `\putyourlightson\blitz\models\SettingsModel::REFRESH_MODE_CLEAR_AND_GENERATE`: Clear the cache and regenerate in a queue job
+		// `\putyourlightson\blitz\models\SettingsModel::REFRESH_MODE_EXPIRE_AND_GENERATE`: Expire the cache and regenerate in a queue job
+		// `\putyourlightson\blitz\models\SettingsModel::REFRESH_MODE_CLEAR`: Clear the cache, regenerate manually or organically
+		// `\putyourlightson\blitz\models\SettingsModel::REFRESH_MODE_EXPIRE`: Expire the cache, regenerate manually or organically*
+		//'refreshMode' => \putyourlightson\blitz\models\SettingsModel::REFRESH_MODE_CLEAR_AND_GENERATE,
 
 		// The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
 		//'includedUriPatterns' => [
@@ -70,7 +73,7 @@ return [
 		// The storage settings.
 		//'cacheStorageSettings' => [
 		//    'folderPath' => '@webroot/cache/blitz',
-		//    'createGzipFiles' => false,
+		//    'compressCachedValues' => false,
 		//    'countCachedFiles' => true,
 		//],
 
@@ -122,7 +125,7 @@ return [
 		//    'gitRepositories' => [
 		//        'f64d4923-f64d4923-f64d4923' => [
 		//            'repositoryPath' => '@root/path/to/repo',
-		//            'branch' => 'master',
+		//            'branch' => 'main',
 		//            'remote' => 'origin',
 		//        ],
 		//    ],
@@ -143,6 +146,13 @@ return [
 		// With this setting enabled, Blitz will statically include templates using Server-Side Includes (SSI), which must be enabled on the web server.
 		//'ssiEnabled' => false,
 
+		// The format to use for SSI tags, in which `{uri}` will be replaced. You can change this when using Caddy’s `httpInclude` template function, for example.
+		// https://caddyserver.com/docs/modules/http.handlers.templates#httpinclude
+		//'ssiTagFormat' => '<!--#include virtual="{uri}" -->',
+
+		// Whether SSI detection via the control panel should be enabled.
+		//'detectSsiEnabled' => true,
+
 		// With this setting enabled, Blitz will statically include templates using Edge-Side Includes (ESI), which must be enabled on the web server or CDN.
 		//'esiEnabled' => false,
 
@@ -152,7 +162,7 @@ return [
 		// - `2`: Cache URLs with query strings as the same page
 		//'queryStringCaching' => 0,
 
-		// The query string parameters to include when determining if and how a page should be cached (regular expressions may be used).
+		// The query string parameters to include (retain) when caching a URL (regular expressions may be used).
 		//'includedQueryStringParams' => [
 		//    [
 		//        'siteId' => '',
@@ -160,7 +170,7 @@ return [
 		//    ],
 		//],
 
-		// The query string parameters to exclude when determining if and how a page should be cached (regular expressions may be used).
+		// The query string parameters to exclude (disregard) when caching a URL (regular expressions may be used).
 		//'excludedQueryStringParams' => [
 		//    [
 		//        'siteId' => '',
@@ -202,6 +212,12 @@ return [
 		// Whether element queries should be tracked in the database.
 		//'trackElementQueries' => true,
 
+		// The element query params to exclude when storing tracked element queries.
+		//'excludedTrackedElementQueryParams' => [
+		//    'limit',
+		//    'offset',
+		//],
+
 		// The amount of time after which the cache should expire (if not 0). See [[ConfigHelper::durationInSeconds()]] for a list of supported value types.
 		//'cacheDuration' => 0,
 
@@ -222,10 +238,16 @@ return [
 		//    'putyourlightson\blitz\drivers\integrations\SeomaticIntegration',
 		//],
 
+		// The value to send in the cache control header by default, if not null.
+		//'defaultCacheControlHeader' => 'no-cache, no-store, must-revalidate',
+
 		// The value to send in the cache control header.
 		//'cacheControlHeader' => 'public, s-maxage=31536000, max-age=0',
 
-		// Whether an `X-Powered-By: Blitz` header should be sent.
+		// The value to send in the cache control header when a page is expired.
+		//'cacheControlHeaderExpired' => 'public, s-maxage=5, max-age=0',
+
+		// Whether an `X-Powered-By: Blitz` header should be added to the response.
 		//'sendPoweredByHeader' => true,
 
 		// Whether the "cached on" and "served by" timestamp comments should be appended to the cached output.
@@ -235,10 +257,13 @@ return [
 		// - `3`: Append "served by" comment only
 		//'outputComments' => true,
 
-		// The priority to give the refresh cache job (the lower the number, the higher the priority). Set to `null` to inherit the default priority.
+		// The priority to give the refresh cache job (the lower the number, the higher the priority). If set to `null`, the default job priority will be used.
 		//'refreshCacheJobPriority' => 10,
 
-		// The priority to give driver jobs (the lower the number, the higher the priority). Set to `null` to inherit the default priority.
+		//The batch size to use for driver jobs that support batching.
+		//'driverJobBatchSize' => 100,
+
+		// The priority to give driver jobs (the lower the number, the higher the priority). If set to `null`, the default job priority will be used.
 		//'driverJobPriority' => 100,
 
 		// The time to reserve for queue jobs in seconds.
@@ -246,6 +271,12 @@ return [
 
 		// The maximum number of times to attempt retrying a failed queue job.
 		//'maxRetryAttempts' => 10,
+
+		// The maximum length of URIs that may be cached. Increasing this value requires manually updating the limit in the `uri` column of the `blitz_caches` database table. Note that the prefix length limit is 3072 bytes for InnoDB tables that use the DYNAMIC or COMPRESSED row format. Assuming a `utf8mb4` character set and a maximum of 4 bytes for each character, this is 768 characters.
+		// https://dev.mysql.com/doc/refman/8.0/en/column-indexes.html#column-indexes-prefix
+		// Warning: if using the File Storage driver, this value should not exceed 255 unless using a file system that supports longer file names.
+		// https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits
+		//'maxUriLength' => 255,
 
 		// The time in seconds to wait for mutex locks to be released.
 		//'mutexTimeout' => 1,
@@ -257,5 +288,8 @@ return [
 
 		// The name of the JavaScript event that will trigger a script inject.
 		//'injectScriptEvent' => 'DOMContentLoaded',
+
+		// The position in the HTML of the injected script.
+		//'injectScriptPosition' => yii\web\View::POS_END,
 	],
 ];

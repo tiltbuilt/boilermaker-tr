@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: pageBuilder
+instructions: null
+name: 'Page Builder'
+searchable: true
+settings:
+  createButtonLabel: 'New Page Section'
+  entryTypes:
+    - 15890ba2-38e4-4bce-9ccc-45ed62101d3e # Section
+    - 938f3198-1925-4908-b0e0-8dfd786c00f1 # Side by Side Photo Section
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

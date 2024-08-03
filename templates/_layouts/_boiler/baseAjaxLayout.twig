@@ -1,0 +1,30 @@
+{#
+/**
+ * Tilt Boilermaker - Base Ajax Template - Used for loading modals
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# -- Base layout template that all AJAX requests inherit from -- #}
+{% extends "_layouts/_boiler/globalVariables.twig" %}
+
+
+{% block htmlPage %}
+{% minify %}
+	<div id='modal-description' class='sr-only'>{{entry.excerpt}}</div>	
+	<div id="modal-content-inner-wrapper">
+	{# -- Primary content block -- #}
+	{% block pageContent %}
+		<code>No content block defined.</code>
+	{% endblock pageContent %}
+	</div>    
+{% endminify %}
+{% endblock htmlPage %}

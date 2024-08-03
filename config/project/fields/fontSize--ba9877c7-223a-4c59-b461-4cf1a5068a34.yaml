@@ -1,0 +1,295 @@
+columnSuffix: null
+handle: fontSize
+instructions: null
+name: 'Font Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Responsive Scaling Sizes'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling X-Small'
+        -
+          - value
+          - text-scaling-xs
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling Small'
+        -
+          - value
+          - text-scaling-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling Base'
+        -
+          - value
+          - text-scaling-base
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling Large'
+        -
+          - value
+          - text-scaling-lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling X-Large'
+        -
+          - value
+          - text-scaling-xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 2XL'
+        -
+          - value
+          - text-scaling-2xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 3XL'
+        -
+          - value
+          - text-scaling-3xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 4XL'
+        -
+          - value
+          - text-scaling-4xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 5XL'
+        -
+          - value
+          - text-scaling-5xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 6XL'
+        -
+          - value
+          - text-scaling-6xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 7XL'
+        -
+          - value
+          - text-scaling-7xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 8XL'
+        -
+          - value
+          - text-scaling-8xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Fixed Sizes'
+    -
+      __assoc__:
+        -
+          - label
+          - 'X-Small (12px)'
+        -
+          - value
+          - text-xs
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Small (14px)'
+        -
+          - value
+          - text-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Base (16px)'
+        -
+          - value
+          - text-base
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Large (18px)'
+        -
+          - value
+          - text-lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'X-Large (20px)'
+        -
+          - value
+          - text-xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2XL (24px)'
+        -
+          - value
+          - text-2xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3XL (30px)'
+        -
+          - value
+          - text-3xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4XL (36px)'
+        -
+          - value
+          - text-4xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '5XL (48px)'
+        -
+          - value
+          - text-5xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '6XL (60px)'
+        -
+          - value
+          - text-6xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '7XL (72px)'
+        -
+          - value
+          - text-7xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '8XL (96px)'
+        -
+          - value
+          - text-8xl
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

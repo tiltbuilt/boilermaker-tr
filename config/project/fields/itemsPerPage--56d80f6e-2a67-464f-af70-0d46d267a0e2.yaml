@@ -1,0 +1,18 @@
+columnSuffix: null
+handle: itemsPerPage
+instructions: 'Use this field to determine how many items are displayed in the listing. If you leave it set at 0, then all of the items will be displayed in the list with no pagination. If you change it to a non-zero number, that many items will display per page. If using pagination, consider how many items there are per row (in card lists) and make this number a multiple of that.'
+name: 'Items Per Page'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 0
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

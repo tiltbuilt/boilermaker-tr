@@ -1,0 +1,32 @@
+columnSuffix: null
+handle: slideEffect
+instructions: null
+name: 'Slide Effect'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Slide
+        -
+          - value
+          - none
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Fade
+        -
+          - value
+          - fade
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

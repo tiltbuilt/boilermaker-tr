@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: fontWeight
+instructions: null
+name: 'Font Weight'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Normal
+        -
+          - value
+          - font-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bold
+        -
+          - value
+          - font-bold
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,76 @@
+columnSuffix: null
+handle: deviceSize
+instructions: null
+name: 'Device Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (Phone Vertical and Above)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Phone Horizontal and Above'
+        -
+          - value
+          - sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Tablet and Above'
+        -
+          - value
+          - md
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Laptop and Above'
+        -
+          - value
+          - lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Desktop and Above'
+        -
+          - value
+          - xl
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hi-Res
+        -
+          - value
+          - 2xl
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

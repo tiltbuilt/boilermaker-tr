@@ -1,0 +1,68 @@
+{#
+/**
+ * Tilt Boilermaker - Standard Page Section Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set sectionClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'section-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% set colorScheme = entry.colorScheme.class %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set sectionClassList = sectionClassList|merge(colorClasses) %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.sectionStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}
+
+<section id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+{% if entry.animate %}
+	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
+	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
+{% endif %}
+>
+	<div class="container {{- entry.fullscreen ? 'container-fullscreen' -}}">
+		<div class="inner container-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">			
+			{% for chunk in entry.elementContent %}
+				{% if chunk.type == 'markup' %}
+					{% if entry.animate and entry.animateContent %}
+						{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)}}
+					{% else %}
+						{{chunk|raw}}
+					{% endif %}
+				{% else %}
+					{{ chunk.entry.render({
+						'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
+						'colorScheme': colorScheme
+					}) }}
+				{% endif %}
+			{% endfor %}							
+		</div>
+		<div class="background">
+			{{ gMacros.buildElementBackground(adjustments) }}
+		</div>
+	</div>	
+</section>

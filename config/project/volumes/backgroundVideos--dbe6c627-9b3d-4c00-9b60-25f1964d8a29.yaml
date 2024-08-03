@@ -1,0 +1,49 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  80eef89d-c5f7-45d1-accb-3b9cf9a03875:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 498a6cd9-0cb8-4f04-bd43-7e7212cd0543
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d86d9e90-5f05-45dd-90de-7c65d841ee4f
+        userCondition: null
+fs: backgroundVideos
+handle: backgroundVideos
+name: 'Background Videos'
+sortOrder: 4
+subpath: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

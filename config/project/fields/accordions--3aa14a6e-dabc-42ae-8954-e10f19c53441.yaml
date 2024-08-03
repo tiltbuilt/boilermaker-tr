@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: accordions
+instructions: null
+name: Accordions
+searchable: true
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 400ed272-3701-4004-b0e0-a74db3d25030 # Accordion
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

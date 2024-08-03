@@ -1,0 +1,80 @@
+color: yellow
+fieldLayouts:
+  7e5feb3c-e3b1-4d57-9fde-a887e3b8e079:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 4a2c58b5-7d58-498a-92d5-a2b9a211ef45
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: excerpt
+            includeInCards: false
+            instructions: null
+            label: 'Modal Description'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e48cf14a-83d3-4198-97b4-429f2da42c92
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6283122d-7dc0-4b8d-8895-140bc4e66973 # Page Builder
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a0afbdb-f244-4fdf-83f3-56f5920020ec
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 722b5556-ee9e-4e0c-8a0d-a0950a45018f
+        userCondition: null
+handle: modal
+hasTitleField: true
+icon: clone
+name: Modal
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: iconVerticalAlignment
+instructions: 'This field adjusts the vertical position of the icon from the stye sheet standard in cases where the layout is set to horizontal. The default position is to vertically center it.'
+name: 'Icon Vertical Alignment'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Change (Use Default)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Top
+        -
+          - value
+          - start
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Middle
+        -
+          - value
+          - center
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bottom
+        -
+          - value
+          - end
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

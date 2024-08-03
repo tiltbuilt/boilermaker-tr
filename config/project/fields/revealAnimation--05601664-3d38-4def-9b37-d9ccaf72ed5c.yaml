@@ -1,0 +1,87 @@
+columnSuffix: null
+handle: revealAnimation
+instructions: null
+name: 'Reveal Animation'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Animation'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Up Fade In'
+        -
+          - value
+          - slideUpFadeIn
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Down Fade In'
+        -
+          - value
+          - slideDownFadeIn
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Left Fade In'
+        -
+          - value
+          - slideLeftFadeIn
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Slide Right Fade In'
+        -
+          - value
+          - slideRightFadeIn
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scale Up Fade In'
+        -
+          - value
+          - scaleUpFadeIn
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scale Down Fade In'
+        -
+          - value
+          - scaleDownFadeIn
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

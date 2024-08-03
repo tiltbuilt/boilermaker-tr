@@ -1,0 +1,30 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 6a43a3aa-97db-498c-b938-2d84a3519729 # Pages
+handle: pages
+maxAuthors: 1
+name: Pages
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - refresh
+        - '1'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  e6aadd12-c632-4735-b22d-b5a758ab5003: # Boilermaker 3
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: ff92f543-fe55-4d96-99e1-dbdef0dcdffa
+type: structure

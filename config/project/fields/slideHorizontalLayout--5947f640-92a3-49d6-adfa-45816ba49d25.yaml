@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: slideHorizontalLayout
+instructions: null
+name: 'Slide Horizontal Layout'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Left
+        -
+          - value
+          - justify-start
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Right
+        -
+          - value
+          - justify-end
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Center
+        -
+          - value
+          - justify-center
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

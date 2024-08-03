@@ -1,0 +1,164 @@
+columnSuffix: null
+handle: cardsPerRow
+instructions: null
+name: 'Cards Per Row'
+searchable: false
+settings:
+  addRowLabel: 'Set Row Size'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Layout Size'
+            -
+              - handle
+              - layoutSize
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Extra Small (Phone Vertical)'
+                    -
+                      - value
+                      - '@xs'
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Small (Phone Horizontal)'
+                    -
+                      - value
+                      - '@sm'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Medium (Tablet)'
+                    -
+                      - value
+                      - '@md'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Large (Laptop+)'
+                    -
+                      - value
+                      - '@lg'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - X-Large(Desktop+)
+                    -
+                      - value
+                      - '@xl'
+                    -
+                      - default
+                      - false
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Number of Cards'
+            -
+              - handle
+              - numberOfCards
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '1'
+                    -
+                      - value
+                      - '1'
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '2'
+                    -
+                      - value
+                      - '2'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '3'
+                    -
+                      - value
+                      - '3'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '4'
+                    -
+                      - value
+                      - '4'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '5'
+                    -
+                      - value
+                      - '5'
+                    -
+                      - default
+                      - false
+  defaults: null
+  maxRows: 6
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

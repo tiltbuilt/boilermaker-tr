@@ -1,0 +1,103 @@
+/**
+* components/tab-set.css
+*
+*Tab Set component specific styles
+*
+*/
+
+.tab-set {
+	/* These classes must stay in order to ensure functionality */
+	
+	/* The default classes and style below can be changed on a per-project basis */
+	margin-top: theme('spacing.normal');
+}
+
+.tab-list {
+	display: flex;
+	align-items: stretch;
+	
+	li {
+		margin-top: 0;
+		margin-left: 2px;
+		
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.tab-set-btn {
+	display: inline-flex;	
+	text-transform: uppercase;
+	font-weight: bold;		
+	padding-top: theme('spacing.3');
+	padding-bottom: theme('spacing.3');
+	padding-left: theme('spacing.base');
+	padding-right: theme('spacing.base');
+	transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+	
+	
+	/* styles for icons above the text in the button */
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;	
+	
+	
+	.tab-icon {
+		width: 5rem;
+		height: 5rem;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: theme('spacing.2');
+		
+		svg, i {			
+			display: block;
+			fill: currentColor;
+			width: 5rem;
+			height: 5rem;			
+		}
+		
+		i {
+			font-size: 5rem;
+		}
+	}
+	
+	
+	/* styles for icons inline with text */
+	/*
+	flex-direction: row;	
+	align-items: center;
+	justify-content: space-between;
+	text-align: left;
+	
+	.tab-icon {
+		width: 3rem;
+		height: 3rem;
+		margin-right: theme('spacing.3');		
+		
+		svg, i {			
+			display: block;
+			fill: currentColor;
+			width: 3rem;
+			height: 3rem;			
+		}
+		
+		i {
+			font-size: 3rem;
+		}
+	}
+	
+	*/
+			
+	span {
+		display: block;
+	}
+}
+
+.tab-panel {
+	padding-left: theme('spacing.base');
+	padding-right: theme('spacing.base');
+	padding-top: theme('spacing.base');
+	padding-bottom: theme('spacing.base');
+}

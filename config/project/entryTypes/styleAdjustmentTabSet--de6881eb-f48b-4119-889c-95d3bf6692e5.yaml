@@ -1,0 +1,328 @@
+color: pink
+fieldLayouts:
+  1ee94bf9-4472-4487-bf9f-1f365185e8fa:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a5c08d5b-c21c-4c5e-b638-f85453ffc811
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Layout Size
+            handle: deviceSize
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 33ef48c7-50c8-4c21-86f0-423f5314113e
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Device Size'
+        uid: d7b3942d-9800-4b8b-9a77-6a5f1de79dc2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'These control settings are applied to all of the accordions in the set at the device size(s) selected. You can override these settings on a per accordion basis in each accordion.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 506f467e-7527-4ed7-b84a-02027db3fba5
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35149613-3c40-4a5e-aae8-c23592b1113a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aaaf02b6-7314-44b9-94de-453f782f6471
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 61f97db1-ef32-431e-b0d0-261a917565c5
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 15aca61b-26aa-4086-8bf0-579fa709d798
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3248a11d-993f-4e56-9f7e-39258a2a7668
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: adde54c2-0be4-4721-8630-9ce0d972ffb7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Alignment and Columns'
+            type: craft\fieldlayoutelements\Heading
+            uid: 862de02c-be70-4165-8e9f-0847ee50a061
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2932d3a1-4297-495f-a52d-cf04c3244114
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 13531367-46d6-4c50-8ec6-9bb2a6ab5ab1 # Number of Columns
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b2383765-5ec4-4b13-99e1-fd63be1b3609
+            userCondition: null
+            warning: null
+            width: 100
+        name: Type
+        uid: 9a7a4472-6423-4162-b8d1-608a57847e20
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pt
+            includeInCards: false
+            instructions: null
+            label: 'Top Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c9bf8c00-6304-4c3e-8748-0b74f48287d6
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pb
+            includeInCards: false
+            instructions: null
+            label: 'Bottom Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fdc5d25d-e9b8-4afc-919b-bde3450d107e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pl
+            includeInCards: false
+            instructions: null
+            label: 'Left Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 16782a99-79fe-4794-90e3-a1e4c97790c3
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pr
+            includeInCards: false
+            instructions: null
+            label: 'Right Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a9135365-e7fd-49dc-a3b6-f601a9033ab9
+            userCondition: null
+            warning: null
+            width: 50
+        name: Padding
+        uid: 2db889bf-1afa-4307-98f4-7fe7b4d4fbb6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mt
+            includeInCards: false
+            instructions: null
+            label: 'Top Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94839055-fd17-41cf-acb6-8df66bcc8b1b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mb
+            includeInCards: false
+            instructions: null
+            label: 'Bottom Margin'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d10bdce7-55bf-41df-80fe-f1fd0a4e76d6
+            userCondition: null
+            warning: null
+            width: 50
+        name: Margins
+        uid: cc20bf4f-7421-41c1-8fb3-65bec6d2f02a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3dd65269-2ea2-4e41-b238-730312a547b7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Display
+        uid: fc014ae8-27fb-4d09-ae95-d2ce9f8f11a2
+        userCondition: null
+handle: styleAdjustmentTabSet
+hasTitleField: false
+icon: palette
+name: 'Style Adjustment - Tab Set'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-styles-{ object.deviceSize }'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

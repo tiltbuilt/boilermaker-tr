@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: openclosed
+instructions: null
+name: OpenClosed
+searchable: false
+settings:
+  default: false
+  offLabel: Closed
+  onLabel: Open
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

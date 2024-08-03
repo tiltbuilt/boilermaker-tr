@@ -1,0 +1,227 @@
+{#
+/**
+ * Tilt Boilermaker - Side by Side Photo Section Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Class output macros #}
+{% macro contentClasses(classSettings) %}
+	{% set contentClasses = [] %}
+	{% for key, value in classSettings %}		
+		{% set contentClasses = contentClasses|merge([key ~ ':w-' ~ value.columnWidth]) %}	
+		{% set contentClasses = contentClasses|merge([key ~ ':' ~ value.columnPosition]) %}
+		{% if value.columnPosition == 'order-first' %}
+			{% set contentClasses = contentClasses|merge([key ~ ':justify-end']) %}
+		{% else %}
+			{% set contentClasses = contentClasses|merge([key ~ ':justify-start']) %}
+		{% endif %}	
+		{% set contentClasses = contentClasses|merge([key ~ ':' ~ value.verticalAlignment]) %}	
+	{% endfor %}
+	{{- contentClasses|join(' ') }}
+{% endmacro contentClasses %}
+
+{% macro imgClasses(classSettings) %}
+	{% set imgClasses = [] %}
+	{% for key, value in classSettings %}
+		{% switch classSettings[(key)].columnWidth %}
+			{% case '1/5' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-4/5']) %}
+			{% case '1/4' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-3/4']) %}
+			{% case '1/3' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-2/3']) %}
+			{% case '2/5' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-3/5']) %}
+			{% case '1/2' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-1/2']) %}
+			{% case '3/5' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-2/5']) %}
+			{% case '2/3' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-1/3']) %}
+			{% case '3/4' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-1/4']) %}
+			{% case '4/5' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-1/5']) %}
+			{% case 'full' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-full']) %}				
+		{% endswitch %}
+	{% endfor %}
+	{{- imgClasses|join(' ') }}
+{% endmacro imgClasses %}
+
+{% macro wrapperClasses(classSettings) %}
+	{% set baseMaxList = {
+		'@md': 768,
+		'@lg': 1024,
+		'@xl': 1280,
+		'@2xl': 1536,
+	} %}
+	{% set wrapperClasses = [] %}
+	{% for key, value in classSettings %}
+		{% switch classSettings[(key)].columnWidth %}
+			{% case '1/5' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.2)|round ~ 'px]']) %}
+			{% case '1/4' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.252)|round ~ 'px]']) %}
+			{% case '1/3' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.33333332)|round ~ 'px]']) %}
+			{% case '2/5' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.42)|round ~ 'px]']) %}
+			{% case '1/2' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.52)|round ~ 'px]']) %}
+			{% case '3/5' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.62)|round ~ 'px]']) %}
+			{% case '2/3' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.66666662)|round ~ 'px]']) %}
+			{% case '3/4' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.752)|round ~ 'px]']) %}
+			{% case '4/5' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.82)|round ~ 'px]']) %}
+			{% case 'full' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ baseMaxList[(key)] ~ 'px]']) %}			
+		{% endswitch %}
+	{% endfor %}
+	{{- wrapperClasses|join(' ') }}	
+{% endmacro wrapperClasses %}
+
+{# Create array for classes to pass to macros for section #}
+{% set sectionClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'section-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% set colorScheme = entry.colorScheme.class %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set sectionClassList = sectionClassList|merge(colorClasses) %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.sidePhotoStyleAdjustments.eagerly().all() %}
+
+{# Set Styles for Columns #}
+
+{# set object with default settings for all sizes for comparison, if different, merge setting from field into object #}
+{% set classSettings = {
+	'@md': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@lg': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@2xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	}
+ %}
+ 
+{% set newSettings = {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'} %}
+{#cycle through sizes in order and compare settings from field to defaults, if they don't match, replace in the newSettings object to keep track of settings across sites then write to classSettings list when each cycle finishes #}
+{% for key, value in classSettings %}
+	{% for layoutSetting in entry.contentColumnLayout %}	
+		{% if layoutSetting.layoutSize == key %}
+			{% if layoutSetting.columnWidth != newSettings.columnWidth and layoutSetting.columnWidth != '' %}
+				{% set newSettings = newSettings|merge({'columnWidth': (layoutSetting.columnWidth)}) %}			
+			{% endif %}
+			{% if layoutSetting.columnPosition != newSettings.columnPosition and layoutSetting.columnPosition != '' %}
+				{% set newSettings = newSettings|merge({'columnPosition': (layoutSetting.columnPosition)}) %}			
+			{% endif %}
+			{% if layoutSetting.verticalAlignment != newSettings.verticalAlignment and layoutSetting.verticalAlignment != '' %}
+				{% set newSettings = newSettings|merge({'verticalAlignment': (layoutSetting.verticalAlignment)}) %}			
+			{% endif %}
+		{% endif %}		
+	{% endfor %}
+	{% set classSettings = classSettings|merge({(key): (newSettings)}) %}
+{% endfor %}
+
+<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+{% if entry.animate %}
+	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
+	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
+{% endif %}
+>
+	<div class="side-section-layout {{ entry.fullscreen ? 'fullscreen' -}}">
+		
+		<div class="side-photo-content {{ _self.contentClasses(classSettings) -}}">
+			<div class="side-photo-content-wrapper {#{% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} #} {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
+				{% for chunk in entry.elementContent %}
+					{% if chunk.type == 'markup' %}
+						{% if entry.animate and entry.animateContent %}
+							{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)}}
+						{% else %}
+							{{chunk|raw}}
+						{% endif %}
+					{% else %}
+						{{ chunk.entry.render({
+							'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
+							'colorScheme': colorScheme
+						}) }}
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		
+		<div class="side-photo-img {% if entry.animate and entry.animateContent %}animate{% endif %} {{ _self.imgClasses(classSettings) -}}">
+			{% set mainPhoto = entry.mainPhoto.eagerly().one() %}
+			{% set smPhoto = entry.photoSm.eagerly().one() %}
+			{% if smPhoto == null %}			
+				{% set smPhoto = mainPhoto %}
+			{% endif %}
+			{% if entry.aspectRatioSm  != '' and entry.aspectRatioSm != 'auto' %} 
+				{%- set smXForm = 'image-' ~ entry.aspectRatioSm	%}
+			{% else %}
+				{%- set smXForm = 'contentImage' %}
+			{% endif %}
+			{% if entry.aspectRatio  != '' and entry.aspectRatio != 'auto' %} 
+				{%- set xForm = 'image-' ~ entry.aspectRatio	%}
+			{% else %}
+				{%- set xForm = 'contentImage' %}
+			{% endif %}			
+			{% if craft.imager.serverSupportsWebp() %}
+				{%- set smXForm = smXForm ~ '-webp' %}
+				{%- set xForm = xForm ~ '-webp' %}
+			{% endif %}
+			{%- set smImages = craft.imagerx.transformImage(smPhoto,smXForm) %}
+			{%- set smStartImage = smImages[0] %}
+			{%- set lgImages = craft.imagerx.transformImage(mainPhoto, xForm) %}
+			{%- set lgStartImage = lgImages[0] %}
+			
+			<img src="{{ craft.imager.placeholder({width: smStartImage.width, height: smStartImage.height}) }}"
+			  width="{{smStartImage.width}}"
+			  height="{{smStartImage.height}}"
+			  sizes="auto"
+			  src="{{ smStartImage }}"
+			  srcset="{{ craft.imager.srcset(smImages) }}"
+			  alt="{{entry.mainPhotoAlt}}"
+			  class="block @md:hidden w-full lazyload"
+			  loading="lazy"
+			>
+					
+			<img src="{{ craft.imager.placeholder({width: lgStartImage.width, height: lgStartImage.height}) }}"
+			  width="{{lgStartImage.width}}"
+			  height="{{lgStartImage.height}}"
+			  sizes="auto"
+			  src="{{ lgStartImage }}"
+			  srcset="{{ craft.imager.srcset(lgImages) }}"
+			  alt="{{entry.mainPhotoAlt}}"
+			  class="hidden @md:block absolute w-full h-full inset-0 object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
+			  loading="lazy"
+			>
+		</div>		
+	</div>
+</section>
+

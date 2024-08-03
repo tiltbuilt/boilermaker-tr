@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: display
+instructions: null
+name: Display
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Hidden
+        -
+          - value
+          - hidden
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Visible
+        -
+          - value
+          - not-hidden
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

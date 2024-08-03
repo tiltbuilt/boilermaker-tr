@@ -1,0 +1,28 @@
+{#
+/**
+* Tilt Boilermaker - Repeater Template - Buttons 
+* -----
+* Simple cards with title, excerpt and link
+* 
+* @author    TILT, LLC <support@tiltbuilt.com>
+* @copyright Copyright (c) 2020, TILT, LLC
+* @link      https://tiltbuilt.com
+* @package   tiltrus
+*/
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{% set btnStyles = ['btn', colorScheme, btnStyles, btnSize] %}
+{% if fullWidthSmall %}
+	{% set btnStyles = btnStyles|merge(['w-full mt-half @md:w-auto @md:mt-none']) %}
+{% endif %}
+
+<div class="repeater-list-btn button-group @container {% if animate %}animate{% endif %}">
+{% for listItem in listContent %}
+	{% if listItem.url|length %}
+    	<a href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} class="{{- btnStyles|join(' ') }}">{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><br><sup><sub>') }}</a>	  
+	{% endif %}	
+{% endfor %}
+</div>

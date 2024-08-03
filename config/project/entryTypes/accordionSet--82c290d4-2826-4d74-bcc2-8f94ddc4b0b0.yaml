@@ -1,0 +1,253 @@
+color: green
+fieldLayouts:
+  4c4ddfa7-2465-4c23-9d7e-35445d849237:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 14b108f6-dc62-426a-8159-41ba171bb8cb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3aa14a6e-dabc-42ae-8954-e10f19c53441 # Accordions
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 85fecb8e-b887-48f6-a74a-128d09fc0b53
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 40a7763d-183c-46da-b909-039a124912e3
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
+            handle: accordionIcon
+            includeInCards: false
+            instructions: null
+            label: 'Accordion Icon'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 253af7eb-b575-4782-98d2-d643dc6484c6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d7a280bb-af78-455c-9bd1-1fc2f7e4018d # OpenClosed
+            handle: accordionStartState
+            includeInCards: false
+            instructions: null
+            label: 'First Accordion Start State'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ad6ce1b9-2edf-46e0-9c09-60c4ecce4a9d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: accordionsAllowMultiple
+            includeInCards: false
+            instructions: null
+            label: 'Allow Multiple Accordions To Be Open At Once?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0c2b4dd7-95c9-49e6-a71e-e69e2a8a7e1a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 23531d2e-1589-47b4-b2ed-b8ed41e286ff
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Control Settings'
+        uid: c4dc1d49-d40d-4e7a-8c39-963610b4e736
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 78cf10f3-a20e-4dd0-804f-db517e96f837
+            userCondition: null
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'The color settings here are applied to all of the sub accordions'
+            type: craft\fieldlayoutelements\Tip
+            uid: 725d1b18-1176-465b-8b65-6fcf360a2c83
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9b7d457a-bf24-447b-bbed-346ab8996846
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: 'The color selected here will replace the background color selected in the color scheme selected'
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 80cc07f8-cf71-4953-a8cb-53966fc1da2b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: d0cea9f7-0cc9-4fdc-915a-06c946fcdb04
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 96056087-af4e-42ba-a559-9152ba279d35 # Accordion Set Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 24993cee-6a61-4939-afc4-5023eb812ffa
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: ee63fcd6-9005-4407-aa02-373d523f5b74
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 69c54b00-33bc-4e3b-8213-ded81d31ccf0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 99fb42cb-66a2-487a-896e-02ec202938e1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 56f41a82-33a4-49bb-9cb6-a5d0e061f438
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: b3ea43d9-6cda-405b-9735-80ef906ab405
+        userCondition: null
+handle: accordionSet
+hasTitleField: true
+icon: shutters
+name: 'Accordion Set'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,109 @@
+{#
+/**
+ * Tilt Boilermaker - Heading Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Subhead styling macro #}
+{% macro subheadClasses(adjustments, subStyle, subColor, subPos) %}
+	{% set classList = ['subhead'] %}
+	{% if subStyle|length %}
+		{% set classList = classList|merge([subStyle]) %}
+	{% endif %}
+	{% if subColor|length %}
+		{% set classList = classList|merge(['text-' ~ subColor]) %}
+	{% endif %}
+	{% for adjSet in adjustments %}
+		{# Get Device Size for Adjustments #}
+		{% set devSize = adjSet.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ ':' %}	
+		{% endif %}
+		{# Get adjustments for type at each device size #}
+		{% if adjSet.subheadFont|length %}
+			{% set classList = classList|merge([devSize ~ 'font-' ~ adjSet.subheadFont]) %}
+		{% endif %}
+		{% if adjSet.subheadFontSize|length %}
+			{% set classList = classList|merge([devSize ~ adjSet.subheadFontSize]) %}
+		{% endif %}
+		{% if adjSet.subheadLineHeight|length %}
+			{% set classList = classList|merge([devSize ~ adjSet.subheadLineHeight]) %}
+		{% endif %}
+		{% if adjSet.subheadFontWeight|length %}
+			{% set classList = classList|merge([devSize ~ adjSet.subheadFontWeight]) %}
+		{% endif %}
+		{% if adjSet.subheadItalic|length %}
+			{% set classList = classList|merge([devSize ~ adjSet.subheadItalic]) %}
+		{% endif %}
+		{% if adjSet.subheadTextCase|length %}
+			{% set classList = classList|merge([devSize ~ adjSet.subheadTextCase]) %}
+		{% endif %}
+		{% if adjSet.subheadLetterSpacing|length %}
+			{% set classList = classList|merge([devSize ~ adjSet.subheadLetterSpacing]) %}
+		{% endif %}
+		{% if adjSet.subheadSpacing|length %}
+			{% if subPos %}
+				{% set subSpace = devSize ~ 'mb-' ~ adjSet.subheadSpacing %}
+			{% else %}
+				{% set subSpace = devSize ~ 'mt-' ~ adjSet.subheadSpacing %}
+			{% endif %}
+			{% set classList = classList|merge([subSpace]) %}
+		{% endif %}
+	{% endfor %}
+	{{ classList|join(' ') }}	
+{% endmacro subheadClasses %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'header-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and  animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+{# Set color class #}
+{% if entry.headlineColor|length %}
+	{% set colorClass = 'text-' ~ entry.headlineColor %}
+{% else %}
+	{% set colorClass = colorScheme %}
+{% endif %}
+
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.headerStyleAdjustments.eagerly().all() %}
+
+<{{entry.headingLevel}} id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{entry.headingStyle}} {{ colorClass }} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- gMacros.classesOut(adjustments, 'Headline') -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+
+	{% if entry.subheadText|length and entry.subheadPosition == 1 %}
+		<span id="{{blockId}}-subhead" class="{{- _self.subheadClasses(adjustments, entry.subheadStyle, entry.subheadColor, entry.subheadPosition) -}}">		
+			{{ gMacros.stripTags(entry.subheadText) }}			
+		</span>
+	{% endif %}
+
+	<span class="header-main-text">{{entry.title}}</span>
+	
+	{% if entry.subheadText|length and entry.subheadPosition == 0 %}
+		<span id="{{blockId}}-subhead" class="{{- _self.subheadClasses(adjustments, entry.subheadStyle, entry.subheadColor, entry.subheadPosition) -}}">		
+			{{ gMacros.stripTags(entry.subheadText) }}			
+		</span>
+	{% endif %}
+		
+</{{entry.headingLevel}}>

@@ -1,0 +1,334 @@
+columnSuffix: null
+handle: contentColumnLayout
+instructions: null
+name: 'Content Column Layout'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Layout Size'
+            -
+              - handle
+              - layoutSize
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Medium (Tablet and Above)'
+                    -
+                      - value
+                      - '@md'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Large (Laptop and Above)'
+                    -
+                      - value
+                      - '@lg'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'X-Large (Desktop and Above)'
+                    -
+                      - value
+                      - '@xl'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '2XL (Hi Res)'
+                    -
+                      - value
+                      - '@2xl'
+                    -
+                      - default
+                      - false
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Column Width'
+            -
+              - handle
+              - columnWidth
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Default (No Change)'
+                    -
+                      - value
+                      - ''
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 1/5
+                    -
+                      - value
+                      - 1/5
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 1/4
+                    -
+                      - value
+                      - 1/4
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 1/3
+                    -
+                      - value
+                      - 1/3
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 2/5
+                    -
+                      - value
+                      - 2/5
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 1/2
+                    -
+                      - value
+                      - 1/2
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 3/5
+                    -
+                      - value
+                      - 3/5
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 2/3
+                    -
+                      - value
+                      - 2/3
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 3/4
+                    -
+                      - value
+                      - 3/4
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 4/5
+                    -
+                      - value
+                      - 4/5
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Full Width'
+                    -
+                      - value
+                      - full
+                    -
+                      - default
+                      - false
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Column Position'
+            -
+              - handle
+              - columnPosition
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Default (No Change)'
+                    -
+                      - value
+                      - ''
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Left
+                    -
+                      - value
+                      - order-first
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Right
+                    -
+                      - value
+                      - order-last
+                    -
+                      - default
+                      - false
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Vertical Alignment'
+            -
+              - handle
+              - verticalAlignment
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - 'Default (No Change)'
+                    -
+                      - value
+                      - ''
+                    -
+                      - default
+                      - true
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Top
+                    -
+                      - value
+                      - items-start
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Middle
+                    -
+                      - value
+                      - items-center
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Bottom
+                    -
+                      - value
+                      - items-end
+                    -
+                      - default
+                      - false
+  defaults: null
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

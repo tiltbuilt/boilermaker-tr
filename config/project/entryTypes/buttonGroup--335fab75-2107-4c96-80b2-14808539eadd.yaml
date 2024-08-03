@@ -1,0 +1,211 @@
+color: cyan
+fieldLayouts:
+  a9a00d05-cf25-4f32-8b1b-0e9c58c815d7:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: bd671f96-ebc4-4d94-9c8b-8e6bf0c869b3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c025e168-6f53-4831-9433-670f03c62851 # Buttons
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1643d131-cc4a-4714-aa47-826d686ae2a9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 68fd06f1-a1fd-4fb7-bfed-e152be405eb5
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'These settings are applied to each button in the group, but can be overridden on the buttons themselves'
+            type: craft\fieldlayoutelements\Tip
+            uid: dfcb2dfd-bf88-49a5-8ba5-0686fda789a9
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1b181259-bf3a-4b0a-826f-2a66c0e4112b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d72d669-c642-4582-b94b-6dbac6034e08
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: fullWidthSmall
+            includeInCards: false
+            instructions: 'Flip this switch on if you want the buttons in this group to take up the full width and stack in small layouts like phones and sidebars.'
+            label: 'Full width in Small Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d2c2b2f-f541-4ba7-bd3c-8f79af44611d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73 # Button Color
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 24e4d9cf-8fbf-4d6a-9931-8f2795494eec
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 5c47d007-6f84-47cd-b394-09201d1feccc
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: dd25301d-9012-41dd-aa43-19f023540545 # Button Group Style Adjustment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 705f3da7-51e0-4eb4-98b0-62e0d87ab546
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 43eb2322-76b3-451b-aeda-8dc511730a07
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 73831af4-e11c-4695-b35f-398d66211441
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: edd925fd-f567-4186-b082-49159c0b6564
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9302b92c-c035-4bd1-963e-56ae26c677f5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: c8910b12-ffa1-4157-8ef5-655699c84d04
+        userCondition: null
+handle: buttonGroup
+hasTitleField: true
+icon: rectangle
+name: 'Button Group'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

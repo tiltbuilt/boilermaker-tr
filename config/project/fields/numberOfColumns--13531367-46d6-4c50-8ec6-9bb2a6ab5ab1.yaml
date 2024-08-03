@@ -1,0 +1,65 @@
+columnSuffix: null
+handle: numberOfColumns
+instructions: null
+name: 'Number of Columns'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '1'
+        -
+          - value
+          - columns-1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2'
+        -
+          - value
+          - columns-2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3'
+        -
+          - value
+          - columns-3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4'
+        -
+          - value
+          - columns-4
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

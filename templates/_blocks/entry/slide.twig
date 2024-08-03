@@ -1,0 +1,114 @@
+{#
+/**
+* Tilt Boilermaker - Generic Slide Block Template
+* -----
+* 
+* 
+* @author    TILT, LLC <support@tiltbuilt.com>
+* @copyright Copyright (c) 2019, TILT, LLC
+* @link      https://tiltbuilt.com
+*/
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Create array for classes to pass to macros for section #}
+{% set slideClassList = [] %}
+
+{# Get slide image if there is one #}
+{% set image = entry.slideImage.eagerly().one() %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'slide-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Set color classes #}
+{% set colorClasses = [] %}
+{% if entry.colorScheme != null %}
+	{% set colorScheme = entry.colorScheme.class %}	
+{% endif %}
+{% set colorClasses = colorClasses|merge([colorScheme]) %}
+{% if entry.bgColor|length %}
+	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
+{% endif %}
+{% set slideClassList = slideClassList|merge(colorClasses) %}
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.slideStyleAdjustments.eagerly().all() %}
+
+<div id="{{blockId}}" class="{{blockClass}} swiper-slide {{ slideClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} {% if entry.slideTimingOverride != '' %}data-swiper-autoplay="{{entry.slideTimingOverride}}"{% endif %}>
+	
+	{% if image != null %}
+		<div class="slide-image aspect-{{slideAspectSm}} @md:aspect-{{slideAspectLg}}">			
+			
+			{% set mobileXForm = 'image-' ~ slideAspectSm %}
+			{% set xForm = 'image-' ~ slideAspectLg %}
+			{% if craft.imager.serverSupportsWebp() %}
+				{%- set mobileXForm = mobileXForm ~ '-webp' %}
+				{%- set xForm = xForm ~ '-webp' %}
+			{% endif %}
+			{%- set mobileImages = craft.imagerx.transformImage(image, mobileXForm) %}
+			{%- set mobileStartImage = mobileImages[0] %}
+			{%- set largerImages = craft.imagerx.transformImage(image, xForm) %}
+			{%- set largerStartImage = largerImages[0] %}
+									
+			<img src="{{ craft.imager.placeholder({width: mobileStartImage.width, height: mobileStartImage.height}) }}"
+			  width="{{mobileStartImage.width}}"
+			  height="{{mobileStartImage.height}}"
+			  sizes="auto"
+			  src="{{ mobileStartImage }}"
+			  srcset="{{ craft.imager.srcset(mobileImages) }}"
+			  alt="{{ entry.title }}"
+			  class="block @md:hidden lazyload"
+			  loading="lazy"
+			>
+					
+			<img src="{{ craft.imager.placeholder({width: largerStartImage.width, height: largerStartImage.height}) }}"
+			  width="{{largerStartImage.width}}"
+			  height="{{largerStartImage.height}}"
+			  sizes="auto"
+			  src="{{ largerStartImage }}"
+			  srcset="{{ craft.imager.srcset(largerImages) }}"
+			  alt="{{ entry.title }}"
+			  class="hidden @md:block lazyload"
+			  loading="lazy"
+			>
+						
+		</div>
+	{% endif %}
+	
+	
+	{# by default layout shifts at med size and above based on size of the container. change size modifier if you want the layout shift to happen at a different size #}
+		
+	<div class="slide-layout @md:flex @md:{{entry.slideHorizontalLayout}} @md:{{entry.slideVerticalLayout}} {% if image != null %}@md:absolute @md:inset-0{% endif %}">
+		<div class="slide-content">
+			<div class="slide-content-wrapper {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+				{% for chunk in entry.slideContent %}
+					{% if chunk.type == 'markup' %}
+						{{chunk|raw}}
+					{% elseif chunk.type == 'button' and entry.wholeSlideLink %}
+						{{ chunk.entry.render({
+							'animSetting': null,
+							'colorScheme': colorScheme,
+							'linkOverride': 1,
+						}) }}
+					{% else %}
+						{{ chunk.entry.render({
+							'animSetting': null,
+							'colorScheme': colorScheme,
+							'linkOverride': 0,
+						}) }}
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>		
+	</div>
+	
+</div>

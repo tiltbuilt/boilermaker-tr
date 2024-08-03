@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: sectionStyleAdjustments
+instructions: null
+name: 'Section Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - fd3b49a5-f45c-4fff-9e83-efae0bfb34d4 # Style Adjustment - Section
+  includeTableView: true
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

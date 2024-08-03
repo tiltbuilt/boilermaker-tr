@@ -1,0 +1,8 @@
+columnSuffix: null
+handle: navListToDisplay
+instructions: null
+name: 'Nav List to Display'
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: verbb\navigation\fields\NavigationField

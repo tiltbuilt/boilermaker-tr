@@ -1,10 +1,10 @@
 # Tilt - BoilerMaker-TR 
 
-This is a starter Craft CMS v4.X setup for site built by Tilt. It is opinionated in the sense that it is configured to make use of the following stack:
-* Laravel Valet as the local dev server
-* Laravel Mix for handling of webpack
+This is a starter Craft CMS v5.X setup for site built by TILT. It is opinionated in the sense that it is configured to make use of the following stack:
+* DDEV as the local dev server
+* Vite for handling of HMR, and front end build features
 * SASS/PostCSS for CSS processing
-* Jquery for Javascript
+* Alpine JS for Javascript
 
 ## Installation Instructions
 
@@ -12,86 +12,128 @@ This is a starter Craft CMS v4.X setup for site built by Tilt. It is opinionated
 
 ### Download Files
 
-First you need to run the command to download the package files. Open the terminal and go to the folder where you keep all of your sites in Valet. Once there, run the following command:
+First you need to run the command to download the package files. Open the terminal and go to the folder where you keep all of your sites. Once there, run the following command:
 
-`composer create-project tiltbuilt/boilermaker-tr my/project/path`
-
-Where the project path part is replaced with the name of the folder for the project you are creating (usually the name of the client website, all lower case, no spaces. hyphens and underscores are allowed). Once you have download the files from the repository, you need to have Composer run an update to make sure that it installs all the necessary plugins, etc. before you install Craft so that the project config will remain intact. To do this, run the `composer update` command in the terminal while in the project folder.
-
-### Edit .env File
-
-Once all of the files have copied down, you need to edit the .env file inside the project folder. Open the file in a text editor. You will need to change the following lines:
-
-#### Database Settings
-```
-DB_DATABASE=
-DB_USER=root
-DB_PASSWORD=
-DB_TABLE_PREFIX=
+```shell
+composer create-project tiltbuilt/boilermaker-tr my/project/path --no-install`
 ```
 
-**DB_DATABASE** is the name of the database itself. You need to set that up using the database manager of your choice.
+Where the project path part is replaced with the name of the folder for the project you are creating (usually the name of the client website, all lower case, no spaces. hyphens and underscores are allowed). The folder needs to be empty.
 
-**DB_USER** is the name of the database user. On Valet it is usually root, but it doesn't have to be.
+### Configure DDEV
 
-**DB_PASSWORD** is the password for the database user.
+If you want your site to run on a domain other than https://craftcms.ddev.site, run:
 
-**DB_TABLE_PREFIX** is the prefix Craft will attach to the database tables it creates when it installs. This is optional, but I usually set it to some abbreviation of the project name (i.e. MMR)
-
-#### Application Settings
-```
-APP_ID=CraftCMS-
-SECURITY_KEY=
+```shell
+ddev config
 ```
 
-**APP_ID** Is a unique identifier used by the site for caching purposes. It typically starts with CraftCMS- and then a unique random string of characters. I typically go to [1Password's Password Generator](https://1password.com/password-generator/) and have it generator a random character string 30 characters in length and then add that after the CraftCMS-.
+Use the following settings:
 
-**SECURITY_KEY** is a unique character string used as the encryption key for encrypting the site. I typically go to [1Password's Password Generator](https://1password.com/password-generator/) and have it generator a random character string 40 characters in length.
+Project name: e.g. mysite would result in a project URL of https://mysite.ddev.site (you will need this later)
+Docroot location: keep as-is, web is the default
+Project Type: keep as-is, php is the default
 
-#### Site Settings
+## Installing Craft
+
+To install a clean version of Craft, run:
+
+```shell
+make install
 ```
-SITE_NAME="Website"
-SITE_EMAIL="webbies@tiltbuilt.com"
-SITE_URL="http://website.test/"
-SITE_PATH="/path/to/root/"
-DEV_HOST="website.test"
+
+Follow the prompts.
+
+This command will:
+
+1. Copy your local SSH keys into the container (handy if you are setting up [craft-scripts](https://github.com/nystudio107/craft-scripts/))
+2. Start your DDEV project
+3. Install Composer
+4. Install npm
+5. Do a one-time build of Vite
+6. Generate `APP_ID` and save to your `.env` file
+7. Generate `SECURITY_KEY` and save to your `.env` file
+8. Installing Craft for the first time, allowing you to set the admin's account credentials
+9. Install all Craft plugins
+
+Once the process is complete, type `ddev launch` to open the project in your default browser. 🚀
+
+## Local development with Vite
+
+To begin development with Vite's dev server & HMR, run:
+
+```shell
+make dev
 ```
 
-**SITE_NAME** Is the human-friendly name of the website (usually the name of the client company).
+This command will:
 
-**SITE_EMAIL** Is the email address the site will use to send its messages. For local dev it is the Tilt webiies address. For production it is the email address the client wants to use for the site.
+1. Copy your local SSH keys into the container (handy if you are setting up [craft-scripts](https://github.com/nystudio107/craft-scripts/))
+2. Start your DDEV project
+3. Install Composer
+4. Install npm
+5. Do a one-time build of Vite
+6. Spin up the Vite dev server
 
-**SITE_URL** Is url for the site. For local development on Valet this will typically be website-name.test. Just replace website in the default text with the folder name for the project.
+Open up a browser to your project domain to verify that Vite is connected. Begin crafting beautiful things. 
 
-**SITE_PATH** Is the full path to the project root folder (i.e. /Users/Brian/WebDev/sites/boilermaker-tr/). This will vary depending on where you put your Valet files on your hard drive.
+## Makefile
 
-**DEV_HOST** Is the site url without the http://. It is used by Laravel Mix to load the correct url for Browsersync. It is only needed for local development and should be removed in the production .env file.
+A Makefile has been included to provide a unified CLI for common development commands.
 
-#### SMTP Settings
+- `make install` - Runs a complete one-time process to set the project up and install Craft.
+- `make up` - Starts the DDEV project, ensuring that SSH keys have been added, and npm & Composer have been installed.
+- `make dev` - Runs a one-time build of all front-end assets, then starts Vite's server for HMR.
+- `make build` - Builds all front-end assets.
+- `make pull` - Pull remote db & assets (requires setting up [craft-scripts](https://github.com/nystudio107/craft-scripts/)
 
-These variables are included in order to use SMTP for handling the site's email.
-
-#### Asset Settings
-
-These variables are the urls and paths to the asset volumes for the site. Three are created to start with (images, docs, and videos). There are url and path variables for each. If you wish to change the names of the folders themselves, make sure to adjust the names here as well as at the folders themselves. Additional volumes can also be added, but adjustments they will need to be entered correctly into the CP in order for the project config to be correct.
-
-#### IMGIX Settings
-
-These variables hold the credentials needed for using ImgIX for image processing. This should be configured, particularly for production environments.
-
-
-### Run Craft Installation
-
-Once the .env files has been set properly, you should run the `./craft install` command from inside the project folder in the terminal. This will run the Craft CMS installer and it will ask you questions to set up your user account. It will use the project config to set up all of the fields etc. for the boilerplate setup.
+<span style="color:red">**IMPORTANT NOTE - Before you run the install process make sure to copy your .npmrc file into the project, otherwise the npm installstep will fail because it tries to installGSAP's paid suite and it requires authentication.**</span>
 
 
-### Create new Git Repo for Project
+## Craft CMS Plugins
 
-**ONLY DO THIS IF YOU ARE CREATING A NEW PROJECT** Once you have finished installing the boilerplate. You need to create a new local git repository for your project (if you are starting a new site, if you are working on an existing site or if someone else on the team has already set up a repo for a project, clone the repo that should already exist for the site). 
+1. [Blitz](https://plugins.craftcms.com/blitz)
+1. [Button Box](https://plugins.craftcms.com/buttonbox)
+1. [CK Editor](https://plugins.craftcms.com/ckeditor)
+1. [Colour Swatches](https://plugins.craftcms.com/colour-swatches)
+1. [Color Mixer](https://plugins.craftcms.com/craft-color-mixer)
+1. [Default Dashboard](https://plugins.craftcms.com/default-dashboard)
+1. [Element Index Defaults](https://plugins.craftcms.com/element-index-defaults)
+1. [Embedded Assets](https://plugins.craftcms.com/embeddedassets)
+1. [Expanded Singles](https://plugins.craftcms.com/expanded-singles)
+1. [Feed-Me](https://plugins.craftcms.com/feed-me)
+1. [Field Manager](https://plugins.craftcms.com/field-manager)
+1. [Formie](https://plugins.craftcms.com/formie)
+1. [Hyper](https://plugins.craftcms.com/hyper)
+1. [Icon Picker](https://plugins.craftcms.com/icon-picker)
+1. [Imager-X](https://plugins.craftcms.com/imager-x)
+1. [Imager-X Power Pack](https://plugins.craftcms.com/imager-x-power-pack)
+1. [Knock Knock](https://plugins.craftcms.com/knock-knock)
+1. [Minify](https://plugins.craftcms.com/minify)
+1. [Navigation](https://plugins.craftcms.com/navigation)
+1. [Postmark](https://plugins.craftcms.com/postmark)
+1. [Retcon](https://plugins.craftcms.com/retcon)
+1. [Section and Product Type](https://plugins.craftcms.com/section-and-product-type)
+1. [Seomatic](https://nystudio107.com/docs/seomatic/)
+1. [Servd Assets and Helpers](https://github.com/servdhost/craft-asset-storage)
+1. [Shortcodes](https://plugins.craftcms.com/shortcodes)
+1. [Social Share](https://plugins.craftcms.com/social-share)
+1. [Table Maker](https://plugins.craftcms.com/tablemaker)
+1. [Typogrify](https://plugins.craftcms.com/typogrify)
+1. [Vite](https://github.com/nystudio107/craft-vite)
 
+## Tailwind Plugins
 
-### Install Javascript Dependencies
+1. [Aspect Ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
+1. [Container Queries](https://github.com/tailwindlabs/tailwindcss-container-queries)
+1. [Line Clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp)
+1. [Typography](https://github.com/tailwindlabs/tailwindcss-typography)
 
-Finally you need to install all of the javascript dependencies on the project to be able to start working on the site. To do this, assuming you are running npm, run the `npm install` command from the project folder and it npm will install everything specified in the package.json file.
+## Javascript Libraries
 
+1. [AlpineJS](https://alpinejs.dev/)
+1. [Lazysizes](https://afarkas.github.io/lazysizes/)
 
+## Acknowledgments
+
+This project is based upon the work of a lot of people including the entire team at Craft CMS, Andrew Welch of NY Studio 107, Ryan Irelan of CraftQuest, the team at One Darnley Road and others. A big thank you to all of you for the work you have done and the fact that you are so willing to share it with the community. I could not have gotten this done without the insights and examples you have all provided. I also want to thank the team at TILT for their ongoing support and dedication to making great sites. My thanks to you all!

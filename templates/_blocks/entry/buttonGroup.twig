@@ -1,0 +1,130 @@
+{#
+/**
+ * Tilt Boilermaker -Button Group Template
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Non-modal button code macro #}
+{% macro linkCode (button, btnClasses) %}
+	<a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ button.url }}" {{- button.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
+		<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+	</a>
+{% endmacro linkCode %}
+
+{# handle scenario where button is inside a slide with whole slide link turned on #}
+{% if linkOverride is not defined %}
+	{% set linkOverride = 0 %}
+{% endif %}
+
+{# Create array for classes to pass to macros for set #}
+{% set btnSetClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'button-set-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+{# Set color class #}
+{% if entry.btnColor.value|length %}
+	{% set colorClass = 'btn-' ~ entry.btnColor %}
+{% else %}
+	{% set colorClass = colorScheme %}
+{% endif %}
+
+{# create object with btn set preset styles to grab from as needed if buttons do not have custom styles different from the set #}
+{% set btnSetStyles = {
+	'size': entry.btnSize,
+	'style': entry.btnStyles,
+	'fullWidthSmall': entry.fullWidthSmall,
+	'color': colorClass,
+}
+%}
+
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.buttonGroupStyleAdjustments.eagerly().all() %}
+
+<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- btnSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	{% set buttons = entry.buttons %}
+	{% for button in buttons %}
+		{# get styles for button or if not set, use styles from the set #}
+		{% set btnClasses = ['btn'] %}
+		{% if button.btnStyles|length %}
+			{% set btnClasses = btnClasses|merge([button.btnStyles]) %}
+		{% else %}
+			{% set btnClasses = btnClasses|merge([btnSetStyles.style]) %}
+		{% endif %}
+		{% if button.btnSize|length %}
+			{% set btnClasses = btnClasses|merge([button.btnSize]) %}
+		{% else %}
+			{% set btnClasses = btnClasses|merge([btnSetStyles.size]) %}
+		{% endif %}
+		{% if button.btnColor|length %}
+			{% set btnClasses = btnClasses|merge([button.btnColor]) %}
+		{% else %}
+			{% set btnClasses = btnClasses|merge([btnSetStyles.color]) %}
+		{% endif %}
+		{% if btnSetStyles.fullWidthSmall %}
+			{% set btnClasses = btnClasses|merge(['w-full mt-half @md:w-auto @md:mt-none']) %}
+		{% endif %}
+		
+		{% if linkOverride %}
+			{# if linkOverride is true, then button is inside a whole slide link in a slider, so the button just needs to look like a button, but not actually do anything because the slide will handle the click event #}
+			<button {% if button.customId|length %}id="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}>
+				<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+			</button>
+		{% else %}
+			{# if button is a modal button do one thing, if not do the other #}		
+			{% if button.getLinkType().label == 'Modal' %}
+				{# modal #}
+				{% set modalUrl = '/resources/entrymodal?entryid=' ~ button.linkValue %}
+				{% set modalEntry = craft.entries().id(button.linkValue).one() %}
+				{% if not craft.app.request.isAjax() %}
+					<button {% if button.customId|length %}id="{{button.customId}}" x-ref="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}" x-ref="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}
+			    	x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{% if button.customId|length %}{{button.customId}}{% else %}{{blockId}}-button{{loop.index}}{% endif %}';
+			    	fetch('{{ modalUrl }}', {
+			    		method: 'GET',
+						headers: {
+							'X-Requested-With': 'XMLHttpRequest',
+						},
+					})
+					.then(response => response.text())
+					.then(text => {
+						modalHtml = text
+						showLoading = false;			   
+					});"			 
+					>
+						<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+					</button>
+				{% elseif modalEntry.section.handle == "pages" %}
+					{{- _self.linkCode(button, btnClasses) -}}
+				{% endif %}			
+			{% else %}
+				{# everything else #}
+				{{- _self.linkCode(button, btnClasses) -}}
+			{% endif %}
+		{% endif %}			
+	{% endfor %}				
+</div>
+	

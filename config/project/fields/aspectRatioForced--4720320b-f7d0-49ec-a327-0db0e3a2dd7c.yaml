@@ -1,0 +1,87 @@
+columnSuffix: null
+handle: aspectRatioForced
+instructions: null
+name: 'Aspect Ratio - Forced'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Rectangle - 16/9'
+        -
+          - value
+          - video
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Rectangle - 4/3'
+        -
+          - value
+          - 4/3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Rectangle - 3/2'
+        -
+          - value
+          - 3/2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Rectangle - 3/1'
+        -
+          - value
+          - 3/1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Rectangle - 4/1'
+        -
+          - value
+          - 4/1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Square
+        -
+          - value
+          - square
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Natural
+        -
+          - value
+          - auto
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,140 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Page Template - Extends Base HTML Layout in Boilerplate folder
+ * -----
+ * Loads the appropriate page partial or the default
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+
+{# -- Layout template for HTML pages -- #}
+{% extends "_layouts/_boiler/baseHtmlLayout.twig" %}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# -- Any <meta> tags that should be included in the <head> #}
+{% block headMeta %}
+{% endblock headMeta %}
+
+{# -- Any <link> tags that should be included in the <head> #}
+{% block headLinks %}
+<script src="https://kit.fontawesome.com/d26be30bbd.js" crossorigin="anonymous"></script>
+{{craft.vite.script("src/js/app.js", false)}}
+{% endblock headLinks %}
+
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+		
+	
+{% endblock headCss %}
+
+{# -- Page body -- #}
+
+{% block pageId %}{% endblock %}
+
+{% block bodyAttr %}{% endblock %}
+
+{% block bodyHtml %}
+	
+		
+	<div id="page-wrapper">
+		<div id="login-status-bar-wrapper"></div>
+		<div class="wrapper" id="wrapper">		
+			<div id="header_topbar"></div>	
+			
+			{% if block('globalHeader') is defined %}
+			  {{ block('globalHeader') }}
+			{% endif %}
+			
+			<div class="root" id="root">
+				<main class="main" id="main">
+					{% if block('pageHeader') is defined %}
+					  {{ block('pageHeader') }}
+					{% endif %}
+					
+					{% if block('pageContent') is defined %}
+					  {{ block('pageContent') }}
+					{% endif %}
+				</main>
+				
+				{% if block('pageFooter') is defined %}
+				  {{ block('pageFooter') }}
+				{% endif %}
+						
+			</div>
+		</div>
+	</div>
+	
+	{% block modalContent %}				
+		
+		<!-- Modal -->			
+			
+		<div
+			x-show="modalOpen"
+			style="display: none"
+			x-on:keydown.escape.prevent.stop="modalOpen = false"
+			role="dialog"
+			aria-modal="true"
+			x-id="['modal-title']"
+			:aria-labelledby="$id('modal-title')"
+			class="modal-wrapper-outer"
+		>
+			<!-- Overlay -->
+			<div x-show="modalOpen" x-transition.opacity class="modal-overlay"></div>
+			
+			<!-- close button -->
+			<button id="btn-modal-close" class="modal-close" type="button" x-show="modalOpen" x-on:click="modalOpen = false; $refs[focusEl].focus();">			  
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+		
+			<!-- Panel -->
+			<div
+				x-show="modalOpen" x-transition
+				x-on:click="modalOpen = false"
+				class="modal-wrapper-inner"
+			>
+				
+				<div
+					x-on:click.stop
+					x-trap.noscroll.inert="modalOpen"
+					class="modal-window"
+				>
+					<!-- Title -->
+					<h2 class="hidden" :id="$id('modal-title')" x-text="modalTitle"></h2>
+		
+					<div
+					  x-show="showLoading"
+					  x-transition:leave="transition ease-out duration-500"
+					  x-transition:leave-start="opacity-100"
+					  x-transition:leave-end="opacity-0"
+					  class="absolute h-full w-full inset-0 z-20 flex flex-col justify-center items-center text-gray-600 bg-white"
+					  {# class="absolute h-full w-full inset-0 z-20 flex flex-col justify-center items-center text-gray-100  bg-black" #}
+					  >
+						<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" class="w-16 h-16 fill-current">
+							<path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+							  <animateTransform
+								 attributeName="transform"
+								 attributeType="XML"
+								 type="rotate"
+								 dur="1s"
+								 from="0 50 50"
+								 to="360 50 50"
+								 repeatCount="indefinite" />
+						  </path>
+						</svg>
+						Loading&hellip;
+					  </div>
+					<div x-html="modalHtml"></div>
+				</div>
+			</div>
+		</div>			
+		
+	{% endblock %}	
+			
+{% endblock bodyHtml %}

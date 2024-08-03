@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: navListDisplayType
+instructions: null
+name: 'Nav List Display Type'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Simple Text List'
+        -
+          - value
+          - textList
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Buttons
+        -
+          - value
+          - buttonList
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Card
+        -
+          - value
+          - cardList
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

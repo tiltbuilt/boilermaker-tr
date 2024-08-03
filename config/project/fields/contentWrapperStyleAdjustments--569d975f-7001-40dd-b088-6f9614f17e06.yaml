@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: contentWrapperStyleAdjustments
+instructions: null
+name: 'Content Wrapper Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Style'
+  entryTypes:
+    - f103b592-617a-4840-8a3b-ce98a171eb09 # Style Adjustment - Content Wrapper
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,24 @@
+columnSuffix: null
+handle: entriesToList
+instructions: null
+name: 'Entries to List'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: false
+  sources:
+    - 'section:589d7e58-f378-455e-b073-055e9221964b' # Pages
+    - singles
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

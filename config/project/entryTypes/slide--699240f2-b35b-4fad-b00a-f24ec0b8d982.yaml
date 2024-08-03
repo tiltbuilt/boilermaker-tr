@@ -1,0 +1,251 @@
+color: lime
+fieldLayouts:
+  b30c8d55-fa5e-4ab5-aa70-56049d798dc9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: dccc82e3-f36f-44d2-96ea-8f8d11714b1f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
+            handle: slideContent
+            includeInCards: false
+            instructions: null
+            label: 'Slide Content'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fbc05a53-f8b5-45d8-b0bf-ac56150226a7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: slideImage
+            includeInCards: false
+            instructions: null
+            label: 'Slide Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a00f8583-ac8e-4e4d-991b-c88094be404b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e6a5ca0a-ca9b-4d27-b6f9-c330151d7750
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 24664393-bbfc-46d1-baab-46bef56260a7 # Slide Timing Override
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ebd85c81-d874-49a5-a35f-cb05b5a0d50a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Controls
+        uid: ec7a8b7a-41c7-4dd8-b12b-6979299756d2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5947f640-92a3-49d6-adfa-45816ba49d25 # Slide Horizontal Layout
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0af11a3-efb7-474f-8f46-e65abb124326
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8977ed51-c96b-4f56-acf0-7b95d3182220 # Slide Vertical Layout
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: acd3f467-430d-44a3-8a35-d0b53b458168
+            userCondition: null
+            warning: null
+            width: 50
+        name: 'Slide Layout'
+        uid: b1e6df55-fe38-4df8-af0b-c4b6e8088b5b
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 63b060a9-83cf-47a6-a582-3dd3fe1305df
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6f3b387-c4dd-4eb7-b721-77a29d1dfa42
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e45dd5c1-f79c-45d5-997f-6aaa7a717219
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 811855c1-b074-4329-8d7a-63af73d7c704
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: ecb5f699-34c7-440c-bb60-a045e0e28b18 # Slide Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a0a1c9d-9f76-4665-9c1e-f30c7b669633
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: cd3e099d-906c-4f82-b38f-b89f41065fe2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 886fd8c2-97fe-4aec-b469-1bdc77cc024a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 19266eee-1c43-4f1d-8631-d40db8587fb3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bc533033-b281-4d6e-bb39-a36c20717ed2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: ec58402c-ca14-4d84-ba0e-cec3787663a8
+        userCondition: null
+handle: slide
+hasTitleField: true
+icon: rectangle
+name: Slide
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,4 +1,22 @@
 # Changelog
+## 3.0.0 - 2024-08-03
+
+## Updated
+ - Craft and all plugins to minimum of Craft 5.2.9 and compatible
+
+## Removed
+ - Neo
+ - Freeform
+
+## Changed
+ - Dev environment switched to DDEV
+ - System now uses Craft and internal Matrix/CKEditor setup with Nested Entry Types instead of Neo for the Page Builder
+ - System now uses Formie plugin to handle form functionality
+ - Now uses Vite for front end build and asset processing
+ - Now uses Servd as default hosting platform
+ - System now defaults to installing the current versions of all plugins at the first install of the project
+ - Now uses Makefile for managing CLI commands
+
 ## 2.8.3 - 2024-02-25
 
 ## Updated

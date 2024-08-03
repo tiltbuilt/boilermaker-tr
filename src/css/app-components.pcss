@@ -1,0 +1,91 @@
+/**
+ * This injects any component classes registered by plugins.
+ *
+ */
+ 
+@import './tilt-components.pcss';
+@import "tailwindcss/components";
+
+@layer components {
+    
+    .container {	
+        /* These classes must stay in order to ensure functionality */
+        @apply mx-auto max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl;
+        /*The default classes and style below can be changed on a per-project basis  */  
+        
+       &.container-fullwidth {
+          /* These classes must stay in order to ensure functionality */
+          @apply xl:max-w-full;
+          /* The default classes and style below can be changed on a per-project basis */
+       }    
+    }
+    
+    
+    /* TEXT WRAP */
+        
+    .text-wrap-left {
+        @apply float-left mr-normal mb-normal;		
+    }
+    
+    .text-wrap-right {
+        @apply float-right ml-normal mb-normal;			
+    }
+    
+    .text-wrap-none {
+        @apply float-none;		
+    }
+    
+    /* VISIBILITY */
+    	
+    .not-hidden {
+        display: block;
+    }
+    
+    /* BUTTON SIZES */
+    
+    .btn, .btn-md {
+      @apply text-scaling-base py-4 px-8;	 
+    }
+    
+    .btn-sm {
+      @apply text-scaling-sm py-2 px-4;	 
+    }
+    
+    .btn-lg {
+      @apply text-scaling-lg py-6 px-12;	 
+    }
+    
+    /* ICON SIZES */
+    
+    .icon-small {        
+        
+        svg, i {
+            width: 4rem;
+            height: 4rem;
+            font-size: 4rem;
+            line-height: 1;
+        }
+    }
+    
+    .icon-medium {        
+        
+        svg, i {
+            width: 8rem;
+            height: 8rem;
+            font-size: 8rem;
+            line-height: 1;
+        }
+    }
+    
+    .icon-large {             
+        
+        svg, i {
+            width: 12rem;
+            height: 12rem;
+            font-size: 12rem;
+            line-height: 1;
+        }
+    }
+    
+
+}

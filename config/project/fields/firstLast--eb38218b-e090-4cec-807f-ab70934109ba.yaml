@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: firstLast
+instructions: null
+name: 'First Last'
+searchable: false
+settings:
+  default: false
+  offLabel: First
+  onLabel: Last
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

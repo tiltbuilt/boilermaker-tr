@@ -1,0 +1,64 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Row Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{% set rowContent = entry.columns.eagerly().all() %}
+
+{# Create array for classes to pass to macros for section #}
+{% set rowClassList = [] %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+	{% set blockId = 'row-' ~ entry.id %}
+{% endif %}
+
+{# Set block type handle as class name for styling #}
+{% set blockClass = entry.type.handle|kebab %}
+
+{# Get classes for element animation settings #}
+{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+	{% set animate = true %}	
+{% else %}
+	{% set animate = false %}		
+{% endif %}
+
+
+{# insert layout changes #}
+{% for layoutItem in entry.rowLayout %}
+	{% set devSize = layoutItem.deviceSize %}
+	{% if devSize|length %}
+		{% set devSize = devSize ~ ':' %}	
+	{% endif %}
+	{% if layoutItem.horizontalLayout|length %}
+		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.horizontalLayout]) %}
+	{% endif %}
+	{% if layoutItem.verticalLayout|length %}
+		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.verticalLayout]) %}
+	{% endif %}
+{% endfor %}
+
+
+{# Retrieve styling adjustments #}
+{% set adjustments = entry.rowStyleAdjustments.eagerly().all() %}
+
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}} {{- rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+	{% for column in rowContent %}
+		{{column.render({
+			'animSetting': animSetting,
+			'colorScheme': colorScheme
+		})}}
+	{% endfor %}
+</div>

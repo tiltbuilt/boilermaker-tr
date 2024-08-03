@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: formStyleAdjustments
+instructions: null
+name: 'Form Style Adjustments'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - fe981b00-296b-4916-816f-a8e2670638e3 # Style Adjustment - Form
+  includeTableView: false
+  maxEntries: 6
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

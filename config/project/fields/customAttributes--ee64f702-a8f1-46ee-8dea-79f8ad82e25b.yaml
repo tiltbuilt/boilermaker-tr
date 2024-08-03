@@ -1,0 +1,48 @@
+columnSuffix: null
+handle: customAttributes
+instructions: null
+name: 'Custom Attributes'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Attribute
+            -
+              - handle
+              - attribute
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Value
+            -
+              - handle
+              - value
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults: null
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

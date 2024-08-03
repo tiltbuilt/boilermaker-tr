@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: btnSize
+instructions: null
+name: 'Button Size'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'No Change (Use Default)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - btn-sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - btn-md
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - btn-lg
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

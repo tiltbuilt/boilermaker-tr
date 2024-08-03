@@ -1,0 +1,194 @@
+color: lime
+fieldLayouts:
+  17f974cf-5fe7-43e2-90d8-357ff155b84e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: bdcb410a-3021-4b6b-81d8-aac1e5598503
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
+            handle: accordionIcon
+            includeInCards: false
+            instructions: null
+            label: 'Accordion Icon'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f9be6c16-5bbb-4665-a5ff-700ceb2a9b09
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40b6a49e-a758-4175-ab21-93c9ec3b06f2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9cf48e4f-e4a8-4e1c-ac80-5c3648bd7907
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 001c841b-3599-4a57-a25c-4361c0cb927d
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df8f7abd-b9c0-4c4f-89ca-40552b5dd13a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: null
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b9620717-3ee4-4a3f-aa45-dbe79cc25780
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Adjustments
+            type: craft\fieldlayoutelements\Heading
+            uid: 2b5854d1-3329-4598-86a7-5ffcad53d6ed
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 2ac55b2e-329b-4793-af25-3d158c1a4682 # Accordion Style Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8aabbc14-7fe5-4526-b6dc-15de9e244f92
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styling
+        uid: 09f067e7-d40d-4c01-b8ed-77f11089735a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6b2693a2-5320-4ff9-9a71-39923bb640a4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72b0657e-2c04-4de0-a72f-b3339f88b4cc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a8e17217-022b-4f03-a375-0132a011f437
+            userCondition: null
+            warning: null
+            width: 100
+        name: Advanced
+        uid: f73475c3-86d7-4725-a271-92a21d9a0ab2
+        userCondition: null
+handle: accordion
+hasTitleField: true
+icon: table-rows
+name: Accordion
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

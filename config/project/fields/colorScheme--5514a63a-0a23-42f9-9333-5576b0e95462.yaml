@@ -1,0 +1,56 @@
+columnSuffix: null
+handle: colorScheme
+instructions: 'This field presets the colors of text, heading etc. in the section. Based on what background color you choose for the section (or in the case of a background photo, how dark the photo is) you select the color mode that will work best with the background. Colors can be overridden on the individual elements themselves if desired.'
+name: 'Color Scheme'
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Light Mode'
+        -
+          - color
+          - '#FFF, #000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - colormode-light
+    -
+      __assoc__:
+        -
+          - label
+          - 'Dark Mode'
+        -
+          - color
+          - '#000,#FFF'
+        -
+          - default
+          - ''
+        -
+          - class
+          - colormode-dark
+    -
+      __assoc__:
+        -
+          - label
+          - Test
+        -
+          - color
+          - '#FF0000'
+        -
+          - default
+          - ''
+        -
+          - class
+          - colormode-red
+  palette: null
+  setRandom: false
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

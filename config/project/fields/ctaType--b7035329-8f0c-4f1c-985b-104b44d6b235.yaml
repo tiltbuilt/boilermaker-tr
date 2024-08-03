@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: ctaType
+instructions: null
+name: 'CTA Type'
+searchable: false
+settings:
+  default: false
+  offLabel: Small
+  onLabel: Large
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

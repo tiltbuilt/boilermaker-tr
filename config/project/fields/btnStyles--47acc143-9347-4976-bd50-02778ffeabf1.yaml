@@ -1,0 +1,54 @@
+columnSuffix: null
+handle: btnStyles
+instructions: null
+name: 'Button Styles'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Standard Button'
+        -
+          - value
+          - btn-standard
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Button'
+        -
+          - value
+          - btn-text
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Button with Arrow'
+        -
+          - value
+          - btn-text-arrow
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown
