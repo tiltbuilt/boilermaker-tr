@@ -15,7 +15,7 @@ This is a starter Craft CMS v5.X setup for site built by TILT. It is opinionated
 First you need to run the command to download the package files. Open the terminal and go to the folder where you keep all of your sites. Once there, run the following command:
 
 ```shell
-composer create-project tiltbuilt/boilermaker-tr my/project/path --no-install`
+composer create-project tiltbuilt/boilermaker-tr my/project/path --no-install
 ```
 
 Where the project path part is replaced with the name of the folder for the project you are creating (usually the name of the client website, all lower case, no spaces. hyphens and underscores are allowed). The folder needs to be empty.

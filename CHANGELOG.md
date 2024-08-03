@@ -1,4 +1,11 @@
 # Changelog
+
+## 3.0.2 - 2024-08-03
+### Fixed
+- Fixed issue with installing GSAP paid plugins
+- Fixed issue with naming of site during install
+
+
 ## 3.0.1 - 2024-08-03
 ### Fixed
 - issue with name of example env file preventing it from being copied on project initiation

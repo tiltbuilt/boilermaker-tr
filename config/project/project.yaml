@@ -487,6 +487,6 @@ plugins:
 system:
   edition: pro
   live: true
-  name: 'Boilermaker 3'
+  name: $SITE_NAME
   schemaVersion: 5.0.0.21
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
