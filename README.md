@@ -22,6 +22,7 @@ Where the project path part is replaced with the name of the folder for the proj
 
 ### Configure DDEV
 
+**DO NOT SKIP THIS STEP **
 If you want your site to run on a domain other than https://craftcms.ddev.site, run:
 
 ```shell
