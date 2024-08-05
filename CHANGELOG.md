@@ -1,9 +1,13 @@
 # Changelog
 
+## 3.0.4 - 2024-08-05
+### Fixed
+-Fixed issue with path settings for asset folders in .env
+
+
 ## 3.0.3 - 2024-08-03
 ### Fixed
 - Fixed deployment issue with version number
-
 
 
 ## 3.0.2 - 2024-08-03
