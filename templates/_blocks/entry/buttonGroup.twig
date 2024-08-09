@@ -47,7 +47,7 @@
 
 {# Set color class #}
 {% if entry.btnColor.value|length %}
-	{% set colorClass = 'btn-' ~ entry.btnColor %}
+	{% set colorClass = entry.btnColor %}
 {% else %}
 	{% set colorClass = colorScheme %}
 {% endif %}

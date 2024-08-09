@@ -5,8 +5,8 @@ name: 'CTA Type'
 searchable: false
 settings:
   default: false
-  offLabel: Small
-  onLabel: Large
+  offLabel: 'CTA without Content Image'
+  onLabel: 'CTA with Content Image'
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.0.5 - 2024-08-09
+### Changed
+-Added class names for CTA types into template to help distinguish between them, renamed CTA types to CTA with Photo and CTA without Photo
+
+### Fixed
+-Fixed classname issue on button color overrides
+-Notification bar alerts now load
+
+
 ## 3.0.4 - 2024-08-05
 ### Fixed
 -Fixed issue with path settings for asset folders in .env
