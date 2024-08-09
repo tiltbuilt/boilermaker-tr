@@ -747,6 +747,23 @@
 			color: theme('colors.white');
 		}
 	}
+	
+	&.btn-standard.btn-white, &.btn-white {
+		background-color: theme('colors.white');		
+		
+		&:hover {
+			opacity: 0.8;			
+		}
+	}
+	
+	&.btn-text.btn-white, &.btn-text-arrow.btn-white {
+		color: theme('colors.white');
+		background: transparent !important;		
+		
+		&:hover {
+			opacity: 0.8;			
+		}
+	}
 }
 
 /* Icon Colors */
@@ -789,7 +806,10 @@
 }
 
 
+/* NOTIFICATION BAR */
 
-
-
-
+.topbar {
+	&.bg-red {
+		background-color: theme('colors.red.600');
+	}
+}

@@ -1,0 +1,103 @@
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# button output macro #}
+
+{% macro linkCode (button, btnClasses) %}
+	<a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ button.url }}" {{- button.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
+		<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+	</a>
+{% endmacro linkCode %}
+
+{% macro buttonOutput(buttons, alertColor) %}
+	{% set btnSetStyles = {
+		'size': 'btn-md',
+		'style': 'btn-standard',
+		'fullWidthSmall': false,
+		'color': 'btn-white',
+	}
+	%}
+	{% for button in buttons %}
+		{# get styles for button or if not set, use styles from the set #}
+		{% set btnClasses = ['btn'] %}
+		{% if button.btnStyles|length %}
+			{% set btnClasses = btnClasses|merge([button.btnStyles]) %}
+			{% if button.btnStyles == '' or button.btnStyles == 'btn-standard' %}
+				{% set btnClasses = btnClasses|merge(['text-' ~ alertColor]) %}
+			{% endif %}
+		{% else %}
+			{% set btnClasses = btnClasses|merge([btnSetStyles.style]) %}
+			{% set btnClasses = btnClasses|merge(['text-' ~ alertColor]) %}
+		{% endif %}
+		{% if button.btnSize|length %}
+			{% set btnClasses = btnClasses|merge([button.btnSize]) %}
+		{% else %}
+			{% set btnClasses = btnClasses|merge([btnSetStyles.size]) %}
+		{% endif %}
+		{% set btnClasses = btnClasses|merge([btnSetStyles.color]) %}	
+		{% set btnClasses = btnClasses|merge(['mt-half']) %}
+		{% if button.getLinkType().label == 'Modal' %}
+			{# modal #}
+			{% set modalUrl = '/resources/entrymodal?entryid=' ~ button.linkValue %}
+			{% set modalEntry = craft.entries().id(button.linkValue).one() %}
+			{% if not craft.app.request.isAjax() %}
+				<button {% if button.customId|length %}id="{{button.customId}}" x-ref="{{button.customId}}"{% else %}id="alert-button{{loop.index}}" x-ref="alert-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}
+				x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{% if button.customId|length %}{{button.customId}}{% else %}{{blockId}}-button{{loop.index}}{% endif %}';
+				fetch('{{ modalUrl }}', {
+					method: 'GET',
+					headers: {
+						'X-Requested-With': 'XMLHttpRequest',
+					},
+				})
+				.then(response => response.text())
+				.then(text => {
+					modalHtml = text
+					showLoading = false;			   
+				});"			 
+				>
+					<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+				</button>
+			{% elseif modalEntry.section.handle == "pages" %}
+				{{- _self.linkCode(button, btnClasses) -}}
+			{% endif %}			
+		{% else %}
+			{# everything else #}
+			{{- _self.linkCode(button, btnClasses) -}}
+		{% endif %}
+	{% endfor %}	
+{% endmacro buttonOutput %}
+
+{% set alert = craft.entries().section('notificationBarAlerts').orderBy('postDate desc').one() %}
+{% if alert %}
+	
+	<div class="topbar bg-{{alert.notificationBarColor.value}}">
+		  
+		<div class="topbar__content container @container px-normal py-base text-white">
+			  {% if alert.icon.value|length %}
+				  <div class="row flex-wrap @md:flex-nowrap mx-negnormal items-center justify-start">
+					<div class="column hidden @md:block mt-0 px-normal @md:pr-base @md:w-[15rem] text-white">			
+						<div class="notification-bar-icon">
+							{% if alert.icon.type == 'svg' %}
+								{{ alert.icon.inline }}
+							{% elseif alert.icon.type == 'css' %}
+								<i class="{{ alert.icon }}"></i>								
+							{% else %}
+								<svg><use xlink:href="#{{ alert.icon.value }}"></use></svg>
+							{% endif %}
+						</div>
+					</div>
+					<div class="column px-normal w-full text-left pt-0 mt-0 @md:pl-base">
+						<h2 class="text-white font-bold text-xl">{{alert.title}}</h2>
+						<p class="mt-half">{{ alert.notificationText|raw }}</p>
+						<div class="mt-half">{{- _self.buttonOutput(alert.buttons, alert.notificationBarColor.value) -}}</div>
+					</div>
+				</div>
+			{% else %}
+				<h2 class="text-white font-bold text-xl">{{alert.title}}</h2>
+				<p class="mt-half">{{ alert.notificationText|raw }}</p>
+				<div class="mt-half">{{- _self.buttonOutput(alert.buttons, alert.notificationBarColor.value) -}}</div>
+			{% endif %}				
+		</div>
+		  
+	</div>
+{% endif %}

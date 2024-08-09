@@ -12,10 +12,10 @@ settings:
           - Red
         -
           - value
-          - red
+          - red-600
         -
           - cssColour
-          - ''
+          - dc2626
         -
           - default
           - '1'
