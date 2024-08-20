@@ -7,6 +7,7 @@
 - Added upload_dirs config setting to ddev config to improve Mutagen performance
 - Added classes to help distinguish between CTA types. Changed labelling on CTA Type field to match
 - Added a default color scheme setting and made color schemes non-required in section blocks and the page header
+- Added bullet-list class filter to text output to make ul lists styled with bullets
 
 ### Fixed
 - Fixed issue with search indexes not updating due to animation and color variables not being present

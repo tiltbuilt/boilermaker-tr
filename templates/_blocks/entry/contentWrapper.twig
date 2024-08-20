@@ -58,7 +58,7 @@
 	<div class="inner content-wrapper-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
-				{{chunk|raw}}
+				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
 			{% else %}
 				{{ chunk.entry.render({
 					'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},

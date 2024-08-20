@@ -116,7 +116,7 @@
 			<div>
 				{% for chunk in entry.ctaContent %}
 					{% if chunk.type == 'markup' %}
-						{{chunk|raw}}
+						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
 					{% else %}
 						{{ chunk.entry.render({
 							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
