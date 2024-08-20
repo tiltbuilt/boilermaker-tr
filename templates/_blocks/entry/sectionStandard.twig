@@ -28,7 +28,11 @@
 
 {# Set color classes #}
 {% set colorClasses = [] %}
-{% set colorScheme = entry.colorScheme.class %}
+{% if entry.colorScheme == null %}
+	{% set colorScheme = "colormode-default" %}	
+{% else %}
+	{% set colorScheme = entry.colorScheme.class %}
+{% endif %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
 {% if entry.bgColor|length %}
 	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
@@ -49,9 +53,9 @@
 			{% for chunk in entry.elementContent %}
 				{% if chunk.type == 'markup' %}
 					{% if entry.animate and entry.animateContent %}
-						{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)}}
+						{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
 					{% else %}
-						{{chunk|raw}}
+						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
 					{% endif %}
 				{% else %}
 					{{ chunk.entry.render({

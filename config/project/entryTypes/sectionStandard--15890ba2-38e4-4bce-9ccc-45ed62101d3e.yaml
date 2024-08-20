@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-20T20:14:02+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
             handle: null
@@ -56,6 +58,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: fullscreen
@@ -71,12 +74,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: ce0adc81-91e4-409d-98bc-6b2cbd087e11
             userCondition: null
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
@@ -84,7 +89,7 @@ fieldLayouts:
             instructions: null
             label: null
             providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: cc950807-a3d5-43f6-9798-92be0edfef12
@@ -92,6 +97,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -107,12 +113,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: 759d1107-9906-41b8-aa40-921f8aa4d237
             userCondition: null
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: 3388d3b4-cb9f-47ee-8874-09e50df3c0bb # Section Style Adjustments
             handle: null
@@ -134,6 +142,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: animate
@@ -149,6 +158,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -174,6 +184,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -205,6 +216,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -220,6 +232,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -235,6 +248,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:14:02+00:00'
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null

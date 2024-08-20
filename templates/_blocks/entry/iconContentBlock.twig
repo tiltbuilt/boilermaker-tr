@@ -24,10 +24,14 @@
 {% set blockClass = 'icon-block' %}
 
 {# Get classes for element animation settings #}
-{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-	{% set animate = true %}	
+{% if animSetting is defined %}
+	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+		{% set animate = true %}	
+	{% else %}
+		{% set animate = false %}		
+	{% endif %}
 {% else %}
-	{% set animate = false %}		
+	{% set animate = false %}
 {% endif %}
 
 {# Retrieve styling adjustments #}
@@ -41,6 +45,9 @@
 {% endif %}
 
 {# set classes for icon #}
+{% if colorScheme is not defined %}
+	{% set colorScheme = "colormode-default" %}	
+{% endif %}
 {% set iconClasses = ['icon-wrapper'] %}
 {% if entry.iconColor != '' %}
 	{% set iconClasses = iconClasses|merge(['icon-' ~ entry.iconColor]) %}
@@ -94,10 +101,10 @@
 				
 				{% for chunk in entry.blockContent %}
 					{% if chunk.type == 'markup' %}
-						{{chunk|raw}}					
+						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}					
 					{% else %}
 						{{ chunk.entry.render({
-							'animSetting': animSetting,
+							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
 							'colorScheme': colorScheme,							
 						}) }}
 					{% endif %}

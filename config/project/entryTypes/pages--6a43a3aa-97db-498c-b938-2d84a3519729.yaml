@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-20T20:17:44+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: excerpt
@@ -50,6 +52,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
             handle: showPageHeader
@@ -65,6 +68,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -90,6 +94,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
             handle: showPageFooter
@@ -105,6 +110,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 6283122d-7dc0-4b8d-8895-140bc4e66973 # Page Builder
             handle: null
@@ -136,6 +142,7 @@ fieldLayouts:
           fieldContext: global
         elements:
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: headerText
@@ -151,6 +158,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: subheadText
@@ -166,6 +174,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 77532772-badf-4ce5-a93b-6752273d81bb # Subhead Position
             handle: null
@@ -181,6 +190,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: introText
@@ -196,6 +206,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: c025e168-6f53-4831-9433-670f03c62851 # Buttons
             handle: null
@@ -227,12 +238,14 @@ fieldLayouts:
           fieldContext: global
         elements:
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 01383099-7bcc-4d0c-85a1-9a7b9ca6b622
             userCondition: null
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: e5d8e3b7-10f0-430f-af2f-f9acf11b2e77 # Page Header Color Scheme
             handle: null
@@ -240,7 +253,7 @@ fieldLayouts:
             instructions: null
             label: null
             providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 90e39a81-9d99-443d-aff3-035fe8b0ff15
@@ -248,6 +261,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -263,12 +277,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             heading: Buttons
             type: craft\fieldlayoutelements\Heading
             uid: c5e10655-9b4a-44e4-a2e6-c30f3ab225bf
             userCondition: null
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
             handle: null
@@ -284,6 +300,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
             handle: null
@@ -299,6 +316,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: fullWidthPhone
@@ -314,6 +332,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73 # Button Color
             handle: btnColor
@@ -329,12 +348,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             heading: Background
             type: craft\fieldlayoutelements\Heading
             uid: 09e167c9-a60b-4946-81d8-a0404544de9a
             userCondition: null
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c # Background Image
             handle: headerImg
@@ -350,6 +371,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
@@ -365,6 +387,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300 # Background Image Small
             handle: headerImgSm
@@ -380,6 +403,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: aspectRatioSm
@@ -395,6 +419,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: imgPosition
@@ -410,12 +435,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             heading: Advanced
             type: craft\fieldlayoutelements\Heading
             uid: e462cd0a-fa96-46dc-b474-206fb85ef3aa
             userCondition: null
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -437,6 +464,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: headerEmbeds
@@ -452,6 +480,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: bodyTagEmbeds
@@ -467,6 +496,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: footerEmbeds
@@ -488,6 +518,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 2bf5d5a7-249a-42a4-ae56-79ea7f679bcc # Modal to Display
             handle: null
@@ -509,6 +540,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: seoTitle
@@ -524,6 +556,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: seoDescription
@@ -539,6 +572,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: seoImage
@@ -554,6 +588,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T20:17:44+00:00'
             elementCondition: null
             fieldUid: 6f54afc7-9741-4a74-9500-6ac9ecabb1e9 # SEO - Robots
             handle: null

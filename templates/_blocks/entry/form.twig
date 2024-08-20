@@ -28,14 +28,21 @@
 {% set blockClass = "form-block" %}
 
 {# Get classes for element animation settings #}
-{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-	{% set animate = true %}	
+{% if animSetting is defined %}
+	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+		{% set animate = true %}	
+	{% else %}
+		{% set animate = false %}		
+	{% endif %}
 {% else %}
-	{% set animate = false %}		
+	{% set animate = false %}
 {% endif %}
 
 	
 {# Set color classes #}
+{% if colorScheme is not defined %}
+	{% set colorScheme = "colormode-default" %}	
+{% endif %}
 {% set colorClasses = [] %}
 {% if entry.colorScheme != null %}
 	{% set colorScheme = entry.colorScheme.class %}	

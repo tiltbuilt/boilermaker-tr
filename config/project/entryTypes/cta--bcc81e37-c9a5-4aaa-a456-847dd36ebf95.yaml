@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-20T19:58:27+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
             handle: ctaContent
@@ -50,6 +52,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
             handle: null
@@ -65,6 +68,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -78,10 +82,10 @@ fieldLayouts:
               fieldContext: global
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: ctaImg
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: 'CTA Image'
-            providesThumbs: false
+            providesThumbs: true
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -90,6 +94,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -115,6 +120,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -140,6 +146,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -165,6 +172,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -190,6 +198,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -221,12 +230,14 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 34051c35-cc92-4be3-8b34-d4fc1e5d0154
             userCondition: null
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
@@ -242,6 +253,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -257,12 +269,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: fb6b1286-07dc-4871-9859-652c44886a89
             userCondition: null
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: bbe3f16b-50e0-4f6a-9db0-bb6359934f84 # CTA Style Adjustments
             handle: null
@@ -284,6 +298,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -299,6 +314,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -314,6 +330,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null

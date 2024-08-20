@@ -1,4 +1,4 @@
-dateModified: 1723246622
+dateModified: 1724185144
 elementSources:
   craft\elements\Entry:
     -
@@ -276,7 +276,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true    
-    schemaVersion: 5.6.0
+    schemaVersion: 5.6.4
     settings:
       apiKey: ''
       cacheControlHeader: 'public, max-age=31536000'

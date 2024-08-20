@@ -27,13 +27,21 @@
 {% set blockClass = entry.type.handle|kebab %}
 
 {# Get classes for element animation settings #}
-{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-	{% set animate = true %}	
+{% if animSetting is defined %}
+	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+		{% set animate = true %}	
+	{% else %}
+		{% set animate = false %}		
+	{% endif %}
 {% else %}
-	{% set animate = false %}		
+	{% set animate = false %}
 {% endif %}
 	
 {# Set color classes #}
+
+{% if colorScheme is not defined %}
+	{% set colorScheme = "colormode-default" %}	
+{% endif %}
 {% set colorClasses = [] %}
 {% if entry.colorScheme != null %}
 	{% set colorScheme = entry.colorScheme.class %}	
@@ -163,10 +171,19 @@
 	
 	{% case "selectEntry" %}
 		{% if paginateItems %}
-			{% paginate  entry.entriesToList.orderBy(listOrder).limit(entry.itemsPerPage).with(['seoImage','headerImgSm','headerImg', 'imageAsset']) as pageInfo, listData %}
-			{% do seomatic.helper.paginate(pageInfo) %}
+			{% if listOrder == '' %}
+				{% paginate  entry.entriesToList.limit(entry.itemsPerPage).with(['seoImage','headerImgSm','headerImg', 'imageAsset']) as pageInfo, listData %}
+				{% do seomatic.helper.paginate(pageInfo) %}
+			{% else %}
+				{% paginate  entry.entriesToList.orderBy(listOrder).limit(entry.itemsPerPage).with(['seoImage','headerImgSm','headerImg', 'imageAsset']) as pageInfo, listData %}
+				{% do seomatic.helper.paginate(pageInfo) %}
+			{% endif %}
 		{% else %}
-			{% set listData = entry.entriesToList.orderBy(listOrder).with(['seoImage','headerImgSm', 'headerImg', 'imageAsset']).eagerly().all() %}
+			{% if listOrder == '' %}
+				{% set listData = entry.entriesToList.with(['seoImage','headerImgSm', 'headerImg', 'imageAsset']).eagerly().all() %}
+			{% else %}
+				{% set listData = entry.entriesToList.orderBy(listOrder).with(['seoImage','headerImgSm', 'headerImg', 'imageAsset']).eagerly().all() %}
+			{% endif %}
 		{% endif %}
 	
 	{% case "navList" %}	

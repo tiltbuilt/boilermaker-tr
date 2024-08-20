@@ -29,12 +29,14 @@
 {% set blockClass = entry.type.handle|kebab %}
 
 {# Get classes for element animation settings #}
-{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-	{% set animate = true %}	
-{% else %}
-	{% set animate = false %}		
+{% if animSetting is not defined %}
+	{% set animSetting = {'animate': false, 'animateContent': false, 'animLevel': false} %}
 {% endif %}
 
+{# set default color if not defined #}
+{% if colorScheme is not defined %}
+	{% set colorScheme = "colormode-default" %}	
+{% endif %}
 
 {# insert layout changes #}
 {% for layoutItem in entry.rowLayout %}
