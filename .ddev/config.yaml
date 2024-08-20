@@ -21,6 +21,10 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: 
     - ANIMTKN=cad99ccc-6be7-45a3-8ef1-5b9c8b9ec4a2
+upload_dirs: 
+    - "uploads"
+    - "../storage"
+    - "../src"
 nodejs_version: "20"
 
 # Key features of DDEV's config.yaml:

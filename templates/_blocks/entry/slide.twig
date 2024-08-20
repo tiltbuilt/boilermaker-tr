@@ -30,6 +30,9 @@
 {% set blockClass = entry.type.handle|kebab %}
 
 {# Set color classes #}
+{% if colorScheme is not defined %}
+	{% set colorScheme = "colormode-default" %}	
+{% endif %}
 {% set colorClasses = [] %}
 {% if entry.colorScheme != null %}
 	{% set colorScheme = entry.colorScheme.class %}	
@@ -95,13 +98,13 @@
 						{{chunk|raw}}
 					{% elseif chunk.type == 'button' and entry.wholeSlideLink %}
 						{{ chunk.entry.render({
-							'animSetting': null,
+							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},,
 							'colorScheme': colorScheme,
 							'linkOverride': 1,
 						}) }}
 					{% else %}
 						{{ chunk.entry.render({
-							'animSetting': null,
+							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},,
 							'colorScheme': colorScheme,
 							'linkOverride': 0,
 						}) }}

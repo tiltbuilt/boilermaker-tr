@@ -27,13 +27,20 @@
 {% set blockClass = entry.type.handle|kebab %}
 
 {# Get classes for element animation settings #}
-{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-	{% set animate = true %}	
+{% if animSetting is defined %}
+	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
+		{% set animate = true %}	
+	{% else %}
+		{% set animate = false %}		
+	{% endif %}
 {% else %}
-	{% set animate = false %}		
+	{% set animate = false %}
 {% endif %}
 
 {# Set color classes for set #}
+{% if colorScheme is not defined %}
+	{% set colorScheme = "colormode-default" %}	
+{% endif %}
 {% if entry.colorScheme != null %}
 	{% set colorScheme = entry.colorScheme.class %}	
 {% endif %}
@@ -245,7 +252,7 @@
 				{{chunk|raw}}
 			{% else %}
 				{{ chunk.entry.render({
-					'animSetting': null,
+					'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},,
 					'colorScheme': tabColorScheme
 				}) }}
 			{% endif %}

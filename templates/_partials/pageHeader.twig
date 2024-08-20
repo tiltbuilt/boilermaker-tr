@@ -23,7 +23,14 @@
 {# set aspect ratio of small photo img block itself NOT the photo transform. This is set to make it easy to set/change the ratio on a per project basis. The small size image has the header content stacked below it. The large size becomes a background behind the header content #}
 {% set smallPhotoAspect = 'aspect-3/2' %}
 
-<div id="{{entry.slug}}-page-header" class="page-header @container {{entry.pageHeaderColorScheme.class}} " x-data="sectionStandard(true, true)"	
+{# set default color scheme for page header if none is set #}
+{% if entry.pageHeaderColorScheme == null %}
+    {% set pageHeaderColorScheme = 'colormode-pageheader' %}
+{% else %}
+    {% set pageHeaderColorScheme = entry.pageHeaderColorScheme.class %}
+{% endif %}
+
+<div id="{{entry.slug}}-page-header" class="page-header @container {{pageHeaderColorScheme}} " x-data="sectionStandard(true, true)"	
 x-ref="animparent">
 	<div class="page-header-photo-wrapper  {{entry.opacity}}">
         {% set mainPhoto = entry.headerImg.eagerly().one() %}

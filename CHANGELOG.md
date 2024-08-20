@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.0.6 - 2024-08-20
+### Changed
+- Row matrix field now renders as inline blocks in the control panel to cut down on the number of flyouts
+- Image blocks and CTA blocks now use their image asset fields as thumbnails in the control panel
+- Added upload_dirs config setting to ddev config to improve Mutagen performance
+- Added classes to help distinguish between CTA types. Changed labelling on CTA Type field to match
+- Added a default color scheme setting and made color schemes non-required in section blocks and the page header
+
+### Fixed
+- Fixed issue with search indexes not updating due to animation and color variables not being present
+- Fixed issue with sort order from field on select entry repeaters not being respected
+- Fixed class name issue in Button Group template that was causing button colors to not render correctly from Button Color field
+
+
 ## 3.0.5 - 2024-08-09
 ### Changed
 -Added class names for CTA types into template to help distinguish between them, renamed CTA types to CTA with Photo and CTA without Photo

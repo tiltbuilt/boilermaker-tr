@@ -108,7 +108,11 @@
 
 {# Set color classes #}
 {% set colorClasses = [] %}
-{% set colorScheme = entry.colorScheme.class %}
+{% if entry.colorScheme == null %}
+	{% set colorScheme = "colormode-default" %}	
+{% else %}
+	{% set colorScheme = entry.colorScheme.class %}
+{% endif %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
 {% if entry.bgColor|length %}
 	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
