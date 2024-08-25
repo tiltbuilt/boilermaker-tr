@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.7 - 2024-08-25
+### Fixed
+- Fixed rendering of social media icons from Global macro
+
+
 ## 3.0.6 - 2024-08-20
 ### Changed
 - Row matrix field now renders as inline blocks in the control panel to cut down on the number of flyouts

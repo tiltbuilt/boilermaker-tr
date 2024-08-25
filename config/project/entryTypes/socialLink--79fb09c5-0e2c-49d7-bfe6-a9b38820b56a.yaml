@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-25T21:25:56+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-25T21:25:56+00:00'
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: null
@@ -50,12 +52,13 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-25T21:25:56+00:00'
             elementCondition: null
             fieldUid: 524fa6fd-cc9f-4e7a-8791-a28ce1bb3c97 # Single URL
-            handle: null
+            handle: socialLinkUrl
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Social Link URL'
             providesThumbs: false
             required: true
             tip: null
@@ -75,6 +78,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
