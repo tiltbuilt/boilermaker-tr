@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-09-05T16:11:51-05:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 79d28a86-5f89-45cb-99a4-a97fa0992c73 # Video Asset
             handle: null
@@ -50,6 +52,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: videoCaption
@@ -71,12 +74,14 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 13c0512f-3000-418b-a869-b50d353b7977
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             dismissible: false
             elementCondition: null
             style: tip
@@ -85,6 +90,7 @@ fieldLayouts:
             uid: 82da4155-4d69-4ae7-86cc-dfd2b0436bce
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: captionColor
@@ -100,6 +106,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -115,12 +122,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: ee0359a6-2acc-47c2-8368-acc10a6c6e45
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 4296db0d-d5cc-4ca0-a1b3-08c226ac2224 # Video Style Adjustments
             handle: null
@@ -142,6 +151,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -157,6 +167,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -172,6 +183,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null

@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-09-05T16:11:51-05:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Layout Size
             handle: deviceSize
@@ -56,6 +58,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
             handle: null
@@ -71,6 +74,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
             handle: null
@@ -92,6 +96,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mt
@@ -107,6 +112,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mb
@@ -122,6 +128,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: ml
@@ -137,6 +144,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mr
@@ -158,6 +166,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: pt
@@ -173,6 +182,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: pb
@@ -188,6 +198,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: pl
@@ -203,6 +214,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: pr
@@ -224,6 +236,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             dismissible: false
             elementCondition: null
             style: tip
@@ -232,6 +245,7 @@ fieldLayouts:
             uid: 2d9002dc-0475-44d7-9be8-249078f5f026
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
             handle: null
@@ -247,6 +261,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
             handle: null
@@ -262,6 +277,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
             handle: null
@@ -277,6 +293,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
             handle: null
@@ -292,6 +309,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
             handle: null
@@ -307,6 +325,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
             handle: null
@@ -322,6 +341,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
             handle: null
@@ -337,12 +357,14 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: Alignment
             type: craft\fieldlayoutelements\Heading
             uid: 9b7dfbcd-c323-4be3-9309-e2746dd98216
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
             handle: null
@@ -364,6 +386,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
             handle: null

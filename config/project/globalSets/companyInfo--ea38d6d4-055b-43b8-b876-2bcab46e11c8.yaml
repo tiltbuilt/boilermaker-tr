@@ -5,6 +5,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed # Phone Number
             handle: null
@@ -20,6 +21,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 8cea45ff-f3ed-4c12-b8d2-ed1d8140b912 # Social Media Links
             handle: null

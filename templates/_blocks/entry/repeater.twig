@@ -99,7 +99,7 @@
 {% endif %}
 
 {# don't show dates on nav lists #}
-{% if contentType == 'navList' %}
+{% if contentType == 'navList' or contentType == 'contentCards' %}
 	{% set showDate = false %}
 {% else %}
 	{% set showDate = entry.showPostDate %}
