@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-09-05T16:11:51-05:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 93013c2a-acd5-4b87-b999-b352741b10fd # Repeater Content
             handle: null
@@ -50,6 +52,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
@@ -65,6 +68,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -92,6 +96,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -127,6 +132,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -162,6 +168,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -195,12 +202,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: 'List Content'
             type: craft\fieldlayoutelements\Heading
             uid: 52a3c115-cf55-44af-89e7-4650d63860c1
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -228,6 +237,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -255,6 +265,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -282,6 +293,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -315,6 +327,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -342,6 +355,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -369,6 +383,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -387,6 +402,7 @@ fieldLayouts:
             uid: a38b5de7-3abb-4054-916a-7d3c94e97e5f
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -414,6 +430,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -441,6 +458,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -459,6 +477,7 @@ fieldLayouts:
             uid: 98364caa-a718-44a1-8f5c-b09c0db8bdd9
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -486,6 +505,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -513,6 +533,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -540,6 +561,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -560,6 +582,7 @@ fieldLayouts:
             uid: ace9496f-5b47-4372-8bda-f29954e1cb1e
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -589,6 +612,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -608,6 +632,7 @@ fieldLayouts:
             uid: cd4a58ce-7ea3-4834-b16e-6bd312a3790b
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -635,6 +660,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -662,6 +688,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -690,6 +717,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -718,6 +746,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -746,6 +775,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -774,6 +804,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -802,6 +833,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -829,6 +861,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -858,6 +891,7 @@ fieldLayouts:
             uid: e3f87921-f86b-4cb1-8f41-d3aab059d379
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -896,6 +930,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -942,6 +977,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -1000,12 +1036,14 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 96f5abef-2c83-4460-a7e2-c7c46e70f0ef
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
@@ -1021,6 +1059,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -1036,12 +1075,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: 5a944388-998c-434f-811c-a3d6c60afb28
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: fdc69893-7848-4bd4-8f1d-3df385771a84 # Repeater Style Adjustments
             handle: null
@@ -1063,6 +1104,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -1078,6 +1120,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -1093,6 +1136,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null

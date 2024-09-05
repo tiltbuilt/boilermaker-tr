@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.9 - 2024-09-05
+### Fixed
+- Fixed rendering of content cards in repeater
+
 ## 3.0.8 - 2024-09-05
 ### Fixed
 - Fixed rendering of social media icons from Global macro

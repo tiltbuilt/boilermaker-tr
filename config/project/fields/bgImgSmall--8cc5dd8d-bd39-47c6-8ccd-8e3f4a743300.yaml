@@ -12,7 +12,6 @@ settings:
   branchLimit: null
   defaultUploadLocationSource: 'volume:fa819c1c-abac-42ac-b1e5-3de37862ccf3' # Images
   defaultUploadLocationSubpath: null
-  localizeRelations: false
   maintainHierarchy: false
   maxRelations: 1
   minRelations: null
@@ -32,5 +31,5 @@ settings:
   validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Assets

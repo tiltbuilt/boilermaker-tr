@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-09-05T21:12:17+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,12 +36,13 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T21:12:17+00:00'
             elementCondition: null
             fieldUid: 3fa40ffc-bcf8-4f2f-9462-19c808265175 # Multiline Text With Search
-            handle: null
+            handle: excerpt
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Card Content'
             providesThumbs: false
             required: false
             tip: null
@@ -50,6 +52,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T21:12:17+00:00'
             elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
@@ -75,6 +78,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

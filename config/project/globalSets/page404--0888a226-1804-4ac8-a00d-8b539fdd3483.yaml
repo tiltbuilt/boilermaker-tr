@@ -5,6 +5,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 6283122d-7dc0-4b8d-8895-140bc4e66973 # Page Builder
             handle: null

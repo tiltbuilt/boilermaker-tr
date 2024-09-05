@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-09-05T16:11:51-05:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,6 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: c025e168-6f53-4831-9433-670f03c62851 # Buttons
             handle: null
@@ -56,6 +58,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             dismissible: false
             elementCondition: null
             style: tip
@@ -64,6 +67,7 @@ fieldLayouts:
             uid: dfcb2dfd-bf88-49a5-8ba5-0686fda789a9
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
             handle: null
@@ -79,6 +83,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
             handle: null
@@ -94,6 +99,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: fullWidthSmall
@@ -109,6 +115,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73 # Button Color
             handle: null
@@ -124,12 +131,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: 5c47d007-6f84-47cd-b394-09201d1feccc
             userCondition: null
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: dd25301d-9012-41dd-aa43-19f023540545 # Button Group Style Adjustment
             handle: null
@@ -151,6 +160,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -166,6 +176,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -181,6 +192,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-09-05T16:11:51-05:00'
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
