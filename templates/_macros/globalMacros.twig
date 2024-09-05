@@ -48,12 +48,19 @@
 {# Render social icon links #}
 {% macro socialIconLinks() %}
   {% if companyInfo.socialMediaLinks is defined and companyInfo.socialMediaLinks|length %}
-	{% for socialLink in companyInfo.socialMediaLinks.all() %}
-		<a href="{{ socialLink.socialLinkUrl }}" class="social-icon-link" title="{{ socialLink.title }}" target="_blank"><svg><use xlink:href="/sprites.svg#{{ socialLink.icon.value }}"></use></svg></a>
+	{% for socialLink in companyInfo.socialMediaLinks.eagerly().all() %}
+		<a href="{{ socialLink.socialLinkUrl }}" class="social-icon-link" title="{{ socialLink.title }}" target="_blank">
+		{% if  socialLink.icon.type == 'svg' %}
+			{{  socialLink.icon.inline }}
+		{% elseif socialLink.icon.type == 'css' %}
+			<i class="{{ socialLink.icon }}"></i>								
+		{% else %}
+			<svg><use xlink:href="/sprites.svg#{{ socialLink.icon.value }}"></use></svg>
+		{% endif %}
+		</a>
 	{% endfor %}
   {% endif %}
 {% endmacro socialIconLinks %}
-
 
 {# Class and Attribute Rendering #}
 
@@ -297,17 +304,13 @@
 		{% endif %}
 	{% else %}
 		{% set divClasses = divClasses|merge([bgCurrent.opacity]) %}
-		{% set objClasses = ['background'] %}
-		{% if bgCurrent.bgSize == 'auto' %}
-			{% set objClasses = objClasses|merge() %}
+		{% set objClasses = ['background'] %}		
+		{% if bgCurrent.bgSize == 'auto' or bgCurrent.bgSize == '' %}
+			{% set objClasses = objClasses|merge(['object-scale-down']) %}
 		{% else %}
-			{% if bgCurrent.bgSize == 'auto' or bgCurrent.bgSize == '' %}
-				{% set objClasses = objClasses|merge(['object-scale-down']) %}
-			{% else %}
-				{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.bgSize])%}
-			{% endif %}
-			{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.position])%}	
+			{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.bgSize])%}
 		{% endif %}
+		{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.position])%}			
 		{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
 		{% if bgAsset != null %}			
 			{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.8 - 2024-09-05
+### Fixed
+- Fixed rendering of social media icons from Global macro
+- Fixed error with background images in global macro
+
 ## 3.0.7 - 2024-08-25
 ### Fixed
 - Fixed rendering of social media icons from Global macro
