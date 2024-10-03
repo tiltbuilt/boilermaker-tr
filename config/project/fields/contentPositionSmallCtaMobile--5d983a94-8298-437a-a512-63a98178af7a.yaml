@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: contentPositionSmallCtaMobile
+instructions: null
+name: 'Content Position Small CTA Mobile'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Center (Default)'
+        -
+          - value
+          - center
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Top
+        -
+          - value
+          - top
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bottom
+        -
+          - value
+          - bottom
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

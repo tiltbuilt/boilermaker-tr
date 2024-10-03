@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.0.9 - 2024-10-03
+### Fixed
+- Icon issue on Slider Set
+- Path issue on imager-x config
+
+### Changed
+- CTA Setup to be more flexible
+
+### Added
+- Template for embed block type (OOPS! Good catch Chris!)
+
+
 ## 3.0.9 - 2024-09-05
 ### Fixed
 - Fixed rendering of content cards in repeater
