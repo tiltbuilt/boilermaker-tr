@@ -126,10 +126,10 @@ x-init="swiper = new Swiper($refs.container, {
 				{% elseif gSettings.sliderPreviousIcon.type == 'css' %}
 					<i class="{{ gSettings.sliderPreviousIcon }}"></i>								
 				{% else %}
-					<svg><use xlink:href="#{{ gSettings.sliderPreviousIcon.value }}"></use></svg>
+					<svg><use xlink:href="/sprites.svg#{{ gSettings.sliderPreviousIcon.value }}"></use></svg>
 				{% endif %}
 			{% else %}
-				<svg><use xlink:href="#icon-angle-left"></use></svg>
+				<svg><use xlink:href="/sprites.svg#icon-angle-left"></use></svg>
 			{% endif %}
 		</button>
 		
@@ -140,10 +140,10 @@ x-init="swiper = new Swiper($refs.container, {
 				{% elseif gSettings.sliderNextIcon.type == 'css' %}
 					<i class="{{ gSettings.sliderNextIcon }}"></i>								
 				{% else %}
-					<svg><use xlink:href="#{{ gSettings.sliderNextIcon.value }}"></use></svg>
+					<svg><use xlink:href="/sprites.svg#{{ gSettings.sliderNextIcon.value }}"></use></svg>
 				{% endif %}
 			{% else %}
-				<svg><use xlink:href="#icon-angle-right"></use></svg>
+				<svg><use xlink:href="/sprites.svg#icon-angle-right"></use></svg>
 			{% endif %}
 		</button>
 	{% endif %}

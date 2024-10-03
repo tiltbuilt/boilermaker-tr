@@ -59,11 +59,12 @@
 
 
 {# Set content and image classes #}
+{% set innerClasses = [] %}
 {% set contentClasses = [] %}
 {% set imgClasses = [] %}
 {% if entry.ctaType and ctaImg != null %}
 	{% if entry.contentVerticalAlignment != '' %}
-		{% set contentClasses = contentClasses|merge(['@md/component:items-' ~ entry.contentVerticalAlignment ]) %}
+		{% set contentClasses = contentClasses|merge(['@sm/component:items-' ~ entry.contentVerticalAlignment ]) %}
 	{%endif %}	
 	{% if entry.contentPositionSmall %}
 		{% set contentClasses = contentClasses|merge(['order-last']) %}
@@ -71,47 +72,86 @@
 		{% set contentClasses = contentClasses|merge(['order-first']) %}
 	{% endif %}
 	{% if entry.contentPositionLarge %}
-		{% set contentClasses = contentClasses|merge(['@md/component:order-last']) %}
+		{% set contentClasses = contentClasses|merge(['@sm/component:order-last']) %}
 	{% else %}
-		{% set contentClasses = contentClasses|merge(['@md/component:order-first']) %}
+		{% set contentClasses = contentClasses|merge(['@sm/component:order-first']) %}
 	{% endif %}
 	{% if entry.contentWidthLarge == '' %}
-		{% set contentClasses = contentClasses|merge(['@md/component:w-1/2']) %}
+		{% set contentClasses = contentClasses|merge(['@sm/component:w-1/2']) %}
 	{% else %}
-		{% set contentClasses = contentClasses|merge(['@md/component:w-' ~ entry.contentWidthLarge]) %}
+		{% set contentClasses = contentClasses|merge(['@sm/component:w-' ~ entry.contentWidthLarge]) %}
 	{% endif %}
 	
 	{% switch entry.contentWidthLarge %}
 		{% case '1/5' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-4/5']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-4/5']) %}
 		{% case '1/4' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-3/4']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-3/4']) %}
 		{% case '1/3' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-2/3']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-2/3']) %}
 		{% case '2/5' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-3/5']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-3/5']) %}
 		{% case '1/2' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-1/2']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-1/2']) %}
 		{% case '3/5' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-2/5']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-2/5']) %}
 		{% case '2/3' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-1/3']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-1/3']) %}
 		{% case '3/4' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-1/4']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-1/4']) %}
 		{% case '4/5' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-1/5']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-1/5']) %}
 		{% case 'full' %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-full']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-full']) %}
 		{% default %}
-			{% set imgClasses = imgClasses|merge(['@md/component:w-1/2']) %}
+			{% set imgClasses = imgClasses|merge(['@sm/component:w-1/2']) %}
 	{% endswitch %}
 {% endif %}
+
+{% if entry.contentPositionSmallCta|length %}
+	{% set contentClasses = contentClasses|merge(['@sm/component:w-1/2']) %}
+{% endif %}
+
+{% switch entry.contentPositionSmallCtaMobile %}
+	{% case "top" %}
+		{% set innerClasses = innerClasses|merge(['items-start']) %}
+	{% case "center" %}
+		{% set innerClasses = innerClasses|merge(['items-center']) %}
+	{% case "bottom" %}
+		{% set innerClasses = innerClasses|merge(['items-end']) %}
+	{% default %}
+		{% set innerClasses = innerClasses|merge(['items-center']) %}
+{% endswitch %}
+
+
+{% switch entry.contentPositionSmallCta %}
+	{% case "center-left" %}
+		{% set innerClasses = innerClasses|merge(['{@sm/component:justify-start @sm/component:items-center']) %}
+	{% case "center-center" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-center @sm/component:items-center']) %}
+	{% case "center-right" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-end @sm/component:items-center']) %}
+	{% case "top-left" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-start @sm/component:items-start']) %}
+	{% case "top-center" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-center @sm/component:items-start']) %}
+	{% case "top-right" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-end @sm/component:items-start']) %}
+	{% case "bottom-left" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-start @sm/component:items-end']) %}
+	{% case "bottom-center" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-center @sm/component:items-end']) %}
+	{% case "bottom-right" %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-end @sm/component:items-end']) %}
+	{% default %}
+		{% set innerClasses = innerClasses|merge(['@sm/component:justify-center @sm/component:items-center']) %}
+{% endswitch %}
 
 {# Retrieve styling adjustments #}
 {% set adjustments = entry.ctaStyleAdjustments.eagerly().with('bgImg').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container/component {% if entry.ctaType %}cta-withimg{% else %}cta-noimg{% endif %} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- ctaClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
-	<div class="inner cta-inner">
+<div id="{{blockId}}" class="{{- blockClass }} @container/component {% if entry.ctaType %}cta-lg{% else %}cta-sm{% endif %} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- ctaClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<div class="inner cta-inner {{ innerClasses|join(' ') }}">
 		<div class="cta-content w-full {{ contentClasses|join(' ') }}  {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
 			<div>
 				{% for chunk in entry.ctaContent %}

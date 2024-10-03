@@ -15,10 +15,7 @@
 				'useHttps' => true,
 				'signKey' => App::env('IMGIX_TOKEN'),
 				'sourceIsWebProxy' => false,
-				'useCloudSourcePath' => true,
-				'addPath' => [
-					'images' => 'images',			            
-				],
+				'useCloudSourcePath' => true,				
 				'getExternalImageDimensions' => true,
 				'defaultParams' => ['auto'=>'compress,format', 'q'=>70],
 			],		
@@ -32,10 +29,7 @@
 				'useHttps' => true,
 				'signKey' => App::env('IMGIX_TOKEN'),
 				'sourceIsWebProxy' => false,
-				'useCloudSourcePath' => true,
-				'addPath' => [
-					'images' => 'images',			            
-				],
+				'useCloudSourcePath' => true,				
 				'getExternalImageDimensions' => true,
 				'defaultParams' => ['auto'=>'compress,format', 'q'=>70],
 			],		

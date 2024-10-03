@@ -1,0 +1,26 @@
+{#
+/**
+ * Tilt Boilermaker - Generic Code Embed Block Template
+ * -----
+ * 
+ * 
+ * @author    TILT, LLC <support@tiltbuilt.com>
+ * @copyright Copyright (c) 2019, TILT, LLC
+ * @link      https://tiltbuilt.com
+ */
+#}
+
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
+{# Set block id attribute value #}
+{% if entry.customId is defined and entry.customId != '' %}
+  {% set blockId = entry.customId|replace({' ': '-'})|trim %}
+{% else %}
+  {% set blockId = 'embed-' ~ entry.id %}
+{% endif %}
+
+
+<div class="embed mt-normal" id="{{blockId}}">  
+	{{ entry.embedCode|raw }}  
+</div>

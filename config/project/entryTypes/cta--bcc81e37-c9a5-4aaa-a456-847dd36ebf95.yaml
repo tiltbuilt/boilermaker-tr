@@ -172,6 +172,58 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2024-10-03T19:11:32+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: b9ab9ed7-94c4-4e60-80ee-3841125d1176
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 5d983a94-8298-437a-a512-63a98178af7a # Content Position Small CTA Mobile
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Content Position - Mobile'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 53f2e917-19c5-4829-8fe1-eb01ff777d20
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-03T19:11:32+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 97c99555-dd15-4bbe-a5cd-67ecb0df5075
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: c57caa3f-3422-4928-85a0-f509e3c41317 # Content Position - Small CTA
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Content Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eeebf7da-dfd7-45e6-a2c3-61e7cf95203b
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-08-20T19:58:27+00:00'
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
@@ -356,6 +408,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

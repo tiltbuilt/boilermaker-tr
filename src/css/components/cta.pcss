@@ -2,11 +2,13 @@
 	/* These classes must stay in order to ensure functionality */
 	position: relative;
 	/* The default classes and style below can be changed on a per-project basis */
-	margin-top: theme('spacing.normal');
+	margin-top: theme('spacing.normal');	
+	overflow: hidden;
 	  
 	&:first-child {
 		margin-top: 0;
 	}
+
 }
 
 .cta-content {
@@ -23,4 +25,8 @@
 .cta-content {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	aspect-ratio: 3/1;
 }
+
+
