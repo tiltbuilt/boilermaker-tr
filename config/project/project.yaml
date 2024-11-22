@@ -1,4 +1,4 @@
-dateModified: 1727982692
+dateModified: 1732319319
 elementSources:
   craft\elements\Entry:
     -
@@ -279,7 +279,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: ZY5GT67WUJUTKK84IZ7K70SJ
-    schemaVersion: 5.8.0
+    schemaVersion: 5.9.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -488,5 +488,5 @@ system:
   edition: pro
   live: true
   name: $SITE_NAME
-  schemaVersion: 5.3.0.2
+  schemaVersion: 5.5.0.0
   timeZone: America/Chicago
