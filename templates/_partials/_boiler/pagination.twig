@@ -6,7 +6,7 @@
 #}
 
 {% if pageInfo.totalPages > 1 %}
-	<nav class="pagination">	
+	<nav class="pagination @container">	
 		
 		{# first button #}
 		{% if pageInfo.currentPage != 1 %}
@@ -25,7 +25,7 @@
 		{% endif %}
 		
 		{# page link list, only displays on tablet plus #}		
-		<div class="pagination-pages hidden @md/list:block">
+		<div class="pagination-pages hidden @md:block">
 			{% for page, url in pageInfo.getPrevUrls(3) %}
 				<a href="{{ url }}">{{ page }}</a>
 			{% endfor %}
@@ -38,7 +38,7 @@
 		</div>
 		
 		{# current/total, only displays on tablet plus #}	
-		<div class="pagination-pages-abbreviated @md/list:hidden">
+		<div class="pagination-pages-abbreviated @md:hidden">
 			{{ pageInfo.currentPage }}/{{pageInfo.totalPages}}	
 		</div>
 		{# next button #}

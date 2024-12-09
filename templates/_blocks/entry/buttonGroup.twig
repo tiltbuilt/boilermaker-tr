@@ -59,10 +59,17 @@
 	{% set colorClass = colorScheme %}
 {% endif %}
 
+{% if entry.btnStyles != '' %}
+	{% set btnStyle = entry.btnStyles %}
+{% else %}
+	{% set btnStyle = 'btn-standard' %}
+{% endif %}
+
+
 {# create object with btn set preset styles to grab from as needed if buttons do not have custom styles different from the set #}
 {% set btnSetStyles = {
 	'size': entry.btnSize,
-	'style': entry.btnStyles,
+	'style': btnStyle,
 	'fullWidthSmall': entry.fullWidthSmall,
 	'color': colorClass,
 }
@@ -72,7 +79,7 @@
 {# Retrieve styling adjustments #}
 {% set adjustments = entry.buttonGroupStyleAdjustments.eagerly().all() %}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- btnSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Alignment') -}} {{ gMacros.classesOut(adjustments, 'Display') }} {{ gMacros.classesOut(adjustments, 'Margins', true) }} {{ btnSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
 	{% set buttons = entry.buttons %}
 	{% for button in buttons %}
 		{# get styles for button or if not set, use styles from the set #}

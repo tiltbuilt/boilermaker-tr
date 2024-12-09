@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: spacing
+handle: buttonAlignment
 instructions: null
-name: Spacing
+name: 'Button Alignment'
 searchable: false
 settings:
   customOptions: false
@@ -20,16 +20,11 @@ settings:
     -
       __assoc__:
         -
-          - optgroup
-          - 'Scaling Sizes'
-    -
-      __assoc__:
-        -
           - label
-          - 'Half Normal'
+          - Left
         -
           - value
-          - half-normal
+          - justify-start
         -
           - default
           - ''
@@ -37,10 +32,10 @@ settings:
       __assoc__:
         -
           - label
-          - Normal
+          - Right
         -
           - value
-          - normal
+          - justify-end
         -
           - default
           - ''
@@ -48,10 +43,10 @@ settings:
       __assoc__:
         -
           - label
-          - Extra
+          - Center
         -
           - value
-          - extra
+          - justify-center
         -
           - default
           - ''
@@ -59,26 +54,10 @@ settings:
       __assoc__:
         -
           - label
-          - None
+          - 'Spaced Out'
         -
           - value
-          - none
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - optgroup
-          - 'Fixed Sizes'
-    -
-      __assoc__:
-        -
-          - label
-          - 'Quarter (3.75px)'
-        -
-          - value
-          - quarter
+          - justify-between
         -
           - default
           - ''
@@ -86,10 +65,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Half (7.5px)'
+          - 'Space Around '
         -
           - value
-          - half
+          - space-around
         -
           - default
           - ''
@@ -97,43 +76,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Base (15px)'
+          - 'Evenly Spaced'
         -
           - value
-          - base
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 2x
-        -
-          - value
-          - 2x
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 3x
-        -
-          - value
-          - 3x
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 4x
-        -
-          - value
-          - 4x
+          - space-evenly
         -
           - default
           - ''
