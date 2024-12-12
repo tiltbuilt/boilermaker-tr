@@ -1,6 +1,100 @@
+css: ".ck.ck-content {\r\n  font-size: 16px;\r\n}\r\n\r\n.ck.ck-content .text-xs {\r\n  font-size: 12px;\r\n}\r\n\r\n.ck.ck-content .text-sm {\r\n  font-size: 14px;\r\n}\r\n\r\n.ck.ck-content .text-lg {\r\n  font-size: 18px;\r\n}\r\n\r\n.ck.ck-content .text-xl {\r\n  font-size: 20px;\r\n}\r\n\r\n.ck.ck-content .text-2xl {\r\n  font-size: 24px;\r\n}\r\n\r\n.ck.ck-content .text-3xl {\r\n  font-size: 30px;\r\n}\r\n\r\n.ck.ck-content .text-4xl {\r\n  font-size: 36px;\r\n}\r\n\r\n.ck.ck-content .text-5xl {\r\n  font-size: 48px;\r\n}\r\n\r\n.ck.ck-content .text-6xl {\r\n  font-size: 60px;\r\n}\r\n\r\n.ck.ck-content .text-7xl {\r\n  font-size: 72px;\r\n}\r\n\r\n.ck.ck-content .text-8xl {\r\n  font-size: 96px;\r\n}"
 headingLevels: false
 name: Limited
 options:
+  alignment:
+    options:
+      -
+        className: text-left
+        name: left
+      -
+        className: text-right
+        name: right
+      -
+        className: text-center
+        name: center
+      -
+        className: text-justify
+        name: justify
+  fontSize:
+    options:
+      -
+        model: xs
+        title: 'Extra Small'
+        view:
+          classes:
+            - text-xs
+          name: span
+      -
+        model: sm
+        title: Small
+        view:
+          classes:
+            - text-sm
+          name: span
+      -
+        model: lg
+        title: Large
+        view:
+          classes:
+            - text-lg
+          name: span
+      -
+        model: xl
+        title: 'Extra Large'
+        view:
+          classes:
+            - text-xl
+          name: span
+      -
+        model: 2xl
+        title: 2XL
+        view:
+          classes:
+            - text-2xl
+          name: span
+      -
+        model: 3xl
+        title: 3XL
+        view:
+          classes:
+            - text-3xl
+          name: span
+      -
+        model: 4xl
+        title: 4XL
+        view:
+          classes:
+            - text-4xl
+          name: span
+      -
+        model: 5xl
+        title: 5XL
+        view:
+          classes:
+            - text-5xl
+          name: span
+      -
+        model: 6xl
+        title: 6XL
+        view:
+          classes:
+            - text-6xl
+          name: span
+      -
+        model: 7xl
+        title: 7XL
+        view:
+          classes:
+            - text-7xl
+          name: span
+      -
+        model: 8xl
+        title: 8XL
+        view:
+          classes:
+            - text-8xl
+          name: span
   link:
     addTargetToExternalLinks: false
     decorators:
@@ -16,3 +110,18 @@ toolbar:
   - bold
   - italic
   - link
+  - anchor
+  - '|'
+  - alignment
+  - '|'
+  - fontSize
+  - '|'
+  - bulletedList
+  - numberedList
+  - outdent
+  - indent
+  - '|'
+  - removeFormat
+  - undo
+  - redo
+  - sourceEditing

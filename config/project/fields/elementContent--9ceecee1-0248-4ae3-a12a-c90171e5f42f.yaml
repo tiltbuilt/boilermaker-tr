@@ -14,7 +14,7 @@ settings:
   entryTypes:
     - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
     - bcc81e37-c9a5-4aaa-a456-847dd36ebf95 # CTA
-    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Advanced Heading
+    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
     - ad1fd6cd-1d72-49dd-82fc-6a604b11a71c # Icon Content Block
     - a6e56255-d417-4ac8-9a3f-256c30684cd0 # Image
     - ad2e8ad9-d9ae-4fee-a8f8-de0e8680707c # Quote

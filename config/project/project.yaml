@@ -1,4 +1,4 @@
-dateModified: 1733632735
+dateModified: 1733962521
 elementSources:
   craft\elements\Entry:
     -
@@ -262,7 +262,8 @@ meta:
     adca13f3-4ae5-49c5-83c4-cab3dd9f5ece: 'Button Size' # Button Size
     aeeead9c-f591-4d95-a990-f8bea54fb0ef: 'Heading Style' # Heading Style
     b1dd9550-b7de-4c8d-ac15-30a80aef59ff: 'Text Case' # Text Case
-    b1e1aad8-a87c-4914-9445-bbbbb92076ee: 'Advanced Heading' # Advanced Heading
+    b1e1aad8-a87c-4914-9445-bbbbb92076ee: Heading # Heading
+    b4c4f21e-35c3-40ba-b812-86a3bc213582: 'Main Heading Text' # Main Heading Text
     b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f: 'Row Layout' # Row Layout
     b81cc92d-9e5b-440d-8461-cdf9ab64807e: Opacity # Opacity
     b352c451-ed85-4679-8a36-8e473facf8a0: 'Style Adjustment - Button Group' # Style Adjustment - Button Group
@@ -310,6 +311,7 @@ meta:
     e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
     e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
     e8d249f8-2c18-4b51-b311-baabbd94f999: 'Style Adjustment - Image' # Style Adjustment - Image
+    e976e669-f3ac-496a-8450-9d5613262236: 'Subhead Text' # Subhead Text
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
     e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
     ea38d6d4-055b-43b8-b876-2bcab46e11c8: 'Company Info' # Company Info

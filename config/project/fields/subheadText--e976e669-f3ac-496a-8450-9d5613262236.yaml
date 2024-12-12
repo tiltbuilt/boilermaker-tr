@@ -1,19 +1,16 @@
 columnSuffix: null
-handle: limitedContent
+handle: subheadText
 instructions: null
-name: 'Limited Content'
-searchable: false
+name: 'Subhead Text'
+searchable: true
 settings:
   availableTransforms: ''
   availableVolumes:
     - b644bda8-1050-46f5-9453-0b3d19812289 # Documents
-  ckeConfig: 073c9d03-dcc0-4435-99fe-2df91703e911 # Limited
-  createButtonLabel: 'New Content Element'
+  ckeConfig: 69b9aab4-6d39-462c-b88a-8d4971791897 # Simple
+  createButtonLabel: null
   defaultTransform: null
-  enableSourceEditingForNonAdmins: false
-  entryTypes:
-    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
-    - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+  enableSourceEditingForNonAdmins: true
   purifierConfig: null
   purifyHtml: true
   showUnpermittedFiles: false

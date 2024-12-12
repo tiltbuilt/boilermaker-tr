@@ -6,7 +6,7 @@ searchable: false
 settings:
   createButtonLabel: 'Create Header'
   entryTypes:
-    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Advanced Heading
+    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
   includeTableView: false
   maxEntries: 1
   minEntries: 1

@@ -105,7 +105,7 @@
 		</span>
 	{% endif %}
 
-	<span class="header-main-text">{{entry.title}}</span>
+	<span class="header-main-text">{{ gMacros.stripTags(entry.mainHeadingText) }}</span>
 	
 	{% if entry.subheadText|length and entry.subheadPosition == 0 %}
 		<span id="{{blockId}}-subhead" class="{{- _self.subheadClasses(adjustments, entry.subheadStyle, entry.subheadColor, entry.subheadPosition) -}}">		
