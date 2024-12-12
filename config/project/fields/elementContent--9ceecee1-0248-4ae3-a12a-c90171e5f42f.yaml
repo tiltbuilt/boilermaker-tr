@@ -5,7 +5,8 @@ name: Content
 searchable: true
 settings:
   availableTransforms: ''
-  availableVolumes: ''
+  availableVolumes:
+    - b644bda8-1050-46f5-9453-0b3d19812289 # Documents
   ckeConfig: c43e08b0-14a5-4aee-adb4-4e78e9c3d9fe # Main Content
   createButtonLabel: 'New Content Element'
   defaultTransform: null

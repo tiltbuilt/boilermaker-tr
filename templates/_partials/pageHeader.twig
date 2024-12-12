@@ -64,7 +64,7 @@ x-ref="animparent">
           src="{{ smStartImage }}"
           srcset="{{ craft.imager.srcset(smImages) }}"
           alt="header background image"
-          class="block @md:hidden w-full smallPhotoAspect object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
+          class="block @md:hidden w-full {{smallPhotoAspect}} object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
           loading="lazy"
         >
                 

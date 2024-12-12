@@ -1,7 +1,9 @@
 
 .button-group {
 	/* These classes must stay in order to ensure functionality */
-	display: block;
+	display: flex;
+	align-item: center;
+	justify-content: flex-start;
 	/* The default classes and style below can be changed on a per-project basis */
 	margin-top: theme('spacing.normal');	  
 }
@@ -51,11 +53,19 @@ p + .button-group {
 	@apply text-scaling-base py-4;
 	
 	&.btn-standard {
-		@apply px-8; 
+		@apply mx-4 px-8;
+		
+		&:first-child {
+			@apply ml-none;
+		} 
+		
+		&:last-child {
+			@apply mr-none;
+		} 
 	}
 	
 	&.btn-text, &.btn-text-arrow {
- 		@apply mx-8 px-0; 
+ 		@apply mx-4 px-0; 
 		
 		&:first-child {
 			@apply ml-none;
@@ -71,11 +81,19 @@ p + .button-group {
 	@apply text-scaling-sm py-2;
 	
 	&.btn-standard {
-  		@apply px-4; 
+  		@apply mx-2 px-4;
+		  
+		&:first-child {
+			@apply ml-none;
+		} 
+		
+		&:last-child {
+			@apply mr-none;
+		} 
 	}
 	
 	&.btn-text, &.btn-text-arrow {
-   		@apply mx-4 px-0;
+   		@apply mx-2 px-0;
 		   
 		&:first-child {
 			@apply ml-none;
@@ -91,11 +109,19 @@ p + .button-group {
 	@apply text-scaling-lg py-6;
 	
 	&.btn-standard {
-		@apply px-12; 
+		@apply mx-6 px-12; 
+		
+		&:first-child {
+			@apply ml-none;
+		} 
+		
+		&:last-child {
+			@apply mr-none;
+		} 
 	}
 	
 	&.btn-text, &.btn-text-arrow {
-		@apply mx-12 px-0;
+		@apply mx-6 px-0;
 		
 		&:first-child {
 			@apply ml-none;

@@ -56,8 +56,10 @@ module.exports = {
 		'neg-2x': '-3rem',
 		'neg-3x': '-4.5rem',
 		'neg-4x': '-6rem',
+		'half-normal': 'clamp(0.75rem, 1.175vw, 2.25rem)',
 		'normal': 'clamp(1.5rem, 2.35vw, 4.5rem)',
 		'extra': 'clamp(3rem, 3.5vw, 6rem)',
+		'neg-half-normal': 'clamp(-2.25rem, -1.175vw, -0.75rem)',
 		'neg-normal': 'clamp(-4.5rem, -2.35vw, -1.5rem)',
 		'neg-extra': 'clamp(-6rem, -3.5vw, -3rem)',
 	  },
@@ -130,7 +132,7 @@ module.exports = {
 		variants: ['hover', 'focus'],
 	  },
 	  {
-		pattern: /(p|m)(t|b|l|r)-(none|quarter|half|base|2x|3x|4x|normal|extra|neg-quarter|neg-half|neg-base|neg-2x|neg-3x|neg-4x|neg-normal|neg-extra)/, //adjust sizes to match list available in spacing def
+		pattern: /(p|m|px|py|pt|pl|pr|pb)-(none|0|quarter|half|base|2x|3x|4x|normal|extra|neg-quarter|neg-half|neg-base|neg-2x|neg-3x|neg-4x|half-normal|neg-half-normal|neg-normal|neg-extra)/, //adjust sizes to match list available in spacing def
 		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
 	  },
 	  {

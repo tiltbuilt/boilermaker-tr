@@ -1,3 +1,8 @@
+.modal-active {
+	overflow: hidden;
+	padding-right: 0;
+}
+
 .modal-overlay {	
 	position: fixed;
 	z-index: 999;
@@ -47,11 +52,15 @@
 		
 }
 
+.modal-content-inner-wrapper {
+	overflow: scroll !important;
+}
+
 .modal-close {
 	position: absolute;
 	right: 0;
 	top: 0;
-	z-index: 999;
+	z-index: 1000;
 	color: theme('colors.white');
 	margin: 0.5rem;
 	transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);

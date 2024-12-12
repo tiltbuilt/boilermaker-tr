@@ -97,7 +97,7 @@
 			{% endif %}
 		</div>	
 		{% if entry.blockContent|length %}
-			<div class="{{- contentClasses|join(' ') }} {{ gMacros.classesOut(adjustments, 'Text') -}} ">
+			<div class="{{- contentClasses|join(' ') }} {{ gMacros.classesOut(adjustments, 'Type') -}} ">
 				
 				{% for chunk in entry.blockContent %}
 					{% if chunk.type == 'markup' %}

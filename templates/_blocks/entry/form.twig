@@ -439,7 +439,17 @@
 					},
 				},
 			},
-		}) }}			
+		}) }}
+		{% js %}
+			// Wait until Formie has been loaded and initialized
+			document.addEventListener('onFormieInit', (event) => {
+				// Fetch the Form Factory once it's been loaded
+				let Formie = event.detail.formie;
+		
+				// Refresh the necessary bits that are statically cached (CSRF inputs, captchas, etc)
+				Formie.refreshForCache(event.detail.formId);
+			});
+		{% endjs %}				
 </div>
 
 	

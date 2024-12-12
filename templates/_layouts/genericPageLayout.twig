@@ -104,14 +104,14 @@
 			<div x-show="modalOpen" x-transition.opacity class="modal-overlay"></div>
 			
 			<!-- close button -->
-			<button id="btn-modal-close" class="modal-close" type="button" x-show="modalOpen" x-on:click="modalOpen = false; $refs[focusEl].focus();">			  
+			<button id="btn-modal-close" class="modal-close" type="button" x-show="modalOpen" x-on:click="modalOpen = false; modalHtml = ''; focus(focusEl);">			  
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 		
 			<!-- Panel -->
 			<div
 				x-show="modalOpen" x-transition
-				x-on:click="modalOpen = false"
+				x-on:click="modalOpen = false; modalHtml = ''; focus(focusEl);"
 				class="modal-wrapper-inner"
 			>
 				

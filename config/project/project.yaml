@@ -1,4 +1,4 @@
-dateModified: 1727982692
+dateModified: 1733962521
 elementSources:
   craft\elements\Entry:
     -
@@ -60,6 +60,20 @@ fs:
       path: $BG_VIDEO_ASSETS_PATH
     type: craft\fs\Local
     url: $BG_VIDEO_ASSETS_URL
+  backgroundVideosServd:
+    hasUrls: false
+    name: 'Background Videos - Servd'
+    settings:
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: /local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: 'https://cdn2.assets-servd.host/'
   contentVideos:
     hasUrls: true
     name: 'Content Videos'
@@ -67,6 +81,20 @@ fs:
       path: $CONTENT_VIDEO_ASSETS_PATH
     type: craft\fs\Local
     url: $CONTENT_VIDEO_ASSETS_URL
+  contentVideosServd:
+    hasUrls: false
+    name: 'Content Videos - Servd'
+    settings:
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: /local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: 'https://cdn2.assets-servd.host/'
   docs:
     hasUrls: true
     name: Docs
@@ -74,6 +102,20 @@ fs:
       path: $DOC_ASSETS_PATH
     type: craft\fs\Local
     url: $DOC_ASSETS_URL
+  docsServd:
+    hasUrls: false
+    name: 'Docs - Servd'
+    settings:
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: /local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: 'https://cdn2.assets-servd.host/'
   images:
     hasUrls: true
     name: Images
@@ -81,6 +123,20 @@ fs:
       path: $IMAGE_UPLOADS_PATH
     type: craft\fs\Local
     url: $IMAGE_UPLOADS_URL
+  imagesServd:
+    hasUrls: false
+    name: 'Images - Servd'
+    settings:
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: /local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: 'https://cdn2.assets-servd.host/'
 meta:
   __names__:
     0a94a9c4-7b94-408c-919b-9c4a6c070e37: 'Header Block' # Header Block
@@ -93,6 +149,7 @@ meta:
     2dc9eeb7-914f-40a8-a177-d21efc54153e: 'Link Settings' # Link Settings
     2e638127-2263-4e53-b71d-89eadcf405b0: 'Main Menu' # Main Menu
     3aa14a6e-dabc-42ae-8954-e10f19c53441: Accordions # Accordions
+    3b11f12d-de65-452c-9f88-880fdf6e2c79: 'Button Alignment' # Button Alignment
     3bcfa1bb-bcae-4957-b813-c81aa2061bfd: 'Text List Style' # Text List Style
     3c147a0d-440a-4850-b41a-98bf61c16df6: Globals # Globals
     3f041b04-6fce-4165-ab3a-d234dabaa7bd: 'Embed Code' # Embed Code
@@ -206,6 +263,7 @@ meta:
     aeeead9c-f591-4d95-a990-f8bea54fb0ef: 'Heading Style' # Heading Style
     b1dd9550-b7de-4c8d-ac15-30a80aef59ff: 'Text Case' # Text Case
     b1e1aad8-a87c-4914-9445-bbbbb92076ee: Heading # Heading
+    b4c4f21e-35c3-40ba-b812-86a3bc213582: 'Main Heading Text' # Main Heading Text
     b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f: 'Row Layout' # Row Layout
     b81cc92d-9e5b-440d-8461-cdf9ab64807e: Opacity # Opacity
     b352c451-ed85-4679-8a36-8e473facf8a0: 'Style Adjustment - Button Group' # Style Adjustment - Button Group
@@ -253,6 +311,7 @@ meta:
     e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
     e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
     e8d249f8-2c18-4b51-b311-baabbd94f999: 'Style Adjustment - Image' # Style Adjustment - Image
+    e976e669-f3ac-496a-8450-9d5613262236: 'Subhead Text' # Subhead Text
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
     e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
     ea38d6d4-055b-43b8-b876-2bcab46e11c8: 'Company Info' # Company Info
@@ -279,7 +338,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: ZY5GT67WUJUTKK84IZ7K70SJ
-    schemaVersion: 5.8.0
+    schemaVersion: 5.9.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -400,7 +459,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: JQZ3G3ZLIP5CIUFPHNGEIW22
-    schemaVersion: 3.4.6
+    schemaVersion: 3.4.7
   hyper:
     edition: standard
     enabled: true
@@ -464,6 +523,39 @@ plugins:
     enabled: true
     licenseKey: NQAHIJHKF60ZGGEPV671EQGZ
     schemaVersion: 3.0.12
+  servd-asset-storage:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+    settings:
+      adjustFeedmeLogs: '1'
+      assetsEnvironment: ''
+      assetsEnvironmentOverwrite: ''
+      cacheClearMode: full
+      clearCachesOnSave: always
+      disableDynamic: ''
+      disableTransforms: '1'
+      fsMaps:
+        __assoc__:
+          -
+            - backgroundVideosServd
+            - backgroundVideos
+          -
+            - contentVideosServd
+            - contentVideos
+          -
+            - docsServd
+            - docs
+          -
+            - imagesServd
+            - images
+      fsMapsEnabled: '1'
+      imageAutoConversion: webp
+      injectCors: ''
+      projectSlug: ''
+      securityKey: ''
+      suppressWarnings: ''
+      useLocalVolumes: false
   shortcodes:
     edition: standard
     enabled: true
@@ -488,5 +580,5 @@ system:
   edition: pro
   live: true
   name: $SITE_NAME
-  schemaVersion: 5.3.0.2
+  schemaVersion: 5.5.0.0
   timeZone: America/Chicago

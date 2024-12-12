@@ -11,7 +11,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2024-12-09T18:28:37+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -39,7 +39,7 @@ fieldLayouts:
         name: Content
         uid: 736faa6d-3585-457e-a390-4e43f19b6820
         userCondition: null
-fs: contentVideos
+fs: $CONTENT_VIDEO_FS
 handle: contentVideos
 name: 'Content Videos'
 sortOrder: 3

@@ -4,6 +4,7 @@ instructions: null
 name: 'Row Margins'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -47,10 +48,32 @@ settings:
       __assoc__:
         -
           - label
+          - 'Negative Half Normal'
+        -
+          - value
+          - neg-half-normal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - None
         -
           - value
           - '0'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Half Normal'
+        -
+          - value
+          - half-normal
         -
           - default
           - ''

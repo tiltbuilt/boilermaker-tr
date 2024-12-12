@@ -11,7 +11,19 @@
 	}
 }
 
-.btn-pagination {
+.pagination-pages, .pagination-pages-abbreviated {
+	margin-right: 2rem;
+	
+	a, span {
+		margin-left: 1rem;
+		
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.btn.btn-pagination {
 	display: inline-flex !important;
 	justify-content: start;
 	align-items: center;
