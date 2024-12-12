@@ -1,5 +1,17 @@
 # Changelog
+## 3.0.11 - 2024-12-12
+### Fixed
+- Fixes to styling on various components
+- Fix to CSRF issue with Formie forms
 
+### Added
+- Half-Normal scaling spacing option
+- Documents asset volume added to CKEditor configs to allow linking to PDF assets
+- Linking ability in heading blocks
+- Alignment control to button groups
+
+
+## 3.0.10 - 2024-10-03
 ## 3.0.9 - 2024-10-03
 ### Fixed
 - Icon issue on Slider Set
