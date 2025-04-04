@@ -92,7 +92,7 @@ x-ref="animparent">
             {% endif %}
         </h1>
         {% if entry.introText|length %}
-        <p class="page-header-intro animate">{{ entry.introText }}</p>
+        <p class="page-header-intro animate">{{ entry.introText|typogrify }}</p>
         {% endif %} 
         {% if entry.buttons|length %}
             {# Set color class #}

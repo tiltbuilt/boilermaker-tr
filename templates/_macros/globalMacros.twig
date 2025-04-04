@@ -291,16 +291,20 @@
 		{% set divClasses = divClasses|merge([bgCurrent.repeat, 'bg-' ~ bgCurrent.position, 'bg-auto', bgCurrent.opacity]) %}
 		{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
 		{% if bgAsset != null %}			
-			{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}
-				{%- set xForm = 'contentImage' %}								
+			{% if bgAsset.mimeType != "image/svg+xml" %}
+				{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}
+					{%- set xForm = 'contentImage' %}								
+				{% else %}
+					{%- set xForm = 'image-' ~ bgCurrent.aspect %}
+				{% endif %}
+				{% if craft.imager.serverSupportsWebp() %}
+					{%- set xForm = xForm ~ '-webp' %}
+				{% endif %}				
+				{% set bgImage = craft.imagerx.transformImage(bgAsset, xForm) %}
+				<div class="{{- divClasses|join(' ') }}" style="background-image:url('{{bgImage[0].url}}')"></div>
 			{% else %}
-				{%- set xForm = 'image-' ~ bgCurrent.aspect %}
+				<div class="{{- divClasses|join(' ') }}" style="background-image:url('{{bgAsset.url}}')"></div>
 			{% endif %}
-			{% if craft.imager.serverSupportsWebp() %}
-				{%- set xForm = xForm ~ '-webp' %}
-			{% endif %}				
-			{% set bgImage = craft.imagerx.transformImage(bgAsset, xForm) %}
-			<div class="{{- divClasses|join(' ') }}" style="background-image:url('{{bgImage[0].url}}')"></div>
 		{% endif %}
 	{% else %}
 		{% set divClasses = divClasses|merge([bgCurrent.opacity]) %}
@@ -313,25 +317,35 @@
 		{% set objClasses = objClasses|merge(['object-' ~ bgCurrent.position])%}			
 		{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
 		{% if bgAsset != null %}			
-			{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}
-				{%- set xForm = 'contentImage' %}								
+			{% if bgAsset.mimeType != "image/svg+xml" %}
+				{% if bgCurrent.aspect == '' or bgCurrent.aspect == 'auto' or bgCurrent.aspect == null %}
+					{%- set xForm = 'contentImage' %}								
+				{% else %}
+					{%- set xForm = 'image-' ~ bgCurrent.aspect %}
+				{% endif %}
+				{% set bgImage = craft.imagerx.transformImage(bgAsset, xForm) %}
+							
+				<div class="{{- divClasses|join(' ') }}">
+					<img src="{{ craft.imager.placeholder({width: bgImage[0].width, height: bgImage[0].height}) }}"
+					  width="{{bgImage[0].width}}"
+					  height="{{bgImage[0].height}}"
+					  sizes="auto"
+					  src="{{ bgImage[0].url }}"
+					  srcset="{{ craft.imager.srcset(bgImage) }}"
+					  alt=""
+					  class="{{- objClasses|join(' ') }} lazyload"
+					  loading="lazy"
+					>		
+				</div>
 			{% else %}
-				{%- set xForm = 'image-' ~ bgCurrent.aspect %}
+				<div class="{{- divClasses|join(' ') }}">
+					<img src="{{ bgAsset.url }}"					  
+					  alt=""
+					  class="{{- objClasses|join(' ') }} lazyload"
+					  loading="lazy"
+					>		
+				</div>
 			{% endif %}
-			{% set bgImage = craft.imagerx.transformImage(bgAsset, xForm) %}
-						
-			<div class="{{- divClasses|join(' ') }}">
-				<img src="{{ craft.imager.placeholder({width: bgImage[0].width, height: bgImage[0].height}) }}"
-				  width="{{bgImage[0].width}}"
-				  height="{{bgImage[0].height}}"
-				  sizes="auto"
-				  src="{{ bgImage[0].url }}"
-				  srcset="{{ craft.imager.srcset(bgImage) }}"
-				  alt=""
-				  class="{{- objClasses|join(' ') }} lazyload"
-				  loading="lazy"
-				>		
-			</div>
 		{% endif %}	
 	{% endif %}			
 {%- endmacro backgroundImage -%}

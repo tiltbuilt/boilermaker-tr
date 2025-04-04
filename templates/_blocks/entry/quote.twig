@@ -95,7 +95,7 @@
 <blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{animClass}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	{{entry.quoteText}}
 	<span id="{{blockId}}-credit" class="{{- _self.creditClasses(adjustments, creditColorClass) -}}">
-		{{entry.quoteCredit}}
+		{{entry.quoteCredit|typogrify}}
 		{% if entry.quoteCreditTitle|length %}
 			<span class="credit-title">{{entry.quoteCreditTitle}}</span>
 		{% endif %}

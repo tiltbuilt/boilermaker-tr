@@ -79,9 +79,9 @@
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{% if animate %}
-					{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
+					{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 				{% else %}
-					{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
+					{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 				{% endif %}
 			{% else %}
 				{{ chunk.entry.render({

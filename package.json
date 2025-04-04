@@ -6,7 +6,7 @@
     "@alpinejs/focus": "^3.14.0",
     "@alpinejs/persist": "^3.14.1",
     "alpinejs": "^3.12.0",
-    "gsap": "npm:@gsap/business@^3.12.5",
+    "gsap": "npm:@gsap/business@^3.12.7",
     "lazysizes": "^5.3.2",
     "postcss-scss": "^4.0.9",
     "swiper": "^7.4.1",

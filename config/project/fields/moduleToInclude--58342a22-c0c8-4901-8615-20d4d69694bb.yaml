@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: moduleToInclude
+instructions: null
+name: 'Module to Include'
+searchable: true
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: true
+  sources:
+    - 'section:42d492b4-f425-4d5c-8cba-e1aa7ed774d5' # Reusable Modules
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

@@ -69,6 +69,17 @@ settings:
     -
       __assoc__:
         -
+          - label
+          - Auto
+        -
+          - value
+          - auto
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
           - optgroup
           - 'Fixed Sizes'
     -

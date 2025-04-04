@@ -1,4 +1,10 @@
 # Changelog
+## 3.0.12 - 2025-02-12
+### Fixed
+- Fixes to vite config for update
+- Fix to global macro background setup to accommodate svg background images
+
+
 ## 3.0.11 - 2024-12-12
 ### Fixed
 - Fixes to styling on various components
