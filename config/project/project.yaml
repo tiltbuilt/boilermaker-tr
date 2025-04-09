@@ -1,4 +1,4 @@
-dateModified: 1743806302
+dateModified: 1744236572
 elementSources:
   craft\elements\Entry:
     -
@@ -340,9 +340,8 @@ meta:
 plugins:
   blitz:
     edition: standard
-    enabled: true
-    licenseKey: ZY5GT67WUJUTKK84IZ7K70SJ
-    schemaVersion: 5.9.0
+    enabled: true    
+    schemaVersion: 5.10.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -465,18 +464,15 @@ plugins:
     schemaVersion: 1.0.0
   formie:
     edition: standard
-    enabled: true
-    licenseKey: JQZ3G3ZLIP5CIUFPHNGEIW22
+    enabled: true    
     schemaVersion: 3.4.8
   hyper:
     edition: standard
-    enabled: true
-    licenseKey: 6LSFKG0R04PJNUQ5RGJ41DTC
+    enabled: true    
     schemaVersion: 1.0.0
   icon-picker:
     edition: standard
-    enabled: true
-    licenseKey: UT46DNLWIXWUTCUJR81NASJJ
+    enabled: true    
     schemaVersion: 1.2.3
     settings:
       enableCache: false
@@ -489,8 +485,7 @@ plugins:
       redactorFieldHandle: icon
   imager-x:
     edition: pro
-    enabled: true
-    licenseKey: 5XW5EKEF9KAVTO6D9NV5GHLT
+    enabled: true    
     schemaVersion: 4.0.0
   imager-x-power-pack:
     edition: standard
@@ -506,8 +501,7 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true
-    licenseKey: A5PKP6EUGVR6WXH9LD6ZI84G
+    enabled: true    
     schemaVersion: 2.1.0
   postmark:
     edition: standard
@@ -519,8 +513,7 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true
-    licenseKey: 0B9WRKD70JNGF3IYCXIQN814
+    enabled: true    
     schemaVersion: 3.0.12
   section-and-product-type:
     edition: standard
@@ -528,8 +521,7 @@ plugins:
     schemaVersion: 2.0.8
   seomatic:
     edition: standard
-    enabled: true
-    licenseKey: NQAHIJHKF60ZGGEPV671EQGZ
+    enabled: true    
     schemaVersion: 3.0.12
   servd-asset-storage:
     edition: standard
