@@ -1,4 +1,21 @@
 # Changelog
+## 3.0.12 - 2025-04-09
+### Fixed
+- Fixes to vite config for update
+- Fix to global macro background setup to accommodate svg background images
+- Fixed errors in Imager-X transform configs
+- Fixed syntax error in slide template
+- Fixed positioning of image on 2 column side photo block
+- Fixed text wrap settings
+- Fixed excerpt output on content card repeaters
+
+### Added
+- auto as spacing option
+- auto as image width option
+- Cloner plugin to plugin stack
+
+
+
 ## 3.0.11 - 2024-12-12
 ### Fixed
 - Fixes to styling on various components

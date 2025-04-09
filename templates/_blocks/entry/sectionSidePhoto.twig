@@ -135,7 +135,7 @@
  
 {% set newSettings = {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'} %}
 {#cycle through sizes in order and compare settings from field to defaults, if they don't match, replace in the newSettings object to keep track of settings across sites then write to classSettings list when each cycle finishes #}
-{% for key, value in classSettings %}
+{% for key, value in classSettings %} 
 	{% for layoutSetting in entry.contentColumnLayout %}	
 		{% if layoutSetting.layoutSize == key %}
 			{% if layoutSetting.columnWidth != newSettings.columnWidth and layoutSetting.columnWidth != '' %}
@@ -152,6 +152,12 @@
 	{% set classSettings = classSettings|merge({(key): (newSettings)}) %}
 {% endfor %}
 
+{% if entry.contentPositionSmall %}
+	{% set positionClass = 'order-last' %}
+{% else %}
+	{% set positionClass = 'order-first' %}
+{% endif %}
+
 <section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
@@ -160,14 +166,14 @@
 >
 	<div class="side-section-layout {{ entry.fullscreen ? 'fullscreen' -}}">
 		
-		<div class="side-photo-content {{ _self.contentClasses(classSettings) -}}">
+		<div class="side-photo-conten {{positionClass}} {{ _self.contentClasses(classSettings) -}}">
 			<div class="side-photo-content-wrapper {#{% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} #} {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
 				{% for chunk in entry.elementContent %}
 					{% if chunk.type == 'markup' %}
 						{% if entry.animate and entry.animateContent %}
-							{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
+							{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 						{% else %}
-							{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
+							{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 						{% endif %}
 					{% else %}
 						{{ chunk.entry.render({

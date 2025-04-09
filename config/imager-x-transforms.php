@@ -115,7 +115,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 3/1,
+			'ratio' => 2/1,
 			'format' => 'jpg'
 		],
 		'configOverrides' => [
@@ -124,7 +124,7 @@ return [
 		]
 	],
 	'image-2/1-webp' => [
-		'transforms' => 'image-3/1',
+		'transforms' => 'image-2/1',
 		'defaults' => [
 			'format' => 'webp',
 		]

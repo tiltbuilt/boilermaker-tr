@@ -4,6 +4,7 @@ instructions: null
 name: 'Text Wrap'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -34,7 +35,7 @@ settings:
           - Right
         -
           - value
-          - text-wrap-
+          - text-wrap-right
         -
           - default
           - ''

@@ -95,16 +95,16 @@
 			<div class="slide-content-wrapper {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
 				{% for chunk in entry.slideContent %}
 					{% if chunk.type == 'markup' %}
-						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)}}
+						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 					{% elseif chunk.type == 'button' and entry.wholeSlideLink %}
 						{{ chunk.entry.render({
-							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},,
+							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
 							'colorScheme': colorScheme,
 							'linkOverride': 1,
 						}) }}
 					{% else %}
 						{{ chunk.entry.render({
-							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},,
+							'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
 							'colorScheme': colorScheme,
 							'linkOverride': 0,
 						}) }}

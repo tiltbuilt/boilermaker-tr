@@ -57,6 +57,22 @@ p, ul, ol {
       margin-bottom: 0;
    }
 }
+
+
+#main {
+   .text-center {
+      &> p, &> ul, &>ol {
+         margin-left: auto;
+         margin-right: auto;
+      }
+   }
+   
+   p.text-center {
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
+
  
 *:not(.column):first-child {
    margin-top: 0;

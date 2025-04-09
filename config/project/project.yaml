@@ -1,4 +1,4 @@
-dateModified: 1733962521
+dateModified: 1744236572
 elementSources:
   craft\elements\Entry:
     -
@@ -141,6 +141,7 @@ meta:
   __names__:
     0a94a9c4-7b94-408c-919b-9c4a6c070e37: 'Header Block' # Header Block
     0a727c99-d7ce-4920-b1db-ce06d0647067: 'Letter Spacing' # Letter Spacing
+    00b46567-7b31-49a0-a9ad-dbc2a79ea636: 'Reusable Module' # Reusable Module
     0f72b724-e0a8-4044-a3aa-12255ade6ea1: 'Basic Text with Search' # Basic Text with Search
     0fe2ca3f-eb30-4294-96a2-1154bd95e41e: 'Background Position' # Background Position
     1ef67107-0265-4563-8344-695b0a016e56: Form # Form
@@ -174,6 +175,7 @@ meta:
     7ff3d23a-91a6-4110-a3b0-b131dd2c3ee3: 'Style Adjustment - Accordion' # Style Adjustment - Accordion
     8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300: 'Background Image Small' # Background Image Small
     8cea45ff-f3ed-4c12-b8d2-ed1d8140b912: 'Social Media Links' # Social Media Links
+    9c91b059-ba6d-4424-a897-7792ceb0ab5d: 'Reusable Module Wrapper Section' # Reusable Module Wrapper Section
     9cc69c32-6fb9-465d-b7ce-b805d00f5449: 'Row Margins' # Row Margins
     9ceecee1-0248-4ae3-a12a-c90171e5f42f: Content # Content
     09d61ba7-f8dd-4e73-bc8f-d580cffbcc1e: 'Boilermaker 3' # Boilermaker 3
@@ -182,6 +184,7 @@ meta:
     37a64193-e3ef-4a2d-aa91-555b436b1d7d: 'Italic?' # Italic?
     37ce7ac2-f596-4d6f-9181-3f4d9fa4d692: 'Block Layout' # Block Layout
     40a37d8a-41c1-47af-bc27-28d08f99a909: Slides # Slides
+    42d492b4-f425-4d5c-8cba-e1aa7ed774d5: 'Reusable Modules' # Reusable Modules
     47acc143-9347-4976-bd50-02778ffeabf1: 'Button Styles' # Button Styles
     049ec87b-57e9-4b3e-8d53-44cb8874474b: Width # Width
     55cb62d2-f02a-4bd8-849c-695f3a2e92b1: Columns # Columns
@@ -227,6 +230,7 @@ meta:
     8125ecc7-14a0-48fa-beb2-ae316b8c9c0d: 'Entries to List' # Entries to List
     8977ed51-c96b-4f56-acf0-7b95d3182220: 'Slide Vertical Layout' # Slide Vertical Layout
     15890ba2-38e4-4bce-9ccc-45ed62101d3e: Section # Section
+    58342a22-c0c8-4901-8615-20d4d69694bb: 'Module to Include' # Module to Include
     60656df7-fedd-4651-ae29-cf30fdef7f08: 'Style Adjustment - Slider Set' # Style Adjustment - Slider Set
     68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
@@ -336,9 +340,8 @@ meta:
 plugins:
   blitz:
     edition: standard
-    enabled: true
-    licenseKey: ZY5GT67WUJUTKK84IZ7K70SJ
-    schemaVersion: 5.9.0
+    enabled: true    
+    schemaVersion: 5.10.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -423,6 +426,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  cloner:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   colour-swatches:
     edition: standard
     enabled: true
@@ -457,18 +464,15 @@ plugins:
     schemaVersion: 1.0.0
   formie:
     edition: standard
-    enabled: true
-    licenseKey: JQZ3G3ZLIP5CIUFPHNGEIW22
-    schemaVersion: 3.4.7
+    enabled: true    
+    schemaVersion: 3.4.8
   hyper:
     edition: standard
-    enabled: true
-    licenseKey: 6LSFKG0R04PJNUQ5RGJ41DTC
+    enabled: true    
     schemaVersion: 1.0.0
   icon-picker:
     edition: standard
-    enabled: true
-    licenseKey: UT46DNLWIXWUTCUJR81NASJJ
+    enabled: true    
     schemaVersion: 1.2.3
     settings:
       enableCache: false
@@ -481,8 +485,7 @@ plugins:
       redactorFieldHandle: icon
   imager-x:
     edition: pro
-    enabled: true
-    licenseKey: 5XW5EKEF9KAVTO6D9NV5GHLT
+    enabled: true    
     schemaVersion: 4.0.0
   imager-x-power-pack:
     edition: standard
@@ -498,8 +501,7 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true
-    licenseKey: A5PKP6EUGVR6WXH9LD6ZI84G
+    enabled: true    
     schemaVersion: 2.1.0
   postmark:
     edition: standard
@@ -511,8 +513,7 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true
-    licenseKey: 0B9WRKD70JNGF3IYCXIQN814
+    enabled: true    
     schemaVersion: 3.0.12
   section-and-product-type:
     edition: standard
@@ -520,8 +521,7 @@ plugins:
     schemaVersion: 2.0.8
   seomatic:
     edition: standard
-    enabled: true
-    licenseKey: NQAHIJHKF60ZGGEPV671EQGZ
+    enabled: true    
     schemaVersion: 3.0.12
   servd-asset-storage:
     edition: standard
@@ -580,5 +580,5 @@ system:
   edition: pro
   live: true
   name: $SITE_NAME
-  schemaVersion: 5.5.0.0
+  schemaVersion: 5.6.0.2
   timeZone: America/Chicago

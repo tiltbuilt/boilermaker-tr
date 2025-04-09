@@ -209,7 +209,7 @@
 				<div class="{{- styleListMaster|join(' ') }}">				
 					{% for chunk in acc.elementContent %}
 						{% if chunk.type == 'markup' %}
-							{{chunk|raw|retconAttr('ul', {'class': 'bullet-list'})}}
+							{{chunk|raw|retconAttr('ul', {'class': 'bullet-list'})|typogrify}}
 						{% else %}
 							{{ chunk.entry.render({
 								'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},

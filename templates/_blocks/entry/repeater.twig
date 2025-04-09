@@ -105,6 +105,12 @@
 	{% set showDate = entry.showPostDate %}
 {% endif %}
 
+{% if contentType == 'contentCards' %}
+	{% set showExcerpt = true %}
+{% else %}
+	{% set showExcerpt = entry.showExcerpt %}
+{% endif %}
+
 {# get Row Size Settings for Card Lists #}
 {% if entry.cardsPerRow|length %}
 	{% set cardRowSizes = entry.cardsPerRow %}
@@ -260,25 +266,25 @@
 		{% switch displayType %}								
 			
 			{% case 'textList' %}
-				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'listStyle': entry.textListStyle, 'multiColSettings': entry.multiColumnSettings, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'animate': animate} %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'listStyle': entry.textListStyle, 'multiColSettings': entry.multiColumnSettings, 'showDate': showDate, 'showExcerpt': showExcerpt, 'animate': animate} %}
 				
 			{% case 'buttonList' %}
 				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'btnStyles': entry.btnStyles, 'btnSize': entry.btnSize, 'fullWidthSmall': entry.fullWidthSmall, 'animate': animate} %}
 				
 			{% case 'cardList' %}
-				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
 				
 			{% case 'cardListSideImage' %}	
-				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
 				
 			{% case 'cardListTopImage' %}
-				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'showDate': showDate, 'showExcerpt': showExcerpt, 'cardRowSizes': cardRowSizes, 'animate': animate} %}
 				
 			{% case 'largeSlider' %}
-				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'sliderButtons': entry.buttons, 'sliderDots': entry.dots, 'sliderTiming': entry.slideTransitionDelay, 'sliderEffect': entry.slideEffect, 'sliderAutoPlay': entry.autoplay, 'sliderSizeSm': entry.sliderSizeSm, 'sliderSizeLg':entry.sliderSizeLg, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'blockId': blockId, 'slideImgAspectSm': slideImgAspectSm, 'slideImgAspectLg': slideImgAspectLg, 'animate': animate} %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'sliderButtons': entry.buttons, 'sliderDots': entry.dots, 'sliderTiming': entry.slideTransitionDelay, 'sliderEffect': entry.slideEffect, 'sliderAutoPlay': entry.autoplay, 'sliderSizeSm': entry.sliderSizeSm, 'sliderSizeLg':entry.sliderSizeLg, 'showDate': showDate, 'showExcerpt': showExcerpt, 'blockId': blockId, 'slideImgAspectSm': slideImgAspectSm, 'slideImgAspectLg': slideImgAspectLg, 'animate': animate} %}
 				
 			{% case 'multiCardSlider' %}
-				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'sliderButtons': entry.buttons, 'sliderDots': entry.dots, 'sliderTiming': entry.slideTransitionDelay, 'sliderEffect': entry.slideEffect, 'sliderAutoPlay': entry.autoplay, 'showDate': showDate, 'showExcerpt': entry.showExcerpt, 'blockId': blockId, 'cardSliderSizes': cardSliderSizes, 'animate': animate} %}
+				{% include ['_partials/repeaters/' ~ displayType] with {'listContent': listContent, 'headingLvl': entry.headingLevel, 'colorScheme': colorScheme, 'sliderButtons': entry.buttons, 'sliderDots': entry.dots, 'sliderTiming': entry.slideTransitionDelay, 'sliderEffect': entry.slideEffect, 'sliderAutoPlay': entry.autoplay, 'showDate': showDate, 'showExcerpt': showExcerpt, 'blockId': blockId, 'cardSliderSizes': cardSliderSizes, 'animate': animate} %}
 				
 		{% endswitch %}
 		
