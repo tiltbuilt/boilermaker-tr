@@ -5,7 +5,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: headerEmbeds
@@ -21,7 +21,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: bodyTagEmbeds
@@ -37,7 +37,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: footerEmbeds
@@ -59,12 +59,12 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: pgHeaderAspectSm
             includeInCards: false
-            instructions: 'This field sets the default aspect ratio for the page header background image on mobile devices'
+            instructions: 'This field sets the default aspect ratio for the page header image on mobile devices. The content of the header stacks underneath the photo.'
             label: 'Page Header Image Aspect-Mobile'
             providesThumbs: false
             required: true
@@ -75,12 +75,12 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: pgHeaderAspectMd
             includeInCards: false
-            instructions: 'This control sets the defaults aspect ratio for the page header on medium layouts like tablets in the vertical position'
+            instructions: 'This control sets the defaults aspect ratio for the page header on medium layouts like tablets in the vertical position. The content of the header will overlay the photo and fit within the box at this aspect ratio. '
             label: 'Page Header Image Aspect-Tablet'
             providesThumbs: false
             required: true
@@ -91,12 +91,12 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: pgHeaderAspectLg
             includeInCards: false
-            instructions: 'This field sets the aspect ratio of the page header on laptops and above'
+            instructions: 'This field sets the aspect ratio of the page header on laptops and above. The content of the header will overlay the photo and fit within the box at this aspect ratio. '
             label: 'Page Header Image Aspect-Large'
             providesThumbs: false
             required: true
@@ -113,7 +113,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: sliderPreviousIcon
@@ -129,7 +129,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: sliderNextIcon
@@ -145,7 +145,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: accordionIcon
@@ -167,21 +167,21 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             heading: Repeaters
             type: craft\fieldlayoutelements\Heading
             uid: a29ded7c-dad8-4be8-975f-fea2f0307f94
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             heading: Thumbnails
             type: craft\fieldlayoutelements\Heading
             uid: 2a17fe55-1617-464b-83db-833b08180aed
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: thumbnailPlaceholder
@@ -197,7 +197,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: thumbAspectSm
@@ -213,7 +213,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: thumbAspectLg
@@ -229,14 +229,14 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             heading: 'Card Views'
             type: craft\fieldlayoutelements\Heading
             uid: f9915473-d9f2-4432-b301-d7924f3b88a5
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: cprCard
@@ -252,7 +252,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: cprCardSmImg
@@ -268,7 +268,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: cprCardLgImg
@@ -284,14 +284,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             heading: Sliders
             type: craft\fieldlayoutelements\Heading
             uid: 8a3ec036-d93a-4a23-aad6-1965b62be1c9
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: sliderAspectSm
@@ -307,7 +307,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: sliderAspectLg
@@ -323,7 +323,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-04-10T17:01:03+00:00'
             elementCondition: null
             fieldUid: b422915f-1867-4c28-bb32-280178fab390 # Multi Card Slider Cards Per Layout Size
             handle: null
