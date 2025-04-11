@@ -20,8 +20,11 @@
     </a>
 {% endmacro linkCode %}
 
-{# set aspect ratio of small photo img block itself NOT the photo transform. This is set to make it easy to set/change the ratio on a per project basis. The small size image has the header content stacked below it. The large size becomes a background behind the header content #}
-{% set smallPhotoAspect = 'aspect-3/2' %}
+{# Set sizing of page header using the sizes set in the global settings #}
+{% set smHeaderAspect = gSettings.pgHeaderAspectSm.value %}
+{% set mdHeaderAspect = gSettings.pgHeaderAspectMd.value %}
+{% set lgHeaderAspect = gSettings.pgHeaderAspectLg.value %}
+
 
 {# set default color scheme for page header if none is set #}
 {% if entry.pageHeaderColorScheme == null %}
@@ -32,54 +35,78 @@
 
 <div id="{{entry.slug}}-page-header" class="page-header @container {{pageHeaderColorScheme}} " x-data="sectionStandard(true, true)"	
 x-ref="animparent">
-	<div class="page-header-photo-wrapper  {{entry.opacity}}">
-        {% set mainPhoto = entry.headerImg.eagerly().one() %}
-        {% set smPhoto = entry.headerImgSm.eagerly().one() %}
-        {% if smPhoto == null %}			
-            {% set smPhoto = mainPhoto %}
-        {% endif %}
-        {% if entry.aspectRatioSm  != '' and entry.aspectRatioSm != 'auto' %} 
-            {%- set smXForm = 'image-' ~ entry.aspectRatioSm	%}
+	<div class="page-header-photo-wrapper {{entry.opacity}} aspect-{{smHeaderAspect}} md:aspect-auto">
+        {% if entry.pageHeaderBackgroundType %}
+            {% set headerVideo = entry.bgVideo.eagerly().one() %}
+            {% if headerVideo != null %}
+                <div class="background bg-video">
+                    <video          
+                      class="background object-cover object-{{entry.backgroundVideoPosition == '' ? 'center' : entry.backgroundVideoPosition}} lazyload"
+                      aria-hidden="true"
+                      role="presentation"                      
+                      preload autoplay playsinline muted loop
+                      data-src="{{ headerVideo.url }}"
+                      type="{{ headerVideo.mimeType }}"
+                      loading="lazy"			  
+                    ></video>		
+                </div>
+            {% endif %}
         {% else %}
-            {%- set smXForm = 'contentImage' %}
+            {% set mainPhoto = entry.headerImg.eagerly().one() %}
+            {% set smPhoto = entry.headerImgSm.eagerly().one() %}
+            {% if smPhoto == null %}			
+                {% set smPhoto = mainPhoto %}
+            {% endif %}
+            
+            {% if entry.aspectRatioSm  == '' %} 
+                {%- set smXForm = 'image-' ~  smHeaderAspect %}
+            {% elseif entry.aspectRatioSm == 'auto' %}
+                {%- set smXForm = 'contentImage' %}
+            {% else %}
+                {%- set smXForm = 'image-' ~ entry.aspectRatioSm %}
+            {% endif %}
+            
+            {% if entry.aspectRatio == '' %} 
+                {%- set xForm = 'image-' ~  lgHeaderAspect %}
+            {% elseif entry.aspectRatio == 'auto' %}
+                {%- set xForm = 'contentImage' %}
+            {% else %}
+                {%- set xForm = 'image-' ~ entry.aspectRatio %}
+            {% endif %}
+            
+            {% if craft.imager.serverSupportsWebp() %}
+                {%- set smXForm = smXForm ~ '-webp' %}
+                {%- set xForm = xForm ~ '-webp' %}
+            {% endif %}
+            {%- set smImages = craft.imagerx.transformImage(smPhoto,smXForm) %}
+            {%- set smStartImage = smImages[0] %}
+            {%- set lgImages = craft.imagerx.transformImage(mainPhoto, xForm) %}
+            {%- set lgStartImage = lgImages[0] %}
+            
+            <img src="{{ craft.imager.placeholder({width: smStartImage.width, height: smStartImage.height}) }}"
+              width="{{smStartImage.width}}"
+              height="{{smStartImage.height}}"
+              sizes="auto"
+              src="{{ smStartImage }}"
+              srcset="{{ craft.imager.srcset(smImages) }}"
+              alt="header background image"
+              class="block @md:hidden w-full aspect-{{smHeaderAspect}} object-cover object-{{entry.imgPositionSm == '' ? 'center' : entry.imgPositionSm}} lazyload"
+              loading="lazy"
+            >
+                    
+            <img src="{{ craft.imager.placeholder({width: lgStartImage.width, height: lgStartImage.height}) }}"
+              width="{{lgStartImage.width}}"
+              height="{{lgStartImage.height}}"
+              sizes="auto"
+              src="{{ lgStartImage }}"
+              srcset="{{ craft.imager.srcset(lgImages) }}"
+              alt="header background image"
+              class="hidden @md:block absolute w-full h-full inset-0 object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
+              loading="lazy"
+            >
         {% endif %}
-        {% if entry.aspectRatio  != '' and entry.aspectRatio != 'auto' %} 
-            {%- set xForm = 'image-' ~ entry.aspectRatio	%}
-        {% else %}
-            {%- set xForm = 'contentImage' %}
-        {% endif %}
-        {% if craft.imager.serverSupportsWebp() %}
-            {%- set smXForm = smXForm ~ '-webp' %}
-            {%- set xForm = xForm ~ '-webp' %}
-        {% endif %}
-        {%- set smImages = craft.imagerx.transformImage(smPhoto,smXForm) %}
-        {%- set smStartImage = smImages[0] %}
-        {%- set lgImages = craft.imagerx.transformImage(mainPhoto, xForm) %}
-        {%- set lgStartImage = lgImages[0] %}
-        
-        <img src="{{ craft.imager.placeholder({width: smStartImage.width, height: smStartImage.height}) }}"
-          width="{{smStartImage.width}}"
-          height="{{smStartImage.height}}"
-          sizes="auto"
-          src="{{ smStartImage }}"
-          srcset="{{ craft.imager.srcset(smImages) }}"
-          alt="header background image"
-          class="block @md:hidden w-full {{smallPhotoAspect}} object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
-          loading="lazy"
-        >
-                
-        <img src="{{ craft.imager.placeholder({width: lgStartImage.width, height: lgStartImage.height}) }}"
-          width="{{lgStartImage.width}}"
-          height="{{lgStartImage.height}}"
-          sizes="auto"
-          src="{{ lgStartImage }}"
-          srcset="{{ craft.imager.srcset(lgImages) }}"
-          alt="header background image"
-          class="hidden @md:block absolute w-full h-full inset-0 object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
-          loading="lazy"
-        >
     </div>
-    <div class="page-header-layout">
+    <div class="page-header-layout md:aspect-{{mdHeaderAspect}} lg:aspect-{{ lgHeaderAspect}}">
 		<h1 class="page-header-headline animate">
             {% if entry.subheadText|length and entry.subheadPosition == 1 %}
                 <div class="page-header-subhead">{{ gMacros.stripTags(entry.subheadText) }}</div>

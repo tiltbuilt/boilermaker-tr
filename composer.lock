@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb2cc5d58d5032adafee6a890fe27a13",
+    "content-hash": "330628b9a2188cdbeab99ca64a1beaa3",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1501,11 +1501,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.6.16",
+            "version": "5.6.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/d4e5d887fb2cdd94e91067300393518dc0a8f03e",
-                "reference": "d4e5d887fb2cdd94e91067300393518dc0a8f03e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/19ce0bab651ab52c7b394f5f4a2ed0621ba90bd7",
+                "reference": "19ce0bab651ab52c7b394f5f4a2ed0621ba90bd7",
                 "shasum": ""
             },
             "require": {
@@ -1605,7 +1605,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-04-08T16:22:50+00:00"
+            "time": "2025-04-10T22:42:18+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -2675,15 +2675,28 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v6.11.0",
+            "version": "v6.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/8f718f4dfc9c5d5f0c994cdfd103921b43592712",
-                "reference": "8f718f4dfc9c5d5f0c994cdfd103921b43592712",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^7.4",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psr/cache": "^2.0||^3.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0"
             },
             "suggest": {
                 "ext-sodium": "Support EdDSA (Ed25519) signatures",
@@ -2695,6 +2708,7 @@
                     "Firebase\\JWT\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2716,7 +2730,11 @@
                 "jwt",
                 "php"
             ],
-            "time": "2025-01-23T05:11:06+00:00"
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/v6.11.1"
+            },
+            "time": "2025-04-09T20:32:01+00:00"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
@@ -11242,16 +11260,16 @@
         },
         {
             "name": "verbb/base",
-            "version": "3.0.6",
+            "version": "3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/verbb-base.git",
-                "reference": "9b0b8de750549163bd4243c4e8dcced3eb82f969"
+                "reference": "8e44429c9b5df42bd0db90242bafeb440d870a99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/9b0b8de750549163bd4243c4e8dcced3eb82f969",
-                "reference": "9b0b8de750549163bd4243c4e8dcced3eb82f969",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/8e44429c9b5df42bd0db90242bafeb440d870a99",
+                "reference": "8e44429c9b5df42bd0db90242bafeb440d870a99",
                 "shasum": ""
             },
             "require": {
@@ -11288,7 +11306,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-02T21:02:10+00:00"
+            "time": "2025-04-11T09:34:29+00:00"
         },
         {
             "name": "verbb/buttonbox",
@@ -11671,11 +11689,11 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.0.22",
+            "version": "3.0.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/74ecc0135aac7000f8b3622cec96e9371de68617",
-                "reference": "74ecc0135aac7000f8b3622cec96e9371de68617",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/6655b468b340c4d94fd2c6748ab715dca8e112ab",
+                "reference": "6655b468b340c4d94fd2c6748ab715dca8e112ab",
                 "shasum": ""
             },
             "require": {
@@ -11692,7 +11710,7 @@
                 "php": "^8.2",
                 "stripe/stripe-php": "^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0",
                 "symfony/expression-language": "^5.3.0",
-                "verbb/auth": "^2.0.19",
+                "verbb/auth": "^2.0.20",
                 "verbb/base": "^3.0.4",
                 "voku/anti-xss": "^4.1"
             },
@@ -11732,7 +11750,7 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2025-03-26T23:01:24+00:00"
+            "time": "2025-04-11T09:36:19+00:00"
         },
         {
             "name": "verbb/hyper",

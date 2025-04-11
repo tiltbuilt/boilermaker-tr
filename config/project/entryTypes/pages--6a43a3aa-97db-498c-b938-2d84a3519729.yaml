@@ -25,7 +25,7 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            requirable: false
+            required: true
             size: null
             step: null
             tip: null
@@ -355,8 +355,34 @@ fieldLayouts:
             uid: 09e167c9-a60b-4946-81d8-a0404544de9a
             userCondition: null
           -
-            dateAdded: '2024-08-20T20:17:44+00:00'
+            dateAdded: '2025-04-10T22:20:07+00:00'
             elementCondition: null
+            fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-20T20:17:44+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: e9e18509-f416-4d0a-ad87-18890fda694c
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: 3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c # Background Image
             handle: headerImg
             includeInCards: false
@@ -369,14 +395,24 @@ fieldLayouts:
             uid: c8ce72f5-e48a-4cd6-87c6-ab4799a76e6b
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             dateAdded: '2024-08-20T20:17:44+00:00'
-            elementCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: 67687bf3-41c5-42e8-85b4-ca043277174e
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
             includeInCards: false
-            instructions: null
+            instructions: 'Use this field to set the main header image to use a different aspect ratio than the global page header size. If you use a different size, the header stays at the same size, but the image will be cropped to fit within the header rather than being sized to the header itself. '
             label: 'Header Image Aspect Ratio'
             providesThumbs: false
             required: false
@@ -385,10 +421,61 @@ fieldLayouts:
             uid: 640aeb6e-5b60-4b15-b418-734f037a6447
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             dateAdded: '2024-08-20T20:17:44+00:00'
-            elementCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                  layoutElementUid: 640aeb6e-5b60-4b15-b418-734f037a6447
+                  operator: in
+                  uid: 4a413d60-f62a-480e-8932-f9cc99c61214
+                  values:
+                    - auto
+                    - square
+                    - video
+                    - 4/3
+                    - 3/2
+                    - 3/1
+                    - 2/1
+                    - 4/1
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: 86dcd764-ec70-4f54-be44-f2bcbd0bbf74
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: imgPosition
+            includeInCards: false
+            instructions: 'Use this field to adjust the placement of the header image within the header space'
+            label: 'Header Image Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a07d1411-b1de-4f62-b067-54f11452d89c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-20T20:17:44+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: 0cfc0ed8-7a8f-4796-948f-2baddae1e602
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: 8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300 # Background Image Small
             handle: headerImgSm
             includeInCards: false
@@ -401,14 +488,24 @@ fieldLayouts:
             uid: 176b6dfd-a39a-4151-9b41-2be4bfc04539
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             dateAdded: '2024-08-20T20:17:44+00:00'
-            elementCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: 424e4715-9401-4a46-ba48-799ecb2d5b46
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: aspectRatioSm
             includeInCards: false
-            instructions: null
+            instructions: 'Use this field to set the mobile header image to use a different aspect ratio than the global page header size. If you use a different size, the header stays at the same size, but the image will be cropped to fit within the header rather than being sized to the header itself. '
             label: 'Header Image Aspect Ratio -Small Layouts'
             providesThumbs: false
             required: false
@@ -417,20 +514,97 @@ fieldLayouts:
             uid: 8d3f1c24-3f0f-440e-af92-26c372f55ca7
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
-            dateAdded: '2024-08-20T20:17:44+00:00'
-            elementCondition: null
+            dateAdded: '2025-04-10T18:22:19+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                  layoutElementUid: 8d3f1c24-3f0f-440e-af92-26c372f55ca7
+                  operator: in
+                  uid: ed5ea629-9593-4143-aded-31804d4d57ae
+                  values:
+                    - auto
+                    - square
+                    - video
+                    - 4/3
+                    - 3/2
+                    - 3/1
+                    - 2/1
+                    - 4/1
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: 898f33cf-cc7e-4fe7-af03-0d95178afb42
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
-            handle: imgPosition
+            handle: imgPositionSm
             includeInCards: false
-            instructions: 'Use this field to adjust the placement of the header image within the header space'
-            label: 'Header Image Position'
+            instructions: null
+            label: 'Header Image Position - Small Layouts'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a07d1411-b1de-4f62-b067-54f11452d89c
+            uid: 28640585-7972-42fb-86d3-041fe6390ca5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-10T22:23:38+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: a2106ebc-d7b7-40d3-9d76-12fc8e173cc9
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: cdbe0d46-9b4d-47a1-854d-cc894a161dd5 # Background Video
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 830882eb-8926-4e8d-90bb-e9165d23eaae
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-10T22:23:38+00:00'
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 563d2567-f32a-4687-862f-033e083c1c09 # Page Header Background Type
+                  layoutElementUid: cb2c981b-1b01-43ef-a0dc-66665a7f2928
+                  uid: 87b83de6-dbb3-4b39-8676-4adba3af90c7
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: backgroundVideoPosition
+            includeInCards: false
+            instructions: null
+            label: 'Background Video Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9af26bff-f712-4396-a353-69c969ac5eb0
             userCondition: null
             warning: null
             width: 100

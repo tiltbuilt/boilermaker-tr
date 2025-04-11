@@ -1,4 +1,11 @@
 # Changelog
+## 3.0.13 - 2025-04-11
+### Changed
+- Setup on page header aspect rations to enforce the aspect set in globals as a minimum
+
+### Added
+- Video background capability in page header
+
 ## 3.0.12 - 2025-04-09
 ### Fixed
 - Fixes to vite config for update

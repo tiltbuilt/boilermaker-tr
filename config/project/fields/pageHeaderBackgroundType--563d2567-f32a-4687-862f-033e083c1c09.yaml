@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: pageHeaderBackgroundType
+instructions: null
+name: 'Page Header Background Type'
+searchable: false
+settings:
+  default: false
+  offLabel: Image
+  onLabel: Video
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
