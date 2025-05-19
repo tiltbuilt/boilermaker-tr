@@ -1,0 +1,75 @@
+columnSuffix: null
+handle: buttonLink
+instructions: null
+name: 'Button Link'
+searchable: false
+settings:
+  advancedFields:
+    - urlSuffix
+    - target
+    - rel
+    - ariaLabel
+  fullGraphqlData: true
+  maxLength: 255
+  showLabelField: false
+  typeSettings:
+    __assoc__:
+      -
+        - asset
+        -
+          __assoc__:
+            -
+              - sources
+              -
+                - 'volume:b644bda8-1050-46f5-9453-0b3d19812289' # Documents
+            -
+              - allowedKinds
+              -
+                - excel
+                - pdf
+                - powerpoint
+                - word
+            -
+              - showUnpermittedVolumes
+              - ''
+            -
+              - showUnpermittedFiles
+              - ''
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              -
+                - 'section:589d7e58-f378-455e-b073-055e9221964b' # Pages
+            -
+              - showUnpermittedSections
+              - ''
+            -
+              - showUnpermittedEntries
+              - ''
+      -
+        - url
+        -
+          __assoc__:
+            -
+              - allowRootRelativeUrls
+              - '1'
+            -
+              - allowAnchors
+              - '1'
+            -
+              - allowCustomSchemes
+              - '1'
+  types:
+    - entry
+    - url
+    - asset
+    - category
+    - email
+    - tel
+    - sms
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Link

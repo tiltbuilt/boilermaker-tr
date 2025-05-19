@@ -6,37 +6,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            requirable: false
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 8a3c6ad3-72fb-410a-b359-7759953d2a64
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
             handle: null
@@ -58,7 +29,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
             handle: font
@@ -74,7 +46,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
             handle: fontSize
@@ -90,7 +63,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
             handle: lineHeight
@@ -106,7 +80,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
             handle: null
@@ -122,7 +97,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
             handle: italic
@@ -138,7 +114,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
             handle: textCase
@@ -154,7 +131,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
             handle: letterSpacing
@@ -176,7 +154,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
             handle: creditFont
@@ -192,7 +171,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
             handle: creditFontSize
@@ -208,7 +188,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
             handle: creditLineHeight
@@ -224,7 +205,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
             handle: creditFontWeight
@@ -240,7 +222,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
             handle: creditItalic
@@ -256,7 +239,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
             handle: creditTextCase
@@ -272,7 +256,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
             handle: creditLetterSpacing
@@ -294,7 +279,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mt
@@ -310,7 +296,8 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mb
@@ -332,7 +319,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:55:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
             handle: null
@@ -352,7 +340,7 @@ fieldLayouts:
         userCondition: null
 handle: styleAdjustmentQuote
 hasTitleField: false
-icon: palette
+icon: null
 name: 'Style Adjustment - Quote'
 showSlugField: false
 showStatusField: true

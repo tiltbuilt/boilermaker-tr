@@ -92,7 +92,7 @@
 {# Retrieve styling adjustments #}
 {% set adjustments = entry.quoteStyleAdjustments.eagerly().all() %}
 
-<blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{animClass}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	{{entry.quoteText}}
 	<span id="{{blockId}}-credit" class="{{- _self.creditClasses(adjustments, creditColorClass) -}}">
 		{{entry.quoteCredit|typogrify}}

@@ -1,6 +1,8 @@
 color: cyan
 fieldLayouts:
   c175c6e1-c81e-467f-baab-fe3052dc4e9f:
+    cardView:
+      - 'layoutElement:bfb2691f-54f9-48bd-b5d6-4ce1e7f691e1'
     tabs:
       -
         elementCondition: null
@@ -25,7 +27,7 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            requirable: false
+            required: true
             size: null
             step: null
             tip: null
@@ -37,6 +39,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
@@ -52,7 +55,25 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-05-19T22:32:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: altText
+            includeInCards: false
+            instructions: null
+            label: 'Alt Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be8fd063-0dfb-4197-a8ce-54c90e9fcdd6
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: imageCaption
@@ -67,24 +88,119 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+        name: Content
+        uid: 00f30005-4f29-4c62-b0b6-3cdd8c790959
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
-            dateAdded: '2024-08-20T19:57:55+00:00'
+            dateAdded: '2025-05-19T22:30:53+00:00'
+            editCondition: null
             elementCondition: null
-            fieldUid: 2dc9eeb7-914f-40a8-a177-d21efc54153e # Link Settings
-            handle: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: isModalLink
             includeInCards: false
-            instructions: null
-            label: null
+            instructions: 'Is this link supposed to open normally, or as a modal popup?'
+            label: 'Modal Link?'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e51e3047-575f-415e-8462-8b7a3231e9c7
+            uid: bcbb5f2b-abe5-4520-b440-2d15f380d859
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: 00f30005-4f29-4c62-b0b6-3cdd8c790959
+          -
+            dateAdded: '2025-05-19T22:32:56+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: bcbb5f2b-abe5-4520-b440-2d15f380d859
+                  uid: a5dec3c6-0581-4db8-9018-c2f0229d5f49
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: aa6f3d94-b580-4806-aac7-1dde0e3062e0 # Button Link
+            handle: linkSettings
+            includeInCards: false
+            instructions: null
+            label: 'Link Settings'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a6fbd6d-9fd5-437b-8c8c-d902df44c0f0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-19T22:32:56+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: bcbb5f2b-abe5-4520-b440-2d15f380d859
+                  uid: 691b59f2-d050-4362-aebf-cb20df3b79a4
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: e92ccd0c-f875-418b-84e5-2e10fe5ca803 # Modal Button Link
+            handle: modalLinkSettings
+            includeInCards: false
+            instructions: null
+            label: 'Modal Link Settings'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 225e8ef7-be2e-4168-b729-ff41cf27e55d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-19T22:30:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
+            handle: linkCustomClasses
+            includeInCards: false
+            instructions: null
+            label: 'Link Custom Classes'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed2b8acb-a19f-4918-ba51-2cbddc2910ca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-19T22:30:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
+            handle: linkCustomAttributes
+            includeInCards: false
+            instructions: null
+            label: 'Link Custom Attributes'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab10f566-5344-4703-ac70-46b17394e235
+            userCondition: null
+            warning: null
+            width: 100
+        name: Link
+        uid: ee04809c-a8f0-4e2a-a5f0-b18765a2a600
         userCondition: null
       -
         elementCondition: null
@@ -107,6 +223,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: captionColor
@@ -123,6 +240,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -146,6 +264,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: c9cf2b48-b578-41dd-ae7f-82d0ce5a4241 # Image Style Adjustments
             handle: null
@@ -168,6 +287,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -184,6 +304,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -200,6 +321,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:57:55+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null

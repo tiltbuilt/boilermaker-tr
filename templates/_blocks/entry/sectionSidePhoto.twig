@@ -120,7 +120,7 @@
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.sidePhotoStyleAdjustments.eagerly().all() %}
+{% set adjustments = entry.sidePhotoStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}
 
 {# Set Styles for Columns #}
 
@@ -166,7 +166,7 @@
 >
 	<div class="side-section-layout {{ entry.fullscreen ? 'fullscreen' -}}">
 		
-		<div class="side-photo-conten {{positionClass}} {{ _self.contentClasses(classSettings) -}}">
+		<div class="side-photo-content {{positionClass}} {{ _self.contentClasses(classSettings) -}}">
 			<div class="side-photo-content-wrapper {#{% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} #} {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
 				{% for chunk in entry.elementContent %}
 					{% if chunk.type == 'markup' %}
@@ -182,6 +182,9 @@
 						}) }}
 					{% endif %}
 				{% endfor %}
+			</div>
+			<div class="background">
+				{{ gMacros.buildElementBackground(adjustments) }}
 			</div>
 		</div>
 		

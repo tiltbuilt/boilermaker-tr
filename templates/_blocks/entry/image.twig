@@ -13,6 +13,47 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_macros/globalMacros' as gMacros %}
 
+{# Non-modal button code macro #}
+{% macro blockWidth (adjustments) %}
+	{% set classList = [] %}
+	{% for adjSet in adjustments %}
+		{# Get Device Size for Adjustments #}
+		{% set devSize = adjSet.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ ':' %}	
+		{% endif %}
+				
+		{% if adjSet.width|length %}
+			{% if adjSet.width == 'auto' %}
+				{% set classItem = devSize ~ 'inline-block' %}
+			{% else %}
+				{% set classItem = devSize ~ 'w-' ~ adjSet.width %}				
+			{% endif %}
+			{% set classList = classList|merge([classItem]) %}
+		{% endif %}	
+	{% endfor %}
+	{{ classList|join(' ') }}
+{% endmacro blockWidth %}
+
+{% macro imageWidth (adjustments) %}
+	{% set classList = [] %}
+	{% for adjSet in adjustments %}
+		{# Get Device Size for Adjustments #}
+		{% set devSize = adjSet.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ ':' %}	
+		{% endif %}
+				
+		{% if adjSet.width|length %}
+			{% if adjSet.width == 'auto' %}
+				{% set classItem = devSize ~ 'w-' ~ adjSet.width %}
+				{% set classList = classList|merge([classItem]) %}				
+			{% endif %}			
+		{% endif %}	
+	{% endfor %}
+	{{ classList|join(' ') }}
+{% endmacro imageWidth %}
+
 {# Create array for classes to pass to macros for section #}
 {% set imgClassList = [] %}
 
@@ -79,41 +120,32 @@
 
 {# OUTPUT #}
 {% if image != null %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.widthClasses(adjustments) -}} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ _self.blockWidth(adjustments) }} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
-		{% if entry.linkSettings.url|length %}
-			{% if entry.linkSettings.getLinkType().label == 'Modal' %}
+		{% if entry.linkSettings!= null %}
+			{% if entry.isModalLink %}
 				{# modal #}
-				{% set modalUrl = '/resources/entrymodal?entryid=' ~ entry.linkSettings.linkValue %}
-				{% set modalEntry = craft.entries().id(entry.linkSettings.linkValue).one() %}
+				{% set modalUrl = '/resources/entrymodal?entryid=' ~ entry.modalButtonLink.element.id %}
+				{% set modalEntry = craft.entries().id(entry.modalButtonLink.element.id).one() %}
 				{% if not craft.app.request.isAjax() %}
-					<a id="{{blockId}}-link" x-ref="{{blockId}}-link" type="button" class="img-link {{ entry.linkSettings.customClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkSettings.customAttributes) -}}
-					x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{{blockId}}-link';
-					fetch('{{ modalUrl }}', {
-						method: 'GET',
-						headers: {
-							'X-Requested-With': 'XMLHttpRequest',
-						},
-					})
-					.then(response => response.text())
-					.then(text => {
-						modalHtml = text
-						showLoading = false;			   
-					});"			 
+					<a id="{{blockId}}-link" x-ref="{{blockId}}-link" type="button" class="img-link {{ entry.linkCustomClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkCustomAttributes) -}}
+					
+					x-on:click="focusEl='{{blockId}}-link'; $store.contentModal.open('{{modalUrl}}','{{modalEntry.title}}');"				
+							 
 					>						
 				{% elseif modalEntry.section.handle == "pages" %}
-					<a href="{{modalEntry.url}}" id="{{blockId}}-link" type="button" class="img-link {{ entry.linkSettings.customClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkSettings.customAttributes) -}}>
+					<a href="{{modalEntry.url}}" id="{{blockId}}-link" type="button" class="img-link {{ entry.linkCustomClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkCustomAttributes) -}}>
 				{% endif %}			
 			{% else %}
 				{# everything else #}
-				<a href="{{entry.linkSettings.url}}" id="{{blockId}}-link" type="button" class="img-link {{ entry.linkSettings.customClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{-  entry.linkSettings.target|length ? ' target="_blank"' : '' }} {{- gMacros.attributesOut(entry.linkSettings.customAttributes) -}}>
+				<a href="{{entry.linkSettings.value}}" id="{{blockId}}-link" type="button" class="img-link {{ entry.linkCustomClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{-  entry.linkSettings.target|length ? ' target="_blank"' : '' }} {{- gMacros.attributesOut(entry.linkCustomAttributes) -}}>
 			{% endif %}		
 		{% endif %}
 		
 		{% if image.mimeType == "image/svg+xml" %}		
 		
 			{# for svg images just drop image in, don't mess with aspect ratio or transforms #}
-			<img src="{{ image.url }}" alt="{{entry.title}}" class="lazyload block">
+			<img src="{{ image.url }}" alt="{{entry.altText}}" class="lazyload block {{ _self.imageWidth(adjustments) }}">
 		
 		{% else %}		
 			{% if hasAspectChange %}
@@ -181,8 +213,8 @@
 					<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"		  
 					  data-sizes="auto"
 					  data-src="{{ dfImg }}"					 
-					  alt="{{ entry.title }}" 
-					  class="lazyload"
+					  alt="{{ entry.altText }}" 
+					  class="lazyload {{ _self.imageWidth(adjustments) }}"
 					>									
 				</picture>				
 			{% else %}
@@ -200,13 +232,13 @@
 				  data-sizes="auto"
 				  data-src="{{ transformedImages[0] }}"
 				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-				  alt="{{ entry.title }}"
-				  class="lazyload block"
+				  alt="{{ entry.altText }}"
+				  class="lazyload block {{ _self.imageWidth(adjustments) }}"
 				>			
 			{% endif %}		  
 		{% endif %}
 		
-		{% if entry.linkSettings.url|length %}
+		{% if entry.linkSettings != null %}
 			</a>		
 		{% endif %}
 		

@@ -218,7 +218,7 @@ fieldLayouts:
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: thumbAspectLg
             includeInCards: false
-            instructions: 'This control sets a default size for repeater thumbnails in large image card scenarios and the small image card when the card layout can''t stack'
+            instructions: "This control sets a default size for repeater thumbnails in large image card scenarios and the small image card when the card layout can't stack"
             label: 'Global Thumbnail Size-Large'
             providesThumbs: false
             required: true

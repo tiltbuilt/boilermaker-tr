@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-04-04T22:07:59+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
             handle: null
@@ -56,7 +57,7 @@ fieldLayouts:
         userCondition: null
 handle: reusableModule
 hasTitleField: true
-icon: arrows-rotate-reverse
+icon: null
 name: 'Reusable Module'
 showSlugField: false
 showStatusField: true

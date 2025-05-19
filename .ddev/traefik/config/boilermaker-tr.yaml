@@ -1,0 +1,131 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    boilermaker-tr-web-80-http:
+      entrypoints:
+        - http-80
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-web-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "boilermaker-tr-redirectHttps"
+    boilermaker-tr-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-web-8025"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "boilermaker-tr-redirectHttps"
+    boilermaker-tr-web-3000-http:
+      entrypoints:
+        - http-3001
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-web-3000"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "boilermaker-tr-redirectHttps"
+    boilermaker-tr-xhgui-80-http:
+      entrypoints:
+        - http-8143
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-xhgui-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "boilermaker-tr-redirectHttps"
+    
+    
+    
+    
+    boilermaker-tr-web-80-https:
+      entrypoints:
+        - http-443
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-web-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    boilermaker-tr-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-web-8025"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    boilermaker-tr-web-3000-https:
+      entrypoints:
+        - http-3000
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-web-3000"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+    boilermaker-tr-xhgui-80-https:
+      entrypoints:
+        - http-8142
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-xhgui-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+
+  middlewares:
+    boilermaker-tr-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    boilermaker-tr-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-boilermaker-tr-web:80
+        
+    boilermaker-tr-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-boilermaker-tr-web:8025
+        
+    boilermaker-tr-web-3000:
+      loadbalancer:
+        servers:
+          - url: http://ddev-boilermaker-tr-web:3000
+        
+    
+    
+    
+    boilermaker-tr-xhgui-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-boilermaker-tr-xhgui:80
+        
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/boilermaker-tr.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/boilermaker-tr.key

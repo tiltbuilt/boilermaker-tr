@@ -34,6 +34,10 @@ prepros-6.config
 /node_modules/*
 /vendor
 /web/dist
+/public/dist
+/public/imager/*
+/public/blitz/*
+/public/cache/blitz/*
 
 
 # local env files

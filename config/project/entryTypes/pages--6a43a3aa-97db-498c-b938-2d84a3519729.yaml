@@ -479,7 +479,7 @@ fieldLayouts:
             fieldUid: 8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300 # Background Image Small
             handle: headerImgSm
             includeInCards: false
-            instructions: 'This field is for scenarios where you need an image at a specific aspect ratio that won''t get cropped for small device sizes.'
+            instructions: "This field is for scenarios where you need an image at a specific aspect ratio that won't get cropped for small device sizes."
             label: 'Header Image-Small'
             providesThumbs: false
             required: false

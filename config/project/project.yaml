@@ -1,4 +1,4 @@
-dateModified: 1744400692
+dateModified: 1747693976
 elementSources:
   craft\elements\Entry:
     -
@@ -147,7 +147,6 @@ meta:
     1ef67107-0265-4563-8344-695b0a016e56: Form # Form
     2ac55b2e-329b-4793-af25-3d158c1a4682: 'Accordion Style Adjustments' # Accordion Style Adjustments
     2bf5d5a7-249a-42a4-ae56-79ea7f679bcc: 'Modal to Display' # Modal to Display
-    2dc9eeb7-914f-40a8-a177-d21efc54153e: 'Link Settings' # Link Settings
     2e638127-2263-4e53-b71d-89eadcf405b0: 'Main Menu' # Main Menu
     3aa14a6e-dabc-42ae-8954-e10f19c53441: Accordions # Accordions
     3b11f12d-de65-452c-9f88-880fdf6e2c79: 'Button Alignment' # Button Alignment
@@ -162,6 +161,7 @@ meta:
     4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73: 'Button Color' # Button Color
     5ad5f513-b34c-48ac-80bf-b573ed1e1f78: 'On Off' # On Off
     5ced14c8-e41a-4186-99ba-01c331a7e430: 'Style Adjustment - Header' # Style Adjustment - Header
+    5d5ecce2-3ca6-40ee-bdb3-330b7f832bd9: 'Modal Button' # Modal Button
     5d95a350-fb34-496c-8c66-da3952eb4373: 'Text Alignment' # Text Alignment
     5d983a94-8298-437a-a512-63a98178af7a: 'Content Position Small CTA Mobile' # Content Position Small CTA Mobile
     05fecf3b-4603-46ea-9e54-4612defd70e9: 'Layout Row' # Layout Row
@@ -185,6 +185,7 @@ meta:
     37ce7ac2-f596-4d6f-9181-3f4d9fa4d692: 'Block Layout' # Block Layout
     40a37d8a-41c1-47af-bc27-28d08f99a909: Slides # Slides
     42d492b4-f425-4d5c-8cba-e1aa7ed774d5: 'Reusable Modules' # Reusable Modules
+    045dc99c-c844-4fc8-a68f-71f83ecf05e3: Button # Button
     47acc143-9347-4976-bd50-02778ffeabf1: 'Button Styles' # Button Styles
     049ec87b-57e9-4b3e-8d53-44cb8874474b: Width # Width
     55cb62d2-f02a-4bd8-849c-695f3a2e92b1: Columns # Columns
@@ -260,6 +261,7 @@ meta:
     a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5: 'Custom Classes' # Custom Classes
     a547c85e-ce84-4cd3-9a43-5727af411343: 'Style Adjustment - Side by Side Photo Section' # Style Adjustment - Side by Side Photo Section
     a387115c-e26a-48c1-88b4-11f64ea1772d: 'Font Weight' # Font Weight
+    aa6f3d94-b580-4806-aac7-1dde0e3062e0: 'Button Link' # Button Link
     acdcfd1c-89a2-4090-989d-17db6ad24060: Icon # Icon
     acec3806-c4ac-4430-a8d9-24915eacc052: Modals # Modals
     ad1fd6cd-1d72-49dd-82fc-6a604b11a71c: 'Icon Content Block' # Icon Content Block
@@ -316,6 +318,7 @@ meta:
     e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
     e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
     e8d249f8-2c18-4b51-b311-baabbd94f999: 'Style Adjustment - Image' # Style Adjustment - Image
+    e92ccd0c-f875-418b-84e5-2e10fe5ca803: 'Modal Button Link' # Modal Button Link
     e976e669-f3ac-496a-8450-9d5613262236: 'Subhead Text' # Subhead Text
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
     e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
@@ -343,7 +346,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: WJN1BY9ELQU1J9ZL5UREW5HJ
-    schemaVersion: 5.10.0
+    schemaVersion: 5.11.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -402,7 +405,7 @@ plugins:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
         - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
       maxRetryAttempts: 10
-      maxUriLength: 255
+      maxUriLength: 2048
       mutexTimeout: 1
       outputComments: true
       purgeAssetImagesWhenChanged: true
@@ -531,7 +534,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: JJ00TU9YYRW5XTR5JINUTOR4
-    schemaVersion: 3.0.12
+    schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
     enabled: true
@@ -589,5 +592,5 @@ system:
   edition: pro
   live: true
   name: $SITE_NAME
-  schemaVersion: 5.6.0.2
+  schemaVersion: 5.7.0.3
   timeZone: America/Chicago

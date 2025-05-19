@@ -40,6 +40,38 @@ var duration = duration || 1;
 gsap.registerPlugin(Flip,ScrollTrigger,ScrollToPlugin,Draggable,MotionPathPlugin,TextPlugin,DrawSVGPlugin,ScrambleTextPlugin,SplitText,RoughEase,ExpoScaleEase,SlowMo,CustomEase);    
 
 document.addEventListener('alpine:init', () => {
+  
+  Alpine.store('contentModal', {
+    on: false,
+    modalHtml: '',
+    showLoading: false,   
+  
+    open(modalUrl, modalTitle) {      
+      this.modalHtml='loading...'; 
+      this.showLoading = true; 
+      this.on = true;
+            
+      fetch(modalUrl, {
+        method: 'GET',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+      })
+      .then(response => response.text())
+      .then(text => {
+        this.modalHtml = text
+        this.showLoading = false;			   
+      })
+      
+    },
+    
+    close() {
+      this.on = false;
+      this.modalHtml = '';
+      this.showLoading = false;   
+    }
+  });
+  
   Alpine.data('sectionStandard', (animateContent, staggerAnimations) => ({
     init() {       
       if (animateContent) {
