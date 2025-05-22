@@ -5,6 +5,16 @@
 
 http:
   routers:
+    boilermaker-tr-xhgui-80-http:
+      entrypoints:
+        - http-8143
+      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
+      
+      service: "boilermaker-tr-xhgui-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "boilermaker-tr-redirectHttps"
     boilermaker-tr-web-80-http:
       entrypoints:
         - http-80
@@ -35,17 +45,18 @@ http:
       tls: false
       # middlewares:
       #   - "boilermaker-tr-redirectHttps"
-    boilermaker-tr-xhgui-80-http:
+    
+    
+    boilermaker-tr-xhgui-80-https:
       entrypoints:
-        - http-8143
+        - http-8142
       rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
       
       service: "boilermaker-tr-xhgui-80"
       ruleSyntax: v3
-      tls: false
-      # middlewares:
-      #   - "boilermaker-tr-redirectHttps"
-    
+      
+      tls: true
+      
     
     
     
@@ -80,17 +91,6 @@ http:
       tls: true
       
     
-    boilermaker-tr-xhgui-80-https:
-      entrypoints:
-        - http-8142
-      rule: HostRegexp(`^boilermaker-tr\.ddev\.site$`)
-      
-      service: "boilermaker-tr-xhgui-80"
-      ruleSyntax: v3
-      
-      tls: true
-      
-    
 
   middlewares:
     boilermaker-tr-redirectHttps:
@@ -99,6 +99,12 @@ http:
         permanent: true
 
   services:
+    boilermaker-tr-xhgui-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-boilermaker-tr-xhgui:80
+        
+    
     boilermaker-tr-web-80:
       loadbalancer:
         servers:
@@ -116,12 +122,6 @@ http:
         
     
     
-    
-    boilermaker-tr-xhgui-80:
-      loadbalancer:
-        servers:
-          - url: http://ddev-boilermaker-tr-xhgui:80
-        
     
     
 

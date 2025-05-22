@@ -11,7 +11,7 @@ services:
     db:
         build:
             args:
-                BASE_IMAGE: ddev/ddev-dbserver-mysql-8.0:v1.24.5
+                BASE_IMAGE: ddev/ddev-dbserver-mysql-8.0:v1.24.6
                 gid: "20"
                 uid: "501"
                 username: brianrivet
@@ -61,7 +61,7 @@ services:
             start_period: 2m0s
             timeout: 1m10s
         hostname: boilermaker-tr-db
-        image: ddev/ddev-dbserver-mysql-8.0:v1.24.5-boilermaker-tr-built
+        image: ddev/ddev-dbserver-mysql-8.0:v1.24.6-boilermaker-tr-built
         labels:
             com.ddev.app-type: craftcms
             com.ddev.approot: /Volumes/Vault/SITES/boilermaker-tr
@@ -102,7 +102,7 @@ services:
     web:
         build:
             args:
-                BASE_IMAGE: ddev/ddev-webserver:v1.24.5
+                BASE_IMAGE: ddev/ddev-webserver:v1.24.6
                 DDEV_DATABASE: mysql:8.0
                 DDEV_PHP_VERSION: "8.2"
                 gid: "20"
@@ -120,6 +120,13 @@ services:
             COLUMNS: "76"
             COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
             COREPACK_HOME: /mnt/ddev-global-cache/corepack
+            CRAFT_DB_DATABASE: db
+            CRAFT_DB_DRIVER: mysql
+            CRAFT_DB_PASSWORD: db
+            CRAFT_DB_PORT: "3306"
+            CRAFT_DB_SERVER: db
+            CRAFT_DB_USER: db
+            CRAFT_WEB_ROOT: /var/www/html/web
             DDEV_APPROOT: /var/www/html
             DDEV_COMPOSER_ROOT: /var/www/html
             DDEV_DATABASE: mysql:8.0
@@ -142,7 +149,7 @@ services:
             DDEV_SCHEME: https
             DDEV_SITENAME: boilermaker-tr
             DDEV_TLD: ddev.site
-            DDEV_VERSION: v1.24.5
+            DDEV_VERSION: v1.24.6
             DDEV_WEB_ENTRYPOINT: /mnt/ddev_config/web-entrypoint.d
             DDEV_WEBSERVER_TYPE: nginx-fpm
             DDEV_XDEBUG_ENABLED: "false"
@@ -156,6 +163,8 @@ services:
             HTTPS_EXPOSE: 443:80,8026:8025,3000:3000
             IS_DDEV_PROJECT: "true"
             LINES: "68"
+            MAILPIT_SMTP_HOSTNAME: 127.0.0.1
+            MAILPIT_SMTP_PORT: "1025"
             MYSQL_HISTFILE: /mnt/ddev-global-cache/mysqlhistory/boilermaker-tr-web/mysql_history
             NODE_EXTRA_CA_CERTS: /mnt/ddev-global-cache/mkcert/rootCA.pem
             PGDATABASE: db
@@ -163,6 +172,7 @@ services:
             PGPASSWORD: db
             PGUSER: db
             PHP_IDE_CONFIG: serverName=boilermaker-tr.ddev.site
+            PRIMARY_SITE_URL: https://boilermaker-tr.ddev.site
             SSH_AUTH_SOCK: /home/.ssh-agent/socket
             START_SCRIPT_TIMEOUT: "30"
             TZ: America/Chicago
@@ -180,7 +190,7 @@ services:
             start_period: 2m0s
             timeout: 1m10s
         hostname: boilermaker-tr-web
-        image: ddev/ddev-webserver:v1.24.5-boilermaker-tr-built
+        image: ddev/ddev-webserver:v1.24.6-boilermaker-tr-built
         labels:
             com.ddev.app-type: craftcms
             com.ddev.approot: /Volumes/Vault/SITES/boilermaker-tr
@@ -270,7 +280,7 @@ services:
             XHGUI_PDO_PASS: db
             XHGUI_PDO_USER: db
             XHGUI_SAVE_HANDLER: pdo
-        image: ddev/ddev-xhgui:v1.24.5
+        image: ddev/ddev-xhgui:v1.24.6
         labels:
             com.ddev.approot: /Volumes/Vault/SITES/boilermaker-tr
             com.ddev.site-name: boilermaker-tr

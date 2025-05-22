@@ -167,7 +167,7 @@
 	<div class="side-section-layout {{ entry.fullscreen ? 'fullscreen' -}}">
 		
 		<div class="side-photo-content {{positionClass}} {{ _self.contentClasses(classSettings) -}}">
-			<div class="side-photo-content-wrapper {#{% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} #} {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
+			<div class="side-photo-content-wrapper {#{% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} #} {{entry.textAlignment}} {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
 				{% for chunk in entry.elementContent %}
 					{% if chunk.type == 'markup' %}
 						{% if entry.animate and entry.animateContent %}

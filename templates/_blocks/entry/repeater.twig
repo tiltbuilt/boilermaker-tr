@@ -294,9 +294,9 @@
 				{% if entry.showPagination %}
 					{% include ['_partials/_boiler/pagination'] %}
 				{% else %}
-					{% if entry.fullListingButton.url|length %}
+					{% if entry.fullListingButton.value|length %}
 						<div class="full-listing-btn-wrapper {{entry.fullListingButton.btnAlignment}}">
-							<a {% if entry.fullListingButton.customId|length %}id="{{entry.fullListingButton.customId}}"{% endif %} href="{{entry.fullListingButton.url}}" class="btn btn-full-listings {{entry.fullListingButton.btnStyles}} {{entry.fullListingButton.btnSize}} {{colorScheme}} {{entry.fullListingButton.customClasses}}" {{ gMacros.attributesOut(entry.fullListingButton.customAttributes) -}}>
+							<a {% if entry.fullListingButton.customId|length %}id="{{entry.fullListingButton.customId}}"{% endif %} href="{{entry.fullListingButton.value}}" class="btn btn-full-listings {{entry.fullListingButton.btnStyles}} {{entry.fullListingButton.btnSize}} {{colorScheme}} {{entry.fullListingButton.customClasses}}" {{ gMacros.attributesOut(entry.fullListingButton.customAttributes) -}}>
 								{{entry.fullListingButton.linkText|length ? entry.fullListingButton.linkText : 'View Full Listings'}}
 							</a>
 						</div>

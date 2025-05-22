@@ -223,7 +223,7 @@ services:
       timeout: "70s"
   
   xhgui:
-    image: ddev/ddev-xhgui:v1.24.5
+    image: ddev/ddev-xhgui:v1.24.6
     container_name: ddev-${DDEV_SITENAME}-xhgui
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}

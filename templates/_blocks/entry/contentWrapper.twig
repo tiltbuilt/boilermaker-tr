@@ -55,7 +55,7 @@
 {% set adjustments = entry.contentWrapperStyleAdjustments.eagerly().with('bgImg').all() %}
 
 <div id="{{blockId}}" class="{{- blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- wrapperClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
-	<div class="inner content-wrapper-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+	<div class="inner content-wrapper-inner {{entry.textAlignment}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}

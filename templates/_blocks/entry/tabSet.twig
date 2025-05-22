@@ -139,7 +139,7 @@
   <div role="tabpanels" class="tab-panel-wrapper">
 	{% for tab in tabs %}
 	
-		{% set tabClassList = ['tab-panel'] %}				
+		{% set tabClassList = ['tab-panel', tab.textAlignment] %}				
 		{% set colorClasses = [] %}		
 		
 		{# Set tab id attribute value #}

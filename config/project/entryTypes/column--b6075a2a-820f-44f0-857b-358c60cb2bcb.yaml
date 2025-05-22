@@ -82,6 +82,23 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-05-21T22:03:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5608317-d6eb-4f75-98ff-b9759253c720
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-05-19T20:50:34+00:00'
             elementCondition: null
             heading: Color
