@@ -179,6 +179,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Modal Button'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

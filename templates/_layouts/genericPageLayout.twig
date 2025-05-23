@@ -91,9 +91,9 @@
 		<!-- Modal -->			
 			
 		<div
-			x-show="modalOpen"
+			x-show="$store.contentModal.on"
 			style="display: none"
-			x-on:keydown.escape.prevent.stop="modalOpen = false"
+			x-on:keydown.escape.prevent.stop="$store.contentModal.close()"
 			role="dialog"
 			aria-modal="true"
 			x-id="['modal-title']"
@@ -101,34 +101,34 @@
 			class="modal-wrapper-outer"
 		>
 			<!-- Overlay -->
-			<div x-show="modalOpen" x-transition.opacity class="modal-overlay"></div>
+			<div x-show="$store.contentModal.on" x-transition.opacity class="modal-overlay"></div>
 			
 			<!-- close button -->
-			<button id="btn-modal-close" class="modal-close" type="button" x-show="modalOpen" x-on:click="modalOpen = false; modalHtml = ''; focus(focusEl);">			  
+			<button id="btn-modal-close" class="modal-close" type="button" x-show="$store.contentModal.on" x-on:click="$store.contentModal.close()">			  
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 		
 			<!-- Panel -->
 			<div
-				x-show="modalOpen" x-transition
-				x-on:click="modalOpen = false; modalHtml = ''; focus(focusEl);"
+				x-show="$store.contentModal.on" x-transition
+				x-on:click="$store.contentModal.close()"
 				class="modal-wrapper-inner"
 			>
 				
 				<div
 					x-on:click.stop
-					x-trap.noscroll.inert="modalOpen"
+					x-trap.noscroll.inert="$store.contentModal.on"
 					class="modal-window"
 				>
 					<!-- Title -->
-					<h2 class="hidden" :id="$id('modal-title')" x-text="modalTitle"></h2>
+					<h2 class="hidden" :id="$id('modal-title')" x-text="$store.contentModal.modalTitle"></h2>
 		
 					<div
-					  x-show="showLoading"
+					  x-show="$store.contentModal.showLoading"
 					  x-transition:leave="transition ease-out duration-500"
 					  x-transition:leave-start="opacity-100"
 					  x-transition:leave-end="opacity-0"
-					  class="absolute h-full w-full inset-0 z-20 flex flex-col justify-center items-center text-gray-600 bg-white"
+					  class="absolute h-full w-full inset-0 z-20 flex flex-col justify-center items-center text-gray-600 bg-white-default"
 					  {# class="absolute h-full w-full inset-0 z-20 flex flex-col justify-center items-center text-gray-100  bg-black" #}
 					  >
 						<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -146,7 +146,7 @@
 						</svg>
 						Loading&hellip;
 					  </div>
-					<div x-html="modalHtml"></div>
+					<div x-html="$store.contentModal.modalHtml"></div>
 				</div>
 			</div>
 		</div>			

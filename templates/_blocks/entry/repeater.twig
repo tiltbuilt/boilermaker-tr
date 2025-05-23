@@ -99,7 +99,7 @@
 {% endif %}
 
 {# don't show dates on nav lists #}
-{% if contentType == 'navList' or contentType == 'contentCards' %}
+{% if contentType == 'navList' or contentType == 'contentCards' or contentType == 'linkCards' %}
 	{% set showDate = false %}
 {% else %}
 	{% set showDate = entry.showPostDate %}
@@ -165,7 +165,16 @@
 		{% else %}
 			{% set listData = entry.contentCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}
 		{% endif %}
-		{% set listData = entry.contentCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}	
+		{% set listData = entry.contentCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}
+		
+	{% case "linkCards" %}
+		{% if paginateItems %}
+			{% paginate entry.linkCards.orderBy(listOrder).limit(entry.itemsPerPage).with(['imageAsset']) as pageInfo, listData %}
+			{% do seomatic.helper.paginate(pageInfo) %}
+		{% else %}
+			{% set listData = entry.linkCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}
+		{% endif %}
+		{% set listData = entry.linkCards.orderBy(listOrder).with(['imageAsset']).eagerly().all() %}	
 	
 	{% case "allInSection" %}
 		{% if paginateItems %}
@@ -206,7 +215,19 @@
 	{% else %}
 		{% set itemTitle = null %}
 	{% endif %}
-	{% if item.url is defined %}
+	{% if item.cardLink is defined and item.cardLink != null %}
+		{% if item.cardLink.value|length %}
+			{% set itemUrl = item.cardLink.value %}
+			{% if item.cardLink.target|length %}
+				{% set itemTab = true %}
+			{% else %}
+				{% set itemTab = false %}
+			{% endif %}
+		{% else %}
+			{% set itemUrl = null %}
+			{% set itemTab = false %}
+		{% endif %}
+	{% elseif item.url is defined %}
 		{% if item.url|length %}
 			{% set itemUrl = item.url %}
 		{% else %}
@@ -222,9 +243,11 @@
 		{% set itemTab = false %}
 	{% endif %}
 	{% if item.excerpt is defined %}
-		{% set itemExcerpt = item.excerpt %}
-	{% elseif item.cardContent is defined %}
-		{% set itemExcerpt = item.cardContent|raw %}
+		{% if item.type == 'linkCard' %}
+			{% set itemExcerpt = item.excerpt|retconChange('a', false) %}
+		{% else %}
+			{% set itemExcerpt = item.excerpt %}
+		{% endif %}	
 	{% else %}
 		{% set itemExcerpt = '' %}
 	{% endif %}

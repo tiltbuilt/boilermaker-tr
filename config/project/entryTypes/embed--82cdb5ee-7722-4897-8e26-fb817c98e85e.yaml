@@ -1,6 +1,8 @@
 color: yellow
 fieldLayouts:
   3ffe042c-5d70-4bd0-a13a-a7b5c2e61006:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -63,6 +65,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: Embed
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

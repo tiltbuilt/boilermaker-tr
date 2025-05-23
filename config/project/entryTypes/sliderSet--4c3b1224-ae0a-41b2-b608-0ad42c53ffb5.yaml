@@ -1,6 +1,8 @@
 color: green
 fieldLayouts:
   aa0c56fc-31e5-40f7-a90d-57074a3dd470:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -299,6 +301,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Slider Set'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

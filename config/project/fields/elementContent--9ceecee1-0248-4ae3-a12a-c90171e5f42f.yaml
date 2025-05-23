@@ -7,31 +7,96 @@ settings:
   availableTransforms: ''
   availableVolumes:
     - b644bda8-1050-46f5-9453-0b3d19812289 # Documents
+  characterLimit: null
   ckeConfig: c43e08b0-14a5-4aee-adb4-4e78e9c3d9fe # Main Content
-  createButtonLabel: 'New Content Element'
+  createButtonLabel: null
   defaultTransform: null
-  enableSourceEditingForNonAdmins: false
   entryTypes:
-    - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
-    - bcc81e37-c9a5-4aaa-a456-847dd36ebf95 # CTA
-    - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
-    - ad1fd6cd-1d72-49dd-82fc-6a604b11a71c # Icon Content Block
-    - a6e56255-d417-4ac8-9a3f-256c30684cd0 # Image
-    - ad2e8ad9-d9ae-4fee-a8f8-de0e8680707c # Quote
-    - c43e9602-b393-4012-b9c3-c4b391c74cd6 # Video
-    - 486d3e65-7880-4e2e-803e-daecc6657a1d # Content Wrapper
-    - 82c290d4-2826-4d74-bcc2-8f94ddc4b0b0 # Accordion Set
-    - 05fecf3b-4603-46ea-9e54-4612defd70e9 # Layout Row
-    - 4c3b1224-ae0a-41b2-b608-0ad42c53ffb5 # Slider Set
-    - 4a803a3b-ac9b-4ecc-b439-0815fb18e053 # Tab Set
-    - 82cdb5ee-7722-4897-8e26-fb817c98e85e # Embed
-    - 1ef67107-0265-4563-8344-695b0a016e56 # Form
-    - e2f8e7ee-d666-4bd1-bfe9-ece40a043b3e # Repeater
+    -
+      __assoc__:
+        -
+          - uid
+          - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+    -
+      __assoc__:
+        -
+          - uid
+          - bcc81e37-c9a5-4aaa-a456-847dd36ebf95 # CTA
+    -
+      __assoc__:
+        -
+          - uid
+          - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
+    -
+      __assoc__:
+        -
+          - uid
+          - ad1fd6cd-1d72-49dd-82fc-6a604b11a71c # Icon Content Block
+    -
+      __assoc__:
+        -
+          - uid
+          - a6e56255-d417-4ac8-9a3f-256c30684cd0 # Image
+    -
+      __assoc__:
+        -
+          - uid
+          - ad2e8ad9-d9ae-4fee-a8f8-de0e8680707c # Quote
+    -
+      __assoc__:
+        -
+          - uid
+          - c43e9602-b393-4012-b9c3-c4b391c74cd6 # Video
+    -
+      __assoc__:
+        -
+          - uid
+          - 486d3e65-7880-4e2e-803e-daecc6657a1d # Content Wrapper
+    -
+      __assoc__:
+        -
+          - uid
+          - 82c290d4-2826-4d74-bcc2-8f94ddc4b0b0 # Accordion Set
+    -
+      __assoc__:
+        -
+          - uid
+          - 05fecf3b-4603-46ea-9e54-4612defd70e9 # Layout Row
+    -
+      __assoc__:
+        -
+          - uid
+          - 4c3b1224-ae0a-41b2-b608-0ad42c53ffb5 # Slider Set
+    -
+      __assoc__:
+        -
+          - uid
+          - 4a803a3b-ac9b-4ecc-b439-0815fb18e053 # Tab Set
+    -
+      __assoc__:
+        -
+          - uid
+          - 82cdb5ee-7722-4897-8e26-fb817c98e85e # Embed
+    -
+      __assoc__:
+        -
+          - uid
+          - 1ef67107-0265-4563-8344-695b0a016e56 # Form
+    -
+      __assoc__:
+        -
+          - uid
+          - e2f8e7ee-d666-4bd1-bfe9-ece40a043b3e # Repeater
+  expandEntryButtons: true
+  fullGraphqlData: false
+  parseEmbeds: false
   purifierConfig: null
   purifyHtml: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   showWordCount: false
+  sourceEditingGroups:
+    - __ADMINS__
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

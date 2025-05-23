@@ -1,6 +1,8 @@
 color: cyan
 fieldLayouts:
   b9e0f8aa-c8d6-418d-ae54-fc36f3fb39f4:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -241,6 +243,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Icon Content'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

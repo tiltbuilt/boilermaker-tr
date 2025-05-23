@@ -1,6 +1,8 @@
 color: yellow
 fieldLayouts:
   ba682751-b33d-4384-b122-12672d9f16c7:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -106,14 +108,6 @@ fieldLayouts:
               conditionRules:
                 -
                   class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 93013c2a-acd5-4b87-b999-b352741b10fd # Repeater Content
-                  layoutElementUid: cd0ef4dc-4cbd-49bf-b9a4-90ef1dd3a468
-                  operator: ni
-                  uid: edcdb7d7-5ba3-4d69-b696-bd5ecb241280
-                  values:
-                    - contentCards
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
                   fieldUid: 13b06d24-aa17-46e3-89b9-c895a68df851 # Repeater Display Type
                   layoutElementUid: 637190cd-073e-46d0-b3c6-7e32259ccefc
                   operator: ni
@@ -141,14 +135,6 @@ fieldLayouts:
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 93013c2a-acd5-4b87-b999-b352741b10fd # Repeater Content
-                  layoutElementUid: cd0ef4dc-4cbd-49bf-b9a4-90ef1dd3a468
-                  operator: ni
-                  uid: c10293bb-9694-45e9-93a2-4029bf90018b
-                  values:
-                    - contentCards
                 -
                   class: craft\fields\conditions\OptionsFieldConditionRule
                   fieldUid: 13b06d24-aa17-46e3-89b9-c895a68df851 # Repeater Display Type
@@ -1197,6 +1183,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: Repeater
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

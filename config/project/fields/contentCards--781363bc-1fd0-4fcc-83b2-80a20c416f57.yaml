@@ -5,8 +5,19 @@ name: 'Content Cards'
 searchable: false
 settings:
   createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 738845b3-b901-49ce-a17b-8a5c7864eab9 # Content Card
+    -
+      __assoc__:
+        -
+          - uid
+          - 738845b3-b901-49ce-a17b-8a5c7864eab9 # Content Card
+    -
+      __assoc__:
+        -
+          - uid
+          - 25bdc197-d50e-4c1a-9a58-9d42b6268487 # Link Card
   includeTableView: false
   maxEntries: null
   minEntries: null

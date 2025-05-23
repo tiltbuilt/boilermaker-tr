@@ -125,8 +125,8 @@
 		{% if entry.linkSettings!= null %}
 			{% if entry.isModalLink %}
 				{# modal #}
-				{% set modalUrl = '/resources/entrymodal?entryid=' ~ entry.modalButtonLink.element.id %}
-				{% set modalEntry = craft.entries().id(entry.modalButtonLink.element.id).one() %}
+				{% set modalUrl = '/resources/entrymodal?entryid=' ~ entry.modalLinkSettings.element.id %}
+				{% set modalEntry = craft.entries().id(entry.modalLinkSettings.element.id).one() %}
 				{% if not craft.app.request.isAjax() %}
 					<a id="{{blockId}}-link" x-ref="{{blockId}}-link" type="button" class="img-link {{ entry.linkCustomClasses }}" {% if entry.linkSettings.ariaLabel|length %}aria-label="{{entry.linkSettings.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(entry.linkCustomAttributes) -}}
 					

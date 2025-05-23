@@ -1,6 +1,8 @@
 color: lime
 fieldLayouts:
   8e0b7593-10b1-4c4c-bb45-45678f2b5cd2:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -302,6 +304,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: Section
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

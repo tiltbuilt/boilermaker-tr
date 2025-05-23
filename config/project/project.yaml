@@ -1,4 +1,4 @@
-dateModified: 1747866179
+dateModified: 1748032126
 elementSources:
   craft\elements\Entry:
     -
@@ -181,6 +181,7 @@ meta:
     09d61ba7-f8dd-4e73-bc8f-d580cffbcc1e: 'Boilermaker 3' # Boilermaker 3
     13b06d24-aa17-46e3-89b9-c895a68df851: 'Repeater Display Type' # Repeater Display Type
     23f01ca6-c4de-4346-a8a1-75a6b95d1f53: 'Form Style Adjustments' # Form Style Adjustments
+    25bdc197-d50e-4c1a-9a58-9d42b6268487: 'Link Card' # Link Card
     37a64193-e3ef-4a2d-aa91-555b436b1d7d: 'Italic?' # Italic?
     37ce7ac2-f596-4d6f-9181-3f4d9fa4d692: 'Block Layout' # Block Layout
     40a37d8a-41c1-47af-bc27-28d08f99a909: Slides # Slides
@@ -236,6 +237,7 @@ meta:
     60656df7-fedd-4651-ae29-cf30fdef7f08: 'Style Adjustment - Slider Set' # Style Adjustment - Slider Set
     68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
+    253138fc-844f-44ce-b802-ceba93597569: 'Content Card' # Content Card
     481490a1-1752-4ffc-b455-f05dadea8141: 'Slider Set Style Adjustments' # Slider Set Style Adjustments
     699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
     738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
@@ -251,6 +253,7 @@ meta:
     31960640-d715-4966-93ba-b66e61df5207: 'Style Adjustment - Accordion Set' # Style Adjustment - Accordion Set
     53829185-3375-470c-80cf-a50b1733a8c4: 'Slide Effect' # Slide Effect
     54321551-57ae-4812-8a1d-c491760d59ad: 'Multi-Column Settings' # Multi-Column Settings
+    66354233-a357-4d3f-9543-7f92fef4d662: 'Card Content' # Card Content
     67336236-2b0e-4d01-bb98-029a923a6932: 'Tab Set Style Adjustments' # Tab Set Style Adjustments
     77532772-badf-4ce5-a93b-6752273d81bb: 'Subhead Position' # Subhead Position
     86544431-ce27-4263-b49f-b814ff50fcfb: 'Date Format' # Date Format
@@ -295,6 +298,7 @@ meta:
     c43e08b0-14a5-4aee-adb4-4e78e9c3d9fe: 'Main Content' # Main Content
     c43e9602-b393-4012-b9c3-c4b391c74cd6: Video # Video
     c57caa3f-3422-4928-85a0-f509e3c41317: 'Content Position - Small CTA' # Content Position - Small CTA
+    c281acd6-db5d-49e9-a272-08936804b011: 'Card Link' # Card Link
     cc44dfc3-f9d6-4fcc-9940-621e8a3981f0: 'Quote Style Adjustments' # Quote Style Adjustments
     cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
     d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1: 'Slide Transition Delay' # Slide Transition Delay
@@ -335,7 +339,6 @@ meta:
     f22d8a3b-9296-4b9a-b338-0d599eaa364a: 'Section to List' # Section to List
     f103b592-617a-4840-8a3b-ce98a171eb09: 'Style Adjustment - Content Wrapper' # Style Adjustment - Content Wrapper
     f162c9c9-8174-4ba1-a691-5b2e30f57c37: Root # Root
-    f7399346-9a4c-44e7-99c4-ca44c88fbb0f: 'Content Links' # Content Links
     fa819c1c-abac-42ac-b1e5-3de37862ccf3: Images # Images
     fd3b49a5-f45c-4fff-9e83-efae0bfb34d4: 'Style Adjustment - Section' # Style Adjustment - Section
     fdc69893-7848-4bd4-8f1d-3df385771a84: 'Repeater Style Adjustments' # Repeater Style Adjustments
@@ -472,11 +475,6 @@ plugins:
     enabled: true
     licenseKey: Z2TKXCPCSLGLRAT70BFEM1QC
     schemaVersion: 3.4.8
-  hyper:
-    edition: standard
-    enabled: true
-    licenseKey: 4NFE9QCIHKTCQV9R8Y0Q4RVF
-    schemaVersion: 1.0.0
   icon-picker:
     edition: standard
     enabled: true

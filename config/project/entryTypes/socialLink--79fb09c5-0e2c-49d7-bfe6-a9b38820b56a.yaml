@@ -1,6 +1,8 @@
 color: amber
 fieldLayouts:
   633cde7d-9883-40ee-a53d-05ab77a40b5b:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -80,6 +82,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Social Link'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

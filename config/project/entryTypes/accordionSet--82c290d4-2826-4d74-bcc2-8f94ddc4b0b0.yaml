@@ -1,6 +1,8 @@
 color: green
 fieldLayouts:
   4c4ddfa7-2465-4c23-9d7e-35445d849237:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -274,6 +276,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Accordion Set'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -3,6 +3,7 @@ fieldLayouts:
   c175c6e1-c81e-467f-baab-fe3052dc4e9f:
     cardView:
       - 'layoutElement:bfb2691f-54f9-48bd-b5d6-4ce1e7f691e1'
+      - type
     tabs:
       -
         elementCondition: null
@@ -347,6 +348,6 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: Image
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

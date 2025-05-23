@@ -1,6 +1,8 @@
 color: green
 fieldLayouts:
   127037a8-fd77-403e-9e0e-99113480c117:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -217,6 +219,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-styles-{ object.deviceSize }'
+titleFormat: 'Tab Set'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

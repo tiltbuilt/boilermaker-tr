@@ -1,6 +1,8 @@
 color: lime
 fieldLayouts:
   fa6e25ce-c2c5-44bf-af5c-a82c459145b9:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -444,6 +446,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Side By Side Section'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -1,6 +1,8 @@
 color: cyan
 fieldLayouts:
   262b0049-b5f8-4ffd-8dcc-4347b71a3e63:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -225,6 +227,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: Quote
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

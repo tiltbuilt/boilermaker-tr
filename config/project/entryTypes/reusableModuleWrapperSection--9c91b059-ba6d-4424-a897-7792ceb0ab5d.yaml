@@ -1,6 +1,8 @@
 color: lime
 fieldLayouts:
   052893b7-f328-4ef7-b529-33ce9c2515d1:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -285,6 +287,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Reusable Module Section'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
