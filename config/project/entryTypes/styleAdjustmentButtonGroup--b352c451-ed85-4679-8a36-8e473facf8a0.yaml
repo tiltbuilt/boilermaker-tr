@@ -7,6 +7,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-08T03:38:35+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Layout Size
             handle: deviceSize
@@ -29,6 +30,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-08T03:50:13+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 3b11f12d-de65-452c-9f88-880fdf6e2c79 # Button Alignment
             handle: null
@@ -51,6 +53,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-08T03:38:35+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mt
@@ -67,6 +70,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2024-12-08T03:38:35+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: mb
@@ -89,6 +93,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-08T03:38:35+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
             handle: null
@@ -108,7 +113,7 @@ fieldLayouts:
         userCondition: null
 handle: styleAdjustmentButtonGroup
 hasTitleField: false
-icon: palette
+icon: null
 name: 'Style Adjustment - Button Group'
 showSlugField: false
 showStatusField: true

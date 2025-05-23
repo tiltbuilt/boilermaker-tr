@@ -21,14 +21,12 @@
 {% block pageId %}page-{{- entry.slug -}}{% endblock %}
 
 {% block bodyAttr %}
-	x-data="{ 
-		modalOpen: false,
-		modalHtml: '',
-		modalTitle: '',
-		focusEl: '',
-		showLoading: false,
+	x-data="{
+		focusEl: '',				
 		loadModalOpened: $persist(false).as('loadModalOpened_{{entry.id}}').using(sessionStorage),
-	}"	
+	}"
+	
+		
 
 	{% if entry.modalToDisplay|length %}
 		{% set modalEntry = entry.modalToDisplay.eagerly().one() %}
@@ -38,22 +36,8 @@
 		x-init="
 		if (!loadModalOpened) {
 			$nextTick(() => { 
-				modalHtml='loading...'; 
-				showLoading = true; 
-				modalOpen = true; 
-				loadModalOpened = true;
-				modalTitle='{{modalEntryTitle}}';
-				fetch('{{ modalUrl }}', {
-					method: 'GET',
-					headers: {
-						'X-Requested-With': 'XMLHttpRequest',
-					},
-				})
-				.then(response => response.text())
-				.then(text => {
-					modalHtml = text
-					showLoading = false;			   
-				})
+				$store.contentModal.open('{{modalUrl}}','{{modalEntryTitle}}');
+				loadModalOpened = true;			
 			})
 		}"		
 	{% endif %}		

@@ -5,9 +5,24 @@ name: 'Page Builder'
 searchable: true
 settings:
   createButtonLabel: 'New Page Section'
+  defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 15890ba2-38e4-4bce-9ccc-45ed62101d3e # Section
-    - 938f3198-1925-4908-b0e0-8dfd786c00f1 # Side by Side Photo Section
+    -
+      __assoc__:
+        -
+          - uid
+          - 15890ba2-38e4-4bce-9ccc-45ed62101d3e # Section
+    -
+      __assoc__:
+        -
+          - uid
+          - 938f3198-1925-4908-b0e0-8dfd786c00f1 # Side by Side Photo Section
+    -
+      __assoc__:
+        -
+          - uid
+          - 9c91b059-ba6d-4424-a897-7792ceb0ab5d # Reusable Module Wrapper Section
   includeTableView: false
   maxEntries: null
   minEntries: null

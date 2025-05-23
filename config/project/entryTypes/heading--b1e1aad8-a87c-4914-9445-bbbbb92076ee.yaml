@@ -1,6 +1,9 @@
 color: cyan
 fieldLayouts:
   f3589bbe-232b-4610-91e0-458e9a97c5ef:
+    cardView:
+      - type
+      - 'layoutElement:999bdee3-ba97-4ca8-9fa4-f50e7a6bde8d'
     tabs:
       -
         elementCondition: null
@@ -37,6 +40,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-09T19:57:46+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b4c4f21e-35c3-40ba-b812-86a3bc213582 # Main Heading Text
             handle: null
@@ -53,10 +57,11 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -69,6 +74,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-09T20:04:45+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: e976e669-f3ac-496a-8450-9d5613262236 # Subhead Text
             handle: null
@@ -85,6 +91,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 77532772-badf-4ce5-a93b-6752273d81bb # Subhead Position
             handle: null
@@ -114,6 +121,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: aeeead9c-f591-4d95-a990-f8bea54fb0ef # Heading Style
             handle: null
@@ -130,6 +138,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -173,6 +182,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: headlineColor
@@ -189,6 +199,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: subheadColor
@@ -212,6 +223,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 62bb1cf0-026e-410e-a685-701783c6ae9e # Header Style Adjustments
             handle: null
@@ -234,6 +246,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -250,6 +263,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -266,6 +280,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
@@ -291,6 +306,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: Heading
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

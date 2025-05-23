@@ -1,6 +1,9 @@
-color: red
+color: yellow
 fieldLayouts:
-  77642883-89cb-4b4c-8f4d-89d2e0b1f880:
+  39bb9f2b-3e0d-4167-9d1e-fd5f29ef7e74:
+    cardView:
+      - type
+      - 'layoutElement:a267e2d1-ae60-4826-aaea-283cd94f541c'
     tabs:
       -
         elementCondition: null
@@ -10,7 +13,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-05-19T20:50:56+00:00'
+            dateAdded: '2025-05-23T20:24:51+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,15 +34,32 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: c932dc7b-a160-4fd0-a843-2f086943dd72
+            uid: 6e907349-3181-4576-97b4-8f0ba04d5ec9
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:50:56+00:00'
+            dateAdded: '2025-05-23T20:27:01+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
+            fieldUid: 66354233-a357-4d3f-9543-7f92fef4d662 # Card Content
+            handle: excerpt
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c0b3e29-9391-4263-b5ce-3cd7fdf121fe
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-23T20:27:01+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
             includeInCards: false
             instructions: null
@@ -48,72 +68,38 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5aab943f-2a90-4419-a9e0-432581773499
+            uid: 34472455-ea10-4f2a-9a4b-feef9ee929c8
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:50:56+00:00'
+            dateAdded: '2025-05-23T20:27:01+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 3fa40ffc-bcf8-4f2f-9462-19c808265175 # Multiline Text With Search
-            handle: notificationText
-            includeInCards: false
+            fieldUid: c281acd6-db5d-49e9-a272-08936804b011 # Card Link
+            handle: null
+            includeInCards: true
             instructions: null
-            label: 'Notification Text'
+            label: null
             providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f2bef5ab-d168-415d-a33c-30627d1a3ac3
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:50:56+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: c025e168-6f53-4831-9433-670f03c62851 # Buttons
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 3f25c9e6-510a-45a8-a905-25eea906382a
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:50:56+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: ff110645-b126-49e5-9ed9-a720a1a9d3d2 # Notification Bar Color
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b7d0c855-5bce-4a05-b964-2722d5ca7f7e
+            uid: a267e2d1-ae60-4826-aaea-283cd94f541c
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: d74e3717-a50d-4380-8bf0-625bedb5fd0e
+        uid: 8203d73c-7831-4a26-a27e-fcf3fad47d3e
         userCondition: null
-handle: notificationAlerts
+handle: linkCard
 hasTitleField: true
 icon: null
-name: 'Notification Alerts'
-showSlugField: false
+name: 'Link Card'
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: 'Notification ALert'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

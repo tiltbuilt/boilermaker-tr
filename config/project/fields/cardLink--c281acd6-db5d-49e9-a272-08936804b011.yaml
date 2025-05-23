@@ -1,12 +1,11 @@
 columnSuffix: null
-handle: fullListingButton
+handle: cardLink
 instructions: null
-name: 'Full Listing Button'
+name: 'Card Link'
 searchable: false
 settings:
   advancedFields:
-    - rel
-    - ariaLabel
+    - target
   fullGraphqlData: true
   maxLength: 255
   showLabelField: false
@@ -18,8 +17,7 @@ settings:
           __assoc__:
             -
               - sources
-              -
-                - 'section:589d7e58-f378-455e-b073-055e9221964b' # Pages
+              - '*'
             -
               - showUnpermittedSections
               - ''
@@ -38,7 +36,7 @@ settings:
               - '1'
             -
               - allowCustomSchemes
-              - '1'
+              - ''
   types:
     - entry
     - url

@@ -15,8 +15,13 @@
 
 {# Non-modal button code macro #}
 {% macro linkCode (button, btnClasses) %}
-	<a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ button.url }}" {{- button.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
-		<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+	{% if button.type == "modalButton" %}
+		{% set buttonLink = button.modalButtonLink %}
+	{% else %}
+		{% set buttonLink = button.buttonLink %}
+	{% endif %}
+	<a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ buttonLink.value }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
+		<span>{{ (button.title|length) ? button.title : 'Learn More' }}</span>
 	</a>
 {% endmacro linkCode %}
 
@@ -80,7 +85,7 @@
 {% set adjustments = entry.buttonGroupStyleAdjustments.eagerly().all() %}
 
 <div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Alignment') -}} {{ gMacros.classesOut(adjustments, 'Display') }} {{ gMacros.classesOut(adjustments, 'Margins', true) }} {{ btnSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
-	{% set buttons = entry.buttons %}
+	{% set buttons = entry.buttons.eagerly().all() %}
 	{% for button in buttons %}
 		{# get styles for button or if not set, use styles from the set #}
 		{% set btnClasses = ['btn'] %}
@@ -106,30 +111,18 @@
 		{% if linkOverride %}
 			{# if linkOverride is true, then button is inside a whole slide link in a slider, so the button just needs to look like a button, but not actually do anything because the slide will handle the click event #}
 			<button {% if button.customId|length %}id="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}>
-				<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+				<span>{{ (button.title|length) ? button.title : 'Learn More' }}</span>
 			</button>
 		{% else %}
 			{# if button is a modal button do one thing, if not do the other #}		
-			{% if button.getLinkType().label == 'Modal' %}
+			{% if button.type == 'modalButton' %}
 				{# modal #}
-				{% set modalUrl = '/resources/entrymodal?entryid=' ~ button.linkValue %}
-				{% set modalEntry = craft.entries().id(button.linkValue).one() %}
+				{% set modalUrl = '/resources/entrymodal?entryid=' ~ button.modalButtonLink.element.id %}
+				{% set modalEntry = craft.entries().id(button.modalButtonLink.element.id).one() %}
 				{% if not craft.app.request.isAjax() %}
-					<button {% if button.customId|length %}id="{{button.customId}}" x-ref="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}" x-ref="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}
-			    	x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{% if button.customId|length %}{{button.customId}}{% else %}{{blockId}}-button{{loop.index}}{% endif %}';
-			    	fetch('{{ modalUrl }}', {
-			    		method: 'GET',
-						headers: {
-							'X-Requested-With': 'XMLHttpRequest',
-						},
-					})
-					.then(response => response.text())
-					.then(text => {
-						modalHtml = text
-						showLoading = false;			   
-					});"			 
-					>
-						<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+					<button {% if button.customId|length %}id="{{button.customId}}" x-ref="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}" x-ref="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.modalButtonLink.ariaLabel|length %}aria-label="{{button.modalButtonLink.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}
+			    	x-on:click="focusEl='{% if button.customId|length %}{{button.customId}}{% else %}{{blockId}}-button{{loop.index}}{% endif %}'; $store.contentModal.open('{{modalUrl}}','{{modalEntry.title}}');">
+						<span>{{ (button.title|length) ? button.title : 'Learn More' }}</span>
 					</button>
 				{% elseif modalEntry.section.handle == "pages" %}
 					{{- _self.linkCode(button, btnClasses) -}}

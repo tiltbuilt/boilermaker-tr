@@ -132,7 +132,7 @@ module.exports = {
 		variants: ['hover', 'focus'],
 	  },
 	  {
-		pattern: /(p|m|px|py|pt|pl|pr|pb)-(none|0|quarter|half|base|2x|3x|4x|normal|extra|neg-quarter|neg-half|neg-base|neg-2x|neg-3x|neg-4x|half-normal|neg-half-normal|neg-normal|neg-extra)/, //adjust sizes to match list available in spacing def
+		pattern: /(p|m|px|py|pt|pl|pr|pb|mt|mb|ml|mr|mx|my)-(none|0|quarter|half|base|2x|3x|4x|normal|extra|neg-quarter|neg-half|neg-base|neg-2x|neg-3x|neg-4x|half-normal|neg-half-normal|neg-normal|neg-extra)/, //adjust sizes to match list available in spacing def
 		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
 	  },
 	  {

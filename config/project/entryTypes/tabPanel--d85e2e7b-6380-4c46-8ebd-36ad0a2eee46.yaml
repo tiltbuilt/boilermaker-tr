@@ -1,6 +1,8 @@
 color: lime
 fieldLayouts:
   c0dd578d-8813-45b8-888d-526a518e8b0d:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -10,7 +12,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -25,7 +27,7 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            requirable: false
+            required: true
             size: null
             step: null
             tip: null
@@ -36,7 +38,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: null
@@ -52,7 +55,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
             handle: null
@@ -74,14 +78,32 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-21T22:05:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bbfe09f8-3c0d-409c-b470-a045b23241cc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-19T20:49:00+00:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 075959af-5820-4248-924d-e24ac54573fd
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
@@ -97,7 +119,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -113,14 +136,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: bd48ed4c-e5b2-49fa-87fc-5e71c251bed0
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f13a58c0-cc0e-41c6-b75b-f014f8de92a6 # Tab Panel Style Adjustments
             handle: null
@@ -142,7 +166,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -158,7 +183,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -174,7 +200,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:49:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
@@ -194,12 +221,12 @@ fieldLayouts:
         userCondition: null
 handle: tabPanel
 hasTitleField: true
-icon: folder
+icon: null
 name: 'Tab Panel'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Tab Panel'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

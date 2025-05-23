@@ -1,6 +1,9 @@
 color: cyan
 fieldLayouts:
   ba07b883-e18f-40ca-91f4-256b0c93bf6a:
+    cardView:
+      - 'layoutElement:7fd6a404-e781-4839-8678-bc31ba9e91ec'
+      - type
     tabs:
       -
         elementCondition: null
@@ -25,7 +28,7 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            requirable: false
+            required: true
             size: null
             step: null
             tip: null
@@ -37,6 +40,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
             handle: ctaContent
@@ -53,6 +57,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
             handle: null
@@ -69,6 +74,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -95,6 +101,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -121,6 +128,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -147,6 +155,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -173,6 +182,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2024-10-03T19:11:32+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -199,6 +209,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-10-03T19:11:32+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -225,6 +236,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -251,6 +263,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -290,6 +303,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
@@ -306,6 +320,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
@@ -329,6 +344,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: bbe3f16b-50e0-4f6a-9db0-bb6359934f84 # CTA Style Adjustments
             handle: null
@@ -351,6 +367,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -367,6 +384,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -383,6 +401,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T19:58:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
@@ -402,12 +421,12 @@ fieldLayouts:
         userCondition: null
 handle: cta
 hasTitleField: true
-icon: bullhorn
+icon: null
 name: CTA
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: CTA
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

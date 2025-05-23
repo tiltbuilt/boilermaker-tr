@@ -1,6 +1,6 @@
-color: yellow
+color: cyan
 fieldLayouts:
-  05db9514-d611-48e5-aa08-85e2bfbfd7b2:
+  9c242a29-8056-4a04-9d2f-87464e20e9b5:
     cardView:
       - type
     tabs:
@@ -12,14 +12,14 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:42:43+00:00'
             disabled: false
             elementCondition: null
             id: null
             includeInCards: false
             inputType: null
             instructions: null
-            label: null
+            label: 'Button Text'
             max: null
             min: null
             name: null
@@ -33,15 +33,15 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 98dc6e85-08cb-4409-9553-024ebd9883dd
+            uid: f3497a41-88d6-49fb-bd61-e83a206fcee5
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T21:04:08+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: f0c10f75-8d5e-43c0-83a1-2321c04a2ebd # Form to Display
+            fieldUid: e92ccd0c-f875-418b-84e5-2e10fe5ca803 # Modal Button Link
             handle: null
             includeInCards: false
             instructions: null
@@ -50,66 +50,18 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b70a6d37-506f-4fd9-92dd-500d4f7cef89
+            uid: 2bd83c17-7438-40e9-a511-b5b0359ce8ca
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 86886d72-23a0-4ed6-ad37-cdbf282f55ce
+        uid: 2869ee3c-9ac4-40ee-8a9c-cfe139da9f4d
         userCondition: null
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: 3d52e7a8-a67f-434c-b5eb-47ce59d6bd6a
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0ed35e7c-6939-46ea-b885-6b8a0d79b5b6
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: bgColor
-            includeInCards: false
-            instructions: 'Use this field to override the background color that is specified in the color scheme.'
-            label: 'Background Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7e13abd3-b221-48b5-84ec-af9f273e6513
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            elementCondition: null
-            heading: Button
-            type: craft\fieldlayoutelements\Heading
-            uid: 2a95d88e-e710-4127-88e6-ebe02ee57c5b
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
@@ -121,12 +73,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 74587eb4-c316-41d3-acd3-7289c4eb852f
+            uid: dd3fd34b-370b-4c04-9ebe-4208cb42c5e8
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
@@ -138,39 +90,15 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2f3275b2-f0fa-4055-966f-f0ac23a07c7d
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: btnColor
-            includeInCards: false
-            instructions: null
-            label: 'Button Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 2364078c-7f2a-419d-a6ac-c4151f6845ee
+            uid: 2bcb060c-1e3a-44df-bc50-07b24f2f486b
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: c593e390-4dd7-44bc-9378-b2836a954967
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 23f01ca6-c4de-4346-a8a1-75a6b95d1f53 # Form Style Adjustments
+            fieldUid: 4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73 # Button Color
             handle: null
             includeInCards: false
             instructions: null
@@ -179,18 +107,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a0e72ebc-4cb9-4b4e-a68f-a4add6519c59
+            uid: ec0155f6-7b77-4d23-939a-aa2ca39520c9
             userCondition: null
             warning: null
             width: 100
         name: Styling
-        uid: 28211a06-91fd-4664-90f6-6815239a56db
+        uid: 44486b5f-b4b1-4fc7-84d3-ed5092e46ffb
         userCondition: null
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
@@ -202,12 +130,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f2facd2d-d982-461c-a150-23d18e24bf5d
+            uid: 05dc0c36-e1fc-473e-b9a9-6dc252b01e98
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
@@ -219,12 +147,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f00b5fda-2e1f-4cd3-9a3b-d2ab1324bdf2
+            uid: 96007df7-0727-43fd-9d6a-b45963c8e68f
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:50:08+00:00'
+            dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
@@ -236,21 +164,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5d16fba8-fa27-4abc-8bc6-79e1ea6b4184
+            uid: 945dc854-f1b2-4ff7-8b35-dd69cd67945b
             userCondition: null
             warning: null
             width: 100
         name: Advanced
-        uid: 3e7f673b-53b9-493a-a1d1-b289567774c1
+        uid: e4db1ca0-6729-42e1-aa01-dd1fc34642e0
         userCondition: null
-handle: form
+handle: modalButton
 hasTitleField: true
 icon: null
-name: Form
+name: 'Modal Button'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: Form
+titleFormat: 'Modal Button'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

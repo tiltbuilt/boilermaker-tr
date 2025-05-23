@@ -49,7 +49,7 @@
 {% endif %}
 >
 	<div class="container {{- entry.fullscreen ? 'container-fullscreen' -}}">
-		<div class="inner container-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">			
+		<div class="inner container-inner {{entry.textAlignment}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">			
 			{% for chunk in entry.elementContent %}
 				{% if chunk.type == 'markup' %}
 					{% if entry.animate and entry.animateContent %}

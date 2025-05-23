@@ -1,6 +1,8 @@
 color: cyan
 fieldLayouts:
   b9e0f8aa-c8d6-418d-ae54-fc36f3fb39f4:
+    cardView:
+      - type
     tabs:
       -
         elementCondition: null
@@ -10,7 +12,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -25,7 +27,7 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            requirable: false
+            required: true
             size: null
             step: null
             tip: null
@@ -36,7 +38,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: null
@@ -52,14 +55,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
             elementCondition: null
             heading: 'Additional Elements'
             type: craft\fieldlayoutelements\Heading
             uid: 9dce1772-691d-4554-80e0-25ce1df489a5
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
             dismissible: false
             elementCondition: null
             style: tip
@@ -68,7 +71,8 @@ fieldLayouts:
             uid: 871c9ede-f097-45fa-b58a-695c36cf7b03
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 37ce7ac2-f596-4d6f-9181-3f4d9fa4d692 # Block Layout
             handle: null
@@ -84,7 +88,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
             handle: blockContent
@@ -106,14 +111,15 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 68d70ee0-a510-445c-9859-5c6845f02cde
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: iconColor
@@ -129,7 +135,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
             handle: null
@@ -145,14 +152,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
             elementCondition: null
             heading: Adjustments
             type: craft\fieldlayoutelements\Heading
             uid: 6eee2a0a-3dbc-4856-b40c-f9c56f81c825
             userCondition: null
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 85d1b6aa-228a-4340-bf82-fbdbeec66ee9 # Icon Style Adjustments
             handle: null
@@ -174,7 +182,8 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
@@ -190,7 +199,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
@@ -206,7 +216,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: '2025-05-19T20:50:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
@@ -226,12 +237,12 @@ fieldLayouts:
         userCondition: null
 handle: iconContentBlock
 hasTitleField: true
-icon: fire
+icon: null
 name: 'Icon Content Block'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: 'Icon Content'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

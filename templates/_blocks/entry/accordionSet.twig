@@ -93,7 +93,7 @@
 		
 		{# sort out content styling #}
 		{% set accAdjustments = acc.accordionStyleAdjustments.eagerly().all() %}
-		{% set styleListMaster = ['accordion-content'] %}
+		{% set styleListMaster = ['accordion-content', acc.textAlignment] %}
 		{% set styleObj = {} %}		
 		{% for adj in accAdjustments %}
 			{% set devSize = adj.deviceSize %}

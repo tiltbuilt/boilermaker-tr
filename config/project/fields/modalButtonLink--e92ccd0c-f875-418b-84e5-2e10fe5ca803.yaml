@@ -1,11 +1,10 @@
 columnSuffix: null
-handle: fullListingButton
+handle: modalButtonLink
 instructions: null
-name: 'Full Listing Button'
+name: 'Modal Button Link'
 searchable: false
 settings:
   advancedFields:
-    - rel
     - ariaLabel
   fullGraphqlData: true
   maxLength: 255
@@ -20,28 +19,15 @@ settings:
               - sources
               -
                 - 'section:589d7e58-f378-455e-b073-055e9221964b' # Pages
+                - 'section:acec3806-c4ac-4430-a8d9-24915eacc052' # Modals
             -
               - showUnpermittedSections
               - ''
             -
               - showUnpermittedEntries
               - ''
-      -
-        - url
-        -
-          __assoc__:
-            -
-              - allowRootRelativeUrls
-              - '1'
-            -
-              - allowAnchors
-              - '1'
-            -
-              - allowCustomSchemes
-              - '1'
   types:
     - entry
-    - url
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Link

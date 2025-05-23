@@ -1,4 +1,23 @@
 # Changelog
+
+## 3.0.14 - 2025-05-23
+### Changed
+- Setup of modals to use Alpine Store feature
+- Link setup to use native Link field rather than Hyper plugin
+- GSAP to use free version
+
+### Fixed
+- Excerpt issue on content cards in repeater
+- Class names for content sections loaded in modals to correctly set styles
+- animClass tag error in quote block 
+- ddev 1.24.5 gitignore bug
+
+### Added
+- Link Cards as repeater content type
+- Text alignment controls to all container type blocks
+- Default titles and entry type labels to all card displays in the CP
+
+
 ## 3.0.13 - 2025-04-11
 ### Changed
 - Setup on page header aspect rations to enforce the aspect set in globals as a minimum

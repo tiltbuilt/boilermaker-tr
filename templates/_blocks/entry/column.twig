@@ -75,7 +75,7 @@
 {% set adjustments = entry.columnStyleAdjustments.eagerly().with('bgImg').all() %}
 
 <div id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- columnClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>	
-	<div class="inner column-inner {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+	<div class="inner column-inner {{entry.textAlignment}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{% if animate %}
