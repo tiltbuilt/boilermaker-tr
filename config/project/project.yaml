@@ -1,4 +1,4 @@
-dateModified: 1748032126
+dateModified: 1754083001
 elementSources:
   craft\elements\Entry:
     -
@@ -349,7 +349,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: WJN1BY9ELQU1J9ZL5UREW5HJ
-    schemaVersion: 5.11.0
+    schemaVersion: 5.12.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -446,6 +446,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  datastar:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   default-dashboard:
     edition: standard
     enabled: true
@@ -474,7 +478,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: Z2TKXCPCSLGLRAT70BFEM1QC
-    schemaVersion: 3.4.8
+    schemaVersion: 3.4.9
   icon-picker:
     edition: standard
     enabled: true
@@ -590,5 +594,5 @@ system:
   edition: pro
   live: true
   name: $SITE_NAME
-  schemaVersion: 5.7.0.3
+  schemaVersion: 5.8.0.3
   timeZone: America/Chicago
