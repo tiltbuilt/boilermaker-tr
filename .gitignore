@@ -1,13 +1,41 @@
-/.env
-/.idea
-/.nova
-/vendor
-node_modules
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/.nova
+
+/.env
 .env.php
 .env.sh
+/vendor
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+/web/dist
+/public/dist
+*.local
 
 # Don't save package-lock, when we're fresh installing.
 package-lock.json
 /config/license.key
 /web/dist
+/public/dist
+
+

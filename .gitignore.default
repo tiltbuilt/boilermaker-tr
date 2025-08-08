@@ -31,6 +31,9 @@ prepros-6.config
 /web/imager/*
 /web/blitz/*
 /web/cache/blitz/*
+/public/imager/*
+/public/blitz/*
+/public/cache/blitz/*
 /node_modules/*
 /vendor
 /web/dist

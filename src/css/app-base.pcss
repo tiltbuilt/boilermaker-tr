@@ -1,51 +1,45 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- */
-@import "tailwindcss/base";
-/**
- * Here we add custom base styles, applied after the tailwind-base
- * classes
- *
- */
+/* THIS FILE SETS BASE STYLES FOR CERTAi HTL TAGS */
 
 /* SET BASELINE SCREEN SIZE ON HTML TAG AS WELL AS BASELINE FONT SIZE TO 16PX */
 
-* {
-  box-sizing: border-box;
-}
+ @layer base {
 
-html {
-  font-size: 62.5%; /* sets up base font size of root element at 10px which allows for easier sizing as it is base 10 - for example 1.6rem = 16px */
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
-  @apply leading-normal text-scaling-base;
-  /*font-family: 'brother 1816';*/
-  width: 100vw;
-  height: 100vh;
-  background-color: theme('colors.white');
-  color: theme('colors.black');  
-  overflow-x: hidden;  
-  
-  & > #page-wrapper {
-	width: 100vw;
-	min-height: 100vh;
-	overflow: hidden;
-	
-	& > #wrapper {
-	  position: relative;
-	}
+  * {
+    box-sizing: border-box;
   }
-}
-
-a {
   
-  transition: color 0.3s ease-in;
+  html {
+    font-size: 62.5%; /* sets up base font size of root element at 10px which allows for easier sizing as it is base 10 - for example 1.6rem = 16px */
+    width: 100vw;
+    height: 100vh;  
+  }
   
-  &:hover {
-	/* put hover styles for standard text links here */
-  }  
+  body {
+    /*@apply leading-normal text-scaling-base;*/
+    /*font-family: 'brother 1816';*/
+    width: 100vw;
+    height: 100vh;
+    background-color: theme('colors.white');
+    color: theme('colors.black');  
+    overflow-x: hidden;  
+    
+    & > #page-wrapper {
+	  width: 100vw;
+	  min-height: 100vh;
+	  overflow: hidden;
+	  
+	  & > #wrapper {
+	    position: relative;
+	  }
+    }
+  }
+  
+  a {
+    
+    transition: color 0.3s ease-in;
+    
+    &:hover {
+	  /* put hover styles for standard text links here */
+    }  
+  }
 }

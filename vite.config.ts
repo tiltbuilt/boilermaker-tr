@@ -1,7 +1,8 @@
 import {defineConfig} from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 import manifestSRI from 'vite-plugin-manifest-sri';
 import path from 'path';
-import viteCompression from 'vite-plugin-compression';
+import viteCompression from 'vite-plugin-compression2';
 import ViteRestart from 'vite-plugin-restart';
 
 // https://vitejs.dev/config/

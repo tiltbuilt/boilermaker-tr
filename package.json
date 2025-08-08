@@ -1,43 +1,25 @@
 {
-  "author": "TILT",
-  "version": "3.0.0",
-  "dependencies": {
-    "@alpinejs/collapse": "^3.14.0",
-    "@alpinejs/focus": "^3.14.0",
-    "@alpinejs/persist": "^3.14.1",
-    "alpinejs": "^3.12.0",
-    "gsap": "^3.13.0",
-    "lazysizes": "^5.3.2",
-    "postcss-scss": "^4.0.9",
-    "swiper": "^7.4.1",
-    "yt-player": "^3.5.0"
+  "name": "html",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/line-clamp": "^0.4.4",
-    "@tailwindcss/typography": "^0.5.13",
-    "autoprefixer": "^10.4.19",
-    "fluid-tailwind": "^1.0.0",
-    "postcss": "^8.4.38",
-    "postcss-lighten-darken": "^0.9.0",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.0",
-    "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-manifest-sri": "^0.1",
-    "vite-plugin-restart": "^0.4.0"
+    "rollup-plugin-critical": "^1.0.15",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4",
+    "vite-plugin-compression2": "^2.2.0",
+    "vite-plugin-manifest-sri": "^0.2.0",
+    "vite-plugin-restart": "^1.0.0"
   },
-  "overrides": {
-    "vite": {
-      "esbuild": "0.25.0"
-    }
-  },
-  "engines": {
-    "node": "^20"
-  },
-  "scripts": {
-    "build": "NODE_ENV=production vite build",
-    "serve": "NODE_ENV=dev vite"
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "lazysizes": "^5.3.2",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11"
   }
 }
