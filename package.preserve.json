@@ -2,11 +2,11 @@
   "name": "html",
   "private": true,
   "version": "0.0.0",
-  "type": "module",   
+  "type": "module",
   "scripts": {
-    "build": "NODE_ENV=production vite build",
-    "dev": "NODE_ENV=dev vite",
-    "postinstall": "patch-package"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "rollup-plugin-critical": "^1.0.15",
@@ -15,15 +15,11 @@
     "vite-plugin-compression2": "^2.2.0",
     "vite-plugin-manifest-sri": "^0.2.0",
     "vite-plugin-restart": "^1.0.0"
-  },  
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "lazysizes": "^5.3.2",
     "swiper": "^11.2.10",
-    "tailwindcss": "^4.1.11",
-    "patch-package": "^8.0.0",
-    "countup.js": "^2.8.0",
-    "webfontloader": "^1.6.28",
-    "youtube-player": "^5.6.0"
+    "tailwindcss": "^4.1.11"
   }
 }

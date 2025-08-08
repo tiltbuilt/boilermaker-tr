@@ -1,5 +1,6 @@
 import {defineConfig} from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import critical from 'rollup-plugin-critical';
 import manifestSRI from 'vite-plugin-manifest-sri';
 import path from 'path';
 import viteCompression from 'vite-plugin-compression2';
@@ -22,7 +23,29 @@ export default defineConfig(({command}) => ({
 		sourcemap: true,
 	},
 	plugins: [
+		tailwindcss(),
 		manifestSRI(),
+		critical({
+		  criticalUrl: 'https://greauxhealthy.ddev.site',
+		  criticalBase: './web/dist/criticalcss/',		 
+		  criticalPages: [					
+		  ],
+		  criticalConfig: {
+			penthouse: {
+				timeout: 60000,
+			},
+			dimensions: [
+				{
+				  height: 700,
+				  width: 500,
+				},
+				{
+				  height: 900,
+				  width: 1300,
+				},
+			],
+		  },	  
+		}),
 		viteCompression({
 			filter: /\.(js|mjs|json|css|map)$/i
 		}),

@@ -1,4 +1,5 @@
-/* THIS FILE SETS BASE STYLES FOR CERTAi HTL TAGS */
+/* THIS FILE SETS BASE STYLES FOR CERTAIN HTML TAGS */
+
 
 /* SET BASELINE SCREEN SIZE ON HTML TAG AS WELL AS BASELINE FONT SIZE TO 16PX */
 
@@ -15,12 +16,12 @@
   }
   
   body {
-    /*@apply leading-normal text-scaling-base;*/
-    /*font-family: 'brother 1816';*/
+    /*@apply text-scaling-base;*/
+    font-size: theme(text-scaling-base);    
     width: 100vw;
     height: 100vh;
-    background-color: theme('colors.white');
-    color: theme('colors.black');  
+    background-color: theme(color-white);
+    color: theme(color-black); 
     overflow-x: hidden;  
     
     & > #page-wrapper {

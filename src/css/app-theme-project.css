@@ -3,9 +3,11 @@
 	
 	/* FONT DEFINIONS */
 	/* Example: --font-proxima: 'proximanova', sans-serif; */
+
 	
 	/* COLOR DEFINITONS */
 	/* Example: --color-red-50: oklch(97.1% 0.013 17.38); */
+	--color-transparent: transparent;
 	--color-black: #000;
 	--color-white: #fff;
 	

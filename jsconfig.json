@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
 	"baseUrl": ".",
+	"module": "ESNext",
+	"moduleResolution": "node",
 	"paths": {
 	  "@/*": ["./src/*"],
 	  "@css/*": ["./src/pcss/*"],

@@ -3,7 +3,7 @@
 build: up
 	ddev exec npm run build
 dev: build
-	ddev exec npm run serve
+	ddev exec npm run dev
 pull: up
 	#ddev exec php craft servd-asset-storage/local/pull-database --from=production --interactive=0
 	ddev composer install
@@ -19,6 +19,7 @@ install: up build
 	ddev exec php craft plugin/install ckeditor
 	ddev exec php craft plugin/install colour-swatches
 	ddev exec php craft plugin/install craft-color-mixer
+	ddev exec php craft plugin/install datastar
 	ddev exec php craft plugin/install default-dashboard
 	ddev exec php craft plugin/install element-index-defaults
 	ddev exec php craft plugin/install embeddedassets
