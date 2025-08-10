@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d82b4bef2f65098fba888d10d20ea60",
+    "content-hash": "aaf684a77e9c6945f55d2c3e2429ee9d",
     "packages": [
         {
             "name": "amphp/amp",
@@ -7829,17 +7829,17 @@
         },
         {
             "name": "putyourlightson/craft-datastar",
-            "version": "1.0.0-RC.4",
+            "version": "1.0.0-RC.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/32ffedbc8f164480030f3ef9fbc2952461dd0f50",
-                "reference": "32ffedbc8f164480030f3ef9fbc2952461dd0f50",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/6a464c3342977f8bf9bc4ebc5b6cecb63eebdca0",
+                "reference": "6a464c3342977f8bf9bc4ebc5b6cecb63eebdca0",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.4",
                 "php": "^8.2",
-                "putyourlightson/craft-datastar-module": "^1.0.0-RC.5"
+                "putyourlightson/craft-datastar-module": "^1.0.0-RC.7"
             },
             "type": "craft-plugin",
             "extra": {
@@ -7860,20 +7860,20 @@
                 "mit"
             ],
             "description": "A reactive hypermedia framework for Craft.",
-            "time": "2025-08-06T18:19:43+00:00"
+            "time": "2025-08-10T06:35:22+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar-module",
-            "version": "1.0.0-RC.5",
+            "version": "1.0.0-RC.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar-module.git",
-                "reference": "3ddc97f7832032797c21bc26643eb0e5f6ef29f5"
+                "reference": "18ce20fac293104dcaaa5a57eb1ef40772152c25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/3ddc97f7832032797c21bc26643eb0e5f6ef29f5",
-                "reference": "3ddc97f7832032797c21bc26643eb0e5f6ef29f5",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/18ce20fac293104dcaaa5a57eb1ef40772152c25",
+                "reference": "18ce20fac293104dcaaa5a57eb1ef40772152c25",
                 "shasum": ""
             },
             "require": {
@@ -7909,7 +7909,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-06T18:14:43+00:00"
+            "time": "2025-08-10T06:29:42+00:00"
         },
         {
             "name": "putyourlightson/craft-sprig-core",

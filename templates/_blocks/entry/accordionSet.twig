@@ -50,8 +50,12 @@
 
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
-
-<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
+{% if entry.accordionStartState %}
+	{% set activeVal = 1 %}
+{% else %}
+	{% set activeVal = 0 %}	
+{% endif %}
+<div {% if entry.accordionsAllowMultiple == 0 %}data-signals="{{ { active: activeVal }|json_encode }}"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -164,23 +168,17 @@
 		{% for key, value in styleObj %}
 			{% set styleListMaster = styleListMaster|merge([value]) %}
 		{% endfor %}
-			
-		<div id="{{accId}}" x-data="{
-			id: {{loop.index}},
-			{% if entry.accordionsAllowMultiple %}
-				{% if entry.accordionStartState and loop.index == 1 %}
-					active: 1,
-				{% else %}
-					active: 0,
-				{% endif %}
+		
+		{% set accSigs = {active: null, id: loop.index} %}
+		{% if entry.accordionsAllowMultiple %}
+			{% if entry.accordionStartState and loop.index == 1 %}
+				{% set accSigs = accSigs|merge({active: 1}) %} 
+			{% else %}
+				{% set accSigs = accSigs|merge({active: 0}) %} 
 			{% endif %}
-			get expanded() {
-				return this.active === this.id
-			},
-			set expanded(value) {
-				this.active = value ? this.id : null
-			},
-		}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.classesOut(adjustments, 'Display') }} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
+		{% endif %}
+		
+		<div id="{{accId}}" data-signals="{{ accSigs|json_encode }}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.classesOut(adjustments, 'Display') }} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
 			<{{setHeaderLevel}} class="accordion-header">
 				<button
 					x-on:click="expanded = !expanded"

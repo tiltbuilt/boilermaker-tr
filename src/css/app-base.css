@@ -25,13 +25,13 @@
     overflow-x: hidden;  
     
     & > #page-wrapper {
-	  width: 100vw;
-	  min-height: 100vh;
-	  overflow: hidden;
-	  
-	  & > #wrapper {
-	    position: relative;
-	  }
+      width: 100vw;
+      min-height: 100vh;
+      overflow: hidden;
+      
+      & > #wrapper {
+        position: relative;
+      }
     }
   }
   

@@ -4,56 +4,59 @@
  * Standard Section component specific styles
  *
  */
+@layer components {
 
-.section-standard {
-   /* These classes must stay in order to ensure functionality */   
-   position: relative;
-   width: 100vw;
-   margin: 0;
+   .section-standard {
+      /* These classes must stay in order to ensure functionality */   
+      position: relative;
+      width: 100vw;
+      margin: 0;
+         
+      /* The default classes and style below can be changed on a per-project basis */
       
-   /* The default classes and style below can be changed on a per-project basis */
-   
+   }
+
+   .container-inner {
+      /*padding: theme('spacing.normal');*/
+   } 
+
+   /* SIDE BYSIDE PHOTO SECTION */
+
+   .section-side-photo {
+      /* These classes must stay in order to ensure functionality */
+      position: relative;
+      width: 100vw;
+      margin: 0;   
+      /* The default classes and style below can be changed on a per-project basis */
+   }
+
+   .side-section-layout {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+   }
+
+   .side-photo-content {
+      @apply w-full @md:w-1/2;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+   }
+
+   .side-photo-content-wrapper {
+      width: 100%;
+      /*padding: theme('spacing.normal');*/
+      position: relative;
+      z-index: 10;   
+   }
+
+   .side-photo-img {
+      @apply w-full @md:w-1/2;
+      position: relative;   
+   }
 }
-
-.container-inner {
-   padding: theme('spacing.normal');
-} 
-
-/* SIDE BYSIDE PHOTO SECTION */
-
-.section-side-photo {
-   /* These classes must stay in order to ensure functionality */
-   @apply relative w-screen m-0;   
-   /* The default classes and style below can be changed on a per-project basis */
-}
-
-.side-section-layout {
-   display: flex;
-   justify-content: center;
-   align-items: stretch;
-   flex-wrap: wrap;
-}
-
-.side-photo-content {
-   @apply w-full @md:w-1/2;
-   display: flex;
-   align-items: center;
-   overflow: hidden;
-   position: relative;
-}
-
-.side-photo-content-wrapper {
-   width: 100%;
-   padding: theme('spacing.normal');
-   position: relative;
-   z-index: 10;   
-}
-
-.side-photo-img {
-   @apply w-full @md:w-1/2;
-   position: relative;   
-}
-
 /* calculations are needed to determine the size of the content wrapper div to prevent it from overshooting the normal container area and not lining up with content in other sections when fullwidth is turned off on side by side photo section */
 /*
 @container (width >= theme('containers.md')) {
