@@ -55,7 +55,7 @@
 {% else %}
 	{% set activeVal = 0 %}	
 {% endif %}
-<div {% if entry.accordionsAllowMultiple == 0 %}data-signals="{{ { active: activeVal }|json_encode }}"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
+<div {% if entry.accordionsAllowMultiple == 0 %}data-signals="{{ { activeAcc: activeVal }|json_encode }}"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -181,10 +181,15 @@
 		<div id="{{accId}}" data-signals="{{ accSigs|json_encode }}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.classesOut(adjustments, 'Display') }} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
 			<{{setHeaderLevel}} class="accordion-header">
 				<button
-					x-on:click="expanded = !expanded"
-					:aria-expanded="expanded"
 					class="accordion-button"
-					:class="expanded ? 'active' : ''"
+					{% if entry.accordionsAllowMultiple %}
+						data-on-click="$active = !$active; console.log('click');"
+						data-attr-aria-expanded="$active ? 'true' : 'false'"						
+					{% else %}
+						data-on-click="$activeAcc = $id; console.log('click');"
+						data-attr-aria-expanded="$activeAcc === $id ? 'true' : 'false'"
+						data-class="$activeAcc === $id ? 'active' : ''"
+					{% endif %}
 				>
 					<span>{{acc.title}}</span>
 					<div class="accordion-icon">
@@ -203,7 +208,13 @@
 				</button>
 			</{{setHeaderLevel}}>
 	
-			<div x-show="expanded" x-collapse.duration.300ms >
+			<div 
+				{% if entry.accordionsAllowMultiple %}
+					data-show="$active"
+				{% else %}
+					data-show="$activeAcc === $id"
+				{% endif %}
+			>
 				<div class="{{- styleListMaster|join(' ') }}">				
 					{% for chunk in acc.elementContent %}
 						{% if chunk.type == 'markup' %}

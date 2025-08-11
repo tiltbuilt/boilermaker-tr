@@ -17,7 +17,7 @@
    }
 
    .container-inner {
-      /*padding: theme('spacing.normal');*/
+      padding: var(--spacing-normal);
    } 
 
    /* SIDE BYSIDE PHOTO SECTION */

@@ -11,9 +11,7 @@
    .inner {
       position: relative;
       z-index: 10;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      height: 100%;    
        
       &::after {
          content: '';
@@ -27,6 +25,7 @@
    /* set up basic styles for background element */
     
    .background {
+      display: none;
       position: absolute;
       z-index: 1;
       width: 100%;
@@ -41,12 +40,32 @@
       iframe {
          @apply w-full h-full;
       }
-   }  
+   }
+   
+   
    
 } 
 
 
- 
+@utility container {    
+   margin-inline: auto;
+   
+   @variant lg {
+      max-width: var(--breakpoint-lg);      
+   }
+
+   @variant xl {
+      max-width: var(--breakpoint-xl);      
+   }
+
+   @variant 2xl {
+      max-width: var(--breakpoint-2xl);      
+   }
+} 
+
+@utility container-fullwidth {
+   @apply max-w-full;
+}  
 
 
 
