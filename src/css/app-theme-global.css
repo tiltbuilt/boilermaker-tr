@@ -30,37 +30,38 @@
 	--spacing-neg-9x: calc(-1 * (var(--spacing) * 9));
 	--spacing-neg-10x: calc(-1 * (var(--spacing) * 10));
 	
-	--spacing-scaling-base: clamp(1.4rem, 1.25vw, 1.8rem);
-	--spacing-scaling-quarter: clamp(0.35rem, 0.3125vw, 0.45rem);
-	--spacing-scaling-half: clamp(0.7rem, 0.625vw, 0.9rem);
-	--spacing-scaling-2x: clamp(2.8rem, 2.5vw, 3.6rem);
-	--spacing-scaling-3x: clamp(4.2rem, 3.75vw, 5.4rem);
-	--spacing-scaling-4x: clamp(5.6rem, 5vw, 7.2rem);
-	--spacing-scaling-5x: clamp(7rem, 6.25vw, 9rem);
-	--spacing-scaling-6x: clamp(8.4rem, 7.5vw, 10.8rem);
-	--spacing-scaling-7x: clamp(9.8rem, 8.75vw, 12.6rem);
-	--spacing-scaling-8x: clamp(11.2rem, 10vw, 14.4rem);
-	--spacing-scaling-9x: clamp(12.6rem, 11.25vw, 16.2rem);
-	--spacing-scaling-10x: clamp(14rem, 12.5vw, 18rem);
-	--spacing-neg-scaling-quarter: calc(-1 * clamp(0.35rem, 0.3125vw, 0.45rem));
-	--spacing-neg-scaling-half: calc(-1 * clamp(0.7rem, 0.625vw, 0.9rem));
-	--spacing-neg-scaling-base: calc(-1 * clamp(1.4rem, 1.25vw, 1.8rem));
-	--spacing-neg-scaling-2x: calc(-1 * clamp(2.8rem, 2.5vw, 3.6rem));
-	--spacing-neg-scaling-3x: calc(-1 * clamp(4.2rem, 3.75vw, 5.4rem));
-	--spacing-neg-scaling-4x: calc(-1 * clamp(5.6rem, 5vw, 7.2rem));
-	--spacing-neg-scaling-5x: calc(-1 * clamp(7rem, 6.25vw, 9rem));
-	--spacing-neg-scaling-6x: calc(-1 * clamp(8.4rem, 7.5vw, 10.8rem));
-	--spacing-neg-scaling-7x: calc(-1 * clamp(9.8rem, 8.75vw, 12.6rem));
-	--spacing-neg-scaling-8x: calc(-1 * clamp(11.2rem, 10vw, 14.4rem));
-	--spacing-neg-scaling-9x: calc(-1 * clamp(12.6rem, 11.25vw, 16.2rem));
-	--spacing-neg-scaling-10x: calc(-1 * clamp(14rem, 12.5vw, 18rem));
-	
-	--spacing-normal: var(--spacing-scaling-2x);
-	--spacing-extra: var(--spacing-scaling-4x);
-	--spacing-half-normal: var(--spacing-scaling-base);
-	--spacing-neg-half-normal: var(--spacing-neg-scaling-base);
-	--spacing-neg-normal: var(--spacing-neg-scaling-2x);
-	--spacing-neg-extra: var(--spacing-neg-scaling-4x);
+	--spacing-scaling-base: clamp(1.5rem, 2.35vw, 4.5rem);
+	--spacing-scaling-quarter: calc(0.25 * var(--spacing-scaling-base));
+	--spacing-scaling-half: calc(0.5 * var(--spacing-scaling-base));
+	--spacing-scaling-2x: calc(2 * var(--spacing-scaling-base));
+	--spacing-scaling-3x: calc(3 * var(--spacing-scaling-base));
+	--spacing-scaling-4x: calc(4 * var(--spacing-scaling-base));
+	--spacing-scaling-5x: calc(5 * var(--spacing-scaling-base));
+	--spacing-scaling-6x: calc(6 * var(--spacing-scaling-base));
+	--spacing-scaling-7x: calc(7 * var(--spacing-scaling-base));
+	--spacing-scaling-8x: calc(8 * var(--spacing-scaling-base));
+	--spacing-scaling-9x: calc(9 * var(--spacing-scaling-base));
+	--spacing-scaling-10x: calc(10 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-quarter: calc(-0.25 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-half: calc(-0.5 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-base: calc(-1 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-2x: calc(-2 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-3x: calc(-3 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-4x: calc(-4 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-5x: calc(-5 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-6x: calc(-6 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-7x: calc(-7 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-8x: calc(-8 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-9x: calc(-9 * var(--spacing-scaling-base));
+	--spacing-neg-scaling-10x: calc(-10 * var(--spacing-scaling-base));
+
+	--spacing-normal: var(--spacing-scaling-base);
+	--spacing-neg-normal: var(--spacing-neg-scaling-base);
+	--spacing-half-normal: var(--spacing-scaling-half);
+	--spacing-neg-half-normal: var(--spacing-neg-scaling-half);
+	--spacing-extra: var(--spacing-scaling-2x);
+	--spacing-neg-extra: var(--spacing-neg-scaling-2x);
+		
 	
 	/* BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */
 	--breakpoint-sm: 640px;

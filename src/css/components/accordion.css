@@ -5,7 +5,7 @@
 *
 */
  
-@layer component {
+@layer components {
 	.accordion-set {
 		/* These classes must stay in order to ensure functionality */
 	
@@ -47,14 +47,6 @@
 		transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 	
-	.accordion-content-wrapper {
-		overflow: hidden;
-		max-height: 0;		
-		transition: max-height 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-		
-		background-color: #999999;
-	}
-
 	.accordion-content {
 		padding-left: var(--spacing-base);
 		padding-right: var(--spacing-base);

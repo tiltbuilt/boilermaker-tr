@@ -1,12 +1,16 @@
-.quote {
-	@apply mt-normal;
-}
+@layer components {
+	.quote {
+		margin-top: var(--spacing-normal);
+	}
 
 
-.quote-credit {
-	@apply block mt-base;
-}
+	.quote-credit {
+		display: block;
+		margin-top: var(--spacing-base);		
+	}
 
-.quote-credit-title {
-	@apply block mt-half;
+	.quote-credit-title {
+		display: block;
+		margin-top: var(--spacing-half);		
+	}
 }
