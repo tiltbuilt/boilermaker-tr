@@ -20,7 +20,7 @@
 {% if entry.customId is defined and entry.customId != '' %}
 	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
 {% else %}
-	{% set blockId = 'accordion-set-' ~ entry.id %}
+	{% set blockId = 'accordion-set' ~ entry.id %}
 {% endif %}
 
 {# Set block type handle as class name for styling #}
@@ -55,7 +55,8 @@
 {% else %}
 	{% set activeVal = 0 %}	
 {% endif %}
-<div {% if entry.accordionsAllowMultiple == 0 %}data-signals="{{ { activeAcc: activeVal }|json_encode }}"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
+{% set setSigLabel = "#{blockId}-ActiveAcc" %}
+<div {% if entry.accordionsAllowMultiple == 0 %}data-signals="{ '{{setSigLabel}}': {{activeVal}} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -66,7 +67,7 @@
 		{% if acc.customId is defined and acc.customId != '' %}
 			{% set accId = acc.customId|replace({' ': '-'})|trim %}
 		{% else %}
-			{% set accId = 'acc-' ~ acc.id ~ '-accSet-' ~ entry.id %}
+			{% set accId = 'acc' ~ acc.id ~ '-accSet' ~ entry.id %}
 		{% endif %}
 		
 		{# set colors for accordion #}		
@@ -169,52 +170,52 @@
 			{% set styleListMaster = styleListMaster|merge([value]) %}
 		{% endfor %}
 		
-		{% set accSigs = {active: null, id: loop.index} %}
-		{% if entry.accordionsAllowMultiple %}
+		{% set sigLabel = "#{accId}-Active" %} 
+		{% if entry.accordionsAllowMultiple %}			
 			{% if entry.accordionStartState and loop.index == 1 %}
-				{% set accSigs = accSigs|merge({active: 1}) %} 
+				{% set accStartState = 1 %}				
 			{% else %}
-				{% set accSigs = accSigs|merge({active: 0}) %} 
-			{% endif %}
+				{% set accStartState = 0 %}
+			{% endif %}		
 		{% endif %}
 		
-		<div id="{{accId}}" data-signals="{{ accSigs|json_encode }}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.classesOut(adjustments, 'Display') }} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
-			<{{setHeaderLevel}} class="accordion-header">
-				<button
-					class="accordion-button"
-					{% if entry.accordionsAllowMultiple %}
-						data-on-click="$active = !$active; console.log('click');"
-						data-attr-aria-expanded="$active ? 'true' : 'false'"						
-					{% else %}
-						data-on-click="$activeAcc = $id; console.log('click');"
-						data-attr-aria-expanded="$activeAcc === $id ? 'true' : 'false'"
-						data-class="$activeAcc === $id ? 'active' : ''"
-					{% endif %}
-				>
-					<span>{{acc.title}}</span>
-					<div class="accordion-icon">
-						{% if accIcon %}
-							{% if accIcon.type == 'svg' %}
-								{{ accIcon.inline }}
-							{% elseif accIcon.type == 'css' %}
-								<i class="{{ accIcon.value }}"></i>								
-							{% else %}
-								<svg><use xlink:href="/sprites.svg#{{ accIcon.value }}"></use></svg>
-							{% endif %}
-						{% else %}
-							<svg><use xlink:href="/sprites.svg#icon-caret-right"></use></svg>
-						{% endif %}
-					</div>					
-				</button>
-			</{{setHeaderLevel}}>
-	
-			<div 
-				{% if entry.accordionsAllowMultiple %}
-					data-show="$active"
+		<div id="{{accId}}" {% if entry.accordionsAllowMultiple %}data-signals="{ '{{sigLabel}}': {{accStartState}} }"{% endif %} role="region" class="{{- accClassList|join(' ') }} {{- gMacros.classesOut(adjustments, 'Display') }} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
+			
+			<button id="{{accId}}-btn"
+				class="accordion-button"
+				{% if entry.accordionsAllowMultiple %}					
+					data-on-click="${{sigLabel}} = !${{sigLabel}}; window.tiltBoiler.accPanelFunction('{{accId}}-btn', ${{sigLabel}});"
+					data-attr-aria-expanded="${{sigLabel}} ? 'true' : 'false'"
+					data-on-load="window.tiltBoiler.accPanelFunction('{{accId}}-btn', ${{sigLabel}});"
+					data-attr-aria-expanded="${{sigLabel}} ? 'true' : 'false'"
 				{% else %}
-					data-show="$activeAcc === $id"
+					data-on-click="
+					document.querySelectorAll('#{{blockId}} .accordion-content-wrapper').forEach(element => {element.style.maxHeight = null;});
+					${{setSigLabel}} == {{loop.index}} ? ${{setSigLabel}} = null : ${{setSigLabel}} = {{loop.index}};
+					window.tiltBoiler.accPanelFunction('{{accId}}-btn', ${{setSigLabel}} == {{loop.index}});
+					"
+					data-attr-aria-expanded="${{setSigLabel}} == {{loop.index}} ? 'true' : 'false'"
+					data-on-load="window.tiltBoiler.accPanelFunction('{{accId}}-btn', ${{setSigLabel}} == {{loop.index}});"			
 				{% endif %}
 			>
+				<{{setHeaderLevel}} class="accordion-header">{{acc.title}}</{{setHeaderLevel}}>
+				<div class="accordion-icon">
+					{% if accIcon %}
+						{% if accIcon.type == 'svg' %}
+							{{ accIcon.inline }}
+						{% elseif accIcon.type == 'css' %}
+							<i class="{{ accIcon.value }}"></i>								
+						{% else %}
+							<svg><use xlink:href="/sprites.svg#{{ accIcon.value }}"></use></svg>
+						{% endif %}
+					{% else %}
+						<svg><use xlink:href="/sprites.svg#icon-caret-right"></use></svg>
+					{% endif %}
+				</div>					
+			</button>
+			
+	
+			<div class="accordion-content-wrapper">
 				<div class="{{- styleListMaster|join(' ') }}">				
 					{% for chunk in acc.elementContent %}
 						{% if chunk.type == 'markup' %}
