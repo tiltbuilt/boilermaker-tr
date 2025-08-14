@@ -1,82 +1,84 @@
-.modal-active {
-	overflow: hidden;
-	padding-right: 0;
-}
-
-.modal-overlay {	
-	position: fixed;
-	z-index: 999;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: theme('colors.black');
-	opacity: 0.7;	
-}
-
-.modal-wrapper-outer {	
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	overflow-y: auto;	
-	z-index: 999;
-	
-}
-
-.modal-wrapper-inner {
-	position: relative;
-	min-height: 100vh;	
-	z-index: 999;
-	overflow: scroll;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem;
-}
-
-.modal-window {		
-	position: relative;
-	width: 100%;
-	max-width: 80vw;
-	overflow-y: auto;	
-	background-color: theme('colors.white');
-	--tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-	border-radius: 1rem;
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-	
-	.w-screen, .section-standard, .section-side-photo, .reusable-module-wrapper-section {
-		max-width: 100% !important;
+@layer components {
+	.modal-active {
+		overflow: hidden;
+		padding-right: 0;
 	}
+
+	.modal-overlay {	
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: var(--color-black);
+		opacity: 0.7;	
+	}
+
+	.modal-wrapper-outer {	
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow-y: auto;	
+		z-index: 999;
 		
-}
-
-.modal-content-inner-wrapper {
-	overflow: scroll !important;
-}
-
-.modal-close {
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 1000;
-	color: theme('colors.white');
-	margin: 0.5rem;
-	transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	
-	&:hover {
-		color: theme('colors.red.500');
 	}
-	
-	svg, i {
-		width: 2.4rem;
-		height: 2.4rem;
-		fill: currentColor;
+
+	.modal-wrapper-inner {
+		position: relative;
+		min-height: 100vh;	
+		z-index: 999;
+		overflow: scroll;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
 	}
-	
-	i {
-		font-size: 2.4rem;
-		line-height: 1;
+
+	.modal-window {		
+		position: relative;
+		width: 100%;
+		max-width: 80vw;
+		overflow-y: auto;	
+		background-color: var(--color-white);		
+		border-radius: 1rem;
+		@apply shadow-lg;
+		
+		.w-screen, .section-standard, .section-side-photo, .reusable-module-wrapper-section {
+			max-width: 100% !important;
+		}
+			
+	}
+
+	.modal-content-inner-wrapper {
+		overflow: scroll !important;
+	}
+
+	.modal-close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1000;
+		color: var(--color-white);
+		margin: 0.5rem;
+		transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		
+		&:hover {
+			
+		}
+		
+		svg, i {
+			width: 2.4rem;
+			height: 2.4rem;
+			fill: currentColor;
+		}
+		
+		i {
+			font-size: 2.4rem;
+			line-height: 1;
+		}
+
 	}
 }

@@ -1,6 +1,6 @@
 @layer components {
 	.quote {
-		margin-top: var(--spacing-normal);
+		margin-top: var(--spacing-scaling-base);
 	}
 
 

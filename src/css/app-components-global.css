@@ -1,0 +1,159 @@
+/**
+ * This injects any component classes registered by plugins.
+ *
+ */
+
+@layer components {   
+    
+    /* BACKGROUNDS AND INNERS */
+    .inner {
+        position: relative;
+        z-index: 10;
+        height: 100%;    
+
+        &::after {
+        content: '';
+        clear: both;
+        height: 0px;
+        width: 0px;
+        display: table;
+        }    
+    }
+
+    /* set up basic styles for background element */
+
+    .background {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .bg-video {
+        iframe {         
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    /* MARGIN FIX FOR FIRST CHILD */
+
+    *:not(.column):first-child {
+        margin-top: 0;
+    }
+
+    /* PAGINATION */
+
+    .pagination {
+        width: 100%;
+        padding-top: var(--spacing-scaling-base);	
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        align-items: center;
+        
+        .current {
+            font-weight: bold;
+        }
+    }
+
+    .pagination-pages, .pagination-pages-abbreviated {
+        margin-right: 2rem;
+        
+        a, span {
+            margin-left: 1rem;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .btn.btn-pagination {
+        display: inline-flex !important;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: nowrap;
+        
+        i {
+            display: block;
+            font-size: 60%;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+        }
+        
+        span {
+            display: block;
+        }
+    }
+
+    /* SHARE LINKS */
+
+    .share-links {        
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .share-header {
+            margin-right: var(--spacing-base);
+            display: block;
+            text-transform: uppercase;
+            font-size: var(--text-scaling-lg);
+        }
+
+        a {           
+            display: block;
+            margin-right: var(--spacing-half);
+            transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            
+            &:hover {
+            
+            }
+            
+            svg {
+                @apply block;
+                width: 2.4rem;
+                height: 2.4rem;
+                fill: currentColor;
+            }
+        }
+    }
+
+    .text-center > .share-links {
+        justify-content: center;
+    }
+    
+    
+    
+    /* LOAD SPINNER */
+    
+    .spinner {
+        width: 5.6rem;
+        height: 5.6rem;
+        border-radius: 50%;
+        background: conic-gradient(#0000 10%,#e1e1e2);
+        -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+        animation: var(--animate-spin);
+    }
+
+    
+    /* NOTIFICATION BAR */ 
+    
+    .notification-bar-icon svg, .notification-bar-icon i {  
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        fill: currentColor;
+        width: 7.5rem;
+        height: 7.5rem;
+        font-size: 7.5rem;
+        line-height: 1;	 
+    }
+    
+}

@@ -2,6 +2,8 @@
 
 @theme static {
 	
+	--prose: 65ch;
+
 	/* BASE SPACING */
 	--spacing: 1.5rem;
 	--spacing-none: 0rem;

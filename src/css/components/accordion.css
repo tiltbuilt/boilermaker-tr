@@ -10,11 +10,11 @@
 		/* These classes must stay in order to ensure functionality */
 	
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-normal);	 
+		margin-top: var(--spacing-scaling-base);	 
 	}
 		
 	.accordion {
-		margin-top: var(--spacing-half-normal);
+		margin-top: var(--spacing-scaling-half);
 		
 		&:first-child {
 			margin-top: 0;
@@ -34,10 +34,8 @@
 		justify-content: space-between;
 		align-content: center;
 		/* add classes below to style type etc. in button */
-		padding-top: var(--spacing-half);
-		padding-bottom: var(--spacing-half);
-		padding-left: var(--spacing-base);
-		padding-right: var(--spacing-base);
+		padding-block: var(--spacing-scaling-half);		
+		padding-inline: var(--spacing-scaling-base);		
 		font-weight: bold;
 		text-transform: uppercase;
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -48,10 +46,7 @@
 	}
 	
 	.accordion-content {
-		padding-left: var(--spacing-base);
-		padding-right: var(--spacing-base);
-		padding-top: var(--spacing-base);
-		padding-bottom: var(--spacing-base);	
+		padding: var(--spacing-scaling-base);			
 	}
 
 	/* STYLING FOR ACCORDION ICON FOR DIFFERENT STATES - CHANGE BASED ON DESIGN */
@@ -59,8 +54,4 @@
 	.accordion-button[aria-expanded='true'] > .accordion-icon {
 		transform: rotate(90deg);
 	}
-}
-
-
-
- 
+} 

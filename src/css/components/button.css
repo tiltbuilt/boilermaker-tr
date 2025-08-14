@@ -1,134 +1,109 @@
-
-.button-group {
-	/* These classes must stay in order to ensure functionality */
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	/* The default classes and style below can be changed on a per-project basis */
-	margin-top: theme('spacing.normal');	  
-}
-
-p + .button-group {
-	margin-top: theme('spacing.base');	  
-}
-
-/* SET DEFAULT BUTTON STYLE, SHOULD MATCH ONE OF YUOR RESPONSIVE BUTTON STYLE CLASSES IN APP-UTILITIES.PCSS */
- 
-.btn, .btn-standard {
-	/* These classes must stay in order to ensure functionality */
-	display: inline-block;
-	/* The default classes and style below can be changed on a per-project basis */	
-	transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	@apply font-semibold;
-	/*border-radius: 0.4rem;*/
-	text-transform: uppercase;
-}
-
-.btn-text {  
-	border-radius: 0px;
-	
-}
-
-.btn-text-arrow {
-  &::after {
-	font: var(--fa-font-solid);
-	/* the free version of font awesome is loaded so you can change the icon for the arrow to anything in their collection */
-	content: "\f105";
-	display: inline-block;
-	margin-left: 0.05em;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;     
-	transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);    
-  }
-  
-  &:hover {
-	&::after {      
-	  transform: translateX(0.25em);
+@layer components {
+	.button-group {
+		/* These classes must stay in order to ensure functionality */
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		/* The default classes and style below can be changed on a per-project basis */
+		margin-top: var(--spacing-scaling-base);	  
 	}
-  }
+
+	p + .button-group {
+		margin-top: var(--spacing-base);	  
+	}
+
+	/* SET DEFAULT BUTTON STYLE, SHOULD MATCH ONE OF YOUR RESPONSIVE BUTTON STYLE CLASSES IN APP-UTILITIES.CSS */
+
+	.btn, .btn-standard {
+		/* These classes must stay in order to ensure functionality */
+		display: inline-block;
+		margin-inline: 1rem;
+		/* The default classes and style below can be changed on a per-project basis */	
+		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		font-weight: 600;		/*border-radius: 0.4rem;*/
+		text-transform: uppercase;
+
+		&:first-child {
+			margin-left: 0 !important; 
+		} 
+			
+		&:last-child {
+			margin-right: 0 !important;
+		}
+
+	}
+
+	.btn-text {  
+		border-radius: 0px;
+		
+	}
+
+	.btn-text-arrow {
+		&::after {
+			font: var(--fa-font-solid);
+			/* the free version of font awesome is loaded so you can change the icon for the arrow to anything in their collection */
+			content: "\f105";
+			display: inline-block;
+			margin-left: 0.05em;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;     
+			transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);    
+		}
+		
+		&:hover {
+			&::after {      
+				transform: translateX(0.25em);
+			}
+		}
+	}
+
+
+	.btn, .btn-md {		
+		font-size: var(--text-scaling-base);
+		padding-block: var(--spacing-scaling-base);
+		
+
+		&.btn-standard {			
+			margin-block: var(--spacing-scaling-base);
+			padding-inline: var(--spacing-scaling-2x);			
+		}
+		
+		&.btn-text, &.btn-text-arrow {
+			margin-block: var(--spacing-scaling-base);
+			padding-inline: 0; 			
+		}  
+	}
+
+	.btn-sm {		
+		font-size: var(--text-scaling-sm);
+		padding-block: var(--spacing-scaling-half);
+		
+		&.btn-standard {			
+			margin-block: var(--spacing-scaling-half);
+			padding-inline: var(--spacing-scaling-base);			
+		}
+		
+		&.btn-text, &.btn-text-arrow {			
+			margin-block: var(--spacing-scaling-half);
+			padding-inline: 0;			
+		} 
+	}
+
+	.btn-lg {		
+		font-size: var(--text-scaling-lg);
+		padding-block: calc(1.5 * var(--spacing-scaling-base));
+		
+		&.btn-standard {
+			margin-block: calc(1.5 * var(--spacing-scaling-base));
+			padding-inline: var(--spacing-scaling-3x);  
+		}
+		
+		&.btn-text, &.btn-text-arrow {			
+			margin-block: calc(1.5 * var(--spacing-scaling-base));
+			padding-inline: 0; 
+		} 	 
+	}
+ 
 }
 	 
 		
-.btn, .btn-md {
-	@apply text-scaling-base py-4;
-	
-	&.btn-standard {
-		@apply mx-4 px-8;
-		
-		&:first-child {
-			@apply ml-none;
-		} 
-		
-		&:last-child {
-			@apply mr-none;
-		} 
-	}
-	
-	&.btn-text, &.btn-text-arrow {
- 		@apply mx-4 px-0; 
-		
-		&:first-child {
-			@apply ml-none;
-		} 
-		
-		&:last-child {
-			@apply mr-none;
-		}
-	}  
-}
-
-.btn-sm {
-	@apply text-scaling-sm py-2;
-	
-	&.btn-standard {
-  		@apply mx-2 px-4;
-		  
-		&:first-child {
-			@apply ml-none;
-		} 
-		
-		&:last-child {
-			@apply mr-none;
-		} 
-	}
-	
-	&.btn-text, &.btn-text-arrow {
-   		@apply mx-2 px-0;
-		   
-		&:first-child {
-			@apply ml-none;
-		} 
-		
-		&:last-child {
-			@apply mr-none;
-		} 
-	} 
-}
-
-.btn-lg {
-	@apply text-scaling-lg py-6;
-	
-	&.btn-standard {
-		@apply mx-6 px-12; 
-		
-		&:first-child {
-			@apply ml-none;
-		} 
-		
-		&:last-child {
-			@apply mr-none;
-		} 
-	}
-	
-	&.btn-text, &.btn-text-arrow {
-		@apply mx-6 px-0;
-		
-		&:first-child {
-			@apply ml-none;
-		} 
-		
-		&:last-child {
-			@apply mr-none;
-		} 
-	} 	 
-}

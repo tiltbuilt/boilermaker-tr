@@ -17,7 +17,7 @@
    }
 
    .container-inner {
-      padding: var(--spacing-normal);
+      padding: var(--spacing-scaling-base);
    } 
 
    /* SIDE BYSIDE PHOTO SECTION */
@@ -56,36 +56,25 @@
       @apply w-full @md:w-1/2;
       position: relative;   
    }
-}
-/* calculations are needed to determine the size of the content wrapper div to prevent it from overshooting the normal container area and not lining up with content in other sections when fullwidth is turned off on side by side photo section */
-/*
-@container (width >= theme('containers.md')) {
-   .side-photo-content-wrapper {
-      max-width: calc(100% - ((100vw - 768px)/2));  
+
+   @container (width >= theme('containers.xl')) {
+      .side-photo-content-wrapper {
+         max-width: calc(100% - ((100vw - 1280px)/2));  
+      }
    }
+
+   @container (width >= theme('containers.2xl')) {
+      .side-photo-content-wrapper {
+         max-width: calc(100% - ((100vw - 1536px)/2));  
+      }
+   }
+
+   .fullwidth .side-photo-content-wrapper {
+      width: 100%;  
+   }
+
+
 }
 
-@container (width >= theme('containers.lg')) {
-   .side-photo-content-wrapper {
-      max-width: calc(100% - ((100vw - 1024px)/2));  
-   }
-}
-*/
-
-@container (width >= theme('containers.xl')) {
-   .side-photo-content-wrapper {
-      max-width: calc(100% - ((100vw - 1280px)/2));  
-   }
-}
-
-@container (width >= theme('containers.2xl')) {
-   .side-photo-content-wrapper {
-      max-width: calc(100% - ((100vw - 1536px)/2));  
-   }
-}
-
-.fullwidth .side-photo-content-wrapper {
-   width: 100%;  
-}
 
 

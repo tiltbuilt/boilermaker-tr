@@ -5,22 +5,25 @@
 *
 */
 
-.form-block {
-	/* These classes must stay in order to ensure functionality */
-	position: relative;
-	/* The default classes and style below can be changed on a per-project basis */
-	margin-top: theme('spacing.normal');
-	  
-	&:first-child {
-		margin-top: 0;
+@layer components {
+
+	.form-block {
+		/* These classes must stay in order to ensure functionality */
+		position: relative;
+		/* The default classes and style below can be changed on a per-project basis */
+		margin-top: var(--spacing-scaling-base);
+		
+		&:first-child {
+			margin-top: 0;
+		}
 	}
-	
+		
 	.form-row {
 		display: flex;
 		flex-wrap: wrap;
-		margin-top: theme('spacing.base');
-		margin-left: theme('spacing.neg-base');
-		margin-right: theme('spacing.neg-base');
+		margin-top: var(--spacing-scaling-base);
+		margin-left: var(--spacing-neg-scaling-base);
+		margin-right: var(--spacing-neg-scaling-base);
 		
 		&:first-child {
 			margin-top: 0;
@@ -29,8 +32,8 @@
 	
 	.form-field-wrapper {
 		width: 100%;
-		padding-left: theme('spacing.base');
-		padding-right: theme('spacing.base');
+		padding-left: var(--spacing-scaling-base);
+		padding-right: var(--spacing-scaling-base);
 		
 		@media (min-width: theme('screens.md')) {
 			flex: 1 1 0%;
@@ -44,12 +47,12 @@
 	}
 	
 	.form-field-input {
-		@apply p-3;
+		padding: var(--spacing-base);
 		display: block;
 		width: 100%;
 		border-width: 2px;
 		font-size: 100%;		
-		margin-top: theme('spacing.half');
+		margin-top: var(--spacing-half);
 		
 	}
 	
@@ -59,7 +62,8 @@
 	}
 	
 	.form-checkbox, .form-radio {		
-		@apply h-5 w-5;
+		width: 2rem;
+		height: 2rem;
 	}
 	
 	.form-radio {
@@ -67,27 +71,27 @@
 	}
 	
 	fieldset > legend + div {
-		margin-top: theme('spacing.half');
+		margin-top: var(--spacing-half);
 	}
 	
 	.iti {
-		margin-top: theme('spacing.half');
+		margin-top: var(--spacing-half);
 		width: 100%;
 	}
 	
 	.form-dropdown {
-		@apply p-3;
+		padding: var(--spacing-base);		
 		display: block;
 		width: 100%;
 		border-width: 2px;
 		font-size: 100%;		
-		margin-top: theme('spacing.half');
-		line-height: inherit;		
+		margin-top: var(--spacing-half);
+		line-height: inherit;
+		@apply bg-white border-gray-300;		
 	}
 	
 	.form-btn-wrapper {
-		margin-left: 1rem;
-		margin-right: 1rem;
+		margin-inline: 1rem;		
 		
 		&:first-child {
 			margin-left: 0px;
@@ -100,18 +104,18 @@
 	
 	.alert-error {
 		font-weight: bold;
-		padding: theme('spacing.base');
-		margin-bottom: theme('spacing.normal');	
+		padding: var(--spacing-scaling-base);
+		margin-bottom: var(--spacing-scaling-base);	
 	}
 	
 	.field-error {
-		margin-top: theme('spacing.half');	
+		margin-top: var(--spacing-half);	
 	}
 	
 	.alert-success {
 		font-weight: bold;
-		padding: theme('spacing.base');	
-		margin-bottom: theme('spacing.normal');		
+		padding: var(--spacing-scaling-base);
+		margin-bottom: var(--spacing-scaling-base);		
 	}
-	
+
 }

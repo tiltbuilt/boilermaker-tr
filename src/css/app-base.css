@@ -17,11 +17,11 @@
   
   body {
     /*@apply text-scaling-base;*/
-    font-size: theme(text-scaling-base);    
+    font-size: var(--text-scaling-base);    
     width: 100vw;
     height: 100vh;
-    background-color: theme(color-white);
-    color: theme(color-black); 
+    background-color: var(--color-white);
+    color: var(--color-black); 
     overflow-x: hidden;  
     
     & > #page-wrapper {
@@ -43,4 +43,8 @@
 	  /* put hover styles for standard text links here */
     }  
   }
+
+  h2, h3, h4, h5, h6 {
+		margin-top: var(--spacing-scaling-base);
+	}
 }

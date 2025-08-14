@@ -6,39 +6,33 @@
 */ 
 
 @import './components/global.css';
-/*@import './components/typography.css';
-@import './components/pagination.css';
-@import './components/webfonts.css';
+@import './components/accordion.css';
 @import './components/button.css';
 @import './components/blockquote.css';
-@import './components/nav-list.css';
-@import './components/image.css';
-*/
-@import './components/page-section.css';
-/*
-@import './components/site-header.css';
-@import './components/page-header.css';
-@import './components/page-footer.css';
-@import './components/row.css';
-@import './components/column.css';
-@import './components/content-wrapper.css';
-@import './components/repeater.css';
-*/
-@import './components/accordion.css';
-/*
-@import './components/tab-set.css';
-@import './components/slider.css';
 @import './components/content-video.css';
+@import './components/content-wrapper.css';
 @import './components/cta.css';
 @import './components/forms.css';
 @import './components/icon-content.css';
+@import './components/image.css';
+@import './components/layout.css';
 @import './components/modals.css';
+@import './components/page-footer.css';
+@import './components/page-header.css';
+@import './components/page-section.css';
+@import './components/repeater.css';
+@import './components/site-header.css';
+@import './components/slider.css';
+@import './components/tab-set.css';
+@import './components/typography.css';
+
+/*
 @import './components/colors.css';
 */
+
 /**
 * Include styles for individual pages
 *
 */
-/*
+
 @import './pages/homepage.css';
-*/

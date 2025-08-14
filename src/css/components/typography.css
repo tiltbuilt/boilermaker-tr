@@ -7,32 +7,136 @@
 
 /* set up default spacing between headers, subheads, etc. */
 
-h2, h3, h4, h5, h6 {
-	margin-top: theme('spacing.normal');
-}
+@layer components {
 
-.subhead {
-	display: block;
-}
+	/* HEADINGS */
 
-.subhead + .header-main-text {
-	margin-top: theme('spacing.half');
-}
+	.subhead {
+		display: block;
+	}
 
-.header-main-text + .subhead {
-	margin-top: theme('spacing.base');
-}
+	.subhead + .header-main-text {
+		margin-top: var(--spacing-scaling-half);
+	}
 
-.heading + p {
-	/* use this selector for each header class you create to adjust the spacing between the header/subhead and the first content paragraph below it. */
-	margin-top: theme('spacing.base');
-}
+	.header-main-text + .subhead {
+		margin-top: var(--spacing-scaling-half);
+	}
+
+	.heading + p {
+		/* use this selector for each header class you create to adjust the spacing between the header/subhead and the first content paragraph below it. */
+		margin-top: var(--spacing-base);
+	}
 
 
-/* site specific headline and subhead styles - can be overriden by adjustments */
+	/* site specific headline and subhead styles - can be overriden by adjustments */
 
-.headline-default {
-	font-family: serif;
-	font-weight: bold;
-	font-size: theme('fontSize.scaling-2xl');
+	.headline-default {
+		font-family: serif;
+		font-weight: bold;
+		font-size: var(--text-scaling-2x);
+	}
+
+	/* PARAGRAPHS AND LISTS */
+
+	p, ul, ol {
+		margin: 0;
+		margin-top: var(--spacing-scaling-base);
+		max-width: var(--prose);    
+
+		& > li {	 
+			margin: 0;
+			margin-top: var(--spacing-base);
+		}
+
+		ul, ol {
+			margin-bottom: 0;
+		}
+	}
+
+	#main {
+		.text-center {
+			&> p, &> ul, &>ol {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		
+		p.text-center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	ul.bullet-list {	 
+		list-style-type: none;
+		list-style-position: outside;
+			
+		.list-item-content {
+			display: block; 
+		}
+		
+		& > li {
+		justify-content: start;
+		list-style-type: none;
+		list-style-position: outside;
+		align-items: start;
+		margin-left: 1em;
+		margin-top: var(--spacing-quarter);
+		}
+		
+		li::before {
+		content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+			/*display: inline-block; /* Needed to add space between the bullet and the text */
+			/*width: 1em; /* Also needed for space (tweak if needed) */
+		margin-left: -1em;
+		margin-right: 0.125em;      
+		}
+	}
+
+	ul.lined-list {
+		li {
+			padding-top: var(--spacing-half);
+			border-top: solid 1px;
+		
+			&:first-child {
+			border-top: none;
+			}      
+		}
+	}
+
+	ol {	 
+		list-style-type: decimal;
+		list-style-position: outside;
+		margin-left: 1.1em;
+	}
+
+    
+    /* TEXT WRAP */
+        
+    .text-wrap-left {       
+        float: left;
+        margin-right: var(--spacing-base);
+        margin-bottom: var(--spacing-base);		
+    }
+    
+    .text-wrap-right {
+        float: right;
+        margin-left: var(--spacing-base);
+        margin-bottom: var(--spacing-base);					
+    }
+    
+    .text-wrap-none {
+        float: none;		
+    }
+
+    [class*='text-wrap-left']:first-child + p {
+        margin-top: 0;
+    }
+   
+    [class*='text-wrap-right']:first-child + p {
+        margin-top: 0;
+    }
+	
+
 }

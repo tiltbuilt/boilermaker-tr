@@ -3,10 +3,26 @@
  * config file.
  * BUTTON CLASSES NEED TO GO HERE SINCE THEY ARE GROUPED IF YOU WANT THEM TO BE RESPONSIVE */
  
-@import "tailwindcss/utilities";
+@utility container {    
+   margin-inline: auto;
+   
+   @variant lg {
+      max-width: var(--breakpoint-lg);      
+   }
 
-@layer utilities {
-    
-    
-    
+   @variant xl {
+      max-width: var(--breakpoint-xl);      
+   }
+
+   @variant 2xl {
+      max-width: var(--breakpoint-2xl);      
+   }
+} 
+
+@utility container-fullwidth {
+   @apply max-w-full;
+}
+
+@utility not-hidden {
+   display: block;
 }

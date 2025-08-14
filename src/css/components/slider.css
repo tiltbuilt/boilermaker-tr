@@ -4,156 +4,167 @@
 *
 */
 
-.slider-set, .repeater-slider {
-	/* These classes must stay in order to ensure functionality */
-	position: relative;
-	overflow: hidden;
-	/* The default classes and style below can be changed on a per-project basis */
-	margin-top: theme('spacing.normal');
-	  
-	&:first-child {
-		margin-top: 0;
+@layer components {
+
+	.slider-set, .repeater-slider {
+		/* These classes must stay in order to ensure functionality */
+		position: relative;
+		overflow: hidden;
+		/* The default classes and style below can be changed on a per-project basis */
+		margin-top: var(--spacing-scaling-base);
+		
+		&:first-child {
+			margin-top: 0;
+		}
 	}
-}
 
-.slide {
-	@apply pb-extra @md:pb-none;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	display: block;
-}
-
-.slide-layout {
-	position: relative;
-	width: 100%;
-	display: block;
-	z-index: 10;
-	
-}
-
-.slide-link {
-	position: relative;
-	width: 100%;
-	display: block;
-	cursor: pointer;
-}
-
-.slide-content {
-	/* This object positions and sizes the content in the slide based on the positioning settings on the slide layout. */
-	@apply p-none @md:p-normal;
-	position: relative;
-	
-	@media (min-width: theme('screens.md')) {
-		max-width: 50%;	
-	}		
-}
-
-.slide-content-wrapper {
-	/* This object allows you to control colors and padding of the content in the slide. If padding is added, it will be within the box itself, so in addition to that on the .slide-content object */
-	text-align: left;
-	padding: theme('spacing.normal'); 
-}
-
-.slide-image {
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-	
-	picture {
-		padding: 0;
+	.slide {		
+		padding-bottom: var(--spacing-scaling-2x);
+		overflow: hidden;
+		position: relative;
+		width: 100%;
 		display: block;
-	}
-	
-	img {
-		width: 100%;		
-		object-fit: cover;
-	}
-}
 
-.slider-set {
-	
-	/* The style rules below are nested inside of the slider-set class to make sure they are specific enough to override Swiper's built-in styling */
-	
-	.swiper-wrapper {
-		align-items: stretch;
+		@media (min-width: var(--breakpoint-md)) {
+			padding-bottom: 0;			
+		}	
 	}
-	
-	.swiper-slide {
-		height: auto;
+
+	.slide-layout {
+		position: relative;
+		width: 100%;
+		display: block;
+		z-index: 10;
+		
 	}
-	
-	.swiper-button-prev, .swiper-button-next {
-		@apply flex justify-center items-center;	
-		position: absolute;		
-		top: 50%;
-		z-index: 20;
-		transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-		transform: translateY(-50%);	
-		margin: 0;
-			
-		&::after {
-			content: '';
-			display: none;
+
+	.slide-link {
+		position: relative;
+		width: 100%;
+		display: block;
+		cursor: pointer;
+	}
+
+	.slide-content {
+		/* This object positions and sizes the content in the slide based on the positioning settings on the slide layout. */
+		padding: 0;
+		position: relative;
+		
+		@media (min-width: var(--breakpoint-md)) {
+			max-width: 50%;	
+			padding: var(--spacing-scaling-base)
+		}		
+	}
+
+	.slide-content-wrapper {
+		/* This object allows you to control colors and padding of the content in the slide. If padding is added, it will be within the box itself, so in addition to that on the .slide-content object */
+		text-align: left;
+		padding: var(--spacing-scaling-base); 
+	}
+
+	.slide-image {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		
+		picture {
+			padding: 0;
+			display: block;
 		}
 		
-		i {
-			font-size: 4rem;
-			line-height: 1;
-		}			
+		img {
+			width: 100%;		
+			object-fit: cover;
+		}
+	}
+
+	.slider-set {
 		
-		svg {
-			width: 4rem;
-			height: 4rem;
-			fill: currentColor;	
+		/* The style rules below are nested inside of the slider-set class to make sure they are specific enough to override Swiper's built-in styling */
+		
+		.swiper-wrapper {
+			align-items: stretch;
+		}
+		
+		.swiper-slide {
+			height: auto;
+		}
+		
+		.swiper-button-prev, .swiper-button-next {			
+			display: flex;
+			justify-items: center;
+			align-items: center;
+			position: absolute;		
+			top: 50%;
+			z-index: 20;
+			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			transform: translateY(-50%);	
+			margin: 0;
+				
+			&::after {
+				content: '';
+				display: none;
+			}
+			
+			i {
+				font-size: 4rem;
+				line-height: 1;
+			}			
+			
+			svg {
+				width: 4rem;
+				height: 4rem;
+				fill: currentColor;	
+				
+				&:focus {			
+					outline: none !important;
+				}
+			}
 			
 			&:focus {			
 				outline: none !important;
+				
+				svg {
+					outline: none !important;
+				}
 			}
 		}
 		
-		&:focus {			
-			outline: none !important;
-			
-			svg {
-				outline: none !important;
-			}
+		.swiper-pagination {
+			/* Applies to the wrapper around the dot navigation */		
+			position: absolute;
+			padding-top: var(--spacing-base);
+			padding-bottom: var(--spacing-base);
+			bottom: 0px;
+			z-index: 20;
+			/*top: 100%;*/
+		}	
+		
+		.swiper-pagination-bullet {	
+			/* Applies to the dot navigation items themselves */
+			border: 0px none;
+			border-radius: 0px;
+			width: 8%;
+			height: 8px;
+			opacity: 1;	
+			transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 		}
 	}
-	
-	.swiper-pagination {
-		/* Applies to the wrapper around the dot navigation */		
-		position: absolute;
-		padding-top: theme('spacing.base');
-		padding-bottom: theme('spacing.base');
-		bottom: 0px;
-		z-index: 20;
-		/*top: 100%;*/
-	}	
-	
-	.swiper-pagination-bullet {	
-		/* Applies to the dot navigation items themselves */
-		border: 0px none;
-		border-radius: 0px;
-		width: 8%;
-		height: 8px;
-		opacity: 1;	
-		transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
-}
 
-.repeater-slider {
-	.swiper-pagination {
-		/* Applies to the wrapper around the dot navigation */		
-		position: relative;
-		padding-top: theme('spacing.base');
-		padding-bottom: theme('spacing.base');
-		bottom: 0px;
-		z-index: 20;
-		/*top: 100%;*/
+	.repeater-slider {
+		.swiper-pagination {
+			/* Applies to the wrapper around the dot navigation */		
+			position: relative;
+			padding-top: var(--spacing-base);
+			padding-bottom: var(--spacing-base);
+			bottom: 0px;
+			z-index: 20;
+			/*top: 100%;*/
+		}
+		
+		.slide {
+			padding-bottom: 0;
+		}
 	}
-	
-	.slide {
-		@apply pb-none ;
-	}
+
 }
