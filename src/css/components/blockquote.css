@@ -1,16 +1,19 @@
 @layer components {
 	.quote {
 		margin-top: var(--spacing-scaling-base);
+		color: var(--color-blockquote-text);		
 	}
 
 
 	.quote-credit {
 		display: block;
-		margin-top: var(--spacing-base);		
+		margin-top: var(--spacing-base);
+		color: var(--color-blockquote-credit);		
 	}
 
 	.quote-credit-title {
 		display: block;
-		margin-top: var(--spacing-half);		
+		margin-top: var(--spacing-half);
+		color: var(--color-blockquote-credit-title);		
 	}
 }

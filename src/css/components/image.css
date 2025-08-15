@@ -35,6 +35,8 @@
 
 	.image-caption {
 		padding: val(--spacing-scaling-base);
+		color: var(--color-image-caption-text);
+		background-color: var(--color-image-caption-bg);
 	}
 
 	.img-link {

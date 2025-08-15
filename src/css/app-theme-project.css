@@ -10,6 +10,52 @@
 	--color-transparent: transparent;
 	--color-black: #000;
 	--color-white: #fff;
+	--color-red-700: #ef4444;
+	--color-red-900: #7f1d1d;
+	--color-gray-300: #d1d5db;
+	--color-gray-700: #374151; 
+}
+
+
+@layer components {
+
+	.color-theme-light {
+		/* SECTION */
+		--color-section-text: var(--color-black);
+		--color-section-background: var(--color-white);
+		--color-text-link: var(--color-red-700);
+		--color-text-link-hover: var(--color-red-900);
+		
+		/* ACCORDIONS */
+		--color-accordion-text: var(--color-black);
+		--color-accordion-background: var(--color-gray-300);
+		--color-accordion-button-text: var(--color-white);
+		--color-accordion-button-bg: var(--color-red-700);
+		--color-accordion-button-text-hover: var(--color-white);
+		--color-accordion-button-bg-hover: var(--color-red-900);
+		--color-accordion-button-icon: var(--color-white);
+		--color-accordion-button-icon-hover: var(--color-white);
+
+		/* BLOCKQUOTES */
+		--color-blockquote-text: var(--color-black);
+		--color-blockquote-credit: var(--color-gray-900);
+		--color-blockquote-credit-title: var(--color-gray-900);
+
+		/* BUTTONS */
+		--color-button-standard-text: var(--color-white);
+		--color-button-standard-bg: var(--color-red-700);
+		--color-button-standard-text-hover: var(--color-white);
+		--color-button-standard-bg-hover: var(--color-red-900);
+		--color-button-text-text: var(--color-red-700);		
+		--color-button-text-text-hover: var(--color-red-900);
+		--color-button-text-arrow: var(--color-gray-300);
+		--color-button-text-arrow-hover: var(--color-red-700);
+
+		/* IMAGES */
+		--color-image-caption-text: var(--color-black);
+		--color-image-caption-bg: var(--color-gray-300);
+	}
 	
 	
+
 }

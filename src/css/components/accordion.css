@@ -15,6 +15,8 @@
 		
 	.accordion {
 		margin-top: var(--spacing-scaling-half);
+		color: var(--color-accordion-text);
+		background-color: var(--color-accordion-background);
 		
 		&:first-child {
 			margin-top: 0;
@@ -39,11 +41,27 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		color: var(--color-accordion-button-text);
+		background-color: var(--color-accordion-button-bg);	
+
+		.accordion-icon {
+			transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			color: var(--color-accordion-button-icon);
+		}
+
+		&:hover, &:focus, &.active {
+			color: var(--color-accordion-button-text-hover);
+			background-color: var(--color-accordion-button-bg-hover);
+			outline: none;
+
+			.accordion-icon {
+				color: var(--color-accordion-button-icon-hover);
+			}
+		}
+
 	}
 
-	.accordion-icon {
-		transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
+	
 	
 	.accordion-content {
 		padding: var(--spacing-scaling-base);			

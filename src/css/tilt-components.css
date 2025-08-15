@@ -4,8 +4,6 @@
 * override them.
 *
 */ 
-
-@import './components/global.css';
 @import './components/accordion.css';
 @import './components/button.css';
 @import './components/blockquote.css';
