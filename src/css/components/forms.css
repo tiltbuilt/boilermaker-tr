@@ -53,9 +53,10 @@
 		border-width: 2px;
 		font-size: 100%;		
 		margin-top: var(--spacing-half);
-		
+		color: var(--color-form-input-text);
+		background-color: var(--color-form-input-bg);
 	}
-	
+
 	textarea.form-field-input {
 		height: 10vh;
 		min-height: 250px;
@@ -64,6 +65,8 @@
 	.form-checkbox, .form-radio {		
 		width: 2rem;
 		height: 2rem;
+		color: var(--color-form-input-text);
+		background-color: var(--color-form-input-bg);
 	}
 	
 	.form-radio {
@@ -87,7 +90,8 @@
 		font-size: 100%;		
 		margin-top: var(--spacing-half);
 		line-height: inherit;
-		@apply bg-white border-gray-300;		
+		color: var(--color-form-input-text);
+		background-color: var(--color-form-input-bg);		
 	}
 	
 	.form-btn-wrapper {
@@ -105,17 +109,22 @@
 	.alert-error {
 		font-weight: bold;
 		padding: var(--spacing-scaling-base);
-		margin-bottom: var(--spacing-scaling-base);	
+		margin-bottom: var(--spacing-scaling-base);
+		color: var(--color-form-error-block-text);
+		background-color: var(--color-form-error-block-bg);	
 	}
 	
 	.field-error {
-		margin-top: var(--spacing-half);	
+		margin-top: var(--spacing-half);
+		color: var(--color-form-field-error-text);	
 	}
 	
 	.alert-success {
 		font-weight: bold;
 		padding: var(--spacing-scaling-base);
-		margin-bottom: var(--spacing-scaling-base);		
+		margin-bottom: var(--spacing-scaling-base);
+		color: var(--color-form-success-block-text);
+		background-color: var(--color-form-success-block-bg);		
 	}
 
 }

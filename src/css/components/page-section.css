@@ -10,10 +10,10 @@
       /* These classes must stay in order to ensure functionality */   
       position: relative;
       width: 100vw;
-      margin: 0;
-         
+      margin: 0;         
       /* The default classes and style below can be changed on a per-project basis */
-      
+      color: var(--color-section-text);
+      background-color: var(--color-section-background);
    }
 
    .container-inner {
@@ -28,6 +28,8 @@
       width: 100vw;
       margin: 0;   
       /* The default classes and style below can be changed on a per-project basis */
+      color: var(--color-section-text);
+      background-color: var(--color-section-background);
    }
 
    .side-section-layout {

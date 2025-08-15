@@ -61,12 +61,12 @@
 		right: 0;
 		top: 0;
 		z-index: 1000;
-		color: var(--color-white);
+		color: var(--color-button-text-text);
 		margin: 0.5rem;
 		transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 		
 		&:hover {
-			
+			color: var(--color-button-text-text-hover);
 		}
 		
 		svg, i {

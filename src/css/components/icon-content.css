@@ -1,5 +1,6 @@
 @layer components {
-	.icon-wrapper {	
+	.icon-wrapper {
+		color: var(--color-icon-single-color);	
 		
 		svg, i {
 			width: 8rem;

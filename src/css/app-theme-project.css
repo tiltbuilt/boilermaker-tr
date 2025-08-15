@@ -13,19 +13,22 @@
 	--color-red-700: #ef4444;
 	--color-red-900: #7f1d1d;
 	--color-gray-300: #d1d5db;
-	--color-gray-700: #374151; 
+	--color-gray-700: #374151;
+	--color-green-700:: #16a34a;
+	--color-green-300: #4ade80; 
 }
 
 
 @layer components {
 
 	.color-theme-light {
+		
 		/* SECTION */
 		--color-section-text: var(--color-black);
 		--color-section-background: var(--color-white);
 		--color-text-link: var(--color-red-700);
 		--color-text-link-hover: var(--color-red-900);
-		
+
 		/* ACCORDIONS */
 		--color-accordion-text: var(--color-black);
 		--color-accordion-background: var(--color-gray-300);
@@ -51,9 +54,23 @@
 		--color-button-text-arrow: var(--color-gray-300);
 		--color-button-text-arrow-hover: var(--color-red-700);
 
+		/* FORMS */
+		--color-form-input-text: var(--color-black);
+		--color-form-input-bg: var(--color-gray-300);
+		--color-form-error-block-text: var(--color-white);
+		--color-form-error-block-bg: var(--color-red-700);
+		--color-form-field-error-text: var(--color-red-900);
+		--color-form-success-block-text: var(--color-black);
+		--color-form-success-block-bg: var(--color-gray-300);
+
+		/* ICONS */
+		--color-icon-single-color: var(--color-red-700);
+
 		/* IMAGES */
 		--color-image-caption-text: var(--color-black);
-		--color-image-caption-bg: var(--color-gray-300);
+		--color-image-caption-bg: var(--color-gray-300);	
+
+		
 	}
 	
 	
