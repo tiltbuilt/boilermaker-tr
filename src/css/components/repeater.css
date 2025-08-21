@@ -44,8 +44,9 @@
 	}
 
 	.repeater-list-text-item-header {	
-		font-weight: bold;
+		font-weight: bold;		
 		font-size: var(--text-scaling-lg);
+		color: var(--color-repeater-item-header);
 	}
 
 	/* CARD LISTS */
@@ -53,14 +54,14 @@
 	.repeater-list-card-wrapper {
 		display: flex;
 		flex-wrap: wrap;	
-		margin-inline: var(--spacing-neg-scaling-base);		
+		margin-inline: var(--spacing-neg-scaling-half);		
 		justify-content: start;
 		align-items: stretch;
 	}
 
 	.repeater-card {
 		/* this class sets up the spacing. Sizing is handled in the template itself by adding classes to control the number of items per row */
-		padding: var(--spacing-scaling-base);			
+		padding: var(--spacing-scaling-half);			
 	}
 
 	.repeater-card-inner {
@@ -68,6 +69,7 @@
 		width: 100%;
 		height: 100%;
 		display: block;
+		background-color: var(--color-repeater-card-bg);
 		box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
 		position: relative;		
 	}
@@ -76,18 +78,23 @@
 		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);	
 			
 		&:hover {
-			transform: scale(1.05);			
+			transform: scale(1.05);	
+			
+			.repeater-list-card-header {
+				color: var(--color-repeater-item-header-hover);
+			}
 		}
 	}
 
 	.repeater-card-content {
 		/* this class wraps the text content of the card. Add padding to create space around the text, or if padding on the card-inner class to make a frame, set the padding to 0 to make the text flush with images */
-		padding: var(--spacing-scaling-base);	 	
+		padding: var(--spacing-scaling-half);	 	
 	}
 
 	.repeater-list-card-header {
 		font-weight: bold;
 		font-size: var(--text-scaling-lg);
+		color: var(--color-repeater-item-header);
 		transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 

@@ -34,7 +34,9 @@
 		font-weight: bold;		
 		padding: var(--spacing-base);
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-		
+		color: var(--color-tab-btn-text);
+		background-color: var(--color-tab-btn-bg);		
+
 		
 		/* styles for icons above the text in the button */
 		flex-direction: column;
@@ -49,6 +51,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			margin-bottom: var(--spacing-half);
+			color: var(--color-tab-btn-icon);
 			
 			svg, i {			
 				display: block;
@@ -65,9 +68,29 @@
 		span {
 			display: block;
 		}
+
+		&:hover {
+			color: var(--color-tab-btn-text-hover);
+			background-color: var(--color-tab-btn-bg-hover);
+			
+			.tab-icon {
+				color: var(--color-tab-btn-icon-hover);
+			}
+		}
+
+		&.tab-active {
+			color: var(--color-tab-btn-text-active);
+			background-color: var(--color-tab-btn-bg-active);
+			
+			.tab-icon {
+				color: var(--color-tab-btn-icon-active);
+			}
+		}
 	}
 
 	.tab-panel {
 		padding: var(--spacing-scaling-base);
+		color: var(--color-tab-panel-text);
+		background-color: var(--color-tab-panel-bg);
 	}
 }

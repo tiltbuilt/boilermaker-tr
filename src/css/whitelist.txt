@@ -1,23 +1,824 @@
-mt-extra
-mt-half-normal
-mt-neg-extra
-mt-neg-half-normal
-mt-neg-normal
+-- COLORS
 
-mb-extra
-mb-half-normal
-mb-neg-extra
-mb-neg-half-normal
-mb-neg-normal
+.text-black
+.text-white
+.text-gray-300
+.text-gray-700
+.text-red-700
+.text-red-900
+.text-green-300
+.text-green-700
 
-ml-extra
-ml-half-normal
-ml-neg-extra
-ml-neg-half-normal
-ml-neg-normal
+.bg-black
+.bg-white
+.bg-transparent
+.bg-gray-300
+.bg-gray-700
+.bg-red-700
+.bg-red-900
+.bg-green-300
+.bg-green-700
 
-mr-extra
-mr-half-normal
-mr-neg-extra
-mr-neg-half-normal
-mr-neg-normal
+.btn-black
+.btn-white
+.btn-gray
+.btn-red
+
+
+-- SPACING
+
+p-none
+p-quarter
+p-half
+p-base
+p-2x
+p-3x
+p-4x
+p-5x
+p-6x
+p-7x
+p-8x
+p-9x	
+p-10x
+p-neg-quarter
+p-neg-half	
+p-neg-base
+p-neg-2x
+p-neg-3x
+p-neg-4x
+p-neg-5x
+p-neg-6x
+p-neg-7x
+p-neg-8x
+p-neg-9x
+p-neg-10x
+
+@3xs:p-none
+@3xs:p-quarter
+@3xs:p-half
+@3xs:p-base
+@3xs:p-2x
+@3xs:p-3x
+@3xs:p-4x
+@3xs:p-5x
+@3xs:p-6x
+@3xs:p-7x
+@3xs:p-8x
+@3xs:p-9x	
+@3xs:p-10x
+@3xs:p-neg-quarter
+@3xs:p-neg-half	
+@3xs:p-neg-base
+@3xs:p-neg-2x
+@3xs:p-neg-3x
+@3xs:p-neg-4x
+@3xs:p-neg-5x
+@3xs:p-neg-6x
+@3xs:p-neg-7x
+@3xs:p-neg-8x
+@3xs:p-neg-9x
+@3xs:p-neg-10x
+
+@2xs:p-none
+@2xs:p-quarter
+@2xs:p-half
+@2xs:p-base
+@2xs:p-2x
+@2xs:p-3x
+@2xs:p-4x
+@2xs:p-5x
+@2xs:p-6x
+@2xs:p-7x
+@2xs:p-8x
+@2xs:p-9x	
+@2xs:p-10x
+@2xs:p-neg-quarter
+@2xs:p-neg-half	
+@2xs:p-neg-base
+@2xs:p-neg-2x
+@2xs:p-neg-3x
+@2xs:p-neg-4x
+@2xs:p-neg-5x
+@2xs:p-neg-6x
+@2xs:p-neg-7x
+@2xs:p-neg-8x
+@2xs:p-neg-9x
+@2xs:p-neg-10x
+
+@xs:p-none
+@xs:p-quarter
+@xs:p-half
+@xs:p-base
+@xs:p-2x
+@xs:p-3x
+@xs:p-4x
+@xs:p-5x
+@xs:p-6x
+@xs:p-7x
+@xs:p-8x
+@xs:p-9x	
+@xs:p-10x
+@xs:p-neg-quarter
+@xs:p-neg-half	
+@xs:p-neg-base
+@xs:p-neg-2x
+@xs:p-neg-3x
+@xs:p-neg-4x
+@xs:p-neg-5x
+@xs:p-neg-6x
+@xs:p-neg-7x
+@xs:p-neg-8x
+@xs:p-neg-9x
+@xs:p-neg-10x
+
+@sm:p-none
+@sm:p-quarter
+@sm:p-half
+@sm:p-base
+@sm:p-2x
+@sm:p-3x
+@sm:p-4x
+@sm:p-5x
+@sm:p-6x
+@sm:p-7x
+@sm:p-8x
+@sm:p-9x	
+@sm:p-10x
+@sm:p-neg-quarter
+@sm:p-neg-half	
+@sm:p-neg-base
+@sm:p-neg-2x
+@sm:p-neg-3x
+@sm:p-neg-4x
+@sm:p-neg-5x
+@sm:p-neg-6x
+@sm:p-neg-7x
+@sm:p-neg-8x
+@sm:p-neg-9x
+@sm:p-neg-10x
+
+@md:p-none
+@md:p-quarter
+@md:p-half
+@md:p-base
+@md:p-2x
+@md:p-3x
+@md:p-4x
+@md:p-5x
+@md:p-6x
+@md:p-7x
+@md:p-8x
+@md:p-9x	
+@md:p-10x
+@md:p-neg-quarter
+@md:p-neg-half	
+@md:p-neg-base
+@md:p-neg-2x
+@md:p-neg-3x
+@md:p-neg-4x
+@md:p-neg-5x
+@md:p-neg-6x
+@md:p-neg-7x
+@md:p-neg-8x
+@md:p-neg-9x
+@md:p-neg-10x
+
+@lg:p-none
+@lg:p-quarter
+@lg:p-half
+@lg:p-base
+@lg:p-2x
+@lg:p-3x
+@lg:p-4x
+@lg:p-5x
+@lg:p-6x
+@lg:p-7x
+@lg:p-8x
+@lg:p-9x	
+@lg:p-10x
+@lg:p-neg-quarter
+@lg:p-neg-half	
+@lg:p-neg-base
+@lg:p-neg-2x
+@lg:p-neg-3x
+@lg:p-neg-4x
+@lg:p-neg-5x
+@lg:p-neg-6x
+@lg:p-neg-7x
+@lg:p-neg-8x
+@lg:p-neg-9x
+@lg:p-neg-10x
+
+@xl:p-none
+@xl:p-quarter
+@xl:p-half
+@xl:p-base
+@xl:p-2x
+@xl:p-3x
+@xl:p-4x
+@xl:p-5x
+@xl:p-6x
+@xl:p-7x
+@xl:p-8x
+@xl:p-9x	
+@xl:p-10x
+@xl:p-neg-quarter
+@xl:p-neg-half	
+@xl:p-neg-base
+@xl:p-neg-2x
+@xl:p-neg-3x
+@xl:p-neg-4x
+@xl:p-neg-5x
+@xl:p-neg-6x
+@xl:p-neg-7x
+@xl:p-neg-8x
+@xl:p-neg-9x
+@xl:p-neg-10x
+
+@2xl:p-none
+@2xl:p-quarter
+@2xl:p-half
+@2xl:p-base
+@2xl:p-2x
+@2xl:p-3x
+@2xl:p-4x
+@2xl:p-5x
+@2xl:p-6x
+@2xl:p-7x
+@2xl:p-8x
+@2xl:p-9x	
+@2xl:p-10x
+@2xl:p-neg-quarter
+@2xl:p-neg-half	
+@2xl:p-neg-base
+@2xl:p-neg-2x
+@2xl:p-neg-3x
+@2xl:p-neg-4x
+@2xl:p-neg-5x
+@2xl:p-neg-6x
+@2xl:p-neg-7x
+@2xl:p-neg-8x
+@2xl:p-neg-9x
+@2xl:p-neg-10x
+
+@3xl:p-none
+@3xl:p-quarter
+@3xl:p-half
+@3xl:p-base
+@3xl:p-2x
+@3xl:p-3x
+@3xl:p-4x
+@3xl:p-5x
+@3xl:p-6x
+@3xl:p-7x
+@3xl:p-8x
+@3xl:p-9x	
+@3xl:p-10x
+@3xl:p-neg-quarter
+@3xl:p-neg-half	
+@3xl:p-neg-base
+@3xl:p-neg-2x
+@3xl:p-neg-3x
+@3xl:p-neg-4x
+@3xl:p-neg-5x
+@3xl:p-neg-6x
+@3xl:p-neg-7x
+@3xl:p-neg-8x
+@3xl:p-neg-9x
+@3xl:p-neg-10x
+
+@4xl:p-none
+@4xl:p-quarter
+@4xl:p-half
+@4xl:p-base
+@4xl:p-2x
+@4xl:p-3x
+@4xl:p-4x
+@4xl:p-5x
+@4xl:p-6x
+@4xl:p-7x
+@4xl:p-8x
+@4xl:p-9x	
+@4xl:p-10x
+@4xl:p-neg-quarter
+@4xl:p-neg-half	
+@4xl:p-neg-base
+@4xl:p-neg-2x
+@4xl:p-neg-3x
+@4xl:p-neg-4x
+@4xl:p-neg-5x
+@4xl:p-neg-6x
+@4xl:p-neg-7x
+@4xl:p-neg-8x
+@4xl:p-neg-9x
+@4xl:p-neg-10x
+
+@5xl:p-none
+@5xl:p-quarter
+@5xl:p-half
+@5xl:p-base
+@5xl:p-2x
+@5xl:p-3x
+@5xl:p-4x
+@5xl:p-5x
+@5xl:p-6x
+@5xl:p-7x
+@5xl:p-8x
+@5xl:p-9x	
+@5xl:p-10x
+@5xl:p-neg-quarter
+@5xl:p-neg-half	
+@5xl:p-neg-base
+@5xl:p-neg-2x
+@5xl:p-neg-3x
+@5xl:p-neg-4x
+@5xl:p-neg-5x
+@5xl:p-neg-6x
+@5xl:p-neg-7x
+@5xl:p-neg-8x
+@5xl:p-neg-9x
+@5xl:p-neg-10x
+
+@6xl:p-none
+@6xl:p-quarter
+@6xl:p-half
+@6xl:p-base
+@6xl:p-2x
+@6xl:p-3x
+@6xl:p-4x
+@6xl:p-5x
+@6xl:p-6x
+@6xl:p-7x
+@6xl:p-8x
+@6xl:p-9x	
+@6xl:p-10x
+@6xl:p-neg-quarter
+@6xl:p-neg-half	
+@6xl:p-neg-base
+@6xl:p-neg-2x
+@6xl:p-neg-3x
+@6xl:p-neg-4x
+@6xl:p-neg-5x
+@6xl:p-neg-6x
+@6xl:p-neg-7x
+@6xl:p-neg-8x
+@6xl:p-neg-9x
+@6xl:p-neg-10x
+
+@7xl:p-none
+@7xl:p-quarter
+@7xl:p-half
+@7xl:p-base
+@7xl:p-2x
+@7xl:p-3x
+@7xl:p-4x
+@7xl:p-5x
+@7xl:p-6x
+@7xl:p-7x
+@7xl:p-8x
+@7xl:p-9x	
+@7xl:p-10x
+@7xl:p-neg-quarter
+@7xl:p-neg-half	
+@7xl:p-neg-base
+@7xl:p-neg-2x
+@7xl:p-neg-3x
+@7xl:p-neg-4x
+@7xl:p-neg-5x
+@7xl:p-neg-6x
+@7xl:p-neg-7x
+@7xl:p-neg-8x
+@7xl:p-neg-9x
+@7xl:p-neg-10x
+
+p-scaling-base
+p-scaling-quarter
+p-scaling-half
+p-scaling-2x
+p-scaling-3x
+p-scaling-4x
+p-scaling-5x
+p-scaling-6x
+p-scaling-7x
+p-scaling-8x
+p-scaling-9x
+p-scaling-10x
+p-neg-scaling-quarter
+p-neg-scaling-half
+p-neg-scaling-base
+p-neg-scaling-2x
+p-neg-scaling-3x
+p-neg-scaling-4x
+p-neg-scaling-5x
+p-neg-scaling-6x
+p-neg-scaling-7x
+p-neg-scaling-8x
+p-neg-scaling-9x
+p-neg-scaling-10x
+
+@3xs:p-scaling-base
+@3xs:p-scaling-quarter
+@3xs:p-scaling-half
+@3xs:p-scaling-2x
+@3xs:p-scaling-3x
+@3xs:p-scaling-4x
+@3xs:p-scaling-5x
+@3xs:p-scaling-6x
+@3xs:p-scaling-7x
+@3xs:p-scaling-8x
+@3xs:p-scaling-9x
+@3xs:p-scaling-10x
+@3xs:p-neg-scaling-quarter
+@3xs:p-neg-scaling-half
+@3xs:p-neg-scaling-base
+@3xs:p-neg-scaling-2x
+@3xs:p-neg-scaling-3x
+@3xs:p-neg-scaling-4x
+@3xs:p-neg-scaling-5x
+@3xs:p-neg-scaling-6x
+@3xs:p-neg-scaling-7x
+@3xs:p-neg-scaling-8x
+@3xs:p-neg-scaling-9x
+@3xs:p-neg-scaling-10x
+
+@2xs:p-scaling-base
+@2xs:p-scaling-quarter
+@2xs:p-scaling-half
+@2xs:p-scaling-2x
+@2xs:p-scaling-3x
+@2xs:p-scaling-4x
+@2xs:p-scaling-5x
+@2xs:p-scaling-6x
+@2xs:p-scaling-7x
+@2xs:p-scaling-8x
+@2xs:p-scaling-9x
+@2xs:p-scaling-10x
+@2xs:p-neg-scaling-quarter
+@2xs:p-neg-scaling-half
+@2xs:p-neg-scaling-base
+@2xs:p-neg-scaling-2x
+@2xs:p-neg-scaling-3x
+@2xs:p-neg-scaling-4x
+@2xs:p-neg-scaling-5x
+@2xs:p-neg-scaling-6x
+@2xs:p-neg-scaling-7x
+@2xs:p-neg-scaling-8x
+@2xs:p-neg-scaling-9x
+@2xs:p-neg-scaling-10x
+
+@xs:p-scaling-base
+@xs:p-scaling-quarter
+@xs:p-scaling-half
+@xs:p-scaling-2x
+@xs:p-scaling-3x
+@xs:p-scaling-4x
+@xs:p-scaling-5x
+@xs:p-scaling-6x
+@xs:p-scaling-7x
+@xs:p-scaling-8x
+@xs:p-scaling-9x
+@xs:p-scaling-10x
+@xs:p-neg-scaling-quarter
+@xs:p-neg-scaling-half
+@xs:p-neg-scaling-base
+@xs:p-neg-scaling-2x
+@xs:p-neg-scaling-3x
+@xs:p-neg-scaling-4x
+@xs:p-neg-scaling-5x
+@xs:p-neg-scaling-6x
+@xs:p-neg-scaling-7x
+@xs:p-neg-scaling-8x
+@xs:p-neg-scaling-9x
+@xs:p-neg-scaling-10x
+
+@sm:p-scaling-base
+@sm:p-scaling-quarter
+@sm:p-scaling-half
+@sm:p-scaling-2x
+@sm:p-scaling-3x
+@sm:p-scaling-4x
+@sm:p-scaling-5x
+@sm:p-scaling-6x
+@sm:p-scaling-7x
+@sm:p-scaling-8x
+@sm:p-scaling-9x
+@sm:p-scaling-10x
+@sm:p-neg-scaling-quarter
+@sm:p-neg-scaling-half
+@sm:p-neg-scaling-base
+@sm:p-neg-scaling-2x
+@sm:p-neg-scaling-3x
+@sm:p-neg-scaling-4x
+@sm:p-neg-scaling-5x
+@sm:p-neg-scaling-6x
+@sm:p-neg-scaling-7x
+@sm:p-neg-scaling-8x
+@sm:p-neg-scaling-9x
+@sm:p-neg-scaling-10x
+
+@md:p-scaling-base
+@md:p-scaling-quarter
+@md:p-scaling-half
+@md:p-scaling-2x
+@md:p-scaling-3x
+@md:p-scaling-4x
+@md:p-scaling-5x
+@md:p-scaling-6x
+@md:p-scaling-7x
+@md:p-scaling-8x
+@md:p-scaling-9x
+@md:p-scaling-10x
+@md:p-neg-scaling-quarter
+@md:p-neg-scaling-half
+@md:p-neg-scaling-base
+@md:p-neg-scaling-2x
+@md:p-neg-scaling-3x
+@md:p-neg-scaling-4x
+@md:p-neg-scaling-5x
+@md:p-neg-scaling-6x
+@md:p-neg-scaling-7x
+@md:p-neg-scaling-8x
+@md:p-neg-scaling-9x
+@md:p-neg-scaling-10x
+
+@lg:p-scaling-base
+@lg:p-scaling-quarter
+@lg:p-scaling-half
+@lg:p-scaling-2x
+@lg:p-scaling-3x
+@lg:p-scaling-4x
+@lg:p-scaling-5x
+@lg:p-scaling-6x
+@lg:p-scaling-7x
+@lg:p-scaling-8x
+@lg:p-scaling-9x
+@lg:p-scaling-10x
+@lg:p-neg-scaling-quarter
+@lg:p-neg-scaling-half
+@lg:p-neg-scaling-base
+@lg:p-neg-scaling-2x
+@lg:p-neg-scaling-3x
+@lg:p-neg-scaling-4x
+@lg:p-neg-scaling-5x
+@lg:p-neg-scaling-6x
+@lg:p-neg-scaling-7x
+@lg:p-neg-scaling-8x
+@lg:p-neg-scaling-9x
+@lg:p-neg-scaling-10x
+
+@xl:p-scaling-base
+@xl:p-scaling-quarter
+@xl:p-scaling-half
+@xl:p-scaling-2x
+@xl:p-scaling-3x
+@xl:p-scaling-4x
+@xl:p-scaling-5x
+@xl:p-scaling-6x
+@xl:p-scaling-7x
+@xl:p-scaling-8x
+@xl:p-scaling-9x
+@xl:p-scaling-10x
+@xl:p-neg-scaling-quarter
+@xl:p-neg-scaling-half
+@xl:p-neg-scaling-base
+@xl:p-neg-scaling-2x
+@xl:p-neg-scaling-3x
+@xl:p-neg-scaling-4x
+@xl:p-neg-scaling-5x
+@xl:p-neg-scaling-6x
+@xl:p-neg-scaling-7x
+@xl:p-neg-scaling-8x
+@xl:p-neg-scaling-9x
+@xl:p-neg-scaling-10x
+
+@2xl:p-scaling-base
+@2xl:p-scaling-quarter
+@2xl:p-scaling-half
+@2xl:p-scaling-2x
+@2xl:p-scaling-3x
+@2xl:p-scaling-4x
+@2xl:p-scaling-5x
+@2xl:p-scaling-6x
+@2xl:p-scaling-7x
+@2xl:p-scaling-8x
+@2xl:p-scaling-9x
+@2xl:p-scaling-10x
+@2xl:p-neg-scaling-quarter
+@2xl:p-neg-scaling-half
+@2xl:p-neg-scaling-base
+@2xl:p-neg-scaling-2x
+@2xl:p-neg-scaling-3x
+@2xl:p-neg-scaling-4x
+@2xl:p-neg-scaling-5x
+@2xl:p-neg-scaling-6x
+@2xl:p-neg-scaling-7x
+@2xl:p-neg-scaling-8x
+@2xl:p-neg-scaling-9x
+@2xl:p-neg-scaling-10x
+
+@3xl:p-scaling-base
+@3xl:p-scaling-quarter
+@3xl:p-scaling-half
+@3xl:p-scaling-2x
+@3xl:p-scaling-3x
+@3xl:p-scaling-4x
+@3xl:p-scaling-5x
+@3xl:p-scaling-6x
+@3xl:p-scaling-7x
+@3xl:p-scaling-8x
+@3xl:p-scaling-9x
+@3xl:p-scaling-10x
+@3xl:p-neg-scaling-quarter
+@3xl:p-neg-scaling-half
+@3xl:p-neg-scaling-base
+@3xl:p-neg-scaling-2x
+@3xl:p-neg-scaling-3x
+@3xl:p-neg-scaling-4x
+@3xl:p-neg-scaling-5x
+@3xl:p-neg-scaling-6x
+@3xl:p-neg-scaling-7x
+@3xl:p-neg-scaling-8x
+@3xl:p-neg-scaling-9x
+@3xl:p-neg-scaling-10x
+
+@4xl:p-scaling-base
+@4xl:p-scaling-quarter
+@4xl:p-scaling-half
+@4xl:p-scaling-2x
+@4xl:p-scaling-3x
+@4xl:p-scaling-4x
+@4xl:p-scaling-5x
+@4xl:p-scaling-6x
+@4xl:p-scaling-7x
+@4xl:p-scaling-8x
+@4xl:p-scaling-9x
+@4xl:p-scaling-10x
+@4xl:p-neg-scaling-quarter
+@4xl:p-neg-scaling-half
+@4xl:p-neg-scaling-base
+@4xl:p-neg-scaling-2x
+@4xl:p-neg-scaling-3x
+@4xl:p-neg-scaling-4x
+@4xl:p-neg-scaling-5x
+@4xl:p-neg-scaling-6x
+@4xl:p-neg-scaling-7x
+@4xl:p-neg-scaling-8x
+@4xl:p-neg-scaling-9x
+@4xl:p-neg-scaling-10x
+
+@5xl:p-scaling-base
+@5xl:p-scaling-quarter
+@5xl:p-scaling-half
+@5xl:p-scaling-2x
+@5xl:p-scaling-3x
+@5xl:p-scaling-4x
+@5xl:p-scaling-5x
+@5xl:p-scaling-6x
+@5xl:p-scaling-7x
+@5xl:p-scaling-8x
+@5xl:p-scaling-9x
+@5xl:p-scaling-10x
+@5xl:p-neg-scaling-quarter
+@5xl:p-neg-scaling-half
+@5xl:p-neg-scaling-base
+@5xl:p-neg-scaling-2x
+@5xl:p-neg-scaling-3x
+@5xl:p-neg-scaling-4x
+@5xl:p-neg-scaling-5x
+@5xl:p-neg-scaling-6x
+@5xl:p-neg-scaling-7x
+@5xl:p-neg-scaling-8x
+@5xl:p-neg-scaling-9x
+@5xl:p-neg-scaling-10x
+
+@6xl:p-scaling-base
+@6xl:p-scaling-quarter
+@6xl:p-scaling-half
+@6xl:p-scaling-2x
+@6xl:p-scaling-3x
+@6xl:p-scaling-4x
+@6xl:p-scaling-5x
+@6xl:p-scaling-6x
+@6xl:p-scaling-7x
+@6xl:p-scaling-8x
+@6xl:p-scaling-9x
+@6xl:p-scaling-10x
+@6xl:p-neg-scaling-quarter
+@6xl:p-neg-scaling-half
+@6xl:p-neg-scaling-base
+@6xl:p-neg-scaling-2x
+@6xl:p-neg-scaling-3x
+@6xl:p-neg-scaling-4x
+@6xl:p-neg-scaling-5x
+@6xl:p-neg-scaling-6x
+@6xl:p-neg-scaling-7x
+@6xl:p-neg-scaling-8x
+@6xl:p-neg-scaling-9x
+@6xl:p-neg-scaling-10x
+
+@7xl:p-scaling-base
+@7xl:p-scaling-quarter
+@7xl:p-scaling-half
+@7xl:p-scaling-2x
+@7xl:p-scaling-3x
+@7xl:p-scaling-4x
+@7xl:p-scaling-5x
+@7xl:p-scaling-6x
+@7xl:p-scaling-7x
+@7xl:p-scaling-8x
+@7xl:p-scaling-9x
+@7xl:p-scaling-10x
+@7xl:p-neg-scaling-quarter
+@7xl:p-neg-scaling-half
+@7xl:p-neg-scaling-base
+@7xl:p-neg-scaling-2x
+@7xl:p-neg-scaling-3x
+@7xl:p-neg-scaling-4x
+@7xl:p-neg-scaling-5x
+@7xl:p-neg-scaling-6x
+@7xl:p-neg-scaling-7x
+@7xl:p-neg-scaling-8x
+@7xl:p-neg-scaling-9x
+@7xl:p-neg-scaling-10x
+
+{
+		pattern: /(text|bg|btn|icon)-(white|black|transparent|red)/, //adjust colors to match list available in color def
+		variants: ['hover', 'focus'],
+	  },
+	  {
+		pattern: /(text|bg|btn|icon)-gray-(100|200|300|400|500|600|700|800|900)/, //adjust colors to match list available in color def
+		variants: ['hover', 'focus'],
+	  },
+	  {
+		pattern: /(p|m|px|py|pt|pl|pr|pb|mt|mb|ml|mr|mx|my)-(none|0|quarter|half|base|2x|3x|4x|normal|extra|neg-quarter|neg-half|neg-base|neg-2x|neg-3x|neg-4x|half-normal|neg-half-normal|neg-normal|neg-extra)/, //adjust sizes to match list available in spacing def
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /text-(scaling-)?(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|left|center|right|justify)/, //adjust sizes to match list available in text size def and alignment settings
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /(not-)?italic/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		  //Add in the names of any fonts being used to make sure the class name is kept
+		  pattern: /font-(normal|bold|brother)/, 
+		  variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+		},
+	  {
+		pattern: /tracking-(tighter|tight|normal|wide|wider|widest)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /(normal-case|capitalize|uppercase|lowercase)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /w-(full|1\/5|1\/4|1\/3|2\/5|1\/2|3\/5|2\/3|3\/4|4\/5)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /order-(first|last|1|2|3|4|5)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /(items|self)-(stretch|start|center|end)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /justify-(start|center|end|between|evenly)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /btn-(standard|text|text-arrow|sm|md|lg)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /icon-(small|medium|large)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /aspect-(auto|square|video|4\/3|3\/2|3\/1|2\/1|4\/1)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /(block|hidden|inline|inline-block|flex)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },	  
+	  {
+	  	pattern: /(text-wrap-left|text-wrap-right|text-wrap-none|hidden|not-hidden|block|flex-wrap|flex-nowrap)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/card', '@sm/card', '@md/card', '@lg/card', '@xl/card', '@2xl/card', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+	    pattern: /columns-(\d)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /(bg|object)-(repeat|repeat-x|repeat-y|no-repeat|auto|contain|cover|center|left-top|top|right-top|left|right|left-bottom|bottom|right-bottom)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },
+	  {
+		pattern: /opacity-(0|10|20|30|40|50|60|70|80|90|100)/, 
+		variants: ['sm', 'md', 'lg', 'xl', '2xl', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl', '@xs/list', '@sm/list', '@md/list', '@lg/list', '@xl/list', '@2xl/list', '@xs/component', '@sm/component', '@md/component', '@lg/component', '@xl/component', '@2xl/component'],
+	  },

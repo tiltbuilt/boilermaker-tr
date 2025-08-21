@@ -55,9 +55,9 @@ x-init="swiper = new Swiper($refs.container, {
 		<div class="swiper-wrapper">
 			{% for listItem in listContent %}
 				<div id="{{blockId}}-slide{{loop.index}}" class="slide swiper-slide {{colorScheme}}">					
-					<div class="repeater-slide-layout w-full h-full @sm/list:flex @sm/list:flex-nowrap @sm/list:justify-center @sm/list:items-stretch">
+					<div class="repeater-slide-layout w-full h-full @sm/component:flex @sm/component:flex-nowrap @sm/component:justify-center @sm/component:items-stretch">
 						
-						<div class="repeater-slider-lg-img w-full @sm/list:h-full relative @sm/list:w-1/2 @md/list:w-1/3 @xl/list:w-1/4">
+						<div class="repeater-slider-lg-img w-full @sm/component:h-full relative @sm/component:w-1/2 @md/component:w-1/3 @xl/component:w-1/4">
 							{% if listItem.url|length %}
 								<a href="{{listItem.url}}" {% if listItem.newTab %}target="_blank"{% endif %} class="block h-full">
 							{% endif %}
@@ -80,7 +80,7 @@ x-init="swiper = new Swiper($refs.container, {
 							  data-src="{{ mobileStartImage }}"
 							  data-srcset="{{ craft.imager.srcset(mobileImages) }}"
 							  alt="{{ entry.title }}"
-							  class="lazyload block object-cover w-full @sm/list:hidden"
+							  class="lazyload block object-cover w-full @sm/component:hidden"
 							  loading="lazy"
 							>
 									
@@ -91,7 +91,7 @@ x-init="swiper = new Swiper($refs.container, {
 							  data-src="{{ largerStartImage }}"
 							  data-srcset="{{ craft.imager.srcset(largerImages) }}"
 							  alt="{{ entry.title }}"
-							  class="lazyload hidden w-full h-full object-cover @sm/list:block absolute inset-0"
+							  class="lazyload hidden w-full h-full object-cover @sm/component:block absolute inset-0"
 							  loading="lazy"
 							>
 							{% if listItem.url|length %}
@@ -99,7 +99,7 @@ x-init="swiper = new Swiper($refs.container, {
 							{% endif %}
 						</div>
 						
-						<div class="repeater-card-content w-full flex flex-col justify-center @sm/list:w-1/2 @md/list:w-2/3 @xl/list:w-3/4">
+						<div class="repeater-card-content w-full flex flex-col justify-center @sm/component:w-1/2 @md/component:w-2/3 @xl/component:w-3/4">
 							<{{ headingLvl}} class="repeater-list-card-header">					
 								{% if listItem.url|length %}
 									<a href="{{listItem.url}}" {% if listItem.newTab %}target="_blank"{% endif %}>

@@ -2,7 +2,8 @@
 
 	.page-header {
 		width: 100vw;
-		position: relative;		
+		position: relative;	
+		background-color: var(--color-pg-header-bg);	
 	}
 
 	.page-header-layout {
@@ -39,18 +40,21 @@
 	.page-header-headline {
 		font-weight: bold;
 		font-size: var(--text-scaling-4xl);	
+		color: var(--color-pg-header-headline);
 	}
 
 	.page-header-subhead {
 		margin-top: var(--spacing-scaling-half);
 		font-weight: bold;
 		font-size: var(--text-scaling-2xl);
+		color: var(--color-pg-header-subhead);
 	}
 
 	.page-header-intro {
 		max-width: var(--prose);
 		margin-top: var(--spacing-scaling-half);
 		font-size: var(--text-scaling-xl);
+		color: var(--color-pg-header-text);
 	}
 
 }

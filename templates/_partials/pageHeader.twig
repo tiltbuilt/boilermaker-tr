@@ -28,7 +28,7 @@
 
 {# set default color scheme for page header if none is set #}
 {% if entry.pageHeaderColorScheme == null %}
-    {% set pageHeaderColorScheme = 'colormode-pageheader' %}
+    {% set pageHeaderColorScheme = 'color-theme-page-header-default' %}
 {% else %}
     {% set pageHeaderColorScheme = entry.pageHeaderColorScheme.class %}
 {% endif %}

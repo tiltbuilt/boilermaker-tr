@@ -17,11 +17,11 @@
 
 {% if cardRowSizes != null and cardRowSizes|length %}
 	{% for rowSize in cardRowSizes %}
-		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/list:w-1/' ~ rowSize.numberOfCards]) %}
+		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
 	{% endfor %}
 {% endif %}
 
-<div class="repeater-list-card-wrapper @container/list">	
+<div class="repeater-list-card-wrapper">	
 	{% for listItem in listContent %}	
    		{% if listItem.url != null and listItem.url|length %}
 		   {% set outerTag = 'a' %}

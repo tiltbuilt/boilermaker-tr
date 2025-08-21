@@ -1,4 +1,10 @@
+/* WEBFONTS */
 @import './app-webfonts.css';
+
+/* SAFELIST */
+@import './app-safelist.css';
+
+/* IMPORTS */
 @import "tailwindcss";
 @import './app-theme-global.css';
 @import './app-theme-project.css';

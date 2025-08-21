@@ -17,7 +17,7 @@
 
 {% if cardRowSizes != null and cardRowSizes|length %}
 	{% for rowSize in cardRowSizes %}
-		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/list:w-1/' ~ rowSize.numberOfCards]) %}
+		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
 	{% endfor %}
 {% endif %}
 
@@ -31,8 +31,8 @@
 		
 		<div class="{{ cardClasses|join(' ') }}">			
 			<{{outerTag}} {% if listItem.url != null and listItem.url|length %}href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} {% endif %} class="repeater-card-inner">				
-				<div class="w-full h-full @sm/list:flex @sm/list:flex-nowrap @sm/list:justify-center @sm/list:items-center">
-					<div class="repeater-card-sm-img w-full @sm/list:h-full relative @sm/list:w-1/3 @lg/list:w-1/4">
+				<div class="w-full h-full @sm/component:flex @sm/component:flex-nowrap @sm/component:justify-center @sm/component:items-center">
+					<div class="repeater-card-sm-img w-full @sm/component:h-full relative @sm/component:w-1/3 @lg/component:w-1/4">
 						
 						{% set image = listItem.image[0] %}
 						{% set mobileXForm = 'image-' ~ gSettings.thumbAspectLg %}
@@ -53,7 +53,7 @@
 					  	data-src="{{ mobileStartImage }}"
 					  	data-srcset="{{ craft.imager.srcset(mobileImages) }}"
 					  	alt="{{ entry.title }}"
-					  	class="lazyload block object-cover w-full @sm/list:hidden"
+					  	class="lazyload block object-cover w-full @sm/component:hidden"
 					  	loading="lazy"
 						>
 								
@@ -64,12 +64,12 @@
 					  	data-src="{{ largerStartImage }}"
 					  	data-srcset="{{ craft.imager.srcset(largerImages) }}"
 					  	alt="{{ entry.title }}"
-					  	class="lazyload hidden w-full h-full object-cover @sm/list:block absolute inset-0"
+					  	class="lazyload hidden w-full h-full object-cover @sm/component:block absolute inset-0"
 					  	loading="lazy"
 						>
 					</div>
 					
-					<div class="repeater-card-content w-full @sm/list:w-2/3 @lg/list:w-3/4">
+					<div class="repeater-card-content w-full @sm/component:w-2/3 @lg/component:w-3/4">
 						<{{ headingLvl}} class="repeater-list-card-header">					
 							{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><sup><sub><br>') }}					  
 						</{{ headingLvl }}>

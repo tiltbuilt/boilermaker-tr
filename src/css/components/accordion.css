@@ -49,7 +49,7 @@
 			color: var(--color-accordion-button-icon);
 		}
 
-		&:hover, &:focus, &.active {
+		&:hover, &.active {
 			color: var(--color-accordion-button-text-hover);
 			background-color: var(--color-accordion-button-bg-hover);
 			outline: none;

@@ -57,13 +57,6 @@
 	--spacing-neg-scaling-9x: calc(-9 * var(--spacing-scaling-base));
 	--spacing-neg-scaling-10x: calc(-10 * var(--spacing-scaling-base));
 
-	--spacing-normal: var(--spacing-scaling-base);
-	--spacing-neg-normal: var(--spacing-neg-scaling-base);
-	--spacing-half-normal: var(--spacing-scaling-half);
-	--spacing-neg-half-normal: var(--spacing-neg-scaling-half);
-	--spacing-extra: var(--spacing-scaling-2x);
-	--spacing-neg-extra: var(--spacing-neg-scaling-2x);
-		
 	
 	/* BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */
 	--breakpoint-sm: 640px;

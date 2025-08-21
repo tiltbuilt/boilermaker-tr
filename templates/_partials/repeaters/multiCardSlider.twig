@@ -17,7 +17,7 @@
 
 {% if cardRowSizes != null and cardRowSizes|length %}
 	{% for rowSize in cardRowSizes %}
-		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/list:w-1/' ~ rowSize.numberOfCards]) %}
+		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
 	{% endfor %}
 {% endif %}
 
@@ -103,7 +103,7 @@ x-init="swiper = new Swiper($refs.container, {
 							  data-src="{{ mobileStartImage }}"
 							  data-srcset="{{ craft.imager.srcset(mobileImages) }}"
 							  alt="{{ entry.title }}"
-							  class="lazyload block object-cover w-full @md/list:hidden"
+							  class="lazyload block object-cover w-full @md/component:hidden"
 							  loading="lazy"
 							>
 									
@@ -114,7 +114,7 @@ x-init="swiper = new Swiper($refs.container, {
 							  data-src="{{ largerStartImage }}"
 							  data-srcset="{{ craft.imager.srcset(largerImages) }}"
 							  alt="{{ entry.title }}"
-							  class="lazyload hidden w-full h-full object-cover @md/list:block"
+							  class="lazyload hidden w-full h-full object-cover @md/component:block"
 							  loading="lazy"
 							>
 						</div>

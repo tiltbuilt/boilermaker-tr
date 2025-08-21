@@ -19,7 +19,7 @@ settings:
           - ''
         -
           - class
-          - colormode-light
+          - color-theme-light
     -
       __assoc__:
         -
@@ -33,7 +33,7 @@ settings:
           - '1'
         -
           - class
-          - colormode-dark
+          - color-theme-dark
   palette: null
   setRandom: false
   useConfigFile: false

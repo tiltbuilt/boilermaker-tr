@@ -1,4 +1,4 @@
-dateModified: 1754083001
+dateModified: 1755796473
 elementSources:
   craft\elements\Entry:
     -
@@ -478,7 +478,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: Z2TKXCPCSLGLRAT70BFEM1QC
-    schemaVersion: 3.4.9
+    schemaVersion: 3.4.10
   icon-picker:
     edition: standard
     enabled: true

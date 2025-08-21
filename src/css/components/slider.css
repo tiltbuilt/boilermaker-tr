@@ -100,6 +100,11 @@
 			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 			transform: translateY(-50%);	
 			margin: 0;
+			color: var(--color-slider-nav-button);
+
+			&:hover {
+				color: var(--color-slider-nav-button-hover);
+			}
 				
 			&::after {
 				content: '';
@@ -136,7 +141,7 @@
 			padding-top: var(--spacing-base);
 			padding-bottom: var(--spacing-base);
 			bottom: 0px;
-			z-index: 20;
+			z-index: 20;			 
 			/*top: 100%;*/
 		}	
 		
@@ -148,6 +153,15 @@
 			height: 8px;
 			opacity: 1;	
 			transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+			color: var(--color-slider-pag-bullet);
+
+			&:hover {
+				background-color: var(--color-slider-pag-bullet-hover);
+			}
+
+			&.swiper-pagination-bullet-active {
+				background-color: var(--color-slider-pag-bullet-active);
+			}
 		}
 	}
 

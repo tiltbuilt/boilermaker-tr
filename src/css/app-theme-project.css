@@ -16,12 +16,22 @@
 	--color-gray-700: #374151;
 	--color-green-700:: #16a34a;
 	--color-green-300: #4ade80; 
+
+	/* MODALS */
+	--color-modal-overlay-bg: var(--color-black);
+	--color-modal-window-bg: var(--color-white);
+	--color-button-modal-close: var(--color-white);
+	--color-button-modal-close-hover: var(--color-red-700);
+	--color-modal-overlay-opacity: 0.7;
+
 }
 
 
 @layer components {
 
-	.color-theme-light {
+	/* You can name the color schemeclass names anything you want, but one has to also have a classname of .color-theme-default, and one has to have a name of .color-theme-page-header-default. */
+	
+	.color-theme-light, .color-theme-default {
 		
 		/* SECTION */
 		--color-section-text: var(--color-black);
@@ -41,8 +51,8 @@
 
 		/* BLOCKQUOTES */
 		--color-blockquote-text: var(--color-black);
-		--color-blockquote-credit: var(--color-gray-900);
-		--color-blockquote-credit-title: var(--color-gray-900);
+		--color-blockquote-credit: var(--color-gray-700);
+		--color-blockquote-credit-title: var(--color-gray-700);
 
 		/* BUTTONS */
 		--color-button-standard-text: var(--color-white);
@@ -60,17 +70,142 @@
 		--color-form-error-block-text: var(--color-white);
 		--color-form-error-block-bg: var(--color-red-700);
 		--color-form-field-error-text: var(--color-red-900);
-		--color-form-success-block-text: var(--color-black);
-		--color-form-success-block-bg: var(--color-gray-300);
+		--color-form-success-block-text: var(--color-green-700);
+		--color-form-success-block-bg: var(--color-green-300);
 
 		/* ICONS */
 		--color-icon-single-color: var(--color-red-700);
 
 		/* IMAGES */
 		--color-image-caption-text: var(--color-black);
-		--color-image-caption-bg: var(--color-gray-300);	
-
+		--color-image-caption-bg: var(--color-gray-300);
 		
+		/* MODALS */
+		--color-modal-overlay-bg: var(--color-black);
+		--color-modal-window-bg: var(--color-white);
+		--color-button-modal-close: var(--color-white);
+		--color-button-modal-close-hover: var(--color-red-700);
+		--color-modal-overlay-opacity: 0.7;
+
+		/* PAGE HEADER */
+		--color-pg-header-bg: var(--color-white);
+		--color-pg-header-headline: var(--color-black);
+		--color-pg-header-subhead: var(--color-black);
+		--color-pg-header-text: var(--color-black);
+
+		/* REPEATERS */
+		--color-repeater-card-bg: var(--color-gray-300);
+		--color-repeater-card-header: var(--color-red-700);
+		--color-repeater-card-header-hover: var(--color-red-900);
+
+		/* SLIDERS */
+		--color-slider-nav-button: var(--color-red-700);
+		--color-slider-nav-button-hover: var(--color-red-900);
+		--color-slider-pag-bullet: var(--color-gray-700);
+		--color-slider-pag-bullet-hover: var(--color-red-700);
+		--color-slider-pag-bullet-active: var(--color-red-900);
+
+		/* TAB SETS */
+		--color-tab-btn-text: var(--color-red-900);
+		--color-tab-btn-bg: var(--color-transparent);
+		--color-tab-btn-text-hover: var(--color-red-700);
+		--color-tab-btn-bg-hover: var(--color-transparent);
+		--color-tab-btn-icon: var(--color-red-900);
+		--color-tab-btn-icon-hover: var(--color-red-700);
+		--color-tab-btn-text-active: var(--color-red-700);
+		--color-tab-btn-bg-active: var(--color-gray-300);
+		--color-tab-btn-icon-active: var(--color-red-700);	
+		--color-tab-panel-text: var(--color-black);
+		--color-tab-panel-bg: var(--color-gray-300);
+
+		/* TYPOGRAPHY */
+		--color-type-headline-default: var(--color-black);
+		--color-type-subhead-default: var(--color-black);
+	}
+
+	.color-theme-dark, .color-theme-page-header-default {
+		
+		/* SECTION */
+		--color-section-text: var(--color-white);
+		--color-section-background: var(--color-black);
+		--color-text-link: var(--color-red-700);
+		--color-text-link-hover: var(--color-red-900);
+
+		/* ACCORDIONS */
+		--color-accordion-text: var(--color-white);
+		--color-accordion-background: var(--color-gray-700);
+		--color-accordion-button-text: var(--color-white);
+		--color-accordion-button-bg: var(--color-red-700);
+		--color-accordion-button-text-hover: var(--color-white);
+		--color-accordion-button-bg-hover: var(--color-red-900);
+		--color-accordion-button-icon: var(--color-white);
+		--color-accordion-button-icon-hover: var(--color-white);
+
+		/* BLOCKQUOTES */
+		--color-blockquote-text: var(--color-white);
+		--color-blockquote-credit: var(--color-gray-300);
+		--color-blockquote-credit-title: var(--color-gray-300);
+
+		/* BUTTONS */
+		--color-button-standard-text: var(--color-white);
+		--color-button-standard-bg: var(--color-red-700);
+		--color-button-standard-text-hover: var(--color-white);
+		--color-button-standard-bg-hover: var(--color-red-900);
+		--color-button-text-text: var(--color-red-700);		
+		--color-button-text-text-hover: var(--color-red-900);
+		--color-button-text-arrow: var(--color-white);
+		--color-button-text-arrow-hover: var(--color-red-700);
+
+		/* FORMS */
+		--color-form-input-text: var(--color-white);
+		--color-form-input-bg: var(--color-gray-700);
+		--color-form-error-block-text: var(--color-white);
+		--color-form-error-block-bg: var(--color-red-700);
+		--color-form-field-error-text: var(--color-red-900);
+		--color-form-success-block-text: var(--color-green-700);
+		--color-form-success-block-bg: var(--color-green-300);
+
+		/* ICONS */
+		--color-icon-single-color: var(--color-red-700);
+
+		/* IMAGES */
+		--color-image-caption-text: var(--color-white);
+		--color-image-caption-bg: var(--color-gray-700);
+				
+		/* PAGE HEADER */
+		--color-pg-header-bg: var(--color-black);
+		--color-pg-header-headline: var(--color-white);
+		--color-pg-header-subhead: var(--color-white);
+		--color-pg-header-text: var(--color-white);
+
+		/* REPEATERS */
+		--color-repeater-card-bg: var(--color-gray-700);
+		--color-repeater-card-header: var(--color-red-700);
+		--color-repeater-card-header-hover: var(--color-red-900);
+
+		/* SLIDERS */
+		--color-slider-nav-button: var(--color-red-700);
+		--color-slider-nav-button-hover: var(--color-red-900);
+		--color-slider-pag-bullet: var(--color-gray-300);
+		--color-slider-pag-bullet-hover: var(--color-red-700);
+		--color-slider-pag-bullet-active: var(--color-red-900);
+
+		/* TAB SETS */
+		--color-tab-btn-text: var(--color-red-900);
+		--color-tab-btn-bg: var(--color-transparent);
+		--color-tab-btn-text-hover: var(--color-red-700);
+		--color-tab-btn-bg-hover: var(--color-transparent);
+		--color-tab-btn-icon: var(--color-red-900);
+		--color-tab-btn-icon-hover: var(--color-red-700);
+		--color-tab-btn-text-active: var(--color-red-700);
+		--color-tab-btn-bg-active: var(--color-gray-300);
+		--color-tab-btn-icon-active: var(--color-red-700);	
+		--color-tab-panel-text: var(--color-white);
+		--color-tab-panel-bg: var(--color-gray-700);
+
+		/* TYPOGRAPHY */
+		--color-type-headline-default: var(--color-white);
+		--color-type-subhead-default: var(--color-white);
 	}
 	
 	

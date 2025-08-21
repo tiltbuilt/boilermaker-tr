@@ -19,7 +19,7 @@ settings:
           - ''
         -
           - class
-          - colormode-light
+          - color-theme-light
     -
       __assoc__:
         -
@@ -33,21 +33,7 @@ settings:
           - ''
         -
           - class
-          - colormode-dark
-    -
-      __assoc__:
-        -
-          - label
-          - Test
-        -
-          - color
-          - '#FF0000'
-        -
-          - default
-          - ''
-        -
-          - class
-          - colormode-red
+          - color-theme-dark
   palette: null
   setRandom: false
   useConfigFile: false

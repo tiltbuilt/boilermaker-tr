@@ -32,9 +32,17 @@
 	/* site specific headline and subhead styles - can be overriden by adjustments */
 
 	.headline-default {
-		font-family: serif;
+		font-family: sans-serif;
 		font-weight: bold;
-		font-size: var(--text-scaling-2x);
+		font-size: var(--text-scaling-4xl);
+		color: var(--color-type-headline-default);
+	}
+
+	.subhead-default {
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: var(--text-scaling-2xl);
+		color: var(--color-type-subhead-default);
 	}
 
 	/* PARAGRAPHS AND LISTS */

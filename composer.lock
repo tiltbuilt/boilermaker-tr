@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aaf684a77e9c6945f55d2c3e2429ee9d",
+    "content-hash": "747024e504cf229dd1c0a35090a288b3",
     "packages": [
         {
             "name": "amphp/amp",
@@ -347,16 +347,16 @@
         },
         {
             "name": "amphp/http-client",
-            "version": "v5.3.3",
+            "version": "v5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/http-client.git",
-                "reference": "09212ebc2f34efb5e1eaac4374fef6b11a7d2fbc"
+                "reference": "75ad21574fd632594a2dd914496647816d5106bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/http-client/zipball/09212ebc2f34efb5e1eaac4374fef6b11a7d2fbc",
-                "reference": "09212ebc2f34efb5e1eaac4374fef6b11a7d2fbc",
+                "url": "https://api.github.com/repos/amphp/http-client/zipball/75ad21574fd632594a2dd914496647816d5106bc",
+                "reference": "75ad21574fd632594a2dd914496647816d5106bc",
                 "shasum": ""
             },
             "require": {
@@ -433,7 +433,7 @@
             ],
             "support": {
                 "issues": "https://github.com/amphp/http-client/issues",
-                "source": "https://github.com/amphp/http-client/tree/v5.3.3"
+                "source": "https://github.com/amphp/http-client/tree/v5.3.4"
             },
             "funding": [
                 {
@@ -441,7 +441,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-21T03:24:20+00:00"
+            "time": "2025-08-16T20:41:23+00:00"
         },
         {
             "name": "amphp/parallel",
@@ -1449,15 +1449,15 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.9.0",
+            "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/df2ea2ec6a689b276507c83c38eb982a0287651a",
-                "reference": "df2ea2ec6a689b276507c83c38eb982a0287651a",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/6619d081de4f1fe821cfe1e7bb981286b08c02fa",
+                "reference": "6619d081de4f1fe821cfe1e7bb981286b08c02fa",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^5.6.0",
+                "craftcms/cms": "^5.6.1",
                 "craftcms/html-field": "^3.4.0",
                 "embed/embed": "^4.4",
                 "nystudio107/craft-code-editor": ">=1.0.8 <=1.0.13 || ^1.0.16",
@@ -1498,15 +1498,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2025-05-23T15:58:04+00:00"
+            "time": "2025-08-18T17:29:45+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "5.8.13.2",
+            "version": "5.8.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/372b56f32967414a162d49bfb27a7d2e2a207924",
-                "reference": "372b56f32967414a162d49bfb27a7d2e2a207924",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/1fed537fa97b9c9c169124add2a23570c3cbc4b6",
+                "reference": "1fed537fa97b9c9c169124add2a23570c3cbc4b6",
                 "shasum": ""
             },
             "require": {
@@ -1517,7 +1517,7 @@
                 "craftcms/server-check": "~5.0.1",
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "elvanto/litemoji": "~4.3.0",
-                "enshrined/svg-sanitize": "~0.19.0",
+                "enshrined/svg-sanitize": "~0.22.0",
                 "ext-bcmath": "*",
                 "ext-curl": "*",
                 "ext-dom": "*",
@@ -1603,15 +1603,15 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-08-07T11:14:33+00:00"
+            "time": "2025-08-13T18:19:49+00:00"
         },
         {
             "name": "craftcms/feed-me",
-            "version": "6.8.0",
+            "version": "6.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/cdb3873fd96b941449eec82464284df476b1c52b",
-                "reference": "cdb3873fd96b941449eec82464284df476b1c52b",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/6b15f095b003e6abd453731e1c066932ee603178",
+                "reference": "6b15f095b003e6abd453731e1c066932ee603178",
                 "shasum": ""
             },
             "require": {
@@ -1661,7 +1661,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v6/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2025-03-15T04:08:02+00:00"
+            "time": "2025-08-15T22:22:50+00:00"
         },
         {
             "name": "craftcms/flysystem",
@@ -2583,17 +2583,25 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.19.0",
+            "version": "0.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/darylldoyle/svg-sanitizer.git",
+                "reference": "0afa95ea74be155a7bcd6c6fb60c276c39984500"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e95cd17be68e45f523cbfb0fe50cdd891b0cf20e",
-                "reference": "e95cd17be68e45f523cbfb0fe50cdd891b0cf20e",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/0afa95ea74be155a7bcd6c6fb60c276c39984500",
+                "reference": "0afa95ea74be155a7bcd6c6fb60c276c39984500",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "php": "^5.6 || ^7.0 || ^8.0"
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5 || ^8.5"
             },
             "type": "library",
             "autoload": {
@@ -2601,6 +2609,7 @@
                     "enshrined\\svgSanitize\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -2611,7 +2620,11 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2024-06-18T10:27:15+00:00"
+            "support": {
+                "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.22.0"
+            },
+            "time": "2025-08-12T10:13:48+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -6243,11 +6256,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "5.0.11",
+            "version": "5.0.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/f34d15d7bdad5be5b4bb506ad10cca115f5708a9",
-                "reference": "f34d15d7bdad5be5b4bb506ad10cca115f5708a9",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/ea13abef1d2aef6712ba6e8ce449b92733c38c61",
+                "reference": "ea13abef1d2aef6712ba6e8ce449b92733c38c61",
                 "shasum": ""
             },
             "require": {
@@ -6291,15 +6304,15 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2025-06-14T01:29:05+00:00"
+            "time": "2025-08-17T21:59:07+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "5.1.16",
+            "version": "5.1.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/c328ca7a70f0a551c4f853a021d6ec1b46b9bb1a",
-                "reference": "c328ca7a70f0a551c4f853a021d6ec1b46b9bb1a",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/172631306d30d2ee4c40bc7372f31704c9ad399b",
+                "reference": "172631306d30d2ee4c40bc7372f31704c9ad399b",
                 "shasum": ""
             },
             "require": {
@@ -6352,20 +6365,20 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2025-06-11T21:30:41+00:00"
+            "time": "2025-08-17T22:24:55+00:00"
         },
         {
             "name": "nystudio107/craft-twig-sandbox",
-            "version": "5.0.4",
+            "version": "5.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-twig-sandbox.git",
-                "reference": "9237604a45094e0055dfe1fae9ed83f0b5bc4aea"
+                "reference": "e4742fcf97ac01ab76d36118c357f0221c7a5ce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twig-sandbox/zipball/9237604a45094e0055dfe1fae9ed83f0b5bc4aea",
-                "reference": "9237604a45094e0055dfe1fae9ed83f0b5bc4aea",
+                "url": "https://api.github.com/repos/nystudio107/craft-twig-sandbox/zipball/e4742fcf97ac01ab76d36118c357f0221c7a5ce0",
+                "reference": "e4742fcf97ac01ab76d36118c357f0221c7a5ce0",
                 "shasum": ""
             },
             "require": {
@@ -6414,7 +6427,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-10T22:33:22+00:00"
+            "time": "2025-08-18T16:00:57+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -6968,16 +6981,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.2",
+            "version": "5.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62"
+                "reference": "94f8051919d1b0369a6bcc7931d679a511c03fe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/92dde6a5919e34835c506ac8c523ef095a95ed62",
-                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94f8051919d1b0369a6bcc7931d679a511c03fe9",
+                "reference": "94f8051919d1b0369a6bcc7931d679a511c03fe9",
                 "shasum": ""
             },
             "require": {
@@ -7026,9 +7039,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.2"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.3"
             },
-            "time": "2025-04-13T19:20:35+00:00"
+            "time": "2025-08-01T19:43:32+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -7777,11 +7790,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "5.12.1",
+            "version": "5.12.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/29c75c1946415a8839c914a1bf9df0aa51b69a6d",
-                "reference": "29c75c1946415a8839c914a1bf9df0aa51b69a6d",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/c57d37e5dadd2823199864728d446b0d0b5c33bc",
+                "reference": "c57d37e5dadd2823199864728d446b0d0b5c33bc",
                 "shasum": ""
             },
             "require": {
@@ -7825,21 +7838,21 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2025-08-02T10:58:33+00:00"
+            "time": "2025-08-14T16:26:24+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar",
-            "version": "1.0.0-RC.6",
+            "version": "1.0.0-RC.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/6a464c3342977f8bf9bc4ebc5b6cecb63eebdca0",
-                "reference": "6a464c3342977f8bf9bc4ebc5b6cecb63eebdca0",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/ac66b29a4bd0b142c9cce4ed1d0528a11a721f17",
+                "reference": "ac66b29a4bd0b142c9cce4ed1d0528a11a721f17",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.4",
                 "php": "^8.2",
-                "putyourlightson/craft-datastar-module": "^1.0.0-RC.7"
+                "putyourlightson/craft-datastar-module": "^1.0.0-RC.8"
             },
             "type": "craft-plugin",
             "extra": {
@@ -7860,20 +7873,20 @@
                 "mit"
             ],
             "description": "A reactive hypermedia framework for Craft.",
-            "time": "2025-08-10T06:35:22+00:00"
+            "time": "2025-08-19T17:53:03+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar-module",
-            "version": "1.0.0-RC.7",
+            "version": "1.0.0-RC.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar-module.git",
-                "reference": "18ce20fac293104dcaaa5a57eb1ef40772152c25"
+                "reference": "4b3df2108f3279da13cc931749c9caa05e063a3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/18ce20fac293104dcaaa5a57eb1ef40772152c25",
-                "reference": "18ce20fac293104dcaaa5a57eb1ef40772152c25",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/4b3df2108f3279da13cc931749c9caa05e063a3b",
+                "reference": "4b3df2108f3279da13cc931749c9caa05e063a3b",
                 "shasum": ""
             },
             "require": {
@@ -7909,15 +7922,15 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-10T06:29:42+00:00"
+            "time": "2025-08-19T17:50:34+00:00"
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "3.6.0",
+            "version": "3.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/d1f999b4cf0c527ee1d4899f85aa415f9cb89af2",
-                "reference": "d1f999b4cf0c527ee1d4899f85aa415f9cb89af2",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/fd15728f5d9a962eb2f50b6a973d7b714dd68383",
+                "reference": "fd15728f5d9a962eb2f50b6a973d7b714dd68383",
                 "shasum": ""
             },
             "require": {
@@ -7939,7 +7952,7 @@
                 "source": "https://github.com/putyourlightson/craft-sprig-core",
                 "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2025-04-09T17:20:59+00:00"
+            "time": "2025-08-09T07:49:12+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -10163,7 +10176,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -10222,7 +10235,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10234,6 +10247,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -10242,7 +10259,7 @@
         },
         {
             "name": "symfony/polyfill-iconv",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-iconv.git",
@@ -10302,7 +10319,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-iconv/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-iconv/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10314,6 +10331,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -10322,16 +10343,16 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe"
+                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
-                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/380872130d3a5dd3ace2f4010d95125fde5d5c70",
+                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70",
                 "shasum": ""
             },
             "require": {
@@ -10380,7 +10401,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10392,15 +10413,19 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2025-06-27T09:58:17+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
@@ -10463,7 +10488,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10475,6 +10500,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -10483,7 +10512,7 @@
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -10544,7 +10573,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10556,6 +10585,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -10564,7 +10597,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -10625,7 +10658,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10634,6 +10667,10 @@
                 },
                 {
                     "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
                     "type": "github"
                 },
                 {
@@ -10687,7 +10724,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -10747,7 +10784,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10759,6 +10796,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -10767,7 +10808,7 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
@@ -10823,7 +10864,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10835,6 +10876,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -10843,16 +10888,16 @@
         },
         {
             "name": "symfony/polyfill-php83",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
-                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491"
+                "reference": "17f6f9a6b1735c0f163024d959f700cfbc5155e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/2fb86d65e2d424369ad2905e83b236a8805ba491",
-                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491",
+                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/17f6f9a6b1735c0f163024d959f700cfbc5155e5",
+                "reference": "17f6f9a6b1735c0f163024d959f700cfbc5155e5",
                 "shasum": ""
             },
             "require": {
@@ -10899,7 +10944,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php83/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10911,24 +10956,28 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2025-07-08T02:45:35+00:00"
         },
         {
             "name": "symfony/polyfill-php84",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php84.git",
-                "reference": "000df7860439609837bbe28670b0be15783b7fbf"
+                "reference": "d8ced4d875142b6a7426000426b8abc631d6b191"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/000df7860439609837bbe28670b0be15783b7fbf",
-                "reference": "000df7860439609837bbe28670b0be15783b7fbf",
+                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/d8ced4d875142b6a7426000426b8abc631d6b191",
+                "reference": "d8ced4d875142b6a7426000426b8abc631d6b191",
                 "shasum": ""
             },
             "require": {
@@ -10975,7 +11024,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php84/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php84/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -10987,15 +11036,19 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-20T12:04:08+00:00"
+            "time": "2025-06-24T13:30:11+00:00"
         },
         {
             "name": "symfony/polyfill-uuid",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-uuid.git",
@@ -11054,7 +11107,7 @@
                 "uuid"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -11063,6 +11116,10 @@
                 },
                 {
                     "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
                     "type": "github"
                 },
                 {
@@ -12930,11 +12987,11 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/589c9671fede0e211349eb552afd5602b7c62619",
-                "reference": "589c9671fede0e211349eb552afd5602b7c62619",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/1584a26b3d88a0ec7ee06f9cf914f439c8432943",
+                "reference": "1584a26b3d88a0ec7ee06f9cf914f439c8432943",
                 "shasum": ""
             },
             "require": {
@@ -12991,15 +13048,15 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2025-07-22T12:10:44+00:00"
+            "time": "2025-08-13T00:47:29+00:00"
         },
         {
             "name": "verbb/icon-picker",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/icon-picker/zipball/9f430d1d370c0655c9c3da9268528e944ebe8a17",
-                "reference": "9f430d1d370c0655c9c3da9268528e944ebe8a17",
+                "url": "https://api.github.com/repos/verbb/icon-picker/zipball/5024ef4f82c2932bf6433bf8e12f4b461f4ee144",
+                "reference": "5024ef4f82c2932bf6433bf8e12f4b461f4ee144",
                 "shasum": ""
             },
             "require": {
@@ -13048,7 +13105,7 @@
                 "docs": "https://github.com/verbb/icon-picker",
                 "rss": "https://github.com/verbb/icon-picker/commits/v2.atom"
             },
-            "time": "2025-07-18T14:04:32+00:00"
+            "time": "2025-08-13T00:49:52+00:00"
         },
         {
             "name": "verbb/knock-knock",
@@ -13104,11 +13161,11 @@
         },
         {
             "name": "verbb/navigation",
-            "version": "3.0.10",
+            "version": "3.0.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/navigation/zipball/6c81f2b36550524e6c602cc9c69036a3dcfa2c4e",
-                "reference": "6c81f2b36550524e6c602cc9c69036a3dcfa2c4e",
+                "url": "https://api.github.com/repos/verbb/navigation/zipball/eb236d2c28b13c073ef88176b0ff052bd6151556",
+                "reference": "eb236d2c28b13c073ef88176b0ff052bd6151556",
                 "shasum": ""
             },
             "require": {
@@ -13153,7 +13210,7 @@
                 "docs": "https://github.com/verbb/navigation",
                 "rss": "https://github.com/verbb/navigation/commits/v2.atom"
             },
-            "time": "2025-07-18T14:04:47+00:00"
+            "time": "2025-08-13T00:33:41+00:00"
         },
         {
             "name": "verbb/shortcodes",
@@ -13798,16 +13855,16 @@
         },
         {
             "name": "web-auth/cose-lib",
-            "version": "4.4.1",
+            "version": "4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/web-auth/cose-lib.git",
-                "reference": "b095f160a8c8fa7e53d0e36307093e34c26e7787"
+                "reference": "a93b61c48fb587855f64a9ec11ad7b60e867cb15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/web-auth/cose-lib/zipball/b095f160a8c8fa7e53d0e36307093e34c26e7787",
-                "reference": "b095f160a8c8fa7e53d0e36307093e34c26e7787",
+                "url": "https://api.github.com/repos/web-auth/cose-lib/zipball/a93b61c48fb587855f64a9ec11ad7b60e867cb15",
+                "reference": "a93b61c48fb587855f64a9ec11ad7b60e867cb15",
                 "shasum": ""
             },
             "require": {
@@ -13864,7 +13921,7 @@
             ],
             "support": {
                 "issues": "https://github.com/web-auth/cose-lib/issues",
-                "source": "https://github.com/web-auth/cose-lib/tree/4.4.1"
+                "source": "https://github.com/web-auth/cose-lib/tree/4.4.2"
             },
             "funding": [
                 {
@@ -13876,7 +13933,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-06-13T11:35:45+00:00"
+            "time": "2025-08-14T20:33:29+00:00"
         },
         {
             "name": "web-auth/webauthn-lib",
