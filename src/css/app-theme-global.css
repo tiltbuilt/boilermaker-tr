@@ -66,19 +66,16 @@
 	--breakpoint-2xl: 1536px;
 	
 	/* CONTAINER QUERY BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */	
-	--container-3xs: 25.6rem;
 	--container-2xs: 28.8rem;
 	--container-xs: 32rem;
 	--container-sm: 38.4rem;
 	--container-md: 44.8rem;
-	--container-lg: 51.2rem;
-	--container-xl: 57.6rem;
-	--container-2xl: 67.2rem;
-	--container-3xl: 76.8rem;
-	--container-4xl: 89.6rem;
-	--container-5xl: 102.4rem;
-	--container-6xl: 115.2rem;
-	--container-7xl: 128rem;
+	--container-lg: 51.2rem;	
+	--container-xl: 67.2rem;
+	--container-2xl: 76.8rem;	
+	--container-3xl: 102.4rem;	
+	--container-4xl: 128rem;
+	--container-5xl: 153.6rem;
 	
 	/* FONT SIZES */
 	--text-xs: 1.2rem;

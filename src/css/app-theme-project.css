@@ -95,8 +95,8 @@
 
 		/* REPEATERS */
 		--color-repeater-card-bg: var(--color-gray-300);
-		--color-repeater-card-header: var(--color-red-700);
-		--color-repeater-card-header-hover: var(--color-red-900);
+		--color-repeater-item-header: var(--color-red-700);
+		--color-repeater-item-header-hover: var(--color-red-900);
 
 		/* SLIDERS */
 		--color-slider-nav-button: var(--color-red-700);
@@ -180,8 +180,8 @@
 
 		/* REPEATERS */
 		--color-repeater-card-bg: var(--color-gray-700);
-		--color-repeater-card-header: var(--color-red-700);
-		--color-repeater-card-header-hover: var(--color-red-900);
+		--color-repeater-item-header: var(--color-red-700);
+		--color-repeater-item-header-hover: var(--color-red-900);
 
 		/* SLIDERS */
 		--color-slider-nav-button: var(--color-red-700);
