@@ -1,6 +1,8 @@
 color: lime
+description: null
 fieldLayouts:
   17f974cf-5fe7-43e2-90d8-357ff155b84e:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:

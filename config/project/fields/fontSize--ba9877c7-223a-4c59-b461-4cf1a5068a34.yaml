@@ -4,6 +4,7 @@ instructions: null
 name: 'Font Size'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -12,6 +13,12 @@ settings:
           - 'Default (No Change)'
         -
           - value
+          - ''
+        -
+          - icon
+          - ''
+        -
+          - color
           - ''
         -
           - default
@@ -30,6 +37,12 @@ settings:
           - value
           - text-scaling-xs
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -40,6 +53,12 @@ settings:
         -
           - value
           - text-scaling-sm
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -52,6 +71,12 @@ settings:
           - value
           - text-scaling-base
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -62,6 +87,12 @@ settings:
         -
           - value
           - text-scaling-lg
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -74,6 +105,12 @@ settings:
           - value
           - text-scaling-xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -84,6 +121,12 @@ settings:
         -
           - value
           - text-scaling-2xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -96,6 +139,12 @@ settings:
           - value
           - text-scaling-3xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -106,6 +155,12 @@ settings:
         -
           - value
           - text-scaling-4xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -118,6 +173,12 @@ settings:
           - value
           - text-scaling-5xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -128,6 +189,12 @@ settings:
         -
           - value
           - text-scaling-6xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -140,6 +207,12 @@ settings:
           - value
           - text-scaling-7xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -150,6 +223,29 @@ settings:
         -
           - value
           - text-scaling-8xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 9XL'
+        -
+          - value
+          - text-scaling-9xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -167,6 +263,12 @@ settings:
           - value
           - text-xs
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -177,6 +279,12 @@ settings:
         -
           - value
           - text-sm
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -189,6 +297,12 @@ settings:
           - value
           - text-base
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -199,6 +313,12 @@ settings:
         -
           - value
           - text-lg
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -211,6 +331,12 @@ settings:
           - value
           - text-xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -221,6 +347,12 @@ settings:
         -
           - value
           - text-2xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -233,6 +365,12 @@ settings:
           - value
           - text-3xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -243,6 +381,12 @@ settings:
         -
           - value
           - text-4xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -255,6 +399,12 @@ settings:
           - value
           - text-5xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -265,6 +415,12 @@ settings:
         -
           - value
           - text-6xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -277,6 +433,12 @@ settings:
           - value
           - text-7xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -287,6 +449,29 @@ settings:
         -
           - value
           - text-8xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '9XL (128px)'
+        -
+          - value
+          - text-9xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''

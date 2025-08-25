@@ -15,6 +15,12 @@ settings:
           - value
           - ''
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - '1'
     -
@@ -31,27 +37,11 @@ settings:
           - value
           - auto
         -
-          - default
+          - icon
           - ''
-    -
-      __assoc__:
         -
-          - label
-          - 'Half Normal'
-        -
-          - value
-          - half-normal
-        -
-          - default
+          - color
           - ''
-    -
-      __assoc__:
-        -
-          - label
-          - Normal
-        -
-          - value
-          - normal
         -
           - default
           - ''
@@ -59,10 +49,203 @@ settings:
       __assoc__:
         -
           - label
-          - Extra
+          - 'Scaling Quarter'
         -
           - value
-          - extra
+          - scaling-quarter
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling Half'
+        -
+          - value
+          - scaling-normal
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling Base'
+        -
+          - value
+          - scaling-base
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 2x'
+        -
+          - value
+          - scaling-2x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 3x'
+        -
+          - value
+          - scaling-3x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 4x'
+        -
+          - value
+          - scaling-4x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 5x'
+        -
+          - value
+          - scaling-5x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 6x'
+        -
+          - value
+          - scaling-6x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 7x'
+        -
+          - value
+          - scaling-7x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 8x'
+        -
+          - value
+          - scaling-8x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 9x'
+        -
+          - value
+          - scaling-9x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Scaling 10x'
+        -
+          - value
+          - scaling-10x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -74,6 +257,12 @@ settings:
         -
           - value
           - none
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -91,6 +280,12 @@ settings:
           - value
           - quarter
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -101,6 +296,12 @@ settings:
         -
           - value
           - half
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -113,6 +314,12 @@ settings:
           - value
           - base
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -123,6 +330,12 @@ settings:
         -
           - value
           - 2x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -135,6 +348,12 @@ settings:
           - value
           - 3x
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -145,6 +364,114 @@ settings:
         -
           - value
           - 4x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 5x
+        -
+          - value
+          - 5x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 6x
+        -
+          - value
+          - 6x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 7x
+        -
+          - value
+          - 7x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 8x
+        -
+          - value
+          - 8x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 9x
+        -
+          - value
+          - 9x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 10x
+        -
+          - value
+          - 10x
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
