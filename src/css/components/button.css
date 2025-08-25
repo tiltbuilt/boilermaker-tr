@@ -132,5 +132,39 @@
 	}
  
 }
+
+/* BUTTON COLORS */
+
+@utility btn-white {
+	color: var(--color-black);
+	background-color: var(--color-white);
+
+	&:hover {
+		color: var(--color-white);
+		background-color: var(--color-red-700);			
+		text-decoration: none;
+	}
+}
+
+@utility btn-black {
+	color: var(--color-white);
+	background-color: var(--color-black);
+
+	&:hover {
+		color: var(--color-white);
+		background-color: var(--color-red-700);			
+		text-decoration: none;
+	}
+}
 	 
 		
+@utility btn-red {
+	color: var(--color-white);
+	background-color: var(--color-red-700);
+
+	&:hover {
+		color: var(--color-white);
+		background-color: var(--color-red-900);			
+		text-decoration: none;
+	}
+}

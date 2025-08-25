@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0 - 2025-08-25
+### Upgraded
+- Front end build process now uses Vite 7.0+ and Tailwind CSS 4.1+
+
 ## 3.0.14 - 2025-05-23
 ### Changed
 - Setup of modals to use Alpine Store feature

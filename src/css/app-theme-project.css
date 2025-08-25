@@ -79,14 +79,7 @@
 		/* IMAGES */
 		--color-image-caption-text: var(--color-black);
 		--color-image-caption-bg: var(--color-gray-300);
-		
-		/* MODALS */
-		--color-modal-overlay-bg: var(--color-black);
-		--color-modal-window-bg: var(--color-white);
-		--color-button-modal-close: var(--color-white);
-		--color-button-modal-close-hover: var(--color-red-700);
-		--color-modal-overlay-opacity: 0.7;
-
+				
 		/* PAGE HEADER */
 		--color-pg-header-bg: var(--color-white);
 		--color-pg-header-headline: var(--color-black);
