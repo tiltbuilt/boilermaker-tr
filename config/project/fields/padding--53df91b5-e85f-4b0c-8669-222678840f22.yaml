@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: padding
+instructions: 'This field allows you to override the default style sheet settings for padding of this element. To use it, add a breakpoint adjustments, select the layout size where you want the adjustment to become active, and select the changes to the padding on the different sides of the element. The adjustments can stack so you can add adjustments for multiple different breakpoints if needed.'
+name: Padding
+searchable: false
+settings:
+  createButtonLabel: 'Add Padding Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - e70a2aff-50a6-4307-ac61-fca778c6e08d # Padding Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

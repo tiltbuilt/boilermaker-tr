@@ -1,0 +1,74 @@
+color: pink
+description: null
+fieldLayouts:
+  970f69a2-e485-49a6-97ef-4e0f158ab703:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T18:14:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Layout Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5ee3ca31-9fd5-4a0b-a893-08b2e58fdfdc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T18:14:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mt
+            includeInCards: false
+            instructions: null
+            label: Top
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b0228b6-84f1-4d35-a8f8-788caf48eb91
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-08-27T18:14:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: mb
+            includeInCards: false
+            instructions: null
+            label: Bottom
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c4238f2f-16a1-45d6-ac6a-7c11ce6c27ed
+            userCondition: null
+            warning: null
+            width: 50
+        name: Settings
+        uid: efc95e74-ed32-4002-af1d-dc4a3a08e703
+        userCondition: null
+handle: marginAdjustment
+hasTitleField: false
+icon: null
+name: 'Margin Adjustment'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-{deviceSize}-Margin'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

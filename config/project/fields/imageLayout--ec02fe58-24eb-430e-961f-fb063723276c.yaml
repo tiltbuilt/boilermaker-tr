@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: imageLayout
+instructions: null
+name: 'Image Layout'
+searchable: false
+settings:
+  createButtonLabel: 'Add Image Layout Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 3245198b-294e-4033-ab6f-56530c5758a1 # Image Layout Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

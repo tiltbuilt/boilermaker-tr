@@ -1,6 +1,8 @@
 color: yellow
+description: null
 fieldLayouts:
   05db9514-d611-48e5-aa08-85e2bfbfd7b2:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -51,53 +53,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b70a6d37-506f-4fd9-92dd-500d4f7cef89
-            userCondition: null
-            warning: null
-            width: 100
-        name: Content
-        uid: 86886d72-23a0-4ed6-ad37-cdbf282f55ce
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: 3d52e7a8-a67f-434c-b5eb-47ce59d6bd6a
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0ed35e7c-6939-46ea-b885-6b8a0d79b5b6
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: bgColor
-            includeInCards: false
-            instructions: 'Use this field to override the background color that is specified in the color scheme.'
-            label: 'Background Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7e13abd3-b221-48b5-84ec-af9f273e6513
             userCondition: null
             warning: null
             width: 100
@@ -159,18 +114,17 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2025-05-19T20:50:08+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: c593e390-4dd7-44bc-9378-b2836a954967
-            userCondition: null
+        name: Content
+        uid: 86886d72-23a0-4ed6-ad37-cdbf282f55ce
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
             dateAdded: '2025-05-19T20:50:08+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 23f01ca6-c4de-4346-a8a1-75a6b95d1f53 # Form Style Adjustments
+            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
             includeInCards: false
             instructions: null
@@ -179,12 +133,52 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a0e72ebc-4cb9-4b4e-a68f-a4add6519c59
+            uid: 0ed35e7c-6939-46ea-b885-6b8a0d79b5b6
             userCondition: null
             warning: null
             width: 100
-        name: Styling
+          -
+            dateAdded: '2025-05-19T20:50:08+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: bgColor
+            includeInCards: false
+            instructions: 'Use this field to override the background color that is specified in the color scheme.'
+            label: 'Background Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7e13abd3-b221-48b5-84ec-af9f273e6513
+            userCondition: null
+            warning: null
+            width: 100
+        name: Color
         uid: 28211a06-91fd-4664-90f6-6815239a56db
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T19:52:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4c34a1de-037c-4ec6-9038-5865a1853b65
+            userCondition: null
+            warning: null
+            width: 100
+        name: Spacing
+        uid: c5a77de5-eab1-4b62-9770-541619282cab
         userCondition: null
       -
         elementCondition: null
@@ -237,6 +231,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5d16fba8-fa27-4abc-8bc6-79e1ea6b4184
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T19:52:37+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 5c3861ac-5a33-4def-9493-4cad6e2a66c8
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T19:52:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0263ef8-ece6-44af-8372-89b189cc47d8
             userCondition: null
             warning: null
             width: 100

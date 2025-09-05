@@ -1,6 +1,8 @@
 color: green
+description: null
 fieldLayouts:
   aa0c56fc-31e5-40f7-a90d-57074a3dd470:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -186,12 +188,28 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:52:08+00:00'
+            dateAdded: '2025-08-28T17:06:39+00:00'
+            editCondition: null
             elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: abf2a981-5c94-47e8-884f-d6ccaeb043ca
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fc313360-e5bf-4c99-91af-0eecc4e99d57
             userCondition: null
+            warning: null
+            width: 100
+        name: Spacing
+        uid: 972f7741-9233-4209-9115-266a69db000a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
             dateAdded: '2025-05-19T20:52:08+00:00'
             editCondition: null
@@ -209,31 +227,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2025-05-19T20:52:08+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: 0826a161-652b-4962-a4d6-d80ff07cdb7b
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:52:08+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 481490a1-1752-4ffc-b455-f05dadea8141 # Slider Set Style Adjustments
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ab0b5e5c-c769-4cfb-95b5-39d78b9ed1df
-            userCondition: null
-            warning: null
-            width: 100
-        name: Styling
+        name: Color
         uid: 5759cff1-b617-4af3-979c-3c3743f1ecb9
         userCondition: null
       -
@@ -287,6 +281,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 763973ee-3273-4300-b8c1-4f8d9792cdfd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-28T17:06:39+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 4e874ed4-b371-45b3-8e39-6893960c7392
+            userCondition: null
+          -
+            dateAdded: '2025-08-28T17:06:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2fec0727-6b65-4d28-93d7-e473f6e01f59
             userCondition: null
             warning: null
             width: 100

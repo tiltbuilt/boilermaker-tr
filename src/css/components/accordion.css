@@ -10,11 +10,11 @@
 		/* These classes must stay in order to ensure functionality */
 	
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-scaling-base);	 
+		margin-top: var(--spacing-base);	 
 	}
 		
 	.accordion {
-		margin-top: var(--spacing-scaling-half);
+		margin-top: var(--spacing-half);
 		color: var(--color-accordion-text);
 		background-color: var(--color-accordion-background);
 		
@@ -36,8 +36,8 @@
 		justify-content: space-between;
 		align-content: center;
 		/* add classes below to style type etc. in button */
-		padding-block: var(--spacing-scaling-half);		
-		padding-inline: var(--spacing-scaling-base);		
+		padding-block: var(--spacing-half);		
+		padding-inline: var(--spacing-base);		
 		font-weight: bold;
 		text-transform: uppercase;
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -64,7 +64,7 @@
 	
 	
 	.accordion-content {
-		padding: var(--spacing-scaling-base);			
+		padding: var(--spacing-base);			
 	}
 
 	/* STYLING FOR ACCORDION ICON FOR DIFFERENT STATES - CHANGE BASED ON DESIGN */

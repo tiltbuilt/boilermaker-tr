@@ -1,6 +1,8 @@
 color: green
+description: null
 fieldLayouts:
   4c4ddfa7-2465-4c23-9d7e-35445d849237:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -135,20 +137,45 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:49:36+00:00'
-            elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: 78cf10f3-a20e-4dd0-804f-db517e96f837
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:49:36+00:00'
+            dateAdded: '2025-08-27T19:47:27+00:00'
             dismissible: false
             elementCondition: null
             style: tip
-            tip: 'The color settings here are applied to all of the sub accordions'
+            tip: 'The settings for this element are applied to each of the sub accordions in the set. They can be overridden in the individual accordions if needed.'
             type: craft\fieldlayoutelements\Tip
-            uid: 725d1b18-1176-465b-8b65-6fcf360a2c83
+            uid: b84bdaf3-4061-4b13-abfd-eb567d3531c1
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 751cb276-77b5-43d2-8001-90cc10f5cf33
+            userCondition: null
+            warning: null
+            width: 100
+        name: Type
+        uid: a350c90f-2306-44f1-b30d-26e01ef9fbca
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T19:47:27+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'The settings for this element are applied to each of the sub accordions in the set. They can be overridden in the individual accordions if needed.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 946ccdcc-2c4b-48b1-aa7e-6039a2c4176f
             userCondition: null
           -
             dateAdded: '2025-05-19T20:49:36+00:00'
@@ -185,17 +212,49 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:49:36+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: d0cea9f7-0cc9-4fdc-915a-06c946fcdb04
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:49:36+00:00'
+            dateAdded: '2025-08-27T18:44:12+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 96056087-af4e-42ba-a559-9152ba279d35 # Accordion Set Style Adjustments
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: textColor
+            includeInCards: false
+            instructions: null
+            label: 'Text Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3faa03f2-349a-42f2-b439-de41f6b2d798
+            userCondition: null
+            warning: null
+            width: 100
+        name: Color
+        uid: ee63fcd6-9005-4407-aa02-373d523f5b74
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T19:47:27+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'The settings for padding are applied as an override on all of the accordions in the set. They can be overridden in each accordion if needed. The margin settings are applied to the group as a whole.'
+            type: craft\fieldlayoutelements\Tip
+            uid: e7b7a5ab-d8ce-4558-9cb5-699a7bd52fe9
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            elementCondition: null
+            heading: Padding
+            type: craft\fieldlayoutelements\Heading
+            uid: df14da5d-a0fe-45ff-b514-d775d4c9f197
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
             handle: null
             includeInCards: false
             instructions: null
@@ -204,12 +263,36 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 24993cee-6a61-4939-afc4-5023eb812ffa
+            uid: 9e651127-d64e-4b79-8fc5-9c98680b4bc8
             userCondition: null
             warning: null
             width: 100
-        name: Styling
-        uid: ee63fcd6-9005-4407-aa02-373d523f5b74
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            elementCondition: null
+            heading: Margins
+            type: craft\fieldlayoutelements\Heading
+            uid: 8dd8ae7d-b241-41e9-a1a9-6c93349adb2e
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 99bda455-b931-4bd8-8e4b-08d5d78cb8f8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Spacing
+        uid: ff49a8e9-8b4d-4c9d-8f29-5d1cea0e71c6
         userCondition: null
       -
         elementCondition: null
@@ -262,6 +345,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 56f41a82-33a4-49bb-9cb6-a5d0e061f438
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: a44da34e-1fb5-4d4d-94fd-61547598a638
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T18:44:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6ea6ee61-a500-43a4-a19f-4c4e2202fb14
             userCondition: null
             warning: null
             width: 100

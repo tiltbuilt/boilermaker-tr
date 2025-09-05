@@ -11,7 +11,7 @@
 		/* These classes must stay in order to ensure functionality */
 		position: relative;
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		
 		&:first-child {
 			margin-top: 0;
@@ -21,7 +21,7 @@
 	.form-row {
 		display: flex;
 		flex-wrap: wrap;
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		margin-left: var(--spacing-neg-scaling-base);
 		margin-right: var(--spacing-neg-scaling-base);
 		
@@ -32,8 +32,8 @@
 	
 	.form-field-wrapper {
 		width: 100%;
-		padding-left: var(--spacing-scaling-base);
-		padding-right: var(--spacing-scaling-base);
+		padding-left: var(--spacing-base);
+		padding-right: var(--spacing-base);
 		
 		@media (min-width: theme('screens.md')) {
 			flex: 1 1 0%;
@@ -108,8 +108,8 @@
 	
 	.alert-error {
 		font-weight: bold;
-		padding: var(--spacing-scaling-base);
-		margin-bottom: var(--spacing-scaling-base);
+		padding: var(--spacing-base);
+		margin-bottom: var(--spacing-base);
 		color: var(--color-form-error-block-text);
 		background-color: var(--color-form-error-block-bg);	
 	}
@@ -121,8 +121,8 @@
 	
 	.alert-success {
 		font-weight: bold;
-		padding: var(--spacing-scaling-base);
-		margin-bottom: var(--spacing-scaling-base);
+		padding: var(--spacing-base);
+		margin-bottom: var(--spacing-base);
 		color: var(--color-form-success-block-text);
 		background-color: var(--color-form-success-block-bg);		
 	}

@@ -10,7 +10,7 @@
 		/* These classes must stay in order to ensure functionality */
 		position: relative;
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		
 		&:first-child {
 			margin-top: 0;
@@ -19,12 +19,12 @@
 
 	.repeater-date {
 		font-style: italic;
-		font-size: var(--text-scaling-sm);
+		font-size: var(--text-sm);
 	}
 
 	.full-listing-btn-wrapper {
 		display: flex;
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 	}
 
 	/* TEXT LIST */
@@ -45,7 +45,7 @@
 
 	.repeater-list-text-item-header {	
 		font-weight: bold;		
-		font-size: var(--text-scaling-lg);
+		font-size: var(--text-lg);
 		color: var(--color-repeater-item-header);
 	}
 
@@ -61,7 +61,7 @@
 
 	.repeater-card {
 		/* this class sets up the spacing. Sizing is handled in the template itself by adding classes to control the number of items per row */
-		padding: var(--spacing-scaling-half);			
+		padding: var(--spacing-half);			
 	}
 
 	.repeater-card-inner {
@@ -88,12 +88,12 @@
 
 	.repeater-card-content {
 		/* this class wraps the text content of the card. Add padding to create space around the text, or if padding on the card-inner class to make a frame, set the padding to 0 to make the text flush with images */
-		padding: var(--spacing-scaling-half);	 	
+		padding: var(--spacing-half);	 	
 	}
 
 	.repeater-list-card-header {
 		font-weight: bold;
-		font-size: var(--text-scaling-lg);
+		font-size: var(--text-lg);
 		color: var(--color-repeater-item-header);
 		transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}

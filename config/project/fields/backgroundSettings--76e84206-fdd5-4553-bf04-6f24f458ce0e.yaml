@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: backgroundSettings
+instructions: null
+name: 'Background Settings'
+searchable: false
+settings:
+  createButtonLabel: 'Add a Background'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - a475559f-9cc7-402f-9ea9-01079e5e67e0 # Background
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

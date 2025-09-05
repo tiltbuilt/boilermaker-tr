@@ -1,6 +1,8 @@
 color: cyan
+description: null
 fieldLayouts:
   80324226-21fb-4432-ba89-e048fc4eafa5:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -165,6 +167,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 233e7a8f-2ca1-46aa-93d5-b24b128f7570
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T22:29:13+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 1f44f2b3-b226-43c9-9f7c-6f8611db8a54
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T22:29:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11244deb-d93f-418a-9e37-3a014f3c84b5
             userCondition: null
             warning: null
             width: 100

@@ -1,4 +1,4 @@
-dateModified: 1756155891
+dateModified: 1756938604
 elementSources:
   craft\elements\Entry:
     -
@@ -139,13 +139,12 @@ fs:
     url: 'https://cdn2.assets-servd.host/'
 meta:
   __names__:
-    0a94a9c4-7b94-408c-919b-9c4a6c070e37: 'Header Block' # Header Block
     0a727c99-d7ce-4920-b1db-ce06d0647067: 'Letter Spacing' # Letter Spacing
     00b46567-7b31-49a0-a9ad-dbc2a79ea636: 'Reusable Module' # Reusable Module
     0f72b724-e0a8-4044-a3aa-12255ade6ea1: 'Basic Text with Search' # Basic Text with Search
     0fe2ca3f-eb30-4294-96a2-1154bd95e41e: 'Background Position' # Background Position
+    1bda444e-0c10-4d30-ab1d-f9d24f8b3244: 'Number of Text Columns' # Number of Text Columns
     1ef67107-0265-4563-8344-695b0a016e56: Form # Form
-    2ac55b2e-329b-4793-af25-3d158c1a4682: 'Accordion Style Adjustments' # Accordion Style Adjustments
     2bf5d5a7-249a-42a4-ae56-79ea7f679bcc: 'Modal to Display' # Modal to Display
     2e638127-2263-4e53-b71d-89eadcf405b0: 'Main Menu' # Main Menu
     3aa14a6e-dabc-42ae-8954-e10f19c53441: Accordions # Accordions
@@ -164,7 +163,7 @@ meta:
     5d5ecce2-3ca6-40ee-bdb3-330b7f832bd9: 'Modal Button' # Modal Button
     5d95a350-fb34-496c-8c66-da3952eb4373: 'Text Alignment' # Text Alignment
     5d983a94-8298-437a-a512-63a98178af7a: 'Content Position Small CTA Mobile' # Content Position Small CTA Mobile
-    05fecf3b-4603-46ea-9e54-4612defd70e9: 'Layout Row' # Layout Row
+    05fecf3b-4603-46ea-9e54-4612defd70e9: Layout # Layout
     5feec917-01fb-4987-bd1a-c38c337de8cf: Font # Font
     6a43a3aa-97db-498c-b938-2d84a3519729: Pages # Pages
     6b484609-7d28-4f55-990e-f5212885d922: 'Custom ID' # Custom ID
@@ -175,13 +174,16 @@ meta:
     7ff3d23a-91a6-4110-a3b0-b131dd2c3ee3: 'Style Adjustment - Accordion' # Style Adjustment - Accordion
     8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300: 'Background Image Small' # Background Image Small
     8cea45ff-f3ed-4c12-b8d2-ed1d8140b912: 'Social Media Links' # Social Media Links
+    8e2898a7-d1cb-4da3-b96f-c7017167dedc: 'Column Width' # Column Width
     9c91b059-ba6d-4424-a897-7792ceb0ab5d: 'Reusable Module Wrapper Section' # Reusable Module Wrapper Section
     9cc69c32-6fb9-465d-b7ce-b805d00f5449: 'Row Margins' # Row Margins
     9ceecee1-0248-4ae3-a12a-c90171e5f42f: Content # Content
     09d61ba7-f8dd-4e73-bc8f-d580cffbcc1e: 'Boilermaker 3' # Boilermaker 3
     13b06d24-aa17-46e3-89b9-c895a68df851: 'Repeater Display Type' # Repeater Display Type
-    23f01ca6-c4de-4346-a8a1-75a6b95d1f53: 'Form Style Adjustments' # Form Style Adjustments
+    15a01698-c77f-4130-b85b-22a6b7f59419: 'Column Layout' # Column Layout
     25bdc197-d50e-4c1a-9a58-9d42b6268487: 'Link Card' # Link Card
+    28ace2d7-7d1e-42a0-b95a-1314d1ff1d03: 'Column Order' # Column Order
+    29a6be8e-cb85-466e-a2f5-a9b2a388d92a: 'Horizontal Alignment' # Horizontal Alignment
     37a64193-e3ef-4a2d-aa91-555b436b1d7d: 'Italic?' # Italic?
     37ce7ac2-f596-4d6f-9181-3f4d9fa4d692: 'Block Layout' # Block Layout
     40a37d8a-41c1-47af-bc27-28d08f99a909: Slides # Slides
@@ -189,25 +191,27 @@ meta:
     045dc99c-c844-4fc8-a68f-71f83ecf05e3: Button # Button
     47acc143-9347-4976-bd50-02778ffeabf1: 'Button Styles' # Button Styles
     049ec87b-57e9-4b3e-8d53-44cb8874474b: Width # Width
+    50cd7a70-a0fe-4d38-a86d-9358735fc84c: 'Hidden Visible' # Hidden Visible
+    53df91b5-e85f-4b0c-8669-222678840f22: Padding # Padding
     55cb62d2-f02a-4bd8-849c-695f3a2e92b1: Columns # Columns
     56d80f6e-2a67-464f-af70-0d46d267a0e2: 'Items Per Page' # Items Per Page
     57d8551d-6bb8-45ac-a118-25f3bf7c5b6a: 'Style Adjustment - Repeaters' # Style Adjustment - Repeaters
     57eb287d-cdc2-4fba-8588-5dc66ff28c86: 'Line Height' # Line Height
-    62bb1cf0-026e-410e-a685-701783c6ae9e: 'Header Style Adjustments' # Header Style Adjustments
+    59bbbfc4-509e-4f06-91c5-065e1688562e: Margins # Margins
     65c293ae-ed92-4c10-b2d3-1251a63c1402: Modal # Modal
     66d93990-df90-491e-9f27-29da78847eb3: 'Icon Size' # Icon Size
-    67dbaf8c-d352-485f-a230-5ba94ad31c07: 'Column Layout' # Column Layout
     69b9aab4-6d39-462c-b88a-8d4971791897: Simple # Simple
     71ab40f6-9c7f-41cc-9887-255aa3c9603a: 'Style Adjustment - Tab Panel' # Style Adjustment - Tab Panel
     72b1f013-8778-4308-a355-29b6088c7162: 'Background Type' # Background Type
     073c9d03-dcc0-4435-99fe-2df91703e911: Limited # Limited
+    76e84206-fdd5-4553-bf04-6f24f458ce0e: 'Background Settings' # Background Settings
     79d28a86-5f89-45cb-99a4-a97fa0992c73: 'Video Asset' # Video Asset
     79fb09c5-0e2c-49d7-bfe6-a9b38820b56a: 'Social Link' # Social Link
     82c290d4-2826-4d74-bcc2-8f94ddc4b0b0: 'Accordion Set' # Accordion Set
     82cdb5ee-7722-4897-8e26-fb817c98e85e: Embed # Embed
-    85d1b6aa-228a-4340-bf82-fbdbeec66ee9: 'Icon Style Adjustments' # Icon Style Adjustments
     91d05e51-ee38-4e73-af4c-ebed7e7572d3: Spacing # Spacing
     93bf7bd8-1004-4c0c-be4d-7b59aa97021e: 'List Order' # List Order
+    99a21841-a7ac-4726-85bf-4628867cba30: Display # Display
     206d3220-640b-4b20-a440-faaa801a11d9: Display # Display
     335fab75-2107-4c96-80b2-14808539eadd: 'Button Group' # Button Group
     400ed272-3701-4004-b0e0-a74db3d25030: Accordion # Accordion
@@ -215,18 +219,15 @@ meta:
     486d3e65-7880-4e2e-803e-daecc6657a1d: 'Content Wrapper' # Content Wrapper
     487ec441-2218-43e8-8a96-652a0649e437: 'Color Picker' # Color Picker
     524fa6fd-cc9f-4e7a-8791-a28ce1bb3c97: 'Single URL' # Single URL
-    554d8669-e659-48d2-a13d-a32598ca78cb: 'Side by Side Photo Style Adjustments' # Side by Side Photo Style Adjustments
     558fedab-c14e-4f41-a438-ba8c394113a5: 'Notification Bar Alerts' # Notification Bar Alerts
     563d2567-f32a-4687-862f-033e083c1c09: 'Page Header Background Type' # Page Header Background Type
-    569d975f-7001-40dd-b088-6f9614f17e06: 'Content Wrapper Style Adjustments' # Content Wrapper Style Adjustments
     589d7e58-f378-455e-b073-055e9221964b: Pages # Pages
     732c729f-8dbb-4f01-a463-c163ddc13eab: 'Left Right' # Left Right
     0888a226-1804-4ac8-a00d-8b539fdd3483: '404 Page Content' # 404 Page Content
     938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Photo Section' # Side by Side Photo Section
+    988c8572-16b9-4e94-9297-d33d4b9d8411: 'Margin Adjustment' # Margin Adjustment
     3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c: 'Background Image' # Background Image
-    3388d3b4-cb9f-47ee-8874-09e50df3c0bb: 'Section Style Adjustments' # Section Style Adjustments
     3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25: 'Background Repeat' # Background Repeat
-    4296db0d-d5cc-4ca0-a1b3-08c226ac2224: 'Video Style Adjustments' # Video Style Adjustments
     4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed: 'Phone Number' # Phone Number
     5514a63a-0a23-42f9-9333-5576b0e95462: 'Color Scheme' # Color Scheme
     5947f640-92a3-49d6-adfa-45816ba49d25: 'Slide Horizontal Layout' # Slide Horizontal Layout
@@ -235,14 +236,15 @@ meta:
     15890ba2-38e4-4bce-9ccc-45ed62101d3e: Section # Section
     58342a22-c0c8-4901-8615-20d4d69694bb: 'Module to Include' # Module to Include
     60656df7-fedd-4651-ae29-cf30fdef7f08: 'Style Adjustment - Slider Set' # Style Adjustment - Slider Set
+    62336b23-c907-4179-a797-e2f7a8d75533: 'Type Overrides - Subhead' # Type Overrides - Subhead
     68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
     253138fc-844f-44ce-b802-ceba93597569: 'Content Card' # Content Card
-    481490a1-1752-4ffc-b455-f05dadea8141: 'Slider Set Style Adjustments' # Slider Set Style Adjustments
     699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
     738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
     781363bc-1fd0-4fcc-83b2-80a20c416f57: 'Content Cards' # Content Cards
     1274916c-2577-42bf-a9be-c2a1d3ea5336: New # New
+    3245198b-294e-4033-ab6f-56530c5758a1: 'Image Layout Adjustment' # Image Layout Adjustment
     03773267-1517-45c4-9a3e-c92f4340a1b2: 'Style Adjustment - CTA' # Style Adjustment - CTA
     4720320b-f7d0-49ec-a327-0db0e3a2dd7c: 'Aspect Ratio - Forced' # Aspect Ratio - Forced
     05601664-3d38-4def-9b37-d9ccaf72ed5c: 'Reveal Animation' # Reveal Animation
@@ -254,16 +256,16 @@ meta:
     53829185-3375-470c-80cf-a50b1733a8c4: 'Slide Effect' # Slide Effect
     54321551-57ae-4812-8a1d-c491760d59ad: 'Multi-Column Settings' # Multi-Column Settings
     66354233-a357-4d3f-9543-7f92fef4d662: 'Card Content' # Card Content
-    67336236-2b0e-4d01-bb98-029a923a6932: 'Tab Set Style Adjustments' # Tab Set Style Adjustments
     77532772-badf-4ce5-a93b-6752273d81bb: 'Subhead Position' # Subhead Position
     86544431-ce27-4263-b49f-b814ff50fcfb: 'Date Format' # Date Format
-    96056087-af4e-42ba-a559-9152ba279d35: 'Accordion Set Style Adjustments' # Accordion Set Style Adjustments
     a2da31ae-7341-4dd1-b245-5ee55d44cbc2: 'Yes No' # Yes No
+    a5df8039-f6c5-4289-9ac2-7681f18d254c: 'Column Vertical Alignment' # Column Vertical Alignment
     a6e56255-d417-4ac8-9a3f-256c30684cd0: Image # Image
     a7d4ee4f-543c-4209-b4fd-5df98550137d: 'Cards Per Row' # Cards Per Row
     a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5: 'Custom Classes' # Custom Classes
     a547c85e-ce84-4cd3-9a43-5727af411343: 'Style Adjustment - Side by Side Photo Section' # Style Adjustment - Side by Side Photo Section
     a387115c-e26a-48c1-88b4-11f64ea1772d: 'Font Weight' # Font Weight
+    a475559f-9cc7-402f-9ea9-01079e5e67e0: Background # Background
     aa6f3d94-b580-4806-aac7-1dde0e3062e0: 'Button Link' # Button Link
     acdcfd1c-89a2-4090-989d-17db6ad24060: Icon # Icon
     acec3806-c4ac-4430-a8d9-24915eacc052: Modals # Modals
@@ -274,6 +276,7 @@ meta:
     b1dd9550-b7de-4c8d-ac15-30a80aef59ff: 'Text Case' # Text Case
     b1e1aad8-a87c-4914-9445-bbbbb92076ee: Heading # Heading
     b4c4f21e-35c3-40ba-b812-86a3bc213582: 'Main Heading Text' # Main Heading Text
+    b9dd4da2-a4a7-4a18-960b-da3b1204513f: 'Layout Adjustment' # Layout Adjustment
     b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f: 'Row Layout' # Row Layout
     b81cc92d-9e5b-440d-8461-cdf9ab64807e: Opacity # Opacity
     b352c451-ed85-4679-8a36-8e473facf8a0: 'Style Adjustment - Button Group' # Style Adjustment - Button Group
@@ -287,19 +290,18 @@ meta:
     bae3f95d-8506-49cb-891a-048c975b11d4: 'Heading Level' # Heading Level
     bb8a7c17-de8b-4008-bcca-10c9a30824b5: 'Notification Alerts' # Notification Alerts
     bb89e543-0de1-4a53-9480-2e7c0e8a69a5: 'Aspect Ratio' # Aspect Ratio
-    bbe3f16b-50e0-4f6a-9db0-bb6359934f84: 'CTA Style Adjustments' # CTA Style Adjustments
     bcc81e37-c9a5-4aaa-a456-847dd36ebf95: CTA # CTA
     bea4db36-ae23-4382-ad57-5031c47c5ab6: 'Nav List to Display' # Nav List to Display
     c025e168-6f53-4831-9433-670f03c62851: Buttons # Buttons
+    c3bd9145-5529-4e9f-a2dd-5c85c2d28f48: 'Text Column Adjustment' # Text Column Adjustment
     c3d75796-b930-48a0-b387-b5469be4094b: 'Full Listing Button' # Full Listing Button
-    c9cf2b48-b578-41dd-ae7f-82d0ce5a4241: 'Image Style Adjustments' # Image Style Adjustments
     c17b0219-a22c-422c-a2f1-4e557eed8c4e: 'Content Column Layout' # Content Column Layout
     c22c74d6-c1ba-4d51-af9b-d38a798a1e30: 'Text Wrap' # Text Wrap
     c43e08b0-14a5-4aee-adb4-4e78e9c3d9fe: 'Main Content' # Main Content
     c43e9602-b393-4012-b9c3-c4b391c74cd6: Video # Video
     c57caa3f-3422-4928-85a0-f509e3c41317: 'Content Position - Small CTA' # Content Position - Small CTA
     c281acd6-db5d-49e9-a272-08936804b011: 'Card Link' # Card Link
-    cc44dfc3-f9d6-4fcc-9940-621e8a3981f0: 'Quote Style Adjustments' # Quote Style Adjustments
+    cbcd5b00-2f33-4ac3-82a1-342b8dd20474: 'Column Layout Adjustment' # Column Layout Adjustment
     cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
     d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1: 'Slide Transition Delay' # Slide Transition Delay
     d7a280bb-af78-455c-9bd1-1fc2f7e4018d: OpenClosed # OpenClosed
@@ -307,12 +309,12 @@ meta:
     d12df536-921c-4ee2-b0bc-84a97d7c9e95: 'Column Background Color' # Column Background Color
     d85e2e7b-6380-4c46-8ebd-36ad0a2eee46: 'Tab Panel' # Tab Panel
     d136f8d9-17af-4766-82b7-9c58403b6446: ui-svg-sprites # ui-svg-sprites
+    d155be44-8228-40a0-92f8-496642d3e644: 'Layout Settings' # Layout Settings
     d897b42d-3d26-4db5-b105-29c871b31ffb: 'Limited Content' # Limited Content
     d81788e7-2fa5-4804-876d-57de4924e46f: 'Style Adjustment - Icon' # Style Adjustment - Icon
     d91935cd-7812-422b-9f9f-0317ed62a03b: 'Style Adjustment - Video' # Style Adjustment - Video
     dbe6c627-9b3d-4c00-9b60-25f1964d8a29: 'Background Videos' # Background Videos
     dc77699b-4b92-46d2-bd7c-d70bc8319d04: font-awesome-all # font-awesome-all
-    dd25301d-9012-41dd-aa43-19f023540545: 'Button Group Style Adjustment' # Button Group Style Adjustment
     ddb8108e-63a9-4567-80ba-7ab621baad89: 'Style Adjustment - Quote' # Style Adjustment - Quote
     de6881eb-f48b-4119-889c-95d3bf6692e5: 'Style Adjustment - Tab Set' # Style Adjustment - Tab Set
     df144842-8cb5-4008-8427-22974b6fe49c: 'Icon Vertical Alignment' # Icon Vertical Alignment
@@ -322,26 +324,26 @@ meta:
     e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
     e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
     e8d249f8-2c18-4b51-b311-baabbd94f999: 'Style Adjustment - Image' # Style Adjustment - Image
+    e70a2aff-50a6-4307-ac61-fca778c6e08d: 'Padding Adjustment' # Padding Adjustment
     e92ccd0c-f875-418b-84e5-2e10fe5ca803: 'Modal Button Link' # Modal Button Link
     e976e669-f3ac-496a-8450-9d5613262236: 'Subhead Text' # Subhead Text
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
     e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
     ea38d6d4-055b-43b8-b876-2bcab46e11c8: 'Company Info' # Company Info
     eb38218b-e090-4cec-807f-ab70934109ba: 'First Last' # First Last
-    ecb5f699-34c7-440c-bb60-a045e0e28b18: 'Slide Style Adjustments' # Slide Style Adjustments
+    ec02fe58-24eb-430e-961f-fb063723276c: 'Image Layout' # Image Layout
     ee6d1ced-9ba0-4c31-9f10-d3e6057ae634: 'Style Adjustment - Column' # Style Adjustment - Column
     ee64f702-a8f1-46ee-8dea-79f8ad82e25b: 'Custom Attributes' # Custom Attributes
     f0c10f75-8d5e-43c0-83a1-2321c04a2ebd: 'Form to Display' # Form to Display
     f1b466ce-fb41-471a-90d4-5d0fd23f346d: 'Image Asset' # Image Asset
+    f1dadad3-35b3-471d-ad9b-6fbc3decfa2e: 'Display Adjustment' # Display Adjustment
     f4d725e6-48b8-4083-a921-ecc0925a0bff: 'Background Size' # Background Size
-    f7dc9df7-f17d-4c82-9b2e-2bd2986c309f: 'Column Style Adjustments' # Column Style Adjustments
-    f13a58c0-cc0e-41c6-b75b-f014f8de92a6: 'Tab Panel Style Adjustments' # Tab Panel Style Adjustments
     f22d8a3b-9296-4b9a-b338-0d599eaa364a: 'Section to List' # Section to List
     f103b592-617a-4840-8a3b-ce98a171eb09: 'Style Adjustment - Content Wrapper' # Style Adjustment - Content Wrapper
     f162c9c9-8174-4ba1-a691-5b2e30f57c37: Root # Root
+    f6807d6f-6a06-4137-8317-a236cec446bd: 'Type Settings' # Type Settings
     fa819c1c-abac-42ac-b1e5-3de37862ccf3: Images # Images
     fd3b49a5-f45c-4fff-9e83-efae0bfb34d4: 'Style Adjustment - Section' # Style Adjustment - Section
-    fdc69893-7848-4bd4-8f1d-3df385771a84: 'Repeater Style Adjustments' # Repeater Style Adjustments
     fe981b00-296b-4916-816f-a8e2670638e3: 'Style Adjustment - Form' # Style Adjustment - Form
     ff110645-b126-49e5-9ed9-a720a1a9d3d2: 'Notification Bar Color' # Notification Bar Color
 plugins:
@@ -514,7 +516,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: Y4FS66D3C0TPO8A58N8CFS5X
-    schemaVersion: 2.1.0
+    schemaVersion: 2.1.1
   postmark:
     edition: standard
     enabled: true

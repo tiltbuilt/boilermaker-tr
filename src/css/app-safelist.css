@@ -2,13 +2,12 @@
 @source inline('{hover:,focus:}{bg,text}-{black,white,transparent,red-{700,900},gray-{300,700}}');
 
 /* SPACING */
-@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:{p,m,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x,scaling-quarter,scaling-half,scaling-base,scaling-2x,scaling-3x,scaling-4x,scaling-5x,scaling-6x,scaling-7x,scaling-8x,scaling-9x,scaling-10x,scaling-neg-quarter,scaling-neg-half,scaling-neg-base,scaling-neg-2x,scaling-neg-3x,scaling-neg-4x,scaling-neg-5x,scaling-neg-6x,scaling-neg-7x,scaling-neg-8x,scaling-neg-9x,scaling-neg-10x}');
-@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}{/component}:{p,m,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x,scaling-quarter,scaling-half,scaling-base,scaling-2x,scaling-3x,scaling-4x,scaling-5x,scaling-6x,scaling-7x,scaling-8x,scaling-9x,scaling-10x,scaling-neg-quarter,scaling-neg-half,scaling-neg-base,scaling-neg-2x,scaling-neg-3x,scaling-neg-4x,scaling-neg-5x,scaling-neg-6x,scaling-neg-7x,scaling-neg-8x,scaling-neg-9x,scaling-neg-10x}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:{p,m,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}{/component}:{p,m,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x}');
 
 
 /* TEXT SIZES */
-@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:{text,text-scaling}-{xs,sm,base,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}');
-@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}{/component}:{text,text-scaling}-{xs,sm,base,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}');
+@source inline('text-{xs,sm,base,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}');
 
 
 /* TYPOGRAPHY */

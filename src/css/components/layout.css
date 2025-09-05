@@ -17,7 +17,7 @@
     }
 
     .column-inner {
-        padding: var(--spacing-scaling-base);        
+        padding: var(--spacing-base);        
         position: relative;
         z-index: 10;
     }

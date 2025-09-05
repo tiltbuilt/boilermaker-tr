@@ -4,14 +4,21 @@ instructions: null
 name: 'Device Size'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
         -
           - label
-          - 'Default (Phone Vertical and Above)'
+          - 'Default (All Sizes)'
         -
           - value
+          - ''
+        -
+          - icon
+          - ''
+        -
+          - color
           - ''
         -
           - default
@@ -20,54 +27,169 @@ settings:
       __assoc__:
         -
           - label
-          - 'Phone Horizontal and Above'
+          - '288px Wide and Above'
+        -
+          - value
+          - 2xs
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '320px Wide and Above'
+        -
+          - value
+          - xs
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '384px Wide and Above'
         -
           - value
           - sm
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
       __assoc__:
         -
           - label
-          - 'Tablet and Above'
+          - '448px Wide and Above'
         -
           - value
           - md
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
       __assoc__:
         -
           - label
-          - 'Laptop and Above'
+          - '512px Wide and Above'
         -
           - value
           - lg
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
       __assoc__:
         -
           - label
-          - 'Desktop and Above'
+          - '640px Wide and Above (Phone Horizontal Size)'
         -
           - value
           - xl
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
       __assoc__:
         -
           - label
-          - Hi-Res
+          - '768px Wide and Above (Tablet Vertical Size)'
         -
           - value
           - 2xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1024px Wide and Above (Laptop Size)'
+        -
+          - value
+          - 3xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1280px Wide and Above (Desktop Size)'
+        -
+          - value
+          - 4xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1536px Wide and Above (Hi Res Size)'
+        -
+          - value
+          - 5xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''

@@ -16,7 +16,7 @@
 	}
 
 	.icon-content-wrapper {
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		
 		/* class specific to icon block headline, adjust accordingly */
 		text-align: center;

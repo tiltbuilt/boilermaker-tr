@@ -52,7 +52,7 @@
 
     .pagination {
         width: 100%;
-        padding-top: var(--spacing-scaling-base);	
+        padding-top: var(--spacing-base);	
         display: flex;
         flex-wrap: nowrap;
         justify-content: start;
@@ -104,7 +104,7 @@
             margin-right: var(--spacing-base);
             display: block;
             text-transform: uppercase;
-            font-size: var(--text-scaling-lg);
+            font-size: var(--text-lg);
         }
 
         a {           

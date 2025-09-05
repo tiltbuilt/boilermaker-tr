@@ -1,6 +1,8 @@
 color: cyan
+description: null
 fieldLayouts:
   71835647-cf57-489c-bb5e-8658ff5e7d23:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -78,27 +80,34 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-23T19:14:43+00:00'
+            dateAdded: '2025-08-28T17:17:48+00:00'
+            editCondition: null
             elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: 13c0512f-3000-418b-a869-b50d353b7977
+            fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Layout
+            handle: videoLayout
+            includeInCards: false
+            instructions: null
+            label: 'Video Layout'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e141b936-c7e7-4f14-bbc8-a74ce011c8ff
             userCondition: null
-          -
-            dateAdded: '2025-05-23T19:14:43+00:00'
-            dismissible: false
-            elementCondition: null
-            style: tip
-            tip: 'These fields can be used to override the colors of the caption from the color scheme.'
-            type: craft\fieldlayoutelements\Tip
-            uid: 82da4155-4d69-4ae7-86cc-dfd2b0436bce
-            userCondition: null
+            warning: null
+            width: 100
+        name: 'Size & Layout'
+        uid: 32d73ba0-19f2-455e-81b5-c5d0c234206f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: captionColor
+            handle: textColor
             includeInCards: false
             instructions: null
             label: 'Caption Text Color'
@@ -127,18 +136,17 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+        name: Color
+        uid: eef9073e-99f3-415e-8ba6-05762e179bd2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
-            dateAdded: '2025-05-23T19:14:43+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: ee0359a6-2acc-47c2-8368-acc10a6c6e45
-            userCondition: null
-          -
-            dateAdded: '2025-05-23T19:14:43+00:00'
+            dateAdded: '2025-08-28T17:17:48+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 4296db0d-d5cc-4ca0-a1b3-08c226ac2224 # Video Style Adjustments
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             includeInCards: false
             instructions: null
@@ -147,12 +155,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 05f7e557-0ff1-4a13-84b9-48e09df2e47e
+            uid: 7d3efdbb-cfad-42e5-ba3c-4f09c38b7fc2
             userCondition: null
             warning: null
             width: 100
-        name: Styling
-        uid: eef9073e-99f3-415e-8ba6-05762e179bd2
+        name: Spacing
+        uid: f2cf2269-b241-4162-958f-fb6753ae59f7
         userCondition: null
       -
         elementCondition: null
@@ -205,6 +213,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5da6bb7e-14ac-4d61-94ee-a85efbbcc2c2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-28T17:17:48+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: e9c540b0-ea8e-4115-a203-f948cbeb8b2d
+            userCondition: null
+          -
+            dateAdded: '2025-08-28T17:17:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4f3d8758-4675-4e9d-a64d-078c9e09b6f5
             userCondition: null
             warning: null
             width: 100

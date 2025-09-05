@@ -1,9 +1,10 @@
 columnSuffix: null
 handle: iconVerticalAlignment
-instructions: 'This field adjusts the vertical position of the icon from the stye sheet standard in cases where the layout is set to horizontal. The default position is to vertically center it.'
+instructions: 'This field adjusts the vertical position of the icon from the style sheet standard in cases where the layout is set to horizontal. The default position is to vertically center it.'
 name: 'Icon Vertical Alignment'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -12,6 +13,12 @@ settings:
           - 'No Change (Use Default)'
         -
           - value
+          - ''
+        -
+          - icon
+          - ''
+        -
+          - color
           - ''
         -
           - default
@@ -25,6 +32,12 @@ settings:
           - value
           - start
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -36,6 +49,12 @@ settings:
           - value
           - center
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -46,6 +65,12 @@ settings:
         -
           - value
           - end
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''

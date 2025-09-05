@@ -1,0 +1,108 @@
+color: pink
+description: null
+fieldLayouts:
+  5e301046-808e-445a-aa2a-57a56d52403b:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T17:20:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Layout Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ecbb8413-7425-41e0-8e16-a50266a4ee1b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T17:20:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pt
+            includeInCards: false
+            instructions: null
+            label: Top
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ed03333-fe5e-4a02-a626-c5b8ad7c7f9d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-08-27T17:20:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pb
+            includeInCards: false
+            instructions: null
+            label: Bottom
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d28a92ce-d446-4dc1-bf97-4ad63b2a4a19
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-08-27T17:20:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pl
+            includeInCards: false
+            instructions: null
+            label: Left
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3380cd7b-14b7-4d16-a60d-dc3270915af6
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-08-27T17:20:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pr
+            includeInCards: false
+            instructions: null
+            label: Right
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8f9f9424-0ead-4316-8b01-c657e8dbb9a9
+            userCondition: null
+            warning: null
+            width: 50
+        name: Settings
+        uid: 872e0801-1c9a-4204-a251-94bc3d8fadf6
+        userCondition: null
+handle: paddingAdjustment
+hasTitleField: false
+icon: null
+name: 'Padding Adjustment'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-{deviceSize}-Padding'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: columnLayout
+instructions: null
+name: 'Column Layout'
+searchable: false
+settings:
+  createButtonLabel: 'Add Column Layout Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - cbcd5b00-2f33-4ac3-82a1-342b8dd20474 # Column Layout Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

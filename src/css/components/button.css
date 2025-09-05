@@ -5,7 +5,7 @@
 		align-items: center;
 		justify-content: flex-start;
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-scaling-base);	  
+		margin-top: var(--spacing-base);	  
 	}
 
 	p + .button-group {
@@ -86,47 +86,47 @@
 
 
 	.btn, .btn-md {		
-		font-size: var(--text-scaling-base);
-		padding-block: var(--spacing-scaling-base);
+		font-size: var(--text-base);
+		padding-block: var(--spacing-base);
 		
 
 		&.btn-standard {			
-			margin-block: var(--spacing-scaling-base);
-			padding-inline: var(--spacing-scaling-2x);			
+			margin-block: var(--spacing-base);
+			padding-inline: var(--spacing-2x);			
 		}
 		
 		&.btn-text, &.btn-text-arrow {
-			margin-block: var(--spacing-scaling-base);
+			margin-block: var(--spacing-base);
 			padding-inline: 0; 			
 		}  
 	}
 
 	.btn-sm {		
-		font-size: var(--text-scaling-sm);
-		padding-block: var(--spacing-scaling-half);
+		font-size: var(--text-sm);
+		padding-block: var(--spacing-half);
 		
 		&.btn-standard {			
-			margin-block: var(--spacing-scaling-half);
-			padding-inline: var(--spacing-scaling-base);			
+			margin-block: var(--spacing-half);
+			padding-inline: var(--spacing-base);			
 		}
 		
 		&.btn-text, &.btn-text-arrow {			
-			margin-block: var(--spacing-scaling-half);
+			margin-block: var(--spacing-half);
 			padding-inline: 0;			
 		} 
 	}
 
 	.btn-lg {		
-		font-size: var(--text-scaling-lg);
-		padding-block: calc(1.5 * var(--spacing-scaling-base));
+		font-size: var(--text-lg);
+		padding-block: calc(1.5 * var(--spacing-base));
 		
 		&.btn-standard {
-			margin-block: calc(1.5 * var(--spacing-scaling-base));
-			padding-inline: var(--spacing-scaling-3x);  
+			margin-block: calc(1.5 * var(--spacing-base));
+			padding-inline: var(--spacing-3x);  
 		}
 		
 		&.btn-text, &.btn-text-arrow {			
-			margin-block: calc(1.5 * var(--spacing-scaling-base));
+			margin-block: calc(1.5 * var(--spacing-base));
 			padding-inline: 0; 
 		} 	 
 	}

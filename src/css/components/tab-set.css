@@ -11,7 +11,7 @@
 		/* These classes must stay in order to ensure functionality */
 		
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 	}
 
 	.tab-list {
@@ -89,7 +89,7 @@
 	}
 
 	.tab-panel {
-		padding: var(--spacing-scaling-base);
+		padding: var(--spacing-base);
 		color: var(--color-tab-panel-text);
 		background-color: var(--color-tab-panel-bg);
 	}

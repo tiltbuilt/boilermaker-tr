@@ -1,0 +1,57 @@
+color: pink
+description: null
+fieldLayouts:
+  9986dffe-a1af-42bd-aec4-8e3f7369ebfe:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T18:30:05+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Layout Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bce8670f-291a-4dd8-95b1-657de99f9a3f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T18:30:05+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 50cd7a70-a0fe-4d38-a86d-9358735fc84c # Hidden Visible
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ede970d6-dc6c-4e23-866e-841fd5702e91
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: b6afa78d-71ea-439f-bae4-4dface488000
+        userCondition: null
+handle: displayAdjustment
+hasTitleField: false
+icon: null
+name: 'Display Adjustment'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-{deviceSize}-Display-{hiddenVisible}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

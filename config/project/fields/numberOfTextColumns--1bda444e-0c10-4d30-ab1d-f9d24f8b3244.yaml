@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: numberOfTextColumns
+instructions: null
+name: 'Number of Text Columns'
+searchable: false
+settings:
+  createButtonLabel: 'Add a Breakpoint'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - c3bd9145-5529-4e9f-a2dd-5c85c2d28f48 # Text Column Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -26,239 +26,8 @@ settings:
     -
       __assoc__:
         -
-          - optgroup
-          - 'Responsive Scaling Sizes'
-    -
-      __assoc__:
-        -
           - label
-          - 'Scaling X-Small'
-        -
-          - value
-          - text-scaling-xs
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling Small'
-        -
-          - value
-          - text-scaling-sm
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling Base'
-        -
-          - value
-          - text-scaling-base
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling Large'
-        -
-          - value
-          - text-scaling-lg
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling X-Large'
-        -
-          - value
-          - text-scaling-xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 2XL'
-        -
-          - value
-          - text-scaling-2xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 3XL'
-        -
-          - value
-          - text-scaling-3xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 4XL'
-        -
-          - value
-          - text-scaling-4xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 5XL'
-        -
-          - value
-          - text-scaling-5xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 6XL'
-        -
-          - value
-          - text-scaling-6xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 7XL'
-        -
-          - value
-          - text-scaling-7xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 8XL'
-        -
-          - value
-          - text-scaling-8xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Scaling 9XL'
-        -
-          - value
-          - text-scaling-9xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - optgroup
-          - 'Fixed Sizes'
-    -
-      __assoc__:
-        -
-          - label
-          - 'X-Small (12px)'
+          - 'X-Small '
         -
           - value
           - text-xs
@@ -275,7 +44,7 @@ settings:
       __assoc__:
         -
           - label
-          - 'Small (14px)'
+          - Small
         -
           - value
           - text-sm
@@ -292,7 +61,7 @@ settings:
       __assoc__:
         -
           - label
-          - 'Base (16px)'
+          - Base
         -
           - value
           - text-base
@@ -309,7 +78,7 @@ settings:
       __assoc__:
         -
           - label
-          - 'Large (18px)'
+          - Large
         -
           - value
           - text-lg
@@ -326,7 +95,7 @@ settings:
       __assoc__:
         -
           - label
-          - 'X-Large (20px)'
+          - X-Large
         -
           - value
           - text-xl
@@ -343,7 +112,7 @@ settings:
       __assoc__:
         -
           - label
-          - '2XL (24px)'
+          - 2XL
         -
           - value
           - text-2xl
@@ -360,7 +129,7 @@ settings:
       __assoc__:
         -
           - label
-          - '3XL (30px)'
+          - 3XL
         -
           - value
           - text-3xl
@@ -377,7 +146,7 @@ settings:
       __assoc__:
         -
           - label
-          - '4XL (36px)'
+          - 4XL
         -
           - value
           - text-4xl
@@ -394,7 +163,7 @@ settings:
       __assoc__:
         -
           - label
-          - '5XL (48px)'
+          - 5XL
         -
           - value
           - text-5xl
@@ -411,7 +180,7 @@ settings:
       __assoc__:
         -
           - label
-          - '6XL (60px)'
+          - 6XL
         -
           - value
           - text-6xl
@@ -428,7 +197,7 @@ settings:
       __assoc__:
         -
           - label
-          - '7XL (72px)'
+          - 7XL
         -
           - value
           - text-7xl
@@ -445,7 +214,7 @@ settings:
       __assoc__:
         -
           - label
-          - '8XL (96px)'
+          - 8XL
         -
           - value
           - text-8xl
@@ -462,7 +231,7 @@ settings:
       __assoc__:
         -
           - label
-          - '9XL (128px)'
+          - 9XL
         -
           - value
           - text-9xl

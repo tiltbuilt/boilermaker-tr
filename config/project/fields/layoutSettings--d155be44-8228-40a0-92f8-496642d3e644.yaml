@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: layoutSettings
+instructions: 'This field allows you to override the standard layout settings from the style sheet at different layout sizes. The default setting is to have all of the columns match heights vertically and to position them all as close to the center of the available space as possible.'
+name: 'Layout Settings'
+searchable: false
+settings:
+  createButtonLabel: 'Add Layout Adjsutment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - b9dd4da2-a4a7-4a18-960b-da3b1204513f # Layout Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

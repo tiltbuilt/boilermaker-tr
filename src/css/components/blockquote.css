@@ -1,6 +1,6 @@
 @layer components {
 	.quote {
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		color: var(--color-blockquote-text);		
 	}
 

@@ -1,6 +1,8 @@
 color: green
+description: null
 fieldLayouts:
   f56e9dfe-aa7a-414d-b39c-a744ad3313bc:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -45,7 +47,7 @@ fieldLayouts:
             handle: null
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Layout Columns'
             providesThumbs: false
             required: true
             tip: null
@@ -61,10 +63,10 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-23T19:09:55+00:00'
+            dateAdded: '2025-08-28T18:15:40+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f # Row Layout
+            fieldUid: d155be44-8228-40a0-92f8-496642d3e644 # Layout Settings
             handle: null
             includeInCards: false
             instructions: null
@@ -73,7 +75,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b9300129-0d96-457c-8d22-1f21940e9e22
+            uid: 25112ac4-96da-435d-b8e7-ba1173840b2b
             userCondition: null
             warning: null
             width: 100
@@ -84,10 +86,10 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-23T19:09:55+00:00'
+            dateAdded: '2025-08-28T18:15:15+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 4ccd8d3b-ddf4-4ac6-89c4-8d344eb6a427 # Row Style Adjustments
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             includeInCards: false
             instructions: null
@@ -96,12 +98,35 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f8bf9d5e-0ec3-49a0-a6b5-0ad718e3e16f
+            uid: bd875f37-0854-41d4-8752-8a56c544e339
             userCondition: null
             warning: null
             width: 100
-        name: Styling
+        name: Spacing
         uid: 8c888ec0-5287-4152-a12d-0e922bbaf7c0
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-03T20:30:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 76e84206-fdd5-4553-bf04-6f24f458ce0e # Background Settings
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 31a8f039-337a-42aa-b66e-5f81416abe25
+            userCondition: null
+            warning: null
+            width: 100
+        name: Background
+        uid: ac8217d5-4582-4917-ac53-a8a03360e123
         userCondition: null
       -
         elementCondition: null
@@ -157,17 +182,41 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-08-27T21:58:32+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 8a4e09ed-07c0-459f-9860-c11b7c216218
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T21:58:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da1c7575-359a-43dd-9637-3677abea1626
+            userCondition: null
+            warning: null
+            width: 100
         name: Advanced
         uid: 693b3497-d50a-4d12-aed1-515143292a8c
         userCondition: null
-handle: row
+handle: layout
 hasTitleField: true
 icon: table-layout
-name: 'Layout Row'
+name: Layout
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: 'Layout Row'
+titleFormat: Layout
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

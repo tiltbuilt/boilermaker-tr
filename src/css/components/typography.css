@@ -16,11 +16,11 @@
 	}
 
 	.subhead + .header-main-text {
-		margin-top: var(--spacing-scaling-half);
+		margin-top: var(--spacing-half);
 	}
 
 	.header-main-text + .subhead {
-		margin-top: var(--spacing-scaling-half);
+		margin-top: var(--spacing-half);
 	}
 
 	.heading + p {
@@ -34,14 +34,14 @@
 	.headline-default {
 		font-family: sans-serif;
 		font-weight: bold;
-		font-size: var(--text-scaling-4xl);
+		font-size: var(--text-4xl);
 		color: var(--color-type-headline-default);
 	}
 
 	.subhead-default {
 		font-family: sans-serif;
 		font-weight: bold;
-		font-size: var(--text-scaling-2xl);
+		font-size: var(--text-2xl);
 		color: var(--color-type-subhead-default);
 	}
 
@@ -49,7 +49,7 @@
 
 	p, ul, ol {
 		margin: 0;
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		max-width: var(--prose);    
 
 		& > li {	 

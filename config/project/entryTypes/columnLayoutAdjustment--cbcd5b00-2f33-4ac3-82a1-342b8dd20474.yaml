@@ -1,0 +1,91 @@
+color: pink
+description: null
+fieldLayouts:
+  d12e7486-ce68-49d0-b06e-ae2f9c5d8e4e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T22:19:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Layout Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cf9b795e-1176-460d-84e6-a901a880e4d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T22:19:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 8e2898a7-d1cb-4da3-b96f-c7017167dedc # Column Width
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e8e0f56-5bf6-4b10-96d7-0abd90c03414
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T22:19:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 28ace2d7-7d1e-42a0-b95a-1314d1ff1d03 # Column Order
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b0d9927d-e63c-4479-a6ad-26ed7c1aba7d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T22:19:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a5df8039-f6c5-4289-9ac2-7681f18d254c # Column Vertical Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 82c912ab-506b-4b6f-ab46-bb3a8b51100b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 7e232028-8d6c-4dfa-ad3e-86786723a7ef
+        userCondition: null
+handle: columnLayoutAdjustment
+hasTitleField: false
+icon: null
+name: 'Column Layout Adjustment'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-adjustment-{deviceSize}-{columnWidth}-{columnOrder}-{columnVerticalAlignment}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

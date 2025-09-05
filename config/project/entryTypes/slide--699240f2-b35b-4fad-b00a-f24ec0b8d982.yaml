@@ -1,6 +1,8 @@
 color: lime
+description: null
 fieldLayouts:
   b30c8d55-fa5e-4ab5-aa70-56049d798dc9:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -101,6 +103,29 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-08-28T17:04:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fe754e74-49cd-4df4-a56d-a05917ca696a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Type
+        uid: 26d46fe3-5f96-4912-bc08-6156d80e057b
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
             dateAdded: '2025-05-19T20:52:01+00:00'
             editCondition: null
             elementCondition: null
@@ -134,19 +159,36 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
-        name: 'Slide Layout'
+          -
+            dateAdded: '2025-08-28T17:04:39+00:00'
+            elementCondition: null
+            heading: Padding
+            type: craft\fieldlayoutelements\Heading
+            uid: 2e5b741c-9991-49f2-aa28-217c020c7deb
+            userCondition: null
+          -
+            dateAdded: '2025-08-28T17:04:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96bdc631-797c-425e-bc07-6c5af4d0910e
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Layout & Spacing'
         uid: b1e6df55-fe38-4df8-af0b-c4b6e8088b5b
         userCondition: null
       -
         elementCondition: null
         elements:
-          -
-            dateAdded: '2025-05-19T20:52:01+00:00'
-            elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: 63b060a9-83cf-47a6-a582-3dd3fe1305df
-            userCondition: null
           -
             dateAdded: '2025-05-19T20:52:01+00:00'
             editCondition: null
@@ -182,30 +224,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:52:01+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: 811855c1-b074-4329-8d7a-63af73d7c704
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:52:01+00:00'
+            dateAdded: '2025-08-28T17:04:39+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: ecb5f699-34c7-440c-bb60-a045e0e28b18 # Slide Style Adjustments
-            handle: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: textColor
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Text Color'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5a0a1c9d-9f76-4665-9c1e-f30c7b669633
+            uid: d3f1ed87-1013-4823-93e4-1098971cffaf
             userCondition: null
             warning: null
             width: 100
-        name: Styling
+        name: Color
         uid: cd3e099d-906c-4f82-b38f-b89f41065fe2
         userCondition: null
       -

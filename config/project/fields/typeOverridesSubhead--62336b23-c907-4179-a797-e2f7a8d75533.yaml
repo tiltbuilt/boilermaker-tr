@@ -1,0 +1,284 @@
+columnSuffix: null
+handle: typeOverridesSubhead
+instructions: 'The fields below allow you to override the default styling of type for this element from the style sheet.'
+name: 'Type Overrides - Subhead'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 6d175a4c-a2b5-40b9-9ed3-20ac2316289c
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - cb53bea8-51b6-4c2b-aa6f-9f2c19224715
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - 153ebb8e-b4c2-44e1-a3f2-2f154311c70f
+                            14:
+                              - fieldUid
+                              - 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - fbcf94b7-66f3-4bdf-863c-c481810ae61a
+                            14:
+                              - fieldUid
+                              - ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - 3096bdb8-d097-4dd0-80fc-3c5cf13e98fb
+                            14:
+                              - fieldUid
+                              - 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - ec04c215-55f2-4962-b372-bb1f75133d16
+                            14:
+                              - fieldUid
+                              - a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - italic
+                            2:
+                              - label
+                              - 'Italic?'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - b77b2220-90ce-4d1d-a0ae-1333ac79a05c
+                            14:
+                              - fieldUid
+                              - a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - d7050fb6-4932-4907-8d40-945de9c40afb
+                            14:
+                              - fieldUid
+                              - 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - a3a4b5a9-3d20-4039-be1a-5d995b3142b0
+                            14:
+                              - fieldUid
+                              - b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'Alignment & Text Columns'
+                            -
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            -
+                              - uid
+                              - 327e5136-9bd3-4f1c-951b-217033fd507a
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - 427b2806-2d13-4c52-a5ee-04f8653b153e
+                            14:
+                              - fieldUid
+                              - 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-08-27T20:48:26+00:00'
+                            11:
+                              - uid
+                              - 65436c68-a019-4715-815c-d35e6bcdc17c
+                            14:
+                              - fieldUid
+                              - 1bda444e-0c10-4d30-ab1d-f9d24f8b3244 # Number of Text Columns
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: inline
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

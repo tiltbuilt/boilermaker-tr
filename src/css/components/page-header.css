@@ -9,8 +9,8 @@
 	.page-header-layout {
 		width: 100%;
 		display: flex;
-		padding-block: var(--spacing-scaling-2x);		
-		padding-inline: var(--spacing-scaling-base);		
+		padding-block: var(--spacing-2x);		
+		padding-inline: var(--spacing-base);		
 		text-align: center;
 		justify-content: center;
 		align-items: center;
@@ -39,21 +39,21 @@
 
 	.page-header-headline {
 		font-weight: bold;
-		font-size: var(--text-scaling-4xl);	
+		font-size: var(--text-4xl);	
 		color: var(--color-pg-header-headline);
 	}
 
 	.page-header-subhead {
-		margin-top: var(--spacing-scaling-half);
+		margin-top: var(--spacing-half);
 		font-weight: bold;
-		font-size: var(--text-scaling-2xl);
+		font-size: var(--text-2xl);
 		color: var(--color-pg-header-subhead);
 	}
 
 	.page-header-intro {
 		max-width: var(--prose);
-		margin-top: var(--spacing-scaling-half);
-		font-size: var(--text-scaling-xl);
+		margin-top: var(--spacing-half);
+		font-size: var(--text-xl);
 		color: var(--color-pg-header-text);
 	}
 

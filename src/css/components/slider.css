@@ -11,7 +11,7 @@
 		position: relative;
 		overflow: hidden;
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-scaling-base);
+		margin-top: var(--spacing-base);
 		
 		&:first-child {
 			margin-top: 0;
@@ -19,7 +19,7 @@
 	}
 
 	.slide {		
-		padding-bottom: var(--spacing-scaling-2x);
+		padding-bottom: var(--spacing-2x);
 		overflow: hidden;
 		position: relative;
 		width: 100%;
@@ -52,14 +52,14 @@
 		
 		@media (min-width: var(--breakpoint-md)) {
 			max-width: 50%;	
-			padding: var(--spacing-scaling-base)
+			padding: var(--spacing-base)
 		}		
 	}
 
 	.slide-content-wrapper {
 		/* This object allows you to control colors and padding of the content in the slide. If padding is added, it will be within the box itself, so in addition to that on the .slide-content object */
 		text-align: left;
-		padding: var(--spacing-scaling-base); 
+		padding: var(--spacing-base); 
 	}
 
 	.slide-image {

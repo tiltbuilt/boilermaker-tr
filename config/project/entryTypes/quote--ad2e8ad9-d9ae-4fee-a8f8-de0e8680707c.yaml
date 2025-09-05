@@ -1,6 +1,8 @@
 color: cyan
+description: null
 fieldLayouts:
   262b0049-b5f8-4ffd-8dcc-4347b71a3e63:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -95,12 +97,28 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:51:03+00:00'
+            dateAdded: '2025-08-27T22:38:52+00:00'
+            editCondition: null
             elementCondition: null
-            heading: Color
-            type: craft\fieldlayoutelements\Heading
-            uid: 0b27b140-d7a8-429f-9640-ede5b3a1dd5b
+            fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8576041e-635c-42bb-b5c4-7f70f08d7499
             userCondition: null
+            warning: null
+            width: 100
+        name: Type
+        uid: 9176cf9e-5f66-4634-bdc6-9eab05c29fd7
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
@@ -136,30 +154,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:51:03+00:00'
-            elementCondition: null
-            heading: Adjustment
-            type: craft\fieldlayoutelements\Heading
-            uid: ee8bcba8-4214-458b-a534-6f00715d5cf2
-            userCondition: null
-          -
-            dateAdded: '2025-05-19T20:51:03+00:00'
+            dateAdded: '2025-08-27T22:38:52+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: cc44dfc3-f9d6-4fcc-9940-621e8a3981f0 # Quote Style Adjustments
-            handle: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: quoteCreditTitleColor
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Quote Credit Title Color'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: aaae68d1-4e48-47c4-b7a7-860f69a04487
+            uid: c10e2631-c74e-46f8-9934-1b4c437fe070
             userCondition: null
             warning: null
             width: 100
-        name: Styling
+        name: Color
         uid: ec51c722-f780-477a-a65a-dcfcb50c16a3
         userCondition: null
       -
@@ -213,6 +224,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 20b2bc22-c831-4239-a60e-0ecfd559d2c9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T22:38:52+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: f2fe8419-e205-4f4d-9972-556755f2cea9
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T22:38:52+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 981e6c06-6945-461f-84de-dcf786b33a0d
             userCondition: null
             warning: null
             width: 100

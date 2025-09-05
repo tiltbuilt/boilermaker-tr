@@ -1,9 +1,10 @@
 columnSuffix: null
-handle: display
+handle: displayOld
 instructions: null
 name: Display
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -12,6 +13,12 @@ settings:
           - 'Default (No Change)'
         -
           - value
+          - ''
+        -
+          - icon
+          - ''
+        -
+          - color
           - ''
         -
           - default
@@ -25,6 +32,12 @@ settings:
           - value
           - hidden
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -35,6 +48,12 @@ settings:
         -
           - value
           - not-hidden
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''

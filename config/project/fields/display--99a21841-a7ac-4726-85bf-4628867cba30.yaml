@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: display
+instructions: 'This field allows you to override the default style sheet settings for the display of this element. To use it, add a breakpoint adjustments, select the layout size where you want the adjustment to become active, and flip the switch to determine if the element is visible or not. The adjustments can stack so you can add adjustments for multiple different breakpoints if needed.'
+name: Display
+searchable: false
+settings:
+  createButtonLabel: 'Add Display Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - f1dadad3-35b3-471d-ad9b-6fbc3decfa2e # Display Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

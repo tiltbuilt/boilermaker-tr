@@ -1,6 +1,8 @@
 color: cyan
+description: null
 fieldLayouts:
   a9a00d05-cf25-4f32-8b1b-0e9c58c815d7:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -137,18 +139,17 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+        name: 'Button Styling'
+        uid: 43eb2322-76b3-451b-aeda-8dc511730a07
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
-            dateAdded: '2025-05-23T19:00:46+00:00'
-            elementCondition: null
-            heading: Adjustments
-            type: craft\fieldlayoutelements\Heading
-            uid: 5c47d007-6f84-47cd-b394-09201d1feccc
-            userCondition: null
-          -
-            dateAdded: '2025-05-23T19:00:46+00:00'
+            dateAdded: '2025-08-27T18:45:51+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: dd25301d-9012-41dd-aa43-19f023540545 # Button Group Style Adjustment
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             includeInCards: false
             instructions: null
@@ -157,12 +158,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 705f3da7-51e0-4eb4-98b0-62e0d87ab546
+            uid: e0e762da-bbb6-4f8f-9832-a25431e90524
             userCondition: null
             warning: null
             width: 100
-        name: Styling
-        uid: 43eb2322-76b3-451b-aeda-8dc511730a07
+        name: Spacing
+        uid: 11ec67d9-d410-47c5-88c2-7aaf5113d3f4
         userCondition: null
       -
         elementCondition: null
@@ -215,6 +216,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9302b92c-c035-4bd1-963e-56ae26c677f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T22:28:22+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 9b7531e5-65b0-4b25-873e-c3b9db9cc4fa
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T22:28:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 99f4d700-24c7-4e6c-ae5c-31dc81ef91f7
             userCondition: null
             warning: null
             width: 100

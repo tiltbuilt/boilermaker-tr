@@ -1,6 +1,8 @@
 color: cyan
+description: null
 fieldLayouts:
   f3589bbe-232b-4610-91e0-458e9a97c5ef:
+    cardThumbAlignment: end
     cardView:
       - type
       - 'layoutElement:999bdee3-ba97-4ca8-9fa4-f50e7a6bde8d'
@@ -8,36 +10,6 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
-          -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-12-09T20:01:51+00:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: c46fe326-2986-45aa-8ca1-9838e7a4bd43
-            userCondition: null
-            warning: null
-            width: 100
           -
             dateAdded: '2024-12-09T19:57:46+00:00'
             editCondition: null
@@ -73,6 +45,77 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-08-27T20:48:33+00:00'
+            elementCondition: null
+            heading: 'Type Styling'
+            type: craft\fieldlayoutelements\Heading
+            uid: 10f76587-42b9-4f0a-93af-417992196f2a
+            userCondition: null
+          -
+            dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: aeeead9c-f591-4d95-a990-f8bea54fb0ef # Heading Style
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e554bb46-5847-4596-ad6e-af34b33fd73c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T20:48:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
+            handle: typeSettingsMainHeadline
+            includeInCards: false
+            instructions: null
+            label: 'Type Overrides - Main Headline'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3486fe31-5177-435d-aab6-676fca4aab7c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-27T20:48:33+00:00'
+            elementCondition: null
+            heading: Color
+            type: craft\fieldlayoutelements\Heading
+            uid: 35db9f79-9cd4-4e97-8eed-a0ffaa6a015b
+            userCondition: null
+          -
+            dateAdded: '2024-12-08T04:36:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: headlineColor
+            includeInCards: false
+            instructions: null
+            label: 'Headline Color'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8bc08470-059f-42d0-8bda-5f0d65784b4d
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Main Headline'
+        uid: a70d97af-159d-463f-ac71-a8066ef1f2c6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
             dateAdded: '2024-12-09T20:04:45+00:00'
             editCondition: null
             elementCondition: null
@@ -106,36 +149,13 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: a70d97af-159d-463f-ac71-a8066ef1f2c6
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
             elementCondition: null
-            heading: 'Type Style'
+            heading: 'Type Styling'
             type: craft\fieldlayoutelements\Heading
             uid: 0516af06-0a83-4846-890e-d08beb3e72fa
             userCondition: null
-          -
-            dateAdded: '2024-12-08T04:36:22+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: aeeead9c-f591-4d95-a990-f8bea54fb0ef # Heading Style
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e554bb46-5847-4596-ad6e-af34b33fd73c
-            userCondition: null
-            warning: null
-            width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
             editCondition: null
@@ -165,38 +185,29 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-08-27T20:52:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 62336b23-c907-4179-a797-e2f7a8d75533 # Type Overrides - Subhead
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 68c3fd0b-6c56-40ea-8485-f75139a2a33c
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-12-08T04:36:22+00:00'
             elementCondition: null
             heading: Color
             type: craft\fieldlayoutelements\Heading
             uid: 9df28174-ab49-4f7a-8b90-c7d9063797fb
             userCondition: null
-          -
-            dateAdded: '2024-12-08T04:36:22+00:00'
-            dismissible: false
-            elementCondition: null
-            style: tip
-            tip: 'Use these fields to override the colors from the color scheme if desired.'
-            type: craft\fieldlayoutelements\Tip
-            uid: c46c10c2-5eee-4c37-90b1-4df50f10a8b9
-            userCondition: null
-          -
-            dateAdded: '2024-12-08T04:36:22+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: headlineColor
-            includeInCards: false
-            instructions: null
-            label: 'Headline Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8bc08470-059f-42d0-8bda-5f0d65784b4d
-            userCondition: null
-            warning: null
-            width: 100
           -
             dateAdded: '2024-12-08T04:36:22+00:00'
             editCondition: null
@@ -215,17 +226,40 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-12-08T04:36:22+00:00'
+            dateAdded: '2025-08-27T20:52:59+00:00'
             elementCondition: null
-            heading: Adjustments
+            heading: Spacing
             type: craft\fieldlayoutelements\Heading
-            uid: 1342e631-8c9b-4bfe-a268-a85427a0cbbb
+            uid: f3c51a34-ea6b-4891-8e73-39636473328f
             userCondition: null
           -
-            dateAdded: '2024-12-08T04:36:22+00:00'
+            dateAdded: '2025-08-27T20:52:59+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 62bb1cf0-026e-410e-a685-701783c6ae9e # Header Style Adjustments
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: subheadSpacing
+            includeInCards: false
+            instructions: 'Use this field to override the default stylesheet spacing between the subhead and the main headline.'
+            label: 'Subhead Spacing'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5e7b5d96-547a-4549-ae75-8505052037d4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Subhead
+        uid: 7bbb70b5-68f5-43d1-b90f-a4e04dd31342
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-27T20:48:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             includeInCards: false
             instructions: null
@@ -234,12 +268,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f4d34e91-c076-4554-97c2-0e92eaedacca
+            uid: 67d7ad56-63db-405d-93ca-6ded5f1769eb
             userCondition: null
             warning: null
             width: 100
-        name: Styling
-        uid: 7bbb70b5-68f5-43d1-b90f-a4e04dd31342
+        name: Spacing
+        uid: d8b76224-f909-4675-a9f3-2d6f9df01d42
         userCondition: null
       -
         elementCondition: null
@@ -295,11 +329,35 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-08-27T20:48:33+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: fce12334-ad92-419e-b4f1-7c250c790a08
+            userCondition: null
+          -
+            dateAdded: '2025-08-27T20:48:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9650c1b1-1f38-47dc-a46d-23535b1d6e90
+            userCondition: null
+            warning: null
+            width: 100
         name: Advanced
         uid: b4a609f4-ddc5-4065-83d4-7b8b3f98bd77
         userCondition: null
 handle: heading
-hasTitleField: true
+hasTitleField: false
 icon: helicopter-symbol
 name: Heading
 showSlugField: false
