@@ -35,7 +35,7 @@
 {% endif %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.iconStyleAdjustments.eagerly().all() %}
+{#{% set adjustments = entry.iconStyleAdjustments.eagerly().all() %}#}
 
 {# set Layout Class #}
 {% if entry.blockLayout %}
@@ -57,8 +57,9 @@
 {% if entry.iconSize != '' %}
 	{% set iconClasses = iconClasses|merge(['icon-' ~ entry.iconSize]) %}
 {% endif %}
+{#}
 {% for adjSet in adjustments %}
-	{# Get Device Size for Adjustments #}
+	{# Get Device Size for Adjustments #}{#}
 	{% set devSize = adjSet.deviceSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ '/component:' %}	
@@ -73,8 +74,9 @@
 {% if entry.iconSize != '' %}
 	{% set contentClasses = contentClasses|merge(['icon-content-wrapper-' ~ entry.iconSize]) %}
 {% endif %}
+{#}
 {% for adjSet in adjustments %}
-	{# Get Device Size for Adjustments #}
+	{# Get Device Size for Adjustments #}{#}
 	{% set devSize = adjSet.deviceSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ '/component:' %}	
@@ -83,9 +85,9 @@
 		{% set contentClasses = contentClasses|merge([devSize ~ 'mt-' ~ adjSet.contentMt]) %}
 	{% endif %}	
 {% endfor %}
+#}
 
-
-<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="{{layoutClass}}">
 		<div class="{{- iconClasses|join(' ') }}">
 			{% if  entry.icon.type == 'svg' %}
@@ -97,7 +99,7 @@
 			{% endif %}
 		</div>	
 		{% if entry.blockContent|length %}
-			<div class="{{- contentClasses|join(' ') }} {{ gMacros.classesOut(adjustments, 'Type') -}} ">
+			<div class="{{- contentClasses|join(' ') }} {{- gMacros.typeClasses(entry.typeSettings, true) -}}">
 				
 				{% for chunk in entry.blockContent %}
 					{% if chunk.type == 'markup' %}

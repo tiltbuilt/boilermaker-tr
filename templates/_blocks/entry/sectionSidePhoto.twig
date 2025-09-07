@@ -120,7 +120,7 @@
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.sidePhotoStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}
+{#{% set adjustments = entry.sidePhotoStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}#}
 
 {# Set Styles for Columns #}
 
@@ -158,7 +158,7 @@
 	{% set positionClass = 'order-first' %}
 {% endif %}
 
-<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+<section id="{{blockId}}" class="{{- blockClass }} @container {#{{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}}#} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
@@ -167,7 +167,7 @@
 	<div class="side-section-layout {{ entry.fullscreen ? 'fullscreen' -}}">
 		
 		<div class="side-photo-content {{positionClass}} {{ _self.contentClasses(classSettings) -}}">
-			<div class="side-photo-content-wrapper {#{% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} #} {{entry.textAlignment}} {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
+			<div class="side-photo-content-wrapper {% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} {{- gMacros.typeClasses(entry.typeSettings, false) -}} {#} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}#}">
 				{% for chunk in entry.elementContent %}
 					{% if chunk.type == 'markup' %}
 						{% if entry.animate and entry.animateContent %}
@@ -184,7 +184,7 @@
 				{% endfor %}
 			</div>
 			<div class="background">
-				{{ gMacros.buildElementBackground(adjustments) }}
+				{#{{ gMacros.buildElementBackground(adjustments) }}#}
 			</div>
 		</div>
 		

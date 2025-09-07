@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ced37a0f622ce09eda0e631e7c8a7433",
+    "content-hash": "18cef46109bf9a5f663158fa623f1daa",
     "packages": [
         {
             "name": "amphp/amp",
@@ -466,11 +466,16 @@
         },
         {
             "name": "amphp/parallel",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amphp/parallel.git",
+                "reference": "321b45ae771d9c33a068186b24117e3cd1c48dce"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/parallel/zipball/5113111de02796a782f5d90767455e7391cca190",
-                "reference": "5113111de02796a782f5d90767455e7391cca190",
+                "url": "https://api.github.com/repos/amphp/parallel/zipball/321b45ae771d9c33a068186b24117e3cd1c48dce",
+                "reference": "321b45ae771d9c33a068186b24117e3cd1c48dce",
                 "shasum": ""
             },
             "require": {
@@ -486,6 +491,12 @@
                 "php": ">=8.1",
                 "revolt/event-loop": "^1"
             },
+            "require-dev": {
+                "amphp/php-cs-fixer-config": "^2",
+                "amphp/phpunit-util": "^3",
+                "phpunit/phpunit": "^9",
+                "psalm/phar": "^5.18"
+            },
             "type": "library",
             "autoload": {
                 "files": [
@@ -498,6 +509,7 @@
                     "Amp\\Parallel\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -524,7 +536,17 @@
                 "multi-processing",
                 "multi-threading"
             ],
-            "time": "2024-12-21T01:56:09+00:00"
+            "support": {
+                "issues": "https://github.com/amphp/parallel/issues",
+                "source": "https://github.com/amphp/parallel/tree/v2.3.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/amphp",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-08-27T21:55:40+00:00"
         },
         {
             "name": "amphp/parser",
@@ -1544,11 +1566,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.8.16",
+            "version": "5.8.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/3daa5c883e9a5a8a5e97ee41ef894cd07dd5c933",
-                "reference": "3daa5c883e9a5a8a5e97ee41ef894cd07dd5c933",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/afad55fb5c220b2e25a9ea6bf5e5c324eb44bc53",
+                "reference": "afad55fb5c220b2e25a9ea6bf5e5c324eb44bc53",
                 "shasum": ""
             },
             "require": {
@@ -1645,7 +1667,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-08-30T02:34:17+00:00"
+            "time": "2025-09-05T23:56:04+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -7859,11 +7881,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "5.12.3",
+            "version": "5.12.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/c57d37e5dadd2823199864728d446b0d0b5c33bc",
-                "reference": "c57d37e5dadd2823199864728d446b0d0b5c33bc",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/16d513db47e1d0933ffba209cb4c70ef60157847",
+                "reference": "16d513db47e1d0933ffba209cb4c70ef60157847",
                 "shasum": ""
             },
             "require": {
@@ -7907,7 +7929,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2025-08-14T16:26:24+00:00"
+            "time": "2025-09-04T13:50:14+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar",

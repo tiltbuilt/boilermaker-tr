@@ -52,6 +52,7 @@
 {% set columnClassList = columnClassList|merge(colorClasses) %}
 
 {# Set Layout Styles #}
+{#}
 {% for layoutItem in entry.columnLayout %}
 	{% set devSize = layoutItem.deviceSize %}
 	{% if devSize|length %}
@@ -70,12 +71,15 @@
 		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.verticalAlignment]) %}
 	{% endif %}
 {% endfor %}
+#}
 
 {# Retrieve styling adjustments #}
+{#}
 {% set adjustments = entry.columnStyleAdjustments.eagerly().with('bgImg').all() %}
+#}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- columnClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>	
-	<div class="inner column-inner {{entry.textAlignment}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
+	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} {{ gMacros.spacingClasses(entry.padding, false) }}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{% if animate %}
@@ -92,7 +96,7 @@
 		{% endfor %}							
 	</div>
 	<div class="background">
-		{{ gMacros.buildElementBackground(adjustments) }}
+		{#{{ gMacros.buildElementBackground(adjustments) }}#}
 	</div>		
 </div>
 

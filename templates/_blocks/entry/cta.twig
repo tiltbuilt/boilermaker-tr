@@ -148,11 +148,11 @@
 {% endswitch %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.ctaStyleAdjustments.eagerly().with('bgImg').all() %}
+{#{% set adjustments = entry.ctaStyleAdjustments.eagerly().with('bgImg').all() %}#}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container/component {% if entry.ctaType %}cta-lg{% else %}cta-sm{% endif %} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- ctaClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{- blockClass }} @container/component {% if entry.ctaType %}cta-lg{% else %}cta-sm{% endif %} {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ ctaClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 	<div class="inner cta-inner {{ innerClasses|join(' ') }}">
-		<div class="cta-content w-full {{ contentClasses|join(' ') }}  {{ gMacros.classesOut(adjustments, 'Type') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
+		<div class="cta-content w-full {{ contentClasses|join(' ') }}  {{- gMacros.typeClasses(entry.typeSettings, true) }} {{ gMacros.spacingClasses(entry.padding, true) }}">
 			<div>
 				{% for chunk in entry.ctaContent %}
 					{% if chunk.type == 'markup' %}
@@ -167,7 +167,7 @@
 			</div>
 		</div>
 		{% if entry.ctaType and ctaImg != null %}
-			<div class="cta-img-wrapper w-full {{ imgClasses|join(' ') }} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}">
+			<div class="cta-img-wrapper w-full {{ imgClasses|join(' ') }} {#{{ gMacros.classesOut(adjustments, 'Padding', true) -}}#}">
 						
 				{% if entry.ctaImgAspect == '' or entry.ctaImgAspect == 'auto' %}
 					{%- set xForm = 'contentImage' %}								
@@ -192,7 +192,7 @@
 		{% endif %}							
 	</div>
 	<div class="background">
-		{{ gMacros.buildElementBackground(adjustments) }}
+		{#{{ gMacros.buildElementBackground(adjustments) }}#}
 	</div>		
 </div>
 

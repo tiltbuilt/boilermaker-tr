@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: displayOld
+handle: displayState
 instructions: null
-name: Display
+name: 'Display State'
 searchable: false
 settings:
   customOptions: false

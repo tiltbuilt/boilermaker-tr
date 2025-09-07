@@ -61,9 +61,9 @@
 
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.formStyleAdjustments.eagerly().all() %}
+{#{% set adjustments = entry.formStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 	{% set form = entry.formToDisplay.eagerly().one() %}	
 	{{ craft.formie.renderForm(form, {
 		themeConfig: {

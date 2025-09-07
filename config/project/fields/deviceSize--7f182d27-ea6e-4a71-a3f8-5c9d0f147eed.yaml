@@ -30,7 +30,7 @@ settings:
           - '288px Wide and Above'
         -
           - value
-          - 2xs
+          - '@2xs'
         -
           - icon
           - ''
@@ -47,7 +47,7 @@ settings:
           - '320px Wide and Above'
         -
           - value
-          - xs
+          - '@xs'
         -
           - icon
           - ''
@@ -64,7 +64,7 @@ settings:
           - '384px Wide and Above'
         -
           - value
-          - sm
+          - '@sm'
         -
           - icon
           - ''
@@ -81,7 +81,7 @@ settings:
           - '448px Wide and Above'
         -
           - value
-          - md
+          - '@md'
         -
           - icon
           - ''
@@ -98,7 +98,7 @@ settings:
           - '512px Wide and Above'
         -
           - value
-          - lg
+          - '@lg'
         -
           - icon
           - ''
@@ -115,7 +115,7 @@ settings:
           - '640px Wide and Above (Phone Horizontal Size)'
         -
           - value
-          - xl
+          - '@xl'
         -
           - icon
           - ''
@@ -132,7 +132,7 @@ settings:
           - '768px Wide and Above (Tablet Vertical Size)'
         -
           - value
-          - 2xl
+          - '@2xl'
         -
           - icon
           - ''
@@ -149,7 +149,7 @@ settings:
           - '1024px Wide and Above (Laptop Size)'
         -
           - value
-          - 3xl
+          - '@3xl'
         -
           - icon
           - ''
@@ -166,7 +166,7 @@ settings:
           - '1280px Wide and Above (Desktop Size)'
         -
           - value
-          - 4xl
+          - '@4xl'
         -
           - icon
           - ''
@@ -183,7 +183,7 @@ settings:
           - '1536px Wide and Above (Hi Res Size)'
         -
           - value
-          - 5xl
+          - '@5xl'
         -
           - icon
           - ''

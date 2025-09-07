@@ -46,7 +46,7 @@
 {% endif %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.tabSetStyleAdjustments.eagerly().all() %}
+{#{% set adjustments = entry.tabSetStyleAdjustments.eagerly().all() %}#}
 
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
@@ -73,7 +73,7 @@
   }"
   x-id="['tab']"
   id="{{blockId}}"
-  class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- tabSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}" >
+  class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ tabSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}" >
   <!-- Tab List -->
   <ul
 	x-ref="tablist"
@@ -166,15 +166,15 @@
 		{% set tabClassList = tabClassList|merge(colorClasses) %}
 				
 		{# sort out content styling #}
-		{% set tabAdjustments = tab.tabPanelStyleAdjustments.eagerly().all() %}
 		{% set styleListMaster = [] %}
-		{% set styleObj = {} %}		
+		{% set styleObj = {} %}
+		{#{% set tabAdjustments = tab.tabPanelStyleAdjustments.eagerly().all() %}				
 		{% for adj in tabAdjustments %}
 			{% set devSize = adj.deviceSize %}
 			{% if devSize|length %}
 				{% set devSize = devSize ~ ':' %}	
 			{% endif %}		
-			{# loop through the tabs in the accordion adjustments and add to the style object, accordion adjustments get priority, so set class name to key and value to compare against set adjustments so the set adjustments that don't have conflicts get added but not the ones with accordion overrides #}
+			{# loop through the tabs in the accordion adjustments and add to the style object, accordion adjustments get priority, so set class name to key and value to compare against set adjustments so the set adjustments that don't have conflicts get added but not the ones with accordion overrides #}{#}
 			{% set fLayout = adj.getFieldLayout() %}
 			{% for tabObj in fLayout.tabs %}
 				{% if tabObj.name != "Device Size" %}
@@ -200,7 +200,7 @@
 				{% endif %}
 			{% endfor %}					
 		{% endfor %}
-		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
+		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}{#}
 		{% for setAdj in adjustments %}			
 			{% set devSize = setAdj.deviceSize %}
 			{% if devSize|length %}
@@ -234,7 +234,7 @@
 					{% endif %}
 				{% endif %}
 			{% endfor %}
-		{% endfor %}
+		{% endfor %}#}
 		{% for key, value in styleObj %}
 			{% set styleListMaster = styleListMaster|merge([value]) %}
 		{% endfor %}

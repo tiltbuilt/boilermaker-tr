@@ -46,12 +46,13 @@
 {% endif %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.accordionSetStyleAdjustments.eagerly().all() %}
+{#}
+{% set adjustments = entry.accordionSetStyleAdjustments.eagerly().all() %}#}
 
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
 
-<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- accSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} >
+<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {#{{- gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -92,15 +93,19 @@
 		{% endif %}		
 		
 		{# sort out content styling #}
+
+		{% set styleListMaster = ['accordion-content'] %}
+		{% set styleObj = {} %}	
+
+		{#}
 		{% set accAdjustments = acc.accordionStyleAdjustments.eagerly().all() %}
-		{% set styleListMaster = ['accordion-content', acc.textAlignment] %}
-		{% set styleObj = {} %}		
+			
 		{% for adj in accAdjustments %}
 			{% set devSize = adj.deviceSize %}
 			{% if devSize|length %}
 				{% set devSize = devSize ~ ':' %}	
 			{% endif %}		
-			{# loop through the tabs in the accordion adjustments and add to the style object, accordion adjustments get priority, so set class name to key and value to compare against set adjustments so the set adjustments that don't have conflicts get added but not the ones with accordion overrides #}
+			
 			{% set fLayout = adj.getFieldLayout() %}
 			{% for tabObj in fLayout.tabs %}
 				{% if tabObj.name != "Device Size" %}
@@ -127,6 +132,7 @@
 			{% endfor %}					
 		{% endfor %}
 		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
+		{#}
 		{% for setAdj in adjustments %}			
 			{% set devSize = setAdj.deviceSize %}
 			{% if devSize|length %}
@@ -161,6 +167,7 @@
 				{% endif %}
 			{% endfor %}
 		{% endfor %}
+		#}
 		{% for key, value in styleObj %}
 			{% set styleListMaster = styleListMaster|merge([value]) %}
 		{% endfor %}
@@ -180,7 +187,7 @@
 			set expanded(value) {
 				this.active = value ? this.id : null
 			},
-		}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.classesOut(adjustments, 'Display') }} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
+		}" role="region" class="{{- accClassList|join(' ') }} {#{{- gMacros.classesOut(adjustments, 'Display') }}#} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
 			<{{setHeaderLevel}} class="accordion-header">
 				<button
 					x-on:click="expanded = !expanded"

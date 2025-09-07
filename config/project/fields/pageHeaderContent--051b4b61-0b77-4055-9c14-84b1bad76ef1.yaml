@@ -1,0 +1,33 @@
+columnSuffix: null
+handle: pageHeaderContent
+instructions: null
+name: 'Page Header Content'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes:
+    - b644bda8-1050-46f5-9453-0b3d19812289 # Documents
+  characterLimit: null
+  ckeConfig: 073c9d03-dcc0-4435-99fe-2df91703e911 # Limited
+  createButtonLabel: null
+  defaultTransform: null
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+  expandEntryButtons: false
+  fullGraphqlData: true
+  parseEmbeds: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  sourceEditingGroups:
+    - __ADMINS__
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

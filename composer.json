@@ -3,7 +3,7 @@
   "prefer-stable": true,
   "require": {
     "craftcms/ckeditor": "^4.10.1",
-    "craftcms/cms": "5.8.16",
+    "craftcms/cms": "5.8.17",
     "craftcms/feed-me": "^6.10.0",
     "craftcms/postmark": "^3.1.0",
     "craftpulse/craft-colour-swatches": "^5.1.0",
@@ -13,7 +13,7 @@
     "nystudio107/craft-seomatic": "^5.1.17",
     "nystudio107/craft-typogrify": "^5.0.1",
     "nystudio107/craft-vite": "^5.0.1",
-    "putyourlightson/craft-blitz": "^5.12.3",
+    "putyourlightson/craft-blitz": "5.12.4",
     "putyourlightson/craft-datastar": "1.0.0-RC.7",
     "servd/craft-asset-storage": "^4.1.3",
     "spacecatninja/imager-x": "^5.1.6",

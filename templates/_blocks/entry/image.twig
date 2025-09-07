@@ -14,10 +14,11 @@
 {% import '_macros/globalMacros' as gMacros %}
 
 {# Non-modal button code macro #}
+{#}
 {% macro blockWidth (adjustments) %}
 	{% set classList = [] %}
 	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}
+		{# Get Device Size for Adjustments #}{#}
 		{% set devSize = adjSet.deviceSize %}
 		{% if devSize|length %}
 			{% set devSize = devSize ~ ':' %}	
@@ -38,7 +39,7 @@
 {% macro imageWidth (adjustments) %}
 	{% set classList = [] %}
 	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}
+		{# Get Device Size for Adjustments #}{#}
 		{% set devSize = adjSet.deviceSize %}
 		{% if devSize|length %}
 			{% set devSize = devSize ~ ':' %}	
@@ -87,21 +88,22 @@
 {% endif %}
 {% set colorClasses = [] %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
-{% if entry.captionColor|length %}
+{#{% if entry.captionColor|length %}
 	{% set colorClasses = colorClasses|merge(['text-' ~ entry.captionColor]) %}
-{% endif %}
+{% endif %}#}
 {% if entry.bgColor|length %}
 	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
 {% endif %}
 {% set imgClassList = imgClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.imageStyleAdjustments.eagerly().all() %}
+{#{% set adjustments = entry.imageStyleAdjustments.eagerly().all() %}#}
 
 {# Work on Aspect Ratio Setup #}
 {% set hasAspectChange = false %}
 {% set defAspect = 'contentImage' %}
 {% set transformData = {} %}
+{#}
 {% for adjSet in adjustments %}	
 	{% if adjSet.aspectRatio != '' %}
 		{% set hasAspectChange = true %}
@@ -120,7 +122,7 @@
 
 {# OUTPUT #}
 {% if image != null %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ _self.blockWidth(adjustments) }} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ _self.blockWidth(adjustments) }} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}} #} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
 		{% if entry.linkSettings!= null %}
 			{% if entry.isModalLink %}
@@ -145,7 +147,7 @@
 		{% if image.mimeType == "image/svg+xml" %}		
 		
 			{# for svg images just drop image in, don't mess with aspect ratio or transforms #}
-			<img src="{{ image.url }}" alt="{{entry.altText}}" class="lazyload block {{ _self.imageWidth(adjustments) }}">
+			<img src="{{ image.url }}" alt="{{entry.altText}}" class="lazyload block {#{{ _self.imageWidth(adjustments) }}#}">
 		
 		{% else %}		
 			{% if hasAspectChange %}
@@ -159,17 +161,17 @@
 					'@xl': 1200,
 					'@2xl': 1500,
 				} %}
-								
+				{#}				
 				{% for adjSet in adjustments %}
 					{% if adjSet.aspectRatio != '' %}
-						{# add class to aspect classes array to size picture element #}
+						{# add class to aspect classes array to size picture element #}{#}
 						{% set devSize = adjSet.deviceSize %}
 						{% if devSize|length %}
 							{% set devSize = devSize ~ ':' %}	
 						{% endif %}
 						{% set aspectClasses = aspectClasses|merge([devSize ~ 'aspect-' ~ adjSet.aspectRatio]) %}
 						
-						{# Add Aspect Ratio Info for each aspect change to aspectData object for creation of source attributes #}
+						{# Add Aspect Ratio Info for each aspect change to aspectData object for creation of source attributes #}{#}
 						{% if adjSet.deviceSize == '' %}
 							{% set deviceLabel = 'df' %}
 						{% else %}
@@ -179,6 +181,7 @@
 						{% set aspectData = aspectData|merge(aspectObj) %}
 					{% endif %}					
 				{% endfor %}
+
 				
 				<picture class="block relative {{ aspectClasses|join(' ') }}">									
 					{% set dfMaxSize = null %}				
@@ -233,7 +236,7 @@
 				  data-src="{{ transformedImages[0] }}"
 				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
 				  alt="{{ entry.altText }}"
-				  class="lazyload block {{ _self.imageWidth(adjustments) }}"
+				  class="lazyload block {#{{ _self.imageWidth(adjustments) }}#}"
 				>			
 			{% endif %}		  
 		{% endif %}
@@ -243,7 +246,7 @@
 		{% endif %}
 		
 		{% if entry.imageCaption != '' %}
-			<figcaption class="image-caption {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">
+			<figcaption class="image-caption">
 				{{ entry.imageCaption }}						
 			</figcaption>				  
 		{% endif %}

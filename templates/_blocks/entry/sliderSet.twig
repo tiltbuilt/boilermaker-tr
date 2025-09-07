@@ -49,7 +49,7 @@
 {% set sliderSetClassList = sliderSetClassList|merge([colorScheme]) %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.sliderSetStyleAdjustments.eagerly().all() %}
+{#{% set adjustments = entry.sliderSetStyleAdjustments.eagerly().all() %}#}
 
 {# Aspect Ratio Settings #}
 {% if entry.slidePhotoSizeSm|length %}
@@ -67,7 +67,7 @@
 {# retrieve slide content #}
 {% set slides = entry.slides.eagerly().all() %}
 
-<div id="{{blockId}}" class="@container {% if animate %}animate{% endif %} {{blockClass}} {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- sliderSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} 
+<div id="{{blockId}}" class="@container {% if animate %}animate{% endif %} {{blockClass}} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ sliderSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} 
 
 {% if entry.slides|length > 1 %}
 x-data="{swiper: null}"

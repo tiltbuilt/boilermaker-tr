@@ -1,4 +1,4 @@
-dateModified: 1756938604
+dateModified: 1757286648
 elementSources:
   craft\elements\Entry:
     -
@@ -143,6 +143,7 @@ meta:
     00b46567-7b31-49a0-a9ad-dbc2a79ea636: 'Reusable Module' # Reusable Module
     0f72b724-e0a8-4044-a3aa-12255ade6ea1: 'Basic Text with Search' # Basic Text with Search
     0fe2ca3f-eb30-4294-96a2-1154bd95e41e: 'Background Position' # Background Position
+    1bbed984-20fa-4862-a5ef-684f27ff68f7: 'Page Header' # Page Header
     1bda444e-0c10-4d30-ab1d-f9d24f8b3244: 'Number of Text Columns' # Number of Text Columns
     1ef67107-0265-4563-8344-695b0a016e56: Form # Form
     2bf5d5a7-249a-42a4-ae56-79ea7f679bcc: 'Modal to Display' # Modal to Display
@@ -192,6 +193,7 @@ meta:
     47acc143-9347-4976-bd50-02778ffeabf1: 'Button Styles' # Button Styles
     049ec87b-57e9-4b3e-8d53-44cb8874474b: Width # Width
     50cd7a70-a0fe-4d38-a86d-9358735fc84c: 'Hidden Visible' # Hidden Visible
+    051b4b61-0b77-4055-9c14-84b1bad76ef1: 'Page Header Content' # Page Header Content
     53df91b5-e85f-4b0c-8669-222678840f22: Padding # Padding
     55cb62d2-f02a-4bd8-849c-695f3a2e92b1: Columns # Columns
     56d80f6e-2a67-464f-af70-0d46d267a0e2: 'Items Per Page' # Items Per Page
@@ -212,7 +214,7 @@ meta:
     91d05e51-ee38-4e73-af4c-ebed7e7572d3: Spacing # Spacing
     93bf7bd8-1004-4c0c-be4d-7b59aa97021e: 'List Order' # List Order
     99a21841-a7ac-4726-85bf-4628867cba30: Display # Display
-    206d3220-640b-4b20-a440-faaa801a11d9: Display # Display
+    206d3220-640b-4b20-a440-faaa801a11d9: 'Display State' # Display State
     335fab75-2107-4c96-80b2-14808539eadd: 'Button Group' # Button Group
     400ed272-3701-4004-b0e0-a74db3d25030: Accordion # Accordion
     413dfe3a-277c-4fba-a7ed-27de63a9a93f: 'Vertical Alignment' # Vertical Alignment

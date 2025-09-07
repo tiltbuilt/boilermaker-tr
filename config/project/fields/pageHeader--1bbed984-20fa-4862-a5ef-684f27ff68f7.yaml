@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: pageHeader
+instructions: 'If you leave this field blank, the Page Title will be used as the h1 tag page header for the page with the default page header styling for the main headline.'
+name: 'Page Header'
+searchable: true
+settings:
+  createButtonLabel: 'Make Custom Headline'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 1
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -64,6 +64,93 @@
 
 {# Class and Attribute Rendering #}
 
+{% macro typeClasses(typeSettings, useComponent) %}
+	{% set classList = [] %}
+	{% set fLayout = typeSettings.getFieldLayout() %}
+	{% for tabObj in fLayout.tabs %}				
+		{% for tabEl in tabObj.elements %}				
+			{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}				
+				{% if tabEl.field.handle != 'numberOfTextColumns' %}
+					{% if typeSettings.getFieldValue(tabEl.field.handle)|length %}
+						{% set classItem = typeSettings.getFieldValue(tabEl.field.handle) %}					
+						{% set classList = classList|merge([classItem]) %}
+					{% endif %}
+				{% else %}
+					{% for textColumnAdjustment in typeSettings.numberOfTextColumns.eagerly().all() %}
+						{% if textColumnAdjustment.deviceSize|length %}
+							{% set classItem = textColumnAdjustment.deviceSize %}
+							{% if useComponent %}
+								{% set classItem = classItem ~ '/component:' %}
+							{% else %}
+								{% set classItem = classItem ~ ':' %}
+							{% endif %}
+						{% else %}
+							{% set classItem = '' %}
+						{% endif %}
+						{% set classItem = classItem ~ textColumnAdjustment.numberOfColumns %}
+						{% set classList = classList|merge([classItem]) %}
+					{% endfor %}
+				{% endif %}				
+			{% endif %}				
+		{% endfor %}		
+	{% endfor %}
+	{{ classList|join(' ') }}
+{% endmacro typeClasses %}
+
+{% macro spacingClasses(spaceSettings, useComponent) %}
+	{% set classList = [] %}
+	{% for spaceAdjustment in spaceSettings.eagerly().all() %}
+		{% set fLayout = spaceAdjustment.getFieldLayout() %}
+		{% for tabObj in fLayout.tabs %}			
+			{% for tabEl in tabObj.elements %}				
+				{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}				
+					{% if tabEl.field.handle != 'deviceSize' %}
+						{% if spaceAdjustment.getFieldValue(tabEl.field.handle)|length %}
+							{% if spaceAdjustment.deviceSize|length %}
+								{% set classItem = spaceAdjustment.deviceSize %}
+								{% if useComponent %}
+									{% set classItem = classItem ~ '/component:' %}
+								{% else %}
+									{% set classItem = classItem ~ ':' %}
+								{% endif %}
+							{% else %}
+								{% set classItem = '' %}
+							{% endif %}
+							{% set classItem = classItem ~ tabEl.field.handle ~ '-' ~ spaceAdjustment.getFieldValue(tabEl.field.handle) %}						
+							{% set classList = classList|merge([classItem]) %}
+						{% endif %}						
+					{% endif %}				
+				{% endif %}				
+			{% endfor %}		
+		{% endfor %}
+	{% endfor %}
+	{{- classList|join(' ') -}}
+{% endmacro spacingClasses %}
+
+{% macro displayClasses(displaySettings, useComponent) %}
+	{% set classList = [] %}
+	{% for displayAdjustment in displaySettings.eagerly().all() %}		
+		{% if displayAdjustment.deviceSize|length %}
+			{% set classItem = displayAdjustment.deviceSize %}
+			{% if useComponent %}
+				{% set classItem = classItem ~ '/component:' %}
+			{% else %}
+				{% set classItem = classItem ~ ':' %}
+			{% endif %}
+		{% else %}
+			{% set classItem = '' %}
+		{% endif %}
+		{% if displayAdjustment.hiddenVisible %}
+			{% set displayClass = 'block' %}
+		{% else %}
+			{% set displayClass = 'hidden' %}
+		{% endif %}
+		{% set classItem = classItem ~ displayClass %}						
+		{% set classList = classList|merge([classItem]) %}							
+	{% endfor %}
+	{{- classList|join(' ') -}}
+{% endmacro displayClasses %}
+
 {# General Classes by Tab #}	
 {% macro classesOut(adjustments, tabName, useFieldName) %}
 	{% set classList = [] %}

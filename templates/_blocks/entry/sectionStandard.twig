@@ -40,16 +40,16 @@
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.sectionStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}
+{#{% set adjustments = entry.sectionStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}#}
 
-<section id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+<section id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
 {% endif %}
 >
 	<div class="container {{- entry.fullscreen ? 'container-fullscreen' -}}">
-		<div class="inner container-inner {{entry.textAlignment}} {{- gMacros.classesOut(adjustments, 'Type') -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}">			
+		<div class="inner container-inner {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{- gMacros.spacingClasses(entry.padding, false) -}}">			
 			{% for chunk in entry.elementContent %}
 				{% if chunk.type == 'markup' %}
 					{% if entry.animate and entry.animateContent %}
@@ -66,7 +66,7 @@
 			{% endfor %}							
 		</div>
 		<div class="background">
-			{{ gMacros.buildElementBackground(adjustments) }}
+			{#{{ gMacros.buildElementBackground(adjustments) }}#}
 		</div>
 	</div>	
 </section>

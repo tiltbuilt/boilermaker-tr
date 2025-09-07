@@ -23,6 +23,4 @@
    @apply max-w-full;
 }
 
-@utility not-hidden {
-   display: block;
-}
+

@@ -41,7 +41,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
-        name: Content
+        name: Settings
         uid: 020814e0-d8b6-493b-85ef-ddc931daf681
         userCondition: null
 handle: textColumnAdjustment

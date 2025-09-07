@@ -346,7 +346,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:52:51+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display
+            fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display State
             handle: null
             includeInCards: false
             instructions: null

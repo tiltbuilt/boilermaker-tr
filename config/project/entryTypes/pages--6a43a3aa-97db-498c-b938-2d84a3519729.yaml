@@ -149,19 +149,36 @@ fieldLayouts:
           fieldContext: global
         elements:
           -
-            dateAdded: '2025-09-03T22:30:04+00:00'
+            dateAdded: '2025-09-07T02:03:52+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
-            handle: pageHeaderContent
+            fieldUid: 1bbed984-20fa-4862-a5ef-684f27ff68f7 # Page Header
+            handle: null
             includeInCards: false
             instructions: null
-            label: 'Page Header Content'
+            label: null
             providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a0f69831-6c28-4d83-9395-b7cd2b576715
+            uid: b9e68c8c-3dbb-4d21-8fa0-a018d8fd5670
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-07T01:56:43+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 051b4b61-0b77-4055-9c14-84b1bad76ef1 # Page Header Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1060c959-e25e-4ffc-8ce2-dc280412131c
             userCondition: null
             warning: null
             width: 100

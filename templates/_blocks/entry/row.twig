@@ -54,9 +54,9 @@
 
 
 {# Retrieve styling adjustments #}
-{% set adjustments = entry.rowStyleAdjustments.eagerly().all() %}
+{#{% set adjustments = entry.rowStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}} {{- gMacros.classesOut(adjustments, 'Padding', true) -}} {{- rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+<div id="{{blockId}}" class="{{- blockClass }} @container {#{{ gMacros.classesOut(adjustments, 'Display') -}} #} {{ gMacros.spacingClasses(entry.margins, false) }} {{ gMacros.classesOut(adjustments, 'Padding', true) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
 	{% for column in rowContent %}
 		{{column.render({
 			'animSetting': animSetting,
