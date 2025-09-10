@@ -23,7 +23,6 @@
     /* set up basic styles for background element */
 
     .background {
-        display: none;
         position: absolute;
         z-index: 1;
         width: 100%;

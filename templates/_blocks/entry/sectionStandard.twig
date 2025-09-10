@@ -40,7 +40,7 @@
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{#{% set adjustments = entry.sectionStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}#}
+{% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 <section id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
@@ -64,9 +64,9 @@
 					}) }}
 				{% endif %}
 			{% endfor %}							
-		</div>
-		<div class="background">
-			{#{{ gMacros.buildElementBackground(adjustments) }}#}
-		</div>
+		</div>		
+	</div>
+	<div class="background">
+		{{ gMacros.buildElementBackground(backgroundSettings) }}
 	</div>	
 </section>
