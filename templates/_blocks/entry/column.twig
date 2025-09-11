@@ -52,7 +52,7 @@
 {% set columnClassList = columnClassList|merge(colorClasses) %}
 
 {# Set Layout Styles #}
-{#}
+
 {% for layoutItem in entry.columnLayout %}
 	{% set devSize = layoutItem.deviceSize %}
 	{% if devSize|length %}
@@ -71,12 +71,9 @@
 		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.verticalAlignment]) %}
 	{% endif %}
 {% endfor %}
-#}
 
 {# Retrieve styling adjustments #}
-{#}
-{% set adjustments = entry.columnStyleAdjustments.eagerly().with('bgImg').all() %}
-#}
+{% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 <div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
 	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} {{ gMacros.spacingClasses(entry.padding, false) }}">
@@ -96,7 +93,7 @@
 		{% endfor %}							
 	</div>
 	<div class="background">
-		{#{{ gMacros.buildElementBackground(adjustments) }}#}
+		{{ gMacros.buildElementBackground(backgroundSettings) }}
 	</div>		
 </div>
 

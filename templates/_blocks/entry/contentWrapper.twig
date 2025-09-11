@@ -52,7 +52,7 @@
 {% set wrapperClassList = wrapperClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{#{% set adjustments = entry.contentWrapperStyleAdjustments.eagerly().with('bgImg').all() %}#}
+{% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 <div id="{{blockId}}" class="{{- blockClass }} @container {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ wrapperClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="inner content-wrapper-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} {{ gMacros.spacingClasses(entry.padding, false) }}">
@@ -68,7 +68,7 @@
 		{% endfor %}							
 	</div>
 	<div class="background">
-		{#{{ gMacros.buildElementBackground(adjustments) }}#}
+		{{ gMacros.buildElementBackground(backgroundSettings) }}
 	</div>		
 </div>
 

@@ -42,7 +42,7 @@
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<section id="{{blockId}}" class="{{- blockClass }} @container {{- gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
@@ -60,7 +60,8 @@
 				{% else %}
 					{{ chunk.entry.render({
 						'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
-						'colorScheme': colorScheme
+						'colorScheme': colorScheme,
+						'paddingSetting': entry.padding
 					}) }}
 				{% endif %}
 			{% endfor %}							

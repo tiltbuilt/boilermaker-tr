@@ -1,4 +1,4 @@
-dateModified: 1757286648
+dateModified: 1757624050
 elementSources:
   craft\elements\Entry:
     -
@@ -230,6 +230,7 @@ meta:
     988c8572-16b9-4e94-9297-d33d4b9d8411: 'Margin Adjustment' # Margin Adjustment
     3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c: 'Background Image' # Background Image
     3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25: 'Background Repeat' # Background Repeat
+    4306ce1c-1d03-4d40-b285-d1f1f7ea0361: 'Spacing - Margins' # Spacing - Margins
     4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed: 'Phone Number' # Phone Number
     5514a63a-0a23-42f9-9333-5576b0e95462: 'Color Scheme' # Color Scheme
     5947f640-92a3-49d6-adfa-45816ba49d25: 'Slide Horizontal Layout' # Slide Horizontal Layout

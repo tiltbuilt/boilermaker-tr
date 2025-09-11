@@ -60,10 +60,10 @@
 
 {% macro wrapperClasses(classSettings) %}
 	{% set baseMaxList = {
-		'@md': 768,
-		'@lg': 1024,
-		'@xl': 1280,
-		'@2xl': 1536,
+		'@2xl': 768,
+		'@3xl': 1024,
+		'@4xl': 1280,
+		'@5xl': 1536,
 	} %}
 	{% set wrapperClasses = [] %}
 	{% for key, value in classSettings %}
@@ -120,16 +120,16 @@
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
 {# Retrieve styling adjustments #}
-{#{% set adjustments = entry.sidePhotoStyleAdjustments.eagerly().with('bgImg', 'bgVideo').all() %}#}
+{% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 {# Set Styles for Columns #}
 
 {# set object with default settings for all sizes for comparison, if different, merge setting from field into object #}
 {% set classSettings = {
-	'@md': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
-	'@lg': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
-	'@xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
 	'@2xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@3xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@4xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@5xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
 	}
  %}
  
@@ -158,7 +158,7 @@
 	{% set positionClass = 'order-first' %}
 {% endif %}
 
-<section id="{{blockId}}" class="{{- blockClass }} @container {#{{ gMacros.classesOut(adjustments, 'Display') -}} {{- gMacros.classesOut(adjustments, 'Margins', true) -}}#} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
@@ -178,13 +178,14 @@
 					{% else %}
 						{{ chunk.entry.render({
 							'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
-							'colorScheme': colorScheme
+							'colorScheme': colorScheme,
+							'paddingSetting': entry.padding
 						}) }}
 					{% endif %}
 				{% endfor %}
 			</div>
 			<div class="background">
-				{#{{ gMacros.buildElementBackground(adjustments) }}#}
+				{{ gMacros.buildElementBackground(backgroundSettings) }}
 			</div>
 		</div>
 		

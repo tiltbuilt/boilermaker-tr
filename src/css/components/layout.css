@@ -1,23 +1,24 @@
 @layer components {
-    .row {
+    .layout {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: stretch;	
         position: relative;	
-        margin-inline: var(--spacing-neg-scaling-base);		
+        margin-inline: var(--spacing-neg-base);
+        width: 100%;		
     }
 
     .column {   
         /* These classes must stay in order to ensure functionality */        
         width: 100%;  
         position: relative;    
-            
+        margin: 0;
         /* The default classes and style below can be changed on a per-project basis */  
     }
 
     .column-inner {
-        padding: var(--spacing-base);        
+        padding: var(--spacing-base);       
         position: relative;
         z-index: 10;
     }

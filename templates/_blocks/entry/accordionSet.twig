@@ -46,13 +46,12 @@
 {% endif %}
 
 {# Retrieve styling adjustments #}
-{#}
-{% set adjustments = entry.accordionSetStyleAdjustments.eagerly().all() %}#}
+{% set setPadding = entry.padding.eagerly().all() %}
 
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
 
-<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {#{{- gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
+<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -97,77 +96,53 @@
 		{% set styleListMaster = ['accordion-content'] %}
 		{% set styleObj = {} %}	
 
-		{#}
-		{% set accAdjustments = acc.accordionStyleAdjustments.eagerly().all() %}
+		
+		{% set accPadding = acc.padding.eagerly().all() %}
 			
-		{% for adj in accAdjustments %}
+		{% for adj in accPadding %}
 			{% set devSize = adj.deviceSize %}
 			{% if devSize|length %}
 				{% set devSize = devSize ~ ':' %}	
-			{% endif %}		
-			
+			{% endif %}
+						
 			{% set fLayout = adj.getFieldLayout() %}
-			{% for tabObj in fLayout.tabs %}
-				{% if tabObj.name != "Device Size" %}
-					{% if tabObj.name == "Padding" %}
-						{% for tabEl in tabObj.elements %}				
-							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-								{% if adj.getFieldValue(tabEl.field.handle)|length %}
-									{% set styleHandle = devSize ~ tabEl.field.handle %}
-									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ adj.getFieldValue(tabEl.field.handle)}) %}
-								{% endif %}
-							{% endif %}				
-						{% endfor %}
-					{% else %}
-						{% for tabEl in tabObj.elements %}	
-							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-								{% if adj.getFieldValue(tabEl.field.handle)|length %}
-									{% set styleHandle = devSize ~ tabEl.field.handle %}
-									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ adj.getFieldValue(tabEl.field.handle)}) %}
-								{% endif %}
+			{% for tabObj in fLayout.tabs %}									
+				{% for tabEl in tabObj.elements %}				
+					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+						{% if tabEl.field.handle != 'deviceSize' %}
+							{% if adj.getFieldValue(tabEl.field.handle)|length %}
+								{% set styleHandle = devSize ~ tabEl.field.handle %}
+								{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ adj.getFieldValue(tabEl.field.handle)}) %}
 							{% endif %}
-						{% endfor %}
-					{% endif %}
-				{% endif %}
+						{% endif%}
+					{% endif %}				
+				{% endfor %}			
 			{% endfor %}					
 		{% endfor %}
 		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
-		{#}
-		{% for setAdj in adjustments %}			
+		
+		{% for setAdj in setPadding %}			
 			{% set devSize = setAdj.deviceSize %}
 			{% if devSize|length %}
 				{% set devSize = devSize ~ ':' %}	
 			{% endif %}
 			{% set fLayout = setAdj.getFieldLayout() %}
-			{% for tabObj in fLayout.tabs %}
-				{% if tabObj.name != "Device Size" %}
-					{% if tabObj.name == "Padding" %}
-						{% for tabEl in tabObj.elements %}				
-							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-								{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
-									{% set styleHandle = devSize ~ tabEl.field.handle %}
-									{% if styleObj[styleHandle] is not defined %}
-										{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
-									{% endif %}
+			{% for tabObj in fLayout.tabs %}					
+				{% for tabEl in tabObj.elements %}				
+					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+						{% if tabEl.field.handle != 'deviceSize' %}
+							{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
+								{% set styleHandle = devSize ~ tabEl.field.handle %}
+								{% if styleObj[styleHandle] is not defined %}
+									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
 								{% endif %}
-							{% endif %}				
-						{% endfor %}
-					{% else %}
-						{% for tabEl in tabObj.elements %}
-							{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}						
-								{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
-									{% set styleHandle = devSize ~ tabEl.field.handle %}
-									{% if styleObj[styleHandle] is not defined %}
-										{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
-									{% endif %}
-								{% endif %}						
 							{% endif %}
-						{% endfor %}
-					{% endif %}
-				{% endif %}
+						{% endif %}
+					{% endif %}				
+				{% endfor %}				
 			{% endfor %}
 		{% endfor %}
-		#}
+		
 		{% for key, value in styleObj %}
 			{% set styleListMaster = styleListMaster|merge([value]) %}
 		{% endfor %}
@@ -187,7 +162,7 @@
 			set expanded(value) {
 				this.active = value ? this.id : null
 			},
-		}" role="region" class="{{- accClassList|join(' ') }} {#{{- gMacros.classesOut(adjustments, 'Display') }}#} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
+		}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.displayClasses(acc.display, false)}} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
 			<{{setHeaderLevel}} class="accordion-header">
 				<button
 					x-on:click="expanded = !expanded"

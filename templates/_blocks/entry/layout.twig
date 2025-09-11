@@ -39,7 +39,8 @@
 {% endif %}
 
 {# insert layout changes #}
-{% for layoutItem in entry.rowLayout %}
+
+{% for layoutItem in entry.layoutSettings %}
 	{% set devSize = layoutItem.deviceSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
@@ -56,7 +57,7 @@
 {# Retrieve styling adjustments #}
 {#{% set adjustments = entry.rowStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {#{{ gMacros.classesOut(adjustments, 'Display') -}} #} {{ gMacros.spacingClasses(entry.margins, false) }} {{ gMacros.classesOut(adjustments, 'Padding', true) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
 	{% for column in rowContent %}
 		{{column.render({
 			'animSetting': animSetting,

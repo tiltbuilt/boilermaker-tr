@@ -148,7 +148,7 @@
 {% endswitch %}
 
 {# Retrieve styling adjustments #}
-{#{% set adjustments = entry.ctaStyleAdjustments.eagerly().with('bgImg').all() %}#}
+{% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 <div id="{{blockId}}" class="{{- blockClass }} @container/component {% if entry.ctaType %}cta-lg{% else %}cta-sm{% endif %} {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ ctaClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 	<div class="inner cta-inner {{ innerClasses|join(' ') }}">
@@ -192,7 +192,7 @@
 		{% endif %}							
 	</div>
 	<div class="background">
-		{#{{ gMacros.buildElementBackground(adjustments) }}#}
+		{{ gMacros.buildElementBackground(backgroundSettings) }}
 	</div>		
 </div>
 

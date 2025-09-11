@@ -109,29 +109,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-09-03T20:30:25+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 76e84206-fdd5-4553-bf04-6f24f458ce0e # Background Settings
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 31a8f039-337a-42aa-b66e-5f81416abe25
-            userCondition: null
-            warning: null
-            width: 100
-        name: Background
-        uid: ac8217d5-4582-4917-ac53-a8a03360e123
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
             dateAdded: '2025-05-23T19:09:55+00:00'
             editCondition: null
             elementCondition: null

@@ -25,10 +25,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-08-27T18:14:11+00:00'
+            dateAdded: '2025-09-10T18:25:26+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            fieldUid: 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
             handle: mt
             includeInCards: false
             instructions: null
@@ -37,15 +37,15 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7b0228b6-84f1-4d35-a8f8-788caf48eb91
+            uid: 78f979fe-b5ad-4f07-a2a5-413e1bc0f8c3
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
-            dateAdded: '2025-08-27T18:14:11+00:00'
+            dateAdded: '2025-09-10T18:25:26+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            fieldUid: 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
             handle: mb
             includeInCards: false
             instructions: null
@@ -54,10 +54,10 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c4238f2f-16a1-45d6-ac6a-7c11ce6c27ed
+            uid: d04b6937-290a-4841-b49c-ac4a469d52b1
             userCondition: null
             warning: null
-            width: 50
+            width: 100
         name: Settings
         uid: efc95e74-ed32-4002-af1d-dc4a3a08e703
         userCondition: null

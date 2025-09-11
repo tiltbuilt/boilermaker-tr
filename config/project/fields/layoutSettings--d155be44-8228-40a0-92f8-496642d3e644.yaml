@@ -4,7 +4,7 @@ instructions: 'This field allows you to override the standard layout settings fr
 name: 'Layout Settings'
 searchable: false
 settings:
-  createButtonLabel: 'Add Layout Adjsutment'
+  createButtonLabel: 'Add Layout Adjustment'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
