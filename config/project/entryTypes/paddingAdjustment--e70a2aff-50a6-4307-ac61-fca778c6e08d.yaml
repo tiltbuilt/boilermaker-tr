@@ -100,7 +100,7 @@ hasTitleField: false
 icon: null
 name: 'Padding Adjustment'
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: '{object.owner.title}-{deviceSize}-Padding'

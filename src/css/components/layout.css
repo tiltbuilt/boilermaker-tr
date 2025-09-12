@@ -6,7 +6,7 @@
         align-items: stretch;	
         position: relative;	
         margin-inline: var(--spacing-neg-base);
-        width: 100%;		
+        min-width: 100%;		
     }
 
     .column {   
@@ -14,11 +14,11 @@
         width: 100%;  
         position: relative;    
         margin: 0;
+        padding: var(--spacing-base); 
         /* The default classes and style below can be changed on a per-project basis */  
     }
 
-    .column-inner {
-        padding: var(--spacing-base);       
+    .column-inner {              
         position: relative;
         z-index: 10;
     }

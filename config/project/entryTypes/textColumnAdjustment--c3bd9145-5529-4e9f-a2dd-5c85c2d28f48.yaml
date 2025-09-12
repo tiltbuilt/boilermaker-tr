@@ -49,7 +49,7 @@ hasTitleField: false
 icon: null
 name: 'Text Column Adjustment'
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: '{object.owner.title}-{deviceSize}-text-columns-{numberofColumns}'

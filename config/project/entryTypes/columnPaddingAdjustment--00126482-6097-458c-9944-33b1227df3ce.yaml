@@ -1,14 +1,14 @@
 color: pink
 description: null
 fieldLayouts:
-  970f69a2-e485-49a6-97ef-4e0f158ab703:
+  d5ed6efb-d666-4cd5-a3e3-dd6aa4167af6:
     cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-08-27T18:14:11+00:00'
+            dateAdded: '2025-09-12T21:36:24+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
@@ -20,16 +20,16 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5ee3ca31-9fd5-4a0b-a893-08b2e58fdfdc
+            uid: 15fda714-f96b-407e-acfe-c19b6162abe7
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-10T18:25:26+00:00'
+            dateAdded: '2025-09-12T21:36:24+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
-            handle: mt
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pt
             includeInCards: false
             instructions: null
             label: Top
@@ -37,16 +37,16 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 78f979fe-b5ad-4f07-a2a5-413e1bc0f8c3
+            uid: 96ea586f-718e-4f81-9ce9-f5573950f12f
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
-            dateAdded: '2025-09-10T18:25:26+00:00'
+            dateAdded: '2025-09-12T21:36:24+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
-            handle: mb
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: pb
             includeInCards: false
             instructions: null
             label: Bottom
@@ -54,21 +54,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d04b6937-290a-4841-b49c-ac4a469d52b1
+            uid: 40858c01-0b2d-4134-ab43-26c604d65e33
             userCondition: null
             warning: null
-            width: 100
-        name: Settings
-        uid: efc95e74-ed32-4002-af1d-dc4a3a08e703
+            width: 50
+        name: Content
+        uid: 321f2528-28f0-4f02-8345-dfa7a837b5ec
         userCondition: null
-handle: marginAdjustment
+handle: columnPaddingAdjustment
 hasTitleField: false
 icon: null
-name: 'Margin Adjustment'
+name: 'Column Padding Adjustment'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-{deviceSize}-Margin'
+titleFormat: '{object.owner.title}-{deviceSize}-Padding'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

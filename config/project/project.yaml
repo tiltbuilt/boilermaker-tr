@@ -1,4 +1,4 @@
-dateModified: 1757624050
+dateModified: 1757713654
 elementSources:
   craft\elements\Entry:
     -
@@ -242,6 +242,7 @@ meta:
     62336b23-c907-4179-a797-e2f7a8d75533: 'Type Overrides - Subhead' # Type Overrides - Subhead
     68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
+    00126482-6097-458c-9944-33b1227df3ce: 'Column Padding Adjustment' # Column Padding Adjustment
     253138fc-844f-44ce-b802-ceba93597569: 'Content Card' # Content Card
     699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
     738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
@@ -337,6 +338,7 @@ meta:
     ec02fe58-24eb-430e-961f-fb063723276c: 'Image Layout' # Image Layout
     ee6d1ced-9ba0-4c31-9f10-d3e6057ae634: 'Style Adjustment - Column' # Style Adjustment - Column
     ee64f702-a8f1-46ee-8dea-79f8ad82e25b: 'Custom Attributes' # Custom Attributes
+    ee647f87-6b2e-4408-a66a-007602c7ee67: 'Column Padding' # Column Padding
     f0c10f75-8d5e-43c0-83a1-2321c04a2ebd: 'Form to Display' # Form to Display
     f1b466ce-fb41-471a-90d4-5d0fd23f346d: 'Image Asset' # Image Asset
     f1dadad3-35b3-471d-ad9b-6fbc3decfa2e: 'Display Adjustment' # Display Adjustment

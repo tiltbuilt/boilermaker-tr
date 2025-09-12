@@ -58,23 +58,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
-          -
-            dateAdded: '2025-08-27T21:53:42+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 1f9a4bb5-a733-4f34-b61a-92bd7ad53fa8
-            userCondition: null
-            warning: null
-            width: 100
         name: Settings
         uid: 836e1293-54cb-4f61-b252-05ce4f75cd04
         userCondition: null
@@ -83,7 +66,7 @@ hasTitleField: false
 icon: null
 name: 'Image Layout Adjustment'
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: '{object.owner.title}-{deviceSize}-Image-{width}-{aspectRatio}-{textWrap}'

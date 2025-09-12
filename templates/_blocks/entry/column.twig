@@ -15,6 +15,7 @@
 
 {# Create array for classes to pass to macros for section #}
 {% set columnClassList = [] %}
+{% set gutterClassList = [] %}
 
 {# Set block id attribute value #}
 {% if entry.customId is defined and entry.customId != '' %}
@@ -72,11 +73,23 @@
 	{% endif %}
 {% endfor %}
 
+{% if layoutSettings is defined %}
+	{% for layoutItem in layoutSettings %}
+		{% set devSize = layoutItem.deviceSize %}
+		{% if devSize|length %}
+			{% set devSize = devSize ~ '/component:' %}	
+		{% endif %}	
+		{% if layoutItem.gutterSize|length %}
+			{% set gutterClassList = gutterClassList|merge([devSize ~ 'px-' ~ layoutItem.gutterSize]) %}
+		{% endif %}
+	{% endfor %}
+{% endif %}
+
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
-	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} {{ gMacros.spacingClasses(entry.padding, false) }}">
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ gMacros.spacingClasses(entry.padding, false) }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
+	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} ">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{% if animate %}

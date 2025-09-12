@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: columnPadding
+instructions: null
+name: 'Column Padding'
+searchable: false
+settings:
+  createButtonLabel: 'Add Padding Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 00126482-6097-458c-9944-33b1227df3ce # Column Padding Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

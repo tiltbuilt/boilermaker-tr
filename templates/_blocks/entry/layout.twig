@@ -45,23 +45,23 @@
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
-	{% if layoutItem.horizontalLayout|length %}
-		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.horizontalLayout]) %}
+	{% if layoutItem.horizontalAlignment|length %}
+		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.horizontalAlignment]) %}
 	{% endif %}
-	{% if layoutItem.verticalLayout|length %}
-		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.verticalLayout]) %}
+	{% if layoutItem.verticalAlignment|length %}
+		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.verticalAlignment]) %}
+	{% endif %}
+	{% if layoutItem.gutterSize|length %}
+		{% set rowClassList = rowClassList|merge([devSize ~ 'mx-neg-' ~ layoutItem.gutterSize]) %}
 	{% endif %}
 {% endfor %}
 
-
-{# Retrieve styling adjustments #}
-{#{% set adjustments = entry.rowStyleAdjustments.eagerly().all() %}#}
-
-<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+<div id="{{blockId}}" class="{{- blockClass }} @container/component {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
 	{% for column in rowContent %}
 		{{column.render({
 			'animSetting': animSetting,
-			'colorScheme': colorScheme
+			'colorScheme': colorScheme,
+			'layoutSettings': entry.layoutSettings
 		})}}
 	{% endfor %}
 </div>

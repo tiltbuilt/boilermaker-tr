@@ -116,19 +116,19 @@ fieldLayouts:
             uid: a0ba6d07-4cbe-4b35-a3ca-0b70565595ba
             userCondition: null
           -
-            dateAdded: '2025-08-27T22:24:12+00:00'
+            dateAdded: '2025-09-12T21:47:34+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
-            handle: null
+            fieldUid: ee647f87-6b2e-4408-a66a-007602c7ee67 # Column Padding
+            handle: padding
             includeInCards: false
             instructions: null
-            label: null
+            label: Padding
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 06617391-a18d-4186-939e-f42597fd0f30
+            uid: 7e2d464d-97fa-4318-9cc7-2804515f9512
             userCondition: null
             warning: null
             width: 100

@@ -82,10 +82,10 @@ handle: columnLayoutAdjustment
 hasTitleField: false
 icon: null
 name: 'Column Layout Adjustment'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-adjustment-{deviceSize}-{columnWidth}-{columnOrder}-{columnVerticalAlignment}'
+titleFormat: '{object.owner.title}-adjustment-{deviceSize}-width{columnWidth}-{columnOrder}-{columnVerticalAlignment}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
