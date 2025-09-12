@@ -40,7 +40,7 @@
    }
 
    .side-photo-content {
-      @apply w-full @md:w-1/2;
+      @apply w-full @2xl:w-1/2;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -55,17 +55,17 @@
    }
 
    .side-photo-img {
-      @apply w-full @md:w-1/2;
+      @apply w-full @2xl:w-1/2;
       position: relative;   
    }
 
-   @container (width >= theme('containers.xl')) {
+   @container (width >= theme('containers.4xl')) {
       .side-photo-content-wrapper {
          max-width: calc(100% - ((100vw - 1280px)/2));  
       }
    }
 
-   @container (width >= theme('containers.2xl')) {
+   @container (width >= theme('containers.5xl')) {
       .side-photo-content-wrapper {
          max-width: calc(100% - ((100vw - 1536px)/2));  
       }
