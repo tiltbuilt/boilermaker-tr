@@ -5,6 +5,8 @@
 		/* The default classes and style below can be changed on a per-project basis */
 		margin-top: var(--spacing-base);	
 		overflow: hidden;
+		color: var(--color-section-text);
+		background-color: var(--color-section-background);
 		
 		&:first-child {
 			margin-top: 0;

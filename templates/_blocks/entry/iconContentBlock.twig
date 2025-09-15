@@ -46,7 +46,7 @@
 
 {# set classes for icon #}
 {% if colorScheme is not defined %}
-	{% set colorScheme = "colormode-default" %}	
+	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% set iconClasses = ['icon-wrapper'] %}
 {% if entry.iconColor != '' %}
@@ -87,7 +87,7 @@
 {% endfor %}
 #}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {#{{ gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="{{layoutClass}}">
 		<div class="{{- iconClasses|join(' ') }}">
 			{% if  entry.icon.type == 'svg' %}

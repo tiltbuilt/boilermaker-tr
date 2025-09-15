@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: padding2
+instructions: null
+name: 'Padding 2'
+searchable: false
+settings:
+  createButtonLabel: 'Add Padding Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - e70a2aff-50a6-4307-ac61-fca778c6e08d # Padding Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

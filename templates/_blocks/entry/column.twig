@@ -40,7 +40,7 @@
 
 {# Set color classes #}
 {% if colorScheme is not defined %}
-	{% set colorScheme = "colormode-default" %}	
+	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% set colorClasses = [] %}
 {% if entry.colorScheme != null %}
@@ -88,7 +88,7 @@
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ gMacros.spacingClasses(entry.padding, false) }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ gMacros.spacingClasses(entry.padding, false) }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
 	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} ">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}

@@ -15,6 +15,9 @@ settings:
               -
                 -
                   __assoc__:
+                    0:
+                      - name
+                      - Content
                     1:
                       - uid
                       - cb53bea8-51b6-4c2b-aa6f-9f2c19224715
@@ -130,12 +133,6 @@ settings:
                             0:
                               - type
                               - craft\fieldlayoutelements\CustomField
-                            1:
-                              - handle
-                              - italic
-                            2:
-                              - label
-                              - 'Italic?'
                             6:
                               - required
                               - false
@@ -150,13 +147,13 @@ settings:
                               - 50
                             10:
                               - dateAdded
-                              - '2025-08-27T20:48:26+00:00'
+                              - '2025-09-14T15:24:29+00:00'
                             11:
                               - uid
-                              - b77b2220-90ce-4d1d-a0ae-1333ac79a05c
+                              - c3905f7c-1090-4ab1-ae1c-79d4600cfdbc
                             14:
                               - fieldUid
-                              - a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                              - 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
                         -
                           __assoc__:
                             0:

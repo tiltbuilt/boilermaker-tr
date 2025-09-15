@@ -75,7 +75,7 @@
 
 {# Set color class #}
 {% if colorScheme is not defined %}
-	{% set colorScheme = "colormode-default" %}	
+	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% if entry.quoteColor != '' %}
 	{% set colorClass = 'text-' ~ entry.quoteColor %}
@@ -93,7 +93,7 @@
 {# Retrieve styling adjustments #}
 {#{% set adjustments = entry.quoteStyleAdjustments.eagerly().all() %}#}
 
-<blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {#{{- gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	{{entry.quoteText}}
 	<span id="{{blockId}}-credit" class="{#{{- _self.creditClasses(adjustments, creditColorClass) -}}#}">
 		{{entry.quoteCredit|typogrify}}

@@ -42,7 +42,7 @@
 
 {# Set color classes #}
 {% if colorScheme is not defined %}
-	{% set colorScheme = "colormode-default" %}	
+	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% set colorClasses = [] %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
@@ -66,7 +66,7 @@
 
 {# OUTPUT #}
 {% if embeddedVideo and embeddedVideo.isSafe %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ gMacros.widthClasses(adjustments) -}} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}}#} {{ gMacros.spacingClasses(entry.margins, false) }} {{ videoClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ gMacros.widthClasses(adjustments) -}} {{- gMacros.textWrapClasses(adjustments) -}}#} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ videoClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		<div class="video-embed-wrapper" style="">
 			<div class="video-player">						
 				{{ embeddedVideo.getIframeCode(

@@ -5,7 +5,9 @@
 		align-items: center;
 		justify-content: flex-start;
 		/* The default classes and style below can be changed on a per-project basis */
-		margin-top: var(--spacing-base);	  
+		margin-top: var(--spacing-base);
+		gap: 1rem;
+		flex-wrap: wrap;	  
 	}
 
 	p + .button-group {

@@ -1,4 +1,4 @@
-dateModified: 1757713654
+dateModified: 1757895051
 elementSources:
   craft\elements\Entry:
     -
@@ -253,6 +253,7 @@ meta:
     4720320b-f7d0-49ec-a327-0db0e3a2dd7c: 'Aspect Ratio - Forced' # Aspect Ratio - Forced
     05601664-3d38-4def-9b37-d9ccaf72ed5c: 'Reveal Animation' # Reveal Animation
     6283122d-7dc0-4b8d-8895-140bc4e66973: 'Page Builder' # Page Builder
+    6699696d-9679-496c-9f4c-0a8d498f2959: 'Padding 2' # Padding 2
     13258500-9385-4fb0-a11a-826fcd6a69f4: 'Nav List Display Type' # Nav List Display Type
     13531367-46d6-4c50-8ec6-9bb2a6ab5ab1: 'Number of Columns' # Number of Columns
     24664393-bbfc-46d1-baab-46bef56260a7: 'Slide Timing Override' # Slide Timing Override

@@ -146,6 +146,13 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-09-14T16:43:13+00:00'
+            elementCondition: null
+            heading: Spacing
+            type: craft\fieldlayoutelements\Heading
+            uid: 55382451-a467-41d0-b688-8e3c68f0043a
+            userCondition: null
+          -
             dateAdded: '2025-08-27T18:45:51+00:00'
             editCondition: null
             elementCondition: null
@@ -162,7 +169,31 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Spacing
+          -
+            dateAdded: '2025-09-14T16:43:13+00:00'
+            elementCondition: null
+            heading: Alignment
+            type: craft\fieldlayoutelements\Heading
+            uid: cd03fac0-cb09-4178-a2be-78c5caf0560f
+            userCondition: null
+          -
+            dateAdded: '2025-09-14T16:43:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 29a6be8e-cb85-466e-a2f5-a9b2a388d92a # Horizontal Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e894a102-052f-4da7-8ba1-bd619b9867b8
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Spacing & Alignment'
         uid: 11ec67d9-d410-47c5-88c2-7aaf5113d3f4
         userCondition: null
       -

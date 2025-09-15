@@ -331,15 +331,42 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
-            handle: null
+            handle: contentPadding
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Content Padding'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4da22087-1f63-4912-a03b-6a28f6fc5b97
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-15T00:10:51+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 4c35d501-f5af-4d81-9f69-8c11f69690ed
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 6699696d-9679-496c-9f4c-0a8d498f2959 # Padding 2
+            handle: imagePadding
+            includeInCards: false
+            instructions: 'This field applies a padding override to the default padding around the CTA image (0px)'
+            label: 'Image Padding'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d4d178dc-16e9-40d4-bed4-9c13c672ad66
             userCondition: null
             warning: null
             width: 100
