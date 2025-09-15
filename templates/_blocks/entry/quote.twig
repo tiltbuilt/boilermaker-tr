@@ -13,45 +13,6 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_macros/globalMacros' as gMacros %}
 
-{# Subhead styling macro #}
-{% macro creditClasses(adjustments, creditColor) %}
-	{% set classList = ['quote-credit'] %}
-	{% if creditColor|length %}
-		{% set classList = classList|merge(['text-' ~ creditColor]) %}
-	{% endif %}
-	{#}
-	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}{#}
-		{% set devSize = adjSet.deviceSize %}
-		{% if devSize|length %}
-			{% set devSize = devSize ~ ':' %}	
-		{% endif %}
-		{# Get adjustments for type at each device size #}{#}
-		{% if adjSet.creditFont|length %}
-			{% set classList = classList|merge([devSize ~ 'font-' ~ adjSet.creditFont]) %}
-		{% endif %}
-		{% if adjSet.creditFontSize|length %}
-			{% set classList = classList|merge([devSize ~ adjSet.creditFontSize]) %}
-		{% endif %}
-		{% if adjSet.creditLineHeight|length %}
-			{% set classList = classList|merge([devSize ~ adjSet.creditLineHeight]) %}
-		{% endif %}
-		{% if adjSet.creditFontWeight|length %}
-			{% set classList = classList|merge([devSize ~ adjSet.creditFontWeight]) %}
-		{% endif %}
-		{% if adjSet.creditItalic|length %}
-			{% set classList = classList|merge([devSize ~ adjSet.creditItalic]) %}
-		{% endif %}
-		{% if adjSet.creditTextCase|length %}
-			{% set classList = classList|merge([devSize ~ adjSet.creditTextCase]) %}
-		{% endif %}
-		{% if adjSet.creditLetterSpacing|length %}
-			{% set classList = classList|merge([devSize ~ adjSet.creditLetterSpacing]) %}
-		{% endif %}		
-	{% endfor %}#}
-	{{ classList|join(' ') }}	
-{% endmacro creditClasses %}
-
 {# Set block id attribute value #}
 {% if entry.customId is defined and entry.customId != '' %}
 	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
@@ -73,32 +34,36 @@
 	{% set animate = false %}
 {% endif %}
 
-{# Set color class #}
+{# Set color classes #}
+{% set colorClass = '' %}
+{% set creditColorClass = '' %}
+{% set creditTitleColorClass = '' %}
+
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% if entry.quoteColor != '' %}
-	{% set colorClass = 'text-' ~ entry.quoteColor %}
+	{% set colorClass = colorScheme ~ ' text-' ~ entry.quoteColor %}
 {% else %}
 	{% set colorClass = colorScheme %}
 {% endif %}
 
 {% if entry.creditColor != '' %}
-	{% set creditColorClass = entry.creditColor %}
-{% else %}
-	{% set creditColorClass = colorScheme %}
+	{% set creditColorClass = 'text-' ~ creditColorClass %}
+{% endif %}
+
+{% if entry.creditTitleColorClass != '' %}
+	{% set creditTitleColorClass = 'text-' ~ creditTitleColorClass %}
 {% endif %}
 
 
-{# Retrieve styling adjustments #}
-{#{% set adjustments = entry.quoteStyleAdjustments.eagerly().all() %}#}
 
 <blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	{{entry.quoteText}}
-	<span id="{{blockId}}-credit" class="{#{{- _self.creditClasses(adjustments, creditColorClass) -}}#}">
+	<span id="{{blockId}}-credit" class="quote-credit {{entry.creditColorClass}}">
 		{{entry.quoteCredit|typogrify}}
 		{% if entry.quoteCreditTitle|length %}
-			<span class="credit-title">{{entry.quoteCreditTitle}}</span>
+			<span class="quote-credit-title {{creditTitleColorClass}}">{{entry.quoteCreditTitle}}</span>
 		{% endif %}
 	</span>		
 </blockquote>

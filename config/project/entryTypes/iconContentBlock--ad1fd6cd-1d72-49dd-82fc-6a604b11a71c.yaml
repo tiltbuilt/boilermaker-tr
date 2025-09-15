@@ -58,50 +58,6 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-05-19T20:50:16+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 74843fe1-a73b-4ddc-a396-0618fbc7c07a
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-08-27T21:09:35+00:00'
-            editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\LightswitchFieldConditionRule
-                  fieldUid: 37ce7ac2-f596-4d6f-9181-3f4d9fa4d692 # Block Layout
-                  layoutElementUid: 77ee2ca9-9e33-49b8-9c7b-250dc06e82da
-                  uid: b706ab17-a120-45cb-a34c-0771f728a2c6
-                  value: true
-              elementType: craft\elements\Entry
-              fieldContext: global
-            fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 527fb021-232f-4b46-bfda-17dfc08e5e48
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:50:16+00:00'
             elementCondition: null
             heading: 'Additional Elements'
             type: craft\fieldlayoutelements\Heading
@@ -116,23 +72,6 @@ fieldLayouts:
             type: craft\fieldlayoutelements\Tip
             uid: 871c9ede-f097-45fa-b58a-695c36cf7b03
             userCondition: null
-          -
-            dateAdded: '2025-05-19T20:50:16+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 37ce7ac2-f596-4d6f-9181-3f4d9fa4d692 # Block Layout
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 77ee2ca9-9e33-49b8-9c7b-250dc06e82da
-            userCondition: null
-            warning: null
-            width: 100
           -
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
@@ -152,6 +91,29 @@ fieldLayouts:
             width: 100
         name: Content
         uid: d3ab5979-9abe-44a4-b2ff-211e724ba117
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-15T18:29:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: fda8531d-3e9b-418c-8d5e-103f60ff9ada # Icon Block Layout Adjustments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 82b3f589-4526-4e81-aa1c-9cbaa41a6eda
+            userCondition: null
+            warning: null
+            width: 100
+        name: Layout
+        uid: 835095bd-67eb-46de-b2c0-e3b5e72b4e50
         userCondition: null
       -
         elementCondition: null

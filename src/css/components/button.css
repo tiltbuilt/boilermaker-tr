@@ -18,8 +18,7 @@
 
 	.btn, .btn-standard {
 		/* These classes must stay in order to ensure functionality */
-		display: inline-block;
-		margin-inline: 1rem;
+		display: inline-block;		
 		/* The default classes and style below can be changed on a per-project basis */	
 		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 		font-weight: 600;		/*border-radius: 0.4rem;*/
@@ -89,17 +88,15 @@
 
 	.btn, .btn-md {		
 		font-size: var(--text-base);
-		padding-block: var(--spacing-base);
+		padding-block: var(--spacing-quarter);
 		
 
 		&.btn-standard {			
-			margin-block: var(--spacing-base);
-			padding-inline: var(--spacing-2x);			
+			padding-inline: var(--spacing-half);			
 		}
 		
-		&.btn-text, &.btn-text-arrow {
-			margin-block: var(--spacing-base);
-			padding-inline: 0; 			
+		&.btn-text, &.btn-text-arrow {			
+			padding: 0; 			
 		}  
 	}
 
@@ -108,12 +105,10 @@
 		padding-block: var(--spacing-half);
 		
 		&.btn-standard {			
-			margin-block: var(--spacing-half);
-			padding-inline: var(--spacing-base);			
+			padding-inline: var(--spacing-base);	
 		}
 		
 		&.btn-text, &.btn-text-arrow {			
-			margin-block: var(--spacing-half);
 			padding-inline: 0;			
 		} 
 	}
@@ -122,13 +117,11 @@
 		font-size: var(--text-lg);
 		padding-block: calc(1.5 * var(--spacing-base));
 		
-		&.btn-standard {
-			margin-block: calc(1.5 * var(--spacing-base));
+		&.btn-standard {			
 			padding-inline: var(--spacing-3x);  
 		}
 		
-		&.btn-text, &.btn-text-arrow {			
-			margin-block: calc(1.5 * var(--spacing-base));
+		&.btn-text, &.btn-text-arrow {	
 			padding-inline: 0; 
 		} 	 
 	}

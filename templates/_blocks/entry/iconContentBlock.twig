@@ -34,29 +34,41 @@
 	{% set animate = false %}
 {% endif %}
 
-{# Retrieve styling adjustments #}
-{#{% set adjustments = entry.iconStyleAdjustments.eagerly().all() %}#}
+
 
 {# set Layout Class #}
-{% if entry.blockLayout %}
-	{% set layoutClass = 'icon-block-horizontal' %}
-{% else %}
-	{% set layoutClass = 'icon-block-vertical' %}
-{% endif %}
+{% set layoutClasses = [] %}
+{% set iconClasses = ['icon-wrapper'] %}
+{% set contentClasses = ['icon-content-wrapper'] %}
+{% for layoutAdj in entry.iconBlockLayoutAdjustments.eagerly().all() %}
+	{% set devSize = layoutAdj.deviceSize %}
+	{% if devSize|length %}
+		{% set devSize = devSize ~ '/component:' %}	
+	{% endif %}	
+	{% if layoutAdj.iconBlockLayout == 'horizontal' %}
+		{% set layoutClasses = layoutClasses|merge([devSize ~ 'flex-row']) %}
+	{% else %}
+		{% set layoutClasses = layoutClasses|merge([devSize ~ 'flex-col']) %}
+	{% endif %}
+	
+{% endfor %}
 
 {# set classes for icon #}
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
-{% set iconClasses = ['icon-wrapper'] %}
+{% if entry.iconColor != '' %}
+	{% set textColor = 'text-' ~ entry.textColor %}
+{% else %}
+	{% set textColor = '' %}
+{% endif %}
+{% set contentClasses = contentClasses|merge(['icon-content-wrapper']) %}
 {% if entry.iconColor != '' %}
 	{% set iconClasses = iconClasses|merge(['icon-' ~ entry.iconColor]) %}
 {% else %}
 	{% set iconClasses = iconClasses|merge([colorScheme]) %}
 {% endif %}
-{% if entry.iconSize != '' %}
-	{% set iconClasses = iconClasses|merge(['icon-' ~ entry.iconSize]) %}
-{% endif %}
+
 {#}
 {% for adjSet in adjustments %}
 	{# Get Device Size for Adjustments #}{#}
@@ -69,26 +81,9 @@
 	{% endif %}
 {% endfor %}
 
-{# set classes for content wrapper #}
-{% set contentClasses = ['icon-content-wrapper'] %}
-{% if entry.iconSize != '' %}
-	{% set contentClasses = contentClasses|merge(['icon-content-wrapper-' ~ entry.iconSize]) %}
-{% endif %}
-{#}
-{% for adjSet in adjustments %}
-	{# Get Device Size for Adjustments #}{#}
-	{% set devSize = adjSet.deviceSize %}
-	{% if devSize|length %}
-		{% set devSize = devSize ~ '/component:' %}	
-	{% endif %}
-	{% if adjSet.contentMt != '' %}
-		{% set contentClasses = contentClasses|merge([devSize ~ 'mt-' ~ adjSet.contentMt]) %}
-	{% endif %}	
-{% endfor %}
 #}
-
 <div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
-	<div class="{{layoutClass}}">
+	<div class="icon-layout {{ layoutClasses|join(' ') }}">
 		<div class="{{- iconClasses|join(' ') }}">
 			{% if  entry.icon.type == 'svg' %}
 				{{  entry.icon.inline }}
@@ -99,7 +94,7 @@
 			{% endif %}
 		</div>	
 		{% if entry.blockContent|length %}
-			<div class="{{- contentClasses|join(' ') }} {{- gMacros.typeClasses(entry.typeSettings, true) -}}">
+			<div class="{{- contentClasses|join(' ') }} {{ gMacros.typeClasses(entry.typeSettings, true) -}}">
 				
 				{% for chunk in entry.blockContent %}
 					{% if chunk.type == 'markup' %}
@@ -114,5 +109,5 @@
 				
 			</div>
 		{% endif %}
-	</div>
+	</div>	
 </div>

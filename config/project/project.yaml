@@ -1,4 +1,4 @@
-dateModified: 1757895051
+dateModified: 1757964574
 elementSources:
   craft\elements\Entry:
     -
@@ -186,6 +186,7 @@ meta:
     28ace2d7-7d1e-42a0-b95a-1314d1ff1d03: 'Column Order' # Column Order
     29a6be8e-cb85-466e-a2f5-a9b2a388d92a: 'Horizontal Alignment' # Horizontal Alignment
     37a64193-e3ef-4a2d-aa91-555b436b1d7d: 'Italic?' # Italic?
+    37be564b-24b4-43ff-a947-49896b163197: 'Icon Block Layout' # Icon Block Layout
     37ce7ac2-f596-4d6f-9181-3f4d9fa4d692: 'Block Layout' # Block Layout
     40a37d8a-41c1-47af-bc27-28d08f99a909: Slides # Slides
     42d492b4-f425-4d5c-8cba-e1aa7ed774d5: 'Reusable Modules' # Reusable Modules
@@ -306,7 +307,9 @@ meta:
     c43e9602-b393-4012-b9c3-c4b391c74cd6: Video # Video
     c57caa3f-3422-4928-85a0-f509e3c41317: 'Content Position - Small CTA' # Content Position - Small CTA
     c281acd6-db5d-49e9-a272-08936804b011: 'Card Link' # Card Link
+    c478b55b-ac82-444e-9cfe-af352d9ac8e9: 'Icon Content Layout Adjustment' # Icon Content Layout Adjustment
     cbcd5b00-2f33-4ac3-82a1-342b8dd20474: 'Column Layout Adjustment' # Column Layout Adjustment
+    cd2e4df6-b8ea-4048-be1a-c8404b36a103: 'Icon Horizontal Alignment' # Icon Horizontal Alignment
     cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
     d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1: 'Slide Transition Delay' # Slide Transition Delay
     d7a280bb-af78-455c-9bd1-1fc2f7e4018d: OpenClosed # OpenClosed
@@ -350,6 +353,7 @@ meta:
     f6807d6f-6a06-4137-8317-a236cec446bd: 'Type Settings' # Type Settings
     fa819c1c-abac-42ac-b1e5-3de37862ccf3: Images # Images
     fd3b49a5-f45c-4fff-9e83-efae0bfb34d4: 'Style Adjustment - Section' # Style Adjustment - Section
+    fda8531d-3e9b-418c-8d5e-103f60ff9ada: 'Icon Block Layout Adjustments' # Icon Block Layout Adjustments
     fe981b00-296b-4916-816f-a8e2670638e3: 'Style Adjustment - Form' # Style Adjustment - Form
     ff110645-b126-49e5-9ed9-a720a1a9d3d2: 'Notification Bar Color' # Notification Bar Color
 plugins:

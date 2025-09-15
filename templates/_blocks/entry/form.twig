@@ -201,7 +201,7 @@
 					attributes: {
 						class: [
 							'form-row',
-							"{{ not row.getIsHidden() ? 'hidden' }}",
+							"{{ row.getIsHidden() ? 'hidden' }}",
 						],
 					},
 				},

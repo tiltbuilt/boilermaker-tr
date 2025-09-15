@@ -43,6 +43,9 @@
 @source inline('columns-{1,2,3,4}');
 @source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:columns-{1,2,3,4}');
 @source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}/component:columns-{1,2,3,4}');
+@source inline('flex-{column,row}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:flex-{column,row}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}/component:flex-{column,row}');
 
 
 /* COMPONENTS */

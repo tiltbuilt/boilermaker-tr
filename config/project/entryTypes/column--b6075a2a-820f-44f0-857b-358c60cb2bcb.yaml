@@ -293,6 +293,30 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-09-15T15:46:30+00:00'
+            elementCondition: null
+            heading: 'Display Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 60ca4cdf-d395-4c54-a42e-599305b837da
+            userCondition: null
+          -
+            dateAdded: '2025-09-15T15:46:30+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a0e8b5fd-da4b-4da7-b4a2-7d5c8cb1ad64
+            userCondition: null
+            warning: null
+            width: 100
         name: Advanced
         uid: dd9772a9-92b7-4017-a3eb-82715b3b2249
         userCondition: null
