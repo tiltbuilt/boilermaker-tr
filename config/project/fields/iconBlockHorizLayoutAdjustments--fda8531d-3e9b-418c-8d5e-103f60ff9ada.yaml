@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: iconBlockLayoutAdjustments
+handle: iconBlockHorizLayoutAdjustments
 instructions: null
-name: 'Icon Block Layout Adjustments'
+name: 'Icon Block Horizontal Layout Adjustments'
 searchable: false
 settings:
   createButtonLabel: 'Add Layout Adjustment'
@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - c478b55b-ac82-444e-9cfe-af352d9ac8e9 # Icon Content Layout Adjustment
+          - c478b55b-ac82-444e-9cfe-af352d9ac8e9 # Icon Content Horizontal Layout Adjustment
         -
           - group
           - General

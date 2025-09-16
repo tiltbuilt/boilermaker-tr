@@ -24,3 +24,32 @@
 }
 
 
+@utility icon-small {        
+        
+   svg, i {
+      width: 4rem;
+      height: 4rem;
+      font-size: 4rem;
+      line-height: 1;
+   }
+}
+
+@utility icon-medium {        
+   
+   svg, i {
+      width: 8rem;
+      height: 8rem;
+      font-size: 8rem;
+      line-height: 1;
+   }
+}
+
+@utility icon-large {             
+   
+   svg, i {
+      width: 12rem;
+      height: 12rem;
+      font-size: 12rem;
+      line-height: 1;
+   }
+}

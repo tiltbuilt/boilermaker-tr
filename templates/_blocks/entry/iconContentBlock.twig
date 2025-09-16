@@ -40,18 +40,36 @@
 {% set layoutClasses = [] %}
 {% set iconClasses = ['icon-wrapper'] %}
 {% set contentClasses = ['icon-content-wrapper'] %}
-{% for layoutAdj in entry.iconBlockLayoutAdjustments.eagerly().all() %}
+{% if entry.blockLayout %}
+	{% set layoutClasses = layoutClasses|merge(['icon-block-horizontal']) %}
+	{% set layoutAdjustments = entry.iconBlockHorizLayoutAdjustments.eagerly().all() %}
+{% else %}
+	{% set layoutClasses = layoutClasses|merge(['icon-block-vertical']) %}
+	{% set layoutAdjustments = entry.iconBlockVerticalLayoutAdjustments.eagerly().all() %}
+{% endif %}
+
+
+{% for layoutAdj in layoutAdjustments %}
 	{% set devSize = layoutAdj.deviceSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ '/component:' %}	
+	{% endif %}
+	{% if layoutAdj.iconSize|length %}
+		{% set iconClasses = iconClasses|merge([devSize ~ 'icon-' ~ layoutAdj.iconSize]) %}
 	{% endif %}	
-	{% if layoutAdj.iconBlockLayout == 'horizontal' %}
-		{% set layoutClasses = layoutClasses|merge([devSize ~ 'flex-row']) %}
+	{% if entry.blockLayout %}
+		{% if layoutAdj.iconVerticalAlignment|length %}
+			{% set iconClasses = iconClasses|merge([devSize ~ 'self-' ~ layoutAdj.iconVerticalAlignment]) %}
+		{% endif %}
 	{% else %}
-		{% set layoutClasses = layoutClasses|merge([devSize ~ 'flex-col']) %}
+		{% if layoutAdj.iconHorizontalAlignment|length %}
+			{% set iconClasses = iconClasses|merge([devSize ~ 'justify-' ~ layoutAdj.iconHorizontalAlignment]) %}
+			{% set layoutClasses = layoutClasses|merge([devSize ~ 'gap-' ~ layoutAdj.iconSpacing]) %}
+		{% endif %}
 	{% endif %}
 	
 {% endfor %}
+
 
 {# set classes for icon #}
 {% if colorScheme is not defined %}

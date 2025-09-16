@@ -1,4 +1,4 @@
-dateModified: 1757964574
+dateModified: 1758040665
 elementSources:
   craft\elements\Entry:
     -
@@ -242,6 +242,7 @@ meta:
     60656df7-fedd-4651-ae29-cf30fdef7f08: 'Style Adjustment - Slider Set' # Style Adjustment - Slider Set
     62336b23-c907-4179-a797-e2f7a8d75533: 'Type Overrides - Subhead' # Type Overrides - Subhead
     68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
+    74484c3f-217d-4141-ba59-128676f0ee17: 'Icon Content Vertical Layout Adjustment' # Icon Content Vertical Layout Adjustment
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
     00126482-6097-458c-9944-33b1227df3ce: 'Column Padding Adjustment' # Column Padding Adjustment
     253138fc-844f-44ce-b802-ceba93597569: 'Content Card' # Content Card
@@ -264,6 +265,7 @@ meta:
     66354233-a357-4d3f-9543-7f92fef4d662: 'Card Content' # Card Content
     77532772-badf-4ce5-a93b-6752273d81bb: 'Subhead Position' # Subhead Position
     86544431-ce27-4263-b49f-b814ff50fcfb: 'Date Format' # Date Format
+    a1a85592-41a0-4088-acde-b7b2a763ecfa: 'Icon Block Vertical Layout Adjustments' # Icon Block Vertical Layout Adjustments
     a2da31ae-7341-4dd1-b245-5ee55d44cbc2: 'Yes No' # Yes No
     a5df8039-f6c5-4289-9ac2-7681f18d254c: 'Column Vertical Alignment' # Column Vertical Alignment
     a6e56255-d417-4ac8-9a3f-256c30684cd0: Image # Image
@@ -307,7 +309,7 @@ meta:
     c43e9602-b393-4012-b9c3-c4b391c74cd6: Video # Video
     c57caa3f-3422-4928-85a0-f509e3c41317: 'Content Position - Small CTA' # Content Position - Small CTA
     c281acd6-db5d-49e9-a272-08936804b011: 'Card Link' # Card Link
-    c478b55b-ac82-444e-9cfe-af352d9ac8e9: 'Icon Content Layout Adjustment' # Icon Content Layout Adjustment
+    c478b55b-ac82-444e-9cfe-af352d9ac8e9: 'Icon Content Horizontal Layout Adjustment' # Icon Content Horizontal Layout Adjustment
     cbcd5b00-2f33-4ac3-82a1-342b8dd20474: 'Column Layout Adjustment' # Column Layout Adjustment
     cd2e4df6-b8ea-4048-be1a-c8404b36a103: 'Icon Horizontal Alignment' # Icon Horizontal Alignment
     cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
@@ -353,7 +355,7 @@ meta:
     f6807d6f-6a06-4137-8317-a236cec446bd: 'Type Settings' # Type Settings
     fa819c1c-abac-42ac-b1e5-3de37862ccf3: Images # Images
     fd3b49a5-f45c-4fff-9e83-efae0bfb34d4: 'Style Adjustment - Section' # Style Adjustment - Section
-    fda8531d-3e9b-418c-8d5e-103f60ff9ada: 'Icon Block Layout Adjustments' # Icon Block Layout Adjustments
+    fda8531d-3e9b-418c-8d5e-103f60ff9ada: 'Icon Block Horizontal Layout Adjustments' # Icon Block Horizontal Layout Adjustments
     fe981b00-296b-4916-816f-a8e2670638e3: 'Style Adjustment - Form' # Style Adjustment - Form
     ff110645-b126-49e5-9ed9-a720a1a9d3d2: 'Notification Bar Color' # Notification Bar Color
 plugins:

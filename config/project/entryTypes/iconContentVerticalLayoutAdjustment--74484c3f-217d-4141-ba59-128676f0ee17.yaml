@@ -1,31 +1,31 @@
 color: pink
 description: null
 fieldLayouts:
-  f47a24e4-4429-4d09-8157-959b62133e09:
+  b69666e1-27fe-431f-9c29-acdc1addddcc:
     cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-09-15T17:31:29+00:00'
+            dateAdded: '2025-09-16T15:13:06+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
             handle: null
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Layout Size'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a483bd06-1907-4158-a1a7-6057999573ef
+            uid: 623c2179-660e-4be7-a48d-34c740cdf9d4
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-15T17:31:29+00:00'
+            dateAdded: '2025-09-16T15:13:06+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
@@ -37,15 +37,15 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d090f2d1-7659-4a89-ac42-29831e5fe903
+            uid: 8802b940-19e5-49d9-b958-ec7bf1b8f819
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-15T18:03:55+00:00'
+            dateAdded: '2025-09-16T15:13:06+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 37be564b-24b4-43ff-a947-49896b163197 # Icon Block Layout
+            fieldUid: cd2e4df6-b8ea-4048-be1a-c8404b36a103 # Icon Horizontal Alignment
             handle: null
             includeInCards: false
             instructions: null
@@ -54,38 +54,38 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2e671f5c-0aaf-4ec2-8efc-0b0f9cd56b5a
+            uid: 9e9cc053-db48-4084-86a9-0edeb062f548
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-15T17:31:29+00:00'
+            dateAdded: '2025-09-16T15:13:06+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
-            handle: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: iconSpacing
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Icon Spacing'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 24fef589-57ed-471f-99ae-0ca273410623
+            uid: 542341dc-5e2c-41ad-8ea6-1902629c857d
             userCondition: null
             warning: null
             width: 100
-        name: Settings
-        uid: 8c1a2129-ec3e-4b6f-996f-b8833126a0d6
+        name: Content
+        uid: f667f1c4-9e54-4103-80ab-1fcd9f6f1913
         userCondition: null
-handle: iconContentLayoutAdjustment
+handle: iconContentVerticalLayoutAdjustment
 hasTitleField: false
 icon: null
-name: 'Icon Content Layout Adjustment'
+name: 'Icon Content Vertical Layout Adjustment'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-adjustment-{deviceSize}-{iconBlockLayout}-size_{iconSize}-align_{iconVerticalAlignment}'
+titleFormat: '{object.owner.title}-adjustment-{deviceSize}-Vertical-size_{iconSize}-align_{iconVerticalAlignment}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

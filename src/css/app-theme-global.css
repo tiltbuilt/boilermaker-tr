@@ -6,7 +6,7 @@
 
 	/* BASE SPACING */	
 	--spacing-none: 0;
-	--spacing-base: clamp(1.5rem, 2.35vw, 4.5rem);
+	--spacing-base: clamp(1.5rem, 1.953125vw, 4.5rem);
 	--spacing-quarter: calc(0.25 * var(--spacing-base));
 	--spacing-half: calc(0.5 * var(--spacing-base));
 	--spacing-2x: calc(2 * var(--spacing-base));

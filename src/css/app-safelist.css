@@ -2,9 +2,9 @@
 @source inline('{hover:,focus:}{bg,text}-{black,white,transparent,red-{700,900},gray-{300,700}}');
 
 /* SPACING */
-@source inline('{p,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x}');
-@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:{p,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x}');
-@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}/component:{p,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x}');
+@source inline('{p,px,py,pt,pr,pl,pb,gap}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:{p,px,py,pt,pr,pl,pb,gap}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}/component:{p,px,py,pt,pr,pl,pb,gap}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x}');
 @source inline('{m,mx,my,mt,ml,mr,mb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x}');
 @source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:{m,mx,my,mt,ml,mr,mb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x}');
 @source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}/component:{m,mx,my,mt,ml,mr,mb}-{0,quarter,half,base,2x,3x,4x,5x,6x,7x,8x,9x,10x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x,neg-5x,neg-6x,neg-7x,neg-8x,neg-9x,neg-10x}');
@@ -51,6 +51,8 @@
 /* COMPONENTS */
 @source inline('btn-{standard,text,text-arrow,sm,md,lg}');
 @source inline('icon-{small,medium,large}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}:icon-{small,medium,large}');
+@source inline('{@2xs,@xs,@sm,@md,@lg,@xl,@2xl,@3xl,@4xl,@5xl}/component:icon-{small,medium,large}');
 
 /* ASPECT RATIOS */
 @source inline('aspect-{auto,square,video,4/3,3/2,3/1,2/1,4/1}');

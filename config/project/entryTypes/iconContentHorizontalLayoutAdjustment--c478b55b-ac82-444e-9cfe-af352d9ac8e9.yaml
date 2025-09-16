@@ -1,0 +1,74 @@
+color: pink
+description: null
+fieldLayouts:
+  f47a24e4-4429-4d09-8157-959b62133e09:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-15T17:31:29+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Layout Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a483bd06-1907-4158-a1a7-6057999573ef
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-15T17:31:29+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d090f2d1-7659-4a89-ac42-29831e5fe903
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-15T17:31:29+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 24fef589-57ed-471f-99ae-0ca273410623
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 8c1a2129-ec3e-4b6f-996f-b8833126a0d6
+        userCondition: null
+handle: iconContentHorizontalLayoutAdjustment
+hasTitleField: false
+icon: null
+name: 'Icon Content Horizontal Layout Adjustment'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-adjustment-{deviceSize}-Horizontal-size_{iconSize}-align_{iconVerticalAlignment}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

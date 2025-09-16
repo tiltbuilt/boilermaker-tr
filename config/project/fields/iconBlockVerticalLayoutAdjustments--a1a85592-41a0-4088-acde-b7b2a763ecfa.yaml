@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: iconBlockVerticalLayoutAdjustments
+instructions: null
+name: 'Icon Block Vertical Layout Adjustments'
+searchable: false
+settings:
+  createButtonLabel: 'Add Layout Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 74484c3f-217d-4141-ba59-128676f0ee17 # Icon Content Vertical Layout Adjustment
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 10
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

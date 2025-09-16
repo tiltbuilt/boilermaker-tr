@@ -16,9 +16,7 @@
 			height: 8rem;
 			font-size: 8rem;
 			line-height: 1;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
+			display: block;			
 			fill: currentColor;
 		}
 		
@@ -41,86 +39,42 @@
 			text-align: center;
 			
 		}
+
+		.button-group {
+			@apply justify-center;
+		}
 	}
 
 	.icon-block-horizontal {
-		flex-direction: row;
+		@apply flex-col justify-center items-center @lg/component:flex-row @lg/component:justify-start @lg/component:items-start; 
 		
 		
 		/* the width settings on the icon-wrapper class take into account the different icon size settings and the built in padding of 1.5 rem on one side. If you change the base icon sizes in the css, you need to adjust these sizes accordingly. */
 		
 		.icon-wrapper {
-			@apply @md/component:pr-base @md/component:block @md/component:w-[9.5rem];
+			@apply w-[8rem];
 			
 			&.icon-large {
-				@apply @md/component:w-[13.5rem];
+				@apply w-[12rem];
 			}
 			
 			&.icon-small {
-				@apply @md/component:w-[5.5rem];
+				@apply w-[4rem];
 			}
 		}
 		
 			
 		.icon-content-wrapper {
-			text-align: left;
+			@apply text-center @lg/component:text-left;
 			
 		}
-		
-		
-	}
 
-
-	/* ICON SIZES */
-
-	.icon-small {        
-        
-        svg, i {
-            width: 4rem;
-            height: 4rem;
-            font-size: 4rem;
-            line-height: 1;
-        }
-    }
-    
-    .icon-medium {        
-        
-        svg, i {
-            width: 8rem;
-            height: 8rem;
-            font-size: 8rem;
-            line-height: 1;
-        }
-    }
-    
-    .icon-large {             
-        
-        svg, i {
-            width: 12rem;
-            height: 12rem;
-            font-size: 12rem;
-            line-height: 1;
-        }
-    }
-
-
-	/* calculations are needed to determine the size of the content wrapper div to prevent it from wrapping to a new line undesirably */
-
-	@container component (width > var(--container-3xl)) {
-		
-		.icon-block-horizontal {
-			.icon-content-wrapper {
-				width: calc(100% - 9.5rem);
-				
-				&.icon-content-wrapper-large {
-					width: calc(100% - 13.5rem);
-				}
-				
-				&.icon-content-wrapper-small {
-					width: calc(100% - 5.5rem);
-				}
-			}
+		.button-group {
+			@apply justify-center @lg/component:justify-start;
 		}
-
+		
+		
 	}
+
+
 }
