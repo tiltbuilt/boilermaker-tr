@@ -6,7 +6,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 /* JS */
-import 'lazysizes';
+//import 'lazysizes';
 import { gsap } from "gsap";    
 import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";    

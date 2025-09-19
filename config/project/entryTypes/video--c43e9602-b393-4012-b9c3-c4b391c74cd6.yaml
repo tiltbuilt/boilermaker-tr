@@ -83,7 +83,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:17:48+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Layout
+            fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Size
             handle: videoLayout
             includeInCards: false
             instructions: null

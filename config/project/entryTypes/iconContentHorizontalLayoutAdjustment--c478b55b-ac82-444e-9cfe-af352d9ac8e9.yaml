@@ -3,6 +3,9 @@ description: null
 fieldLayouts:
   f47a24e4-4429-4d09-8157-959b62133e09:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:d090f2d1-7659-4a89-ac42-29831e5fe903'
+      - 'layoutElement:24fef589-57ed-471f-99ae-0ca273410623'
     tabs:
       -
         elementCondition: null
@@ -30,7 +33,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -47,7 +50,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -69,6 +72,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-adjustment-{deviceSize}-Horizontal-size_{iconSize}-align_{iconVerticalAlignment}'
+titleFormat: '{object.owner.title}-adjustment-{deviceSize}-Horizontal'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

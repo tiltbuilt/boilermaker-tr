@@ -3,6 +3,8 @@ description: null
 fieldLayouts:
   9986dffe-a1af-42bd-aec4-8e3f7369ebfe:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:905b0cb4-d08b-42e7-8475-96bd0b2b02fc'
     tabs:
       -
         elementCondition: null
@@ -30,7 +32,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 50cd7a70-a0fe-4d38-a86d-9358735fc84c # Hidden Visible
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -52,6 +54,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-{deviceSize}-Display-{hiddenVisible}'
+titleFormat: '{object.owner.title}-Display-{deviceSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

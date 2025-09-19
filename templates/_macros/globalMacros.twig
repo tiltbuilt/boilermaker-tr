@@ -127,6 +127,25 @@
 	{{- classList|join(' ') -}}
 {% endmacro spacingClasses %}
 
+{% macro widthClasses(widthSettings, useComponent) %}
+	{% set classList = [] %}
+	{% for widthAdjustment in widthSettings.eagerly().all() %}
+		{% if widthAdjustment.deviceSize|length %}
+			{% set classItem = widthAdjustment.deviceSize %}
+			{% if useComponent %}
+				{% set classItem = classItem ~ '/component:' %}
+			{% else %}
+				{% set classItem = classItem ~ ':' %}
+			{% endif %}
+		{% else %}
+			{% set classItem = '' %}
+		{% endif %}
+		{% set classItem = classItem ~ 'w-' ~ widthAdjustment.width %}						
+		{% set classList = classList|merge([classItem]) %}		
+	{% endfor %}
+	{{- classList|join(' ') -}}
+{% endmacro widthClasses %}
+
 {% macro displayClasses(displaySettings, useComponent) %}
 	{% set classList = [] %}
 	{% for displayAdjustment in displaySettings.eagerly().all() %}		
@@ -182,23 +201,7 @@
 	{{ classList|join(' ') }}	
 {% endmacro classesOut %}
 
-{# Width Classes #}
-{% macro widthClasses(adjustments) %}
-	{% set classList = [] %}
-	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}
-		{% set devSize = adjSet.deviceSize %}
-		{% if devSize|length %}
-			{% set devSize = devSize ~ ':' %}	
-		{% endif %}
-				
-		{% if adjSet.width|length %}
-			{% set classItem = devSize ~ 'w-' ~ adjSet.width %}
-			{% set classList = classList|merge([classItem]) %}
-		{% endif %}	
-	{% endfor %}
-	{{ classList|join(' ') }}	
-{% endmacro widthClasses %}
+
 
 {# Text Wrap Classes #}
 {% macro textWrapClasses(adjustments) %}
@@ -424,7 +427,7 @@
 					  src="{{ bgImage[0].url }}"
 					  srcset="{{ craft.imager.srcset(bgImage) }}"
 					  alt=""
-					  class="{{- objClasses|join(' ') }} lazyload"
+					  class="{{- objClasses|join(' ') }}"
 					  loading="lazy"
 					>		
 				</div>
@@ -432,7 +435,7 @@
 				<div class="{{- divClasses|join(' ') }}">
 					<img src="{{ bgAsset.url }}"					  
 					  alt=""
-					  class="{{- objClasses|join(' ') }} lazyload"
+					  class="{{- objClasses|join(' ') }} "
 					  loading="lazy"
 					>		
 				</div>

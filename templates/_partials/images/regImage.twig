@@ -1,0 +1,42 @@
+{% set image = entry.imageAsset.eagerly().one() %}
+{% if entry.aspectRatio == '' or entry.aspectRatio == 'auto' %}
+    {% set xForm = 'contentImage' %}
+    {% set xFormWidth = image.width %}
+    {% set xFormHeight = image.height %}
+{% else %}
+    {% if entry.aspectRatio == 'video' %}
+        {% set numerator = 16 %}
+        {% set denominator = 9 %} 
+    {% elseif entry.aspectRatio == 'square' %}
+        {% set numerator = 1 %}
+        {% set denominator = 1 %} 
+    {% else %}
+        {% set numerator = entry.aspectRatio.value|split('/')|first %}
+        {% set denominator = entry.aspectRatio.value|split('/')|last %}        
+    {% endif %}
+
+    {% set xForm = 'image-' ~ entry.aspectRatio %}
+    {% set xFormWidth = image.width %}
+    {% set xFormHeight = (image.width * denominator) / numerator %}
+{% endif %}
+
+{% if craft.imager.serverSupportsWebp() %}
+    {%- set xForm = xForm ~ '-webp' %}
+{% endif %}
+
+{%- set transformedImages = craft.imagerx.transformImage(image, xForm)	%}
+
+<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+    width="{{xFormWidth}}"
+    height="{{xFormHeight}}"
+    {% if entry.lazyLoadImg %}
+        sizes="auto"
+    {% else %}
+        fetchpriority="high"
+    {% endif %}    
+    srcset="{{ craft.imager.srcset(transformedImages) }}"
+    alt="{{ entry.altText }}"
+    class="block w-full "
+    loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
+>			
+				 

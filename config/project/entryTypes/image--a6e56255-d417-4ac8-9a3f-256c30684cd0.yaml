@@ -41,6 +41,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-09-17T16:50:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+            handle: artDirectImage
+            includeInCards: false
+            instructions: "When turned off, all the image resizes for this element will be generated based on the image's focal point and the selected aspect ratio. When activated, you can select to use different images at different layout sizes, set a frame aspect ration and image aspect ratio, and move the image around within its frame allowing tighter control over the image design."
+            label: 'Art Direct Image?'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7b18ca0-9c3d-4490-9304-29788e6db52f
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-08-20T19:57:55+00:00'
             editCondition: null
             elementCondition: null
@@ -54,6 +71,87 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bfb2691f-54f9-48bd-b5d6-4ce1e7f691e1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-17T18:22:19+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: a7b18ca0-9c3d-4490-9304-29788e6db52f
+                  uid: dd6734d0-8ef2-4167-b96f-6b26840ae557
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 426ae63f-e1b9-4f97-b5d0-5ef0987fec86
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-17T19:03:34+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: a7b18ca0-9c3d-4490-9304-29788e6db52f
+                  uid: 4af0dd21-c300-4abe-baa5-0a77b846a503
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8b5aaa1-9dcd-4f9f-8644-6b5e5879ac03
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-18T16:43:25+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
+                  layoutElementUid: a7b18ca0-9c3d-4490-9304-29788e6db52f
+                  uid: fa0f0a75-96be-4548-9a46-565f574d16d6
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: f1350f49-769c-4408-b6aa-b1f6285c818a # Image Art Direction
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 23068773-2c60-47d4-8c3c-e5072b8f3992
             userCondition: null
             warning: null
             width: 100
@@ -93,29 +191,6 @@ fieldLayouts:
             width: 100
         name: Content
         uid: 00f30005-4f29-4c62-b0b6-3cdd8c790959
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-08-27T21:55:20+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Layout
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: a8992edd-3aec-403a-a97f-ae91711ef799
-            userCondition: null
-            warning: null
-            width: 100
-        name: 'Size & Layout'
-        uid: fa17159a-13a3-4cc2-9e71-e8295b99cb41
         userCondition: null
       -
         elementCondition: null
@@ -342,6 +417,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b77e1a87-e262-45ad-b0de-d84cd8d9fc3f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-18T16:04:42+00:00'
+            elementCondition: null
+            heading: Performance
+            type: craft\fieldlayoutelements\Heading
+            uid: a1f26458-4bcb-493f-bed1-81ec634f60f4
+            userCondition: null
+          -
+            dateAdded: '2025-09-18T16:04:42+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
+            handle: lazyLoadImg
+            includeInCards: false
+            instructions: 'When this switch is activated the image will not load until it is about to appear in the browser. If turned off, the image will load when the page loads. You should only turn this off if an image is going to appear at the top of a page.'
+            label: 'Lazy Load Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df92b17c-abbf-42ec-b9b4-f797af3b5ce6
             userCondition: null
             warning: null
             width: 100

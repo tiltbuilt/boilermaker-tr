@@ -168,25 +168,46 @@
 		</div>
 		{% if entry.ctaType and ctaImg != null %}
 			<div class="cta-img-wrapper w-full {{ imgClasses|join(' ') }} {{ gMacros.spacingClasses(entry.imagePadding, true) }}">
-						
+										
 				{% if entry.ctaImgAspect == '' or entry.ctaImgAspect == 'auto' %}
-					{%- set xForm = 'contentImage' %}								
+					{% set xForm = 'contentImage' %}
+					{% set xFormWidth = ctaImg.width %}
+					{% set xFormHeight = ctaImg.height %}
 				{% else %}
-					{%- set xForm = 'image-' ~ entry.ctaImgAspect %}
+					{% if entry.ctaImgAspect == 'video' %}
+						{% set numerator = 16 %}
+						{% set denominator = 9 %} 
+					{% elseif entry.ctaImgAspect == 'square' %}
+						{% set numerator = 1 %}
+						{% set denominator = 1 %} 
+					{% else %}
+						{% set numerator = entry.ctaImgAspect.value|split('/')|first %}
+						{% set denominator = entry.ctaImgAspect.value|split('/')|last %}        
+					{% endif %}
+
+					{% set xForm = 'image-' ~ entry.ctaImgAspect %}
+					{% set xFormWidth = ctaImg.width %}
+					{% set xFormHeight = (ctaImg.width * denominator) / numerator %}
 				{% endif %}
+
 				{% if craft.imager.serverSupportsWebp() %}
 					{%- set xForm = xForm ~ '-webp' %}
-				{% endif %}				
+				{% endif %}
+
 				{% set ctaOutputImage = craft.imagerx.transformImage(ctaImg, xForm) %}
-				<img src="{{ craft.imager.placeholder({width: ctaOutputImage[0].width, height: ctaOutputImage[0].height}) }}"
-				  width="{{ctaOutputImage[0].width}}"
-				  height="{{ctaOutputImage[0].height}}"
-				  sizes="auto"
+				<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+				  width="{{xFormWidth}}"
+				  height="{{xFormHeight}}"
+				  {% if entry.lazyLoadImg %}
+					sizes="auto"
+				  {% else %}
+					fetchpriority="high"
+				  {% endif %}
 				  src="{{ ctaOutputImage[0].url }}"
 				  srcset="{{ craft.imager.srcset(ctaOutputImage) }}"
 				  alt=""
-				  class="block w-full h-full object-cover object-center lazyload"
-				  loading="lazy"
+				  class="block w-full h-full object-cover object-center"
+				  loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
 				>
 			</div>
 		{% endif %}							

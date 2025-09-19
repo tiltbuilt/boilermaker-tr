@@ -3,6 +3,12 @@ description: null
 fieldLayouts:
   183439b6-e927-413f-a830-17a8aa56b5a8:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:1f03f4a9-3bd1-4adc-8956-750035e0e3e6'
+      - 'layoutElement:ceb56510-c637-42fb-b9d8-2a34deebfc70'
+      - 'layoutElement:30b7bd89-5855-4e77-819e-42d1b6ca6e12'
+      - 'layoutElement:89d03685-dec6-4d64-add9-334817b6656f'
+      - 'layoutElement:2193eef0-32af-4802-b092-c90a7091baf1'
     tabs:
       -
         elementCondition: null
@@ -30,7 +36,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 72b1f013-8778-4308-a355-29b6088c7162 # Background Type
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -62,7 +68,7 @@ fieldLayouts:
             includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
+            providesThumbs: true
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -117,7 +123,7 @@ fieldLayouts:
               fieldContext: global
             fieldUid: f4d725e6-48b8-4083-a921-ecc0925a0bff # Background Size
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -183,7 +189,7 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25 # Background Repeat
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -213,7 +219,7 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -230,7 +236,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b81cc92d-9e5b-440d-8461-cdf9ab64807e # Opacity
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -249,7 +255,7 @@ hasTitleField: false
 icon: null
 name: Background
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: '{object.owner.title}-background-{deviceSize}'

@@ -3,11 +3,7 @@
 return [
 	'contentImage' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -16,7 +12,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'contentImage-webp' => [
@@ -27,11 +23,7 @@ return [
 	],
 	'image-video' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -42,7 +34,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-video-webp' => [
@@ -53,11 +45,7 @@ return [
 	],
 	'image-4/3' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -68,7 +56,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-4/3-webp' => [
@@ -79,11 +67,7 @@ return [
 	],
 	'image-3/2' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -94,7 +78,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-3/2-webp' => [
@@ -105,11 +89,7 @@ return [
 	],
 	'image-2/1' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -120,7 +100,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-2/1-webp' => [
@@ -131,11 +111,7 @@ return [
 	],
 	'image-3/1' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -146,7 +122,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-3/1-webp' => [
@@ -157,11 +133,7 @@ return [
 	],
 	'image-4/1' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -172,7 +144,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-4/1-webp' => [
@@ -183,11 +155,7 @@ return [
 	],
 	'image-square' => [
 		'transforms' => [
-			['width' => 320],
-			['width' => 640],
-			['width' => 768],
-			['width' => 1024],
-			['width' => 1280],
+			['width' => 320],			
 			['width' => 1600],
 		],
 		'defaults' => [
@@ -198,7 +166,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'image-square-webp' => [
@@ -209,9 +177,7 @@ return [
 	],
 	'thumbnail' => [
 		'transforms' => [
-			['width' => 200],
-			['width' => 320],
-			['width' => 400],
+			['width' => 200],			
 			['width' => 640],			
 		],
 		'defaults' => [
@@ -220,7 +186,7 @@ return [
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
-			'fillInterval' => 200,
+			'fillInterval' => 100,
 		]
 	],
 	'thumbnailWebp' => [

@@ -1,0 +1,133 @@
+{% set image = entry.imageAsset.eagerly().one() %}
+{% set adSettings = entry.imageArtDirection.eagerly().all() %}
+
+{# set frame aspect ratio classes #}
+{% set frameClasses = ['block', 'relative', 'overflow-hidden', 'w-full'] %}
+{% set aspectValues =  {
+	'df': 'h-auto',
+	'@2xs': null,
+	'@xs': null,
+	'@sm': null,
+	'@md': null,
+	'@lg': null,
+	'@xl': null,
+	'@2xl': null,
+	'@3xl': null,
+	'@4xl': null,
+	'@5xl': null,
+} %}
+
+{% for adjustment in adSettings %}
+	{% if adjustment.deviceSize.value == '' %}
+		{% if adjustment.frameAspect.value != '' %}
+			{% set aspectValues  = aspectValues|merge({'df': 'aspect-' ~ adjustment.frameAspect.value })%}
+		{% endif %}
+	{% else %}
+		{% if adjustment.frameAspect.value != '' %}
+			{% set defaultFrameAspect = 'aspect-' ~ adjustment.frameAspect.value %}
+			{% set aspectValues  = aspectValues|merge({ (adjustment.deviceSize.value) : 'aspect-' ~ adjustment.frameAspect.value })%}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{% for key,value in aspectValues %}
+	{% if value != null %}
+		{% if key == 'df' %}
+			{% set frameClasses = frameClasses|merge([value]) %}
+		{% else %}
+			{% set frameClasses = frameClasses|merge([key ~ ':' ~ value]) %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+<picture class="{{ frameClasses|join(' ') }}">
+
+</picture>
+
+
+{# Work on Aspect Ratio Setup }
+{% set hasAspectChange = false %}
+{% set defAspect = 'contentImage' %}
+{% set transformData = {} %}
+
+{% for adjSet in adjustments %}	
+	{% if adjSet.aspectRatio != '' %}
+		{% set hasAspectChange = true %}
+		{% if adjSet.deviceSize == '' %}
+			{% set defAspect = adjSet.aspectRatio %}
+		{% endif %}			
+	{% endif %}	
+{% endfor %}
+
+{% if hasAspectChange %}
+				{% set aspectClasses = [] %}
+				{% set aspectData = {'df': 'contentImage'} %}
+				{% set minSizes = {
+					'df': 0,
+					'@sm': 600,
+					'@md': 750,
+					'@lg': 1000,
+					'@xl': 1200,
+					'@2xl': 1500,
+				} %}
+								
+				{% for adjSet in adjustments %}
+					{% if adjSet.aspectRatio != '' %}
+						{# add class to aspect classes array to size picture element #}{#}
+						{% set devSize = adjSet.deviceSize %}
+						{% if devSize|length %}
+							{% set devSize = devSize ~ ':' %}	
+						{% endif %}
+						{% set aspectClasses = aspectClasses|merge([devSize ~ 'aspect-' ~ adjSet.aspectRatio]) %}
+						
+						{# Add Aspect Ratio Info for each aspect change to aspectData object for creation of source attributes #}{#}
+						{% if adjSet.deviceSize == '' %}
+							{% set deviceLabel = 'df' %}
+						{% else %}
+							{% set deviceLabel = adjSet.deviceSize.value %}
+						{% endif %}
+						{% set aspectObj = {(deviceLabel) : adjSet.aspectRatio} %}						
+						{% set aspectData = aspectData|merge(aspectObj) %}
+					{% endif %}					
+				{% endfor %}
+
+				
+													
+					{% set dfMaxSize = null %}				
+									
+					{% set dfImg = null %}
+					{% for key,value in minSizes %}
+						{% if key != 'df' and aspectData[key] is defined %}
+							{% if dfMaxSize == null %}
+								{% set dfMaxSize = minSizes[key] - 1 %}
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					{% for key,value in minSizes %}
+						{% if aspectData[key] is defined %}														
+							{% if aspectData[key] != '' and aspectData[key] != 'auto' %} 
+								{%- set xForm = 'image-' ~ aspectData[key]	%}
+							{% else %}
+								{%- set xForm = 'contentImage' %}
+							{% endif %}
+							{% if craft.imager.serverSupportsWebp() %}
+								{%- set xForm = xForm ~ '-webp' %}
+							{% endif %}
+							{%- set transformedImages = craft.imagerx.transformImage(image, xForm) %}
+							
+							{% if key == 'df' %}
+								{% set dfImg = transformedImages[0] %}
+							{% endif %}							
+							<source data-sizes="auto" {% if aspectData|length > 1 %}media="{% if key == 'df' %}(max-width: {{dfMaxSize}}px){% else %}(min-width: {{value}}px){% endif %}"{% endif %} data-srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+						{% endif %}						
+					{% endfor %}
+					
+					<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"		  
+					  data-sizes="auto"
+					  data-src="{{ dfImg }}"					 
+					  alt="{{ entry.altText }}" 
+					  class="lazyload {{ _self.imageWidth(adjustments) }}"
+					>									
+				</picture>				
+						
+			{% endif %}		 #} 

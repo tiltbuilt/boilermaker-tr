@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: imageLayout
+handle: imageArtDirection
 instructions: null
-name: 'Image Layout'
+name: 'Image Art Direction'
 searchable: false
 settings:
-  createButtonLabel: 'Add Image Layout Adjustment'
+  createButtonLabel: 'Add Image Adjustment'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 3245198b-294e-4033-ab6f-56530c5758a1 # Image Layout Adjustment
+          - f4961db5-bd05-4161-8a34-8708af93564c # Image Art Direction Adjustment
         -
           - group
           - General

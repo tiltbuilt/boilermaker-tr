@@ -1,0 +1,135 @@
+color: pink
+description: null
+fieldLayouts:
+  e63995f4-64f7-4377-a4ff-f88d54cb649e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Layout Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b997afb1-1a2a-441a-b271-7c7e39e5a3ca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+                  layoutElementUid: b997afb1-1a2a-441a-b271-7c7e39e5a3ca
+                  operator: notempty
+                  uid: fe9a6a13-4728-4578-b0d7-6a1cf5d477ff
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: null
+            includeInCards: false
+            instructions: 'Use this field to set a new image asset for use at the selected device size. Only available on devices other than default. The default size uses the field from the image block itself.'
+            label: null
+            providesThumbs: true
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1dbae2f7-9e6e-411d-bbb8-1a058229938e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+            handle: width
+            includeInCards: false
+            instructions: 'This field sets the width of the frame.'
+            label: 'Frame Width'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 45ae41ec-046e-42f2-a921-6a5dfe7dc62a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: frameAspect
+            includeInCards: false
+            instructions: 'This field sets the aspect ratio of the frame of the image (the space the image takes up).'
+            label: 'Frame Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41fe0525-76bb-44c2-85ec-4bf2d04e2056
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: imageAspect
+            includeInCards: true
+            instructions: 'Use this field to set a different aspect ratio for the image displayed than the aspect ratio of the frame. This allows you to use a larger image within the frame and position it to get the image appearance you want.'
+            label: 'Image Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11a2c257-6d92-4b8b-9d34-88fdfa960432
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: imagePosition
+            includeInCards: true
+            instructions: null
+            label: 'Image Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6b19dc92-61bf-42b0-9db1-0e2bb08ae827
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 6c2995dc-4eab-4967-a632-caae41ee1561
+        userCondition: null
+handle: imageArtDirectionAdjustment
+hasTitleField: false
+icon: null
+name: 'Image Art Direction Adjustment'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-{deviceSize}-Frame-{frameWidth}-{frameAspect}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

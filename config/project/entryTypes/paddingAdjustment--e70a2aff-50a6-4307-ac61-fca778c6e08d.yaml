@@ -3,6 +3,9 @@ description: null
 fieldLayouts:
   5e301046-808e-445a-aa2a-57a56d52403b:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:1ed03333-fe5e-4a02-a626-c5b8ad7c7f9d'
+      - 'layoutElement:d28a92ce-d446-4dc1-bf97-4ad63b2a4a19'
     tabs:
       -
         elementCondition: null
@@ -30,7 +33,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: pt
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: Top
             providesThumbs: false
@@ -47,7 +50,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: pb
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: Bottom
             providesThumbs: false
@@ -103,6 +106,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-{deviceSize}-Padding'
+titleFormat: '{object.owner.title}-Padding-{deviceSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

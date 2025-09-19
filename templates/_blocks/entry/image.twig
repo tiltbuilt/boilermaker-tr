@@ -13,53 +13,11 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_macros/globalMacros' as gMacros %}
 
-{# Non-modal button code macro #}
-{#}
-{% macro blockWidth (adjustments) %}
-	{% set classList = [] %}
-	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}{#}
-		{% set devSize = adjSet.deviceSize %}
-		{% if devSize|length %}
-			{% set devSize = devSize ~ ':' %}	
-		{% endif %}
-				
-		{% if adjSet.width|length %}
-			{% if adjSet.width == 'auto' %}
-				{% set classItem = devSize ~ 'inline-block' %}
-			{% else %}
-				{% set classItem = devSize ~ 'w-' ~ adjSet.width %}				
-			{% endif %}
-			{% set classList = classList|merge([classItem]) %}
-		{% endif %}	
-	{% endfor %}
-	{{ classList|join(' ') }}
-{% endmacro blockWidth %}
-
-{% macro imageWidth (adjustments) %}
-	{% set classList = [] %}
-	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}{#}
-		{% set devSize = adjSet.deviceSize %}
-		{% if devSize|length %}
-			{% set devSize = devSize ~ ':' %}	
-		{% endif %}
-				
-		{% if adjSet.width|length %}
-			{% if adjSet.width == 'auto' %}
-				{% set classItem = devSize ~ 'w-' ~ adjSet.width %}
-				{% set classList = classList|merge([classItem]) %}				
-			{% endif %}			
-		{% endif %}	
-	{% endfor %}
-	{{ classList|join(' ') }}
-{% endmacro imageWidth %}
 
 {# Create array for classes to pass to macros for section #}
 {% set imgClassList = [] %}
 
 {% set image = entry.imageAsset.eagerly().one() %}
-
 
 {# Set block id attribute value #}
 {% if entry.customId is defined and entry.customId != '' %}
@@ -88,30 +46,15 @@
 {% endif %}
 {% set colorClasses = [] %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
-{#{% if entry.captionColor|length %}
-	{% set colorClasses = colorClasses|merge(['text-' ~ entry.captionColor]) %}
-{% endif %}#}
+{% if entry.textColor|length %}
+	{% set colorClasses = colorClasses|merge(['text-' ~ entry.textColor]) %}
+{% endif %}
 {% if entry.bgColor|length %}
 	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
 {% endif %}
 {% set imgClassList = imgClassList|merge(colorClasses) %}
 
-{# Retrieve styling adjustments #}
-{#{% set adjustments = entry.imageStyleAdjustments.eagerly().all() %}#}
 
-{# Work on Aspect Ratio Setup #}
-{% set hasAspectChange = false %}
-{% set defAspect = 'contentImage' %}
-{% set transformData = {} %}
-{#}
-{% for adjSet in adjustments %}	
-	{% if adjSet.aspectRatio != '' %}
-		{% set hasAspectChange = true %}
-		{% if adjSet.deviceSize == '' %}
-			{% set defAspect = adjSet.aspectRatio %}
-		{% endif %}			
-	{% endif %}	
-{% endfor %}
 
 {# set outer tag depending on if element has caption or not #}
 {% if entry.imageCaption != '' %}
@@ -122,7 +65,7 @@
 
 {# OUTPUT #}
 {% if image != null %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ _self.blockWidth(adjustments) }} {{- gMacros.textWrapClasses(adjustments) -}} {{- gMacros.classesOut(adjustments, 'Display') -}} #} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ entry.artDirectImage ? gMacros.widthClasses(entry.imageArtDirection, false) : gMacros.widthClasses(entry.imageSize, false) }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
 		{% if entry.linkSettings!= null %}
 			{% if entry.isModalLink %}
@@ -147,98 +90,16 @@
 		{% if image.mimeType == "image/svg+xml" %}		
 		
 			{# for svg images just drop image in, don't mess with aspect ratio or transforms #}
-			<img src="{{ image.url }}" alt="{{entry.altText}}" class="lazyload block {#{{ _self.imageWidth(adjustments) }}#}">
+			<img src="{{ image.url }}" alt="{{entry.altText}}" class="block w-full" loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}">
 		
 		{% else %}		
-			{% if hasAspectChange %}
-				{% set aspectClasses = [] %}
-				{% set aspectData = {'df': 'contentImage'} %}
-				{% set minSizes = {
-					'df': 0,
-					'@sm': 600,
-					'@md': 750,
-					'@lg': 1000,
-					'@xl': 1200,
-					'@2xl': 1500,
-				} %}
-				{#}				
-				{% for adjSet in adjustments %}
-					{% if adjSet.aspectRatio != '' %}
-						{# add class to aspect classes array to size picture element #}{#}
-						{% set devSize = adjSet.deviceSize %}
-						{% if devSize|length %}
-							{% set devSize = devSize ~ ':' %}	
-						{% endif %}
-						{% set aspectClasses = aspectClasses|merge([devSize ~ 'aspect-' ~ adjSet.aspectRatio]) %}
-						
-						{# Add Aspect Ratio Info for each aspect change to aspectData object for creation of source attributes #}{#}
-						{% if adjSet.deviceSize == '' %}
-							{% set deviceLabel = 'df' %}
-						{% else %}
-							{% set deviceLabel = adjSet.deviceSize.value %}
-						{% endif %}
-						{% set aspectObj = {(deviceLabel) : adjSet.aspectRatio} %}						
-						{% set aspectData = aspectData|merge(aspectObj) %}
-					{% endif %}					
-				{% endfor %}
-
-				
-				<picture class="block relative {{ aspectClasses|join(' ') }}">									
-					{% set dfMaxSize = null %}				
-					{# output source tag for each size/aspect #}					
-					{% set dfImg = null %}
-					{% for key,value in minSizes %}
-						{% if key != 'df' and aspectData[key] is defined %}
-							{% if dfMaxSize == null %}
-								{% set dfMaxSize = minSizes[key] - 1 %}
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-					{% for key,value in minSizes %}
-						{% if aspectData[key] is defined %}														
-							{% if aspectData[key] != '' and aspectData[key] != 'auto' %} 
-								{%- set xForm = 'image-' ~ aspectData[key]	%}
-							{% else %}
-								{%- set xForm = 'contentImage' %}
-							{% endif %}
-							{% if craft.imager.serverSupportsWebp() %}
-								{%- set xForm = xForm ~ '-webp' %}
-							{% endif %}
-							{%- set transformedImages = craft.imagerx.transformImage(image, xForm) %}
-							{# set variable for default image to use in img tag #}
-							{% if key == 'df' %}
-								{% set dfImg = transformedImages[0] %}
-							{% endif %}							
-							<source data-sizes="auto" {% if aspectData|length > 1 %}media="{% if key == 'df' %}(max-width: {{dfMaxSize}}px){% else %}(min-width: {{value}}px){% endif %}"{% endif %} data-srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
-						{% endif %}						
-					{% endfor %}
-					
-					<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"		  
-					  data-sizes="auto"
-					  data-src="{{ dfImg }}"					 
-					  alt="{{ entry.altText }}" 
-					  class="lazyload {{ _self.imageWidth(adjustments) }}"
-					>									
-				</picture>				
+			{# if entry is art directed, use art direction template if not use regular template #}
+			{% if entry.artDirectImage %}
+				{% include '_partials/images/adImage' with {'entry': entry} %}
 			{% else %}
-				{% if craft.imager.serverSupportsWebp() %}
-					{%- set xForm = 'contentImage-webp' %}
-				{% else %}
-					{%- set xForm = 'contentImage'	%}
-				{% endif %}
-				
-				{%- set transformedImages = craft.imagerx.transformImage(image, xForm)	%}
-				
-				<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"
-				  width="{{image.width}}"
-				  height="{{image.height}}"
-				  data-sizes="auto"
-				  data-src="{{ transformedImages[0] }}"
-				  data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-				  alt="{{ entry.altText }}"
-				  class="lazyload block {#{{ _self.imageWidth(adjustments) }}#}"
-				>			
-			{% endif %}		  
+				{% include '_partials/images/regImage' with {'entry': entry} %}
+			{% endif %}
+
 		{% endif %}
 		
 		{% if entry.linkSettings != null %}
