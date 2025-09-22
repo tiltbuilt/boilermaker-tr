@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: imageArtDirection
+handle: imageSettings
 instructions: null
-name: 'Image Art Direction'
+name: 'Image Settings'
 searchable: false
 settings:
-  createButtonLabel: 'Add Image Adjustment'
+  createButtonLabel: null
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,18 +12,18 @@ settings:
       __assoc__:
         -
           - uid
-          - f4961db5-bd05-4161-8a34-8708af93564c # Image Art Direction Adjustment - Frame
+          - bbfcb497-fe48-4545-bb0e-7030a4a1284b # Image Art Direction - Image
         -
           - group
           - General
   includeTableView: false
-  maxEntries: 10
+  maxEntries: 5
   minEntries: null
-  pageSize: null
+  pageSize: 50
   propagationKeyFormat: null
   propagationMethod: all
   showCardsInGrid: false
-  viewMode: blocks
+  viewMode: cards
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

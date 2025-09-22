@@ -14,7 +14,7 @@ fieldLayouts:
             dateAdded: '2025-09-12T21:36:24+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Device Size
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
             includeInCards: false
             instructions: null
@@ -72,6 +72,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-Padding-{deviceSize}'
+titleFormat: '{object.owner.title}-Padding-{layoutSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

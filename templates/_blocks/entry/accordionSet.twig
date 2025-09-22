@@ -100,7 +100,7 @@
 		{% set accPadding = acc.padding.eagerly().all() %}
 			
 		{% for adj in accPadding %}
-			{% set devSize = adj.deviceSize %}
+			{% set devSize = adj.layoutSize %}
 			{% if devSize|length %}
 				{% set devSize = devSize ~ ':' %}	
 			{% endif %}
@@ -122,7 +122,7 @@
 		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
 		
 		{% for setAdj in setPadding %}			
-			{% set devSize = setAdj.deviceSize %}
+			{% set devSize = setAdj.layoutSize %}
 			{% if devSize|length %}
 				{% set devSize = devSize ~ ':' %}	
 			{% endif %}

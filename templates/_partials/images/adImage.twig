@@ -1,8 +1,15 @@
 {% set image = entry.imageAsset.eagerly().one() %}
+{% set dfTransforms = null %}
+{% set defaultAspect = 'auto' %}
+{% set currentAspect = defaultAspect %}
+{% set xFormWidth = '' %}
+{% set xFormHeight = '' %}
 {% set adSettings = entry.imageArtDirection.eagerly().all() %}
+{% set imgSettings = entry.imageSettings.eagerly().all() %}
 
-{# set frame aspect ratio classes #}
-{% set frameClasses = ['block', 'relative', 'overflow-hidden', 'w-full'] %}
+{# set frame aspect ratio and image position classes #}
+{% set frameClasses = ['block', 'relative', 'w-full'] %}
+{% set imgClasses = ['block', 'w-full'] %}
 {% set aspectValues =  {
 	'df': 'h-auto',
 	'@2xs': null,
@@ -16,16 +23,34 @@
 	'@4xl': null,
 	'@5xl': null,
 } %}
+{% set posValues =  {
+	'df': 'object-center',
+	'@2xs': null,
+	'@xs': null,
+	'@sm': null,
+	'@md': null,
+	'@lg': null,
+	'@xl': null,
+	'@2xl': null,
+	'@3xl': null,
+	'@4xl': null,
+	'@5xl': null,
+} %}
 
 {% for adjustment in adSettings %}
-	{% if adjustment.deviceSize.value == '' %}
+	{% if adjustment.layoutSize.value == '' %}
 		{% if adjustment.frameAspect.value != '' %}
 			{% set aspectValues  = aspectValues|merge({'df': 'aspect-' ~ adjustment.frameAspect.value })%}
 		{% endif %}
+		{% if adjustment.imagePosition.value != '' %}
+			{% set posValues  = posValues|merge({'df': 'object-' ~ adjustment.imagePosition.value })%}
+		{% endif %}
 	{% else %}
-		{% if adjustment.frameAspect.value != '' %}
-			{% set defaultFrameAspect = 'aspect-' ~ adjustment.frameAspect.value %}
-			{% set aspectValues  = aspectValues|merge({ (adjustment.deviceSize.value) : 'aspect-' ~ adjustment.frameAspect.value })%}
+		{% if adjustment.frameAspect.value != '' %}			
+			{% set aspectValues  = aspectValues|merge({ (adjustment.layoutSize.value) : 'aspect-' ~ adjustment.frameAspect.value })%}
+		{% endif %}
+		{% if adjustment.imagePosition.value != '' %}
+			{% set posValues  = posValues|merge({ (adjustment.layoutSize.value) : 'object-' ~ adjustment.imagePosition.value })%}
 		{% endif %}
 	{% endif %}
 {% endfor %}
@@ -34,100 +59,108 @@
 	{% if value != null %}
 		{% if key == 'df' %}
 			{% set frameClasses = frameClasses|merge([value]) %}
+			{% set imgClasses = imgClasses|merge([value]) %}
 		{% else %}
 			{% set frameClasses = frameClasses|merge([key ~ ':' ~ value]) %}
+			{% set imgClasses = imgClasses|merge([key ~ ':' ~ value]) %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{% for key,value in posValues %}
+	{% if value != null %}
+		{% if key == 'df' %}
+			{% set imgClasses = imgClasses|merge([value]) %}
+		{% else %}
+			{% set imgClasses = imgClasses|merge([key ~ ':' ~ value]) %}
 		{% endif %}
 	{% endif %}
 {% endfor %}
 
 <picture class="{{ frameClasses|join(' ') }}">
+	{# set ordered array of objects for source settings #}
+	{% set srcObjects =  {
+		'df': {'minSize': 0, 'aspect': 'auto', 'image': image},
+		'xs': {'minSize': 320, 'aspect': null, 'image': null},
+		'sm': {'minSize': 640, 'aspect': null, 'image': null},
+		'md': {'minSize': 768, 'aspect': null, 'image': null},
+		'lg': {'minSize': 1024, 'aspect': null, 'image': null},
+		'xl': {'minSize': 1280, 'aspect': null, 'image': null},
+		'2xl': {'minSize': 1536, 'aspect': null, 'image': null},		
+	} %}
+
+	{% for srcSetting in imgSettings %}
+		{# if there is a new image in the adjustment then use it as the image for src attributes #}
+		{% if srcSetting.deviceSize == '' %}
+			{% set srcSize = 'df' %}
+		{% else %}
+			{% set srcSize = srcSetting.deviceSize.value %}
+		{% endif %}
+
+		{% if srcSetting.imageAsset|length or srcSetting.aspectRatio != '' %}
+			{% if srcSetting.imageAsset|length and srcSetting.deviceSize != '' %}
+				{% set image = srcSetting.imageAsset.eagerly().one() %}
+			{% endif %}
+			{% if srcSetting.aspectRatio.value != '' %}				
+				{% set currentAspect = srcSetting.aspectRatio.value %}
+			{% else %}
+				{% set myRatio = currentAspect %}
+			{% endif %}
+			{% set mySrcObject = srcObjects[(srcSize)] %}			
+			{% set mySrcObject = mySrcObject|merge({'image': image, 'aspect': currentAspect}) %}
+			{% set srcObjects = srcObjects|merge({(srcSize): mySrcObject}) %}
+
+		{% endif %}		
+	{% endfor %}
+		
+	{# loop through and write in src elements for different breakpoints #}
+	
+	{% for sizeKey, srcSettings in srcObjects|reverse %}		
+		{% if srcSettings.image != null or srcSettings.aspect != null %}
+			{% if srcSettings.aspect == 'auto' %}
+				{% set xForm = 'contentImage' %}				
+			{% else %}
+				{% set xForm = 'image-' ~ srcSettings.aspect %}				
+			{% endif %}
+			{% set transformedImages = craft.imagerx.transformImage(srcSettings.image, xForm) %}
+			{% if sizeKey == 'df' %}
+				{% if srcSettings.aspect == 'auto' %}				
+					{% set xFormWidth = srcSettings.image.width %}
+					{% set xFormHeight = srcSettings.image.height %}
+				{% else %}				
+					{% if srcSettings.aspect == 'video' %}
+						{% set numerator = 16 %}
+						{% set denominator = 9 %} 
+					{% elseif srcSettings.aspect == 'square' %}
+						{% set numerator = 1 %}
+						{% set denominator = 1 %} 
+					{% else %}
+						{% set numerator = srcSettings.aspect|split('/')|first %}
+						{% set denominator = srcSettings.aspect|split('/')|last %}        
+					{% endif %}
+					{% set xFormWidth = srcSettings.image.width %}				
+					{% set xFormHeight = (srcSettings.image.image.width * denominator) / numerator %}				
+				{% endif %}
+				
+				<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+					width="{{xFormWidth}}"
+					height="{{xFormHeight}}"
+					{% if entry.lazyLoadImg %}
+						sizes="auto"
+					{% else %}
+						fetchpriority="high"
+					{% endif %}    
+					srcset="{{ craft.imager.srcset(transformedImages) }}"
+					alt="{{ entry.altText }}"
+					class="{{imgClasses|join(' ')}}"
+					loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
+					decoding="async"
+				>
+			{% else %}
+				<source sizes="auto" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
 
 </picture>
 
-
-{# Work on Aspect Ratio Setup }
-{% set hasAspectChange = false %}
-{% set defAspect = 'contentImage' %}
-{% set transformData = {} %}
-
-{% for adjSet in adjustments %}	
-	{% if adjSet.aspectRatio != '' %}
-		{% set hasAspectChange = true %}
-		{% if adjSet.deviceSize == '' %}
-			{% set defAspect = adjSet.aspectRatio %}
-		{% endif %}			
-	{% endif %}	
-{% endfor %}
-
-{% if hasAspectChange %}
-				{% set aspectClasses = [] %}
-				{% set aspectData = {'df': 'contentImage'} %}
-				{% set minSizes = {
-					'df': 0,
-					'@sm': 600,
-					'@md': 750,
-					'@lg': 1000,
-					'@xl': 1200,
-					'@2xl': 1500,
-				} %}
-								
-				{% for adjSet in adjustments %}
-					{% if adjSet.aspectRatio != '' %}
-						{# add class to aspect classes array to size picture element #}{#}
-						{% set devSize = adjSet.deviceSize %}
-						{% if devSize|length %}
-							{% set devSize = devSize ~ ':' %}	
-						{% endif %}
-						{% set aspectClasses = aspectClasses|merge([devSize ~ 'aspect-' ~ adjSet.aspectRatio]) %}
-						
-						{# Add Aspect Ratio Info for each aspect change to aspectData object for creation of source attributes #}{#}
-						{% if adjSet.deviceSize == '' %}
-							{% set deviceLabel = 'df' %}
-						{% else %}
-							{% set deviceLabel = adjSet.deviceSize.value %}
-						{% endif %}
-						{% set aspectObj = {(deviceLabel) : adjSet.aspectRatio} %}						
-						{% set aspectData = aspectData|merge(aspectObj) %}
-					{% endif %}					
-				{% endfor %}
-
-				
-													
-					{% set dfMaxSize = null %}				
-									
-					{% set dfImg = null %}
-					{% for key,value in minSizes %}
-						{% if key != 'df' and aspectData[key] is defined %}
-							{% if dfMaxSize == null %}
-								{% set dfMaxSize = minSizes[key] - 1 %}
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-					{% for key,value in minSizes %}
-						{% if aspectData[key] is defined %}														
-							{% if aspectData[key] != '' and aspectData[key] != 'auto' %} 
-								{%- set xForm = 'image-' ~ aspectData[key]	%}
-							{% else %}
-								{%- set xForm = 'contentImage' %}
-							{% endif %}
-							{% if craft.imager.serverSupportsWebp() %}
-								{%- set xForm = xForm ~ '-webp' %}
-							{% endif %}
-							{%- set transformedImages = craft.imagerx.transformImage(image, xForm) %}
-							
-							{% if key == 'df' %}
-								{% set dfImg = transformedImages[0] %}
-							{% endif %}							
-							<source data-sizes="auto" {% if aspectData|length > 1 %}media="{% if key == 'df' %}(max-width: {{dfMaxSize}}px){% else %}(min-width: {{value}}px){% endif %}"{% endif %} data-srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
-						{% endif %}						
-					{% endfor %}
-					
-					<img src="{{ craft.imager.placeholder({width: image.width, height: image.height}) }}"		  
-					  data-sizes="auto"
-					  data-src="{{ dfImg }}"					 
-					  alt="{{ entry.altText }}" 
-					  class="lazyload {{ _self.imageWidth(adjustments) }}"
-					>									
-				</picture>				
-						
-			{% endif %}		 #} 

@@ -77,8 +77,8 @@
 					{% endif %}
 				{% else %}
 					{% for textColumnAdjustment in typeSettings.numberOfTextColumns.eagerly().all() %}
-						{% if textColumnAdjustment.deviceSize|length %}
-							{% set classItem = textColumnAdjustment.deviceSize %}
+						{% if textColumnAdjustment.layoutSize|length %}
+							{% set classItem = textColumnAdjustment.layoutSize %}
 							{% if useComponent %}
 								{% set classItem = classItem ~ '/component:' %}
 							{% else %}
@@ -104,10 +104,10 @@
 		{% for tabObj in fLayout.tabs %}			
 			{% for tabEl in tabObj.elements %}				
 				{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}				
-					{% if tabEl.field.handle != 'deviceSize' %}
+					{% if tabEl.field.handle != 'layoutSize' %}
 						{% if spaceAdjustment.getFieldValue(tabEl.field.handle)|length %}
-							{% if spaceAdjustment.deviceSize|length %}
-								{% set classItem = spaceAdjustment.deviceSize %}
+							{% if spaceAdjustment.layoutSize|length %}
+								{% set classItem = spaceAdjustment.layoutSize %}
 								{% if useComponent %}
 									{% set classItem = classItem ~ '/component:' %}
 								{% else %}
@@ -130,8 +130,8 @@
 {% macro widthClasses(widthSettings, useComponent) %}
 	{% set classList = [] %}
 	{% for widthAdjustment in widthSettings.eagerly().all() %}
-		{% if widthAdjustment.deviceSize|length %}
-			{% set classItem = widthAdjustment.deviceSize %}
+		{% if widthAdjustment.layoutSize|length %}
+			{% set classItem = widthAdjustment.layoutSize %}
 			{% if useComponent %}
 				{% set classItem = classItem ~ '/component:' %}
 			{% else %}
@@ -149,8 +149,8 @@
 {% macro displayClasses(displaySettings, useComponent) %}
 	{% set classList = [] %}
 	{% for displayAdjustment in displaySettings.eagerly().all() %}		
-		{% if displayAdjustment.deviceSize|length %}
-			{% set classItem = displayAdjustment.deviceSize %}
+		{% if displayAdjustment.layoutSize|length %}
+			{% set classItem = displayAdjustment.layoutSize %}
 			{% if useComponent %}
 				{% set classItem = classItem ~ '/component:' %}
 			{% else %}
@@ -175,7 +175,7 @@
 	{% set classList = [] %}
 	{% for adjSet in adjustments %}
 		{# Get Device Size for Adjustments #}
-		{% set devSize = adjSet.deviceSize %}
+		{% set devSize = adjSet.layoutSize %}
 		{% if devSize|length %}
 			{% set devSize = devSize ~ ':' %}	
 		{% endif %}
@@ -208,7 +208,7 @@
 	{% set classList = [] %}
 	{% for adjSet in adjustments %}
 		{# Get Device Size for Adjustments #}
-		{% set devSize = adjSet.deviceSize %}
+		{% set devSize = adjSet.layoutSize %}
 		{% if devSize|length %}
 			{% set devSize = devSize ~ ':' %}	
 		{% endif %}
@@ -259,10 +259,10 @@
 				
 	{% for adjSet in adjustments %}
 		{# determine which size setting we are dealing with and set the slot name for the bgSet object #}
-		{% if adjSet.deviceSize == '' %}
+		{% if adjSet.layoutSize == '' %}
 			{% set bgObj = '@df' %}
 		{% else %}
-			{% set bgObj = adjSet.deviceSize.value %}
+			{% set bgObj = adjSet.layoutSize.value %}
 		{% endif %}
 		
 		{#}

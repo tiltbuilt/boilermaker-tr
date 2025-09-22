@@ -36,7 +36,8 @@
     {% endif %}    
     srcset="{{ craft.imager.srcset(transformedImages) }}"
     alt="{{ entry.altText }}"
-    class="block w-full "
+    class="block w-full object-cover object-center"
     loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
+    decoding="async"
 >			
 				 

@@ -1,37 +1,64 @@
 color: pink
 description: null
 fieldLayouts:
-  f47a24e4-4429-4d09-8157-959b62133e09:
+  1331e924-b13a-4d73-83e5-3b0d682fdeb5:
     cardThumbAlignment: end
     cardView:
-      - 'layoutElement:d090f2d1-7659-4a89-ac42-29831e5fe903'
-      - 'layoutElement:24fef589-57ed-471f-99ae-0ca273410623'
+      - 'layoutElement:baa745ef-7ac5-43c3-821e-cb670ca04f00'
+      - 'layoutElement:81437c9c-e54a-4f5a-8feb-6c80feeed144'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-09-15T17:31:29+00:00'
+            dateAdded: '2025-09-20T22:30:13+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
+            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
             handle: null
             includeInCards: false
             instructions: null
-            label: 'Layout Size'
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a483bd06-1907-4158-a1a7-6057999573ef
+            uid: 5bbe81f2-0f37-4a54-8031-6fdc50998ba4
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-15T17:31:29+00:00'
+            dateAdded: '2025-09-20T22:30:13+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
+                  layoutElementUid: 5bbe81f2-0f37-4a54-8031-6fdc50998ba4
+                  operator: notempty
+                  uid: 31585e10-9e5c-4a12-80c4-d104e48795c2
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: true
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: baa745ef-7ac5-43c3-821e-cb670ca04f00
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-20T22:30:13+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
             includeInCards: true
             instructions: null
@@ -40,38 +67,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d090f2d1-7659-4a89-ac42-29831e5fe903
+            uid: 81437c9c-e54a-4f5a-8feb-6c80feeed144
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2025-09-15T17:31:29+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
-            handle: null
-            includeInCards: true
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 24fef589-57ed-471f-99ae-0ca273410623
-            userCondition: null
-            warning: null
-            width: 100
-        name: Settings
-        uid: 8c1a2129-ec3e-4b6f-996f-b8833126a0d6
+        name: Content
+        uid: 382488e6-a998-4297-a9e5-ca63aa7a6d18
         userCondition: null
-handle: iconContentHorizontalLayoutAdjustment
+handle: imageSource
 hasTitleField: false
 icon: null
-name: 'Icon Content Horizontal Layout Adjustment'
+name: 'Image Art Direction - Image'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-adjustment-{layoutSize}-Horizontal'
+titleFormat: '{object.owner.title}-ImageSource-{deviceSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

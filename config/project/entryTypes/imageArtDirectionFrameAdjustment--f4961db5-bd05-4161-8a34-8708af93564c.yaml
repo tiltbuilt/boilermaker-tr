@@ -1,78 +1,20 @@
 color: pink
+description: null
 fieldLayouts:
-  fcc6d8c1-886b-42fb-9ddf-0ffd017539d4:
+  e63995f4-64f7-4377-a4ff-f88d54cb649e:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:ca6c7457-0ecb-40c0-bb25-f2b31e17e5ec'
+      - 'layoutElement:97db9ffc-f10a-4e06-9513-f2883b5f0dc4'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:53:06+00:00'
+            dateAdded: '2025-09-20T22:32:11+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Layout Size
-            handle: deviceSize
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 1aa31c8e-b0b8-4561-9ebf-1e1d94597548
-            userCondition: null
-            warning: null
-            width: 100
-        name: 'Device Size'
-        uid: 481dc6bc-ef4f-43e7-adb7-1c6b4751973e
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-05-19T20:53:06+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
-            handle: mt
-            includeInCards: false
-            instructions: null
-            label: 'Top Margin'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: a2d71008-d495-42d2-a5df-81f135d5450f
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-05-19T20:53:06+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
-            handle: mb
-            includeInCards: false
-            instructions: null
-            label: 'Bottom Margin'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4aae9458-caa5-4593-a434-7ed66fcbdae7
-            userCondition: null
-            warning: null
-            width: 50
-        name: Margins
-        uid: d5958ba1-d0a1-4a94-8f99-b99005f4d3ac
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-05-19T20:53:06+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 206d3220-640b-4b20-a440-faaa801a11d9 # Display State
+            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
             includeInCards: false
             instructions: null
@@ -81,21 +23,72 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3c3d9f7d-1df2-4f59-970f-28ab7b5dcbf0
+            uid: 832cc504-549f-4e54-bbd7-c0c48f154afd
             userCondition: null
             warning: null
             width: 100
-        name: Display
-        uid: 74819bcb-d5bc-4f58-9d32-edc07e8fe932
+          -
+            dateAdded: '2025-09-20T22:16:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: 'Frame Width'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ca6c7457-0ecb-40c0-bb25-f2b31e17e5ec
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-09-20T22:16:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: frameAspect
+            includeInCards: true
+            instructions: null
+            label: 'Frame Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 97db9ffc-f10a-4e06-9513-f2883b5f0dc4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-09-17T19:38:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: imagePosition
+            includeInCards: true
+            instructions: null
+            label: 'Image Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6b19dc92-61bf-42b0-9db1-0e2bb08ae827
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 6c2995dc-4eab-4967-a632-caae41ee1561
         userCondition: null
-handle: styleAdjustmentForm
+handle: imageArtDirectionFrameAdjustment
 hasTitleField: false
 icon: null
-name: 'Style Adjustment - Form'
+name: 'Image Art Direction Adjustment - Frame'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{object.owner.title}-styles-{ object.deviceSize }'
+titleFormat: '{object.owner.title}-{layoutSize}-ArtDirection-Frame'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

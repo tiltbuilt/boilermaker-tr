@@ -65,7 +65,7 @@
 
 {# OUTPUT #}
 {% if image != null %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ entry.artDirectImage ? gMacros.widthClasses(entry.imageArtDirection, false) : gMacros.widthClasses(entry.imageSize, false) }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ entry.artDirectImage ? gMacros.widthClasses(entry.imageArtDirection, false) : gMacros.widthClasses(entry.imageSize, false) }}#} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
 		{% if entry.linkSettings!= null %}
 			{% if entry.isModalLink %}

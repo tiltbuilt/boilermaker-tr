@@ -80,7 +80,7 @@ x-init="swiper = new Swiper($refs.container, {
 							  data-src="{{ mobileStartImage }}"
 							  data-srcset="{{ craft.imager.srcset(mobileImages) }}"
 							  alt="{{ entry.title }}"
-							  class="lazyload block object-cover w-full @sm/component:hidden"
+							  class="block object-cover w-full @sm/component:hidden"
 							  loading="lazy"
 							>
 									
@@ -91,7 +91,7 @@ x-init="swiper = new Swiper($refs.container, {
 							  data-src="{{ largerStartImage }}"
 							  data-srcset="{{ craft.imager.srcset(largerImages) }}"
 							  alt="{{ entry.title }}"
-							  class="lazyload hidden w-full h-full object-cover @sm/component:block absolute inset-0"
+							  class="hidden w-full h-full object-cover @sm/component:block absolute inset-0"
 							  loading="lazy"
 							>
 							{% if listItem.url|length %}

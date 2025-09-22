@@ -50,7 +50,7 @@
 
 
 {% for layoutAdj in layoutAdjustments %}
-	{% set devSize = layoutAdj.deviceSize %}
+	{% set devSize = layoutAdj.layoutSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ '/component:' %}	
 	{% endif %}
@@ -87,19 +87,6 @@
 	{% set iconClasses = iconClasses|merge([colorScheme]) %}
 {% endif %}
 
-{#}
-{% for adjSet in adjustments %}
-	{# Get Device Size for Adjustments #}{#}
-	{% set devSize = adjSet.deviceSize %}
-	{% if devSize|length %}
-		{% set devSize = devSize ~ '/component:' %}	
-	{% endif %}	
-	{% if entry.blockLayout and adjSet.iconVerticalAlignment != '' %}
-		{% set iconClasses = iconClasses|merge([devSize ~ 'self-' ~ adjSet.iconVerticalAlignment]) %}
-	{% endif %}
-{% endfor %}
-
-#}
 <div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="icon-layout {{ layoutClasses|join(' ') }}">
 		<div class="{{- iconClasses|join(' ') }}">

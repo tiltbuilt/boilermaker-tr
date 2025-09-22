@@ -55,7 +55,7 @@
 {# Set Layout Styles #}
 
 {% for layoutItem in entry.columnLayout %}
-	{% set devSize = layoutItem.deviceSize %}
+	{% set devSize = layoutItem.layoutSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
@@ -75,7 +75,7 @@
 
 {% if layoutSettings is defined %}
 	{% for layoutItem in layoutSettings %}
-		{% set devSize = layoutItem.deviceSize %}
+		{% set devSize = layoutItem.layoutSize %}
 		{% if devSize|length %}
 			{% set devSize = devSize ~ '/component:' %}	
 		{% endif %}	

@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: deviceSize
+handle: layoutSize
 instructions: null
-name: 'Device Size'
+name: 'Layout Size'
 searchable: false
 settings:
   customOptions: false

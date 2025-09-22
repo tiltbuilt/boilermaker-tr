@@ -41,7 +41,7 @@
 {# insert layout changes #}
 
 {% for layoutItem in entry.layoutSettings %}
-	{% set devSize = layoutItem.deviceSize %}
+	{% set devSize = layoutItem.layoutSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
