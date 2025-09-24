@@ -16,6 +16,17 @@
 {% endif %}
 
 {% if cardRowSizes != null and cardRowSizes|length %}
+	{#}
+	{% for rowSize in cardRowSizes %}
+		{% if rowSize.layoutSize == '' %}
+			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}
+			{% set countValues = countValues|merge({'df': rowSize.numberOfCards}) %}
+		{% else %}
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+			{% set countValues = countValues|merge({ (rowSize.layoutSize) : rowSize.numberOfCards }) %}
+		{% endif %}
+	{% endfor %}
+#}
 	{% for rowSize in cardRowSizes %}
 		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
 	{% endfor %}
@@ -49,24 +60,13 @@
 						<img src="{{ craft.imager.placeholder({width: mobileStartImage.width, height: mobileStartImage.height}) }}"
 					  	width="{{mobileStartImage.width}}"
 					  	height="{{mobileStartImage.height}}"
-					  	data-sizes="auto"
-					  	data-src="{{ mobileStartImage }}"
-					  	data-srcset="{{ craft.imager.srcset(mobileImages) }}"
+					  	sizes="auto"					  	
+					  	srcset="{{ craft.imager.srcset(mobileImages) }}"
 					  	alt="{{ entry.title }}"
-					  	class="block object-cover w-full @sm/component:hidden"
+					  	class="block object-cover w-full object-center"
 					  	loading="lazy"
 						>
-								
-						<img src="{{ craft.imager.placeholder({width: largerStartImage.width, height: largerStartImage.height}) }}"
-					  	width="100%"
-					  	height="100%"
-					  	data-sizes="auto"
-					  	data-src="{{ largerStartImage }}"
-					  	data-srcset="{{ craft.imager.srcset(largerImages) }}"
-					  	alt="{{ entry.title }}"
-					  	class="hidden w-full h-full object-cover @sm/component:block absolute inset-0"
-					  	loading="lazy"
-						>
+						
 					</div>
 					
 					<div class="repeater-card-content w-full @sm/component:w-2/3 @lg/component:w-3/4">

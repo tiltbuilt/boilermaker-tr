@@ -33,7 +33,7 @@ settings:
                       - 'Extra Small (Phone Vertical)'
                     -
                       - value
-                      - '@xs'
+                      - ''
                     -
                       - default
                       - true
@@ -44,7 +44,7 @@ settings:
                       - 'Small (Phone Horizontal)'
                     -
                       - value
-                      - '@sm'
+                      - '@xl'
                     -
                       - default
                       - false
@@ -55,7 +55,7 @@ settings:
                       - 'Medium (Tablet)'
                     -
                       - value
-                      - '@md'
+                      - '@2xl'
                     -
                       - default
                       - false
@@ -66,7 +66,7 @@ settings:
                       - 'Large (Laptop+)'
                     -
                       - value
-                      - '@lg'
+                      - '@3xl'
                     -
                       - default
                       - false
@@ -77,7 +77,7 @@ settings:
                       - X-Large(Desktop+)
                     -
                       - value
-                      - '@xl'
+                      - '@4xl'
                     -
                       - default
                       - false

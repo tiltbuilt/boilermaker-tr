@@ -16,9 +16,15 @@
 {% endif %}
 
 {% if cardRowSizes != null and cardRowSizes|length %}
+
 	{% for rowSize in cardRowSizes %}
-		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+		{% if rowSize.layoutSize == '' %}
+			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}			
+		{% else %}
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}			
+		{% endif %}
 	{% endfor %}
+
 {% endif %}
 
 <div class="repeater-list-card-wrapper">	

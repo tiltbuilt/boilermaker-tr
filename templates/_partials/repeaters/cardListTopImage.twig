@@ -15,10 +15,67 @@
 	{% set cardClasses = cardClasses|merge(["animate"]) %}
 {% endif %}
 
+{% set countValues =  {
+	'df': 1,
+	'@2xs': null,
+	'@xs': null,
+	'@sm': null,
+	'@md': null,
+	'@lg': null,
+	'@xl': null,
+	'@2xl': null,
+	'@3xl': null,
+	'@4xl': null,
+	'@5xl': null,
+} %}
+
+{% set countSizes =  {
+	'df': 0,
+	'@2xs': 288,
+	'@xs': 320,
+	'@sm': 384,
+	'@md': 448,
+	'@lg': 512,
+	'@xl': 640,
+	'@2xl': 768,
+	'@3xl': 1024,
+	'@4xl': 1280,
+	'@5xl': 1536,
+} %}
+
 {% if cardRowSizes != null and cardRowSizes|length %}
 	{% for rowSize in cardRowSizes %}
-		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+		{% if rowSize.layoutSize == '' %}
+			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}
+			{% set countValues = countValues|merge({'df': rowSize.numberOfCards}) %}
+		{% else %}
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+			{% set countValues = countValues|merge({ (rowSize.layoutSize) : rowSize.numberOfCards }) %}
+		{% endif %}
 	{% endfor %}
+{% endif %}
+
+{# set sizes attribute #}
+{% set sizesAttr = '' %}
+{% for key,value in countValues|reverse %}
+	{% if value != null %}
+		{% if key != 'df' %}
+			{% set sizesAttr = sizesAttr ~ "(min-width:" ~ countSizes[key] ~ "px) calc(80vw / " ~ value ~ "), " %}
+		{% else %}
+			{% if value != 1 %}
+				{% set sizesAttr = sizesAttr ~ "calc(80vw / " ~ value ~ ")" %}
+			{% else %}
+				{% set sizesAttr = sizesAttr ~ "80vw" %}
+			{% endif %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{# set heading level #}
+{% if headingLevel is defined and headingLevel != '' %}
+	{% set headingLvl = headingLevel %}
+{% else %}
+	{% set headingLvl = 'h3' %}
 {% endif %}
 
 <div class="repeater-list-card-wrapper">	
@@ -32,39 +89,46 @@
 		<div class="{{ cardClasses|join(' ') }}">			
 			<{{outerTag}} {% if listItem.url != null and listItem.url|length %}href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} {% endif %} class="repeater-card-inner">			
 				<div class="repeater-card-sm-img w-full">					
-					{% set image = listItem.image[0] %}
-					{% set mobileXForm = 'image-' ~ gSettings.thumbAspectSm %}
-					{% set xForm = 'image-' ~ gSettings.thumbAspectLg %}
-					{% if craft.imager.serverSupportsWebp() %}
-						{%- set mobileXForm = mobileXForm ~ '-webp' %}
+					{% set image = listItem.image[0] %}					
+					
+					{% if gSettings.thumbAspectLg == '' or gSettings.thumbAspectLg == 'auto' %}
+						{% set xForm = 'contentImage' %}
+						{% set xFormWidth = image.width %}
+						{% set xFormHeight = image.height %}
+					{% else %}
+						{% if gSettings.thumbAspectLg == 'video' %}
+							{% set numerator = 16 %}
+							{% set denominator = 9 %} 
+						{% elseif gSettings.thumbAspectLg == 'square' %}
+							{% set numerator = 1 %}
+							{% set denominator = 1 %} 
+						{% else %}
+							{% set numerator = gSettings.thumbAspectLg.value|split('/')|first %}
+							{% set denominator = gSettings.thumbAspectLg.value|split('/')|last %}        
+						{% endif %}
+
+						{% set xForm = 'image-' ~ gSettings.thumbAspectLg %}
+						{% set xFormWidth = image.width %}
+						{% set xFormHeight = (image.width * denominator) / numerator %}
+					{% endif %}
+
+					{% if craft.imager.serverSupportsWebp() %}						
 						{%- set xForm = xForm ~ '-webp' %}
 					{% endif %}
-					{%- set mobileImages = craft.imagerx.transformImage(image, mobileXForm) %}
-					{%- set mobileStartImage = mobileImages[0] %}
-					{%- set largerImages = craft.imagerx.transformImage(image, xForm) %}
-					{%- set largerStartImage = largerImages[0] %}
-											
-					<img src="{{ craft.imager.placeholder({width: mobileStartImage.width, height: mobileStartImage.height}) }}"
-					  width="{{mobileStartImage.width}}"
-					  height="{{mobileStartImage.height}}"
-					  data-sizes="auto"
-					  data-src="{{ mobileStartImage }}"
-					  data-srcset="{{ craft.imager.srcset(mobileImages) }}"
-					  alt="{{ entry.title }}"
-					  class="block object-cover w-full @md/component:hidden"
-					  loading="lazy"
+					
+					{%- set xFormImages = craft.imagerx.transformImage(image, xForm) %}
+					
+					<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+						width="{{xFormWidth}}"
+						height="{{xFormHeight}}"
+						sizes="{{sizesAttr}}"						    
+						srcset="{{ craft.imager.srcset(xFormImages) }}"
+						alt="{{ entry.title }}"
+						class="block w-full object-cover object-center"
+						loading="lazy"
+						decoding="async"
 					>
-							
-					<img src="{{ craft.imager.placeholder({width: largerStartImage.width, height: largerStartImage.height}) }}"
-					  width="100%"
-					  height="100%"
-					  data-sizes="auto"
-					  data-src="{{ largerStartImage }}"
-					  data-srcset="{{ craft.imager.srcset(largerImages) }}"
-					  alt="{{ entry.title }}"
-					  class="hidden w-full h-full object-cover @md/component:block"
-					  loading="lazy"
-					>
+
 				</div>
 				
 				<div class="repeater-card-content w-full">

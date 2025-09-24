@@ -54,7 +54,7 @@
 	.repeater-list-card-wrapper {
 		display: flex;
 		flex-wrap: wrap;	
-		margin-inline: var(--spacing-neg-scaling-half);		
+		margin-inline: var(--spacing-neg-half);		
 		justify-content: start;
 		align-items: stretch;
 	}
