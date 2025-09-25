@@ -139,7 +139,7 @@
 						{% set denominator = srcSettings.aspect|split('/')|last %}        
 					{% endif %}
 					{% set xFormWidth = srcSettings.image.width %}				
-					{% set xFormHeight = (srcSettings.image.image.width * denominator) / numerator %}				
+					{% set xFormHeight = (srcSettings.image.width * denominator) / numerator %}				
 				{% endif %}
 				
 				<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"

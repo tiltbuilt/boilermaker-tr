@@ -63,9 +63,9 @@
 			{% set sizesAttr = sizesAttr ~ "(min-width:" ~ countSizes[key] ~ "px) calc(80vw / " ~ value ~ "), " %}
 		{% else %}
 			{% if value != 1 %}
-				{% set sizesAttr = sizesAttr ~ "calc(80vw / " ~ value ~ ")" %}
+				{% set sizesAttr = sizesAttr ~ "calc(90vw / " ~ value ~ ")" %}
 			{% else %}
-				{% set sizesAttr = sizesAttr ~ "80vw" %}
+				{% set sizesAttr = sizesAttr ~ "90vw" %}
 			{% endif %}
 		{% endif %}
 	{% endif %}

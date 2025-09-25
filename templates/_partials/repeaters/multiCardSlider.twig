@@ -15,11 +15,62 @@
 
 {% set cardClasses = ['repeater-card', 'w-full'] %}
 
+{% set countValues =  {
+	'df': 1,
+	'@2xs': null,
+	'@xs': null,
+	'@sm': null,
+	'@md': null,
+	'@lg': null,
+	'@xl': null,
+	'@2xl': null,
+	'@3xl': null,
+	'@4xl': null,
+	'@5xl': null,
+} %}
+
+{% set countSizes =  {
+	'df': 0,
+	'@2xs': 288,
+	'@xs': 320,
+	'@sm': 384,
+	'@md': 448,
+	'@lg': 512,
+	'@xl': 640,
+	'@2xl': 768,
+	'@3xl': 1024,
+	'@4xl': 1280,
+	'@5xl': 1536,
+} %}
+
+
 {% if cardRowSizes != null and cardRowSizes|length %}
 	{% for rowSize in cardRowSizes %}
-		{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+		{% if rowSize.layoutSize == '' %}
+			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}
+			{% set countValues = countValues|merge({'df': rowSize.numberOfCards}) %}
+		{% else %}
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+			{% set countValues = countValues|merge({ (rowSize.layoutSize) : rowSize.numberOfCards }) %}
+		{% endif %}
 	{% endfor %}
 {% endif %}
+
+{# set sizes attribute #}
+{% set sizesAttr = '' %}
+{% for key,value in countValues|reverse %}
+	{% if value != null %}
+		{% if key != 'df' %}
+			{% set sizesAttr = sizesAttr ~ "(min-width:" ~ countSizes[key] ~ "px) calc(80vw / " ~ value ~ "), " %}
+		{% else %}
+			{% if value != 1 %}
+				{% set sizesAttr = sizesAttr ~ "calc(90vw / " ~ value ~ ")" %}
+			{% else %}
+				{% set sizesAttr = sizesAttr ~ "90vw" %}
+			{% endif %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
 
 
 <div id="{{blockId}}" class="slider-set repeater-slider {{colorScheme}} {% if animate %}animate{% endif %}"
