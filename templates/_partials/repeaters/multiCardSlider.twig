@@ -73,25 +73,19 @@
 {% endfor %}
 
 
-<div id="{{blockId}}" class="slider-set repeater-slider {{colorScheme}} {% if animate %}animate{% endif %}"
+<div id="{{blockId}}" class="slider-set repeater-slider repeater-slider-multi {{colorScheme}} {% if animate %}animate{% endif %}"
 {% if listContent|length > 1 %}
 x-data="{swiper: null}"
 x-init="swiper = new Swiper($refs.container, {
 	loop: true,
 	slidesPerView: 1,
 	breakpointsBase: 'container',
-	spaceBetween: 0,
-	centeredSlides: true,
+	spaceBetween: 0,	
 	noSwipingSelector: 'a',
 	breakpoints: {
 	{% for size in cardSliderSizes %}
 		{{size.layoutSize}}: {
-			slidesPerView: {{size.numberOfCards}},
-			{% if size.numberOfCards is even %}
-				centeredSlides: false,
-			{% else %}
-				centeredSlides: true,
-			{% endif %}
+			slidesPerView: {{size.numberOfCards}},			
 		},
 	{% endfor %}
 	},
@@ -136,38 +130,44 @@ x-init="swiper = new Swiper($refs.container, {
 					<{{outerTag}} {% if listItem.url|length %}href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} {% endif %} class="repeater-card-inner">			
 						<div class="repeater-card-sm-img w-full">					
 							{% set image = listItem.image[0] %}
-							{% set mobileXForm = 'image-' ~ gSettings.thumbAspectSm %}
-							{% set xForm = 'image-' ~ gSettings.thumbAspectLg %}
-							{% if craft.imager.serverSupportsWebp() %}
-								{%- set mobileXForm = mobileXForm ~ '-webp' %}
+							{% if gSettings.thumbAspectLg == '' or gSettings.thumbAspectLg == 'auto' %}
+								{% set xForm = 'contentImage' %}
+								{% set xFormWidth = image.width %}
+								{% set xFormHeight = image.height %}
+							{% else %}
+								{% if gSettings.thumbAspectLg == 'video' %}
+									{% set numerator = 16 %}
+									{% set denominator = 9 %} 
+								{% elseif gSettings.thumbAspectLg == 'square' %}
+									{% set numerator = 1 %}
+									{% set denominator = 1 %} 
+								{% else %}
+									{% set numerator = gSettings.thumbAspectLg.value|split('/')|first %}
+									{% set denominator = gSettings.thumbAspectLg.value|split('/')|last %}        
+								{% endif %}
+
+								{% set xForm = 'image-' ~ gSettings.thumbAspectLg %}
+								{% set xFormWidth = image.width %}
+								{% set xFormHeight = (image.width * denominator) / numerator %}
+							{% endif %}
+
+							{% if craft.imager.serverSupportsWebp() %}						
 								{%- set xForm = xForm ~ '-webp' %}
 							{% endif %}
-							{%- set mobileImages = craft.imagerx.transformImage(image, mobileXForm) %}
-							{%- set mobileStartImage = mobileImages[0] %}
-							{%- set largerImages = craft.imagerx.transformImage(image, xForm) %}
-							{%- set largerStartImage = largerImages[0] %}
-													
-							<img src="{{ craft.imager.placeholder({width: mobileStartImage.width, height: mobileStartImage.height}) }}"
-							  width="{{mobileStartImage.width}}"
-							  height="{{mobileStartImage.height}}"
-							  data-sizes="auto"
-							  data-src="{{ mobileStartImage }}"
-							  data-srcset="{{ craft.imager.srcset(mobileImages) }}"
-							  alt="{{ entry.title }}"
-							  class="block object-cover w-full @md/component:hidden"
-							  loading="lazy"
-							>
-									
-							<img src="{{ craft.imager.placeholder({width: largerStartImage.width, height: largerStartImage.height}) }}"
-							  width="100%"
-							  height="100%"
-							  data-sizes="auto"
-							  data-src="{{ largerStartImage }}"
-							  data-srcset="{{ craft.imager.srcset(largerImages) }}"
-							  alt="{{ entry.title }}"
-							  class="hidden w-full h-full object-cover @md/component:block"
-							  loading="lazy"
-							>
+							
+							{%- set xFormImages = craft.imagerx.transformImage(image, xForm) %}
+							
+							<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+								width="{{xFormWidth}}"
+								height="{{xFormHeight}}"
+								sizes="{{sizesAttr}}"						    
+								srcset="{{ craft.imager.srcset(xFormImages) }}"
+								alt="{{ entry.title }}"
+								class="block w-full object-cover object-center"
+								loading="lazy"
+								decoding="async"
+							>			
+							
 						</div>
 						
 						<div class="repeater-card-content w-full">

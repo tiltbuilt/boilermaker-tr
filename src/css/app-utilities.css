@@ -5,6 +5,7 @@
  
 @utility container {    
    margin-inline: auto;
+   max-width: none;
    
    @variant lg {
       max-width: var(--breakpoint-lg);      

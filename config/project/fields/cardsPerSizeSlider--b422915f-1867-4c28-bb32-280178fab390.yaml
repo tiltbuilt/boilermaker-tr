@@ -55,7 +55,7 @@ settings:
                       - 'Large (Laptop+)'
                     -
                       - value
-                      - '1000'
+                      - '950'
                     -
                       - default
                       - false
@@ -66,7 +66,7 @@ settings:
                       - X-Large(Desktop+)
                     -
                       - value
-                      - '1200'
+                      - '1150'
                     -
                       - default
                       - false

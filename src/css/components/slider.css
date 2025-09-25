@@ -81,7 +81,6 @@
 	.slider-set {
 		
 		/* The style rules below are nested inside of the slider-set class to make sure they are specific enough to override Swiper's built-in styling */
-		
 		.swiper-wrapper {
 			align-items: stretch;
 		}
@@ -97,8 +96,7 @@
 			position: absolute;		
 			top: 50%;
 			z-index: 20;
-			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-			transform: translateY(-50%);	
+			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);	
 			margin: 0;
 			color: var(--color-slider-nav-button);
 
@@ -166,6 +164,11 @@
 	}
 
 	.repeater-slider {
+
+		&.repeater-slider-multi {
+			margin-inline: var(--spacing-neg-half);
+		}
+
 		.swiper-pagination {
 			/* Applies to the wrapper around the dot navigation */		
 			position: relative;
@@ -176,8 +179,10 @@
 			/*top: 100%;*/
 		}
 		
-		.slide {
+		.swiper-slide {
 			padding-bottom: 0;
+			background-color: var(--color-repeater-card-bg);
+			height: auto !important
 		}
 	}
 
