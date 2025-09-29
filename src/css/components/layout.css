@@ -1,20 +1,20 @@
 @layer components {
-    .layout {
-        display: flex;
-        flex-wrap: wrap;
+    .layout {        
+        width: 100%;
+        display: grid;
         justify-content: center;
         align-items: stretch;	
-        position: relative;	
-        margin-inline: var(--spacing-neg-base);
-        min-width: 100%;		
+        position: relative;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--spacing-base);
+        margin-top: var(--spacing-base);        		
     }
 
     .column {   
-        /* These classes must stay in order to ensure functionality */        
-        width: 100%;  
+        /* These classes must stay in order to ensure functionality */            
         position: relative;    
-        margin: 0;
-        padding: var(--spacing-base); 
+        margin: 0;        
+        /*padding: var(--spacing-base);*/
         /* The default classes and style below can be changed on a per-project basis */  
     }
 

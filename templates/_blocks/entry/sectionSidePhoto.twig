@@ -60,10 +60,10 @@
 
 {% macro wrapperClasses(classSettings) %}
 	{% set baseMaxList = {
-		'@2xl': 768,
-		'@3xl': 1024,
-		'@4xl': 1280,
-		'@5xl': 1536,
+		'@md': 768,
+		'@lg': 1024,
+		'@xl': 1280,
+		'@2xl': 1536,
 	} %}
 	{% set wrapperClasses = [] %}
 	{% for key, value in classSettings %}
@@ -124,10 +124,10 @@
 
 {# set object with default settings for all sizes for comparison, if different, merge setting from field into object #}
 {% set classSettings = {
+	'@md': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
+	'@lg': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
+	'@xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
 	'@2xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
-	'@3xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
-	'@4xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
-	'@5xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
 	}
  %}
  
@@ -147,7 +147,7 @@
 				{% set newSettings = newSettings|merge({'verticalAlignment': (layoutSetting.verticalAlignment)}) %}			
 			{% endif %}
 			{% if layoutSetting.imagePosition != newSettings.imagePosition and layoutSetting.imagePosition != '' %}
-				{% set newSettings = newSettings|merge({'imagePosition': (layoutSetting.imagePosition)}) %}			
+				{% set newSettings = newSettings|merge({'imagePosition': 'object-' ~ (layoutSetting.imagePosition)}) %}			
 			{% endif %}
 		{% endif %}		
 	{% endfor %}
@@ -190,33 +190,29 @@
 		
 		<div class="side-photo-img {% if entry.animate and entry.animateContent %}animate{% endif %} {{ _self.imgClasses(classSettings) -}}">
 			{% set image = entry.defaultPhoto.eagerly().one() %}
-			{% set currentAspectAspect = 'auto' %}
+			{% set currentAspect = entry.aspectRatio %}
 			{% set xFormWidth = '' %}
 			{% set xFormHeight = '' %}
 			{% set imgSettings = entry.imageSettings.eagerly().all() %}
-			{% set imgClasses = ['block', 'w-full', '@2xl:absolute', '@2xl:h-full', '@2xl:inset-0', 'object-cover'] %}
+			{% set imgClasses = ['block', 'w-full', '@md:absolute', '@md:h-full', '@md:inset-0', 'object-cover'] %}
 			{% set aspectValues =  {
-				'df': 'h-auto',
-				'@2xs': null,
+				'df': 'h-auto',				
 				'@xs': null,
 				'@sm': null,
 				'@md': null,
 				'@lg': null,
 				'@xl': null,
-				'@2xl': null,
-				'@3xl': null,
-				'@4xl': null,
-				'@5xl': null,
+				'@2xl': null,				
 			} %}
 						
 			{% for key, setting in classSettings %}
 				{% if key == '' %}					
 					{% if setting.imagePosition != '' %}
-						{% set imgClasses = imgClasses|merge(['object-' ~ setting.imagePosition])%}
+						{% set imgClasses = imgClasses|merge([setting.imagePosition])%}
 					{% endif %}
 				{% else %}					
 					{% if setting.imagePosition != '' %}
-						{% set imgClasses  = imgClasses|merge([ key ~ ':object-' ~ setting.imagePosition ])%}
+						{% set imgClasses  = imgClasses|merge([ key ~ ':' ~ setting.imagePosition ])%}
 					{% endif %}
 				{% endif %}
 			{% endfor %}
@@ -224,7 +220,7 @@
 			<picture class="w-full h-full relative block">
 				{# set ordered array of objects for source settings #}
 				{% set srcObjects =  {
-					'df': {'minSize': 0, 'aspect': 'auto', 'image': image, 'sizes': '100vw'},
+					'df': {'minSize': 0, 'aspect': currentAspect, 'image': image, 'sizes': '100vw'},
 					'xs': {'minSize': 320, 'aspect': null, 'image': null, 'sizes': '100vw'},
 					'sm': {'minSize': 640, 'aspect': null, 'image': null, 'sizes': '100vw'},
 					'md': {'minSize': 768, 'aspect': null, 'image': null, 'sizes': ''},
@@ -234,10 +230,16 @@
 				} %}
 
 				{% for key, setting in classSettings %}
-					
-					{# NEED TO SET KEY VALS DIFFERENTLY #}
-					
-					{% set newKey = key|slice(1) %}
+					{% switch key %}
+						{% case '@md' %}
+							{% set newKey = 'md' %}
+						{% case '@lg' %}
+							{% set newKey = 'lg' %}
+						{% case '@xl' %}
+							{% set newKey = 'xl' %}
+						{% case '@2xl' %}
+							{% set newKey = '2xl' %}
+					{% endswitch %}
 					{% set origSrcObject = srcObjects[newKey] %}
 					{% set sizeVal = "calc(80vw * " ~ setting.columnWidth ~ ")" %}
 					{% set newSrcObject = origSrcObject|merge({'sizes': sizeVal}) %}
@@ -305,7 +307,7 @@
 							<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
 								width="{{xFormWidth}}"
 								height="{{xFormHeight}}"
-								sizes="{{sizesAttr}}"
+								sizes="{{sizeAttr}}"
 								{% if not entry.lazyLoadImg %}						
 									fetchpriority="high"
 								{% endif %}    

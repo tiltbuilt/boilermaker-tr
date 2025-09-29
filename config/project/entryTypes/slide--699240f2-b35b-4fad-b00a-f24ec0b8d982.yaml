@@ -66,10 +66,27 @@ fieldLayouts:
             instructions: null
             label: 'Slide Image'
             providesThumbs: false
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a00f8583-ac8e-4e4d-991b-c88094be404b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-29T20:11:43+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: slideImageSm
+            includeInCards: false
+            instructions: 'Use this field to substitute a different image on small layouts that works better with the aspect ratio being use in small layouts. If the main Slide Image works at both sizes, you can leave this field empty.'
+            label: 'Slide Image - Small Layouts'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3aced777-619c-4cc8-906d-3a1d4f97ebee
             userCondition: null
             warning: null
             width: 100
@@ -294,6 +311,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bc533033-b281-4d6e-bb39-a36c20717ed2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-29T20:46:58+00:00'
+            elementCondition: null
+            heading: Performance
+            type: craft\fieldlayoutelements\Heading
+            uid: 775fe47a-5ce2-442f-87e6-6e581f554d5c
+            userCondition: null
+          -
+            dateAdded: '2025-09-29T20:46:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
+            handle: lazyLoadImg
+            includeInCards: false
+            instructions: 'When this switch is activated the image will not load until it is about to appear in the browser. If turned off, the image will load when the page loads. You should only turn this off if an image is going to appear at the top of a page.'
+            label: 'Lazy Load Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 827085c5-ae1f-4861-a7f2-730c2f74561b
             userCondition: null
             warning: null
             width: 100

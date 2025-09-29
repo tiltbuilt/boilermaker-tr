@@ -14,7 +14,7 @@
 {% import '_macros/globalMacros' as gMacros %}
 
 {# Create array for classes to pass to macros for section #}
-{% set columnClassList = [] %}
+{% set columnClassList = ['col-span-12'] %}
 {% set gutterClassList = [] %}
 
 {# Set block id attribute value #}
@@ -60,7 +60,29 @@
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
 	{% if layoutItem.columnWidth|length %}
-		{% set columnClassList = columnClassList|merge([devSize ~ 'w-' ~ layoutItem.columnWidth]) %}
+		{% switch layoutItem.columnWidth %}
+			{% case '1/6' %}
+				{% set colSizeClass = 'col-span-2' %}
+			{% case '1/4' %}
+				{% set colSizeClass = 'col-span-3' %}
+			{% case '1/3' %}
+				{% set colSizeClass = 'col-span-4' %}
+			{% case '5/12' %}
+				{% set colSizeClass = 'col-span-5' %}
+			{% case '1/2' %}
+				{% set colSizeClass = 'col-span-6' %}
+			{% case '7/12' %}
+				{% set colSizeClass = 'col-span-7' %}
+			{% case '2/3' %}
+				{% set colSizeClass = 'col-span-8' %}
+			{% case '3/4' %}
+				{% set colSizeClass = 'col-span-9' %}
+			{% case '5/6' %}
+				{% set colSizeClass = 'col-span-10' %}
+			{% default %}
+				{% set colSizeClass = 'col-span-12' %}
+		{% endswitch %}
+		{% set columnClassList = columnClassList|merge([devSize ~ colSizeClass]) %}
 	{% endif %}
 	{% if layoutItem.display|length %}
 		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.display]) %}

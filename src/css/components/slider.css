@@ -23,11 +23,7 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
-		display: block;
-
-		@media (min-width: var(--breakpoint-md)) {
-			padding-bottom: 0;			
-		}	
+		display: block;		
 	}
 
 	.slide-layout {

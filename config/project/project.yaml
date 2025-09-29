@@ -1,4 +1,4 @@
-dateModified: 1759097499
+dateModified: 1759181345
 elementSources:
   craft\elements\Entry:
     -
@@ -503,6 +503,10 @@ plugins:
     enabled: true
     licenseKey: WNZH530QE6O6NXG01SWZVSTT
     schemaVersion: 4.0.0
+  imager-x-imgix-download-transformer:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   imager-x-power-pack:
     edition: standard
     enabled: true

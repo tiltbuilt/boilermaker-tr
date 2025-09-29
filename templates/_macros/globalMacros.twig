@@ -242,17 +242,15 @@
 {%- macro buildElementBackground(adjustments) -%}	
 	{% import '_macros/globalMacros' as gMacros %}
 	{# Create an array with a slot for each possible layout size and then write in an object with the info for each background. Slots are named to match layuot sizes with @df for default phone vert size, write each object to its appropriate slot based on device size setting. That way the bgs are always written in the correct order #}
-	{% set bgOrder = ['@df', '@sm', '@md', '@lg', '@xl', '@2xl', '@3xl', '@4xl', '@5xl' ] %}
+	{% set bgOrder = ['@df', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl' ] %}
 	{% set bgSet = {
 		'@df': null,
+		'@xs': null,
 		'@sm': null,
 		'@md': null,
 		'@lg': null,
 		'@xl': null,
-		'@2xl': null,
-		'@3xl': null,
-		'@4xl': null,
-		'@5xl': null,
+		'@2xl': null,		
 	} %}	
 	{# set null variable outside of loop to store the bg asset so that if there is a change in aspect or position settings etc. but not the asset it can still set the asset without it having to be uploaded to the field in each case #}
 	{% set bgCurrent = null %}

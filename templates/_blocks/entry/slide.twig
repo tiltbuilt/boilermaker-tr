@@ -19,6 +19,17 @@
 {# Get slide image if there is one #}
 {% set image = entry.slideImage.eagerly().one() %}
 
+{% if entry.slideImageSm|length %}
+	{% set imageSm = entry.slideImageSm.eagerly().one() %}
+{% else %}
+	{% set imageSm = image %}
+{% endif %}
+
+{% set xFormWidth = '' %}
+{% set xFormHeight = '' %}
+{% set smXFormWidth = '' %}
+{% set smXFormHeight = '' %}
+
 {# Set block id attribute value #}
 {% if entry.customId is defined and entry.customId != '' %}
 	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
@@ -46,7 +57,7 @@
 {# Retrieve styling adjustments #}
 {#{% set adjustments = entry.slideStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{blockClass}} swiper-slide {{ slideClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} {% if entry.slideTimingOverride != '' %}data-swiper-autoplay="{{entry.slideTimingOverride}}"{% endif %}>
+<div id="{{blockId}}" class="{{blockClass}} swiper-slide @md:pb-0 {{ slideClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} {% if entry.slideTimingOverride != '' %}data-swiper-autoplay="{{entry.slideTimingOverride}}"{% endif %}>
 	
 	{% if image != null %}
 		<div class="slide-image aspect-{{slideAspectSm}} @md:aspect-{{slideAspectLg}}">			
@@ -57,32 +68,65 @@
 				{%- set mobileXForm = mobileXForm ~ '-webp' %}
 				{%- set xForm = xForm ~ '-webp' %}
 			{% endif %}
-			{%- set mobileImages = craft.imagerx.transformImage(image, mobileXForm) %}
-			{%- set mobileStartImage = mobileImages[0] %}
+			{%- set mobileImages = craft.imagerx.transformImage(imageSm, mobileXForm) %}			
 			{%- set largerImages = craft.imagerx.transformImage(image, xForm) %}
-			{%- set largerStartImage = largerImages[0] %}
-									
-			<img src="{{ craft.imager.placeholder({width: mobileStartImage.width, height: mobileStartImage.height}) }}"
-			  width="{{mobileStartImage.width}}"
-			  height="{{mobileStartImage.height}}"
-			  sizes="auto"
-			  src="{{ mobileStartImage }}"
-			  srcset="{{ craft.imager.srcset(mobileImages) }}"
-			  alt="{{ entry.title }}"
-			  class="block @md:hidden"
-			  loading="lazy"
-			>
-					
-			<img src="{{ craft.imager.placeholder({width: largerStartImage.width, height: largerStartImage.height}) }}"
-			  width="{{largerStartImage.width}}"
-			  height="{{largerStartImage.height}}"
-			  sizes="auto"
-			  src="{{ largerStartImage }}"
-			  srcset="{{ craft.imager.srcset(largerImages) }}"
-			  alt="{{ entry.title }}"
-			  class="hidden @md:block "
-			  loading="lazy"
-			>
+
+			{% if slideAspectLg == 'auto' %}				
+				{% set xFormWidth = image.width %}
+				{% set xFormHeight = image.height %}
+			{% else %}				
+				{% if slideAspectLg == 'video' %}
+					{% set numerator = 16 %}
+					{% set denominator = 9 %} 
+				{% elseif slideAspectLg == 'square' %}
+					{% set numerator = 1 %}
+					{% set denominator = 1 %} 
+				{% else %}
+					{% set numerator = slideAspectLg|split('/')|first %}
+					{% set denominator = slideAspectLg|split('/')|last %}        
+				{% endif %}
+				{% set xFormWidth = image.width %}				
+				{% set xFormHeight = (image.width * denominator) / numerator %}				
+			{% endif %}
+
+			{% if slideAspectSm == 'auto' %}				
+				{% set smXFormWidth = image.width %}
+				{% set smXFormHeight = image.height %}
+			{% else %}				
+				{% if slideAspectSm == 'video' %}
+					{% set numerator = 16 %}
+					{% set denominator = 9 %} 
+				{% elseif slideAspectSm == 'square' %}
+					{% set numerator = 1 %}
+					{% set denominator = 1 %} 
+				{% else %}
+					{% set numerator = slideAspectLg|split('/')|first %}
+					{% set denominator = slideAspectLg|split('/')|last %}        
+				{% endif %}
+				{% set smXFormWidth = image.width %}				
+				{% set smXFormHeight = (image.width * denominator) / numerator %}				
+			{% endif %}
+			
+			<picture class="w-full h-full">
+				<source sizes="100vw" width="{{xFormWidth}}" height="{{xFormHeight}}" media="(min-width: 768px)" srcset="{{ craft.imager.srcset(largerImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+			
+				<img src="{{ craft.imager.placeholder({width: smXFormWidth, height: smXFormHeight}) }}"
+					width="{{smXFormWidth}}"
+					height="{{smXFormHeight}}"
+					{% if entry.lazyLoadImg %}
+						sizes="auto"
+					{% else %}
+						fetchpriority="high"
+						sizes= "100vw"
+					{% endif %}					
+					srcset="{{ craft.imager.srcset(mobileImages) }}"
+					alt="{{ entry.title }}"
+					class="block w-full h-full object-cover object-center"
+					loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
+    				decoding="async"
+				>
+			
+			</picture>
 						
 		</div>
 	{% endif %}
@@ -92,7 +136,7 @@
 		
 	<div class="slide-layout @md:flex @md:{{entry.slideHorizontalLayout}} @md:{{entry.slideVerticalLayout}} {% if image != null %}@md:absolute @md:inset-0{% endif %}">
 		<div class="slide-content">
-			<div class="slide-content-wrapper {{- gMacros.typeClasses(entry.typeSettings, false) -}} {#} {{- gMacros.classesOut(adjustments, 'Padding', true) -}}#}">
+			<div class="slide-content-wrapper {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{- gMacros.spacingClasses(entry.padding, false) -}}">
 				{% for chunk in entry.slideContent %}
 					{% if chunk.type == 'markup' %}
 						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}

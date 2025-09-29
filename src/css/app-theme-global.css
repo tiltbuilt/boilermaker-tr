@@ -10,27 +10,13 @@
 	--spacing-quarter: calc(0.25 * var(--spacing-base));
 	--spacing-half: calc(0.5 * var(--spacing-base));
 	--spacing-2x: calc(2 * var(--spacing-base));
-	--spacing-3x: calc(3 * var(--spacing-base));
-	--spacing-4x: calc(4 * var(--spacing-base));
-	--spacing-5x: calc(5 * var(--spacing-base));
-	--spacing-6x: calc(6 * var(--spacing-base));
-	--spacing-7x: calc(7 * var(--spacing-base));
-	--spacing-8x: calc(8 * var(--spacing-base));
-	--spacing-9x: calc(9 * var(--spacing-base));
-	--spacing-10x: calc(10 * var(--spacing-base));
+	--spacing-3x: calc(3 * var(--spacing-base));	
 	--spacing-neg-quarter: calc(-0.25 * var(--spacing-base));
 	--spacing-neg-half: calc(-0.5 * var(--spacing-base));
 	--spacing-neg-base: calc(-1 * var(--spacing-base));
 	--spacing-neg-2x: calc(-2 * var(--spacing-base));
 	--spacing-neg-3x: calc(-3 * var(--spacing-base));
-	--spacing-neg-4x: calc(-4 * var(--spacing-base));
-	--spacing-neg-5x: calc(-5 * var(--spacing-base));
-	--spacing-neg-6x: calc(-6 * var(--spacing-base));
-	--spacing-neg-7x: calc(-7 * var(--spacing-base));
-	--spacing-neg-8x: calc(-8 * var(--spacing-base));
-	--spacing-neg-9x: calc(-9 * var(--spacing-base));
-	--spacing-neg-10x: calc(-10 * var(--spacing-base));
-
+	
 	
 	/* BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */
 	--breakpoint-xs: 320px;
@@ -41,16 +27,13 @@
 	--breakpoint-2xl: 1536px;
 	
 	/* CONTAINER QUERY BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */	
-	--container-2xs: 28.8rem;
-	--container-xs: 32rem;
-	--container-sm: 38.4rem;
-	--container-md: 44.8rem;
-	--container-lg: 51.2rem;	
-	--container-xl: 64rem;
-	--container-2xl: 76.8rem;	
-	--container-3xl: 102.4rem;	
-	--container-4xl: 128rem;
-	--container-5xl: 153.6rem;
+	--container-xs: 29rem;
+	--container-sm: 61rem;
+	--container-md: 73.8rem;
+	--container-lg: 99.4rem;	
+	--container-xl: 125rem;
+	--container-2xl: 150.6rem;	
+	
 	
 	/* FONT SIZES */		
 	--text-xs: clamp(1rem, 0.78125vw, 1.4rem);

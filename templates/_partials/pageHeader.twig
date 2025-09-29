@@ -169,7 +169,7 @@ x-ref="animparent">
             {% endif %}
         {% endif %}
     </div>
-    <div class="page-header-layout {{pageHeaderColorScheme}} @2xl:aspect-{{mdHeaderAspect}} @3xl:aspect-{{ lgHeaderAspect}}">
+    <div class="page-header-layout {{pageHeaderColorScheme}} @md:aspect-{{mdHeaderAspect}} @lg:aspect-{{ lgHeaderAspect}}">
 		{% set headlineContent = entry.pageHeader.eagerly().one() %}
         {% if headlineContent != null %}
             {% include ['_blocks/entry/heading'] with {'entry': headlineContent, 'headingLvl': 'h1', 'headlineStyle': 'page-header-headline', 'subheadStyle': 'page-header-subhead', 'colorScheme': pageHeaderColorScheme, 'animSetting': {'animate': true, 'animateContent': true, 'animLevel': true}} %}
