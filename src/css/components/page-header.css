@@ -21,32 +21,22 @@
 
 	.page-header-photo-wrapper {
 		width: 100vw;
-		position: relative;	
-		opacity: 0.6;
+		position: relative;			
+		z-index: 1;
 	}
 
-	@container (width > var(--container-3xl)) {
-
-		.page-header-photo-wrapper {
-			position: absolute;
-			z-index: 1;
-			height: 100%;
-			top: 0px;
-			left: 0px;			
-		}
-		
-	}
+	
 
 	.page-header-headline {
 		font-weight: bold;
-		font-size: var(--text-4xl);	
+		font-size: var(--text-6xl);	
 		color: var(--color-pg-header-headline);
 	}
 
 	.page-header-subhead {
 		margin-top: var(--spacing-half);
 		font-weight: bold;
-		font-size: var(--text-2xl);
+		font-size: var(--text-3xl);
 		color: var(--color-pg-header-subhead);
 	}
 

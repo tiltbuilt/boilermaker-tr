@@ -18,3 +18,26 @@
   <div class="mm_wrapper__bg"></div>
 </div>
 #}
+
+<header id="site-header" class="site-header @container">
+	<div id="login-status-bar-wrapper"></div>				
+	<div id="notification-alert-wrapper"
+		x-data="{alertHtml: ''}"
+		x-html="alertHtml"				
+		x-init="
+			$nextTick(() => {						
+				fetch('/resources/notificationbaralerts', {
+					method: 'GET',
+					headers: {
+						'X-Requested-With': 'XMLHttpRequest',
+					},
+				})
+				.then(response => response.text())
+				.then(text => {
+					alertHtml = text										   
+				})
+			})"
+	></div>	
+
+	{# put header code here #}
+</header>

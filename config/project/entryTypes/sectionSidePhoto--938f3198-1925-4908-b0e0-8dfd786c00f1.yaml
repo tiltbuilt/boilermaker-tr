@@ -43,91 +43,6 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
-            handle: mainPhoto
-            includeInCards: false
-            instructions: null
-            label: 'Main Photo'
-            providesThumbs: false
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f656522e-23f6-47f9-aab5-15280eeb92ed
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
-            handle: null
-            includeInCards: false
-            instructions: 'Sets the aspect ratio of the photo to be used. Select a size close to what the dimensions are in the layout to reduce cropping.'
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ff551936-da17-48b8-b0da-ca1cd8659145
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300 # Background Image Small
-            handle: photoSm
-            includeInCards: false
-            instructions: 'Select an image to use in smaller layout scenarios if the main photo is not cropping well. You should use an image as close to the dimensions of the space in the layout as possible.'
-            label: 'Photo - Small Layouts'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e41438ce-228b-4d65-a1ce-eadff2cf210a
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
-            handle: aspectRatioSm
-            includeInCards: false
-            instructions: 'Sets the aspect ratio of the photo to be used in small layouts. Select a size close to what the dimensions are in the layout to reduce cropping.'
-            label: 'Aspect Ratio - Small Layouts'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 246ea23e-8d6f-4d0b-82aa-aaa9650b2266
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
-            handle: mainPhotoAlt
-            includeInCards: false
-            instructions: null
-            label: 'Main Photo Alt Text'
-            providesThumbs: false
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 28452f1d-0612-42df-af7c-9707a309091d
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
             fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
             handle: null
             includeInCards: false
@@ -143,6 +58,80 @@ fieldLayouts:
             width: 100
         name: Content
         uid: b3e248e3-6b5d-4c4a-afec-3c228b721887
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-05-19T20:51:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: defaultPhoto
+            includeInCards: false
+            instructions: null
+            label: 'Default Photo'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f656522e-23f6-47f9-aab5-15280eeb92ed
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-05-19T20:51:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: altText
+            includeInCards: false
+            instructions: null
+            label: 'Alt Text'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 28452f1d-0612-42df-af7c-9707a309091d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-19T20:51:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: null
+            includeInCards: false
+            instructions: 'Sets the aspect ratio of the photo to be used. Select a size close to what the dimensions are in the layout to reduce cropping.'
+            label: 'Default Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff551936-da17-48b8-b0da-ca1cd8659145
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-09-28T21:05:51+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2186e435-0cf5-4c2f-8436-888d6d2e00c9 # Image Settings
+            handle: null
+            includeInCards: false
+            instructions: 'Use this field to change settings for the image on a per device basis. You can change to a different image at certain device sizes or change the aspect ratio of the image being used, etc.'
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab87dfa8-679a-46ff-9570-d5d45c9f8fea
+            userCondition: null
+            warning: null
+            width: 100
+        name: Photo
+        uid: 72506d55-7177-4860-a2e6-a41a385c844b
         userCondition: null
       -
         elementCondition: null
@@ -182,36 +171,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:51:50+00:00'
+            dateAdded: '2025-09-28T21:18:13+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: c17b0219-a22c-422c-a2f1-4e557eed8c4e # Content Column Layout
+            fieldUid: c12d2808-0b82-4820-9af1-d1e45e27fc9e # Content Column Layout
             handle: null
             includeInCards: false
-            instructions: 'By Default the content column and photo column are full width on mobile devices. On tablet and above they default to being half the screenwidth unless you change it here.'
+            instructions: null
             label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0984adaf-97d2-430c-96d1-5c191d74ed0f
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
-            handle: imgPosition
-            includeInCards: false
-            instructions: 'Positions the focal point of the image to help control cropping more effectively'
-            label: 'Image Position'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 95693e69-f708-4888-83f1-6923c0330e54
+            uid: e69d7c3f-6b38-4d8f-b9b7-e7eaa10b6658
             userCondition: null
             warning: null
             width: 100
@@ -356,29 +328,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-09-03T20:37:34+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 76e84206-fdd5-4553-bf04-6f24f458ce0e # Background Settings
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7f9066fb-dd00-42a9-8add-9613f9c1fa4f
-            userCondition: null
-            warning: null
-            width: 100
-        name: Background
-        uid: fc780907-e194-423b-88d0-ae32d0d42256
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
@@ -503,6 +452,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9626c35e-85b0-4106-bbbf-8e48c2f0ae71
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-28T21:56:47+00:00'
+            elementCondition: null
+            heading: Performance
+            type: craft\fieldlayoutelements\Heading
+            uid: 4e89423c-db23-420f-8729-4038ca41ac88
+            userCondition: null
+          -
+            dateAdded: '2025-09-28T21:56:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
+            handle: lazyLoadImg
+            includeInCards: false
+            instructions: 'When this switch is activated the image will not load until it is about to appear in the browser. If turned off, the image will load when the page loads. You should only turn this off if an image is going to appear at the top of a page.'
+            label: 'Lazy Load Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 13b300f4-cdc4-48cf-980a-c5defd620315
             userCondition: null
             warning: null
             width: 100

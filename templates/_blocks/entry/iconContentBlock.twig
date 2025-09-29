@@ -52,7 +52,7 @@
 {% for layoutAdj in layoutAdjustments %}
 	{% set devSize = layoutAdj.layoutSize %}
 	{% if devSize|length %}
-		{% set devSize = devSize ~ '/component:' %}	
+		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
 	{% if layoutAdj.iconSize|length %}
 		{% set iconClasses = iconClasses|merge([devSize ~ 'icon-' ~ layoutAdj.iconSize]) %}
@@ -87,7 +87,7 @@
 	{% set iconClasses = iconClasses|merge([colorScheme]) %}
 {% endif %}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<div id="{{blockId}}" class="{{ blockClass }} @container {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="icon-layout {{ layoutClasses|join(' ') }}">
 		<div class="{{- iconClasses|join(' ') }}">
 			{% if  entry.icon.type == 'svg' %}

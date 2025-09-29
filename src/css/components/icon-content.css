@@ -46,7 +46,7 @@
 	}
 
 	.icon-block-horizontal {
-		@apply flex-col justify-center items-center @lg/component:flex-row @lg/component:justify-start @lg/component:items-start; 
+		@apply flex-col justify-center items-center @lg:flex-row @lg:justify-start @lg:items-start; 
 		
 		
 		/* the width settings on the icon-wrapper class take into account the different icon size settings and the built in padding of 1.5 rem on one side. If you change the base icon sizes in the css, you need to adjust these sizes accordingly. */
@@ -65,12 +65,12 @@
 		
 			
 		.icon-content-wrapper {
-			@apply text-center @lg/component:text-left;
+			@apply text-center @lg:text-left;
 			
 		}
 
 		.button-group {
-			@apply justify-center @lg/component:justify-start;
+			@apply justify-center @lg:justify-start;
 		}
 		
 		

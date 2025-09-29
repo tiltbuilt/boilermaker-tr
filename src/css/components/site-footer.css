@@ -1,0 +1,5 @@
+.site-footer {
+    justify-self: flex-end;
+    width: 100%;
+    flex: 0 0 auto;
+}

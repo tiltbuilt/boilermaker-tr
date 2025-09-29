@@ -28,9 +28,17 @@
       width: 100vw;
       min-height: 100vh;
       overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 0;
+      align-items: center;
+      justify-content: flex-start; 
       
-      & > #wrapper {
-        position: relative;
+      & > #main {
+        flex: 1 0 auto; /* allows main content area to grow and fill available space pushing footer to bottom of viewport if there is not enough content to do so naturally */
+        width: 100%;    
       }
     }
   }

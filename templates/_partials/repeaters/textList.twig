@@ -14,7 +14,7 @@
 {% if multiColSettings|length %}
 	{% set repeaterStyles = repeaterStyles|merge(['multi-column-list']) %}
 	{% for columnSetting in multiColSettings %}
-		{% set repeaterStyles = repeaterStyles|merge([columnSetting.layoutSize ~'/list:columns-' ~ columnSetting.numberOfColumns]) %}
+		{% set repeaterStyles = repeaterStyles|merge([columnSetting.layoutSize ~':columns-' ~ columnSetting.numberOfColumns]) %}
 	{% endfor %}
 {% endif %}
 

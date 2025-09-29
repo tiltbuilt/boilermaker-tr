@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: imageryType
+instructions: null
+name: 'Imagery Type'
+searchable: false
+settings:
+  default: false
+  offLabel: Image
+  onLabel: Video
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

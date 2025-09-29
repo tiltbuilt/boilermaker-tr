@@ -50,7 +50,7 @@
 			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}
 			{% set countValues = countValues|merge({'df': rowSize.numberOfCards}) %}
 		{% else %}
-			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ ':w-1/' ~ rowSize.numberOfCards]) %}
 			{% set countValues = countValues|merge({ (rowSize.layoutSize) : rowSize.numberOfCards }) %}
 		{% endif %}
 	{% endfor %}

@@ -9,7 +9,7 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_macros/globalMacros' as gMacros %}
 
-{% set cardClasses = ['repeater-card', 'w-full'] %}
+{% set cardClasses = ['repeater-card', 'col-span-12'] %}
 
 {% if animate %}
 	{% set cardClasses = cardClasses|merge(["animate"]) %}
@@ -18,10 +18,24 @@
 {% if cardRowSizes != null and cardRowSizes|length %}
 
 	{% for rowSize in cardRowSizes %}
+		{% set cardSizeClass = 'col-span-12' %}
+		{% switch rowSize.numberOfCards %}
+			{% case '1' %}
+				{% set cardSizeClass = 'col-span-12' %}				
+			{% case '2' %}
+				{% set cardSizeClass = 'col-span-6' %}				
+			{% case '3' %}
+				{% set cardSizeClass = 'col-span-4' %}				
+			{% case '4' %}
+				{% set cardSizeClass = 'col-span-3' %}				
+			{% default %}
+				{% set cardSizeClass = 'col-span-12' %}
+		{% endswitch %}
+
 		{% if rowSize.layoutSize == '' %}
-			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}			
+			{% set cardClasses = cardClasses|merge([cardSizeClass]) %}			
 		{% else %}
-			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}			
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ ':' ~ cardSizeClass]) %}			
 		{% endif %}
 	{% endfor %}
 

@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: columns
+handle: contentColumnLayout
 instructions: null
-name: Columns
+name: 'Content Column Layout'
 searchable: false
 settings:
-  createButtonLabel: 'Add Column'
+  createButtonLabel: 'Add Layout Adjustment'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,12 +12,12 @@ settings:
       __assoc__:
         -
           - uid
-          - b6075a2a-820f-44f0-857b-358c60cb2bcb # Layout Column
+          - 951299a5-0a7b-4281-a104-a93d875ef18d # Side Photo Content Layout Adjustment
         -
           - group
           - General
   includeTableView: false
-  maxEntries: 5
+  maxEntries: 10
   minEntries: null
   pageSize: null
   propagationKeyFormat: null

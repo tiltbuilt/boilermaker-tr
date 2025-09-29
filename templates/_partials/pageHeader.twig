@@ -35,173 +35,160 @@
 
 <div id="{{entry.slug}}-page-header" class="page-header @container {{pageHeaderColorScheme}} " x-data="sectionStandard(true, true)"	
 x-ref="animparent">
-	<div class="page-header-photo-wrapper {{entry.opacity}} aspect-{{smHeaderAspect}} md:aspect-auto">
-        {% if entry.pageHeaderBackgroundType %}
-            {% set headerVideo = entry.bgVideo.eagerly().one() %}
+	<div class="page-header-photo-wrapper aspect-{{smHeaderAspect}} md:aspect-auto md:absolute md:inset-0 md:h-full">       
+        {% if not entry.imageryType %}
+            {% set image = entry.pageHeaderDefaultImage.eagerly().one() %}
+            {% if image != null  %}
+                {% set imgSettings = entry.pageHeaderImageArtDirection.eagerly().all() %}
+                {% set currentAspectAspect = 'auto' %}
+                {% set xFormWidth = '' %}
+                {% set xFormHeight = '' %}
+                {% set srcObjects =  {
+                    'df': {'minSize': 0, 'aspect': 'auto', 'image': image, 'pos': 'center', 'opacity': 'opacity-60'},
+                    'xs': {'minSize': 320, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
+                    'sm': {'minSize': 640, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
+                    'md': {'minSize': 768, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
+                    'lg': {'minSize': 1024, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
+                    'xl': {'minSize': 1280, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
+                    '2xl': {'minSize': 1536, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},		
+                } %}
+
+                {% set imgClasses = ['block', 'w-full', 'absolute', 'inset-0', 'h-full', 'object-cover'] %}
+                
+                {% for srcSetting in imgSettings %}
+                    {# if there is a new image in the adjustment then use it as the image for src attributes #}
+                    {% if srcSetting.deviceSize == '' %}
+                        {% set srcSize = 'df' %}
+                    {% else %}
+                        {% set srcSize = srcSetting.deviceSize.value %}
+                    {% endif %}
+
+                    {% if srcSetting.imageAsset|length or srcSetting.aspectRatio != '' or srcSetting.imagePosition != '' or srcSetting.opacity != '' %}
+                        {% if srcSetting.imageAsset|length and srcSetting.deviceSize != '' %}
+                            {% set image = srcSetting.imageAsset.eagerly().one() %}
+                        {% endif %}
+                        {% if srcSetting.aspectRatio.value != '' %}				
+                            {% set currentAspect = srcSetting.aspectRatio.value %}
+                        {% else %}
+                            {% set myRatio = currentAspect %}
+                        {% endif %}
+                        {% if srcSetting.opacity.value != '' %}
+                            {% set myOpacity = srcSetting.opacity.value %}
+                        {% else %}
+                            {% set myOpacity = null %}
+                        {% endif %}
+                        {% if srcSetting.imagePosition.value != '' %}
+                            {% set myPos = srcSetting.imagePosition.value %}
+                        {% else %}
+                            {% set myPos = null %}
+                        {% endif %}
+                        {% set mySrcObject = srcObjects[(srcSize)] %}			
+                        {% set mySrcObject = mySrcObject|merge({'image': image, 'aspect': currentAspect, 'pos': myPos, 'opacity': myOpacity}) %}
+                        {% set srcObjects = srcObjects|merge({(srcSize): mySrcObject}) %}
+                    {% endif %}		
+                {% endfor %}
+
+                <picture class="absolute inset-0">
+                    
+                    {% for sizeKey, srcSettings in srcObjects|reverse %}
+                        
+                        {% if sizeKey == 'df' %}
+                            {% set devSize = '' %}
+                        {% else %}
+                            {% set devSize = sizeKey ~ ':' %}
+                        {% endif %}
+                        {% if srcSettings.pos != null %}
+                            {% set imgClasses = imgClasses|merge([devSize ~ 'object-' ~ srcSettings.pos]) %}                    
+                        {% endif %}
+                        {% if srcSettings.opacity != null %}
+                            {% set imgClasses = imgClasses|merge([devSize ~ srcSettings.opacity]) %}
+                        {% endif %}
+                        
+                        
+                        {# if there is an image and/or aspect ratio to use, then output the image or source element #}
+                        
+                        {% if srcSettings.image != null or srcSettings.aspect != null %}
+                            {% if srcSettings.aspect == 'auto' %}
+                                {% set xForm = 'contentImage' %}				
+                            {% else %}
+                                {% set xForm = 'image-' ~ srcSettings.aspect %}				
+                            {% endif %}
+                            {% set transformedImages = craft.imagerx.transformImage(srcSettings.image, xForm) %}
+                            
+                            {% if srcSettings.aspect == 'auto' %}				
+                                {% set xFormWidth = srcSettings.image.width %}
+                                {% set xFormHeight = srcSettings.image.height %}
+                            {% else %}				
+                                {% if srcSettings.aspect == 'video' %}
+                                    {% set numerator = 16 %}
+                                    {% set denominator = 9 %} 
+                                {% elseif srcSettings.aspect == 'square' %}
+                                    {% set numerator = 1 %}
+                                    {% set denominator = 1 %} 
+                                {% else %}
+                                    {% set numerator = srcSettings.aspect|split('/')|first %}
+                                    {% set denominator = srcSettings.aspect|split('/')|last %}        
+                                {% endif %}
+                                {% set xFormWidth = srcSettings.image.width %}				
+                                {% set xFormHeight = (srcSettings.image.width * denominator) / numerator %}				
+                            {% endif %}
+                            
+                            {% if sizeKey == 'df' %}
+                                <img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+                                    width="{{xFormWidth}}"
+                                    height="{{xFormHeight}}"
+                                    fetchpriority="high"
+                                    sizes="100vw" 
+                                    srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                    alt="{{ entry.altText }}"
+                                    class="{{imgClasses|join(' ')}}"
+                                    loading="eager"
+                                    decoding="async"
+                                >
+                            {% else %}
+                                <source sizes="100vw" width="{{xFormWidth}}" height="{{xFormHeight}}" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </picture>
+            {% endif %}
+        {% else %}            
+            {% set headerVideo = entry.pageHeaderVideo.eagerly().one() %}
             {% if headerVideo != null %}
-                <div class="background bg-video">
+                   <div class="background bg-video">
                     <video          
-                      class="background object-cover object-{{entry.backgroundVideoPosition == '' ? 'center' : entry.backgroundVideoPosition}} lazyload"
+                      class="background object-cover object-center"
                       aria-hidden="true"
                       role="presentation"                      
                       preload autoplay playsinline muted loop
                       data-src="{{ headerVideo.url }}"
                       type="{{ headerVideo.mimeType }}"
-                      loading="lazy"			  
+                      loading="eager"			  
                     ></video>		
                 </div>
             {% endif %}
-        {% else %}
-            {% set mainPhoto = entry.headerImg.eagerly().one() %}
-            {% set smPhoto = entry.headerImgSm.eagerly().one() %}
-            {% if smPhoto == null %}			
-                {% set smPhoto = mainPhoto %}
-            {% endif %}
-            
-            {% if entry.aspectRatioSm  == '' %} 
-                {%- set smXForm = 'image-' ~  smHeaderAspect %}
-            {% elseif entry.aspectRatioSm == 'auto' %}
-                {%- set smXForm = 'contentImage' %}
-            {% else %}
-                {%- set smXForm = 'image-' ~ entry.aspectRatioSm %}
-            {% endif %}
-            
-            {% if entry.aspectRatio == '' %} 
-                {%- set xForm = 'image-' ~  lgHeaderAspect %}
-            {% elseif entry.aspectRatio == 'auto' %}
-                {%- set xForm = 'contentImage' %}
-            {% else %}
-                {%- set xForm = 'image-' ~ entry.aspectRatio %}
-            {% endif %}
-            
-            {% if craft.imager.serverSupportsWebp() %}
-                {%- set smXForm = smXForm ~ '-webp' %}
-                {%- set xForm = xForm ~ '-webp' %}
-            {% endif %}
-            {%- set smImages = craft.imagerx.transformImage(smPhoto,smXForm) %}
-            {%- set smStartImage = smImages[0] %}
-            {%- set lgImages = craft.imagerx.transformImage(mainPhoto, xForm) %}
-            {%- set lgStartImage = lgImages[0] %}
-            
-            <img src="{{ craft.imager.placeholder({width: smStartImage.width, height: smStartImage.height}) }}"
-              width="{{smStartImage.width}}"
-              height="{{smStartImage.height}}"
-              sizes="auto"
-              src="{{ smStartImage }}"
-              srcset="{{ craft.imager.srcset(smImages) }}"
-              alt="header background image"
-              class="block @md:hidden w-full aspect-{{smHeaderAspect}} object-cover object-{{entry.imgPositionSm == '' ? 'center' : entry.imgPositionSm}} lazyload"
-              loading="lazy"
-            >
-                    
-            <img src="{{ craft.imager.placeholder({width: lgStartImage.width, height: lgStartImage.height}) }}"
-              width="{{lgStartImage.width}}"
-              height="{{lgStartImage.height}}"
-              sizes="auto"
-              src="{{ lgStartImage }}"
-              srcset="{{ craft.imager.srcset(lgImages) }}"
-              alt="header background image"
-              class="hidden @md:block absolute w-full h-full inset-0 object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
-              loading="lazy"
-            >
         {% endif %}
     </div>
-    <div class="page-header-layout md:aspect-{{mdHeaderAspect}} lg:aspect-{{ lgHeaderAspect}}">
-		<h1 class="page-header-headline animate">
-            {% if entry.subheadText|length and entry.subheadPosition == 1 %}
-                <div class="page-header-subhead">{{ gMacros.stripTags(entry.subheadText) }}</div>
-            {% endif %}
-            
-            <span class="page-header-headline-text">{{ entry.headerText|length ? entry.headerText : entry.title }}</span>
-            
-            {% if entry.subheadText|length and entry.subheadPosition == 0 %}
-                <div class="page-header-subhead">{{ gMacros.stripTags(entry.subheadText) }}</div>
-            {% endif %}
-        </h1>
-        {% if entry.introText|length %}
-        <p class="page-header-intro animate">{{ entry.introText|typogrify }}</p>
-        {% endif %} 
-        {% if entry.buttons|length %}
-            {# Set color class #}
-            {% if entry.btnColor.value|length %}
-                {% set btnColorClass = 'btn-' ~ entry.btnColor %}
-            {% else %}
-                {% set btnColorClass = entry.pageHeaderColorScheme.class %}
-            {% endif %}            
-            
-            {% set linkOverride = 0 %}            
-            
-            {# create object with btn set preset styles to grab from as needed if buttons do not have custom styles different from the set #}
-            {% set btnSetStyles = {
-                'size': entry.btnSize,
-                'style': entry.btnStyles,
-                'fullWidthSmall': entry.fullWidthSmall,
-                'color': btnColorClass,
-            }
-            %}
-            <div class="button-group animate">
-                {% set buttons = entry.buttons %}
-                {% for button in buttons %}
-                    {# get styles for button or if not set, use styles from the set #}
-                    {% set btnClasses = ['btn'] %}
-                    {% if button.btnStyles|length %}
-                        {% set btnClasses = btnClasses|merge([button.btnStyles]) %}
-                    {% else %}
-                        {% set btnClasses = btnClasses|merge([btnSetStyles.style]) %}
-                    {% endif %}
-                    {% if button.btnSize|length %}
-                        {% set btnClasses = btnClasses|merge([button.btnSize]) %}
-                    {% else %}
-                        {% set btnClasses = btnClasses|merge([btnSetStyles.size]) %}
-                    {% endif %}
-                    {% if button.btnColor|length %}
-                        {% set btnClasses = btnClasses|merge([button.btnColor]) %}
-                    {% else %}
-                        {% set btnClasses = btnClasses|merge([btnSetStyles.color]) %}
-                    {% endif %}
-                    {% if btnSetStyles.fullWidthSmall %}
-                        {% set btnClasses = btnClasses|merge(['w-full mt-half @md:w-auto @md:mt-none']) %}
-                    {% endif %}
-                    
-                    {% if linkOverride %}
-                        {# if linkOverride is true, then button is inside a whole slide link in a slider, so the button just needs to look like a button, but not actually do anything because the slide will handle the click event #}
-                        <button {% if button.customId|length %}id="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}>
-                            <span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
-                        </button>
-                    {% else %}
-                        {# if button is a modal button do one thing, if not do the other #}		
-                        {% if button.getLinkType().label == 'Modal' %}
-                            {# modal #}
-                            {% set modalUrl = '/resources/entrymodal?entryid=' ~ button.linkValue %}
-                            {% set modalEntry = craft.entries().id(button.linkValue).one() %}
-                            {% if not craft.app.request.isAjax() %}
-                                <button {% if button.customId|length %}id="{{button.customId}}" x-ref="{{button.customId}}"{% else %}id="{{blockId}}-button{{loop.index}}" x-ref="{{blockId}}-button{{loop.index}}"{% endif %} type="button" class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %} {{- gMacros.attributesOut(button.customAttributes) -}}
-                                x-on:click="modalHtml='loading...'; showLoading = true; modalOpen = !modalOpen; modalTitle='{{modalEntry.title}}'; focusEl='{% if button.customId|length %}{{button.customId}}{% else %}{{blockId}}-button{{loop.index}}{% endif %}';
-                                fetch('{{ modalUrl }}', {
-                                    method: 'GET',
-                                    headers: {
-                                        'X-Requested-With': 'XMLHttpRequest',
-                                    },
-                                })
-                                .then(response => response.text())
-                                .then(text => {
-                                    modalHtml = text
-                                    showLoading = false;			   
-                                });"			 
-                                >
-                                    <span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
-                                </button>
-                            {% elseif modalEntry.section.handle == "pages" %}
-                                {{- _self.linkCode(button, btnClasses) -}}
-                            {% endif %}			
-                        {% else %}
-                            {# everything else #}
-                            {{- _self.linkCode(button, btnClasses) -}}
-                        {% endif %}
-                    {% endif %}			
-                {% endfor %}
-            </div>
-
-        {% endif %}   
+    <div class="page-header-layout {{pageHeaderColorScheme}} @2xl:aspect-{{mdHeaderAspect}} @3xl:aspect-{{ lgHeaderAspect}}">
+		{% set headlineContent = entry.pageHeader.eagerly().one() %}
+        {% if headlineContent != null %}
+            {% include ['_blocks/entry/heading'] with {'entry': headlineContent, 'headingLvl': 'h1', 'headlineStyle': 'page-header-headline', 'subheadStyle': 'page-header-subhead', 'colorScheme': pageHeaderColorScheme, 'animSetting': {'animate': true, 'animateContent': true, 'animLevel': true}} %}
+        {% else %}
+            <h1 class="page-header-headline animate">{{entry.title}}</h1>
+        {% endif %}
+        
+        {% if entry.pageHeaderContent|length %}            
+            {% for chunk in entry.pageHeaderContent %}
+				{% if chunk.type == 'markup' %}
+					{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate page-header-intro' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}					
+				{% else %}
+					{{ chunk.entry.render({
+						'animSetting': {'animate': true, 'animateContent': true, 'animLevel': true},
+						'colorScheme': pageHeaderColorScheme,						
+					}) }}
+				{% endif %}
+			{% endfor %}
+        {% endif %}
+        
 	</div>	
 </div>

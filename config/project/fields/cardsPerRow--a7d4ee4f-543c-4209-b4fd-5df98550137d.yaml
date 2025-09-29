@@ -144,17 +144,6 @@ settings:
                     -
                       - default
                       - false
-                -
-                  __assoc__:
-                    -
-                      - label
-                      - '5'
-                    -
-                      - value
-                      - '5'
-                    -
-                      - default
-                      - false
   defaults: null
   maxRows: 6
   minRows: null

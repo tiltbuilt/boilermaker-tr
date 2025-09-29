@@ -34,6 +34,20 @@
 	{% set animate = false %}
 {% endif %}
 
+{# set headingLevel if not defined from page header #}
+{% if headingLevel is not defined or headingLevel == '' %}
+	{% set headingLevel = entry.headingLevel|length ? entry.headingLevel : 'h2' %}
+{% endif %}
+
+{% if headlineStyle is not defined %}
+	{% set headlineStyle = entry.headingStyle|length ? entry.headingStyle : 'headline-default' %}
+{% endif %}
+
+{# set subheadStyle if not defined from page header #}
+{% if subheadStyle is not defined %}
+	{% set subheadStyle = entry.subheadStyle|length ? entry.subheadStyle : 'subhead-default' %}
+{% endif %}
+
 {# Set color class #}
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
@@ -49,7 +63,7 @@
 		</span>
 	{% endif %}
 
-	<span class="header-main-text block m-0 {{ entry.headingStyle}} {{ gMacros.typeClasses(entry.typeSettingsMainHeadline, false) }} {% if entry.headlineColor|length %}text-{{ entry.headlineColor }}{% endif %}">{{ gMacros.stripTags(entry.mainHeadingText) }}</span>
+	<span class="header-main-text block m-0 {{ headlineStyle}} {{ gMacros.typeClasses(entry.typeSettingsMainHeadline, false) }} {% if entry.headlineColor|length %}text-{{ entry.headlineColor }}{% endif %}">{{ gMacros.stripTags(entry.mainHeadingText) }}</span>
 	
 	{% if entry.subheadText|length and entry.subheadPosition == 0 %}
 		<span id="{{blockId}}-subhead" class="block {{ entry.subheadStyle}} {{ gMacros.typeClasses(entry.typeOverridesSubhead, false) }} mt-{{entry.subheadSpacing}} {% if entry.subheadColor|length %}text-{{ entry.subheadColor }}{% endif %}">		

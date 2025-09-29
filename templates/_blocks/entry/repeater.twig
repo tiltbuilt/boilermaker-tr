@@ -282,7 +282,7 @@
 
 {# begin rendering #}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container/component {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ repeaterClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+<div id="{{blockId}}" class="{{ blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ repeaterClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
 	
 	{% if listContent|length %}
 	

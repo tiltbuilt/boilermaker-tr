@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: columnWidth
+handle: columnWidthNoFull
 instructions: null
-name: 'Column Width'
+name: 'Column Width - No Full'
 searchable: false
 settings:
   customOptions: false
@@ -167,23 +167,6 @@ settings:
         -
           - value
           - 4/5
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Full Width'
-        -
-          - value
-          - full
         -
           - icon
           - ''

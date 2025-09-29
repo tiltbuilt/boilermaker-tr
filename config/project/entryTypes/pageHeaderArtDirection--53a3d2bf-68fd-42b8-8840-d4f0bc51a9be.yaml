@@ -1,0 +1,118 @@
+color: pink
+description: null
+fieldLayouts:
+  fa8beb1c-e5bc-4b50-bb01-40b536be927a:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-27T20:38:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72018c63-4ade-4ae9-a419-0a736197da2b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T20:38:37+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
+                  layoutElementUid: 72018c63-4ade-4ae9-a419-0a736197da2b
+                  operator: notempty
+                  uid: 2cfe482f-48ad-449f-a675-aed908b7f323
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6417ceb-517b-4c73-8bae-c88b1c63275e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T20:38:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 63164398-a80d-4596-8047-a50454edeee5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T20:38:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: imagePosition
+            includeInCards: false
+            instructions: null
+            label: 'Image Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ce3577fe-8775-4d92-82f9-c68753124399
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T20:38:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b81cc92d-9e5b-440d-8461-cdf9ab64807e # Opacity
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d589cff-51d5-44e0-9400-c4c9ee3a5cc0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 2c66658d-872c-41ec-908b-0bb243c2f46f
+        userCondition: null
+handle: pageHeaderArtDirection
+hasTitleField: false
+icon: null
+name: 'Page Header Art Direction'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{object.owner.title}-{deviceSize}-PageHeaderArtDirection'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -9,7 +9,7 @@
 {# Load in global macros for use across all Twig templates #}
 {% import '_macros/globalMacros' as gMacros %}
 
-{% set cardClasses = ['repeater-card', 'w-full'] %}
+{% set cardClasses = ['repeater-card', 'col-span-12'] %}
 
 {% if animate %}
 	{% set cardClasses = cardClasses|merge(["animate"]) %}
@@ -46,11 +46,25 @@
 {% if cardRowSizes != null and cardRowSizes|length %}
 	
 	{% for rowSize in cardRowSizes %}
+		{% set cardSizeClass = 'col-span-12' %}
+		{% switch rowSize.numberOfCards %}
+			{% case '1' %}
+				{% set cardSizeClass = 'col-span-12' %}				
+			{% case '2' %}
+				{% set cardSizeClass = 'col-span-6' %}				
+			{% case '3' %}
+				{% set cardSizeClass = 'col-span-4' %}				
+			{% case '4' %}
+				{% set cardSizeClass = 'col-span-3' %}				
+			{% default %}
+				{% set cardSizeClass = 'col-span-12' %}
+		{% endswitch %}
+		
 		{% if rowSize.layoutSize == '' %}
-			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}
+			{% set cardClasses = cardClasses|merge([cardSizeClass]) %}
 			{% set countValues = countValues|merge({'df': rowSize.numberOfCards}) %}
 		{% else %}
-			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ '/component:w-1/' ~ rowSize.numberOfCards]) %}
+			{% set cardClasses = cardClasses|merge([rowSize.layoutSize ~ ':' ~ cardSizeClass]) %}
 			{% set countValues = countValues|merge({ (rowSize.layoutSize) : rowSize.numberOfCards }) %}
 		{% endif %}
 	{% endfor %}
@@ -88,9 +102,9 @@
 		
 		<div class="{{ cardClasses|join(' ') }}">			
 			<{{outerTag}} {% if listItem.url != null and listItem.url|length %}href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} {% endif %} class="repeater-card-inner">				
-				<div class="w-full h-full @xl/component:flex @xl/component:flex-nowrap @xl/component:justify-center @xl/component:items-center">
-					<div class="repeater-card-sm-img w-full @xl/component:h-full relative @xl/component:w-1/3 @3xl/component:w-1/4">
-						<picture class="block w-full @xl/component:h-full">
+				<div class="w-full h-full @xl:flex @xl:flex-nowrap @xl:justify-center @xl:items-center">
+					<div class="repeater-card-sm-img w-full @xl:h-full relative @xl:w-1/3 @3xl:w-1/4">
+						<picture class="block w-full @xl:h-full">
 							{% set image = listItem.image[0] %}
 							{% set mobileXForm = 'image-' ~ gSettings.thumbAspectLg %}
 							{% set xForm = 'image-' ~ gSettings.thumbAspectSm %}
@@ -129,14 +143,14 @@
 							sizes="{{sizesAttrSm}}"					  	
 							srcset="{{ craft.imager.srcset(mobileImages) }}"
 							alt="{{ entry.title }}"
-							class="block object-cover w-full object-center"
+							class="block object-cover w-full h-full object-center"
 							loading="lazy"
 							>
 
 						</picture>						
 					</div>
 					
-					<div class="repeater-card-content w-full @xl/component:w-2/3 @3xl/component:w-3/4">
+					<div class="repeater-card-content w-full @xl:w-2/3 @3xl:w-3/4">
 						<{{ headingLvl}} class="repeater-list-card-header">					
 							{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><sup><sub><br>') }}					  
 						</{{ headingLvl }}>

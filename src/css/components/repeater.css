@@ -52,17 +52,29 @@
 	/* CARD LISTS */
 
 	.repeater-list-card-wrapper {
+		/*
 		display: flex;
 		flex-wrap: wrap;	
-		margin-inline: var(--spacing-neg-half);		
+		margin-inline: var(--spacing-neg-half);
+		*/
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: var(--spacing-half);
 		justify-content: start;
 		align-items: stretch;
 	}
 
-	.repeater-card {
-		/* this class sets up the spacing. Sizing is handled in the template itself by adding classes to control the number of items per row */
-		padding: var(--spacing-half);			
-	}
+	.repeater-slider.repeater-slider-multi {
+
+		.repeater-card {
+			/* this class sets up the spacing. Sizing is handled in the template itself by adding classes to control the number of items per row */
+			padding: var(--spacing-half);			
+		}
+
+		.swiper-slide {
+			background-color: transparent;
+		}
+	} 
 
 	.repeater-card-inner {
 		/* this class makes the cards look like cards. Add padding here to create a frame around card content if you don't want images to go to the edge of the card */
@@ -88,7 +100,7 @@
 
 	.repeater-card-content {
 		/* this class wraps the text content of the card. Add padding to create space around the text, or if padding on the card-inner class to make a frame, set the padding to 0 to make the text flush with images */
-		padding: var(--spacing-half);	 	
+		padding: var(--spacing-base);	 	
 	}
 
 	.repeater-list-card-header {

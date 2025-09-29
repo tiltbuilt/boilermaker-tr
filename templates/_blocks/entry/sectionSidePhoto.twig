@@ -119,25 +119,24 @@
 {% endif %}
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
-{# Retrieve styling adjustments #}
-{% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 {# Set Styles for Columns #}
 
 {# set object with default settings for all sizes for comparison, if different, merge setting from field into object #}
 {% set classSettings = {
-	'@2xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
-	'@3xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
-	'@4xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
-	'@5xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'},
+	'@2xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
+	'@3xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
+	'@4xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
+	'@5xl': {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'},
 	}
  %}
  
-{% set newSettings = {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center'} %}
+{% set newSettings = {'columnWidth': '1/2', 'columnPosition': 'order-first', 'verticalAlignment': 'items-center', 'imagePosition': 'object-center'} %}
+{% set adSettings = entry.contentColumnLayout.eagerly().all() %}
 {#cycle through sizes in order and compare settings from field to defaults, if they don't match, replace in the newSettings object to keep track of settings across sites then write to classSettings list when each cycle finishes #}
 {% for key, value in classSettings %} 
-	{% for layoutSetting in entry.contentColumnLayout %}	
-		{% if layoutSetting.layoutSize == key %}
+	{% for layoutSetting in adSettings %}	
+		{% if layoutSetting.deviceSize == key %}
 			{% if layoutSetting.columnWidth != newSettings.columnWidth and layoutSetting.columnWidth != '' %}
 				{% set newSettings = newSettings|merge({'columnWidth': (layoutSetting.columnWidth)}) %}			
 			{% endif %}
@@ -146,6 +145,9 @@
 			{% endif %}
 			{% if layoutSetting.verticalAlignment != newSettings.verticalAlignment and layoutSetting.verticalAlignment != '' %}
 				{% set newSettings = newSettings|merge({'verticalAlignment': (layoutSetting.verticalAlignment)}) %}			
+			{% endif %}
+			{% if layoutSetting.imagePosition != newSettings.imagePosition and layoutSetting.imagePosition != '' %}
+				{% set newSettings = newSettings|merge({'imagePosition': (layoutSetting.imagePosition)}) %}			
 			{% endif %}
 		{% endif %}		
 	{% endfor %}
@@ -183,58 +185,143 @@
 						}) }}
 					{% endif %}
 				{% endfor %}
-			</div>
-			<div class="background">
-				{{ gMacros.buildElementBackground(backgroundSettings) }}
-			</div>
+			</div>			
 		</div>
 		
 		<div class="side-photo-img {% if entry.animate and entry.animateContent %}animate{% endif %} {{ _self.imgClasses(classSettings) -}}">
-			{% set mainPhoto = entry.mainPhoto.eagerly().one() %}
-			{% set smPhoto = entry.photoSm.eagerly().one() %}
-			{% if smPhoto == null %}			
-				{% set smPhoto = mainPhoto %}
-			{% endif %}
-			{% if entry.aspectRatioSm  != '' and entry.aspectRatioSm != 'auto' %} 
-				{%- set smXForm = 'image-' ~ entry.aspectRatioSm	%}
-			{% else %}
-				{%- set smXForm = 'contentImage' %}
-			{% endif %}
-			{% if entry.aspectRatio  != '' and entry.aspectRatio != 'auto' %} 
-				{%- set xForm = 'image-' ~ entry.aspectRatio	%}
-			{% else %}
-				{%- set xForm = 'contentImage' %}
-			{% endif %}			
-			{% if craft.imager.serverSupportsWebp() %}
-				{%- set smXForm = smXForm ~ '-webp' %}
-				{%- set xForm = xForm ~ '-webp' %}
-			{% endif %}
-			{%- set smImages = craft.imagerx.transformImage(smPhoto,smXForm) %}
-			{%- set smStartImage = smImages[0] %}
-			{%- set lgImages = craft.imagerx.transformImage(mainPhoto, xForm) %}
-			{%- set lgStartImage = lgImages[0] %}
-			
-			<img src="{{ craft.imager.placeholder({width: smStartImage.width, height: smStartImage.height}) }}"
-			  width="{{smStartImage.width}}"
-			  height="{{smStartImage.height}}"
-			  sizes="auto"
-			  src="{{ smStartImage }}"
-			  srcset="{{ craft.imager.srcset(smImages) }}"
-			  alt="{{entry.mainPhotoAlt}}"
-			  class="block @md:hidden w-full lazyload"
-			  loading="lazy"
-			>
+			{% set image = entry.defaultPhoto.eagerly().one() %}
+			{% set currentAspectAspect = 'auto' %}
+			{% set xFormWidth = '' %}
+			{% set xFormHeight = '' %}
+			{% set imgSettings = entry.imageSettings.eagerly().all() %}
+			{% set imgClasses = ['block', 'w-full', '@2xl:absolute', '@2xl:h-full', '@2xl:inset-0', 'object-cover'] %}
+			{% set aspectValues =  {
+				'df': 'h-auto',
+				'@2xs': null,
+				'@xs': null,
+				'@sm': null,
+				'@md': null,
+				'@lg': null,
+				'@xl': null,
+				'@2xl': null,
+				'@3xl': null,
+				'@4xl': null,
+				'@5xl': null,
+			} %}
+						
+			{% for key, setting in classSettings %}
+				{% if key == '' %}					
+					{% if setting.imagePosition != '' %}
+						{% set imgClasses = imgClasses|merge(['object-' ~ setting.imagePosition])%}
+					{% endif %}
+				{% else %}					
+					{% if setting.imagePosition != '' %}
+						{% set imgClasses  = imgClasses|merge([ key ~ ':object-' ~ setting.imagePosition ])%}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+
+			<picture class="w-full h-full relative block">
+				{# set ordered array of objects for source settings #}
+				{% set srcObjects =  {
+					'df': {'minSize': 0, 'aspect': 'auto', 'image': image, 'sizes': '100vw'},
+					'xs': {'minSize': 320, 'aspect': null, 'image': null, 'sizes': '100vw'},
+					'sm': {'minSize': 640, 'aspect': null, 'image': null, 'sizes': '100vw'},
+					'md': {'minSize': 768, 'aspect': null, 'image': null, 'sizes': ''},
+					'lg': {'minSize': 1024, 'aspect': null, 'image': null, 'sizes': ''},
+					'xl': {'minSize': 1280, 'aspect': null, 'image': null, 'sizes': ''},
+					'2xl': {'minSize': 1536, 'aspect': null, 'image': null, 'sizes': ''},		
+				} %}
+
+				{% for key, setting in classSettings %}
 					
-			<img src="{{ craft.imager.placeholder({width: lgStartImage.width, height: lgStartImage.height}) }}"
-			  width="{{lgStartImage.width}}"
-			  height="{{lgStartImage.height}}"
-			  sizes="auto"
-			  src="{{ lgStartImage }}"
-			  srcset="{{ craft.imager.srcset(lgImages) }}"
-			  alt="{{entry.mainPhotoAlt}}"
-			  class="hidden @md:block absolute w-full h-full inset-0 object-cover object-{{entry.imgPosition == '' ? 'center' : entry.imgPosition}} lazyload"
-			  loading="lazy"
-			>
+					{# NEED TO SET KEY VALS DIFFERENTLY #}
+					
+					{% set newKey = key|slice(1) %}
+					{% set origSrcObject = srcObjects[newKey] %}
+					{% set sizeVal = "calc(80vw * " ~ setting.columnWidth ~ ")" %}
+					{% set newSrcObject = origSrcObject|merge({'sizes': sizeVal}) %}
+					{% set srcObjects = srcObjects|merge({(newKey): newSrcObject}) %}
+				{% endfor %}
+				
+				{% set sizeAttr = '' %}
+				{% for key, src in srcObjects|reverse %}
+					{% set sizeAttr = sizeAttr ~ '(min-width: ' ~ src.minSize ~ 'px) ' ~ src.sizes ~ ',' %}
+				{% endfor %}
+
+				{% for srcSetting in imgSettings %}
+					{# if there is a new image in the adjustment then use it as the image for src attributes #}
+					{% if srcSetting.deviceSize == '' %}
+						{% set srcSize = 'df' %}
+					{% else %}
+						{% set srcSize = srcSetting.deviceSize.value %}
+					{% endif %}
+
+					{% if srcSetting.imageAsset|length or srcSetting.aspectRatio != '' %}
+						{% if srcSetting.imageAsset|length and srcSetting.deviceSize != '' %}
+							{% set image = srcSetting.imageAsset.eagerly().one() %}
+						{% endif %}
+						{% if srcSetting.aspectRatio.value != '' %}				
+							{% set currentAspect = srcSetting.aspectRatio.value %}
+						{% else %}
+							{% set myRatio = currentAspect %}
+						{% endif %}
+						{% set mySrcObject = srcObjects[(srcSize)] %}			
+						{% set mySrcObject = mySrcObject|merge({'image': image, 'aspect': currentAspect}) %}
+						{% set srcObjects = srcObjects|merge({(srcSize): mySrcObject}) %}
+
+					{% endif %}		
+				{% endfor %}
+					
+				{# loop through and write in src elements for different breakpoints #}
+				
+				{% for sizeKey, srcSettings in srcObjects|reverse %}		
+					{% if srcSettings.image != null or srcSettings.aspect != null %}
+						{% if srcSettings.aspect == 'auto' %}
+							{% set xForm = 'contentImage' %}				
+						{% else %}
+							{% set xForm = 'image-' ~ srcSettings.aspect %}				
+						{% endif %}
+						{% set transformedImages = craft.imagerx.transformImage(srcSettings.image, xForm) %}
+						{% if sizeKey == 'df' %}
+							{% if srcSettings.aspect == 'auto' %}				
+								{% set xFormWidth = srcSettings.image.width %}
+								{% set xFormHeight = srcSettings.image.height %}
+							{% else %}				
+								{% if srcSettings.aspect == 'video' %}
+									{% set numerator = 16 %}
+									{% set denominator = 9 %} 
+								{% elseif srcSettings.aspect == 'square' %}
+									{% set numerator = 1 %}
+									{% set denominator = 1 %} 
+								{% else %}
+									{% set numerator = srcSettings.aspect|split('/')|first %}
+									{% set denominator = srcSettings.aspect|split('/')|last %}        
+								{% endif %}
+								{% set xFormWidth = srcSettings.image.width %}				
+								{% set xFormHeight = (srcSettings.image.width * denominator) / numerator %}				
+							{% endif %}
+							
+							<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
+								width="{{xFormWidth}}"
+								height="{{xFormHeight}}"
+								sizes="{{sizesAttr}}"
+								{% if not entry.lazyLoadImg %}						
+									fetchpriority="high"
+								{% endif %}    
+								srcset="{{ craft.imager.srcset(transformedImages) }}"
+								alt="{{ entry.altText }}"
+								class="{{imgClasses|join(' ')}}"
+								loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
+								decoding="async"
+							>
+						{% else %}
+							<source sizes="100vw" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+
+			</picture>			
 		</div>		
 	</div>
 </section>

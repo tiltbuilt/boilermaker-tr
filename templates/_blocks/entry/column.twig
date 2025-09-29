@@ -77,7 +77,7 @@
 	{% for layoutItem in layoutSettings %}
 		{% set devSize = layoutItem.layoutSize %}
 		{% if devSize|length %}
-			{% set devSize = devSize ~ '/component:' %}	
+			{% set devSize = devSize ~ ':' %}	
 		{% endif %}	
 		{% if layoutItem.gutterSize|length %}
 			{% set gutterClassList = gutterClassList|merge([devSize ~ 'px-' ~ layoutItem.gutterSize]) %}

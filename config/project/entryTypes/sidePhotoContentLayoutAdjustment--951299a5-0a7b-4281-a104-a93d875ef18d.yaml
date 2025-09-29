@@ -1,38 +1,51 @@
 color: pink
 description: null
 fieldLayouts:
-  cb7267dc-730a-43ac-bee9-1c0b2b7b9b78:
+  300da3b3-2128-48a9-a921-bb979d5dba90:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:e0e05a0e-c2eb-41b9-8880-1471296ad1ee'
-      - 'layoutElement:84903f95-ce19-4ec9-adcf-d21a772456d0'
-      - 'layoutElement:440f0a90-71d8-43c3-b304-3faba70343e5'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-08-28T18:13:31+00:00'
+            dateAdded: '2025-09-28T21:24:43+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
-            handle: null
+            fieldUid: f8bf9322-a174-4828-95a3-9f768c70cdea # Device Size - Tab Plus
+            handle: deviceSize
             includeInCards: false
             instructions: null
-            label: 'Layout Size'
+            label: 'Device Size'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b57fd304-492d-400a-9133-b7292358acb0
+            uid: c8a361dc-6b85-4da0-8649-6df80f8d9180
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-08-28T18:13:31+00:00'
+            dateAdded: '2025-09-28T22:11:39+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 29a6be8e-cb85-466e-a2f5-a9b2a388d92a # Horizontal Alignment
+            fieldUid: 859bdfc7-87f1-4c0d-8217-2388c34baba4 # Column Width - No Full
+            handle: columnWidth
+            includeInCards: false
+            instructions: null
+            label: 'Column Width'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4fafab75-07c6-45a4-80db-b38ccffe8f5e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-28T21:16:49+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 96e05d50-67cf-45ef-8670-b1764a09015a # Column Position
             handle: null
             includeInCards: true
             instructions: null
@@ -41,12 +54,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e0e05a0e-c2eb-41b9-8880-1471296ad1ee
+            uid: d17d7b88-2a28-464e-a7c1-f5ca886e3aae
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-08-28T18:13:31+00:00'
+            dateAdded: '2025-09-28T21:16:49+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 413dfe3a-277c-4fba-a7ed-27de63a9a93f # Vertical Alignment
@@ -58,34 +71,34 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 84903f95-ce19-4ec9-adcf-d21a772456d0
+            uid: 18c0c372-2c3f-47b9-8b78-a98477479816
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-12T21:29:16+00:00'
+            dateAdded: '2025-09-28T21:16:49+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
-            handle: gutterSize
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: imagePosition
             includeInCards: true
-            instructions: null
-            label: 'Gutter Size'
+            instructions: 'Use this field to reposition the photo within its frame, allowing more control over the focal point position'
+            label: 'Image Position'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 440f0a90-71d8-43c3-b304-3faba70343e5
+            uid: c30e8f03-9e48-41b7-9618-5510a3658a4e
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 7e0ca690-dd67-404d-8077-f6e587b8686e
+        uid: 67ea7606-e05c-4008-8074-29f8fad47c28
         userCondition: null
-handle: layoutAdjustment
+handle: sidePhotoContentLayoutAdjustment
 hasTitleField: false
 icon: null
-name: 'Layout Adjustment'
+name: 'Side Photo Content Layout Adjustment'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

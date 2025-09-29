@@ -42,48 +42,23 @@
 {% block bodyHtml %}
 	
 		
-	<div id="page-wrapper">
-		<div id="login-status-bar-wrapper"></div>
-		<div class="wrapper" id="wrapper">		
-			<div id="header_topbar"
-				x-data="{alertHtml: ''}"
-				x-html="alertHtml"				
-				x-init="
-					$nextTick(() => {						
-						fetch('/resources/notificationbaralerts', {
-							method: 'GET',
-							headers: {
-								'X-Requested-With': 'XMLHttpRequest',
-							},
-						})
-						.then(response => response.text())
-						.then(text => {
-							alertHtml = text										   
-						})
-					})"
-			></div>	
-			
-			{% if block('globalHeader') is defined %}
-			  {{ block('globalHeader') }}
+	<div id="page-wrapper">		
+		{% if block('globalHeader') is defined %}
+			{{ block('globalHeader') }}
+		{% endif %}	
+		
+		<main class="main @container" id="main">
+			{% if block('pageHeader') is defined %}
+				{{ block('pageHeader') }}
 			{% endif %}
 			
-			<div class="root" id="root">
-				<main class="main @container" id="main">
-					{% if block('pageHeader') is defined %}
-					  {{ block('pageHeader') }}
-					{% endif %}
-					
-					{% if block('pageContent') is defined %}
-					  {{ block('pageContent') }}
-					{% endif %}
-				</main>
-				
-				{% if block('pageFooter') is defined %}
-				  {{ block('pageFooter') }}
-				{% endif %}
-						
-			</div>
-		</div>
+			{% if block('pageContent') is defined %}
+				{{ block('pageContent') }}
+			{% endif %}
+		</main>			
+		{% if block('pageFooter') is defined %}
+			{{ block('pageFooter') }}
+		{% endif %}	
 	</div>
 	
 	{% block modalContent %}				

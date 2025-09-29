@@ -1,0 +1,96 @@
+columnSuffix: null
+handle: deviceSizeTabPlus
+instructions: null
+name: 'Device Size - Tab Plus'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Default (No Change)'
+        -
+          - value
+          - ''
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Medium (Tablet and Above)'
+        -
+          - value
+          - '@2xl'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Large (Laptop and Above)'
+        -
+          - value
+          - '@3xl'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'X-Large (Desktop and Above)'
+        -
+          - value
+          - '@4xl'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2XL (Hi-Res Display)'
+        -
+          - value
+          - '@5xl'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

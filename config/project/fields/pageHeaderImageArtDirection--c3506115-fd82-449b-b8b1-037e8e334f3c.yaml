@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: pageHeaderImageArtDirection
+instructions: 'Use this field to provide art direction for the page header image. For example you can use a different image at different device sizes, or different aspect ratio images and then use positioning on the image to help control where the focal point is in the image.'
+name: 'Page Header Image Art Direction'
+searchable: false
+settings:
+  createButtonLabel: 'Add Image Adjustment'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 53a3d2bf-68fd-42b8-8840-d4f0bc51a9be # Page Header Art Direction
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 7
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

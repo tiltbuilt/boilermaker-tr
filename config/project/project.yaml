@@ -1,4 +1,4 @@
-dateModified: 1758823984
+dateModified: 1759097499
 elementSources:
   craft\elements\Entry:
     -
@@ -191,6 +191,7 @@ meta:
     049ec87b-57e9-4b3e-8d53-44cb8874474b: Width # Width
     50cd7a70-a0fe-4d38-a86d-9358735fc84c: 'Hidden Visible' # Hidden Visible
     051b4b61-0b77-4055-9c14-84b1bad76ef1: 'Page Header Content' # Page Header Content
+    53a3d2bf-68fd-42b8-8840-d4f0bc51a9be: 'Page Header Art Direction' # Page Header Art Direction
     53df91b5-e85f-4b0c-8669-222678840f22: Padding # Padding
     55cb62d2-f02a-4bd8-849c-695f3a2e92b1: Columns # Columns
     56d80f6e-2a67-464f-af70-0d46d267a0e2: 'Items Per Page' # Items Per Page
@@ -208,6 +209,7 @@ meta:
     82cdb5ee-7722-4897-8e26-fb817c98e85e: Embed # Embed
     91d05e51-ee38-4e73-af4c-ebed7e7572d3: Spacing # Spacing
     93bf7bd8-1004-4c0c-be4d-7b59aa97021e: 'List Order' # List Order
+    96e05d50-67cf-45ef-8670-b1764a09015a: 'Column Position' # Column Position
     99a21841-a7ac-4726-85bf-4628867cba30: Display # Display
     206d3220-640b-4b20-a440-faaa801a11d9: 'Display State' # Display State
     335fab75-2107-4c96-80b2-14808539eadd: 'Button Group' # Button Group
@@ -220,6 +222,7 @@ meta:
     563d2567-f32a-4687-862f-033e083c1c09: 'Page Header Background Type' # Page Header Background Type
     589d7e58-f378-455e-b073-055e9221964b: Pages # Pages
     732c729f-8dbb-4f01-a463-c163ddc13eab: 'Left Right' # Left Right
+    859bdfc7-87f1-4c0d-8217-2388c34baba4: 'Column Width - No Full' # Column Width - No Full
     0888a226-1804-4ac8-a00d-8b539fdd3483: '404 Page Content' # 404 Page Content
     938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Photo Section' # Side by Side Photo Section
     988c8572-16b9-4e94-9297-d33d4b9d8411: 'Margin Adjustment' # Margin Adjustment
@@ -243,6 +246,7 @@ meta:
     699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
     738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
     781363bc-1fd0-4fcc-83b2-80a20c416f57: 'Content Cards' # Content Cards
+    951299a5-0a7b-4281-a104-a93d875ef18d: 'Side Photo Content Layout Adjustment' # Side Photo Content Layout Adjustment
     1274916c-2577-42bf-a9be-c2a1d3ea5336: New # New
     3245198b-294e-4033-ab6f-56530c5758a1: 'Image Size Adjustment' # Image Size Adjustment
     4720320b-f7d0-49ec-a327-0db0e3a2dd7c: 'Aspect Ratio - Forced' # Aspect Ratio - Forced
@@ -294,13 +298,15 @@ meta:
     c025e168-6f53-4831-9433-670f03c62851: Buttons # Buttons
     c3bd9145-5529-4e9f-a2dd-5c85c2d28f48: 'Text Column Adjustment' # Text Column Adjustment
     c3d75796-b930-48a0-b387-b5469be4094b: 'Full Listing Button' # Full Listing Button
-    c17b0219-a22c-422c-a2f1-4e557eed8c4e: 'Content Column Layout' # Content Column Layout
+    c12d2808-0b82-4820-9af1-d1e45e27fc9e: 'Content Column Layout' # Content Column Layout
+    c17b0219-a22c-422c-a2f1-4e557eed8c4e: 'Content Column Layout Old' # Content Column Layout Old
     c22c74d6-c1ba-4d51-af9b-d38a798a1e30: 'Text Wrap' # Text Wrap
     c43e08b0-14a5-4aee-adb4-4e78e9c3d9fe: 'Main Content' # Main Content
     c43e9602-b393-4012-b9c3-c4b391c74cd6: Video # Video
     c57caa3f-3422-4928-85a0-f509e3c41317: 'Content Position - Small CTA' # Content Position - Small CTA
     c281acd6-db5d-49e9-a272-08936804b011: 'Card Link' # Card Link
     c478b55b-ac82-444e-9cfe-af352d9ac8e9: 'Icon Content Horizontal Layout Adjustment' # Icon Content Horizontal Layout Adjustment
+    c3506115-fd82-449b-b8b1-037e8e334f3c: 'Page Header Image Art Direction' # Page Header Image Art Direction
     cbcd5b00-2f33-4ac3-82a1-342b8dd20474: 'Column Layout Adjustment' # Column Layout Adjustment
     cd2e4df6-b8ea-4048-be1a-c8404b36a103: 'Icon Horizontal Alignment' # Icon Horizontal Alignment
     cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
@@ -333,6 +339,7 @@ meta:
     f1b466ce-fb41-471a-90d4-5d0fd23f346d: 'Image Asset' # Image Asset
     f1dadad3-35b3-471d-ad9b-6fbc3decfa2e: 'Display Adjustment' # Display Adjustment
     f4d725e6-48b8-4083-a921-ecc0925a0bff: 'Background Size' # Background Size
+    f8bf9322-a174-4828-95a3-9f768c70cdea: 'Device Size - Tab Plus' # Device Size - Tab Plus
     f22d8a3b-9296-4b9a-b338-0d599eaa364a: 'Section to List' # Section to List
     f162c9c9-8174-4ba1-a691-5b2e30f57c37: Root # Root
     f1350f49-769c-4408-b6aa-b1f6285c818a: 'Image Art Direction' # Image Art Direction
@@ -340,6 +347,7 @@ meta:
     f6807d6f-6a06-4137-8317-a236cec446bd: 'Type Settings' # Type Settings
     fa819c1c-abac-42ac-b1e5-3de37862ccf3: Images # Images
     fda8531d-3e9b-418c-8d5e-103f60ff9ada: 'Icon Block Horizontal Layout Adjustments' # Icon Block Horizontal Layout Adjustments
+    ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4: 'Imagery Type' # Imagery Type
     ff110645-b126-49e5-9ed9-a720a1a9d3d2: 'Notification Bar Color' # Notification Bar Color
 plugins:
   blitz:

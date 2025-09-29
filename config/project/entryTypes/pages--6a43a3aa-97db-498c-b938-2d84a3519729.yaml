@@ -182,6 +182,131 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-09-27T22:21:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4 # Imagery Type
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b9a4b80d-cde6-4062-bf0f-e2978af7cc60
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T22:21:59+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4 # Imagery Type
+                  layoutElementUid: b9a4b80d-cde6-4062-bf0f-e2978af7cc60
+                  uid: 2985c6cf-4b46-43d3-b0a6-9dcfe93cb025
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: altText
+            includeInCards: false
+            instructions: null
+            label: 'Alt Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 232e2aba-8522-416a-9b33-d817ec4e20f1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T20:54:43+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4 # Imagery Type
+                  layoutElementUid: b9a4b80d-cde6-4062-bf0f-e2978af7cc60
+                  uid: e7fbae48-b704-4bb1-84f9-03b67928b26f
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
+            handle: pageHeaderDefaultImage
+            includeInCards: false
+            instructions: null
+            label: 'Page Header Default Image'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a42965f3-3367-478d-a9c3-3e9c28dc7f10
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T20:54:43+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4 # Imagery Type
+                  layoutElementUid: b9a4b80d-cde6-4062-bf0f-e2978af7cc60
+                  uid: 6c314d83-0980-4d62-b013-b73deb4a53ca
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: c3506115-fd82-449b-b8b1-037e8e334f3c # Page Header Image Art Direction
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 904f4fbc-d64a-4398-9c48-2db2995f147e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-27T22:21:59+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4 # Imagery Type
+                  layoutElementUid: b9a4b80d-cde6-4062-bf0f-e2978af7cc60
+                  uid: 501a59b6-0d13-4f1c-9b73-3e8cfb4760a6
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: cdbe0d46-9b4d-47a1-854d-cc894a161dd5 # Background Video
+            handle: pageHeaderVideo
+            includeInCards: false
+            instructions: null
+            label: 'Page Header Video'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 32593dfc-c0bb-4e0c-9d44-d73347198e4d
+            userCondition: null
+            warning: null
+            width: 100
         name: 'Page Header Content'
         uid: 91576020-b1ff-484b-b283-d4bf8d5bd35b
         userCondition: null
@@ -253,30 +378,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3ab25715-361f-4469-b1cb-8e43972c0aef
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-08-20T20:17:44+00:00'
-            elementCondition: null
-            heading: Background
-            type: craft\fieldlayoutelements\Heading
-            uid: 09e167c9-a60b-4946-81d8-a0404544de9a
-            userCondition: null
-          -
-            dateAdded: '2025-09-03T21:56:06+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 76e84206-fdd5-4553-bf04-6f24f458ce0e # Background Settings
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ee612c64-4ae1-482c-90d7-d7ce69f727dc
             userCondition: null
             warning: null
             width: 100

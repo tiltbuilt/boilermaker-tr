@@ -44,26 +44,9 @@
 						<style type="text/css">
 						  .loader { display: none; z-index: 0; visibility: hidden; opacity: 0; }
 						</style>
-					  <![endif]-->
-					
-					<!-- LOAD ICON SPRITE SHEET -->
-					{#{{ craft.iconPicker.spritesheet('ui-svg-sprites.svg') }}#}
+					  <![endif]-->					
 				{% endblock bodyContent %}				
 				
-				{#-- Site-wide JavaScript --#}
-				{#{{ craft.twigpack.includeSafariNomoduleFix() }}
-				{{ craft.twigpack.includeCssModule("/css/app.css") }}#}
-				<noscript>
-					<style type="text/css">
-						  .loader {
-							display: none;
-							z-index: 0;
-							visibility: hidden;
-							opacity: 0;
-						  }
-					</style>
-				</noscript>
-				{#{{ craft.twigpack.includeJsModule("/js/app.js") }}#}
 				
 				{# -- Any JavaScript that should be included before </body> -- #}
 				{% block footerJs %}

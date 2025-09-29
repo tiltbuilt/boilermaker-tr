@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: contentColumnLayout
+handle: contentColumnLayoutOld
 instructions: null
-name: 'Content Column Layout'
+name: 'Content Column Layout Old'
 searchable: false
 settings:
   addRowLabel: 'Add a row'
