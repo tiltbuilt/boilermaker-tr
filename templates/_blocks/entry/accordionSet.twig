@@ -162,7 +162,7 @@
 			set expanded(value) {
 				this.active = value ? this.id : null
 			},
-		}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.displayClasses(acc.display, false)}} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
+		}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.displayClasses(acc.display)}} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
 			<{{setHeaderLevel}} class="accordion-header">
 				<button
 					x-on:click="expanded = !expanded"
@@ -195,7 +195,8 @@
 						{% else %}
 							{{ chunk.entry.render({
 								'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
-								'colorScheme': accColorScheme
+								'colorScheme': accColorScheme,
+								'sizeTracker': sizeTracker
 							}) }}
 						{% endif %}
 					{% endfor %} 					

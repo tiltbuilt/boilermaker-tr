@@ -54,15 +54,16 @@
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ wrapperClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
-	<div class="inner content-wrapper-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} {{ gMacros.spacingClasses(entry.padding, false) }}">
+<div id="{{blockId}}" class="{{- blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ wrapperClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+	<div class="inner content-wrapper-inner {{- gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding) }}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 			{% else %}
 				{{ chunk.entry.render({
 					'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
-					'colorScheme': colorScheme
+					'colorScheme': colorScheme,
+					'sizeTracker': sizeTracker
 				}) }}
 			{% endif %}
 		{% endfor %}							

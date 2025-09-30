@@ -87,7 +87,7 @@
 	{% set iconClasses = iconClasses|merge([colorScheme]) %}
 {% endif %}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<div id="{{blockId}}" class="{{ blockClass }} @container {{ colorScheme }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="icon-layout {{ layoutClasses|join(' ') }}">
 		<div class="{{- iconClasses|join(' ') }}">
 			{% if  entry.icon.type == 'svg' %}
@@ -99,7 +99,7 @@
 			{% endif %}
 		</div>	
 		{% if entry.blockContent|length %}
-			<div class="{{- contentClasses|join(' ') }} {{ gMacros.typeClasses(entry.typeSettings, true) -}}">
+			<div class="{{- contentClasses|join(' ') }} {{ gMacros.typeClasses(entry.typeSettings) -}}">
 				
 				{% for chunk in entry.blockContent %}
 					{% if chunk.type == 'markup' %}

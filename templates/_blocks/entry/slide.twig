@@ -136,7 +136,7 @@
 		
 	<div class="slide-layout @md:flex @md:{{entry.slideHorizontalLayout}} @md:{{entry.slideVerticalLayout}} {% if image != null %}@md:absolute @md:inset-0{% endif %}">
 		<div class="slide-content">
-			<div class="slide-content-wrapper {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{- gMacros.spacingClasses(entry.padding, false) -}}">
+			<div class="slide-content-wrapper {{- gMacros.typeClasses(entry.typeSettings) -}} {{- gMacros.spacingClasses(entry.padding) -}}">
 				{% for chunk in entry.slideContent %}
 					{% if chunk.type == 'markup' %}
 						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}

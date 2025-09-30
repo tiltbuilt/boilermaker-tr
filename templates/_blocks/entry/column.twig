@@ -52,7 +52,8 @@
 {% endif %}
 {% set columnClassList = columnClassList|merge(colorClasses) %}
 
-{# Set Layout Styles #}
+{# Set Layout Styles and adjust sizeTracker #}
+{% set multiplier = 1 %}
 
 {% for layoutItem in entry.columnLayout %}
 	{% set devSize = layoutItem.layoutSize %}
@@ -63,24 +64,34 @@
 		{% switch layoutItem.columnWidth %}
 			{% case '1/6' %}
 				{% set colSizeClass = 'col-span-2' %}
+				{% set multiplier = 0.16666667 %}
 			{% case '1/4' %}
 				{% set colSizeClass = 'col-span-3' %}
+				{% set multiplier = 0.25 %}
 			{% case '1/3' %}
 				{% set colSizeClass = 'col-span-4' %}
+				{% set multiplier = 0.33333333 %}
 			{% case '5/12' %}
 				{% set colSizeClass = 'col-span-5' %}
+				{% set multiplier = 0.41666667 %}
 			{% case '1/2' %}
 				{% set colSizeClass = 'col-span-6' %}
+				{% set multiplier = 0.5 %}
 			{% case '7/12' %}
 				{% set colSizeClass = 'col-span-7' %}
+				{% set multiplier = 0.58333333 %}
 			{% case '2/3' %}
 				{% set colSizeClass = 'col-span-8' %}
+				{% set multiplier = 0.66666667 %}
 			{% case '3/4' %}
 				{% set colSizeClass = 'col-span-9' %}
+				{% set multiplier = 0.75 %}
 			{% case '5/6' %}
 				{% set colSizeClass = 'col-span-10' %}
+				{% set multiplier = 0.83333333 %}
 			{% default %}
 				{% set colSizeClass = 'col-span-12' %}
+				{% set multiplier = 1 %}
 		{% endswitch %}
 		{% set columnClassList = columnClassList|merge([devSize ~ colSizeClass]) %}
 	{% endif %}
@@ -93,6 +104,15 @@
 	{% if layoutItem.verticalAlignment|length %}
 		{% set columnClassList = columnClassList|merge([devSize ~ layoutItem.verticalAlignment]) %}
 	{% endif %}
+	{% if layoutItem.layoutSize == '' %}
+		{% set trackerKey = '@df' %}
+	{% else %}
+		{% set trackerKey = layoutItem.layoutSize %}
+	{% endif %}
+	{% set startWidth = sizeTracker[trackerKey].size %}
+	{% set unit = sizeTracker[trackerKey].unit %}
+	{% set endWidth = (startWidth * multiplier)|round %}
+	{% set sizeTracker = sizeTracker|merge({(trackerKey):{'size': endWidth, 'unit': unit}}) %}
 {% endfor %}
 
 {% if layoutSettings is defined %}
@@ -110,8 +130,8 @@
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ columnClassList|join(' ') }} {{ gMacros.spacingClasses(entry.padding, false) }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
-	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings, false) }} ">
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ columnClassList|join(' ') }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
+	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding) }}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{% if animate %}
@@ -122,7 +142,8 @@
 			{% else %}
 				{{ chunk.entry.render({
 					'animSetting': animSetting,
-					'colorScheme': colorScheme
+					'colorScheme': colorScheme,
+					'sizeTracker': sizeTracker
 				}) }}
 			{% endif %}
 		{% endfor %}							

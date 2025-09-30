@@ -33,24 +33,24 @@
 	{% set imgClasses = [] %}
 	{% for key, value in classSettings %}
 		{% switch classSettings[(key)].columnWidth %}
-			{% case '1/5' %}
-				{% set imgClasses = imgClasses|merge([key ~ ':w-4/5']) %}
+			{% case '1/6' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-5/6']) %}
 			{% case '1/4' %}
 				{% set imgClasses = imgClasses|merge([key ~ ':w-3/4']) %}
 			{% case '1/3' %}
 				{% set imgClasses = imgClasses|merge([key ~ ':w-2/3']) %}
-			{% case '2/5' %}
-				{% set imgClasses = imgClasses|merge([key ~ ':w-3/5']) %}
+			{% case '5/12' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-7/12']) %}
 			{% case '1/2' %}
 				{% set imgClasses = imgClasses|merge([key ~ ':w-1/2']) %}
-			{% case '3/5' %}
-				{% set imgClasses = imgClasses|merge([key ~ ':w-2/5']) %}
+			{% case '7/12' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-5/12']) %}
 			{% case '2/3' %}
 				{% set imgClasses = imgClasses|merge([key ~ ':w-1/3']) %}
 			{% case '3/4' %}
 				{% set imgClasses = imgClasses|merge([key ~ ':w-1/4']) %}
-			{% case '4/5' %}
-				{% set imgClasses = imgClasses|merge([key ~ ':w-1/5']) %}
+			{% case '5/6' %}
+				{% set imgClasses = imgClasses|merge([key ~ ':w-1/6']) %}
 			{% case 'full' %}
 				{% set imgClasses = imgClasses|merge([key ~ ':w-full']) %}				
 		{% endswitch %}
@@ -68,24 +68,24 @@
 	{% set wrapperClasses = [] %}
 	{% for key, value in classSettings %}
 		{% switch classSettings[(key)].columnWidth %}
-			{% case '1/5' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.2)|round ~ 'px]']) %}
+			{% case '1/6' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.16666667)|round ~ 'px]']) %}
 			{% case '1/4' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.252)|round ~ 'px]']) %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.25)|round ~ 'px]']) %}
 			{% case '1/3' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.33333332)|round ~ 'px]']) %}
-			{% case '2/5' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.42)|round ~ 'px]']) %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.33333333)|round ~ 'px]']) %}
+			{% case '5/12' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.41666667)|round ~ 'px]']) %}
 			{% case '1/2' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.52)|round ~ 'px]']) %}
-			{% case '3/5' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.62)|round ~ 'px]']) %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.5)|round ~ 'px]']) %}
+			{% case '7/12' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.58333333)|round ~ 'px]']) %}
 			{% case '2/3' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.66666662)|round ~ 'px]']) %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.66666667)|round ~ 'px]']) %}
 			{% case '3/4' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.752)|round ~ 'px]']) %}
-			{% case '4/5' %}
-				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.82)|round ~ 'px]']) %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.75)|round ~ 'px]']) %}
+			{% case '5/6' %}
+				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.83333333)|round ~ 'px]']) %}
 			{% case 'full' %}
 				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ baseMaxList[(key)] ~ 'px]']) %}			
 		{% endswitch %}
@@ -154,13 +154,65 @@
 	{% set classSettings = classSettings|merge({(key): (newSettings)}) %}
 {% endfor %}
 
+{# set size tracking object to help with image sizes attributes #}
+{% if entry.fullscreen %}
+	{% set sizeTracker = {
+		'@df': {'size': 90, 'unit': 'vw'},
+		'@xs': {'size': 90, 'unit': 'vw'},
+		'@sm': {'size': 90, 'unit': 'vw'},
+		'@md': {'size': 90, 'unit': 'vw'},
+		'@lg': {'size': 90, 'unit': 'vw'},
+		'@xl': {'size': 90, 'unit': 'vw'},
+		'@2xl': {'size': 90, 'unit': 'vw'},
+	} %}	
+{% else %}
+	{% set sizeTracker = {
+		'@df': {'size': 90, 'unit': 'vw'},
+		'@xs': {'size': 90, 'unit': 'vw'},
+		'@sm': {'size': 90, 'unit': 'vw'},
+		'@md': {'size': 90, 'unit': 'vw'},
+		'@lg': {'size': 994, 'unit': 'px'},
+		'@xl': {'size': 1250, 'unit': 'px'},
+		'@2xl':{'size': 1506, 'unit': 'px'},
+	} %}
+{% endif %}
+{% for key, value in classSettings %}
+	{% set startWidth = sizeTracker[key].size %}
+	{% set unit = sizeTracker[key].unit %}
+	{% set endWidth = '' %}
+	{% switch classSettings[(key)].columnWidth %}
+		{% case '1/6' %}
+			{% set endWidth = (startWidth * 0.16666667)|round %}
+		{% case '1/4' %}
+			{% set endWidth = (startWidth * 0.25)|round %}
+		{% case '1/3' %}
+			{% set endWidth = (startWidth * 0.33333333)|round %}
+		{% case '5/12' %}
+			{% set endWidth = (startWidth * 0.41666667)|round %}
+		{% case '1/2' %}
+			{% set endWidth = (startWidth * 0.5)|round %}
+		{% case '7/12' %}
+			{% set endWidth = (startWidth * 0.58333333)|round %}
+		{% case '2/3' %}
+			{% set endWidth = (startWidth * 0.66666667)|round %}
+		{% case '3/4' %}
+			{% set endWidth = (startWidth * 0.75)|round %}
+		{% case '5/6' %}
+			{% set endWidth = (startWidth * 0.83333333)|round %}
+		{% case 'full' %}
+			{% set endWidth = startWidth %}			
+	{% endswitch %}
+	{% set sizeTracker = sizeTracker|merge({(key):{'size': endWidth, 'unit': unit}}) %}
+{% endfor %}
+
+
 {% if entry.contentPositionSmall %}
 	{% set positionClass = 'order-last' %}
 {% else %}
 	{% set positionClass = 'order-first' %}
 {% endif %}
 
-<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
@@ -169,7 +221,7 @@
 	<div class="side-section-layout {{ entry.fullscreen ? 'fullscreen' -}}">
 		
 		<div class="side-photo-content {{positionClass}} {{ _self.contentClasses(classSettings) -}}">
-			<div class="side-photo-content-wrapper {% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} {{- gMacros.typeClasses(entry.typeSettings, false) -}} {#} {{ gMacros.classesOut(adjustments, 'Padding', true) -}}#}">
+			<div class="side-photo-content-wrapper {% if entry.fullscreen %}w-full{% else %}{{ _self.wrapperClasses(classSettings) }}{% endif %} {{- gMacros.typeClasses(entry.typeSettings) -}} {{- gMacros.spacingClasses(entry.padding) -}}">
 				{% for chunk in entry.elementContent %}
 					{% if chunk.type == 'markup' %}
 						{% if entry.animate and entry.animateContent %}
@@ -181,7 +233,7 @@
 						{{ chunk.entry.render({
 							'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
 							'colorScheme': colorScheme,
-							'paddingSetting': entry.padding
+							'sizeTracker': sizeTracker
 						}) }}
 					{% endif %}
 				{% endfor %}

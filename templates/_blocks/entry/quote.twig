@@ -58,7 +58,7 @@
 
 
 
-<blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{- gMacros.typeClasses(entry.typeSettings, false) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{- gMacros.typeClasses(entry.typeSettings) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	{{entry.quoteText}}
 	<span id="{{blockId}}-credit" class="quote-credit {{entry.creditColorClass}}">
 		{{entry.quoteCredit|typogrify}}

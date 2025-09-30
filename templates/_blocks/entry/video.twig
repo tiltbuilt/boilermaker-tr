@@ -66,7 +66,7 @@
 
 {# OUTPUT #}
 {% if embeddedVideo and embeddedVideo.isSafe %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {#{{ gMacros.widthClasses(adjustments) -}} {{- gMacros.textWrapClasses(adjustments) -}}#} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ videoClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} gMacros.widthClasses(entry.videoSize) {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ videoClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		<div class="video-embed-wrapper" style="">
 			<div class="video-player">						
 				{{ embeddedVideo.getIframeCode(

@@ -55,18 +55,18 @@
 
 
 
-<{{entry.headingLevel}} id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorScheme }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<{{entry.headingLevel}} id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorScheme }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 
 	{% if entry.subheadText|length and entry.subheadPosition == 1 %}
-		<span id="{{blockId}}-subhead" class="block {{ entry.subheadStyle}} {{ gMacros.typeClasses(entry.typeOverridesSubhead, false) }} mb-{{entry.subheadSpacing}} {% if entry.subheadColor|length %}text-{{ entry.subheadColor }}{% endif %}">		
+		<span id="{{blockId}}-subhead" class="block {{ entry.subheadStyle}} {{ gMacros.typeClasses(entry.typeOverridesSubhead) }} mb-{{entry.subheadSpacing}} {% if entry.subheadColor|length %}text-{{ entry.subheadColor }}{% endif %}">		
 			{{ gMacros.stripTags(entry.subheadText) }}			
 		</span>
 	{% endif %}
 
-	<span class="header-main-text block m-0 {{ headlineStyle}} {{ gMacros.typeClasses(entry.typeSettingsMainHeadline, false) }} {% if entry.headlineColor|length %}text-{{ entry.headlineColor }}{% endif %}">{{ gMacros.stripTags(entry.mainHeadingText) }}</span>
+	<span class="header-main-text block m-0 {{ headlineStyle}} {{ gMacros.typeClasses(entry.typeSettingsMainHeadline) }} {% if entry.headlineColor|length %}text-{{ entry.headlineColor }}{% endif %}">{{ gMacros.stripTags(entry.mainHeadingText) }}</span>
 	
 	{% if entry.subheadText|length and entry.subheadPosition == 0 %}
-		<span id="{{blockId}}-subhead" class="block {{ entry.subheadStyle}} {{ gMacros.typeClasses(entry.typeOverridesSubhead, false) }} mt-{{entry.subheadSpacing}} {% if entry.subheadColor|length %}text-{{ entry.subheadColor }}{% endif %}">		
+		<span id="{{blockId}}-subhead" class="block {{ entry.subheadStyle}} {{ gMacros.typeClasses(entry.typeOverridesSubhead) }} mt-{{entry.subheadSpacing}} {% if entry.subheadColor|length %}text-{{ entry.subheadColor }}{% endif %}">		
 			{{ gMacros.stripTags(entry.subheadText) }}			
 		</span>
 	{% endif %}

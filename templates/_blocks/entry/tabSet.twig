@@ -73,7 +73,7 @@
   }"
   x-id="['tab']"
   id="{{blockId}}"
-  class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ tabSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}" >
+  class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ tabSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}" >
   <!-- Tab List -->
   <ul
 	x-ref="tablist"
@@ -230,7 +230,8 @@
 			{% else %}
 				{{ chunk.entry.render({
 					'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
-					'colorScheme': tabColorScheme
+					'colorScheme': tabColorScheme,
+					'sizeTracker': sizeTracker
 				}) }}
 			{% endif %}
 		{% endfor %}

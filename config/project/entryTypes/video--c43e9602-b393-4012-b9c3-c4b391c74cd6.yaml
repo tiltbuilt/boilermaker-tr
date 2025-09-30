@@ -84,10 +84,10 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Size
-            handle: videoLayout
+            handle: videoSize
             includeInCards: false
             instructions: null
-            label: 'Video Layout'
+            label: 'Video Size'
             providesThumbs: false
             required: false
             tip: null

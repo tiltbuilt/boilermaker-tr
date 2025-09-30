@@ -63,7 +63,7 @@
 {# Retrieve styling adjustments #}
 {#{% set adjustments = entry.formStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 	{% set form = entry.formToDisplay.eagerly().one() %}	
 	{{ craft.formie.renderForm(form, {
 		themeConfig: {

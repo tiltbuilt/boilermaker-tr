@@ -59,12 +59,13 @@
 	{% endif %}
 {% endfor %}
 
-<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
+<div id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
 	{% for column in rowContent %}
 		{{column.render({
 			'animSetting': animSetting,
 			'colorScheme': colorScheme,
-			'layoutSettings': entry.layoutSettings
+			'layoutSettings': entry.layoutSettings,
+			'sizeTracker': sizeTracker
 		})}}
 	{% endfor %}
 </div>

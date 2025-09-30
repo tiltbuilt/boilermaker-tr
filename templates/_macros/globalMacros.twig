@@ -64,7 +64,7 @@
 
 {# Class and Attribute Rendering #}
 
-{% macro typeClasses(typeSettings, useComponent) %}
+{% macro typeClasses(typeSettings) %}
 	{% set classList = [] %}
 	{% set fLayout = typeSettings.getFieldLayout() %}
 	{% for tabObj in fLayout.tabs %}				
@@ -78,12 +78,7 @@
 				{% else %}
 					{% for textColumnAdjustment in typeSettings.numberOfTextColumns.eagerly().all() %}
 						{% if textColumnAdjustment.layoutSize|length %}
-							{% set classItem = textColumnAdjustment.layoutSize %}
-							{% if useComponent %}
-								{% set classItem = classItem ~ '/component:' %}
-							{% else %}
-								{% set classItem = classItem ~ ':' %}
-							{% endif %}
+							{% set classItem = textColumnAdjustment.layoutSize ~ ':' %}							
 						{% else %}
 							{% set classItem = '' %}
 						{% endif %}
@@ -97,7 +92,7 @@
 	{{ classList|join(' ') }}
 {% endmacro typeClasses %}
 
-{% macro spacingClasses(spaceSettings, useComponent) %}
+{% macro spacingClasses(spaceSettings) %}
 	{% set classList = [] %}
 	{% for spaceAdjustment in spaceSettings.eagerly().all() %}
 		{% set fLayout = spaceAdjustment.getFieldLayout() %}
@@ -107,12 +102,7 @@
 					{% if tabEl.field.handle != 'layoutSize' %}
 						{% if spaceAdjustment.getFieldValue(tabEl.field.handle)|length %}
 							{% if spaceAdjustment.layoutSize|length %}
-								{% set classItem = spaceAdjustment.layoutSize %}
-								{% if useComponent %}
-									{% set classItem = classItem ~ '/component:' %}
-								{% else %}
-									{% set classItem = classItem ~ ':' %}
-								{% endif %}
+								{% set classItem = spaceAdjustment.layoutSize ~ ':' %}								
 							{% else %}
 								{% set classItem = '' %}
 							{% endif %}
@@ -127,16 +117,11 @@
 	{{- classList|join(' ') -}}
 {% endmacro spacingClasses %}
 
-{% macro widthClasses(widthSettings, useComponent) %}
+{% macro widthClasses(widthSettings) %}
 	{% set classList = [] %}
 	{% for widthAdjustment in widthSettings.eagerly().all() %}
 		{% if widthAdjustment.layoutSize|length %}
-			{% set classItem = widthAdjustment.layoutSize %}
-			{% if useComponent %}
-				{% set classItem = classItem ~ '/component:' %}
-			{% else %}
-				{% set classItem = classItem ~ ':' %}
-			{% endif %}
+			{% set classItem = widthAdjustment.layoutSize ~ ':' %}			
 		{% else %}
 			{% set classItem = '' %}
 		{% endif %}
@@ -146,16 +131,11 @@
 	{{- classList|join(' ') -}}
 {% endmacro widthClasses %}
 
-{% macro displayClasses(displaySettings, useComponent) %}
+{% macro displayClasses(displaySettings) %}
 	{% set classList = [] %}
 	{% for displayAdjustment in displaySettings.eagerly().all() %}		
 		{% if displayAdjustment.layoutSize|length %}
-			{% set classItem = displayAdjustment.layoutSize %}
-			{% if useComponent %}
-				{% set classItem = classItem ~ '/component:' %}
-			{% else %}
-				{% set classItem = classItem ~ ':' %}
-			{% endif %}
+			{% set classItem = displayAdjustment.layoutSize ~ ':' %}			
 		{% else %}
 			{% set classItem = '' %}
 		{% endif %}
@@ -169,38 +149,6 @@
 	{% endfor %}
 	{{- classList|join(' ') -}}
 {% endmacro displayClasses %}
-
-{# General Classes by Tab #}	
-{% macro classesOut(adjustments, tabName, useFieldName) %}
-	{% set classList = [] %}
-	{% for adjSet in adjustments %}
-		{# Get Device Size for Adjustments #}
-		{% set devSize = adjSet.layoutSize %}
-		{% if devSize|length %}
-			{% set devSize = devSize ~ ':' %}	
-		{% endif %}
-				
-		{% set fLayout = adjSet.getFieldLayout() %}
-		{% for tabObj in fLayout.tabs %}
-			{% if tabObj.name == tabName %}
-				{% for tabEl in tabObj.elements %}				
-					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-						{% if adjSet.getFieldValue(tabEl.field.handle)|length %}
-							{% if useFieldName %}
-								{% set classItem = devSize ~ tabEl.field.handle ~ '-' ~adjSet.getFieldValue(tabEl.field.handle) %}
-							{% else %}
-								{% set classItem = devSize ~ adjSet.getFieldValue(tabEl.field.handle) %}
-							{% endif %}
-							{% set classList = classList|merge([classItem]) %}
-						{% endif %}
-					{% endif %}				
-				{% endfor %}
-			{% endif %}
-		{% endfor %}
-	{% endfor %}
-	{{ classList|join(' ') }}	
-{% endmacro classesOut %}
-
 
 
 {# Text Wrap Classes #}

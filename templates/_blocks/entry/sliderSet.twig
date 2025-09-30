@@ -67,7 +67,7 @@
 {# retrieve slide content #}
 {% set slides = entry.slides.eagerly().all() %}
 
-<div id="{{blockId}}" class="@container {% if animate %}animate{% endif %} {{blockClass}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ sliderSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} 
+<div id="{{blockId}}" class="@container {% if animate %}animate{% endif %} {{blockClass}} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ sliderSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} 
 
 {% if entry.slides|length > 1 %}
 x-data="{swiper: null}"
@@ -112,7 +112,8 @@ x-init="swiper = new Swiper($refs.container, {
 					'colorScheme': colorScheme,
 					'ownerId': blockId,
 					'slideAspectSm': slidePhotoSizeSmall,
-					'slideAspectLg': slidePhotoSizeLarge,					
+					'slideAspectLg': slidePhotoSizeLarge,
+					'sizeTracker': sizeTracker,					
 				})}}
 			{% endfor %}
 		</div>

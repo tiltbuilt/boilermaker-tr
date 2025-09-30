@@ -77,7 +77,7 @@
 }
 %}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{entry.horizontalAlignment}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{colorScheme}} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{entry.horizontalAlignment}} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{colorScheme}} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
 	{% set buttons = entry.buttons.eagerly().all() %}
 	{% for button in buttons %}
 		{# get styles for button or if not set, use styles from the set #}
