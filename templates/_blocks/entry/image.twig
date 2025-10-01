@@ -95,9 +95,9 @@
 		{% else %}		
 			{# if entry is art directed, use art direction template if not use regular template #}
 			{% if entry.artDirectImage %}
-				{% include '_partials/images/adImage' with {'entry': entry} %}
+				{% include '_partials/images/adImage' with {'entry': entry, 'sizeTracker': sizeTracker} %}
 			{% else %}
-				{% include '_partials/images/regImage' with {'entry': entry} %}
+				{% include '_partials/images/regImage' with {'entry': entry, 'sizeTracker': sizeTracker} %}
 			{% endif %}
 
 		{% endif %}

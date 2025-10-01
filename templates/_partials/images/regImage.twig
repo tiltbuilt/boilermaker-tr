@@ -1,4 +1,28 @@
 {% set image = entry.imageAsset.eagerly().one() %}
+{% set sizesAttr = '' %}
+{% for key, values in sizeTracker|reverse %}
+    {% switch key %}
+        {% case '@xs' %}
+            {% set sizesAttr = sizesAttr ~ '(min-width: 290px) ' %}
+        {% case '@sm' %}
+            {% set sizesAttr = sizesAttr ~ '(min-width: 610px) ' %}
+        {% case '@md' %}
+            {% set sizesAttr = sizesAttr ~ '(min-width: 738px) ' %}
+        {% case '@lg' %}
+            {% set sizesAttr = sizesAttr ~ '(min-width: 994px) ' %}
+        {% case '@xl' %}
+            {% set sizesAttr = sizesAttr ~ '(min-width: 1250px) ' %}
+        {% case '@2xl' %}
+            {% set sizesAttr = sizesAttr ~ '(min-width: 1506px) ' %}
+        {% default %}
+            {% set sizesAttr = sizesAttr %}
+    {% endswitch %}    
+    {% set sizesAttr = sizesAttr ~ ' ' ~ values.size ~ values.unit %}
+    {% if not loop.last %}
+        {% set sizesAttr = sizesAttr ~ ', ' %}
+    {%endif %}
+{% endfor %}
+
 {% if entry.aspectRatio == '' or entry.aspectRatio == 'auto' %}
     {% set xForm = 'contentImage' %}
     {% set xFormWidth = image.width %}
@@ -29,11 +53,10 @@
 <img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
     width="{{xFormWidth}}"
     height="{{xFormHeight}}"
-    {% if entry.lazyLoadImg %}
-        sizes="auto"
-    {% else %}
+    {% if entry.lazyLoadImg %}        
         fetchpriority="high"
-    {% endif %}    
+    {% endif %}
+    sizes="{{sizesAttr}}"    
     srcset="{{ craft.imager.srcset(transformedImages) }}"
     alt="{{ entry.altText }}"
     class="block w-full object-cover object-center"
