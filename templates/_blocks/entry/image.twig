@@ -19,6 +19,12 @@
 
 {% set image = entry.imageAsset.eagerly().one() %}
 
+{% if entry.artDirectImage %} 
+	{% set imageSizeField = entry.imageArtDirection.eagerly().all() %}
+{% else %}
+	{% set imageSizeField = entry.imageSize.eagerly().all() %}
+{% endif %}
+
 {# Set block id attribute value #}
 {% if entry.customId is defined and entry.customId != '' %}
 	{% set blockId = entry.customId|replace({' ': '-'})|trim %}
@@ -65,7 +71,7 @@
 
 {# OUTPUT #}
 {% if image != null %}
-	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ entry.artDirectImage ? gMacros.widthClasses(entry.imageArtDirection) : gMacros.widthClasses(entry.imageSize) }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<{{outerTag}} id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.widthClasses(imageSizeField) }} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ imgClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
 		{% if entry.linkSettings!= null %}
 			{% if entry.isModalLink %}
@@ -94,12 +100,12 @@
 		
 		{% else %}		
 			{# if entry is art directed, use art direction template if not use regular template #}
+			
 			{% if entry.artDirectImage %}
-				{% include '_partials/images/adImage' with {'entry': entry, 'sizeTracker': sizeTracker} %}
+				{% include '_partials/images/adImage' with {'entry': entry, 'sizeTracker': sizeTracker, 'imageSizeField': imageSizeField} %}
 			{% else %}
-				{% include '_partials/images/regImage' with {'entry': entry, 'sizeTracker': sizeTracker} %}
+				{% include '_partials/images/regImage' with {'entry': entry, 'sizeTracker': sizeTracker, 'imageSizeField': imageSizeField} %}
 			{% endif %}
-
 		{% endif %}
 		
 		{% if entry.linkSettings != null %}
@@ -111,5 +117,6 @@
 				{{ entry.imageCaption }}						
 			</figcaption>				  
 		{% endif %}
+		
 	</{{outerTag}}>
 {% endif %}

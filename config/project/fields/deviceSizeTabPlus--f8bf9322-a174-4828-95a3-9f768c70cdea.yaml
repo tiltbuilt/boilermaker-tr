@@ -30,7 +30,7 @@ settings:
           - 'Medium (Tablet and Above)'
         -
           - value
-          - '@2xl'
+          - '@md'
         -
           - icon
           - ''
@@ -47,7 +47,7 @@ settings:
           - 'Large (Laptop and Above)'
         -
           - value
-          - '@3xl'
+          - '@lg'
         -
           - icon
           - ''
@@ -64,7 +64,7 @@ settings:
           - 'X-Large (Desktop and Above)'
         -
           - value
-          - '@4xl'
+          - '@xl'
         -
           - icon
           - ''
@@ -81,7 +81,7 @@ settings:
           - '2XL (Hi-Res Display)'
         -
           - value
-          - '@5xl'
+          - '@2xl'
         -
           - icon
           - ''

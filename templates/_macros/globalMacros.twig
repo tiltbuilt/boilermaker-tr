@@ -119,7 +119,7 @@
 
 {% macro widthClasses(widthSettings) %}
 	{% set classList = [] %}
-	{% for widthAdjustment in widthSettings.eagerly().all() %}
+	{% for widthAdjustment in widthSettings %}
 		{% if widthAdjustment.layoutSize|length %}
 			{% set classItem = widthAdjustment.layoutSize ~ ':' %}			
 		{% else %}
@@ -150,6 +150,100 @@
 	{{- classList|join(' ') -}}
 {% endmacro displayClasses %}
 
+{# SIZES ATTRIBUTES FOR IMAGES #}
+{% macro sizesAttr(sizeTracker, imageSizeField) %}
+	{% set currentImgSize = 1 %}
+	{% set currentImgUnit = null%}
+	{% if imageSizeField == null %}
+		{# if imageSizeField is null then elelement is cta, sideBySide or Slide and image fills its container, so use sizeTracker size #}
+		{% set imageSizeData = sizeTracker %}
+	{% else %}
+		{# if not then element is image block so see if imageSizeField has anything set. If not use sizeTracker, if so then process size settings #}
+		{% if imageSizeField|length %}
+			{% set imageSizeData = {
+				'@df': {},
+				'@xs': {},
+				'@sm': {},
+				'@md': {},
+				'@lg': {},
+				'@xl': {},
+				'@2xl': {},
+			} %}
+			{% for key, dataSet in imageSizeData %}
+				{% for fieldSetting in imageSizeField %}
+					{% if fieldSetting.layoutSize == '' %}
+						{% set layoutSetting = '@df' %}
+					{% else %}
+						{% set layoutSetting = fieldSetting.layoutSize %}
+					{% endif %}
+					{% if layoutSetting == key %}
+						{% if fieldSetting.width != '' %}
+							{% switch fieldSetting.width %}
+								{% case '[100px]' %}
+									{% set currentImgSize = 100 %}
+									{% set currentImgUnit = 'px' %}
+								{% case '[200px]' %}
+									{% set currentImgSize = 200 %}
+									{% set currentImgUnit = 'px' %}
+								{% case '1/4' %}
+									{% set currentImgSize = 0.25 %}
+									{% set currentImgUnit = null %}
+								{% case '1/3' %}
+									{% set currentImgSize = 0.3333333 %}
+									{% set currentImgUnit = null %}
+								{% case '1/2' %}
+									{% set currentImgSize = 0.5 %}
+									{% set currentImgUnit = null %}
+								{% case '2/3' %}
+									{% set currentImgSize = 0.6666667 %}
+									{% set currentImgUnit = null %}
+								{% case '3/4' %}
+									{% set currentImgSize = 0.75 %}
+									{% set currentImgUnit = null %}
+								{% default %}
+									{% set currentImgSize = 1 %}
+									{% set currentImgUnit = null %}
+							{% endswitch %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				{# for each key, if currentUnit is set to null then apply multiplier to size in sizeTracker. If set to px, then it sets the pixel size #}
+				{% if currentImgUnit != null %}
+					{% set imageSizeData = imageSizeData|merge({(key): {'size': currentImgSize, 'unit': 'px'}}) %}
+				{% else %}
+					{% set sizeVal = (sizeTracker[key].size * currentImgSize)|round %}								
+					{% set imageSizeData = imageSizeData|merge({(key): {'size': sizeVal, 'unit': sizeTracker[(key)].unit}}) %}
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			{% set imageSizeData = sizeTracker %}
+		{% endif %}
+	{% endif %}
+	{# write the sizes attribute #}
+	{% set sizesAttrOutput = '' %}
+	{% for key, value in imageSizeData|reverse %}
+		{% switch key %}
+			{% case '@xs' %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 320px) ' ~ value.size ~ value.unit %}
+			{% case '@sm' %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 640px) ' ~ value.size ~ value.unit %}
+			{% case '@md' %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 768px) ' ~ value.size ~ value.unit %}
+			{% case '@lg' %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 1024px) ' ~ value.size ~ value.unit %}
+			{% case '@xl' %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 1280px) ' ~ value.size ~ value.unit %}
+			{% case '@2xl' %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 1536px) ' ~ value.size ~ value.unit %}
+			{% default %}
+				{% set sizesAttrOutput = sizesAttrOutput ~ value.size ~ value.unit %}
+		{% endswitch %}
+		{% if not loop.last %}
+			{% set sizesAttrOutput = sizesAttrOutput ~ ', ' %}
+		{% endif %}
+	{% endfor %}
+	{{sizesAttrOutput}}	
+{% endmacro sizesAttr %}
 
 {# Text Wrap Classes #}
 {% macro textWrapClasses(adjustments) %}

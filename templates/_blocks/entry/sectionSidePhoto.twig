@@ -59,14 +59,14 @@
 {% endmacro imgClasses %}
 
 {% macro wrapperClasses(classSettings) %}
-	{% set baseMaxList = {
-		'@md': 768,
+	{% set baseMaxList = {		
 		'@lg': 1024,
 		'@xl': 1280,
 		'@2xl': 1536,
 	} %}
 	{% set wrapperClasses = [] %}
 	{% for key, value in classSettings %}
+		{% if key != '@md' %}
 		{% switch classSettings[(key)].columnWidth %}
 			{% case '1/6' %}
 				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.16666667)|round ~ 'px]']) %}
@@ -89,6 +89,7 @@
 			{% case 'full' %}
 				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ baseMaxList[(key)] ~ 'px]']) %}			
 		{% endswitch %}
+		{% endif %}
 	{% endfor %}
 	{{- wrapperClasses|join(' ') }}	
 {% endmacro wrapperClasses %}
@@ -135,8 +136,8 @@
 {% set adSettings = entry.contentColumnLayout.eagerly().all() %}
 {#cycle through sizes in order and compare settings from field to defaults, if they don't match, replace in the newSettings object to keep track of settings across sites then write to classSettings list when each cycle finishes #}
 {% for key, value in classSettings %} 
-	{% for layoutSetting in adSettings %}	
-		{% if layoutSetting.deviceSize == key %}
+	{% for layoutSetting in adSettings %}		
+		{% if layoutSetting.deviceSize == key %}			
 			{% if layoutSetting.columnWidth != newSettings.columnWidth and layoutSetting.columnWidth != '' %}
 				{% set newSettings = newSettings|merge({'columnWidth': (layoutSetting.columnWidth)}) %}			
 			{% endif %}
@@ -151,8 +152,10 @@
 			{% endif %}
 		{% endif %}		
 	{% endfor %}
+	
 	{% set classSettings = classSettings|merge({(key): (newSettings)}) %}
 {% endfor %}
+
 
 {# set size tracking object to help with image sizes attributes #}
 {% if entry.fullscreen %}
@@ -177,8 +180,8 @@
 	} %}
 {% endif %}
 {% for key, value in classSettings %}
-	{% set startWidth = sizeTracker[key].size %}
-	{% set unit = sizeTracker[key].unit %}
+	{% set startWidth = sizeTracker[(key)].size %}
+	{% set unit = sizeTracker[(key)].unit %}
 	{% set endWidth = '' %}
 	{% switch classSettings[(key)].columnWidth %}
 		{% case '1/6' %}
@@ -212,6 +215,8 @@
 	{% set positionClass = 'order-first' %}
 {% endif %}
 
+
+
 <section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{- sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
@@ -236,7 +241,7 @@
 							'sizeTracker': sizeTracker
 						}) }}
 					{% endif %}
-				{% endfor %}
+				{% endfor %}				
 			</div>			
 		</div>
 		
@@ -270,30 +275,43 @@
 			{% endfor %}
 
 			<picture class="w-full h-full relative block">
-				{# set ordered array of objects for source settings #}
+				
 				{% set srcObjects =  {
 					'df': {'minSize': 0, 'aspect': currentAspect, 'image': image, 'sizes': '100vw'},
 					'xs': {'minSize': 320, 'aspect': null, 'image': null, 'sizes': '100vw'},
 					'sm': {'minSize': 640, 'aspect': null, 'image': null, 'sizes': '100vw'},
-					'md': {'minSize': 768, 'aspect': null, 'image': null, 'sizes': ''},
-					'lg': {'minSize': 1024, 'aspect': null, 'image': null, 'sizes': ''},
-					'xl': {'minSize': 1280, 'aspect': null, 'image': null, 'sizes': ''},
-					'2xl': {'minSize': 1536, 'aspect': null, 'image': null, 'sizes': ''},		
+					'md': {'minSize': 768, 'aspect': null, 'image': null, 'sizes': '100vw'},
+					'lg': {'minSize': 1024, 'aspect': null, 'image': null, 'sizes': '100vw'},
+					'xl': {'minSize': 1280, 'aspect': null, 'image': null, 'sizes': '100vw'},
+					'2xl': {'minSize': 1536, 'aspect': null, 'image': null, 'sizes': '100vw'},		
 				} %}
 
 				{% for key, setting in classSettings %}
-					{% switch key %}
-						{% case '@md' %}
-							{% set newKey = 'md' %}
-						{% case '@lg' %}
-							{% set newKey = 'lg' %}
-						{% case '@xl' %}
-							{% set newKey = 'xl' %}
-						{% case '@2xl' %}
-							{% set newKey = '2xl' %}
-					{% endswitch %}
+					{% set newKey = key|slice(1) %}					
 					{% set origSrcObject = srcObjects[newKey] %}
-					{% set sizeVal = "calc(80vw * " ~ setting.columnWidth ~ ")" %}
+					{% switch setting.columnWidth %}
+						{% case '1/6' %}
+							{% set imgSizeMultiplier = '5/6' %}
+						{% case '1/4' %}
+							{% set imgSizeMultiplier = '3/4' %}
+						{% case '1/3' %}
+							{% set imgSizeMultiplier = '2/3' %}
+						{% case '5/12' %}
+							{% set imgSizeMultiplier = '7/12' %}
+						{% case '1/2' %}
+							{% set imgSizeMultiplier = '1/2' %}
+						{% case '7/12' %}
+							{% set imgSizeMultiplier = '5/12' %}
+						{% case '2/3' %}
+							{% set imgSizeMultiplier = '1/3' %}
+						{% case '3/4' %}
+							{% set imgSizeMultiplier = '1/4' %}
+						{% case '5/6' %}
+							{% set imgSizeMultiplier = '1/6' %}
+						{% default %}
+							{% set imgSizeMultiplier = '1' %}
+					{% endswitch %}
+					{% set sizeVal = "calc(100vw * " ~ imgSizeMultiplier ~ ")" %}
 					{% set newSrcObject = origSrcObject|merge({'sizes': sizeVal}) %}
 					{% set srcObjects = srcObjects|merge({(newKey): newSrcObject}) %}
 				{% endfor %}
@@ -304,7 +322,7 @@
 				{% endfor %}
 
 				{% for srcSetting in imgSettings %}
-					{# if there is a new image in the adjustment then use it as the image for src attributes #}
+					
 					{% if srcSetting.deviceSize == '' %}
 						{% set srcSize = 'df' %}
 					{% else %}
@@ -327,7 +345,7 @@
 					{% endif %}		
 				{% endfor %}
 					
-				{# loop through and write in src elements for different breakpoints #}
+				
 				
 				{% for sizeKey, srcSettings in srcObjects|reverse %}		
 					{% if srcSettings.image != null or srcSettings.aspect != null %}
@@ -358,10 +376,12 @@
 							
 							<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
 								width="{{xFormWidth}}"
-								height="{{xFormHeight}}"
-								sizes="{{sizeAttr}}"
-								{% if not entry.lazyLoadImg %}						
+								height="{{xFormHeight}}"								
+								{% if not entry.lazyLoadImg %}        
 									fetchpriority="high"
+									sizes="{{sizeAttr}}"
+								{% else %}
+									sizes="auto"     
 								{% endif %}    
 								srcset="{{ craft.imager.srcset(transformedImages) }}"
 								alt="{{ entry.altText }}"
@@ -370,7 +390,7 @@
 								decoding="async"
 							>
 						{% else %}
-							<source sizes="100vw" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+							<source sizes="{{entry.lazyLoadImg ? 'auto' : sizeAttr}}" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
 						{% endif %}
 					{% endif %}
 				{% endfor %}

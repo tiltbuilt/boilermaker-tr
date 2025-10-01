@@ -196,11 +196,17 @@
 
 				{% set ctaOutputImage = craft.imagerx.transformImage(ctaImg, xForm) %}
 				<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
-				  width="{{xFormWidth}}"
-				  height="{{xFormHeight}}"
-				  {% if entry.lazyLoadImg %}
+				width="{{xFormWidth}}"
+				height="{{xFormHeight}}"
+				{% if not entry.lazyLoadImg %}        
+					fetchpriority="high"
+					sizes="{{gMacros.sizesAttr(sizeTracker, null)}}"
+				{% else %}
+					sizes="auto"     
+				{% endif %}
+				{% if entry.lazyLoadImg %}
 					sizes="auto"
-				  {% else %}
+				{% else %}
 					fetchpriority="high"
 				  {% endif %}
 				  src="{{ ctaOutputImage[0].url }}"

@@ -27,12 +27,12 @@
 	--breakpoint-2xl: 1536px;
 	
 	/* CONTAINER QUERY BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */	
-	--container-xs: 29rem;
-	--container-sm: 61rem;
-	--container-md: 73.8rem;
-	--container-lg: 99.4rem;	
-	--container-xl: 125rem;
-	--container-2xl: 150.6rem;	
+	--container-xs: 32rem;
+	--container-sm: 64rem;
+	--container-md: 76.8rem;
+	--container-lg: 102.4rem;	
+	--container-xl: 128rem;
+	--container-2xl: 153.6rem;	
 	
 	
 	/* FONT SIZES */		

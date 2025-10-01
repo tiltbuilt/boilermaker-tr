@@ -1,3 +1,6 @@
+{# Load in global macros for use across all Twig templates #}
+{% import '_macros/globalMacros' as gMacros %}
+
 {% set image = entry.imageAsset.eagerly().one() %}
 {% set currentAspectAspect = 'auto' %}
 {% set xFormWidth = '' %}
@@ -135,10 +138,11 @@
 				<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
 					width="{{xFormWidth}}"
 					height="{{xFormHeight}}"
-					{% if entry.lazyLoadImg %}
-						sizes="auto"
-					{% else %}
+					{% if not entry.lazyLoadImg %}        
 						fetchpriority="high"
+						sizes="{{gMacros.sizesAttr(sizeTracker, imageSizeField)}}"
+					{% else %}
+						sizes="auto"     
 					{% endif %}    
 					srcset="{{ craft.imager.srcset(transformedImages) }}"
 					alt="{{ entry.altText }}"
