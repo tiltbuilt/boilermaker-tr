@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.2.0 - 2025-10-02
+### Upgraded
+- Craft CMS and all Plugins
+
+### Added
+- Critter plugin for Critical CSS handling
+- Imager-X ImgIX Local Storage Plugin to attempt to help image performance
+
+### Changed
+- Remove Adjustment blocks as type and moved all djsutments directly to element entry types themselves
+- Put in image sizing to attempt to set sizes attributes on images
+- Changed layout blocks to use grid for layout
+- Changed available widths on columns to match grid system
+
 ## 3.1.0 - 2025-08-25
 ### Upgraded
 - Front end build process now uses Vite 7.0+ and Tailwind CSS 4.1+
