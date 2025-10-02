@@ -61,7 +61,29 @@
 	
 	{% if image != null %}
 		<div class="slide-image aspect-{{slideAspectSm}} @md:aspect-{{slideAspectLg}}">			
-			
+			{% set sizesAttr = '' %}
+			{% for key, values in sizeTracker|reverse %}
+				{% switch key %}
+					{% case '@xs' %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 320px) ' ~ values.size ~ values.unit %}
+					{% case '@sm' %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 640px) ' ~ values.size ~ values.unit %}
+					{% case '@md' %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 768px) ' ~ values.size ~ values.unit %}
+					{% case '@lg' %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 1024px) ' ~ values.size ~ values.unit %}
+					{% case '@xl' %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 1280px) ' ~ values.size ~ values.unit %}
+					{% case '@2xl' %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 1536px) ' ~ values.size ~ values.unit %}
+					{% default %}
+						{% set sizesAttr = sizesAttr ~ '(min-width: 320px) ' ~ values.size ~ values.unit %}
+				{% endswitch %}
+				{% if not loop.last %}
+					{% set sizesAttr = sizesAttr ~ ',' %}
+				{% endif %}
+			{% endfor %}
+
 			{% set mobileXForm = 'image-' ~ slideAspectSm %}
 			{% set xForm = 'image-' ~ slideAspectLg %}
 			{% if craft.imager.serverSupportsWebp() %}
@@ -108,7 +130,7 @@
 			{% endif %}
 			
 			<picture class="w-full h-full">
-				<source sizes="100vw" width="{{xFormWidth}}" height="{{xFormHeight}}" media="(min-width: 768px)" srcset="{{ craft.imager.srcset(largerImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+				<source sizes="{{entry.lazyLoadImg ? 'auto' : sizesAttr}}" width="{{xFormWidth}}" height="{{xFormHeight}}" media="(min-width: 768px)" srcset="{{ craft.imager.srcset(largerImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
 			
 				<img src="{{ craft.imager.placeholder({width: smXFormWidth, height: smXFormHeight}) }}"
 					width="{{smXFormWidth}}"
@@ -117,15 +139,14 @@
 						sizes="auto"
 					{% else %}
 						fetchpriority="high"
-						sizes= "100vw"
+						sizes= "{{sizesAttr}}"
 					{% endif %}					
 					srcset="{{ craft.imager.srcset(mobileImages) }}"
 					alt="{{ entry.title }}"
 					class="block w-full h-full object-cover object-center"
 					loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
     				decoding="async"
-				>
-			
+				>			
 			</picture>
 						
 		</div>

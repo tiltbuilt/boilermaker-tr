@@ -30,10 +30,10 @@ settings:
                   __assoc__:
                     -
                       - label
-                      - 'Small (Phone Horizontal)'
+                      - '640px Wide and Above (Phone Horizontal Size)'
                     -
                       - value
-                      - '600'
+                      - 640pxWideAndAbovePhoneHorizontalSize
                     -
                       - default
                       - false
@@ -41,10 +41,10 @@ settings:
                   __assoc__:
                     -
                       - label
-                      - 'Medium (Tablet)'
+                      - '768px Wide and Above (Tablet Vertical Size)'
                     -
                       - value
-                      - '750'
+                      - 768pxWideAndAboveTabletVerticalSize
                     -
                       - default
                       - false
@@ -52,10 +52,10 @@ settings:
                   __assoc__:
                     -
                       - label
-                      - 'Large (Laptop+)'
+                      - '1024px Wide and Above (Laptop Size)'
                     -
                       - value
-                      - '950'
+                      - 1024pxWideAndAboveLaptopSize
                     -
                       - default
                       - false
@@ -63,10 +63,10 @@ settings:
                   __assoc__:
                     -
                       - label
-                      - X-Large(Desktop+)
+                      - '1280px Wide and Above (Desktop Size)'
                     -
                       - value
-                      - '1150'
+                      - 1280pxWideAndAboveDesktopSize
                     -
                       - default
                       - false

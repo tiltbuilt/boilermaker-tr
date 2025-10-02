@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8df3406a9fae89959adbff1b96b9c1a",
+    "content-hash": "14a5aea4df72a3a15fe66002e090a68e",
     "packages": [
         {
             "name": "amphp/amp",
@@ -12497,6 +12497,66 @@
                 }
             ],
             "time": "2025-08-27T11:34:33+00:00"
+        },
+        {
+            "name": "tallowandsons/craft-critter",
+            "version": "1.0.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tallowandsons/craft-critter/zipball/9bef13ff1d59a601dbc5aaba7382f9d78bdf91e6",
+                "reference": "9bef13ff1d59a601dbc5aaba7382f9d78bdf91e6",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0",
+                "php": ">=8.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "critter",
+                "name": "Critter",
+                "developer": "Tallow & Sons",
+                "developerUrl": "https://github.com/tallowandsons",
+                "documentationUrl": "https://github.com/tallowandsons/craft-critter#readme",
+                "class": "tallowandsons\\critter\\Critter"
+            },
+            "autoload": {
+                "psr-4": {
+                    "tallowandsons\\critter\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Tallow & Sons",
+                    "homepage": "https://github.com/tallowandsons"
+                }
+            ],
+            "description": "Automatically generates and inlines Critical CSS for Craft CMS to improve frontend performance.",
+            "homepage": "https://github.com/tallowandsons/craft-critter",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "critical-css",
+                "critter",
+                "css",
+                "frontend",
+                "inline-css",
+                "optimization",
+                "performance",
+                "tallowandsons"
+            ],
+            "support": {
+                "email": "support@tallowandsons.com",
+                "issues": "https://github.com/tallowandsons/craft-critter/issues?state=open",
+                "source": "https://github.com/tallowandsons/craft-critter",
+                "docs": "https://github.com/tallowandsons/craft-critter/blob/master/README.md"
+            },
+            "time": "2025-09-18T17:20:22+00:00"
         },
         {
             "name": "theiconic/name-parser",

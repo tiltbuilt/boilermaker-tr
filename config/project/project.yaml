@@ -1,4 +1,4 @@
-dateModified: 1759356029
+dateModified: 1759437844
 elementSources:
   craft\elements\Entry:
     -
@@ -449,6 +449,11 @@ plugins:
   craft-color-mixer:
     edition: standard
     enabled: true
+    schemaVersion: 1.0.0
+  critter:
+    edition: standard
+    enabled: true
+    licenseKey: E61VY7C155SIUNGRPGSV1AZY
     schemaVersion: 1.0.0
   datastar:
     edition: standard

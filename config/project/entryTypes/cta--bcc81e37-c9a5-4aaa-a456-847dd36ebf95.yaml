@@ -102,6 +102,33 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-10-02T16:51:09+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 4cd1420e-6729-4403-aa18-7ba048239fe9
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
+            handle: altText
+            includeInCards: false
+            instructions: null
+            label: 'Alt Text'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 88c803a6-34a0-42d3-831c-b310767dd10b
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-08-20T19:58:27+00:00'
             editCondition: null
             elementCondition:
@@ -125,6 +152,39 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d5751701-1992-4b68-b08b-4fa6952d54ee
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b8294f03-74f9-4555-8f79-babcc782cefe
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-10-03T19:11:32+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 97c99555-dd15-4bbe-a5cd-67ecb0df5075
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: c57caa3f-3422-4928-85a0-f509e3c41317 # Content Position - Small CTA
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Content Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eeebf7da-dfd7-45e6-a2c3-61e7cf95203b
             userCondition: null
             warning: null
             width: 100
@@ -210,60 +270,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-10-03T19:11:32+00:00'
-            editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\LightswitchFieldConditionRule
-                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
-                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
-                  uid: 97c99555-dd15-4bbe-a5cd-67ecb0df5075
-                  value: false
-              elementType: craft\elements\Entry
-              fieldContext: global
-            fieldUid: c57caa3f-3422-4928-85a0-f509e3c41317 # Content Position - Small CTA
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: 'Content Position'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: eeebf7da-dfd7-45e6-a2c3-61e7cf95203b
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-08-20T19:58:27+00:00'
-            editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\LightswitchFieldConditionRule
-                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
-                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
-                  uid: 58599678-dd21-476e-8cfa-49edbdce6b47
-                  value: true
-              elementType: craft\elements\Entry
-              fieldContext: global
-            fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
-            handle: contentWidthLarge
-            includeInCards: false
-            instructions: 'Set the width of the CTA Content column when in large (side by side with image) layouts'
-            label: 'Content Width - Large Layouts'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: c3a89327-4c2b-4106-ba64-c2da57b378a2
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-08-20T19:58:27+00:00'
             editCondition: null
             elementCondition:
@@ -280,7 +286,7 @@ fieldLayouts:
             fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
             handle: contentVerticalAlignment
             includeInCards: false
-            instructions: ' This field sets the vertical alignment of the content relative to its image when the CTA Type is in large CTA mode.'
+            instructions: 'This field sets the vertical alignment of the content relative to its image when the CTA Type is in large CTA mode.'
             label: 'Content Vertical Alignment'
             providesThumbs: false
             required: false
@@ -290,8 +296,35 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: b8294f03-74f9-4555-8f79-babcc782cefe
+          -
+            dateAdded: '2025-10-02T16:13:49+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
+                  layoutElementUid: d57f29aa-7964-4b1c-b52d-63ffda582a5e
+                  uid: 090d67ad-ff31-4ed6-ab48-94ac7998fb95
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 859bdfc7-87f1-4c0d-8217-2388c34baba4 # Column Width - No Full
+            handle: columnWidth
+            includeInCards: false
+            instructions: null
+            label: 'Content Column Width'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ad1ebb90-e4d8-48d7-9a26-ac553a2f5481
+            userCondition: null
+            warning: null
+            width: 100
+        name: Layout
+        uid: 1268f2d9-3f41-49bd-aa74-0c9f900de391
         userCondition: null
       -
         elementCondition: null

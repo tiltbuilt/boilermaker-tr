@@ -30,7 +30,7 @@ settings:
                   __assoc__:
                     -
                       - label
-                      - 'Extra Small (Phone Vertical)'
+                      - 'Default (All Sizes)'
                     -
                       - value
                       - ''
@@ -41,43 +41,43 @@ settings:
                   __assoc__:
                     -
                       - label
-                      - 'Small (Phone Horizontal)'
+                      - '640px Wide and Above (Phone Horizontal Size)'
+                    -
+                      - value
+                      - '@sm'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '768px Wide and Above (Tablet Vertical Size)'
+                    -
+                      - value
+                      - '@md'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '1024px Wide and Above (Laptop Size)'
+                    -
+                      - value
+                      - '@lg'
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - '1280px Wide and Above (Desktop Size)'
                     -
                       - value
                       - '@xl'
-                    -
-                      - default
-                      - false
-                -
-                  __assoc__:
-                    -
-                      - label
-                      - 'Medium (Tablet)'
-                    -
-                      - value
-                      - '@2xl'
-                    -
-                      - default
-                      - false
-                -
-                  __assoc__:
-                    -
-                      - label
-                      - 'Large (Laptop+)'
-                    -
-                      - value
-                      - '@3xl'
-                    -
-                      - default
-                      - false
-                -
-                  __assoc__:
-                    -
-                      - label
-                      - X-Large(Desktop+)
-                    -
-                      - value
-                      - '@4xl'
                     -
                       - default
                       - false
