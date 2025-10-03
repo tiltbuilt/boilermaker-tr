@@ -44,9 +44,9 @@
 	.slide-content {
 		/* This object positions and sizes the content in the slide based on the positioning settings on the slide layout. */
 		padding: 0;
-		position: relative;
+		position: relative;		
 		
-		@media (min-width: var(--breakpoint-md)) {
+		@container (width >= theme('containers.md')) {
 			max-width: 50%;	
 			padding: var(--spacing-base)
 		}		

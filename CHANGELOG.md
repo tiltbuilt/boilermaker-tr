@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.2.2 - 2025-10-03
+### Fixed
+- Invalid media query in slider css file
+- Error in Make file when trying to install plugins twice
+- Put ddev base project path in for Craft Web  Root env var to prevent issues with uploads not working
+- Put DDEV url environment variable in as primary url in env
+
+### Updated
+- README file to draw attention to ddev start step
+
 ## 3.2.1 - 2025-10-03
 ### Fixed
 - Put in env vars in the starter env file to handle switching asset filesystems between local development and Servd asset platform for staging and production

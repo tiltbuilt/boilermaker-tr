@@ -36,6 +36,9 @@ Docroot location: keep as-is, web is the default
 Project Type: keep as-is, php is the default
 
 ** When the config is finished, you should then run ddev start. **
+```shell
+ddev start
+```
 
 ## Installing Craft
 
