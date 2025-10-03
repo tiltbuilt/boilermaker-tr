@@ -22,7 +22,7 @@ Where the project path part is replaced with the name of the folder for the proj
 
 ### Configure DDEV
 
-**DO NOT SKIP THIS STEP **
+** DO NOT SKIP THIS STEP **
 If you want your site to run on a domain other than https://craftcms.ddev.site, run:
 
 ```shell
@@ -34,6 +34,8 @@ Use the following settings:
 Project name: e.g. mysite would result in a project URL of https://mysite.ddev.site (you will need this later)
 Docroot location: keep as-is, web is the default
 Project Type: keep as-is, php is the default
+
+** When the config is finished, you should then run ddev start. **
 
 ## Installing Craft
 
@@ -57,6 +59,14 @@ This command will:
 8. Installing Craft for the first time, allowing you to set the admin's account credentials
 9. Install all Craft plugins
 
+** IMPORTANT - Use the following settings when running the Craft installer for the database settings **
+Database Server: DB
+Database: DB
+Database User: DB
+Database Password: DB
+Database Port: 3306
+Database Prefix: leave blank
+
 Once the process is complete, type `ddev launch` to open the project in your default browser. 🚀
 
 ## Local development with Vite
@@ -76,7 +86,7 @@ This command will:
 5. Do a one-time build of Vite
 6. Spin up the Vite dev server
 
-Open up a browser to your project domain to verify that Vite is connected. Begin crafting beautiful things. 
+Open up a browser to your project domain to verify that Vite is connected.
 
 ## Makefile
 
@@ -85,10 +95,8 @@ A Makefile has been included to provide a unified CLI for common development com
 - `make install` - Runs a complete one-time process to set the project up and install Craft.
 - `make up` - Starts the DDEV project, ensuring that SSH keys have been added, and npm & Composer have been installed.
 - `make dev` - Runs a one-time build of all front-end assets, then starts Vite's server for HMR.
-- `make build` - Builds all front-end assets.
+- `make build` - Builds all front-end assets. 
 - `make pull` - Pull remote db & assets (requires setting up [craft-scripts](https://github.com/nystudio107/craft-scripts/)
-
-<span style="color:red">**IMPORTANT NOTE - Before you run the install process make sure to copy your .npmrc file into the project, otherwise the npm installstep will fail because it tries to installGSAP's paid suite and it requires authentication.**</span>
 
 
 ## Craft CMS Plugins
@@ -96,8 +104,11 @@ A Makefile has been included to provide a unified CLI for common development com
 1. [Blitz](https://plugins.craftcms.com/blitz)
 1. [Button Box](https://plugins.craftcms.com/buttonbox)
 1. [CK Editor](https://plugins.craftcms.com/ckeditor)
+1. [Cloner](https://plugins.craftcms.com/cloner)
 1. [Colour Swatches](https://plugins.craftcms.com/colour-swatches)
 1. [Color Mixer](https://plugins.craftcms.com/craft-color-mixer)
+1. [Critter](https://plugins.craftcms.com/critter)
+1. [DataStar](https://plugins.craftcms.com/datastar)
 1. [Default Dashboard](https://plugins.craftcms.com/default-dashboard)
 1. [Element Index Defaults](https://plugins.craftcms.com/element-index-defaults)
 1. [Embedded Assets](https://plugins.craftcms.com/embeddedassets)
@@ -105,15 +116,16 @@ A Makefile has been included to provide a unified CLI for common development com
 1. [Feed-Me](https://plugins.craftcms.com/feed-me)
 1. [Field Manager](https://plugins.craftcms.com/field-manager)
 1. [Formie](https://plugins.craftcms.com/formie)
-1. [Hyper](https://plugins.craftcms.com/hyper)
 1. [Icon Picker](https://plugins.craftcms.com/icon-picker)
 1. [Imager-X](https://plugins.craftcms.com/imager-x)
+1. [Imager-X ImgIX Download Transformer](https://plugins.craftcms.com/imager-x-imgix-download-transformer)
 1. [Imager-X Power Pack](https://plugins.craftcms.com/imager-x-power-pack)
 1. [Knock Knock](https://plugins.craftcms.com/knock-knock)
 1. [Minify](https://plugins.craftcms.com/minify)
 1. [Navigation](https://plugins.craftcms.com/navigation)
 1. [Postmark](https://plugins.craftcms.com/postmark)
 1. [Retcon](https://plugins.craftcms.com/retcon)
+1. [Retour](https://plugins.craftcms.com/retour)
 1. [Section and Product Type](https://plugins.craftcms.com/section-and-product-type)
 1. [Seomatic](https://nystudio107.com/docs/seomatic/)
 1. [Servd Assets and Helpers](https://github.com/servdhost/craft-asset-storage)
@@ -123,17 +135,12 @@ A Makefile has been included to provide a unified CLI for common development com
 1. [Typogrify](https://plugins.craftcms.com/typogrify)
 1. [Vite](https://github.com/nystudio107/craft-vite)
 
-## Tailwind Plugins
-
-1. [Aspect Ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
-1. [Container Queries](https://github.com/tailwindlabs/tailwindcss-container-queries)
-1. [Line Clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp)
-1. [Typography](https://github.com/tailwindlabs/tailwindcss-typography)
 
 ## Javascript Libraries
 
 1. [AlpineJS](https://alpinejs.dev/)
-1. [Lazysizes](https://afarkas.github.io/lazysizes/)
+1. [Swiper](https://swiperjs.com/)
+1. [GSAP](https://gsap.com/)
 
 ## Acknowledgments
 

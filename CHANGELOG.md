@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.1 - 2025-10-03
+### Fixed
+- Put in env vars in the starter env file to handle switching asset filesystems between local development and Servd asset platform for staging and production
+
+### Updated
+- README file updated to reflect most recent version and added clearer instructions for the install process
+
 ## 3.2.0 - 2025-10-02
 ### Upgraded
 - Craft CMS and all Plugins
