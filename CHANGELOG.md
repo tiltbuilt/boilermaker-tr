@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.3 - 2025-10-06
+### Fixed
+- Corrected code in page header template and global macro to allow video backgrounds to autoplay correctly
+
 ## 3.2.2 - 2025-10-03
 ### Fixed
 - Invalid media query in slider css file

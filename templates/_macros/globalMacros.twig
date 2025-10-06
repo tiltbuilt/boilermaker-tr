@@ -488,7 +488,7 @@
 {# Output for Video Background #}
 {%- macro backgroundVideo(bgCurrent, divClasses) -%}
 	{% set divClasses = divClasses|merge([bgCurrent.opacity]) %}
-	{% set objClasses = ['background', 'object-' ~ bgCurrent.bgSize, 'object-' ~ bgCurrent.position, 'lazyload'] %}
+	{% set objClasses = ['background', 'object-' ~ bgCurrent.bgSize, 'object-' ~ bgCurrent.position] %}
 		
 	{% set bgAsset = craft.assets().id(bgCurrent.asset).one() %}
 	{% if bgAsset != null %}							
@@ -499,7 +499,7 @@
 			  role="presentation"
 			  preload=""
 			  autoplay playsinline muted loop
-			  data-src="{{ bgAsset.url }}"
+			  src="{{ bgAsset.url }}"
 			  type="{{ bgAsset.mimeType }}"
 			  loading="lazy"			  
 			></video>		
