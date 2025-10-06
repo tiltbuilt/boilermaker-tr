@@ -66,7 +66,7 @@
 	} %}
 	{% set wrapperClasses = [] %}
 	{% for key, value in classSettings %}
-		{% if key != '@md' %}
+		{% if key == '@2xl' %}
 		{% switch classSettings[(key)].columnWidth %}
 			{% case '1/6' %}
 				{% set wrapperClasses = wrapperClasses|merge([key ~ ':max-w-[' ~ (baseMaxList[(key)] * 0.16666667)|round ~ 'px]']) %}
@@ -151,9 +151,21 @@
 				{% set newSettings = newSettings|merge({'imagePosition': 'object-' ~ (layoutSetting.imagePosition)}) %}			
 			{% endif %}
 		{% endif %}		
-	{% endfor %}
-	
+	{% endfor %}	
 	{% set classSettings = classSettings|merge({(key): (newSettings)}) %}
+{% endfor %}
+
+{# Set aspect ratios for section if there are any #}
+{% set imgAspectClasses = [] %}
+{% for layoutSetting in adSettings %}
+	{% if layoutSetting.deviceSize == '' %}
+		{% set devSize = '' %}
+	{% else %}
+		{% set devSize = layoutSetting.deviceSize ~ ':' %}
+	{% endif %}
+	{% if layoutSetting.aspectRatio != '' and layoutSetting.aspectRatio != 'auto' %}
+		{% set imgAspectClasses = imgAspectClasses|merge([devSize ~ 'aspect-' ~ layoutSetting.aspectRatio]) %}
+	{% endif %}
 {% endfor %}
 
 
@@ -245,7 +257,7 @@
 			</div>			
 		</div>
 		
-		<div class="side-photo-img {% if entry.animate and entry.animateContent %}animate{% endif %} {{ _self.imgClasses(classSettings) -}}">
+		<div class="side-photo-img {% if entry.animate and entry.animateContent %}animate{% endif %} {{ _self.imgClasses(classSettings) -}} {{imgAspectClasses|join(' ')}}">
 			{% set image = entry.defaultPhoto.eagerly().one() %}
 			{% set currentAspect = entry.aspectRatio %}
 			{% set xFormWidth = '' %}
@@ -349,14 +361,14 @@
 				
 				{% for sizeKey, srcSettings in srcObjects|reverse %}		
 					{% if srcSettings.image != null or srcSettings.aspect != null %}
-						{% if srcSettings.aspect == 'auto' %}
+						{% if srcSettings.aspect == 'auto' or srcSettings.aspect == '' %}
 							{% set xForm = 'contentImage' %}				
 						{% else %}
 							{% set xForm = 'image-' ~ srcSettings.aspect %}				
 						{% endif %}
 						{% set transformedImages = craft.imagerx.transformImage(srcSettings.image, xForm) %}
 						{% if sizeKey == 'df' %}
-							{% if srcSettings.aspect == 'auto' %}				
+							{% if srcSettings.aspect == 'auto' or srcSettings.aspect == '' %}				
 								{% set xFormWidth = srcSettings.image.width %}
 								{% set xFormHeight = srcSettings.image.height %}
 							{% else %}				

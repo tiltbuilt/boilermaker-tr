@@ -7,6 +7,7 @@
    margin-inline: auto;
    max-width: none;
    
+   /*
    @variant lg {
       max-width: var(--breakpoint-lg);      
    }
@@ -14,6 +15,7 @@
    @variant xl {
       max-width: var(--breakpoint-xl);      
    }
+   */
 
    @variant 2xl {
       max-width: var(--breakpoint-2xl);      
