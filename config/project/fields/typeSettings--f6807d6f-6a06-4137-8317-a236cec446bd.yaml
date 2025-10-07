@@ -286,6 +286,41 @@ settings:
                             14:
                               - fieldUid
                               - 1bda444e-0c10-4d30-ab1d-f9d24f8b3244 # Number of Text Columns
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - constrainLineLength
+                            2:
+                              - label
+                              - 'Constrain Line Length?'
+                            3:
+                              - instructions
+                              - 'Turn this field on to limit how wide lines of text in a paragraph or list in this element can get. Useful for scenarios where the text is in a section with no layout columns, etc.'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-10-07T15:38:54+00:00'
+                            11:
+                              - uid
+                              - 00c6b509-ad95-44e5-a36f-19419e796c32
+                            14:
+                              - fieldUid
+                              - a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             3:
               - cardThumbAlignment
               - end

@@ -70,12 +70,7 @@
 	{% for tabObj in fLayout.tabs %}				
 		{% for tabEl in tabObj.elements %}				
 			{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}				
-				{% if tabEl.field.handle != 'numberOfTextColumns' %}
-					{% if typeSettings.getFieldValue(tabEl.field.handle)|length %}
-						{% set classItem = typeSettings.getFieldValue(tabEl.field.handle) %}					
-						{% set classList = classList|merge([classItem]) %}
-					{% endif %}
-				{% else %}
+				{% if tabEl.field.handle == 'numberOfTextColumns' %}
 					{% for textColumnAdjustment in typeSettings.numberOfTextColumns.eagerly().all() %}
 						{% if textColumnAdjustment.layoutSize|length %}
 							{% set classItem = textColumnAdjustment.layoutSize ~ ':' %}							
@@ -85,6 +80,15 @@
 						{% set classItem = classItem ~ textColumnAdjustment.numberOfColumns %}
 						{% set classList = classList|merge([classItem]) %}
 					{% endfor %}
+				{% elseif tabEl.field.handle == 'constrainLineLength' %}
+					{% if typeSettings.constrainLineLength %}
+						{% set classList = classList|merge(['constrain-text']) %}
+					{% endif %}
+				{% else %}					
+					{% if typeSettings.getFieldValue(tabEl.field.handle)|length %}
+						{% set classItem = typeSettings.getFieldValue(tabEl.field.handle) %}					
+						{% set classList = classList|merge([classItem]) %}
+					{% endif %}
 				{% endif %}				
 			{% endif %}				
 		{% endfor %}		

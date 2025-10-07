@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.2.4 - 2025-10-07
+### Changed
+- Side by Side Photo section now has minimum aspect ratio control for the photo side and has the wrapper constraints removed on all but the 2xl size
+- Max-width prose has been removed as a global style on all p, ol and ul tags, but it has been added to the Type Settings field as a settable option on element blocks. When turned on, it applies to all p, ol, and ul tags in the element. It is implemented on the page header by default.
+
+### Fixed
+- Columns no longer add both gap and padding when the gutter padding is set on a layout block. Now the gap is added only.
+
 ## 3.2.3 - 2025-10-06
 ### Fixed
 - Corrected code in page header template and global macro to allow video backgrounds to autoplay correctly

@@ -99,8 +99,8 @@ fieldLayouts:
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
             includeInCards: false
-            instructions: 'Use this field to set a minimum aspect ratio for the entire section itself in case there is not much content in the section and you want the photo to have more visibility.'
-            label: 'Section Minimum Aspect Ratio'
+            instructions: 'Use this field to set a minimum aspect ratio for the photo in case there is not much content in the section and you want the photo to have more visibility.'
+            label: 'Photo Minimum Aspect Ratio'
             providesThumbs: false
             required: false
             tip: null

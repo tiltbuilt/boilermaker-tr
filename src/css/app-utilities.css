@@ -6,16 +6,6 @@
 @utility container {    
    margin-inline: auto;
    max-width: none;
-   
-   /*
-   @variant lg {
-      max-width: var(--breakpoint-lg);      
-   }
-
-   @variant xl {
-      max-width: var(--breakpoint-xl);      
-   }
-   */
 
    @variant 2xl {
       max-width: var(--breakpoint-2xl);      
@@ -54,5 +44,11 @@
       height: 12rem;
       font-size: 12rem;
       line-height: 1;
+   }
+}
+
+@utility constrain-text {
+   p, ul, ol {
+      max-width: var(--prose); 
    }
 }
