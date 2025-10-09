@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.5 - 2025-10-09
+### Changed
+- Classes on page header layout div to help ensure proper stacking on the image in larger layouts
+
+### Removed
+- Old colors.css file now that all color setup is done in theme files
+
 ## 3.2.4 - 2025-10-07
 ### Changed
 - Side by Side Photo section now has minimum aspect ratio control for the photo side and has the wrapper constraints removed on all but the 2xl size
