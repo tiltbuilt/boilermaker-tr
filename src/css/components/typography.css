@@ -52,12 +52,12 @@
 
 	p, ul, ol {
 		margin: 0;
-		margin-top: var(--spacing-base);
+		margin-top: var(--spacing-text);
 		   
 
 		& > li {	 
 			margin: 0;
-			margin-top: var(--spacing-base);
+			margin-top: var(--spacing-quarter);
 		}
 
 		ul, ol {

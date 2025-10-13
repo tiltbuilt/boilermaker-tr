@@ -75,14 +75,18 @@ document.addEventListener('alpine:init', () => {
       if (animateContent) {
         const animParent = this.$refs.animparent;
         const animSelector = "#" + animParent.getAttribute('id') + " .animate" ;
-        const animCast = document.querySelectorAll(animSelector);        
+        const animCast = document.querySelectorAll(animSelector);
+        gsap.set(animCast, {
+          opacity: 0,
+          y: -50
+        });        
         if (staggerAnimations) {          
           ScrollTrigger.batch(animCast, {
-            onEnter: batch => gsap.from(batch, 
+            onEnter: batch => gsap.to(batch, 
             {
               duration: duration * 1.5,		
-              y: 50,
-              opacity: 0,
+              y: 0,
+              opacity: 1,
               // Note: Easing Pack required for easing
               ease: "expo.out",
               onComplete() {
@@ -95,10 +99,10 @@ document.addEventListener('alpine:init', () => {
           });         
         } else {
           animCast.forEach(animItem => {              
-            gsap.from(animItem, { 			
+            gsap.to(animItem, { 			
               duration: duration * 1.5,
-              y: 50,			
-              opacity: 0,              			
+              y: 0,			
+              opacity: 1,              			
               // Note: Easing Pack required for easing
               ease: "expo.out",
               onComplete: this.postRevealFunction,              	
@@ -111,10 +115,10 @@ document.addEventListener('alpine:init', () => {
         }
       } else {
         const animElem = this.$refs.animate;     
-        gsap.from(animElem, {
+        gsap.to(animElem, {
           duration: duration * 1.5,
-          y: 50,          
-          opacity: 0,			
+          y: 0,          
+          opacity: 1,			
           // Note: Easing Pack required for easing
           ease: "expo.out",
           onComplete: this.postReveal,          			
@@ -137,13 +141,16 @@ document.addEventListener('alpine:init', () => {
       if (animateContent) {
         const animParent = this.$refs.animparent;
         const animSelector = "#" + animParent.getAttribute('id') + " .animate" ;
-        const animCast = document.querySelectorAll(animSelector);        
+        const animCast = document.querySelectorAll(animSelector);
+        gsap.set(animCast, {
+          opacity: 0,          
+        });        
         if (staggerAnimations) {          
           ScrollTrigger.batch(animCast, {
-            onEnter: batch => gsap.from(batch, 
+            onEnter: batch => gsap.to(batch, 
             {
               duration: duration * 1.5,	              
-              opacity: 0,
+              opacity: 1,
               // Note: Easing Pack required for easing
               ease: "expo.out",
               onComplete() {
@@ -156,9 +163,9 @@ document.addEventListener('alpine:init', () => {
           });         
         } else {
           animCast.forEach(animItem => {              
-            gsap.from(animItem, { 			
+            gsap.to(animItem, { 			
               duration: duration * 1.5,              			
-              opacity: 0,              			
+              opacity: 1,              			
               // Note: Easing Pack required for easing
               ease: "expo.out",
               onComplete: this.postRevealFunction,              	
@@ -171,10 +178,10 @@ document.addEventListener('alpine:init', () => {
         }
       } else {
         const animElem = this.$refs.animate;     
-        gsap.from(animElem, {
+        gsap.to(animElem, {
           duration: duration * 1.5,          
           force3D: true,
-          opacity: 0,			
+          opacity: 1,			
           // Note: Easing Pack required for easing
           ease: "expo.out",
           onComplete: this.postReveal,          			

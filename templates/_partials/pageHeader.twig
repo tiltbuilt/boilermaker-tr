@@ -33,7 +33,7 @@
     {% set pageHeaderColorScheme = entry.pageHeaderColorScheme.class %}
 {% endif %}
 
-<div id="{{entry.slug}}-page-header" class="page-header @container {{pageHeaderColorScheme}} " x-data="sectionStandard(true, true)"	
+<div id="{{entry.slug}}-page-header" class="page-header section-standard @container {{pageHeaderColorScheme}} " x-data="sectionStandard(true, true)"	
 x-ref="animparent">
 	<div class="page-header-photo-wrapper aspect-{{smHeaderAspect}} md:aspect-auto md:absolute md:inset-0 md:h-full">       
         {% if not entry.imageryType %}

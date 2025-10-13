@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.2.6 - 2025-10-13
+### Upgraded
+- Craft and SEOMatic
+
+### Changed
+- Made tweaks to animation reveals to prevent flashing of content
+- Added spacing-text class to control spacing between paragraph, lists, etc.
+
 ## 3.2.5 - 2025-10-09
 ### Changed
 - Classes on page header layout div to help ensure proper stacking on the image in larger layouts
