@@ -1,4 +1,4 @@
-dateModified: 1759851534
+dateModified: 1763414864
 elementSources:
   craft\elements\Entry:
     -
@@ -349,6 +349,10 @@ meta:
     ff69ab5e-ca5c-4a62-bf54-ea602aa3d6b4: 'Imagery Type' # Imagery Type
     ff110645-b126-49e5-9ed9-a720a1a9d3d2: 'Notification Bar Color' # Notification Bar Color
 plugins:
+  author-toolbar:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   blitz:
     edition: standard
     enabled: true
@@ -430,6 +434,10 @@ plugins:
       ssiTagFormat: '<!--#include virtual="{uri}" -->'
       trackElementQueries: true
       trackElements: true
+  boarding:
+    edition: pro
+    enabled: true    
+    schemaVersion: 1.0.3
   buttonbox:
     edition: standard
     enabled: true
@@ -452,8 +460,7 @@ plugins:
     schemaVersion: 1.0.0
   critter:
     edition: standard
-    enabled: true
-    licenseKey: E61VY7C155SIUNGRPGSV1AZY
+    enabled: true    
     schemaVersion: 1.0.0
   datastar:
     edition: standard
@@ -478,20 +485,18 @@ plugins:
   feed-me:
     edition: standard
     enabled: true
-    schemaVersion: 5.1.1
+    schemaVersion: 5.14.0
   field-manager:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
   formie:
     edition: standard
-    enabled: true
-    licenseKey: Z2TKXCPCSLGLRAT70BFEM1QC
-    schemaVersion: 3.4.10
+    enabled: true    
+    schemaVersion: 3.4.11
   icon-picker:
     edition: standard
-    enabled: true
-    licenseKey: 8FDDC0PBJSDMI6HYP4XYB3R3
+    enabled: true    
     schemaVersion: 1.2.3
     settings:
       enableCache: false
@@ -504,8 +509,7 @@ plugins:
       redactorFieldHandle: icon
   imager-x:
     edition: pro
-    enabled: true
-    licenseKey: WNZH530QE6O6NXG01SWZVSTT
+    enabled: true    
     schemaVersion: 4.0.0
   imager-x-imgix-download-transformer:
     edition: standard
@@ -525,8 +529,7 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true
-    licenseKey: Y4FS66D3C0TPO8A58N8CFS5X
+    enabled: true    
     schemaVersion: 2.1.1
   postmark:
     edition: standard
@@ -538,8 +541,7 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true
-    licenseKey: 9WQ4I4OUMN2GAHKUZ0MT2P7E
+    enabled: true    
     schemaVersion: 3.0.12
   section-and-product-type:
     edition: standard
@@ -547,8 +549,7 @@ plugins:
     schemaVersion: 2.0.8
   seomatic:
     edition: standard
-    enabled: true
-    licenseKey: JJ00TU9YYRW5XTR5JINUTOR4
+    enabled: true    
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
@@ -596,6 +597,10 @@ plugins:
     enabled: true
     schemaVersion: 3.0.0
   typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  upsnap:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

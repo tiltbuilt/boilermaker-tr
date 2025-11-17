@@ -36,5 +36,12 @@
    "@php -r \"@unlink('LICENSE.md');\"",
    "@php -r \"@unlink('README.md');\""
   ]
- }
+ },
+ "repositories": [
+  {
+   "type": "composer",
+   "url": "https://composer.craftcms.com",
+   "canonical": false
+  }
+ ]
 }
