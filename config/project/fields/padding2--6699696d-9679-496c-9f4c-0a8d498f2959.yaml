@@ -4,26 +4,155 @@ instructions: null
 name: 'Padding 2'
 searchable: false
 settings:
-  createButtonLabel: 'Add Padding Adjustment'
-  defaultIndexViewMode: cards
-  enableVersioning: false
-  entryTypes:
-    -
-      __assoc__:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 5c8a2137-f243-4ee7-8a06-b19e191c13e7
         -
-          - uid
-          - e70a2aff-50a6-4307-ac61-fca778c6e08d # Padding Adjustment
-        -
-          - group
-          - General
-  includeTableView: false
-  maxEntries: 10
-  minEntries: null
-  pageSize: null
-  propagationKeyFormat: null
-  propagationMethod: all
-  showCardsInGrid: false
-  viewMode: blocks
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 24eed58a-f005-45b3-a56e-2d7740d5260a
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - pt
+                            2:
+                              - label
+                              - 'Top Padding'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-18T23:10:37+00:00'
+                            11:
+                              - uid
+                              - 7af78459-462e-4839-8931-70fe11f8882b
+                            14:
+                              - fieldUid
+                              - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - pb
+                            2:
+                              - label
+                              - 'Bottom Padding'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-18T23:10:37+00:00'
+                            11:
+                              - uid
+                              - 09363d55-74a9-47eb-9a46-fa1538a81799
+                            14:
+                              - fieldUid
+                              - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - pl
+                            2:
+                              - label
+                              - 'Left Padding'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-18T23:10:37+00:00'
+                            11:
+                              - uid
+                              - 629c12df-4690-4c7f-a326-7121564698f4
+                            14:
+                              - fieldUid
+                              - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - pr
+                            2:
+                              - label
+                              - 'Padding Right'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-18T23:10:37+00:00'
+                            11:
+                              - uid
+                              - 8256f9fd-afdf-4b1e-b1eb-2962ae3c5b6d
+                            14:
+                              - fieldUid
+                              - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
 translationKeyFormat: null
 translationMethod: site
-type: craft\fields\Matrix
+type: craft\fields\ContentBlock

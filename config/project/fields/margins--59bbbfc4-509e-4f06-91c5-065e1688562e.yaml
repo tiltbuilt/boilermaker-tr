@@ -1,29 +1,94 @@
 columnSuffix: null
 handle: margins
-instructions: 'This field allows you to override the default style sheet settings for padding of this element. To use it, add a breakpoint adjustments, select the layout size where you want the adjustment to become active, and select the changes to the margins on the different sides of the element. The adjustments can stack so you can add adjustments for multiple different breakpoints if needed.'
+instructions: null
 name: Margins
 searchable: false
 settings:
-  createButtonLabel: 'Add Margin Adjustment'
-  defaultIndexViewMode: cards
-  enableVersioning: false
-  entryTypes:
-    -
-      __assoc__:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 8ef66d5d-b445-443a-8285-7f27d4a744bc
         -
-          - uid
-          - 988c8572-16b9-4e94-9297-d33d4b9d8411 # Margin Adjustment
-        -
-          - group
-          - General
-  includeTableView: false
-  maxEntries: 10
-  minEntries: null
-  pageSize: null
-  propagationKeyFormat: null
-  propagationMethod: all
-  showCardsInGrid: false
-  viewMode: blocks
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - ea858fff-df90-4a5e-a3e8-bb5739e49041
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - mt
+                            2:
+                              - label
+                              - 'Top Margin'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-18T22:25:17+00:00'
+                            11:
+                              - uid
+                              - 95360aa7-e77b-4a84-b0f4-d3586eb2db19
+                            14:
+                              - fieldUid
+                              - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - mb
+                            2:
+                              - label
+                              - 'Bottom Margin'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-11-18T22:25:17+00:00'
+                            11:
+                              - uid
+                              - 8f5235e6-297d-4549-9580-d09ac6cca279
+                            14:
+                              - fieldUid
+                              - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
 translationKeyFormat: null
 translationMethod: site
-type: craft\fields\Matrix
+type: craft\fields\ContentBlock

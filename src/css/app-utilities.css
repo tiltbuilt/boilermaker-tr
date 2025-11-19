@@ -2,20 +2,6 @@
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
  * BUTTON CLASSES NEED TO GO HERE SINCE THEY ARE GROUPED IF YOU WANT THEM TO BE RESPONSIVE */
- 
-@utility container {    
-   margin-inline: auto;
-   max-width: none;
-
-   @variant 2xl {
-      max-width: var(--breakpoint-2xl);      
-   }
-} 
-
-@utility container-fullwidth {
-   @apply max-w-full;
-}
-
 
 @utility icon-small {        
         
@@ -48,7 +34,7 @@
 }
 
 @utility constrain-text {
-   p, ul, ol {
+   p, ol, ul, h1, h2, h3, h4, h5, h6 {
       max-width: var(--prose); 
    }
 }

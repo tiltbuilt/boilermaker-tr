@@ -86,23 +86,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-04-04T22:15:56+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
-            handle: fullscreen
-            includeInCards: false
-            instructions: null
-            label: 'Full Screen Width?'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d086b585-c6da-4f13-a7a5-a01b97f272af
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2025-08-28T16:31:21+00:00'
             elementCondition: null
             heading: Padding

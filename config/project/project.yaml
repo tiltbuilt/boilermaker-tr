@@ -1,4 +1,4 @@
-dateModified: 1763414864
+dateModified: 1763507437
 elementSources:
   craft\elements\Entry:
     -
@@ -167,6 +167,7 @@ meta:
     6a43a3aa-97db-498c-b938-2d84a3519729: Pages # Pages
     6b484609-7d28-4f55-990e-f5212885d922: 'Custom ID' # Custom ID
     6f54afc7-9741-4a74-9500-6ac9ecabb1e9: 'SEO - Robots' # SEO - Robots
+    7a8599c0-dfe2-4df7-b924-2368c50d96c4: 'Video Settings' # Video Settings
     7c366b82-7c53-4dd2-a425-1c416a3e1464: 'Content Videos' # Content Videos
     7f182d27-ea6e-4a71-a3f8-5c9d0f147eed: 'Layout Size' # Layout Size
     8cc5dd8d-bd39-47c6-8ccd-8e3f4a743300: 'Background Image Small' # Background Image Small
@@ -209,6 +210,7 @@ meta:
     91d05e51-ee38-4e73-af4c-ebed7e7572d3: Spacing # Spacing
     93bf7bd8-1004-4c0c-be4d-7b59aa97021e: 'List Order' # List Order
     96e05d50-67cf-45ef-8670-b1764a09015a: 'Column Position' # Column Position
+    98ef6ef6-573d-4db4-9fbe-c4762deb5af5: 'Media Type' # Media Type
     99a21841-a7ac-4726-85bf-4628867cba30: Display # Display
     206d3220-640b-4b20-a440-faaa801a11d9: 'Display State' # Display State
     335fab75-2107-4c96-80b2-14808539eadd: 'Button Group' # Button Group
@@ -223,7 +225,7 @@ meta:
     732c729f-8dbb-4f01-a463-c163ddc13eab: 'Left Right' # Left Right
     859bdfc7-87f1-4c0d-8217-2388c34baba4: 'Column Width - No Full' # Column Width - No Full
     0888a226-1804-4ac8-a00d-8b539fdd3483: '404 Page Content' # 404 Page Content
-    938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Photo Section' # Side by Side Photo Section
+    938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Media Section' # Side by Side Media Section
     988c8572-16b9-4e94-9297-d33d4b9d8411: 'Margin Adjustment' # Margin Adjustment
     2186e435-0cf5-4c2f-8436-888d6d2e00c9: 'Image Settings' # Image Settings
     3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c: 'Background Image' # Background Image
@@ -245,6 +247,7 @@ meta:
     699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
     738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
     781363bc-1fd0-4fcc-83b2-80a20c416f57: 'Content Cards' # Content Cards
+    799408b2-fdd7-4511-8204-816afb8c2057: 'Art Direction - Video' # Art Direction - Video
     951299a5-0a7b-4281-a104-a93d875ef18d: 'Side Photo Content Layout Adjustment' # Side Photo Content Layout Adjustment
     1274916c-2577-42bf-a9be-c2a1d3ea5336: New # New
     3245198b-294e-4033-ab6f-56530c5758a1: 'Image Size Adjustment' # Image Size Adjustment
@@ -330,6 +333,7 @@ meta:
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
     e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
     ea38d6d4-055b-43b8-b876-2bcab46e11c8: 'Company Info' # Company Info
+    eaf22e5f-1786-41e9-bc4d-0a8682bab8af: 'Media Device Size' # Media Device Size
     eb38218b-e090-4cec-807f-ab70934109ba: 'First Last' # First Last
     ec02fe58-24eb-430e-961f-fb063723276c: 'Image Size' # Image Size
     ee64f702-a8f1-46ee-8dea-79f8ad82e25b: 'Custom Attributes' # Custom Attributes
@@ -436,7 +440,8 @@ plugins:
       trackElements: true
   boarding:
     edition: pro
-    enabled: true    
+    enabled: true
+    licenseKey: 7NWCCKZZNG1BI34ZJJ999A9F
     schemaVersion: 1.0.3
   buttonbox:
     edition: standard
@@ -460,7 +465,8 @@ plugins:
     schemaVersion: 1.0.0
   critter:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: GX5P0KJCQQUPW1HN4FVCE414
     schemaVersion: 1.0.0
   datastar:
     edition: standard
@@ -492,11 +498,13 @@ plugins:
     schemaVersion: 1.0.0
   formie:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: 9UJLPC9MIB1LFA5H71XO4NFS
     schemaVersion: 3.4.11
   icon-picker:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: U7NRVRB8X8ZMIQ8EQNYZATAA
     schemaVersion: 1.2.3
     settings:
       enableCache: false
@@ -509,7 +517,8 @@ plugins:
       redactorFieldHandle: icon
   imager-x:
     edition: pro
-    enabled: true    
+    enabled: true
+    licenseKey: MLFGV1NSRNQFNIUUEB35QGVX
     schemaVersion: 4.0.0
   imager-x-imgix-download-transformer:
     edition: standard
@@ -529,7 +538,8 @@ plugins:
     schemaVersion: 1.0.0
   navigation:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: 4NGDY778PUBYATTK1L91ONOC
     schemaVersion: 2.1.1
   postmark:
     edition: standard
@@ -541,7 +551,8 @@ plugins:
     schemaVersion: 1.0.0
   retour:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: B01ZLCXWAVFHKER3WNLUVI54
     schemaVersion: 3.0.12
   section-and-product-type:
     edition: standard
@@ -549,7 +560,8 @@ plugins:
     schemaVersion: 2.0.8
   seomatic:
     edition: standard
-    enabled: true    
+    enabled: true
+    licenseKey: 98MYH2EXNGL4FD1JT5GIUY8H
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard

@@ -37,60 +37,50 @@
 {% if entry.bgColor|length %}
 	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
 {% endif %}
+{% if entry.textColor|length %}
+	{% set colorClasses = colorClasses|merge(['text-' ~ entry.textColor]) %}
+{% endif %}
 {% set sectionClassList = sectionClassList|merge(colorClasses) %}
 
 {# set size tracking object to help with image sizes attributes #}
-{% if entry.fullscreen %}
-	{% set sizeTracker = {
-		'@df': {'size': 90, 'unit': 'vw'},
-		'@xs': {'size': 90, 'unit': 'vw'},
-		'@sm': {'size': 90, 'unit': 'vw'},
-		'@md': {'size': 90, 'unit': 'vw'},
-		'@lg': {'size': 90, 'unit': 'vw'},
-		'@xl': {'size': 90, 'unit': 'vw'},
-		'@2xl': {'size': 90, 'unit': 'vw'},
-	} %}
-{% else %}
-	{% set sizeTracker = {
-		'@df': {'size': 90, 'unit': 'vw'},
-		'@xs': {'size': 90, 'unit': 'vw'},
-		'@sm': {'size': 90, 'unit': 'vw'},
-		'@md': {'size': 90, 'unit': 'vw'},
-		'@lg': {'size': 994, 'unit': 'px'},
-		'@xl': {'size': 1250, 'unit': 'px'},
-		'@2xl':{'size': 1506, 'unit': 'px'},
-	} %}
-{% endif %}
-
+{% set sizeTracker = {
+	'@df': {'size': 90, 'unit': 'vw'},
+	'@xs': {'size': 90, 'unit': 'vw'},
+	'@sm': {'size': 90, 'unit': 'vw'},
+	'@md': {'size': 90, 'unit': 'vw'},
+	'@lg': {'size': 90, 'unit': 'vw'},
+	'@xl': {'size': 90, 'unit': 'vw'},
+	'@2xl': {'size': 90, 'unit': 'vw'},
+} %}
 
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+<section id="{{blockId}}" class="{{- blockClass }} @container {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }} {{entry.borders}}" {{- gMacros.attributesOut(entry.customAttributes) }}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
 {% endif %}
 >
-	<div class="container {{- entry.fullscreen ? 'container-fullscreen' -}}">
-		<div class="inner container-inner {{- gMacros.typeClasses(entry.typeSettings) -}} {{- gMacros.spacingClasses(entry.padding) -}}">			
-			{% for chunk in entry.elementContent %}
-				{% if chunk.type == 'markup' %}
-					{% if entry.animate and entry.animateContent %}
-						{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-					{% else %}
-						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-					{% endif %}
-				{% else %}
-					{{ chunk.entry.render({
-						'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
-						'colorScheme': colorScheme,						
-						'sizeTracker': sizeTracker
-					}) }}
-				{% endif %}
-			{% endfor %}							
-		</div>		
-	</div>
+	
+<div class="inner section-inner {{- gMacros.typeClasses(entry.typeSettings) -}} {{- gMacros.spacingClasses(entry.padding, true) -}}">			
+	{% for chunk in entry.elementContent %}
+		{% if chunk.type == 'markup' %}
+			{% if entry.animate and entry.animateContent %}
+				{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
+			{% else %}
+				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
+			{% endif %}
+		{% else %}
+			{{ chunk.entry.render({
+				'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
+				'colorScheme': colorScheme,						
+				'sizeTracker': sizeTracker
+			}) }}
+		{% endif %}
+	{% endfor %}							
+</div>		
+	
 	<div class="background">
 		{{ gMacros.buildElementBackground(backgroundSettings) }}
 	</div>	

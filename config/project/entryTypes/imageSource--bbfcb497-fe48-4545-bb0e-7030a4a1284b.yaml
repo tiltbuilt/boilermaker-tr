@@ -11,36 +11,26 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-09-20T22:30:13+00:00'
+            dateAdded: '2025-11-18T19:08:13+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
-            handle: null
+            fieldUid: eaf22e5f-1786-41e9-bc4d-0a8682bab8af # Media Device Size
+            handle: deviceSize
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Device Size'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5bbe81f2-0f37-4a54-8031-6fdc50998ba4
+            uid: 6ace2b64-74ff-4822-8f23-f7686a12c799
             userCondition: null
             warning: null
             width: 100
           -
             dateAdded: '2025-09-20T22:30:13+00:00'
             editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
-                  layoutElementUid: 5bbe81f2-0f37-4a54-8031-6fdc50998ba4
-                  operator: notempty
-                  uid: 31585e10-9e5c-4a12-80c4-d104e48795c2
-              elementType: craft\elements\Entry
-              fieldContext: global
+            elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
             includeInCards: true
@@ -55,19 +45,53 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-11-18T19:08:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: frameAspect
+            includeInCards: false
+            instructions: null
+            label: 'Frame Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 124f8809-df4a-4b7b-ad2f-f8355ef1e718
+            userCondition: null
+            warning: null
+            width: 50
+          -
             dateAdded: '2025-09-20T22:30:13+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
-            handle: null
+            handle: mediaAspect
             includeInCards: true
             instructions: null
-            label: null
+            label: 'Media Aspect Ratio'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 81437c9c-e54a-4f5a-8feb-6c80feeed144
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-11-18T19:08:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: mediaPosition
+            includeInCards: false
+            instructions: null
+            label: 'Media Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5a9d649-8947-4609-bf34-44c4f8a701d6
             userCondition: null
             warning: null
             width: 100

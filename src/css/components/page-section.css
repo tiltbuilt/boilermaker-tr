@@ -16,61 +16,44 @@
       background-color: var(--color-section-background);
    }
 
-   .container-inner {
-      padding: var(--spacing-base);
-   } 
+   .section-inner {
+      padding-inline: var(--spacing-section-x-base);
+      padding-block: var(--spacing-section-y-base);
+   }
 
    /* SIDE BYSIDE PHOTO SECTION */
 
-   .section-side-photo {
-      /* These classes must stay in order to ensure functionality */
-      position: relative;
+   .section-side-media {
+      /* These classes must stay in order to ensure functionality */     
       width: 100vw;
       margin: 0;   
       /* The default classes and style below can be changed on a per-project basis */
       color: var(--color-section-text);
       background-color: var(--color-section-background);
-   }
-
-   .side-section-layout {
-      display: flex;
+      display: grid;
       justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      height: 100%;
+      align-items: stretch;	
+      position: relative;      
+      grid-template-columns: repeat(12, 1fr);        
+      gap: var(--spacing-base);
    }
 
-   .side-photo-content {
-      @apply w-full @md:w-1/2;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
+   
+   .side-media-content {
+      @apply col-span-12 @md:col-span-6;     
       position: relative;
+      padding-inline: var(--spacing-section-x-base);
+      padding-block: var(--spacing-section-y-base);
+      align-self: center;
    }
 
-   .side-photo-content-wrapper {
-      width: 100%;
-      padding: var(--spacing-base);
+   .side-media-media {
+      @apply col-span-12 @md:col-span-6; 
       position: relative;
-      z-index: 10;   
+      /*aspect-ratio: 16/9;
+      overflow: hidden; */  
    }
-
-   .side-photo-img {
-      @apply w-full @md:w-1/2;
-      position: relative;   
-   }
-
-   @container (width >= theme('containers.2xl')) {
-      .side-photo-content-wrapper {
-         max-width: calc(100% - ((100vw - 1536px)/2));  
-      }
-   }
-
-   .fullwidth .side-photo-content-wrapper {
-      width: 100%;  
-   }
-
-
+   
 }
 
 

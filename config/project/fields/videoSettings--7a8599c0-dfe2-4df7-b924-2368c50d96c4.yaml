@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: videoSettings
+instructions: 'Use this field to change settings for the video on a per device basis. You can change to a different video at certain device sizes or change the aspect ratio of the image being used, etc.'
+name: 'Video Settings'
+searchable: false
+settings:
+  createButtonLabel: 'Adjust Video'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 799408b2-fdd7-4511-8204-816afb8c2057 # Art Direction - Video
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 5
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

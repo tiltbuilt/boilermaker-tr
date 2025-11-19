@@ -63,9 +63,36 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:51:50+00:00'
+            dateAdded: '2025-11-18T18:28:08+00:00'
             editCondition: null
             elementCondition: null
+            fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8420fc7-a703-4a0b-bd5e-935c817da1de
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-19T20:51:50+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
+                  layoutElementUid: b8420fc7-a703-4a0b-bd5e-935c817da1de
+                  uid: 1f1ac51e-2151-43b7-95c2-2f60ae77b4d2
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: defaultPhoto
             includeInCards: false
@@ -78,7 +105,34 @@ fieldLayouts:
             uid: f656522e-23f6-47f9-aab5-15280eeb92ed
             userCondition: null
             warning: null
-            width: 50
+            width: 100
+          -
+            dateAdded: '2025-11-18T20:02:48+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
+                  layoutElementUid: b8420fc7-a703-4a0b-bd5e-935c817da1de
+                  uid: 50995a98-9d20-4632-9a6b-fda4e1a74fb2
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: cdbe0d46-9b4d-47a1-854d-cc894a161dd5 # Background Video
+            handle: defaultVideo
+            includeInCards: false
+            instructions: null
+            label: 'Default Video'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d646cf5-f8ea-4250-bab9-2b60385f21f0
+            userCondition: null
+            warning: null
+            width: 100
           -
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
@@ -97,14 +151,41 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-05-19T20:51:50+00:00'
+            dateAdded: '2025-11-18T18:28:08+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
-            handle: null
+            handle: frameAspect
             includeInCards: false
-            instructions: 'Sets the aspect ratio of the photo to be used. Select a size close to what the dimensions are in the layout to reduce cropping.'
-            label: 'Default Aspect Ratio'
+            instructions: 'Sets the minimum aspect ratio of the media (photo/video) side of the section.'
+            label: 'Frame Aspect Ratio'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8fc46ec7-b189-44e4-a079-71d24023c129
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-05-19T20:51:50+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
+                  layoutElementUid: b8420fc7-a703-4a0b-bd5e-935c817da1de
+                  uid: e2201981-383c-4a7b-a446-d79cb7f8fe15
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+            handle: mediaAspect
+            includeInCards: false
+            instructions: 'Sets what the aspect ratio of the media being displayed within the frame. '
+            label: 'Media Aspect Ratio'
             providesThumbs: false
             required: false
             tip: null
@@ -114,9 +195,36 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2025-09-28T21:05:51+00:00'
+            dateAdded: '2025-11-18T20:02:48+00:00'
             editCondition: null
             elementCondition: null
+            fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
+            handle: mediaPosition
+            includeInCards: false
+            instructions: null
+            label: 'Media Position'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f0ae8cb9-4b03-4fc4-ae5f-3b8a141fd7c7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-28T21:05:51+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
+                  layoutElementUid: b8420fc7-a703-4a0b-bd5e-935c817da1de
+                  uid: e48e37e2-4cac-4ecf-b115-2ef25dbc79f7
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: 2186e435-0cf5-4c2f-8436-888d6d2e00c9 # Image Settings
             handle: null
             includeInCards: false
@@ -130,29 +238,39 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Photo
+          -
+            dateAdded: '2025-11-18T20:02:48+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
+                  layoutElementUid: b8420fc7-a703-4a0b-bd5e-935c817da1de
+                  uid: 82bb92f8-288b-462a-b013-f34584b02863
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 7a8599c0-dfe2-4df7-b924-2368c50d96c4 # Video Settings
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc6a5bff-efd4-4f64-beab-a2f849154ac7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Media
         uid: 72506d55-7177-4860-a2e6-a41a385c844b
         userCondition: null
       -
         elementCondition: null
         elements:
-          -
-            dateAdded: '2025-05-19T20:51:50+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
-            handle: fullscreen
-            includeInCards: false
-            instructions: null
-            label: 'Full Screen Width?'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0c626548-19a0-4346-9f76-85402ecf9165
-            userCondition: null
-            warning: null
-            width: 100
           -
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
@@ -506,10 +624,10 @@ fieldLayouts:
         name: Advanced
         uid: 19688c00-f44b-4f0e-b507-72b502a4c6ae
         userCondition: null
-handle: sectionSidePhoto
+handle: sectionSideMedia
 hasTitleField: true
 icon: null
-name: 'Side by Side Photo Section'
+name: 'Side by Side Media Section'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
