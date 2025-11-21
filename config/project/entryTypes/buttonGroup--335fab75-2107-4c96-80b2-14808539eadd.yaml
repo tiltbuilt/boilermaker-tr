@@ -193,6 +193,23 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-11-20T20:06:52+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 82142db1-96fa-4ed9-a7e4-501f639e73f5 # Button Orientation
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8b4beae0-54ca-44eb-8ebd-f38d91502c27
+            userCondition: null
+            warning: null
+            width: 100
         name: 'Spacing & Alignment'
         uid: 11ec67d9-d410-47c5-88c2-7aaf5113d3f4
         userCondition: null

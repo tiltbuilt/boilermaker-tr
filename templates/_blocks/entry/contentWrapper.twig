@@ -54,7 +54,7 @@
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ wrapperClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
+<div id="{{blockId}}" class="{{- blockClass }} @container {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ wrapperClassList|join(' ') }} {{ entry.customClasses }} {{entry.borders}}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="inner content-wrapper-inner {{- gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding) }}">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}

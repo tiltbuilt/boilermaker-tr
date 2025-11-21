@@ -84,38 +84,6 @@ fieldLayouts:
             dismissible: false
             elementCondition: null
             style: tip
-            tip: 'These override settings are applied to all of the tabs in the tab set, but they can be overridden by setting in each respective tab as well.'
-            type: craft\fieldlayoutelements\Tip
-            uid: c69c8e60-4122-48a1-bcf9-493d4492da37
-            userCondition: null
-          -
-            dateAdded: '2025-08-28T17:13:55+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4b42d1d0-1804-4a4d-bfdc-3b6009806927
-            userCondition: null
-            warning: null
-            width: 100
-        name: Type
-        uid: 4142c225-e2da-4837-9600-2aa175fd35cc
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-08-28T17:13:55+00:00'
-            dismissible: false
-            elementCondition: null
-            style: tip
             tip: 'The padding override settings here are applied to all of the tabs in the set, but can be overridden by settings in each respective tab. The margin setting is for the tab set itself.'
             type: craft\fieldlayoutelements\Tip
             uid: 8394c866-d165-4656-b3c1-d96eb6eee1be
@@ -197,40 +165,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a1cfaa8b-df74-4370-b426-a82cc9d5eff1
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:49:09+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: bgColor
-            includeInCards: false
-            instructions: null
-            label: 'Background Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8dc185fb-3f6b-4cf1-9bad-465b35e6336c
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-08-28T17:13:55+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: textColor
-            includeInCards: false
-            instructions: null
-            label: 'Text Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0c1a1c84-502a-4646-9538-8772a527a781
             userCondition: null
             warning: null
             width: 100

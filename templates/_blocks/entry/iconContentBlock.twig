@@ -95,7 +95,7 @@
 			{% elseif entry.icon.type == 'css' %}
 				<i class="{{ entry.icon }}"></i>								
 			{% else %}
-				<svg><use xlink:href="/sprites.svg#{{ entry.icon.value }}"></use></svg>
+				<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ entry.icon.value }}"></use></svg>
 			{% endif %}
 		</div>	
 		{% if entry.blockContent|length %}

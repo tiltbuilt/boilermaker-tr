@@ -199,8 +199,6 @@
 		/* TYPOGRAPHY */
 		--color-type-headline-default: var(--color-white);
 		--color-type-subhead-default: var(--color-white);
-	}
-	
-	
+	}	
 
 }

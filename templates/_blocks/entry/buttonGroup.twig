@@ -55,6 +55,7 @@
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
+{% set colorClass = colorScheme %}
 {% if entry.btnColor.value|length %}
 	{% set colorClass = entry.btnColor %}
 {% else %}
@@ -77,7 +78,7 @@
 }
 %}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {{entry.horizontalAlignment}} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{colorScheme}} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {% if entry.buttonOrientation %}btn-group-stacked {{entry.buttonHorizontalAlignment}}{% else %}btn-group-inline {{entry.horizontalAlignment}}{% endif %} %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{colorScheme}} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
 	{% set buttons = entry.buttons.eagerly().all() %}
 	{% for button in buttons %}
 		{# get styles for button or if not set, use styles from the set #}

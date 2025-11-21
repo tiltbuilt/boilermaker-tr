@@ -9,15 +9,7 @@
     .inner {
         position: relative;
         z-index: 10;
-        height: 100%;    
-
-        &::after {
-        content: '';
-        clear: both;
-        height: 0px;
-        width: 0px;
-        display: table;
-        }    
+        height: 100%;      
     }
 
     /* set up basic styles for background element */
@@ -79,6 +71,7 @@
         justify-content: start;
         align-items: center;
         flex-wrap: nowrap;
+        margin-inline: var(--spacing-half);
         
         i {
             display: block;

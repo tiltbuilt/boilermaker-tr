@@ -60,6 +60,7 @@
 
 		color: var(--color-button-text-text);
 		background-color: transparent;
+		border: none;
 
 		&::after {
 			font: var(--fa-font-solid);

@@ -143,38 +143,6 @@ fieldLayouts:
             style: tip
             tip: 'The settings for this element are applied to each of the sub accordions in the set. They can be overridden in the individual accordions if needed.'
             type: craft\fieldlayoutelements\Tip
-            uid: b84bdaf3-4061-4b13-abfd-eb567d3531c1
-            userCondition: null
-          -
-            dateAdded: '2025-08-27T18:44:12+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 751cb276-77b5-43d2-8001-90cc10f5cf33
-            userCondition: null
-            warning: null
-            width: 100
-        name: Type
-        uid: a350c90f-2306-44f1-b30d-26e01ef9fbca
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-08-27T19:47:27+00:00'
-            dismissible: false
-            elementCondition: null
-            style: tip
-            tip: 'The settings for this element are applied to each of the sub accordions in the set. They can be overridden in the individual accordions if needed.'
-            type: craft\fieldlayoutelements\Tip
             uid: 946ccdcc-2c4b-48b1-aa7e-6039a2c4176f
             userCondition: null
           -
@@ -191,40 +159,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9b7d457a-bf24-447b-bbed-346ab8996846
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-05-19T20:49:36+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: bgColor
-            includeInCards: false
-            instructions: 'The color selected here will replace the background color selected in the color scheme selected'
-            label: 'Background Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 80cc07f8-cf71-4953-a8cb-53966fc1da2b
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-08-27T18:44:12+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
-            handle: textColor
-            includeInCards: false
-            instructions: null
-            label: 'Text Color'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 3faa03f2-349a-42f2-b439-de41f6b2d798
             userCondition: null
             warning: null
             width: 100

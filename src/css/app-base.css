@@ -9,8 +9,7 @@
     box-sizing: border-box;
   }
   
-  html {
-    font-size: 62.5%; /* sets up base font size of root element at 10px which allows for easier sizing as it is base 10 - for example 1.6rem = 16px */
+  html {    
     width: 100vw;
     height: 100vh;  
   }

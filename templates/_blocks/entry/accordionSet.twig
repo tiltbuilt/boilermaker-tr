@@ -46,7 +46,7 @@
 {% endif %}
 
 {# Retrieve styling adjustments #}
-{% set setPadding = entry.padding.eagerly().all() %}
+{% set setPadding = entry.padding %}
 
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
@@ -72,13 +72,7 @@
 			{% set accColorScheme = colorScheme %}
 		{% endif %}
 		{% set colorClasses = colorClasses|merge([accColorScheme]) %}
-		{% if acc.bgColor|length %}
-			{% set colorClasses = colorClasses|merge(['bg-' ~ acc.bgColor]) %}
-		{% else %}
-			{% if entry.bgColor|length %}
-				{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
-			{% endif %}
-		{% endif %}
+		
 		{% set accClassList = accClassList|merge(colorClasses) %}
 		
 		{% if acc.accordionIcon|length %}
@@ -94,59 +88,23 @@
 		{# sort out content styling #}
 
 		{% set styleListMaster = ['accordion-content'] %}
-		{% set styleObj = {} %}	
+				
+		{% set accPadding = acc.padding %}
 
-		
-		{% set accPadding = acc.padding.eagerly().all() %}
-			
-		{% for adj in accPadding %}
-			{% set devSize = adj.layoutSize %}
-			{% if devSize|length %}
-				{% set devSize = devSize ~ ':' %}	
-			{% endif %}
-						
-			{% set fLayout = adj.getFieldLayout() %}
-			{% for tabObj in fLayout.tabs %}									
-				{% for tabEl in tabObj.elements %}				
-					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-						{% if tabEl.field.handle != 'deviceSize' %}
-							{% if adj.getFieldValue(tabEl.field.handle)|length %}
-								{% set styleHandle = devSize ~ tabEl.field.handle %}
-								{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ adj.getFieldValue(tabEl.field.handle)}) %}
-							{% endif %}
-						{% endif%}
-					{% endif %}				
-				{% endfor %}			
-			{% endfor %}					
-		{% endfor %}
-		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
-		
-		{% for setAdj in setPadding %}			
-			{% set devSize = setAdj.layoutSize %}
-			{% if devSize|length %}
-				{% set devSize = devSize ~ ':' %}	
-			{% endif %}
-			{% set fLayout = setAdj.getFieldLayout() %}
-			{% for tabObj in fLayout.tabs %}					
-				{% for tabEl in tabObj.elements %}				
-					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-						{% if tabEl.field.handle != 'deviceSize' %}
-							{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
-								{% set styleHandle = devSize ~ tabEl.field.handle %}
-								{% if styleObj[styleHandle] is not defined %}
-									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
-								{% endif %}
-							{% endif %}
-						{% endif %}
-					{% endif %}				
-				{% endfor %}				
+		{# loop through the padding settings  to see if tabs have specific settings and if not, fall back to set setting and add to style list #}
+		{% set fLayout = accPadding.getFieldLayout() %}
+		{% for tabObj in fLayout.tabs %}									
+			{% for tabEl in tabObj.elements %}
+				{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+					{% if accPadding.getFieldValue(tabEl.field.handle)|length %}
+						{% set styleListMaster = styleListMaster|merge([tabEl.field.handle ~ '-' ~ accPadding.getFieldValue(tabEl.field.handle)]) %}
+					{% elseif setPadding.getFieldValue(tabEl.field.handle)|length %}
+						{% set styleListMaster = styleListMaster|merge([tabEl.field.handle ~ '-' ~ setPadding.getFieldValue(tabEl.field.handle)]) %}
+					{% endif %}
+				{% endif %}
 			{% endfor %}
 		{% endfor %}
-		
-		{% for key, value in styleObj %}
-			{% set styleListMaster = styleListMaster|merge([value]) %}
-		{% endfor %}
-			
+						
 		<div id="{{accId}}" x-data="{
 			id: {{loop.index}},
 			{% if entry.accordionsAllowMultiple %}
@@ -178,17 +136,17 @@
 							{% elseif accIcon.type == 'css' %}
 								<i class="{{ accIcon.value }}"></i>								
 							{% else %}
-								<svg><use xlink:href="/sprites.svg#{{ accIcon.value }}"></use></svg>
+								<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ accIcon.value }}"></use></svg>
 							{% endif %}
 						{% else %}
-							<svg><use xlink:href="/sprites.svg#icon-caret-right"></use></svg>
+							<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#icon-caret-right"></use></svg>
 						{% endif %}
 					</div>					
 				</button>
 			</{{setHeaderLevel}}>
 	
 			<div x-show="expanded" x-collapse.duration.300ms >
-				<div class="{{- styleListMaster|join(' ') }}">				
+				<div class="{{- styleListMaster|join(' ') }} {{ gMacros.typeClasses(acc.typeSettings) -}}">				
 					{% for chunk in acc.elementContent %}
 						{% if chunk.type == 'markup' %}
 							{{chunk|raw|retconAttr('ul', {'class': 'bullet-list'})|typogrify}}

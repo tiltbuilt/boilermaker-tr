@@ -40,16 +40,12 @@
 
 {# insert layout changes #}
 
-{% for layoutItem in entry.layoutSettings %}
+{% for layoutItem in entry.layoutSettings.eagerly().all() %}
 	{% set devSize = layoutItem.layoutSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
-
 	
-	{% if layoutItem.horizontalAlignment|length %}
-		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.horizontalAlignment]) %}
-	{% endif %}
 	{% if layoutItem.verticalAlignment|length %}
 		{% set rowClassList = rowClassList|merge([devSize ~ layoutItem.verticalAlignment]) %}
 	{% endif %}

@@ -1,4 +1,4 @@
-dateModified: 1763507437
+dateModified: 1763762029
 elementSources:
   craft\elements\Entry:
     -
@@ -241,6 +241,7 @@ meta:
     62336b23-c907-4179-a797-e2f7a8d75533: 'Type Overrides - Subhead' # Type Overrides - Subhead
     68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
     74484c3f-217d-4141-ba59-128676f0ee17: 'Icon Content Vertical Layout Adjustment' # Icon Content Vertical Layout Adjustment
+    82142db1-96fa-4ed9-a7e4-501f639e73f5: 'Button Orientation' # Button Orientation
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
     00126482-6097-458c-9944-33b1227df3ce: 'Column Padding Adjustment' # Column Padding Adjustment
     253138fc-844f-44ce-b802-ceba93597569: 'Content Card' # Content Card
@@ -357,6 +358,53 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+    settings:
+      accountSettingsLinkEnabled: true
+      actionButtonsEnabled: true
+      assetsLinkEnabled: true
+      company: TILT
+      contextBarEnabled: true
+      creatableEntries:
+        __assoc__:
+          -
+            - Modals
+            - ''
+          -
+            - NotificationBarAlerts
+            - '0'
+          -
+            - Pages
+            - '1'
+          -
+            - ReusableModules
+            - '0'
+      customStartMenuLinks:
+        -
+          __assoc__:
+            -
+              - label
+              - ''
+            -
+              - href
+              - ''
+            -
+              - enabled
+              - ''
+      dashboardLinkEnabled: true
+      email: webbies@tiltthis.com
+      entriesLinkEnabled: true
+      globalSearchEnabled: true
+      helpMenuEnabled: true
+      info: ''
+      inventoryLinkEnabled: true
+      issueTicketUrl: ''
+      logoutLinkEnabled: true
+      ordersLinkEnabled: true
+      phoneNumber: 225.389.1433
+      productsLinkEnabled: true
+      seoMenuEnabled: true
+      startMenuEnabled: true
+      toolbarEnabled: true
   blitz:
     edition: standard
     enabled: true

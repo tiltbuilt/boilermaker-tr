@@ -46,7 +46,8 @@
 {% endif %}
 
 {# Retrieve styling adjustments #}
-{% set setPadding = entry.padding.eagerly().all() %}
+{% set setPadding = entry.padding %}
+
 
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
@@ -98,13 +99,7 @@
 		  {% set tabColorScheme = colorScheme %}
 	  {% endif %}
 	  {% set colorClasses = colorClasses|merge([tabColorScheme]) %}
-	  {% if tab.bgColor|length %}
-		  {% set colorClasses = colorClasses|merge(['bg-' ~ tab.bgColor]) %}
-	  {% else %}
-		  {% if entry.bgColor|length %}
-			  {% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
-		  {% endif %}
-	  {% endif %}
+	  
 	  
 	  <!-- Tab -->
 	  <li>
@@ -127,7 +122,7 @@
 			{% elseif tab.icon.type == 'css' %}
 				<i class="{{ tab.icon.value }}"></i>								
 			{% else %}
-				<svg><use xlink:href="/sprites.svg#{{ tab.icon.value }}"></use></svg>
+				<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ tab.icon.value }}"></use></svg>
 			{% endif %}
 			</div>
 		{% endif %}
@@ -155,74 +150,34 @@
 		{% else %}
 			{% set tabColorScheme = colorScheme %}
 		{% endif %}
-		{% set colorClasses = colorClasses|merge([tabColorScheme]) %}
-		{% if tab.bgColor|length %}
-			{% set colorClasses = colorClasses|merge(['bg-' ~ tab.bgColor]) %}
-		{% else %}
-			{% if entry.bgColor|length %}
-				{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}
-			{% endif %}
-		{% endif %}
+		{% set colorClasses = colorClasses|merge([tabColorScheme]) %}		
 		{% set tabClassList = tabClassList|merge(colorClasses) %}
 				
-		{# sort out content styling #}
-		{% set styleListMaster = [] %}
-		{% set styleObj = {} %}
-		{% set tabPadding = tab.padding.eagerly().all() %}				
-		{% for adj in tabPadding %}
-			{% set devSize = adj.layoutSize %}
-			{% if devSize|length %}
-				{% set devSize = devSize ~ ':' %}	
-			{% endif %}		
-			{# loop through the tabs in the accordion adjustments and add to the style object, accordion adjustments get priority, so set class name to key and value to compare against set adjustments so the set adjustments that don't have conflicts get added but not the ones with accordion overrides #}
-			{% set fLayout = adj.getFieldLayout() %}
-			{% for tabObj in fLayout.tabs %}									
-				{% for tabEl in tabObj.elements %}				
-					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-						{% if tabEl.field.handle != 'deviceSize' %}
-							{% if adj.getFieldValue(tabEl.field.handle)|length %}
-								{% set styleHandle = devSize ~ tabEl.field.handle %}
-								{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ adj.getFieldValue(tabEl.field.handle)}) %}
-							{% endif %}
-						{% endif %}
-					{% endif %}				
-				{% endfor %}			
-			{% endfor %}					
-		{% endfor %}
-		{# sweep through adjustments from accordion set and if adjustment doesn't have an override already in the list from the accordion itself, then add it.#}
-		{% for setAdj in setPadding %}			
-			{% set devSize = setAdj.layoutSize %}
-			{% if devSize|length %}
-				{% set devSize = devSize ~ ':' %}	
-			{% endif %}
-			{% set fLayout = setAdj.getFieldLayout() %}
-			{% for tabObj in fLayout.tabs %}				
-				{% for tabEl in tabObj.elements %}				
-					{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
-						{% if tabEl.field.handle != 'deviceSize' %}
-							{% if setAdj.getFieldValue(tabEl.field.handle)|length %}
-								{% set styleHandle = devSize ~ tabEl.field.handle %}
-								{% if styleObj[styleHandle] is not defined %}
-									{% set styleObj = styleObj|merge({(styleHandle) : devSize ~ tabEl.field.handle ~ '-' ~ setAdj.getFieldValue(tabEl.field.handle)}) %}
-								{% endif %}
-							{% endif %}
-						{% endif %}
-					{% endif %}				
-				{% endfor %}					
+					
+		{% set tabPadding = tab.padding %}
+				
+		{# loop through the padding settings  to see if tabs have specific settings and if not, fall back to set setting and add to style list #}
+		{% set fLayout = tabPadding.getFieldLayout() %}
+		{% for tabObj in fLayout.tabs %}									
+			{% for tabEl in tabObj.elements %}
+				{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+					{% if tabPadding.getFieldValue(tabEl.field.handle)|length %}
+						{% set tabClassList = tabClassList|merge([tabEl.field.handle ~ '-' ~ tabPadding.getFieldValue(tabEl.field.handle)]) %}
+					{% elseif setPadding.getFieldValue(tabEl.field.handle)|length %}
+						{% set tabClassList = tabClassList|merge([tabEl.field.handle ~ '-' ~ setPadding.getFieldValue(tabEl.field.handle)]) %}
+					{% endif %}
+				{% endif %}
 			{% endfor %}
 		{% endfor %}
+				
 		
-		{% for key, value in styleObj %}
-			{% set styleListMaster = styleListMaster|merge([value]) %}
-		{% endfor %}
-		{% set tabClassList = tabClassList|merge(styleListMaster) %}
 	
 	  <!-- Panel -->
 	  <div
 		x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
 		:aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
 		role="tabpanel"
-		class="{{- tabClassList|join(' ') }}" {{- gMacros.attributesOut(tab.customAttributes) -}}
+		class="{{- tabClassList|join(' ') }} {{ gMacros.typeClasses(tab.typeSettings) -}}" {{- gMacros.attributesOut(tab.customAttributes) -}}
 	  >     
 		{% for chunk in tab.elementContent %}
 			{% if chunk.type == 'markup' %}

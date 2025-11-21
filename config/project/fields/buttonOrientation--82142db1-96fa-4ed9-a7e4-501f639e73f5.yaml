@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: buttonOrientation
+instructions: null
+name: 'Button Orientation'
+searchable: false
+settings:
+  default: false
+  offLabel: Inline
+  onLabel: Stacked
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -57,24 +57,24 @@
 {# Retrieve styling adjustments #}
 {#{% set adjustments = entry.slideStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{blockClass}} swiper-slide @md:pb-0 {{ slideClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} {% if entry.slideTimingOverride != '' %}data-swiper-autoplay="{{entry.slideTimingOverride}}"{% endif %}>
+<div id="{{blockId}}" class="{{blockClass}} swiper-slide md:pb-0 {{ slideClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}} {% if entry.slideTimingOverride != '' %}data-swiper-autoplay="{{entry.slideTimingOverride}}"{% endif %}>
 	
 	{% if image != null %}
-		<div class="slide-image aspect-{{slideAspectSm}} @md:aspect-{{slideAspectLg}}">			
+		<div class="slide-image aspect-{{slideAspectSm}} md:aspect-{{slideAspectLg}}">			
 			{% set sizesAttr = '' %}
 			{% for key, values in sizeTracker|reverse %}
 				{% switch key %}
-					{% case '@xs' %}
+					{% case 'xs' %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 320px) ' ~ values.size ~ values.unit %}
-					{% case '@sm' %}
+					{% case 'sm' %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 640px) ' ~ values.size ~ values.unit %}
-					{% case '@md' %}
+					{% case 'md' %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 768px) ' ~ values.size ~ values.unit %}
-					{% case '@lg' %}
+					{% case 'lg' %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 1024px) ' ~ values.size ~ values.unit %}
-					{% case '@xl' %}
+					{% case 'xl' %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 1280px) ' ~ values.size ~ values.unit %}
-					{% case '@2xl' %}
+					{% case '2xl' %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 1536px) ' ~ values.size ~ values.unit %}
 					{% default %}
 						{% set sizesAttr = sizesAttr ~ '(min-width: 320px) ' ~ values.size ~ values.unit %}

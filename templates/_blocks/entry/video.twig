@@ -46,8 +46,8 @@
 {% endif %}
 {% set colorClasses = [] %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
-{% if entry.captionColor|length %}
-	{% set colorClasses = colorClasses|merge(['text-' ~ entry.captionColor]) %}
+{% if entry.textColor|length %}
+	{% set colorClasses = colorClasses|merge(['text-' ~ entry.textColor]) %}
 {% endif %}
 {% if entry.bgColor|length %}
 	{% set colorClasses = colorClasses|merge(['bg-' ~ entry.bgColor]) %}

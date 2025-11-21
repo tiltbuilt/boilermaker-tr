@@ -13,7 +13,7 @@
 {# Strip tags from a string except for a certain subset #}
 
 {% macro stripTags(string, safeTagsString) %}
-  {% set safeTagsString = (safeTagsString ? safeTagsString : '<b><strong><i><em><a><br>') %}
+  {% set safeTagsString = (safeTagsString ? safeTagsString : '<b><strong><i><em><a><br><span>') %}
   {{- string|striptags(safeTagsString)|raw -}}
 {% endmacro stripTags %}
 
@@ -55,7 +55,7 @@
 		{% elseif socialLink.icon.type == 'css' %}
 			<i class="{{ socialLink.icon }}"></i>								
 		{% else %}
-			<svg><use xlink:href="/sprites.svg#{{ socialLink.icon.value }}"></use></svg>
+			<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ socialLink.icon.value }}"></use></svg>
 		{% endif %}
 		</a>
 	{% endfor %}
@@ -96,41 +96,42 @@
 	{{ classList|join(' ') }}
 {% endmacro typeClasses %}
 
-{% macro spacingClasses(spaceSettings) %}
+{% macro spacingClasses(spaceSettings, isSection) %}
 	{% set classList = [] %}
-	{% for spaceAdjustment in spaceSettings.eagerly().all() %}
-		{% set fLayout = spaceAdjustment.getFieldLayout() %}
-		{% for tabObj in fLayout.tabs %}			
-			{% for tabEl in tabObj.elements %}				
-				{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}				
-					{% if tabEl.field.handle != 'layoutSize' %}
-						{% if spaceAdjustment.getFieldValue(tabEl.field.handle)|length %}
-							{% if spaceAdjustment.layoutSize|length %}
-								{% set classItem = spaceAdjustment.layoutSize ~ ':' %}								
-							{% else %}
-								{% set classItem = '' %}
-							{% endif %}
-							{% set classItem = classItem ~ tabEl.field.handle ~ '-' ~ spaceAdjustment.getFieldValue(tabEl.field.handle) %}						
-							{% set classList = classList|merge([classItem]) %}
-						{% endif %}						
-					{% endif %}				
-				{% endif %}				
-			{% endfor %}		
+	{% set fLayout = spaceSettings.getFieldLayout() %}
+	{% for tabObj in fLayout.tabs %}				
+		{% for tabEl in tabObj.elements %}				
+			{% if isSection %}
+				{% if tabEl.field.handle == 'pt' or tabEl.field.handle == 'pb' or tabEl.field.handle == 'mt' or tabEl.field.handle == 'mb' %}
+					{% set middleSegment = '-section-y-' %}
+				{% else %}
+					{% set middleSegment = '-section-x-' %}
+				{% endif %}
+			{% else %}
+				{% set middleSegment = '-' %}
+			{% endif %}
+			{% if tabEl.className is same as("craft\\fieldlayoutelements\\CustomField") %}
+				{% if spaceSettings.getFieldValue(tabEl.field.handle)|length %}
+					{% set classList = classList|merge([tabEl.field.handle ~ middleSegment ~ spaceSettings.getFieldValue(tabEl.field.handle)]) %}					
+				{% endif %}
+			{% endif %}
 		{% endfor %}
 	{% endfor %}
-	{{- classList|join(' ') -}}
+	{{ classList|join(' ') }}
 {% endmacro spacingClasses %}
 
 {% macro widthClasses(widthSettings) %}
 	{% set classList = [] %}
 	{% for widthAdjustment in widthSettings %}
-		{% if widthAdjustment.layoutSize|length %}
-			{% set classItem = widthAdjustment.layoutSize ~ ':' %}			
-		{% else %}
-			{% set classItem = '' %}
-		{% endif %}
-		{% set classItem = classItem ~ 'w-' ~ widthAdjustment.width %}						
-		{% set classList = classList|merge([classItem]) %}		
+		{% if widthAdjustment.width|length %}
+			{% if widthAdjustment.layoutSize|length %}
+				{% set classItem = widthAdjustment.layoutSize ~ ':' %}			
+			{% else %}
+				{% set classItem = '' %}
+			{% endif %}
+			{% set classItem = classItem ~ 'w-' ~ widthAdjustment.width %}						
+			{% set classList = classList|merge([classItem]) %}
+		{% endif %}		
 	{% endfor %}
 	{{- classList|join(' ') -}}
 {% endmacro widthClasses %}
@@ -165,13 +166,13 @@
 		{# if not then element is image block so see if imageSizeField has anything set. If not use sizeTracker, if so then process size settings #}
 		{% if imageSizeField|length %}
 			{% set imageSizeData = {
-				'@df': {},
-				'@xs': {},
-				'@sm': {},
-				'@md': {},
-				'@lg': {},
-				'@xl': {},
-				'@2xl': {},
+				'df': {},
+				'xs': {},
+				'sm': {},
+				'md': {},
+				'lg': {},
+				'xl': {},
+				'2xl': {},
 			} %}
 			{% for key, dataSet in imageSizeData %}
 				{% for fieldSetting in imageSizeField %}
@@ -227,17 +228,17 @@
 	{% set sizesAttrOutput = '' %}
 	{% for key, value in imageSizeData|reverse %}
 		{% switch key %}
-			{% case '@xs' %}
+			{% case 'xs' %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 320px) ' ~ value.size ~ value.unit %}
-			{% case '@sm' %}
+			{% case 'sm' %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 640px) ' ~ value.size ~ value.unit %}
-			{% case '@md' %}
+			{% case 'md' %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 768px) ' ~ value.size ~ value.unit %}
-			{% case '@lg' %}
+			{% case 'lg' %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 1024px) ' ~ value.size ~ value.unit %}
-			{% case '@xl' %}
+			{% case 'xl' %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 1280px) ' ~ value.size ~ value.unit %}
-			{% case '@2xl' %}
+			{% case '2xl' %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ '(min-width: 1536px) ' ~ value.size ~ value.unit %}
 			{% default %}
 				{% set sizesAttrOutput = sizesAttrOutput ~ value.size ~ value.unit %}
@@ -288,15 +289,15 @@
 {%- macro buildElementBackground(adjustments) -%}	
 	{% import '_macros/globalMacros' as gMacros %}
 	{# Create an array with a slot for each possible layout size and then write in an object with the info for each background. Slots are named to match layuot sizes with @df for default phone vert size, write each object to its appropriate slot based on device size setting. That way the bgs are always written in the correct order #}
-	{% set bgOrder = ['@df', '@xs', '@sm', '@md', '@lg', '@xl', '@2xl' ] %}
+	{% set bgOrder = ['df', 'xs', 'sm', 'md', 'lg', 'xl', '2xl' ] %}
 	{% set bgSet = {
-		'@df': null,
-		'@xs': null,
-		'@sm': null,
-		'@md': null,
-		'@lg': null,
-		'@xl': null,
-		'@2xl': null,		
+		'df': null,
+		'xs': null,
+		'sm': null,
+		'md': null,
+		'lg': null,
+		'xl': null,
+		'2xl': null,		
 	} %}	
 	{# set null variable outside of loop to store the bg asset so that if there is a change in aspect or position settings etc. but not the asset it can still set the asset without it having to be uploaded to the field in each case #}
 	{% set bgCurrent = null %}

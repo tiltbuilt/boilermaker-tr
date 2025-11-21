@@ -9,8 +9,8 @@
 	.page-header-layout {
 		width: 100%;
 		display: flex;
-		padding-block: var(--spacing-2x);		
-		padding-inline: var(--spacing-base);		
+		padding-block: var(--spacing-section-y-base);		
+		padding-inline: var(--spacing-section-x-base);		
 		text-align: center;
 		justify-content: center;
 		align-items: center;
@@ -29,15 +29,23 @@
 
 	.page-header-headline {
 		font-weight: bold;
-		font-size: var(--text-6xl);	
+		font-size: var(--text-4xl);	
 		color: var(--color-pg-header-headline);
 	}
 
 	.page-header-subhead {
 		margin-top: var(--spacing-half);
 		font-weight: bold;
-		font-size: var(--text-3xl);
+		font-size: var(--text-xl);
 		color: var(--color-pg-header-subhead);
+	}
+
+	.page-header-headline + .page-header-subhead {
+		margin-top: 0;
+	}
+
+	.page-header-subhead + .page-header-headline {
+		margin-top: 0;
 	}
 
 	.page-header-intro {
