@@ -37,7 +37,7 @@
 	--spacing-neg-3x: calc(-3 * var(--spacing-base));
 	
 	
-	/* BREAKPOINTS ADJUSTED FOR 10px BASE SIZE */
+	/* BREAKPOINTS  */
 	--breakpoint-xs: 320px;
 	--breakpoint-sm: 640px;
 	--breakpoint-md: 768px;
@@ -45,8 +45,8 @@
 	--breakpoint-xl: 1280px;
 	--breakpoint-2xl: 1536px;
 	
-	
-	--container-xs: 20rem;
+	/* CONTAINER BREAKPOINTS  */
+	--container-xs: 25rem;
 	--container-sm: 40rem;
 	--container-md: 48rem;
 	--container-lg: 64rem;	

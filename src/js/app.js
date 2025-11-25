@@ -7,19 +7,8 @@ import 'swiper/css/bundle';
 
 /* JS */
 //import 'lazysizes';
-import { gsap } from "gsap";    
-import { CustomEase } from "gsap/CustomEase";
-import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";    
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
-/* The following plugins are Club GSAP perks */
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-import { SplitText } from "gsap/SplitText";
+import { animate, scroll, cubicBezier, easeOut, hover, press, inView, resize } from "motion"
+
 //import * as YTPlayer from 'yt-player';
 
 /* SCRIPTS HERE */

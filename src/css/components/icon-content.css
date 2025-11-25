@@ -45,7 +45,7 @@
 	}
 
 	.icon-block-horizontal {
-		@apply flex-col justify-center items-center @lg:flex-row @lg:justify-start @lg:items-start; 
+		@apply flex-col justify-center items-center @xs:flex-row @xs:justify-start @xs:items-start; 
 		
 		
 		/* the width settings on the icon-wrapper class take into account the different icon size settings and the built in padding of 1.5 rem on one side. If you change the base icon sizes in the css, you need to adjust these sizes accordingly. */
