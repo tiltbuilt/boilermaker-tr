@@ -1,4 +1,4 @@
-dateModified: 1763762029
+dateModified: 1766099504
 elementSources:
   craft\elements\Entry:
     -
@@ -408,7 +408,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true
-    licenseKey: WJN1BY9ELQU1J9ZL5UREW5HJ
+    licenseKey: PD0GGIUJCIT7H64ZP34SCTK7
     schemaVersion: 5.12.0
     settings:
       apiKey: ''
@@ -548,7 +548,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 9UJLPC9MIB1LFA5H71XO4NFS
-    schemaVersion: 3.4.11
+    schemaVersion: 3.4.12
   icon-picker:
     edition: standard
     enabled: true

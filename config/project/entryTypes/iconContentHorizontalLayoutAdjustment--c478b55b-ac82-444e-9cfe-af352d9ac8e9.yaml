@@ -6,6 +6,7 @@ fieldLayouts:
     cardView:
       - 'layoutElement:d090f2d1-7659-4a89-ac42-29831e5fe903'
       - 'layoutElement:24fef589-57ed-471f-99ae-0ca273410623'
+      - 'layoutElement:1467fb4d-3ae3-4daa-9454-340fb77cc7d2'
     tabs:
       -
         elementCondition: null
@@ -58,6 +59,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 24fef589-57ed-471f-99ae-0ca273410623
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-12-18T22:05:43+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
+            handle: iconSpacing
+            includeInCards: true
+            instructions: null
+            label: 'Icon Spacing'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1467fb4d-3ae3-4daa-9454-340fb77cc7d2
             userCondition: null
             warning: null
             width: 100

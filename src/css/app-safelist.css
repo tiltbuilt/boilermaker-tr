@@ -7,11 +7,9 @@
 @source inline('{m,mx,my,mt,ml,mr,mb}-{0,quarter,half,base,2x,3x,4x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x}');
 @source inline('{m,mx,my,mt,ml,mr,mb}-section-{x,y}-{0,quarter,half,base,2x,3x,4x,neg-quarter,neg-half,neg-base,neg-2x,neg-3x,neg-4x}');
 @source inline('gap-{0,quarter,half,base,2x,3x,4x}');
-@source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:gap-{0,quarter,half,base,2x,3x,4x}');
-@source inline('gap-{0,quarter,half,base,2x,3x,4x}');
-@source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:gap-{0,quarter,half,base,2x,3x,4x}');
+@source inline('{xs,sm,md,lg,xl,2xl,@xs,@sm,@md,@lg,@xl,@2xl}:gap-{0,quarter,half,base,2x,3x,4x}');
 @source inline('gap-section-x-{0,quarter,half,base,2x,3x,4x}');
-@source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:gap-section-x-{0,quarter,half,base,2x,3x,4x}');
+@source inline('{md,lg,xl,2xl}:gap-section-x-{0,quarter,half,base,2x,3x,4x}');
 
 /* TEXT SIZES */
 @source inline('text-{xs,sm,base,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}');

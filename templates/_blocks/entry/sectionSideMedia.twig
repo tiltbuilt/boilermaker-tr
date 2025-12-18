@@ -108,10 +108,10 @@
 {% endif %}
 
 {% set allSettings = {
-	'@md': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
-	'@lg': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
-	'@xl': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
-	'@2xl': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
+	'md': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
+	'lg': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
+	'xl': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
+	'2xl': {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null},
 } %}
 
 {% set newSettings = {'columnWidth': '1/2', 'contentPosition': positionClass, 'gap': 'gap-section-x-base', 'verticalAlignment': 'self-center', 'mediaPosition': posClass, 'mediaAspect': 'video', 'frameAspect': frameClass, 'mediaAsset': null} %}
@@ -196,13 +196,13 @@
 {# SET SIZETRACKER #}
 
 {% set sizeTracker = {
-	'@df': {'size': 90, 'unit': 'vw'},
-	'@xs': {'size': 90, 'unit': 'vw'},
-	'@sm': {'size': 90, 'unit': 'vw'},
-	'@md': {'size': 90, 'unit': 'vw'},
-	'@lg': {'size': 90, 'unit': 'vw'},
-	'@xl': {'size': 90, 'unit': 'vw'},
-	'@2xl': {'size': 90, 'unit': 'vw'},
+	'df': {'size': 90, 'unit': 'vw'},
+	'xs': {'size': 90, 'unit': 'vw'},
+	'sm': {'size': 90, 'unit': 'vw'},
+	'md': {'size': 90, 'unit': 'vw'},
+	'lg': {'size': 90, 'unit': 'vw'},
+	'xl': {'size': 90, 'unit': 'vw'},
+	'2xl': {'size': 90, 'unit': 'vw'},
 } %}
 
 {% for key, value in allSettings %}
@@ -300,7 +300,7 @@
 				} %}
 
 				{% for key, setting in allSettings %}
-					{% set newKey = key|slice(1) %}					
+					{% set newKey = key %}					
 					{% set origSrcObject = srcObjects[newKey] %}
 					{% set newSrcObject = origSrcObject %}
 					{% switch setting.columnWidth %}

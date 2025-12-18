@@ -59,7 +59,8 @@
 	{% endif %}	
 	{% if entry.blockLayout %}
 		{% if layoutAdj.iconVerticalAlignment|length %}
-			{% set iconClasses = iconClasses|merge([devSize ~ 'self-' ~ layoutAdj.iconVerticalAlignment]) %}
+			{% set layoutClasses = layoutClasses|merge([devSize ~ 'items-' ~ layoutAdj.iconVerticalAlignment]) %}
+			{% set layoutClasses = layoutClasses|merge([devSize ~ 'gap-' ~ layoutAdj.iconSpacing]) %}
 		{% endif %}
 	{% else %}
 		{% if layoutAdj.iconHorizontalAlignment|length %}
