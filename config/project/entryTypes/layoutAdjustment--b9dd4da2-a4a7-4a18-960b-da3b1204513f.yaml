@@ -4,9 +4,7 @@ fieldLayouts:
   cb7267dc-730a-43ac-bee9-1c0b2b7b9b78:
     cardThumbAlignment: end
     cardView:
-      - 'layoutElement:e0e05a0e-c2eb-41b9-8880-1471296ad1ee'
       - 'layoutElement:84903f95-ce19-4ec9-adcf-d21a772456d0'
-      - 'layoutElement:440f0a90-71d8-43c3-b304-3faba70343e5'
     tabs:
       -
         elementCondition: null
@@ -32,23 +30,6 @@ fieldLayouts:
             dateAdded: '2025-08-28T18:13:31+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 29a6be8e-cb85-466e-a2f5-a9b2a388d92a # Horizontal Alignment
-            handle: null
-            includeInCards: true
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e0e05a0e-c2eb-41b9-8880-1471296ad1ee
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-08-28T18:13:31+00:00'
-            editCondition: null
-            elementCondition: null
             fieldUid: 413dfe3a-277c-4fba-a7ed-27de63a9a93f # Vertical Alignment
             handle: null
             includeInCards: true
@@ -63,19 +44,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-09-12T21:29:16+00:00'
+            dateAdded: '2025-12-19T17:09:20+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: gutterSize
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: 'Gutter Size'
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 440f0a90-71d8-43c3-b304-3faba70343e5
+            uid: 9863b479-d949-42ac-9c0a-57aa6a6430aa
             userCondition: null
             warning: null
             width: 100
