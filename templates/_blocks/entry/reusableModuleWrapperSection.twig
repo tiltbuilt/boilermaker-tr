@@ -59,10 +59,10 @@
 
 {% if contentMod != null %}
 	<section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
-	{% if entry.animate %}
+	{#{% if entry.animate %}
 		x-data="sectionStandard({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 		x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
-	{% endif %}
+	{% endif %}#}
 	>
 		
 		<div class="inner section-inner {{ gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding, true) }}">			

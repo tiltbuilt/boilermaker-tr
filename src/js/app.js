@@ -36,6 +36,7 @@ import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import persist from '@alpinejs/persist';
 
+/*
 var duration = duration || 1;
 gsap.registerPlugin(Flip,ScrollTrigger,ScrollToPlugin,Draggable,MotionPathPlugin,TextPlugin,DrawSVGPlugin,ScrambleTextPlugin,SplitText,RoughEase,ExpoScaleEase,SlowMo,CustomEase);    
 
@@ -204,6 +205,23 @@ document.addEventListener('alpine:init', () => {
  
     
 })
+  */
+
+try {
+  animate("body", { opacity: 1 });
+  document.body.classList.add('motion-loaded');
+
+  inView(".section-standard, .section-side-media", (element) => {
+    animate(element, { opacity: 1}, { duration: 1 });
+    //console.log("in view:", element);
+  }, { amount: 0.15 }, { once: true });
+} catch (error) {
+  // Handle the error, perhaps by logging it or doing nothing
+  console.error("Motion.dev failed to load:", error);
+}
+
+
+
 
 if (typeof window.Alpine === "undefined") {
   Alpine.plugin(collapse);

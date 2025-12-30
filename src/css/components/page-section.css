@@ -13,7 +13,7 @@
       margin: 0;         
       /* The default classes and style below can be changed on a per-project basis */
       color: var(--color-section-text);
-      background-color: var(--color-section-background);
+      background-color: var(--color-section-background);      
    }
 
    .section-inner {
@@ -35,7 +35,7 @@
       align-items: stretch;	
       position: relative;      
       grid-template-columns: repeat(12, 1fr);        
-      gap: var(--spacing-base);
+      gap: var(--spacing-base);      
    }
 
    
@@ -52,6 +52,10 @@
       position: relative;
       /*aspect-ratio: 16/9;
       overflow: hidden; */  
+   }
+
+   body.motion-loaded .section-standard, body.motion-loaded .section-side-media {
+      opacity: 0;
    }
    
 }

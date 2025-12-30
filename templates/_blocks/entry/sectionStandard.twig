@@ -57,10 +57,11 @@
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
 <section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
+{#}
 {% if entry.animate %}
 	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
 	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
-{% endif %}
+{% endif %}#}
 >
 	
 <div class="inner section-inner {{- gMacros.typeClasses(entry.typeSettings) -}} {{- gMacros.spacingClasses(entry.padding, true) -}}">			
