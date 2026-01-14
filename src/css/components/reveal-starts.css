@@ -1,0 +1,29 @@
+@layer components {
+    
+    body.motion-loaded .section-standard {
+        
+        p, li, .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .repeater-card  {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        .background-wrapper {
+            opacity: 0;            
+        }
+
+    }
+
+    body.motion-loaded .section-side-media {
+        
+        p, li, .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .repeater-card  {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        .side-media-media {
+            opacity: 0;            
+        }
+
+    }
+
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.0 - 2026-01-14
+### Upgraded
+- Craft and Plugins
+
+### Changed
+- Animation system no longer uses GSAP. It now uses Motion in conjunction with Lenis
+- Animated reveals are now baked in as a default and have no controls in the control panel.
+
 ## 3.2.6 - 2025-10-13
 ### Upgraded
 - Craft and SEOMatic

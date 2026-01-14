@@ -53,10 +53,6 @@
       /*aspect-ratio: 16/9;
       overflow: hidden; */  
    }
-
-   body.motion-loaded .section-standard, body.motion-loaded .section-side-media {
-      opacity: 0;
-   }
    
 }
 

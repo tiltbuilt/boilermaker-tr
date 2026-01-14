@@ -33,9 +33,8 @@
     {% set pageHeaderColorScheme = entry.pageHeaderColorScheme.class %}
 {% endif %}
 
-<div id="{{entry.slug}}-page-header" class="page-header section-standard @container {{pageHeaderColorScheme}} " {#x-data="sectionStandard(true, true)"	
-x-ref="animparent"#}>
-	<div class="page-header-photo-wrapper aspect-{{smHeaderAspect}} md:aspect-auto md:absolute md:inset-0 md:h-full">       
+<div id="{{entry.slug}}-page-header" class="page-header section-standard @container {{pageHeaderColorScheme}} ">
+	<div class="page-header-photo-wrapper background-wrapper aspect-{{smHeaderAspect}} md:aspect-auto md:absolute md:inset-0 md:h-full">       
         {% if not entry.imageryType %}
             {% set image = entry.pageHeaderDefaultImage.eagerly().one() %}
             {% if image != null  %}

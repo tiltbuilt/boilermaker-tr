@@ -14,7 +14,7 @@
 
     /* set up basic styles for background element */
 
-    .background {
+    .background-wrapper, .background {
         position: absolute;
         z-index: 1;
         width: 100%;

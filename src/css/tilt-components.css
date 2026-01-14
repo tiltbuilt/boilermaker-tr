@@ -23,6 +23,7 @@
 @import './components/slider.css';
 @import './components/tab-set.css';
 @import './components/typography.css';
+@import './components/reveal-starts.css';
 
 /**
 * Include styles for individual pages

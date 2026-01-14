@@ -58,24 +58,14 @@
 {% set contentMod = entry.moduleToInclude.eagerly().one() %}
 
 {% if contentMod != null %}
-	<section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}
-	{#{% if entry.animate %}
-		x-data="sectionStandard({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
-		x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
-	{% endif %}#}
-	>
+	<section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
 		<div class="inner section-inner {{ gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding, true) }}">			
 			{% for chunk in contentMod.elementContent %}
 				{% if chunk.type == 'markup' %}
-					{% if entry.animate and entry.animateContent %}
-						{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-					{% else %}
-						{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false|typogrify)}}
-					{% endif %}
+					{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false|typogrify)}}
 				{% else %}
-					{{ chunk.entry.render({
-						'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
+					{{ chunk.entry.render({						
 						'colorScheme': colorScheme,
 						'sizeTracker': sizeTracker
 					}) }}

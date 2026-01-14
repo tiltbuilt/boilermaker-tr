@@ -1,27 +1,18 @@
-/* CSS */
-import "../css/app.css";
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css'
+
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
 
-/* JS */
-import { animate, scroll, cubicBezier, hover, press, inView, resize } from "motion";
+/* CSS */
+import "../css/app.css";
 
-/*
-import { gsap } from "gsap";    
-import { CustomEase } from "gsap/CustomEase";
-import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";    
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-import { SplitText } from "gsap/SplitText";
-*/
+/* JS */
+import { animate, stagger, scroll, cubicBezier, inView, frame, time } from "motion";
+
+
 //import * as YTPlayer from 'yt-player';
 
 /* SCRIPTS HERE */
@@ -36,191 +27,52 @@ import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import persist from '@alpinejs/persist';
 
-/*
-var duration = duration || 1;
-gsap.registerPlugin(Flip,ScrollTrigger,ScrollToPlugin,Draggable,MotionPathPlugin,TextPlugin,DrawSVGPlugin,ScrambleTextPlugin,SplitText,RoughEase,ExpoScaleEase,SlowMo,CustomEase);    
 
-document.addEventListener('alpine:init', () => {
-  
-  Alpine.store('contentModal', {
-    on: false,
-    modalHtml: '',
-    showLoading: false,   
-  
-    open(modalUrl, modalTitle) {      
-      this.modalHtml='loading...'; 
-      this.showLoading = true; 
-      this.on = true;
-            
-      fetch(modalUrl, {
-        method: 'GET',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-        },
-      })
-      .then(response => response.text())
-      .then(text => {
-        this.modalHtml = text
-        this.showLoading = false;			   
-      })
-      
-    },
-    
-    close() {
-      this.on = false;
-      this.modalHtml = '';
-      this.showLoading = false;   
-    }
-  });
-  
-  Alpine.data('sectionStandard', (animateContent, staggerAnimations) => ({
-    init() {       
-      if (animateContent) {
-        const animParent = this.$refs.animparent;
-        const animSelector = "#" + animParent.getAttribute('id') + " .animate" ;
-        const animCast = document.querySelectorAll(animSelector);
-        gsap.set(animCast, {
-          opacity: 0,
-          y: -50
-        });        
-        if (staggerAnimations) {          
-          ScrollTrigger.batch(animCast, {
-            onEnter: batch => gsap.to(batch, 
-            {
-              duration: duration * 1.5,		
-              y: 0,
-              opacity: 1,
-              // Note: Easing Pack required for easing
-              ease: "expo.out",
-              onComplete() {
-                this.postRevealFunction;
-              },
-              stagger: 0.15			
-            }),
-            start: "top 95%",
-            once: true
-          });         
-        } else {
-          animCast.forEach(animItem => {              
-            gsap.to(animItem, { 			
-              duration: duration * 1.5,
-              y: 0,			
-              opacity: 1,              			
-              // Note: Easing Pack required for easing
-              ease: "expo.out",
-              onComplete: this.postRevealFunction,              	
-              scrollTrigger: {
-                trigger: animParent,
-                start: "top 95%",
-              }			
-            })
-          });
-        }
-      } else {
-        const animElem = this.$refs.animate;     
-        gsap.to(animElem, {
-          duration: duration * 1.5,
-          y: 0,          
-          opacity: 1,			
-          // Note: Easing Pack required for easing
-          ease: "expo.out",
-          onComplete: this.postReveal,          			
-          scrollTrigger: {
-            trigger: animElem,
-            start: "top 95%",
-          }
-        })
-      }      
-    },
-        
-    postReveal() {
-      
-    }    
-      
-  })),
-  
-  Alpine.data('sectionSidePhoto', (animateContent, staggerAnimations) => ({
-    init() {       
-      if (animateContent) {
-        const animParent = this.$refs.animparent;
-        const animSelector = "#" + animParent.getAttribute('id') + " .animate" ;
-        const animCast = document.querySelectorAll(animSelector);
-        gsap.set(animCast, {
-          opacity: 0,          
-        });        
-        if (staggerAnimations) {          
-          ScrollTrigger.batch(animCast, {
-            onEnter: batch => gsap.to(batch, 
-            {
-              duration: duration * 1.5,	              
-              opacity: 1,
-              // Note: Easing Pack required for easing
-              ease: "expo.out",
-              onComplete() {
-                this.postRevealFunction;
-              },
-              stagger: 0.15			
-            }),
-            start: "top 95%",
-            once: true
-          });         
-        } else {
-          animCast.forEach(animItem => {              
-            gsap.to(animItem, { 			
-              duration: duration * 1.5,              			
-              opacity: 1,              			
-              // Note: Easing Pack required for easing
-              ease: "expo.out",
-              onComplete: this.postRevealFunction,              	
-              scrollTrigger: {
-                trigger: animParent,
-                start: "top 95%",
-              }			
-            })
-          });
-        }
-      } else {
-        const animElem = this.$refs.animate;     
-        gsap.to(animElem, {
-          duration: duration * 1.5,          
-          force3D: true,
-          opacity: 1,			
-          // Note: Easing Pack required for easing
-          ease: "expo.out",
-          onComplete: this.postReveal,          			
-          scrollTrigger: {
-            trigger: animElem,
-            start: "top 95%",
-          }
-        })
-      }      
-    },
-        
-    postReveal() {
-      
-    }    
-      
-  }))
-  
- 
-    
-})
-  */
+/* Lenis setup to smooth scrolling */
+const lenis = new Lenis();
+
+// Define a function to update Lenis on each frame
+function update() {
+  // Use motion's synced time.now() to call lenis.raf()
+  lenis.raf(time.now());
+}
+// Subscribe the update function to motion's global frame loop
+// The 'true' argument ensures it runs before other frame updates
+frame.update(update, true);
+
+
 
 try {
   animate("body", { opacity: 1 });
   document.body.classList.add('motion-loaded');
 
-  inView(".section-standard, .section-side-media", (element) => {
-    animate(element, { opacity: 1}, { duration: 1 });
+  inView(".section-standard .background-wrapper, .section-side-media .side-media-media", (element) => {
+    animate(element, { opacity: 1}, { duration: 1.5 });
     //console.log("in view:", element);
-  }, { amount: 0.15 }, { once: true });
+  }, { amount: 0.01}, { once: true });
+
+  inView(".section-standard p, .section-standard li, .section-standard .heading, .section-standard .btn, .section-standard .cta, .section-standard .content-image, .section-standard .icon-content, .section-standard .accordion, .section-standard .tab-set, .section-standard .slider-set, .section-standard .quote, .section-standard .content-video, .section-standard .icon-wrapper, .section-side-media p, .section-side-media li, .section-side-media .heading, .section-side-media .btn, .section-side-media .cta, .section-side-media .content-image, .section-side-media .icon-content, .section-side-media .accordion, .section-side-media .tab-set, .section-side-media .slider-set, .section-side-media .quote, .section-side-media .content-video, .section-side-media .icon-wrapper", (element) => {
+    animate(element, { opacity: 1, y: 0}, { ease: [.17,.67,.83,.67], opacity: { ease: [.17,.67,.83,.67]} }, { duration: 1.5, y: { duration: 2} }, {delay: 0.3});
+    //console.log("in view:", element);
+  }, { amount: 0.3 }, { once: true });
+  
+  inView(".section-standard .repeater, .section-side-media .repeater", (target) => {
+    animate(
+      '.repeater-card', 
+      { opacity: 1, y: 0}, 
+      /*{ ease: [.17,.67,.83,.67], opacity: { ease: [.17,.67,.83,.67]} }, 
+      { duration: 1.5, y: { duration: 2} }, */
+      { delay: stagger(0.3) });
+    },
+    { amount: 0.15 }, 
+    { once: true }
+  );   
+
+
 } catch (error) {
   // Handle the error, perhaps by logging it or doing nothing
   console.error("Motion.dev failed to load:", error);
 }
-
-
 
 
 if (typeof window.Alpine === "undefined") {
@@ -231,7 +83,6 @@ if (typeof window.Alpine === "undefined") {
   window.Swiper = Swiper;  
   Alpine.start();
 }
-
 
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html

@@ -234,24 +234,14 @@
 	{% set sizeTracker = sizeTracker|merge({(key):{'size': endWidth, 'unit': unit}}) %}
 {% endfor %}
 
-<section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}
-{#}
-{% if entry.animate %}
-	x-data="{{entry.type.handle}}({{entry.animateContent ? 'true': 'false'}},{{entry.staggerAnimations ? 'true': 'false'}})"	
-	x-ref="{% if entry.animateContent %}animparent{% else %}animate{% endif %}"
-{% endif %}#}>	
+<section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>	
 		
 	<div class="side-media-content {{positionClass}} {{ _self.contentClasses(allSettings) }} {{ gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding, true) }}">			
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
-				{% if entry.animate and entry.animateContent %}
-					{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-				{% else %}
-					{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-				{% endif %}
+				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}				
 			{% else %}
-				{{ chunk.entry.render({
-					'animSetting': {'animate': entry.animate, 'animateContent': entry.animateContent, 'animLevel': true},
+				{{ chunk.entry.render({					
 					'colorScheme': colorScheme,
 					'sizeTracker': sizeTracker
 				}) }}
@@ -259,7 +249,7 @@
 		{% endfor %}						
 	</div>
 	
-	<div class="side-media-media {% if entry.animate and entry.animateContent %}animate{% endif %} {{ _self.mediaColClasses(allSettings) }}">
+	<div class="side-media-media {{ _self.mediaColClasses(allSettings) }}">
 		{% set mediaClasses = ['w-full', 'h-full', 'object-cover'] %}
 		{% if entry.mediaPosition != '' %}
 			{% set mediaClasses = mediaClasses|merge(['object-' ~ entry.mediaPosition]) %}
