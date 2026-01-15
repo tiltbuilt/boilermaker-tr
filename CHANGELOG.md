@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.1 - 2026-01-15
+### Fixed
+- Missing color styling for text links
+
 ## 3.3.0 - 2026-01-14
 ### Upgraded
 - Craft and Plugins

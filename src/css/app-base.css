@@ -43,11 +43,12 @@
   }
   
   a {
-    
+    color: var(--color-text-link);
     transition: color 0.3s ease-in;
     
     &:hover {
 	  /* put hover styles for standard text links here */
+      color: var(--color-text-link-hover);
     }  
   }
 
