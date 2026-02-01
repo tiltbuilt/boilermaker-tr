@@ -120,7 +120,7 @@
 			set expanded(value) {
 				this.active = value ? this.id : null
 			},
-		}" role="region" class="{{- accClassList|join(' ') }} {{- gMacros.displayClasses(acc.display)}} {% if animate %}animate{% endif %}" {{- gMacros.attributesOut(acc.customAttributes) }}>
+		}" role="region" class="{{ accClassList|join(' ') }} {{- gMacros.displayClasses(acc.display)}}" {{- gMacros.attributesOut(acc.customAttributes) }}>
 			<{{setHeaderLevel}} class="accordion-header">
 				<button
 					x-on:click="expanded = !expanded"
@@ -146,18 +146,20 @@
 			</{{setHeaderLevel}}>
 	
 			<div x-show="expanded" x-collapse.duration.300ms >
-				<div class="{{- styleListMaster|join(' ') }} {{ gMacros.typeClasses(acc.typeSettings) -}}">				
-					{% for chunk in acc.elementContent %}
-						{% if chunk.type == 'markup' %}
-							{{chunk|raw|retconAttr('ul', {'class': 'bullet-list'})|typogrify}}
-						{% else %}
-							{{ chunk.entry.render({
-								'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
-								'colorScheme': accColorScheme,
-								'sizeTracker': sizeTracker
-							}) }}
-						{% endif %}
-					{% endfor %} 					
+				<div class="@container">
+					<div class="{{- styleListMaster|join(' ') }} {{ gMacros.typeClasses(acc.typeSettings) -}}">				
+						{% for chunk in acc.elementContent %}
+							{% if chunk.type == 'markup' %}
+								{{chunk|raw|retconAttr('ul', {'class': 'bullet-list'})|typogrify}}
+							{% else %}
+								{{ chunk.entry.render({
+									'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
+									'colorScheme': accColorScheme,
+									'sizeTracker': sizeTracker
+								}) }}
+							{% endif %}
+						{% endfor %} 					
+					</div>
 				</div>
 			</div>
 		</div>		

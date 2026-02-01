@@ -9,10 +9,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed # Phone Number
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -25,10 +23,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 8cea45ff-f3ed-4c12-b8d2-ed1d8140b912 # Social Media Links
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

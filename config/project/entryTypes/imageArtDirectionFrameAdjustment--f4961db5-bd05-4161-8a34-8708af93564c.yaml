@@ -16,10 +16,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -33,10 +31,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
             handle: null
-            includeInCards: true
             instructions: null
             label: 'Frame Width'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -50,10 +46,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: frameAspect
-            includeInCards: true
             instructions: null
             label: 'Frame Aspect Ratio'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -67,10 +61,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: imagePosition
-            includeInCards: true
             instructions: null
             label: 'Image Position'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

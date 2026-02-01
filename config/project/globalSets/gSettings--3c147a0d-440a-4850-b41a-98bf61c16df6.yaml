@@ -11,10 +11,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: headerEmbeds
-            includeInCards: false
             instructions: null
             label: 'Header Embeds'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -28,10 +26,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: bodyTagEmbeds
-            includeInCards: false
             instructions: null
             label: 'Body Tag Embeds'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -45,10 +41,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3f041b04-6fce-4165-ab3a-d234dabaa7bd # Embed Code
             handle: footerEmbeds
-            includeInCards: false
             instructions: null
             label: 'Footer Embeds'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -68,10 +62,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: pgHeaderAspectSm
-            includeInCards: false
             instructions: 'This field sets the default aspect ratio for the page header image on mobile devices. The content of the header stacks underneath the photo.'
             label: 'Page Header Image Aspect-Mobile'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -85,10 +77,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: pgHeaderAspectMd
-            includeInCards: false
             instructions: 'This control sets the defaults aspect ratio for the page header on medium layouts like tablets in the vertical position. The content of the header will overlay the photo and fit within the box at this aspect ratio. '
             label: 'Page Header Image Aspect-Tablet'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -102,10 +92,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: pgHeaderAspectLg
-            includeInCards: false
             instructions: 'This field sets the aspect ratio of the page header on laptops and above. The content of the header will overlay the photo and fit within the box at this aspect ratio. '
             label: 'Page Header Image Aspect-Large'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -125,10 +113,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: sliderPreviousIcon
-            includeInCards: false
             instructions: null
             label: 'Slider Previous Icon'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -142,10 +128,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: sliderNextIcon
-            includeInCards: false
             instructions: null
             label: 'Slider Next Icon'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -159,10 +143,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: accordionIcon
-            includeInCards: false
             instructions: null
             label: 'Accordion Icon'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -196,10 +178,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: thumbnailPlaceholder
-            includeInCards: false
             instructions: null
             label: 'Thumbnail Placeholder'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -213,10 +193,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: thumbAspectSm
-            includeInCards: false
             instructions: 'This control sets a default size for repeater thumbnails for side card repeaters'
             label: 'Global Thumbnail Size-Small'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -230,10 +208,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: thumbAspectLg
-            includeInCards: false
             instructions: 'This control sets a size for repeater thumbnails in top card, and multi-card slider repeaters'
             label: 'Global Thumbnail Size-Large'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -254,10 +230,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: cprCard
-            includeInCards: false
             instructions: 'This setting controls the number of cards shown per row by default in a non-image card repeater. The layout size is determined by the size of the device and also by the size of the container that the repeater is in.'
             label: 'Card Per Row - Card View'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -271,10 +245,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: cprCardSmImg
-            includeInCards: false
             instructions: 'This setting controls the number of cards shown per row by default in a small image card repeater. The layout size is determined by the size of the device and also by the size of the container that the repeater is in.'
             label: 'Cards Per Row - Side Image Cards'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -288,10 +260,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: cprCardLgImg
-            includeInCards: false
             instructions: 'This setting controls the number of cards shown per row by default in a large image card repeater. The layout size is determined by the size of the device and also by the size of the container that the repeater is in.'
             label: 'Cards Per Row - Top Image Cards'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -312,10 +282,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: sliderAspectSm
-            includeInCards: false
             instructions: 'This field sets a default aspect ratio for the images in sliders with images when the slider is in a small container in a layout (for instance on a mobile device or in a sidebar).'
             label: 'Slider Image Aspect-Small'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -329,10 +297,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 4720320b-f7d0-49ec-a327-0db0e3a2dd7c # Aspect Ratio - Forced
             handle: sliderAspectLg
-            includeInCards: false
             instructions: 'This controls the size of the images in sliders by default when the slider is in a large layout scenario. The slide content will layer on top of the slide in larger cases making this the aspect ratio of the entire slider.'
             label: 'Slider Image Aspect-Large'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -346,10 +312,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b422915f-1867-4c28-bb32-280178fab390 # Multi Card Slider Cards Per Layout Size
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

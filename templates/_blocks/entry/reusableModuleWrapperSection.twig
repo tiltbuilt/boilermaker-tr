@@ -58,7 +58,7 @@
 {% set contentMod = entry.moduleToInclude.eagerly().one() %}
 
 {% if contentMod != null %}
-	<section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	<section id="{{blockId}}" class="@container {{ blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 		
 		<div class="inner section-inner {{ gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding, true) }}">			
 			{% for chunk in contentMod.elementContent %}

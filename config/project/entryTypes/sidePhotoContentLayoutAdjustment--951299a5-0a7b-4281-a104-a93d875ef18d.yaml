@@ -3,6 +3,10 @@ description: null
 fieldLayouts:
   300da3b3-2128-48a9-a921-bb979d5dba90:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:d17d7b88-2a28-464e-a7c1-f5ca886e3aae'
+      - 'layoutElement:18c0c372-2c3f-47b9-8b78-a98477479816'
+      - 'layoutElement:c30e8f03-9e48-41b7-9618-5510a3658a4e'
     tabs:
       -
         elementCondition: null
@@ -13,10 +17,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f8bf9322-a174-4828-95a3-9f768c70cdea # Device Size - Tab Plus
             handle: deviceSize
-            includeInCards: false
             instructions: null
             label: 'Device Size'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -30,10 +32,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 859bdfc7-87f1-4c0d-8217-2388c34baba4 # Column Width - No Full
             handle: columnWidth
-            includeInCards: false
             instructions: null
             label: 'Column Width'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -47,10 +47,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 96e05d50-67cf-45ef-8670-b1764a09015a # Column Position
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -64,10 +62,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 413dfe3a-277c-4fba-a7ed-27de63a9a93f # Vertical Alignment
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -81,10 +77,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: imagePosition
-            includeInCards: true
             instructions: 'Use this field to reposition the photo within its frame, allowing more control over the focal point position'
             label: 'Image Position'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -98,10 +92,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
-            includeInCards: false
             instructions: 'Use this field to set a minimum aspect ratio for the photo in case there is not much content in the section and you want the photo to have more visibility.'
             label: 'Photo Minimum Aspect Ratio'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

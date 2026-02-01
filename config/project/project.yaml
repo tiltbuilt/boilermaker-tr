@@ -1,4 +1,4 @@
-dateModified: 1768422950
+dateModified: 1769972154
 elementSources:
   craft\elements\Entry:
     -
@@ -226,7 +226,6 @@ meta:
     859bdfc7-87f1-4c0d-8217-2388c34baba4: 'Column Width - No Full' # Column Width - No Full
     0888a226-1804-4ac8-a00d-8b539fdd3483: '404 Page Content' # 404 Page Content
     938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Media Section' # Side by Side Media Section
-    988c8572-16b9-4e94-9297-d33d4b9d8411: 'Margin Adjustment' # Margin Adjustment
     2186e435-0cf5-4c2f-8436-888d6d2e00c9: 'Image Settings' # Image Settings
     3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c: 'Background Image' # Background Image
     3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25: 'Background Repeat' # Background Repeat
@@ -243,7 +242,6 @@ meta:
     74484c3f-217d-4141-ba59-128676f0ee17: 'Icon Content Vertical Layout Adjustment' # Icon Content Vertical Layout Adjustment
     82142db1-96fa-4ed9-a7e4-501f639e73f5: 'Button Orientation' # Button Orientation
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
-    00126482-6097-458c-9944-33b1227df3ce: 'Column Padding Adjustment' # Column Padding Adjustment
     253138fc-844f-44ce-b802-ceba93597569: 'Content Card' # Content Card
     699240f2-b35b-4fad-b00a-f24ec0b8d982: Slide # Slide
     738845b3-b901-49ce-a17b-8a5c7864eab9: 'Content Card' # Content Card
@@ -328,7 +326,6 @@ meta:
     e5bff211-8719-442c-8ca7-caf236c14273: 'Subhead Style' # Subhead Style
     e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
     e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
-    e70a2aff-50a6-4307-ac61-fca778c6e08d: 'Padding Adjustment' # Padding Adjustment
     e92ccd0c-f875-418b-84e5-2e10fe5ca803: 'Modal Button Link' # Modal Button Link
     e976e669-f3ac-496a-8450-9d5613262236: 'Subhead Text' # Subhead Text
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
@@ -672,5 +669,5 @@ system:
   edition: pro
   live: true
   name: $SITE_NAME
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.9.0.8
   timeZone: America/Chicago

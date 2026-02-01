@@ -16,10 +16,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b4c4f21e-35c3-40ba-b812-86a3bc213582 # Main Heading Text
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -33,10 +31,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -57,10 +53,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: aeeead9c-f591-4d95-a990-f8bea54fb0ef # Heading Style
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -74,10 +68,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
             handle: typeSettingsMainHeadline
-            includeInCards: false
             instructions: null
             label: 'Type Overrides - Main Headline'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -98,10 +90,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: headlineColor
-            includeInCards: false
             instructions: null
             label: 'Headline Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -121,10 +111,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: e976e669-f3ac-496a-8450-9d5613262236 # Subhead Text
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -138,10 +126,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 77532772-badf-4ce5-a93b-6752273d81bb # Subhead Position
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -173,10 +159,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: e5bff211-8719-442c-8ca7-caf236c14273 # Subhead Style
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -190,10 +174,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 62336b23-c907-4179-a797-e2f7a8d75533 # Type Overrides - Subhead
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -214,10 +196,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: subheadColor
-            includeInCards: false
             instructions: null
             label: 'Subhead Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -238,10 +218,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: subheadSpacing
-            includeInCards: false
             instructions: 'Use this field to override the default stylesheet spacing between the subhead and the main headline.'
             label: 'Subhead Spacing'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -261,10 +239,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -284,10 +260,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -301,10 +275,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -318,10 +290,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -342,10 +312,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

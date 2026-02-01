@@ -19,7 +19,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -28,7 +27,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -46,10 +44,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
             handle: ctaContent
-            includeInCards: false
             instructions: null
             label: 'CTA Content'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -63,10 +59,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b7035329-8f0c-4f1c-985b-104b44d6b235 # CTA Type
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -90,10 +84,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: ctaImg
-            includeInCards: true
             instructions: null
             label: 'CTA Image'
-            providesThumbs: true
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -117,10 +109,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: altText
-            includeInCards: false
             instructions: null
             label: 'Alt Text'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -144,10 +134,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: ctaImgAspect
-            includeInCards: false
             instructions: 'Sets the aspect ratio to be used for the image in the CTA content'
             label: 'CTA Image Aspect Ratio'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -177,10 +165,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: c57caa3f-3422-4928-85a0-f509e3c41317 # Content Position - Small CTA
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Content Position'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -204,10 +190,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: eb38218b-e090-4cec-807f-ab70934109ba # First Last
             handle: contentPositionSmall
-            includeInCards: false
             instructions: null
             label: 'Content Position - Small Layouts'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -231,10 +215,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 732c729f-8dbb-4f01-a463-c163ddc13eab # Left Right
             handle: contentPositionLarge
-            includeInCards: false
             instructions: null
             label: 'Content Position - Large Layouts'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -258,10 +240,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 5d983a94-8298-437a-a512-63a98178af7a # Content Position Small CTA Mobile
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Content Position - Mobile'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -285,10 +265,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
             handle: contentVerticalAlignment
-            includeInCards: false
             instructions: 'This field sets the vertical alignment of the content relative to its image when the CTA Type is in large CTA mode.'
             label: 'Content Vertical Alignment'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -312,10 +290,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 859bdfc7-87f1-4c0d-8217-2388c34baba4 # Column Width - No Full
             handle: columnWidth
-            includeInCards: false
             instructions: null
             label: 'Content Column Width'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -335,10 +311,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -365,10 +339,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
             handle: contentPadding
-            includeInCards: false
             instructions: null
             label: 'Content Padding'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -392,10 +364,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 6699696d-9679-496c-9f4c-0a8d498f2959 # Padding 2
             handle: imagePadding
-            includeInCards: false
             instructions: 'This field applies a padding override to the default padding around the CTA image (0px)'
             label: 'Image Padding'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -416,10 +386,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -439,10 +407,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -456,10 +422,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
-            includeInCards: false
             instructions: null
             label: 'Background Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -473,10 +437,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
-            includeInCards: false
             instructions: null
             label: 'Text Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -496,10 +458,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 76e84206-fdd5-4553-bf04-6f24f458ce0e # Background Settings
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -519,10 +479,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -536,10 +494,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -553,10 +509,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -587,10 +541,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
             handle: lazyLoadImg
-            includeInCards: false
             instructions: null
             label: 'Lazy Load Image'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -611,10 +563,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -625,6 +575,7 @@ fieldLayouts:
         name: Advanced
         uid: 57109434-1a80-47df-b091-2ea23ea07e24
         userCondition: null
+    thumbFieldKey: 'layoutElement:7fd6a404-e781-4839-8678-bc31ba9e91ec'
 handle: cta
 hasTitleField: true
 icon: null

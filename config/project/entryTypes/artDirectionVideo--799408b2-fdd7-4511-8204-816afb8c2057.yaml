@@ -3,6 +3,8 @@ description: null
 fieldLayouts:
   5341d892-306b-451e-9db6-ac97fd0c598a:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:3858dc49-f36c-40f1-b46d-915f3dfee3c2'
     tabs:
       -
         elementCondition: null
@@ -13,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: eaf22e5f-1786-41e9-bc4d-0a8682bab8af # Media Device Size
             handle: deviceSize
-            includeInCards: false
             instructions: null
             label: 'Device Size'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -30,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: frameAspect
-            includeInCards: true
             instructions: null
             label: 'Frame Aspect Ratio'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -47,10 +45,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: mediaPosition
-            includeInCards: false
             instructions: null
             label: 'Media Positon'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

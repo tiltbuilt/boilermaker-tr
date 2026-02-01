@@ -70,7 +70,7 @@
 	{% endif %}
 {% endfor %}
 
-<picture class="{{ frameClasses|join(' ') }}">
+<picture class="{{ frameClasses|join(' ') }} ">
 	{# set ordered array of objects for source settings #}
 	{% set srcObjects =  {
 		'df': {'minSize': 0, 'aspect': 'auto', 'image': image},
@@ -90,12 +90,12 @@
 			{% set srcSize = srcSetting.deviceSize.value %}
 		{% endif %}
 
-		{% if srcSetting.imageAsset|length or srcSetting.aspectRatio != '' %}
+		{% if srcSetting.imageAsset|length or srcSetting.mediaAspect != '' %}
 			{% if srcSetting.imageAsset|length and srcSetting.deviceSize != '' %}
 				{% set image = srcSetting.imageAsset.eagerly().one() %}
 			{% endif %}
-			{% if srcSetting.aspectRatio.value != '' %}				
-				{% set currentAspect = srcSetting.aspectRatio.value %}
+			{% if srcSetting.mediaAspect.value != '' %}				
+				{% set currentAspect = srcSetting.mediaAspect.value %}
 			{% else %}
 				{% set myRatio = currentAspect %}
 			{% endif %}
@@ -155,6 +155,5 @@
 			{% endif %}
 		{% endif %}
 	{% endfor %}
-
 </picture>
 

@@ -237,6 +237,7 @@
 <section id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>	
 		
 	<div class="side-media-content {{positionClass}} {{ _self.contentClasses(allSettings) }} {{ gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding, true) }}">			
+		<div class="@container">
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}				
@@ -246,10 +247,12 @@
 					'sizeTracker': sizeTracker
 				}) }}
 			{% endif %}
-		{% endfor %}						
+		{% endfor %}
+		</div>						
 	</div>
 	
 	<div class="side-media-media {{ _self.mediaColClasses(allSettings) }}">
+		<div class="@container">
 		{% set mediaClasses = ['w-full', 'h-full', 'object-cover'] %}
 		{% if entry.mediaPosition != '' %}
 			{% set mediaClasses = mediaClasses|merge(['object-' ~ entry.mediaPosition]) %}
@@ -386,6 +389,7 @@
 
 			</picture>
 		{% endif %}
+		</div>
 	</div>		
 	
 </section>

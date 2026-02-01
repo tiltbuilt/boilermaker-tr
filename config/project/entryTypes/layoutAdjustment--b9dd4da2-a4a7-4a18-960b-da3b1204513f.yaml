@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 413dfe3a-277c-4fba-a7ed-27de63a9a93f # Vertical Alignment
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -49,10 +45,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: gutterSize
-            includeInCards: false
             instructions: null
             label: 'Gutter Size'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

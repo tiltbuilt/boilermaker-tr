@@ -177,8 +177,9 @@
 		x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
 		:aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
 		role="tabpanel"
-		class="{{- tabClassList|join(' ') }} {{ gMacros.typeClasses(tab.typeSettings) -}}" {{- gMacros.attributesOut(tab.customAttributes) -}}
-	  >     
+		class=" {{- tabClassList|join(' ') }} {{ gMacros.typeClasses(tab.typeSettings) -}}" {{- gMacros.attributesOut(tab.customAttributes) -}}
+	  >
+	  <div class="@container">     
 		{% for chunk in tab.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
@@ -190,6 +191,7 @@
 				}) }}
 			{% endif %}
 		{% endfor %}
+      </div>
 	  </div>
 	{% endfor %}          
   </div>

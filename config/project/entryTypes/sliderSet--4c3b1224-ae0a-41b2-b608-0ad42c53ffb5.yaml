@@ -18,7 +18,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -27,7 +26,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -45,10 +43,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 40a37d8a-41c1-47af-bc27-28d08f99a909 # Slides
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -68,10 +64,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: slidePhotoSizeSm
-            includeInCards: false
             instructions: 'This control overrides the default slider photo aspect ratio for small layout sizes'
             label: 'Slide Photo Size-Small'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -85,10 +79,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: slidePhotoSizeLg
-            includeInCards: false
             instructions: 'This control overrides the default slider photo aspect ratio for large layout sizes'
             label: 'Slide Photo Size-Large'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -102,10 +94,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
             handle: buttons
-            includeInCards: false
             instructions: null
             label: 'Slider Control Buttons?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -119,10 +109,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
             handle: dots
-            includeInCards: false
             instructions: null
             label: 'Control Dots?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -136,10 +124,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1 # Slide Transition Delay
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -153,10 +139,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 53829185-3375-470c-80cf-a50b1733a8c4 # Slide Effect
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -170,10 +154,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: autoplay
-            includeInCards: false
             instructions: null
             label: 'Autoplay?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -193,10 +175,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -216,10 +196,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -239,10 +217,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -256,10 +232,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -273,10 +247,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -297,10 +269,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

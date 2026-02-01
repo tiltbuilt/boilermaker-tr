@@ -18,7 +18,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -27,7 +26,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -45,10 +43,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 93013c2a-acd5-4b87-b999-b352741b10fd # Repeater Content
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -62,10 +58,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
-            includeInCards: false
             instructions: null
             label: 'List Item Heading Level'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -91,10 +85,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 93bf7bd8-1004-4c0c-be4d-7b59aa97021e # List Order
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -120,10 +112,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: showExcerpt
-            includeInCards: false
             instructions: null
             label: 'Show Excerpt?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -149,10 +139,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: showPostDate
-            includeInCards: false
             instructions: null
             label: 'Show Post Date'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -184,10 +172,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 86544431-ce27-4263-b49f-b814ff50fcfb # Date Format
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -220,10 +206,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 781363bc-1fd0-4fcc-83b2-80a20c416f57 # Content Cards
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -249,10 +233,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: f22d8a3b-9296-4b9a-b338-0d599eaa364a # Section to List
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -278,10 +260,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 8125ecc7-14a0-48fa-beb2-ae316b8c9c0d # Entries to List
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -307,10 +287,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: bea4db36-ae23-4382-ad57-5031c47c5ab6 # Nav List to Display
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -342,10 +320,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 13b06d24-aa17-46e3-89b9-c895a68df851 # Repeater Display Type
             handle: repeaterDisplay
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -371,10 +347,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 13258500-9385-4fb0-a11a-826fcd6a69f4 # Nav List Display Type
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Repeater Display'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -419,10 +393,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 3bcfa1bb-bcae-4957-b813-c81aa2061bfd # Text List Style
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -448,10 +420,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 54321551-57ae-4812-8a1d-c491760d59ad # Multi-Column Settings
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -496,10 +466,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -525,10 +493,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -554,10 +520,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: fullWidthSmall
-            includeInCards: false
             instructions: 'Flip this switch on if you want the buttons in this repeater to take up the full width and stack in small layouts like phones and sidebars.'
             label: 'Full Width in Small Layouts'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -606,10 +570,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: null
-            includeInCards: false
             instructions: 'This field overrides the global default row size for whichever card type is selected for display.'
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -655,10 +617,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: sliderSizeSm
-            includeInCards: false
             instructions: 'This control overrides the default global aspect ratio for slider photos in small layouts.'
             label: 'Slider Image Aspect Ratio-Small'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -684,10 +644,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: sliderSizeLg
-            includeInCards: false
             instructions: null
             label: 'Slider Image Aspect Ratio-Large'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -714,10 +672,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
             handle: buttons
-            includeInCards: false
             instructions: null
             label: 'Slider Control Buttons'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -744,10 +700,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
             handle: dots
-            includeInCards: false
             instructions: null
             label: 'Control Dots?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -774,10 +728,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1 # Slide Transition Delay
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -804,10 +756,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 53829185-3375-470c-80cf-a50b1733a8c4 # Slide Effect
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -834,10 +784,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: autoplay
-            includeInCards: false
             instructions: null
             label: 'Autoplay?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -863,10 +811,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: b422915f-1867-4c28-bb32-280178fab390 # Multi Card Slider Cards Per Layout Size
             handle: null
-            includeInCards: false
             instructions: 'This field overrides the global setting for cards per device size for this repeater'
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -933,10 +879,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 56d80f6e-2a67-464f-af70-0d46d267a0e2 # Items Per Page
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -981,10 +925,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: showPagination
-            includeInCards: false
             instructions: null
             label: 'Show Pagination?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1035,10 +977,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: c3d75796-b930-48a0-b387-b5469be4094b # Full Listing Button
             handle: null
-            includeInCards: false
             instructions: "Use this field to set up a \"View Full Listings\" button when you show a limited subset of items in a list and don't want to show pagination.  If you don't want a button and no pagination, don't create a button."
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1058,10 +998,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1075,10 +1013,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
-            includeInCards: false
             instructions: null
             label: 'Background Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1092,10 +1028,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
-            includeInCards: false
             instructions: null
             label: 'Text Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1115,10 +1049,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1138,10 +1070,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1155,10 +1085,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1172,10 +1100,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -1196,10 +1122,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

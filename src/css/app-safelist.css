@@ -36,11 +36,11 @@
 @source inline('justify-{start,center,end,between,around}');
 @source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:justify-{start,center,end,between,around}');
 @source inline('order-{first,last,1,2,3,4,5}');
-@source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:order-{first,last,1,2,3,4,5}');
+@source inline('{xs,sm,md,lg,xl,2xl,@xs,@sm,@md,@lg,@xl,@2xl}:order-{first,last,1,2,3,4,5}');
 @source inline('{block,hidden,inline,inline-block,flex}');
 @source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:{block,hidden,inline,inline-block,flex}');
 @source inline('{hidden,not-hidden,block,flex-wrap,flex-nowrap}');
-@source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:{hidden,not-hidden,block,flex-wrap,flex-nowrap}');
+@source inline('{xs,sm,md,lg,xl,2xl}:{hidden,not-hidden,block,flex-wrap,flex-nowrap}');
 @source inline('columns-{1,2,3,4}');
 @source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:columns-{1,2,3,4}');
 @source inline('flex-{column,row}');

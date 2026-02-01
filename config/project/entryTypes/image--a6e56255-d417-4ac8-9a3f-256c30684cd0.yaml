@@ -19,7 +19,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -28,7 +27,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -46,10 +44,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: artDirectImage
-            includeInCards: false
             instructions: "When turned off, all the image resizes for this element will be generated based on the image's focal point and the selected aspect ratio. When activated, you can select to use different images at different device sizes, set a frame aspect ratio and image aspect ratio, and move the image around within its frame allowing tighter control over the image design."
             label: 'Art Direct Image?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -63,10 +59,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: true
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -90,10 +84,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -117,10 +109,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Size
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -144,10 +134,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 2186e435-0cf5-4c2f-8436-888d6d2e00c9 # Image Settings
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Art Directed Image Settings'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -171,10 +159,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: f1350f49-769c-4408-b6aa-b1f6285c818a # Image Art Direction
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Image Frame Art Direction'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -188,10 +174,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: altText
-            includeInCards: false
             instructions: null
             label: 'Alt Text'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -205,10 +189,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: imageCaption
-            includeInCards: false
             instructions: null
             label: 'Image Caption'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -228,10 +210,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: isModalLink
-            includeInCards: false
             instructions: 'Is this link supposed to open normally, or as a modal popup?'
             label: 'Modal Link?'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -255,10 +235,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: aa6f3d94-b580-4806-aac7-1dde0e3062e0 # Button Link
             handle: linkSettings
-            includeInCards: false
             instructions: null
             label: 'Link Settings'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -282,10 +260,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: e92ccd0c-f875-418b-84e5-2e10fe5ca803 # Modal Button Link
             handle: modalLinkSettings
-            includeInCards: false
             instructions: null
             label: 'Modal Link Settings'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -299,10 +275,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: linkCustomClasses
-            includeInCards: false
             instructions: null
             label: 'Link Custom Classes'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -316,10 +290,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: linkCustomAttributes
-            includeInCards: false
             instructions: null
             label: 'Link Custom Attributes'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -339,10 +311,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
-            includeInCards: false
             instructions: null
             label: 'Caption Text Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -356,10 +326,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
-            includeInCards: false
             instructions: null
             label: 'Caption Background Color'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -379,10 +347,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -402,10 +368,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -419,10 +383,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -436,10 +398,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -460,10 +420,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
             handle: lazyLoadImg
-            includeInCards: false
             instructions: 'When this switch is activated the image will not load until it is about to appear in the browser. If turned off, the image will load when the page loads. You should only turn this off if an image is going to appear at the top of a page.'
             label: 'Lazy Load Image'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -484,10 +442,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -498,6 +454,7 @@ fieldLayouts:
         name: Advanced
         uid: 11758821-2b81-476b-a61c-7a1609f66115
         userCondition: null
+    thumbFieldKey: 'layoutElement:bfb2691f-54f9-48bd-b5d6-4ce1e7f691e1'
 handle: image
 hasTitleField: true
 icon: image

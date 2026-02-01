@@ -97,7 +97,7 @@
 
 {# Set Layout Styles #}
 {% for layoutItem in entry.columnLayout %}
-	{% set devSize = layoutItem.layoutSize %}
+	{% set devSize = layoutItem.deviceSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
@@ -141,7 +141,7 @@
 {# Retrieve styling adjustments #}
 {% set backgroundSettings = entry.backgroundSettings.eagerly().with('bgImg', 'bgVideo').all() %}
 
-<div id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ columnClassList|join(' ') }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
+<div id="{{blockId}}" class="@container {{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ columnClassList|join(' ') }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
 	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding) }}">		
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}

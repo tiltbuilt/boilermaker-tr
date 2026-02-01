@@ -139,8 +139,8 @@
 {% macro displayClasses(displaySettings) %}
 	{% set classList = [] %}
 	{% for displayAdjustment in displaySettings.eagerly().all() %}		
-		{% if displayAdjustment.layoutSize|length %}
-			{% set classItem = displayAdjustment.layoutSize ~ ':' %}			
+		{% if displayAdjustment.deviceSize|length %}
+			{% set classItem = displayAdjustment.deviceSize ~ ':' %}			
 		{% else %}
 			{% set classItem = '' %}
 		{% endif %}
@@ -151,7 +151,7 @@
 		{% endif %}
 		{% set classItem = classItem ~ displayClass %}						
 		{% set classList = classList|merge([classItem]) %}							
-	{% endfor %}
+	{% endfor %}	
 	{{- classList|join(' ') -}}
 {% endmacro displayClasses %}
 
@@ -305,7 +305,7 @@
 	{% for adjSet in adjustments %}
 		{# determine which size setting we are dealing with and set the slot name for the bgSet object #}
 		{% if adjSet.layoutSize == '' %}
-			{% set bgObj = '@df' %}
+			{% set bgObj = 'df' %}
 		{% else %}
 			{% set bgObj = adjSet.layoutSize.value %}
 		{% endif %}
@@ -375,7 +375,7 @@
 			
 			{# Build class list for each background div #}	
 			{% set divClasses = ['background'] %}			
-			{% if bgSet[(i)].layoutSize != '@df' %}
+			{% if bgSet[(i)].layoutSize != 'df' %}
 				{% set divClasses = divClasses|merge(['hidden', bgSet[(i)].layoutSize ~ ':block']) %}
 			{% endif %}			
 			{# add classes to hide background div on appropriate device sites by checking to see what other sizes are present above this one - look forward to turn off divs that should not be showing at sizes larger then their layout size #}

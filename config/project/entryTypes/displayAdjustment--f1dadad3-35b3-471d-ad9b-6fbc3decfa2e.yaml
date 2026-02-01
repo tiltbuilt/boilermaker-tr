@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -10,19 +11,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-08-27T18:30:05+00:00'
+            dateAdded: '2026-01-30T21:03:49+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
+            elementEditCondition: null
+            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
             handle: null
-            includeInCards: false
             instructions: null
-            label: 'Layout Size'
-            providesThumbs: false
+            label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: bce8670f-291a-4dd8-95b1-657de99f9a3f
+            uid: 6c77f660-4048-47d6-a02d-df65a9ab0564
             userCondition: null
             warning: null
             width: 100
@@ -30,12 +30,11 @@ fieldLayouts:
             dateAdded: '2025-09-07T23:10:48+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 50cd7a70-a0fe-4d38-a86d-9358735fc84c # Hidden Visible
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -46,6 +45,7 @@ fieldLayouts:
         name: Settings
         uid: b6afa78d-71ea-439f-bae4-4dface488000
         userCondition: null
+    thumbFieldKey: null
 handle: displayAdjustment
 hasTitleField: false
 icon: null
@@ -57,3 +57,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-Display-{layoutSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

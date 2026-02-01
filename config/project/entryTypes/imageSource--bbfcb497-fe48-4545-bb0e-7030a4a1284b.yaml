@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -14,12 +15,11 @@ fieldLayouts:
             dateAdded: '2025-11-18T19:08:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: eaf22e5f-1786-41e9-bc4d-0a8682bab8af # Media Device Size
             handle: deviceSize
-            includeInCards: false
             instructions: null
             label: 'Device Size'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -31,12 +31,11 @@ fieldLayouts:
             dateAdded: '2025-09-20T22:30:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: true
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -45,49 +44,30 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-11-18T19:08:13+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
-            handle: frameAspect
-            includeInCards: false
-            instructions: null
-            label: 'Frame Aspect Ratio'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 124f8809-df4a-4b7b-ad2f-f8355ef1e718
-            userCondition: null
-            warning: null
-            width: 50
-          -
             dateAdded: '2025-09-20T22:30:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: mediaAspect
-            includeInCards: true
             instructions: null
             label: 'Media Aspect Ratio'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 81437c9c-e54a-4f5a-8feb-6c80feeed144
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             dateAdded: '2025-11-18T19:08:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: mediaPosition
-            includeInCards: false
             instructions: null
             label: 'Media Position'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -98,6 +78,7 @@ fieldLayouts:
         name: Content
         uid: 382488e6-a998-4297-a9e5-ca63aa7a6d18
         userCondition: null
+    thumbFieldKey: 'layoutElement:baa745ef-7ac5-43c3-821e-cb670ca04f00'
 handle: imageSource
 hasTitleField: false
 icon: null
@@ -109,3 +90,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-ImageSource-{deviceSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

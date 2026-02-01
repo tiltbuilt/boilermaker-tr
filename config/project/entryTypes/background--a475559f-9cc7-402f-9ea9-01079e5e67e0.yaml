@@ -14,19 +14,17 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-09-03T19:46:56+00:00'
+            dateAdded: '2026-01-29T22:27:34+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
-            handle: null
-            includeInCards: false
+            fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
+            handle: layoutSize
             instructions: null
             label: 'Layout Size'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 55f0b51f-5a3d-4b85-9d79-24194550ff8d
+            uid: 4035bd30-1c05-4eba-bf1d-be19c7e94490
             userCondition: null
             warning: null
             width: 100
@@ -36,10 +34,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 72b1f013-8778-4308-a355-29b6088c7162 # Background Type
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -65,10 +61,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c # Background Image
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: true
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -94,10 +88,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: cdbe0d46-9b4d-47a1-854d-cc894a161dd5 # Background Video
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -123,10 +115,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: f4d725e6-48b8-4083-a921-ecc0925a0bff # Background Size
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -152,10 +142,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -189,10 +177,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25 # Background Repeat
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -219,10 +205,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -236,10 +220,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b81cc92d-9e5b-440d-8461-cdf9ab64807e # Opacity
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -250,6 +232,7 @@ fieldLayouts:
         name: 'Background Settings'
         uid: 91ffcc0b-32ff-40bf-8182-34f320eb00ed
         userCondition: null
+    thumbFieldKey: 'layoutElement:dcdf0904-47b9-433f-8898-ab252300d5ff'
 handle: background
 hasTitleField: false
 icon: null
