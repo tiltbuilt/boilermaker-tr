@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.3 - 2026-02-03
+### Upgraded
+- Craft
+
+### Fixed
+- Issue with tab panel active class not being added to buttons
+- Issue with margin being added to bottom of page by author tool bar plugin
+
 ## 3.3.2 - 2026-02-03
 ### Upgraded
 - Craft and Plugins

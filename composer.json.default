@@ -3,7 +3,7 @@
   "prefer-stable": true,
   "require": {
     "appfoster/upsnap": "^1.1.0",
-    "craftcms/ckeditor": "^.11.0",
+    "craftcms/ckeditor": "^4.11.0",
     "craftcms/cms": "^5.9.5",
     "craftcms/feed-me": "^6.10.0",
     "craftcms/postmark": "^3.1.0",

@@ -111,7 +111,7 @@
 		  type="button"
 		  :tabindex="isSelected($el.id) ? 0 : -1"
 		  :aria-selected="isSelected($el.id)"
-		  :class="isSelected($el.id) ? 'tab-active' "
+		  :class="isSelected($el.id) ? 'tab-active' : ''"
 		  class="tab-set-btn {{ colorClasses|join(' ') }}"
 		  role="tab"
 		>
