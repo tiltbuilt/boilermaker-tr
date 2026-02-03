@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32af068f07077aa73eb65a14541458b0",
+    "content-hash": "4d98ed604afc6818b07062139404ff7d",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1093,16 +1093,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.14.1",
+            "version": "0.14.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "f05858549e5f9d7bb45875a75583240a38a281d0"
+                "reference": "a8b53e6cc4d3a336543f042a4dfa0e3f2f2356a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/f05858549e5f9d7bb45875a75583240a38a281d0",
-                "reference": "f05858549e5f9d7bb45875a75583240a38a281d0",
+                "url": "https://api.github.com/repos/brick/math/zipball/a8b53e6cc4d3a336543f042a4dfa0e3f2f2356a4",
+                "reference": "a8b53e6cc4d3a336543f042a4dfa0e3f2f2356a4",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1141,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.14.1"
+                "source": "https://github.com/brick/math/tree/0.14.4"
             },
             "funding": [
                 {
@@ -1149,7 +1149,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-24T14:40:29+00:00"
+            "time": "2026-02-02T16:57:31+00:00"
         },
         {
             "name": "cakephp/core",
@@ -1689,11 +1689,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.3",
+            "version": "5.9.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/44e8085ae706ab9843740d95c3ecfb0b26938fc2",
-                "reference": "44e8085ae706ab9843740d95c3ecfb0b26938fc2",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/a0f43797e571059945fb754ac22fae845a4ad05f",
+                "reference": "a0f43797e571059945fb754ac22fae845a4ad05f",
                 "shasum": ""
             },
             "require": {
@@ -1793,7 +1793,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-01-28T21:58:10+00:00"
+            "time": "2026-01-31T18:05:38+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -9634,11 +9634,16 @@
         },
         {
             "name": "spicyweb/craft-embedded-assets",
-            "version": "5.4.6",
+            "version": "5.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spicywebau/craft-embedded-assets.git",
+                "reference": "d975a79363785579da812926916e1034ac17df90"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-embedded-assets/zipball/6f6a226224ec4af8624e83db52f3a15ed5d600a3",
-                "reference": "6f6a226224ec4af8624e83db52f3a15ed5d600a3",
+                "url": "https://api.github.com/repos/spicywebau/craft-embedded-assets/zipball/d975a79363785579da812926916e1034ac17df90",
+                "reference": "d975a79363785579da812926916e1034ac17df90",
                 "shasum": ""
             },
             "require": {
@@ -9646,20 +9651,25 @@
                 "embed/embed": "^4.4.10",
                 "php": "^8.0.2"
             },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
             "type": "craft-plugin",
             "extra": {
-                "handle": "embeddedassets",
                 "name": "Embedded Assets",
-                "schemaVersion": "1.0.0",
                 "class": "spicyweb\\embeddedassets\\Plugin",
+                "handle": "embeddedassets",
+                "downloadUrl": "https://github.com/spicywebau/craft-embedded-assets/archive/5.4.7.zip",
                 "changelogUrl": "https://github.com/spicywebau/craft-embedded-assets/blob/5.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-embedded-assets/archive/5.4.6.zip"
+                "schemaVersion": "1.0.0"
             },
             "autoload": {
                 "psr-4": {
                     "spicyweb\\embeddedassets\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -9681,12 +9691,12 @@
                 "youtube"
             ],
             "support": {
+                "docs": "https://github.com/spicywebau/craft-embedded-assets/blob/5.4.7/README.md",
                 "issues": "https://github.com/spicywebau/craft-embedded-assets/issues",
-                "source": "https://github.com/spicywebau/craft-embedded-assets",
-                "docs": "https://github.com/spicywebau/craft-embedded-assets/blob/5.4.6/README.md",
-                "rss": "https://github.com/spicywebau/craft-embedded-assets/commits/5.x.atom"
+                "rss": "https://github.com/spicywebau/craft-embedded-assets/commits/5.x.atom",
+                "source": "https://github.com/spicywebau/craft-embedded-assets"
             },
-            "time": "2026-01-28T09:25:26+00:00"
+            "time": "2026-02-03T10:15:50+00:00"
         },
         {
             "name": "spomky-labs/cbor-php",

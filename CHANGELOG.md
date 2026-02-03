@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.3.2 - 2026-02-03
+### Upgraded
+- Craft and Plugins
+
+### Fixed
+- Issue with background not displaying
+- Issue with some elements that require @container classes to work not ahving them present
+- Minor template issues and removed unused block types
+
 ## 3.3.1 - 2026-01-15
 ### Fixed
 - Missing color styling for text links
