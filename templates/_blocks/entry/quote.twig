@@ -49,18 +49,18 @@
 {% endif %}
 
 {% if entry.creditColor != '' %}
-	{% set creditColorClass = 'text-' ~ creditColorClass %}
+	{% set creditColorClass = 'text-' ~ entry.creditColor %}
 {% endif %}
 
-{% if entry.creditTitleColorClass != '' %}
-	{% set creditTitleColorClass = 'text-' ~ creditTitleColorClass %}
+{% if entry.quoteCreditTitleColor != '' %}
+	{% set creditTitleColorClass = 'text-' ~ entry.quoteCreditTitleColor %}
 {% endif %}
 
 
 
 <blockquote id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{- gMacros.typeClasses(entry.typeSettings) -}} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	{{entry.quoteText}}
-	<span id="{{blockId}}-credit" class="quote-credit {{entry.creditColorClass}}">
+	<span id="{{blockId}}-credit" class="quote-credit {{creditColorClass}}">
 		{{entry.quoteCredit|typogrify}}
 		{% if entry.quoteCreditTitle|length %}
 			<span class="quote-credit-title {{creditTitleColorClass}}">{{entry.quoteCreditTitle}}</span>

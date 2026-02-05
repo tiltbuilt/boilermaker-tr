@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.4 - 2026-02-05
+
+### Fixed
+- Quote block's lack of margin control
+
 ## 3.3.3 - 2026-02-03
 ### Upgraded
 - Craft

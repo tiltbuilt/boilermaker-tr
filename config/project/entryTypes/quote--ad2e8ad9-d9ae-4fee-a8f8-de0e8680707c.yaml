@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: cyan
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 3fa40ffc-bcf8-4f2f-9462-19c808265175 # Multiline Text With Search
             handle: quoteText
             instructions: null
@@ -56,6 +58,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: quoteCredit
             instructions: null
@@ -71,6 +74,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: quoteCreditTitle
             instructions: null
@@ -92,6 +96,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:38:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
             handle: null
             instructions: null
@@ -110,9 +115,32 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2026-02-05T18:14:38+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: de4619b0-de67-4111-98a3-e8f1b2daaa32
+            userCondition: null
+            warning: null
+            width: 100
+        name: Spacing
+        uid: 6e7eb4ef-4455-488d-859e-76aa4b9d0f60
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: quoteColor
             instructions: null
@@ -128,6 +156,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: creditColor
             instructions: null
@@ -143,6 +172,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:38:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: quoteCreditTitleColor
             instructions: null
@@ -164,6 +194,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -179,6 +210,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -194,6 +226,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:03+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -216,6 +249,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:38:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -230,6 +264,7 @@ fieldLayouts:
         name: Advanced
         uid: ae8a600c-89ec-4dbc-a08f-7a8eeccfac99
         userCondition: null
+    thumbFieldKey: null
 handle: quote
 hasTitleField: true
 icon: null
@@ -241,3 +276,4 @@ slugTranslationMethod: site
 titleFormat: Quote
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'
