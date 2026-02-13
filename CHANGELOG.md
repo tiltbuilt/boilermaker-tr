@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.3.5 - 2026-02-13
+
+### Upgraded
+- Craft and plugins
+
+### Fixed
+- Issue in page header partial template where  template could throw error when art direction on
+
+## Changed
+- Made performance improvement to reveal animation calls in motion
+
 ## 3.3.4 - 2026-02-05
 
 ### Fixed

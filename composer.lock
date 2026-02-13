@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43cb1f794e9155782a4c374071e23921",
+    "content-hash": "1bcba5e1f55c173bc8fd24f68141383e",
     "packages": [
         {
             "name": "amphp/amp",
@@ -862,11 +862,11 @@
         },
         {
             "name": "appfoster/upsnap",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Appfoster/upsnap/zipball/3f82a60a84cdb922de165a583968bdd5ac85c9ce",
-                "reference": "3f82a60a84cdb922de165a583968bdd5ac85c9ce",
+                "url": "https://api.github.com/repos/Appfoster/upsnap/zipball/ac00f87b7fbce8c914834f202c4bcbc4ec117ff7",
+                "reference": "ac00f87b7fbce8c914834f202c4bcbc4ec117ff7",
                 "shasum": ""
             },
             "require": {
@@ -914,7 +914,7 @@
                 "docs": "https://github.com/Appfoster/upsnap/wiki",
                 "issues": "https://github.com/Appfoster/upsnap/issues"
             },
-            "time": "2026-01-23T08:23:21+00:00"
+            "time": "2026-02-11T07:15:50+00:00"
         },
         {
             "name": "aws/aws-crt-php",
@@ -1093,16 +1093,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.14.5",
+            "version": "0.14.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "618a8077b3c326045e10d5788ed713b341fcfe40"
+                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/618a8077b3c326045e10d5788ed713b341fcfe40",
-                "reference": "618a8077b3c326045e10d5788ed713b341fcfe40",
+                "url": "https://api.github.com/repos/brick/math/zipball/63422359a44b7f06cae63c3b429b59e8efcc0629",
+                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1141,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.14.5"
+                "source": "https://github.com/brick/math/tree/0.14.8"
             },
             "funding": [
                 {
@@ -1149,7 +1149,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-03T18:06:51+00:00"
+            "time": "2026-02-10T14:33:43+00:00"
         },
         {
             "name": "cakephp/core",
@@ -1689,11 +1689,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.6",
+            "version": "5.9.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/558372701d7870da4a3cda88592a21d962de0cb1",
-                "reference": "558372701d7870da4a3cda88592a21d962de0cb1",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/2f5149d4d64a5dafae9db99357823655422ba77d",
+                "reference": "2f5149d4d64a5dafae9db99357823655422ba77d",
                 "shasum": ""
             },
             "require": {
@@ -1793,7 +1793,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-02-03T16:48:37+00:00"
+            "time": "2026-02-13T00:01:18+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -2377,11 +2377,11 @@
         },
         {
             "name": "digitalastronaut/craft-author-toolbar",
-            "version": "v1.2.9-beta",
+            "version": "v1.2.10-beta",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tim-digitalastronaut/craft-author-toolbar/zipball/c647fa1e344e800500f44bb1bb273e6d3764200c",
-                "reference": "c647fa1e344e800500f44bb1bb273e6d3764200c",
+                "url": "https://api.github.com/repos/tim-digitalastronaut/craft-author-toolbar/zipball/78f9e3f9644221d18949140cc655cef857faa2ec",
+                "reference": "78f9e3f9644221d18949140cc655cef857faa2ec",
                 "shasum": ""
             },
             "require": {
@@ -2412,7 +2412,7 @@
                 "docs": "https://github.com/tim-digitalastronaut/craft-author-toolbar",
                 "rss": "https://github.com/tim-digitalastronaut/craft-author-toolbar/releases.atom"
             },
-            "time": "2025-11-06T10:16:38+00:00"
+            "time": "2026-02-09T17:50:34+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -2502,29 +2502,29 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38"
+                "reference": "d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
-                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca",
+                "reference": "d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "conflict": {
-                "phpunit/phpunit": "<=7.5 || >=13"
+                "phpunit/phpunit": "<=7.5 || >=14"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^9 || ^12 || ^13",
-                "phpstan/phpstan": "1.4.10 || 2.1.11",
+                "doctrine/coding-standard": "^9 || ^12 || ^14",
+                "phpstan/phpstan": "1.4.10 || 2.1.30",
                 "phpstan/phpstan-phpunit": "^1.0 || ^2",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12.4 || ^13.0",
                 "psr/log": "^1 || ^2 || ^3"
             },
             "suggest": {
@@ -2544,9 +2544,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.5"
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.6"
             },
-            "time": "2025-04-07T20:06:18+00:00"
+            "time": "2026-02-07T07:09:04+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -6951,11 +6951,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "5.0.13",
+            "version": "5.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/ddcf01728839949213d916dce239edcda52bb329",
-                "reference": "ddcf01728839949213d916dce239edcda52bb329",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/b16c8486f673be3402a100ec1d04e92756f9412f",
+                "reference": "b16c8486f673be3402a100ec1d04e92756f9412f",
                 "shasum": ""
             },
             "require": {
@@ -6999,7 +6999,7 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2026-01-22T21:00:37+00:00"
+            "time": "2026-02-06T19:51:05+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -13543,16 +13543,16 @@
         },
         {
             "name": "verbb/auth",
-            "version": "2.0.29",
+            "version": "2.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/auth.git",
-                "reference": "9ff76c4032a250af2d1d748f777cdffbc0e003e0"
+                "reference": "476434166993ad4510f21006f3dafce50908b3c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/auth/zipball/9ff76c4032a250af2d1d748f777cdffbc0e003e0",
-                "reference": "9ff76c4032a250af2d1d748f777cdffbc0e003e0",
+                "url": "https://api.github.com/repos/verbb/auth/zipball/476434166993ad4510f21006f3dafce50908b3c7",
+                "reference": "476434166993ad4510f21006f3dafce50908b3c7",
                 "shasum": ""
             },
             "require": {
@@ -13598,7 +13598,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-19T02:36:52+00:00"
+            "time": "2026-02-11T00:29:46+00:00"
         },
         {
             "name": "verbb/base",
@@ -14043,11 +14043,11 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.1.10",
+            "version": "3.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/31ef3b6545890649a3f301b9972f945ba44587b4",
-                "reference": "31ef3b6545890649a3f301b9972f945ba44587b4",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/19c4a9ff0e56a5b02f83591078fe58b1961a1f74",
+                "reference": "19c4a9ff0e56a5b02f83591078fe58b1961a1f74",
                 "shasum": ""
             },
             "require": {
@@ -14065,9 +14065,8 @@
                 "stripe/stripe-php": "^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0",
                 "symfony/expression-language": "^5.3.0",
                 "theiconic/name-parser": "^1.0",
-                "verbb/auth": "^2.0.20",
-                "verbb/base": "^3.0.8",
-                "voku/anti-xss": "^4.1"
+                "verbb/auth": "^2.0.31",
+                "verbb/base": "^3.0.8"
             },
             "type": "craft-plugin",
             "extra": {
@@ -14105,7 +14104,7 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2026-01-28T04:03:33+00:00"
+            "time": "2026-02-07T02:58:34+00:00"
         },
         {
             "name": "verbb/icon-picker",
@@ -14218,11 +14217,11 @@
         },
         {
             "name": "verbb/navigation",
-            "version": "3.0.16",
+            "version": "3.0.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/navigation/zipball/6968cc257c7edcbdbae2348e62416907fc07313e",
-                "reference": "6968cc257c7edcbdbae2348e62416907fc07313e",
+                "url": "https://api.github.com/repos/verbb/navigation/zipball/52cc906581fb2fcccb3e624ca5998dc87f1c298e",
+                "reference": "52cc906581fb2fcccb3e624ca5998dc87f1c298e",
                 "shasum": ""
             },
             "require": {
@@ -14267,7 +14266,7 @@
                 "docs": "https://github.com/verbb/navigation",
                 "rss": "https://github.com/verbb/navigation/commits/v2.atom"
             },
-            "time": "2026-01-23T21:34:15+00:00"
+            "time": "2026-02-07T02:49:24+00:00"
         },
         {
             "name": "verbb/shortcodes",
@@ -14328,11 +14327,11 @@
         },
         {
             "name": "verbb/social-share",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/social-share/zipball/a9b39513aeec7ca439def26efc501474938c091c",
-                "reference": "a9b39513aeec7ca439def26efc501474938c091c",
+                "url": "https://api.github.com/repos/verbb/social-share/zipball/68d1d0bf37aaf7e2788fecb200ef7ac567d5bbf0",
+                "reference": "68d1d0bf37aaf7e2788fecb200ef7ac567d5bbf0",
                 "shasum": ""
             },
             "require": {
@@ -14376,7 +14375,7 @@
                 "docs": "https://github.com/verbb/social-share",
                 "rss": "https://github.com/verbb/social-share/commits/v2.atom"
             },
-            "time": "2025-11-06T03:28:04+00:00"
+            "time": "2026-02-07T02:49:35+00:00"
         },
         {
             "name": "verbb/tablemaker",
@@ -14983,11 +14982,16 @@
         },
         {
             "name": "web-auth/webauthn-lib",
-            "version": "4.9.2",
+            "version": "4.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/web-auth/webauthn-lib.git",
+                "reference": "129fbaccd22163429a39bf85e320fb9eddad035c"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/web-auth/webauthn-lib/zipball/008b25171c27cf4813420d0de31cc059bcc71f1a",
-                "reference": "008b25171c27cf4813420d0de31cc059bcc71f1a",
+                "url": "https://api.github.com/repos/web-auth/webauthn-lib/zipball/129fbaccd22163429a39bf85e320fb9eddad035c",
+                "reference": "129fbaccd22163429a39bf85e320fb9eddad035c",
                 "shasum": ""
             },
             "require": {
@@ -15030,6 +15034,7 @@
                     "Webauthn\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -15050,7 +15055,20 @@
                 "fido",
                 "webauthn"
             ],
-            "time": "2025-01-04T09:47:58+00:00"
+            "support": {
+                "source": "https://github.com/web-auth/webauthn-lib/tree/4.9.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Spomky",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/FlorentMorselli",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2026-02-05T12:48:16+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -15734,11 +15752,11 @@
         },
         {
             "name": "zeix/craft-boarding",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zeixcom/craft-boarding/zipball/6d12c07ac7b9c9f8e5ec8dff527aa8356226fd39",
-                "reference": "6d12c07ac7b9c9f8e5ec8dff527aa8356226fd39",
+                "url": "https://api.github.com/repos/zeixcom/craft-boarding/zipball/f05705a3e7b20881dece836f212165b897b57a42",
+                "reference": "f05705a3e7b20881dece836f212165b897b57a42",
                 "shasum": ""
             },
             "require": {
@@ -15783,7 +15801,7 @@
                 "docs": "https://github.com/zeixcom/craft-boarding/blob/main/README.md",
                 "issues": "https://github.com/zeixcom/craft-boarding/issues"
             },
-            "time": "2025-12-17T06:34:15+00:00"
+            "time": "2026-02-10T07:09:30+00:00"
         }
     ],
     "packages-dev": [
@@ -16299,13 +16317,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }

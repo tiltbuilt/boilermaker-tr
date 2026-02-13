@@ -39,7 +39,7 @@
             {% set image = entry.pageHeaderDefaultImage.eagerly().one() %}
             {% if image != null  %}
                 {% set imgSettings = entry.pageHeaderImageArtDirection.eagerly().all() %}
-                {% set currentAspectAspect = 'auto' %}
+                {% set currentAspect = 'auto' %}
                 {% set xFormWidth = '' %}
                 {% set xFormHeight = '' %}
                 {% set srcObjects =  {

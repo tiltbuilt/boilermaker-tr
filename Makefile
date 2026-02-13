@@ -13,8 +13,7 @@ install: up build
 	ddev exec php craft setup/security-key \
 		$(filter-out $@,$(MAKECMDGOALS))
 	ddev exec php craft install \
-		$(filter-out $@,$(MAKECMDGOALS))
-	
+		$(filter-out $@,$(MAKECMDGOALS))	
 up:
 	if [ ! "$$(ddev describe | grep OK)" ]; then \
 		ddev auth ssh; \

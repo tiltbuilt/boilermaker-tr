@@ -32,7 +32,7 @@
 
 @source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:h-{auto,full}');
 @source inline('{items,self}-{stretch,start,center,end}');
-@source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:{items,self}-{stretch,start,center,end}');
+@source inline('{@xs,@sm,@md,@lg,@xl,@2xl,xs,sm,md,lg,xl,2xl}:{items,self}-{stretch,start,center,end}');
 @source inline('justify-{start,center,end,between,around}');
 @source inline('{@xs,@sm,@md,@lg,@xl,@2xl}:justify-{start,center,end,between,around}');
 @source inline('order-{first,last,1,2,3,4,5}');

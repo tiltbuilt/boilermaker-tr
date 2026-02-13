@@ -1,4 +1,4 @@
-dateModified: 1770315278
+dateModified: 1771004800
 elementSources:
   craft\elements\Entry:
     -
@@ -585,7 +585,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 4NGDY778PUBYATTK1L91ONOC
-    schemaVersion: 2.1.1
+    schemaVersion: 2.1.2
   postmark:
     edition: standard
     enabled: true
