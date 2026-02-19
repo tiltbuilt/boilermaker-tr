@@ -26,17 +26,6 @@
 {# Set block type handle as class name for styling #}
 {% set blockClass = entry.type.handle|kebab %}
 
-{# Get classes for element animation settings #}
-{% if animSetting is defined %}
-	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-		{% set animate = true %}	
-	{% else %}
-		{% set animate = false %}		
-	{% endif %}
-{% else %}
-	{% set animate = false %}
-{% endif %}
-	
 {# Set color classes #}
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
@@ -60,8 +49,7 @@
 			{% if chunk.type == 'markup' %}
 				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
 			{% else %}
-				{{ chunk.entry.render({
-					'animSetting': {'animate': false, 'animateContent': false, 'animLevel': false},
+				{{ chunk.entry.render({					
 					'colorScheme': colorScheme,
 					'sizeTracker': sizeTracker
 				}) }}

@@ -28,11 +28,6 @@
 {# Set block type handle as class name for styling #}
 {% set blockClass = entry.type.handle|kebab %}
 
-{# Get classes for element animation settings #}
-{% if animSetting is not defined %}
-	{% set animSetting = {'animate': false, 'animateContent': false, 'animLevel': false} %}
-{% endif %}
-
 {# set default color if not defined #}
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
@@ -57,8 +52,7 @@
 
 <div id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ rowClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) -}}>
 	{% for column in rowContent %}
-		{{column.render({
-			'animSetting': animSetting,
+		{{column.render({			
 			'colorScheme': colorScheme,
 			'layoutSettings': entry.layoutSettings,
 			'sizeTracker': sizeTracker

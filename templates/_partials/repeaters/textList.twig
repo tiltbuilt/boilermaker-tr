@@ -20,7 +20,7 @@
 
 <ul class="{{- repeaterStyles|join(' ') }}">
 {% for listItem in listContent %}
-	<li class="repeater-list-text-item {% if animate %}animate{% endif %}">
+	<li class="repeater-list-text-item">
 		<div class="list-item-content">	
 			<{{ headingLvl}} class="repeater-list-text-item-header">
 				{% if listItem.url|length %}<a href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %}>{% endif %}

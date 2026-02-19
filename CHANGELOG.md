@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.3.6 - 2026-02-19
+
+### Upgraded
+- Craft and plugins
+
+### Fixed
+- Modals so that they actually work for a change
+- Styling of forms
+- Settings for full listings button in repeater template
+
+## Changed
+- Made more performance improvement to reveal animation calls in motion
+
+## Removed
+- Legacy animation setting code from all block templates
+
 ## 3.3.5 - 2026-02-13
 
 ### Upgraded

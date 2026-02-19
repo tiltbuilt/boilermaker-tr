@@ -46,38 +46,81 @@ try {
   animate("body", { opacity: 1 });
   document.body.classList.add('motion-loaded');
 
-  const selectors = "p, ul, .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper"
+  // General content - section level animation
+  const selectors = "p, ul, .heading, .btn, .cta, .content-image, .accordion, .icon-content, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .page-header-main-photo, .stat-ticker-group, .animated, .form-field-wrapper, .form-btn-wrapper";
 
   inView(".section-standard .background-wrapper, .section-side-media .side-media-media", (element) => {
     animate(element, { opacity: 1}, { duration: 1.5 });
     //console.log("in view:", element);
   }, { amount: 0.01}, { once: true });
-
-  inView(".section-standard, .section-side-media", (element) => {
-  animate(element.querySelectorAll(selectors), { opacity: 1, y: 0 }, { 
-    delay: stagger(0.1, { startDelay: 0.1 }), 
-    duration: 0.5, 
-    ease: [0.3, 0.1, 0.1, 1] 
-  });
-}, { amount: 0.3, once: true });
   
+  inView(".main .section-standard, .main .section-side-media", (section) => {
+    const items = Array.from(section.querySelectorAll(selectors));
+
+    // Cache rects once before sorting
+    const rects = new Map(items.map(el => [el, el.getBoundingClientRect()]));
+
+    items.sort((a, b) => {
+      const rectA = rects.get(a);
+      const rectB = rects.get(b);
+      const rowDiff = rectA.top - rectB.top;
+      if (Math.abs(rowDiff) > 5) return rowDiff;
+      return rectA.left - rectB.left;
+    });
+
+    animate(items, { opacity: 1, y: 0 }, { delay: stagger(0.03), duration: 0.5, ease: [0.3, 0.1, 0.1, 1] });
+  }, { amount: 0.2, once: true });
+
+  // Individual level (more expensive but needed for larger batches)
   inView(".section-standard .repeater, .section-side-media .repeater", (target) => {
     animate(
       '.repeater-card', 
-      { opacity: 1, y: 0}, 
-      /*{ ease: [.17,.67,.83,.67], opacity: { ease: [.17,.67,.83,.67]} }, 
-      { duration: 1.5, y: { duration: 2} }, */
+      { opacity: 1, y: 0},      
       { delay: stagger(0.3) });
     },
     { amount: 0.15 }, 
     { once: true }
-  );   
-
+  );
 
 } catch (error) {
   // Handle the error, perhaps by logging it or doing nothing
   console.error("Motion.dev failed to load:", error);
 }
+
+
+document.addEventListener('alpine:init', () => {
+  
+  Alpine.store('contentModal', {
+    on: false,
+    modalHtml: '',
+    showLoading: false,   
+  
+    open(modalUrl, modalTitle) {      
+      this.modalHtml='loading...'; 
+      this.showLoading = true; 
+      this.on = true;
+            
+      fetch(modalUrl, {
+        method: 'GET',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+      })
+      .then(response => response.text())
+      .then(text => {
+        this.modalHtml = text
+        this.showLoading = false;			   
+      })
+      
+    },
+    
+    close() {
+      this.on = false;
+      this.modalHtml = '';
+      this.showLoading = false;   
+    }
+  });
+});
 
 
 if (typeof window.Alpine === "undefined") {

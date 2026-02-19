@@ -27,17 +27,6 @@
 {# Set block type handle as class name for styling #}
 {% set blockClass = entry.type.handle|kebab %}
 
-{# Get classes for element animation settings #}
-{% if animSetting is defined %}
-	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-		{% set animate = true %}	
-	{% else %}
-		{% set animate = false %}		
-	{% endif %}
-{% else %}
-	{% set animate = false %}
-{% endif %}
-
 {# Set color classes #}
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
@@ -144,15 +133,10 @@
 <div id="{{blockId}}" class="@container {{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ columnClassList|join(' ') }} {{ gutterClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}}>	
 	<div class="inner column-inner {{- gMacros.typeClasses(entry.typeSettings) }} {{ gMacros.spacingClasses(entry.padding) }}">		
 		{% for chunk in entry.elementContent %}
-			{% if chunk.type == 'markup' %}
-				{% if animate %}
-					{{chunk|raw|retconAttr(['body > p', 'body > ol', 'body > ul'], { 'class' : 'animate' }, false)|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-				{% else %}
-					{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}
-				{% endif %}
+			{% if chunk.type == 'markup' %}				
+				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}				
 			{% else %}
-				{{ chunk.entry.render({
-					'animSetting': animSetting,
+				{{ chunk.entry.render({					
 					'colorScheme': colorScheme,
 					'sizeTracker': sizeTracker
 				}) }}

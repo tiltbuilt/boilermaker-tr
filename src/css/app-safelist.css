@@ -1,5 +1,6 @@
 /* COLORS */
 @source inline('{hover:,focus:}{bg,text}-{black,white,transparent,red-{700,900},gray-{300,700}}');
+@source inline('{bg,text}-{black,white,transparent,red-{700,900},gray-{300,700}}');
 
 /* SPACING */
 @source inline('{p,px,py,pt,pr,pl,pb}-{0,quarter,half,base,2x,3x,4x}');

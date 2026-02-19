@@ -40,16 +40,6 @@
 {# Set block type handle as class name for styling #}
 {% set blockClass = entry.type.handle|kebab %}
 
-{# Get classes for element animation settings #}
-{% if animSetting is defined %}
-	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-		{% set animate = true %}	
-	{% else %}
-		{% set animate = false %}		
-	{% endif %}
-{% else %}
-	{% set animate = false %}
-{% endif %}
 
 {# Set color class #}
 {% if colorScheme is not defined %}
@@ -78,7 +68,7 @@
 }
 %}
 
-<div id="{{blockId}}" class="{{ blockClass }} @container {% if animate %}animate{% endif %} {% if entry.buttonOrientation %}btn-group-stacked {{entry.buttonHorizontalAlignment}}{% else %}btn-group-inline {{entry.horizontalAlignment}}{% endif %} %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{colorScheme}} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{ blockClass }} @container {% if entry.buttonOrientation %}btn-group-stacked {{entry.buttonHorizontalAlignment}}{% else %}btn-group-inline {{entry.horizontalAlignment}}{% endif %} %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{colorScheme}} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) }}>
 	{% set buttons = entry.buttons.eagerly().all() %}
 	{% for button in buttons %}
 		{# get styles for button or if not set, use styles from the set #}

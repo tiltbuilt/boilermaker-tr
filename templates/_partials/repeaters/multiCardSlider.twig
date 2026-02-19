@@ -65,7 +65,7 @@
 {% endfor %}
 
 
-<div id="{{blockId}}" class="slider-set repeater-slider repeater-slider-multi {{colorScheme}} {% if animate %}animate{% endif %}"
+<div id="{{blockId}}" class="slider-set repeater-slider repeater-slider-multi {{colorScheme}}"
 {% if listContent|length > 1 %}
 x-data="{swiper: null}"
 x-init="swiper = new Swiper($refs.container, {

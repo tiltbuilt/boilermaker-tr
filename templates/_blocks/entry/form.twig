@@ -15,7 +15,11 @@
 
 {# Create array for classes to pass to macros for section #}
 {% set formClassList = [] %}
-{% set btnClasses = ['btn', entry.btnStyles, entry.btnSize] %}
+
+{% set btnStyle = entry.btnStyles == '' ? 'btn-standard': entry.btnStyles %}
+{% set btnSize = entry.btnSize == '' ? 'btn-md' : entry.btnSize %}
+{% set btnClasses = ['btn', btnStyle, btnSize] %}
+{% set btnClassesString = btnClasses|join(' ') %}
 
 {# Set block id attribute value #}
 {% if entry.customId is defined and entry.customId != '' %}
@@ -26,17 +30,6 @@
 
 {# Set block type handle as class name for styling #}
 {% set blockClass = "form-block" %}
-
-{# Get classes for element animation settings #}
-{% if animSetting is defined %}
-	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-		{% set animate = true %}	
-	{% else %}
-		{% set animate = false %}		
-	{% endif %}
-{% else %}
-	{% set animate = false %}
-{% endif %}
 
 	
 {# Set color classes #}
@@ -63,7 +56,9 @@
 {# Retrieve styling adjustments #}
 {#{% set adjustments = entry.formStyleAdjustments.eagerly().all() %}#}
 
-<div id="{{blockId}}" class="{{- blockClass }} {% if animate %}animate{% endif %} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<div id="{{blockId}}" class="{{- blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ formClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+	
+	{# form rendering #}
 	{% set form = entry.formToDisplay.eagerly().one() %}	
 	{{ craft.formie.renderForm(form, {
 		themeConfig: {
@@ -90,7 +85,7 @@
 				buttonWrapper: {
 					attributes: {
 						class: [
-							'flex justify-start mt-base',
+							'flex justify-start mt-base items-center',
 							"{{ buttonsPosition == 'right' ? 'justify-end' }}",
 							"{{ buttonsPosition == 'center' ? 'justify-center' }}",
 							"{{ buttonsPosition == 'left-right' ? 'justify-between' }}",
@@ -112,7 +107,7 @@
 				saveButton: {
 					attributes: {
 						class: [
-							'btn btn-text' ~ colorScheme,
+							'btn btn-text ' ~ colorScheme,
 						],
 					},
 				},
@@ -120,14 +115,14 @@
 				backButton: {
 					attributes: {
 						class: [
-							'btn btn-text' ~ colorScheme,
+							'btn btn-text ' ~ colorScheme,
 						],
 					},
 				},
 		
 				submitButton: {
 					attributes: {
-						class: btnClasses,
+						class: btnClassesString,
 					},
 				},
 		

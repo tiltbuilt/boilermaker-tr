@@ -23,17 +23,6 @@
 {# Set block type handle as class name for styling #}
 {% set blockClass = entry.type.handle|kebab %}
 
-{# Get classes for element animation settings #}
-{% if animSetting is defined %}
-	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-		{% set animate = true %}	
-	{% else %}
-		{% set animate = false %}		
-	{% endif %}
-{% else %}
-	{% set animate = false %}
-{% endif %}
-
 {# set headingLevel if not defined from page header #}
 {% if headingLevel is not defined or headingLevel == '' %}
 	{% set headingLevel = entry.headingLevel|length ? entry.headingLevel : 'h2' %}
@@ -55,7 +44,7 @@
 
 
 
-<{{entry.headingLevel}} id="{{blockId}}" class="{{ blockClass }} {% if animate %}animate{% endif %} {{ colorScheme }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
+<{{entry.headingLevel}} id="{{blockId}}" class="{{ blockClass }} {{ colorScheme }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 
 	{% if entry.subheadText|length and entry.subheadPosition == 1 %}
 		<span id="{{blockId}}-subhead" class="block {{ subheadStyle}} {{ gMacros.typeClasses(entry.typeOverridesSubhead) }} {% if entry.subheadSpacing|length %}mb-{{entry.subheadSpacing}}{% endif %} {% if entry.subheadColor|length %}text-{{ entry.subheadColor }}{% endif %}">		

@@ -13,7 +13,8 @@ hooks:
     post-start:
         - exec: composer install
         - exec: npm install        
-        - exec: npm run build       
+        - exec: npm run build
+        - exec: npm run dev       
     pre-stop:
         - exec: php craft db/backup
 use_dns_when_possible: true

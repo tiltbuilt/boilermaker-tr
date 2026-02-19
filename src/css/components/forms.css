@@ -82,8 +82,8 @@
 	}
 	
 	.form-checkbox, .form-radio {		
-		width: 2rem;
-		height: 2rem;
+		width: .9rem;
+		height: .9rem;
 		color: var(--color-form-input-text);
 		background-color: var(--color-form-input-bg);
 	}

@@ -25,6 +25,7 @@
 	.full-listing-btn-wrapper {
 		display: flex;
 		margin-top: var(--spacing-base);
+		justify-content: center;
 	}
 
 	/* TEXT LIST */

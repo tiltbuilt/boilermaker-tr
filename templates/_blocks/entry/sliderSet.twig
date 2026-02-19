@@ -26,17 +26,6 @@
 {# Set block type handle as class name for styling #}
 {% set blockClass = entry.type.handle|kebab %}
 
-{# Get classes for element animation settings #}
-{% if animSetting is defined %}
-	{% if animSetting.animate and animSetting.animateContent and animSetting.animLevel %}
-		{% set animate = true %}	
-	{% else %}
-		{% set animate = false %}		
-	{% endif %}
-{% else %}
-	{% set animate = false %}
-{% endif %}
-
 {# Set color classes #}
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
@@ -67,7 +56,7 @@
 {# retrieve slide content #}
 {% set slides = entry.slides.eagerly().all() %}
 
-<div id="{{blockId}}" class="@container {% if animate %}animate{% endif %} {{blockClass}} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ sliderSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} 
+<div id="{{blockId}}" class="@container {{blockClass}} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ sliderSetClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} 
 
 {% if entry.slides|length > 1 %}
 x-data="{swiper: null}"

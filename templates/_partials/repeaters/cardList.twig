@@ -11,10 +11,6 @@
 
 {% set cardClasses = ['repeater-card', 'col-span-12'] %}
 
-{% if animate %}
-	{% set cardClasses = cardClasses|merge(["animate"]) %}
-{% endif %}
-
 {% if cardRowSizes != null and cardRowSizes|length %}
 
 	{% for rowSize in cardRowSizes %}

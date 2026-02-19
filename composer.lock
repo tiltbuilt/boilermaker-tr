@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bcba5e1f55c173bc8fd24f68141383e",
+    "content-hash": "6acd964c0b4d808475ec5439ec908555",
     "packages": [
         {
             "name": "amphp/amp",
@@ -862,11 +862,11 @@
         },
         {
             "name": "appfoster/upsnap",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Appfoster/upsnap/zipball/ac00f87b7fbce8c914834f202c4bcbc4ec117ff7",
-                "reference": "ac00f87b7fbce8c914834f202c4bcbc4ec117ff7",
+                "url": "https://api.github.com/repos/Appfoster/upsnap/zipball/5dbf065c88dcf1a82c3b2f3f814dac10a1a4f024",
+                "reference": "5dbf065c88dcf1a82c3b2f3f814dac10a1a4f024",
                 "shasum": ""
             },
             "require": {
@@ -914,7 +914,7 @@
                 "docs": "https://github.com/Appfoster/upsnap/wiki",
                 "issues": "https://github.com/Appfoster/upsnap/issues"
             },
-            "time": "2026-02-11T07:15:50+00:00"
+            "time": "2026-02-16T08:46:14+00:00"
         },
         {
             "name": "aws/aws-crt-php",
@@ -1636,11 +1636,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.11.0",
+            "version": "4.11.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/00289e6ce5f9a7c9595c5a51c2c726585aad5964",
-                "reference": "00289e6ce5f9a7c9595c5a51c2c726585aad5964",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/2e75b5050377aafb0aeef4b67230d26c28a07218",
+                "reference": "2e75b5050377aafb0aeef4b67230d26c28a07218",
                 "shasum": ""
             },
             "require": {
@@ -1685,15 +1685,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2025-11-20T01:01:30+00:00"
+            "time": "2026-02-18T22:13:33+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.10",
+            "version": "5.9.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/2f5149d4d64a5dafae9db99357823655422ba77d",
-                "reference": "2f5149d4d64a5dafae9db99357823655422ba77d",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b38439ac3815a0a56c9f4cca34db5ddb1ce15dca",
+                "reference": "b38439ac3815a0a56c9f4cca34db5ddb1ce15dca",
                 "shasum": ""
             },
             "require": {
@@ -1793,7 +1793,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-02-13T00:01:18+00:00"
+            "time": "2026-02-18T21:29:03+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -3068,16 +3068,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v6.11.1",
+            "version": "v7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
+                "reference": "5645b43af647b6947daac1d0f659dd1fbe8d3b65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
-                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/5645b43af647b6947daac1d0f659dd1fbe8d3b65",
+                "reference": "5645b43af647b6947daac1d0f659dd1fbe8d3b65",
                 "shasum": ""
             },
             "require": {
@@ -3125,9 +3125,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.11.1"
+                "source": "https://github.com/firebase/php-jwt/tree/v7.0.2"
             },
-            "time": "2025-04-09T20:32:01+00:00"
+            "time": "2025-12-16T22:17:28+00:00"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
@@ -4523,43 +4523,6 @@
                 "laravel"
             ],
             "time": "2021-01-22T15:08:35+00:00"
-        },
-        {
-            "name": "ircmaxell/security-lib",
-            "version": "v1.1.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/SecurityLib/zipball/f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
-                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "SecurityLib": "lib"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
-                    "homepage": "http://blog.ircmaxell.com"
-                }
-            ],
-            "description": "A Base Security Library",
-            "homepage": "https://github.com/ircmaxell/SecurityLib",
-            "time": "2015-03-20T14:31:23+00:00"
         },
         {
             "name": "jakeasmith/http_build_url",
@@ -7377,57 +7340,6 @@
             "time": "2025-09-24T15:06:41+00:00"
         },
         {
-            "name": "paragonie/random-lib",
-            "version": "v2.0.3",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/RandomLib/zipball/556bb9c3b70c5e9bf74838fbd22c989c633f5d52",
-                "reference": "556bb9c3b70c5e9bf74838fbd22c989c633f5d52",
-                "shasum": ""
-            },
-            "require": {
-                "ircmaxell/security-lib": "^1.1",
-                "paragonie/random_compat": "^2|~9.99",
-                "paragonie/sodium_compat": "^1|^2",
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "RandomLib": "lib"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com",
-                    "homepage": "https://paragonie.com"
-                },
-                {
-                    "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
-                    "homepage": "http://blog.ircmaxell.com"
-                }
-            ],
-            "description": "A Library For Generating Secure Random Numbers",
-            "homepage": "https://github.com/ircmaxell/RandomLib",
-            "keywords": [
-                "cryptography",
-                "random",
-                "random-numbers",
-                "random-strings"
-            ],
-            "time": "2024-04-21T01:17:05+00:00"
-        },
-        {
             "name": "paragonie/random_compat",
             "version": "v9.99.100",
             "dist": {
@@ -7461,102 +7373,6 @@
                 "random"
             ],
             "time": "2020-10-15T08:29:30+00:00"
-        },
-        {
-            "name": "paragonie/sodium_compat",
-            "version": "v2.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "4714da6efdc782c06690bc72ce34fae7941c2d9f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/4714da6efdc782c06690bc72ce34fae7941c2d9f",
-                "reference": "4714da6efdc782c06690bc72ce34fae7941c2d9f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "php-64bit": "*"
-            },
-            "require-dev": {
-                "infection/infection": "^0",
-                "nikic/php-fuzzer": "^0",
-                "phpunit/phpunit": "^7|^8|^9|^10|^11",
-                "vimeo/psalm": "^4|^5|^6"
-            },
-            "suggest": {
-                "ext-sodium": "Better performance, password hashing (Argon2i), secure memory management (memzero), and better security."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "autoload.php"
-                ],
-                "psr-4": {
-                    "ParagonIE\\Sodium\\": "namespaced/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "ISC"
-            ],
-            "authors": [
-                {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com"
-                },
-                {
-                    "name": "Frank Denis",
-                    "email": "jedisct1@pureftpd.org"
-                }
-            ],
-            "description": "Pure PHP implementation of libsodium; uses the PHP extension if it exists",
-            "keywords": [
-                "Authentication",
-                "BLAKE2b",
-                "ChaCha20",
-                "ChaCha20-Poly1305",
-                "Chapoly",
-                "Curve25519",
-                "Ed25519",
-                "EdDSA",
-                "Edwards-curve Digital Signature Algorithm",
-                "Elliptic Curve Diffie-Hellman",
-                "Poly1305",
-                "Pure-PHP cryptography",
-                "RFC 7748",
-                "RFC 8032",
-                "Salpoly",
-                "Salsa20",
-                "X25519",
-                "XChaCha20-Poly1305",
-                "XSalsa20-Poly1305",
-                "Xchacha20",
-                "Xsalsa20",
-                "aead",
-                "cryptography",
-                "ecdh",
-                "elliptic curve",
-                "elliptic curve cryptography",
-                "encryption",
-                "libsodium",
-                "php",
-                "public-key cryptography",
-                "secret-key cryptography",
-                "side-channel resistant"
-            ],
-            "support": {
-                "issues": "https://github.com/paragonie/sodium_compat/issues",
-                "source": "https://github.com/paragonie/sodium_compat/tree/v2.5.0"
-            },
-            "time": "2025-12-30T16:12:18+00:00"
         },
         {
             "name": "phenx/php-font-lib",
@@ -8750,11 +8566,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "5.12.6",
+            "version": "5.12.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/2acc44f435a12841f54163e73f5b84807b786163",
-                "reference": "2acc44f435a12841f54163e73f5b84807b786163",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/51718e5f9b588650c119a8e8c08462fabdb2dc33",
+                "reference": "51718e5f9b588650c119a8e8c08462fabdb2dc33",
                 "shasum": ""
             },
             "require": {
@@ -8798,7 +8614,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2026-01-06T17:01:39+00:00"
+            "time": "2026-02-15T23:03:04+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar",
@@ -8886,11 +8702,11 @@
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/079e060ad4c342a651a95d5661c221ccee36b7e3",
-                "reference": "079e060ad4c342a651a95d5661c221ccee36b7e3",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/a9cf486c1adaa4ca5f08c39b5d4f70f585668774",
+                "reference": "a9cf486c1adaa4ca5f08c39b5d4f70f585668774",
                 "shasum": ""
             },
             "require": {
@@ -8912,7 +8728,7 @@
                 "source": "https://github.com/putyourlightson/craft-sprig-core",
                 "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2025-09-14T15:06:51+00:00"
+            "time": "2026-02-17T23:23:31+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -13543,27 +13359,26 @@
         },
         {
             "name": "verbb/auth",
-            "version": "2.0.32",
+            "version": "2.0.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/auth.git",
-                "reference": "476434166993ad4510f21006f3dafce50908b3c7"
+                "reference": "575ebe05e01603d396689262cd84bba106c4fce2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/auth/zipball/476434166993ad4510f21006f3dafce50908b3c7",
-                "reference": "476434166993ad4510f21006f3dafce50908b3c7",
+                "url": "https://api.github.com/repos/verbb/auth/zipball/575ebe05e01603d396689262cd84bba106c4fce2",
+                "reference": "575ebe05e01603d396689262cd84bba106c4fce2",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0.0",
-                "firebase/php-jwt": "~3.0 || ~4.0 || ~5.0 || ~6.0",
+                "firebase/php-jwt": "~6.0 || ~7.0",
                 "jakeasmith/http_build_url": "^1.0",
                 "lcobucci/jwt": "^3.4 || ^4.0",
                 "league/oauth1-client": "^1.9",
                 "league/oauth2-client": "^2.8.1",
                 "mollie/mollie-api-php": "^1.19 || ^2.39",
-                "paragonie/random-lib": "^2.0",
                 "php": "^8.2",
                 "psr/http-message": "^1.0 || ^2.0",
                 "verbb/base": "^3.0.0"
@@ -13598,7 +13413,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-11T00:29:46+00:00"
+            "time": "2026-02-18T11:30:58+00:00"
         },
         {
             "name": "verbb/base",
@@ -14043,11 +13858,11 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.1.11",
+            "version": "3.1.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/19c4a9ff0e56a5b02f83591078fe58b1961a1f74",
-                "reference": "19c4a9ff0e56a5b02f83591078fe58b1961a1f74",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/1d7409cd18d9d2877602cb7175beb8a711402c4b",
+                "reference": "1d7409cd18d9d2877602cb7175beb8a711402c4b",
                 "shasum": ""
             },
             "require": {
@@ -14065,7 +13880,7 @@
                 "stripe/stripe-php": "^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0",
                 "symfony/expression-language": "^5.3.0",
                 "theiconic/name-parser": "^1.0",
-                "verbb/auth": "^2.0.31",
+                "verbb/auth": "^2.0.33",
                 "verbb/base": "^3.0.8"
             },
             "type": "craft-plugin",
@@ -14104,7 +13919,7 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2026-02-07T02:58:34+00:00"
+            "time": "2026-02-18T20:08:56+00:00"
         },
         {
             "name": "verbb/icon-picker",
@@ -14379,11 +14194,11 @@
         },
         {
             "name": "verbb/tablemaker",
-            "version": "5.0.6",
+            "version": "5.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/84892582b0fd34d077fecee2702313b31dbb68c7",
-                "reference": "84892582b0fd34d077fecee2702313b31dbb68c7",
+                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/fb3b91da8cb3076ac6631caa3a4381ab7c152af4",
+                "reference": "fb3b91da8cb3076ac6631caa3a4381ab7c152af4",
                 "shasum": ""
             },
             "require": {
@@ -14432,7 +14247,7 @@
                 "docs": "https://github.com/verbb/tablemaker",
                 "rss": "https://github.com/verbb/tablemaker/commits/v2.atom"
             },
-            "time": "2025-07-18T14:05:39+00:00"
+            "time": "2026-02-13T22:24:30+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -15072,16 +14887,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "2.1.2",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "ce6a2f100c404b2d32a1dd1270f9b59ad4f57649"
+                "reference": "79155f94852fa27e2f73b459f6503f5e87e2c188"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/ce6a2f100c404b2d32a1dd1270f9b59ad4f57649",
-                "reference": "ce6a2f100c404b2d32a1dd1270f9b59ad4f57649",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/79155f94852fa27e2f73b459f6503f5e87e2c188",
+                "reference": "79155f94852fa27e2f73b459f6503f5e87e2c188",
                 "shasum": ""
             },
             "require": {
@@ -15128,9 +14943,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/2.1.2"
+                "source": "https://github.com/webmozarts/assert/tree/2.1.5"
             },
-            "time": "2026-01-13T14:02:24+00:00"
+            "time": "2026-02-18T14:09:36+00:00"
         },
         {
             "name": "webonyx/graphql-php",
