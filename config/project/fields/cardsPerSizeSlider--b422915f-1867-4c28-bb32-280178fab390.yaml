@@ -33,7 +33,7 @@ settings:
                       - '640px Wide and Above (Phone Horizontal Size)'
                     -
                       - value
-                      - 640pxWideAndAbovePhoneHorizontalSize
+                      - '@sm'
                     -
                       - default
                       - false
@@ -44,7 +44,7 @@ settings:
                       - '768px Wide and Above (Tablet Vertical Size)'
                     -
                       - value
-                      - 768pxWideAndAboveTabletVerticalSize
+                      - '@md'
                     -
                       - default
                       - false
@@ -55,7 +55,7 @@ settings:
                       - '1024px Wide and Above (Laptop Size)'
                     -
                       - value
-                      - 1024pxWideAndAboveLaptopSize
+                      - '@lg'
                     -
                       - default
                       - false
@@ -66,7 +66,7 @@ settings:
                       - '1280px Wide and Above (Desktop Size)'
                     -
                       - value
-                      - 1280pxWideAndAboveDesktopSize
+                      - '@xl'
                     -
                       - default
                       - false

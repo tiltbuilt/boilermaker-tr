@@ -16,7 +16,7 @@
 {% set cardClasses = ['repeater-card', 'w-full'] %}
 
 {% set countValues =  {
-	'df': 1,	
+	'@df': 1,	
 	'@xs': null,
 	'@sm': null,
 	'@md': null,
@@ -26,7 +26,7 @@
 } %}
 
 {% set countSizes =  {
-	'df': 0,	
+	'@df': 0,	
 	'@xs': 290,
 	'@sm': 610,
 	'@md': 738,
@@ -36,8 +36,8 @@
 } %}
 
 
-{% if cardRowSizes != null and cardRowSizes|length %}
-	{% for rowSize in cardRowSizes %}
+{% if cardSliderSizes != null and cardSliderSizes|length %}
+	{% for rowSize in cardSliderSizes %}
 		{% if rowSize.layoutSize == '' %}
 			{% set cardClasses = cardClasses|merge(['w-1/' ~ rowSize.numberOfCards]) %}
 			{% set countValues = countValues|merge({'df': rowSize.numberOfCards}) %}
@@ -64,7 +64,6 @@
 	{% endif %}
 {% endfor %}
 
-
 <div id="{{blockId}}" class="slider-set repeater-slider repeater-slider-multi {{colorScheme}}"
 {% if listContent|length > 1 %}
 x-data="{swiper: null}"
@@ -76,7 +75,7 @@ x-init="swiper = new Swiper($refs.container, {
 	noSwipingSelector: 'a',
 	breakpoints: {
 	{% for size in cardSliderSizes %}
-		{{size.layoutSize}}: {
+		{{countSizes[size.layoutSize]}}: {
 			slidesPerView: {{size.numberOfCards}},			
 		},
 	{% endfor %}

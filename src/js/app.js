@@ -47,7 +47,7 @@ try {
   document.body.classList.add('motion-loaded');
 
   // General content - section level animation
-  const selectors = "p, ul, .heading, .btn, .cta, .content-image, .accordion, .icon-content, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .page-header-main-photo, .stat-ticker-group, .animated, .form-field-wrapper, .form-btn-wrapper";
+  const selectors = "p, ul:not(.tab-list), .heading, .btn, .cta, .content-image, .accordion, .icon-content, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .page-header-main-photo, .stat-ticker-group, .animated, .form-field-wrapper, .form-btn-wrapper";
 
   inView(".section-standard .background-wrapper, .section-side-media .side-media-media", (element) => {
     animate(element, { opacity: 1}, { duration: 1.5 });
@@ -76,7 +76,7 @@ try {
     animate(
       '.repeater-card', 
       { opacity: 1, y: 0},      
-      { delay: stagger(0.3) });
+      { delay: stagger(0.15) });
     },
     { amount: 0.15 }, 
     { once: true }

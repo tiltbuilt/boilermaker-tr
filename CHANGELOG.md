@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.3.7 - 2026-02-21
+
+### Upgraded
+- Craft and plugins
+
+### Fixed
+- Issues with multi-card slider
+- Selector issue with animated reveals that prevented tab panel buttons from displaying
+
+### Changed
+- Speed of reveal for repeater cards
+
 ## 3.3.6 - 2026-02-19
 
 ### Upgraded

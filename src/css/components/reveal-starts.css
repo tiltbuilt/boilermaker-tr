@@ -2,7 +2,7 @@
     
     body.motion-loaded .main .section-standard {
         
-        p, li, .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .repeater-card, .animated, .form-field-wrapper, .form-btn-wrapper  {
+        p, ul:not(.tab-list), .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .repeater-card, .animated, .form-field-wrapper, .form-btn-wrapper  {
             opacity: 0;
             transform: translateY(2rem);
         }
@@ -15,7 +15,7 @@
 
     body.motion-loaded .main .section-side-media {
         
-        p, li, .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .repeater-card, .animated, .form-field-wrapper, .form-btn-wrapper  {
+        p, ul:not(.tab-list) li, .heading, .btn, .cta, .content-image, .icon-content, .accordion, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .repeater-card, .animated, .form-field-wrapper, .form-btn-wrapper  {
             opacity: 0;
             transform: translateY(2rem);
         }
