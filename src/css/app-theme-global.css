@@ -6,6 +6,8 @@
 	--spacing-text: 1.6vmax;
 
 	/* SECTION PADDING */
+	--spacing-section-x-0: 0;
+	--spacing-section-y-0: 0;
 	--spacing-section-x-base: 4vw;
 	--spacing-section-y-base: 4vmax;
 	--spacing-section-x-quarter: calc(0.25 * var(--spacing-section-x-base));

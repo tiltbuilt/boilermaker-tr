@@ -1,0 +1,47 @@
+.ck.ck-content {
+  font-size: 16px;
+}
+
+.ck.ck-content .text-xs {
+  font-size: 12px;
+}
+
+.ck.ck-content .text-sm {
+  font-size: 14px;
+}
+
+.ck.ck-content .text-lg {
+  font-size: 18px;
+}
+
+.ck.ck-content .text-xl {
+  font-size: 20px;
+}
+
+.ck.ck-content .text-2xl {
+  font-size: 24px;
+}
+
+.ck.ck-content .text-3xl {
+  font-size: 30px;
+}
+
+.ck.ck-content .text-4xl {
+  font-size: 36px;
+}
+
+.ck.ck-content .text-5xl {
+  font-size: 48px;
+}
+
+.ck.ck-content .text-6xl {
+  font-size: 60px;
+}
+
+.ck.ck-content .text-7xl {
+  font-size: 72px;
+}
+
+.ck.ck-content .text-8xl {
+  font-size: 96px;
+}

@@ -7,7 +7,16 @@
 		/* The default classes and style below can be changed on a per-project basis */
 		margin-top: var(--spacing-base);
 		gap: 1rem;
-		flex-wrap: wrap;	  
+		flex-wrap: wrap;
+		
+		&.btn-group-stacked {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&.btn-group-inline {
+			flex-direction: row;
+		}
 	}
 
 	p + .button-group {

@@ -1,0 +1,134 @@
+columnSuffix: null
+handle: imageMargins
+instructions: null
+name: 'Image Margins'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 39a4e792-15a4-42a0-8b93-dcfdc45e77c3
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - e16b7eed-a963-4b9c-91d6-a279f776380d
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - mt
+                            2:
+                              - label
+                              - 'Top Margin'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 50
+                            8:
+                              - dateAdded
+                              - '2026-05-18T21:29:36+00:00'
+                            9:
+                              - uid
+                              - 2681ae69-3529-4232-9509-84bd3438432f
+                            12:
+                              - fieldUid
+                              - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - mb
+                            2:
+                              - label
+                              - 'Bottom Margin'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 50
+                            8:
+                              - dateAdded
+                              - '2026-05-18T21:29:36+00:00'
+                            9:
+                              - uid
+                              - 324324b2-1d77-4fce-b208-37d93edcaf1a
+                            12:
+                              - fieldUid
+                              - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - ml
+                            2:
+                              - label
+                              - 'Left Margin'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 50
+                            8:
+                              - dateAdded
+                              - '2026-05-18T21:29:36+00:00'
+                            9:
+                              - uid
+                              - 61d43410-6bdf-47df-84b8-91bf2d40cddf
+                            12:
+                              - fieldUid
+                              - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - mr
+                            2:
+                              - label
+                              - 'Right Margin'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 50
+                            8:
+                              - dateAdded
+                              - '2026-05-18T21:29:36+00:00'
+                            9:
+                              - uid
+                              - 1774098c-2176-4764-9b16-5a180390324a
+                            12:
+                              - fieldUid
+                              - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

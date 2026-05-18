@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: yellow
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 93013c2a-acd5-4b87-b999-b352741b10fd # Repeater Content
             handle: null
             instructions: null
@@ -56,6 +58,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
             instructions: null
@@ -83,6 +86,7 @@ fieldLayouts:
                     - navList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 93bf7bd8-1004-4c0c-be4d-7b59aa97021e # List Order
             handle: null
             instructions: null
@@ -110,6 +114,7 @@ fieldLayouts:
                     - buttonList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: showExcerpt
             instructions: null
@@ -137,6 +142,7 @@ fieldLayouts:
                     - buttonList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: showPostDate
             instructions: null
@@ -170,6 +176,7 @@ fieldLayouts:
                     - buttonList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 86544431-ce27-4263-b49f-b814ff50fcfb # Date Format
             handle: null
             instructions: null
@@ -204,6 +211,7 @@ fieldLayouts:
                     - contentCards
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 781363bc-1fd0-4fcc-83b2-80a20c416f57 # Content Cards
             handle: null
             instructions: null
@@ -231,6 +239,7 @@ fieldLayouts:
                     - allInSection
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: f22d8a3b-9296-4b9a-b338-0d599eaa364a # Section to List
             handle: null
             instructions: null
@@ -258,6 +267,7 @@ fieldLayouts:
                     - selectEntry
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 8125ecc7-14a0-48fa-beb2-ae316b8c9c0d # Entries to List
             handle: null
             instructions: null
@@ -285,6 +295,7 @@ fieldLayouts:
                     - navList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: bea4db36-ae23-4382-ad57-5031c47c5ab6 # Nav List to Display
             handle: null
             instructions: null
@@ -318,6 +329,7 @@ fieldLayouts:
                     - navList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 13b06d24-aa17-46e3-89b9-c895a68df851 # Repeater Display Type
             handle: repeaterDisplay
             instructions: null
@@ -345,6 +357,7 @@ fieldLayouts:
                     - navList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 13258500-9385-4fb0-a11a-826fcd6a69f4 # Nav List Display Type
             handle: null
             instructions: null
@@ -391,6 +404,7 @@ fieldLayouts:
                     - textList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 3bcfa1bb-bcae-4957-b813-c81aa2061bfd # Text List Style
             handle: null
             instructions: null
@@ -418,6 +432,7 @@ fieldLayouts:
                     - textList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 54321551-57ae-4812-8a1d-c491760d59ad # Multi-Column Settings
             handle: null
             instructions: null
@@ -464,6 +479,7 @@ fieldLayouts:
                     - buttonList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
             handle: null
             instructions: null
@@ -491,6 +507,7 @@ fieldLayouts:
                     - buttonList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
             handle: null
             instructions: null
@@ -518,6 +535,7 @@ fieldLayouts:
                     - buttonList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: fullWidthSmall
             instructions: 'Flip this switch on if you want the buttons in this repeater to take up the full width and stack in small layouts like phones and sidebars.'
@@ -526,6 +544,50 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fe1ad399-1585-4d1e-9829-ca926bf56473
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-18T21:04:55+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 13b06d24-aa17-46e3-89b9-c895a68df851 # Repeater Display Type
+                  layoutElementUid: 637190cd-073e-46d0-b3c6-7e32259ccefc
+                  operator: in
+                  uid: ea5380db-e3eb-44c9-a3df-1e8ba8e2e106
+                  values:
+                    - buttonList
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 82142db1-96fa-4ed9-a7e4-501f639e73f5 # Button Orientation
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 31750d41-0abd-4b9b-871d-5f3de9d95c7c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-18T21:12:54+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 29a6be8e-cb85-466e-a2f5-a9b2a388d92a # Horizontal Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 420e511e-cee0-49bb-9d56-0af95ee1de3b
             userCondition: null
             warning: null
             width: 100
@@ -568,6 +630,7 @@ fieldLayouts:
                     - cardListTopImage
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a7d4ee4f-543c-4209-b4fd-5df98550137d # Cards Per Row
             handle: null
             instructions: 'This field overrides the global default row size for whichever card type is selected for display.'
@@ -615,6 +678,7 @@ fieldLayouts:
                     - largeSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: sliderSizeSm
             instructions: 'This control overrides the default global aspect ratio for slider photos in small layouts.'
@@ -642,6 +706,7 @@ fieldLayouts:
                     - largeSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: sliderSizeLg
             instructions: null
@@ -670,6 +735,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
             handle: buttons
             instructions: null
@@ -698,6 +764,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 5ad5f513-b34c-48ac-80bf-b573ed1e1f78 # On Off
             handle: dots
             instructions: null
@@ -726,6 +793,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: d1c26bcb-25db-404d-ba73-7e4e3c7fc0a1 # Slide Transition Delay
             handle: null
             instructions: null
@@ -754,6 +822,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 53829185-3375-470c-80cf-a50b1733a8c4 # Slide Effect
             handle: null
             instructions: null
@@ -782,6 +851,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: autoplay
             instructions: null
@@ -809,6 +879,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: b422915f-1867-4c28-bb32-280178fab390 # Multi Card Slider Cards Per Layout Size
             handle: null
             instructions: 'This field overrides the global setting for cards per device size for this repeater'
@@ -877,6 +948,7 @@ fieldLayouts:
                     - navList
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 56d80f6e-2a67-464f-af70-0d46d267a0e2 # Items Per Page
             handle: null
             instructions: null
@@ -923,6 +995,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: showPagination
             instructions: null
@@ -975,6 +1048,7 @@ fieldLayouts:
                     - multiCardSlider
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: c3d75796-b930-48a0-b387-b5469be4094b # Full Listing Button
             handle: null
             instructions: "Use this field to set up a \"View Full Listings\" button when you show a limited subset of items in a list and don't want to show pagination.  If you don't want a button and no pagination, don't create a button."
@@ -996,6 +1070,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
             handle: null
             instructions: null
@@ -1011,6 +1086,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
             instructions: null
@@ -1026,6 +1102,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:44:06+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
             instructions: null
@@ -1047,6 +1124,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:44:06+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -1068,6 +1146,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -1083,6 +1162,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -1098,6 +1178,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:10+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -1120,6 +1201,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:44:06+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -1134,6 +1216,7 @@ fieldLayouts:
         name: Advanced
         uid: 7e5d309a-64a0-4792-9aa6-819b52022065
         userCondition: null
+    thumbFieldKey: null
 handle: repeater
 hasTitleField: true
 icon: null
@@ -1145,3 +1228,4 @@ slugTranslationMethod: site
 titleFormat: Repeater
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

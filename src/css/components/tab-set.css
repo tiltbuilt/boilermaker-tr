@@ -35,7 +35,8 @@
 		padding: var(--spacing-base);
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		color: var(--color-tab-btn-text);
-		background-color: var(--color-tab-btn-bg);		
+		background-color: var(--color-tab-btn-bg);	
+		cursor: pointer;	
 
 		
 		/* styles for icons above the text in the button */
@@ -46,8 +47,8 @@
 		
 		
 		.tab-icon {
-			width: 5rem;
-			height: 5rem;
+			width: 2rem;
+			height: 2rem;
 			margin-left: auto;
 			margin-right: auto;
 			margin-bottom: var(--spacing-half);
@@ -56,12 +57,12 @@
 			svg, i {			
 				display: block;
 				fill: currentColor;
-				width: 5rem;
-				height: 5rem;			
+				width: 2rem;
+				height: 2rem;			
 			}
 			
 			i {
-				font-size: 5rem;
+				font-size: 2rem;
 			}
 		}	
 				

@@ -1,0 +1,9 @@
+.site-header {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 0;
+	width: 100%;
+	position: relative;
+	z-index: 1000;
+}

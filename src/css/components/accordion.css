@@ -15,8 +15,8 @@
 		
 	.accordion {
 		margin-top: var(--spacing-half);
-		color: var(--color-accordion-text);
-		background-color: var(--color-accordion-background);
+		color: var(--color-text);
+		background-color: var(--color-bg-alt);
 		
 		&:first-child {
 			margin-top: 0;
@@ -41,12 +41,12 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-		color: var(--color-accordion-button-text);
-		background-color: var(--color-accordion-button-bg);	
+		color: var(--color-link);
+		background-color: var(--color-bg-alt);	
 
 		.accordion-icon {
 			transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-			color: var(--color-accordion-button-icon);
+			color: var(--color-link);
 		}
 
 		&:hover, &.active {

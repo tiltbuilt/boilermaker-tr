@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: red
+description: null
 fieldLayouts:
   77642883-89cb-4b4c-8f4d-89d2e0b1f880:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +40,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: null
             instructions: null
@@ -52,6 +56,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 3fa40ffc-bcf8-4f2f-9462-19c808265175 # Multiline Text With Search
             handle: notificationText
             instructions: null
@@ -67,6 +72,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: c025e168-6f53-4831-9433-670f03c62851 # Buttons
             handle: null
             instructions: null
@@ -82,6 +88,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ff110645-b126-49e5-9ed9-a720a1a9d3d2 # Notification Bar Color
             handle: null
             instructions: null
@@ -93,9 +100,42 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2026-05-18T19:22:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: iconColor
+            instructions: null
+            label: 'Icon Color'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 28f5ca7a-99b5-4018-8da9-a09f48eabed2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-18T19:22:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
+            handle: textColor
+            instructions: null
+            label: 'Text Color'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: adae02ac-4bfa-484c-b87f-99a419c0a903
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: d74e3717-a50d-4380-8bf0-625bedb5fd0e
         userCondition: null
+    thumbFieldKey: null
 handle: notificationAlerts
 hasTitleField: true
 icon: null
@@ -107,3 +147,4 @@ slugTranslationMethod: site
 titleFormat: 'Notification ALert'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -7,18 +7,44 @@ settings:
   availableTransforms: ''
   availableVolumes:
     - b644bda8-1050-46f5-9453-0b3d19812289 # Documents
-  ckeConfig: 073c9d03-dcc0-4435-99fe-2df91703e911 # Limited
-  createButtonLabel: 'New Content Element'
+  css: null
+  cssFile: Limited.css
   defaultTransform: null
   enableSourceEditingForNonAdmins: false
   entryTypes:
     - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
     - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+  fullGraphqlData: false
+  headingLevels: false
+  js: null
+  jsFile: Limited.json
+  options: null
   purifierConfig: null
   purifyHtml: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   showWordCount: false
+  toolbar:
+    - createEntry
+    - '|'
+    - bold
+    - italic
+    - link
+    - bookmark
+    - '|'
+    - alignment
+    - '|'
+    - fontSize
+    - '|'
+    - bulletedList
+    - numberedList
+    - outdent
+    - indent
+    - '|'
+    - removeFormat
+    - undo
+    - redo
+    - sourceEditing
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

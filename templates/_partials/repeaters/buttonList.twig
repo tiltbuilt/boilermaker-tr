@@ -19,7 +19,7 @@
 	{% set btnStyles = btnStyles|merge(['w-full mt-half @md:w-auto @md:mt-none']) %}
 {% endif %}
 
-<div class="repeater-list-btn button-group @container">
+<div class="repeater-list-btn button-group @container {% if btnOrientation %}btn-group-stacked {{horizontalAlignment}}{% else %}btn-group-inline {{horizontalAlignment}}{% endif %}">
 {% for listItem in listContent %}
 	{% if listItem.url|length %}
     	<a href="{{ listItem.url }}" {% if listItem.newTab %}target="_blank"{% endif %} class="{{- btnStyles|join(' ') }}">{{ gMacros.stripTags(listItem.title, '<b><strong><i><em><br><sup><sub>') }}</a>	  

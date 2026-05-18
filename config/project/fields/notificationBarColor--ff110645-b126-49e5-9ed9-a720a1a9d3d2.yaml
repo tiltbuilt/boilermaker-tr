@@ -4,6 +4,7 @@ instructions: null
 name: 'Notification Bar Color'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -12,7 +13,7 @@ settings:
           - Red
         -
           - value
-          - red-600
+          - red-700
         -
           - cssColour
           - dc2626

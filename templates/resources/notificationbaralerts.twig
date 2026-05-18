@@ -4,8 +4,13 @@
 {# button output macro #}
 
 {% macro linkCode (button, btnClasses) %}
-	<a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ button.url }}" {{- button.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if button.ariaLabel|length %}aria-label="{{button.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
-		<span>{{ (button.text|length) ? button.text : 'Learn More' }}</span>
+	{% if button.type == "modalButton" %}
+		{% set buttonLink = button.modalButtonLink %}
+	{% else %}
+		{% set buttonLink = button.buttonLink %}
+	{% endif %}
+	<a {% if button.customId|length %}id="{{button.customId}}"{% endif %} href="{{ buttonLink.url }}" {{- buttonLink.target|length ? ' target="_blank"' : '' }} class="{{- btnClasses|join(' ') }} {{ button.customClasses }}" {% if buttonLink.ariaLabel|length %}aria-label="{{buttonLink.ariaLabel}}"{% endif %}  {{- gMacros.attributesOut(button.customAttributes) -}}>
+		<span>{{ (button.title|length) ? button.title : 'Learn More' }}</span>
 	</a>
 {% endmacro linkCode %}
 
@@ -36,7 +41,7 @@
 		{% endif %}
 		{% set btnClasses = btnClasses|merge([btnSetStyles.color]) %}	
 		{% set btnClasses = btnClasses|merge(['mt-half']) %}
-		{% if button.getLinkType().label == 'Modal' %}
+		{% if button.type == 'modalButton' %}
 			{# modal #}
 			{% set modalUrl = '/resources/entrymodal?entryid=' ~ button.linkValue %}
 			{% set modalEntry = craft.entries().id(button.linkValue).one() %}
@@ -69,33 +74,45 @@
 
 {% set alert = craft.entries().section('notificationBarAlerts').orderBy('postDate desc').one() %}
 {% if alert %}
+
+	{% set barColor = alert.notificationBarColor.value|length ? alert.notificationBarColor.value : 'brand-red' %}
+	{% set textColor = alert.textColor.value|length ? alert.textColor.value : 'white' %}
+	{% set iconColor = alert.iconColor.value|length ? alert.iconColor.value : 'white' %}
 	
-	<div class="topbar bg-{{alert.notificationBarColor.value}}">
+	<div class="topbar bg-{{barColor}}">
 		  
-		<div class="topbar__content container @container px-normal py-base text-white">
+		<div class="topbar-content w-full px-section-x-base py-section-y-quarter text-{{textColor}}">
 			  {% if alert.icon.value|length %}
-				  <div class="row flex-wrap @md:flex-nowrap mx-negnormal items-center justify-start">
-					<div class="column hidden @md:block mt-0 px-normal @md:pr-base @md:w-[15rem] text-white">			
+				  <div class="layout">
+					<div class="column hidden md:flex md:col-span-2 text-{{iconColor}} md:justify-center md:items-center">			
 						<div class="notification-bar-icon">
 							{% if alert.icon.type == 'svg' %}
 								{{ alert.icon.inline }}
 							{% elseif alert.icon.type == 'css' %}
 								<i class="{{ alert.icon }}"></i>								
 							{% else %}
-								<svg><use xlink:href="#{{ alert.icon.value }}"></use></svg>
+								<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ alert.icon.value }}"></use></svg>
 							{% endif %}
 						</div>
 					</div>
-					<div class="column px-normal w-full text-left pt-0 mt-0 @md:pl-base">
-						<h2 class="text-white font-bold text-xl">{{alert.title}}</h2>
-						<p class="mt-half">{{ alert.notificationText|raw }}</p>
-						<div class="mt-half">{{- _self.buttonOutput(alert.buttons, alert.notificationBarColor.value) -}}</div>
+					<div class="column col-span-12 text-left @md:col-span-10">
+						<h2 class="text-{{textColor}} font-bold text-xl">{{alert.title}}</h2>
+						{% if alert.notificationText|length %}
+							<p class="mt-half">{{ alert.notificationText|raw }}</p>
+						{% endif %}	
+						{% if alert.buttons|length %}
+							<div class="mt-half">{{- _self.buttonOutput(alert.buttons, barColor) -}}</div>
+						{% endif %}
 					</div>
 				</div>
 			{% else %}
-				<h2 class="text-white font-bold text-xl">{{alert.title}}</h2>
-				<p class="mt-half">{{ alert.notificationText|raw }}</p>
-				<div class="mt-half">{{- _self.buttonOutput(alert.buttons, alert.notificationBarColor.value) -}}</div>
+				<h2 class="text-{{textColor}} font-bold text-xl">{{alert.title}}</h2>
+				{% if alert.notificationText|length %}
+					<p class="mt-half">{{ alert.notificationText|raw }}</p>
+				{% endif %}
+				{% if alert.buttons|length %}
+					<div class="mt-half">{{- _self.buttonOutput(alert.buttons, barColor) -}}</div>
+				{% endif %}
 			{% endif %}				
 		</div>
 		  

@@ -133,6 +133,28 @@ if (typeof window.Alpine === "undefined") {
 }
 
 
+/* Header height padding adjustment */
+/* UNCOOMMENT IF NEEDED, USED TO SET PADDING OF MAIN ELEMENT TO HEIGHT OF HEADER WHEN HEADER IS POSITIONED FIXED. NEEDED TO ALLOW FOR NOTIFIC ATION BAR IN THOSE SCENARIOS */ 
+/*
+function adjustMainPadding() {
+  const siteHeader = document.getElementById('site-header');
+  const mainElement = document.getElementById('main');
+  
+  if (siteHeader && mainElement) {
+    const headerHeight = siteHeader.offsetHeight;
+    if (headerHeight > 0) {
+      mainElement.style.setProperty('padding-top', (headerHeight - 2) + 'px', 'important');
+    }
+  }
+}
+
+// Make function globally available
+window.adjustMainPadding = adjustMainPadding;
+
+// Run on window resize
+window.addEventListener('resize', adjustMainPadding);
+*/
+
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
 if (import.meta.hot) {
   import.meta.hot.accept(() => {

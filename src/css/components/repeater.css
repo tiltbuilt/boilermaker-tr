@@ -60,7 +60,7 @@
 		*/
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		gap: var(--spacing-half);
+		gap: var(--spacing-2x);
 		justify-content: start;
 		align-items: stretch;
 	}

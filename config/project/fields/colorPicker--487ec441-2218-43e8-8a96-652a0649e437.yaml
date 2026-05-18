@@ -4,6 +4,7 @@ instructions: null
 name: 'Color Picker'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:
@@ -68,7 +69,7 @@ settings:
           - Red
         -
           - value
-          - red-500
+          - red-700
         -
           - cssColour
           - FF0000
