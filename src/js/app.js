@@ -46,41 +46,44 @@ try {
   animate("body", { opacity: 1 });
   document.body.classList.add('motion-loaded');
 
-  // General content - section level animation
-  const selectors = "p, ul:not(.tab-list), .heading, .btn, .cta, .content-image, .accordion, .icon-content, .tab-set, .slider-set, .quote, .content-video, .icon-wrapper, .page-header-main-photo, .stat-ticker-group, .animated, .form-field-wrapper, .form-btn-wrapper";
+  const elements = [
+    "p",
+    "ul:not(.tab-list)",
+    ".heading", ".btn", ".cta", ".content-image",
+    ".accordion", ".icon-content", ".tab-set", ".slider-set",
+    ".quote", ".content-video", ".icon-wrapper",
+    ".page-header-main-photo", ".stat-ticker-group",
+    ".animated", ".form-field-wrapper", ".form-btn-wrapper",
+  ];
 
-  inView(".section-standard .background-wrapper, .section-side-media .side-media-media", (element) => {
-    animate(element, { opacity: 1}, { duration: 1.5 });
-    //console.log("in view:", element);
-  }, { amount: 0.01}, { once: true });
-  
-  inView(".main .section-standard, .main .section-side-media", (section) => {
-    const items = Array.from(section.querySelectorAll(selectors));
+  const sections = [".section-standard", ".section-side-media"];
+  const elementRevealSelectors = sections.flatMap(section => elements.map(el => `.main ${section} ${el}`)).join(", ");
 
-    // Cache rects once before sorting
-    const rects = new Map(items.map(el => [el, el.getBoundingClientRect()]));
-
-    items.sort((a, b) => {
-      const rectA = rects.get(a);
-      const rectB = rects.get(b);
-      const rowDiff = rectA.top - rectB.top;
-      if (Math.abs(rowDiff) > 5) return rowDiff;
-      return rectA.left - rectB.left;
+  inView(".background-wrapper, .side-media-media", (element) => {
+    animate(element, { opacity: 1 }, {
+      duration: 0.8,
+      ease: [0.3, 0.1, 0.1, 1],
     });
+  }, { amount: 0.01, once: true });
 
-    animate(items, { opacity: 1, y: 0 }, { delay: stagger(0.03), duration: 0.5, ease: [0.3, 0.1, 0.1, 1] });
+  inView(elementRevealSelectors, (element) => {
+    animate(element, { opacity: 1, y: 0 }, {
+      duration: 0.55,
+      ease: [0.3, 0.1, 0.1, 1],
+      delay: 0.08,
+    });
   }, { amount: 0.2, once: true });
 
-  // Individual level (more expensive but needed for larger batches)
-  inView(".section-standard .repeater, .section-side-media .repeater", (target) => {
-    animate(
-      '.repeater-card', 
-      { opacity: 1, y: 0},      
-      { delay: stagger(0.15) });
-    },
-    { amount: 0.15 }, 
-    { once: true }
-  );
+  inView(".repeater", (repeater) => {
+    const cards = Array.from(repeater.querySelectorAll('.repeater-card'));
+    if (!cards.length) return;
+
+    animate(cards, { opacity: 1, y: 0 }, {
+      delay: stagger(0.15),
+      duration: 0.5,
+      ease: [0.3, 0.1, 0.1, 1],
+    });
+  }, { amount: 'some', once: true });
 
 } catch (error) {
   // Handle the error, perhaps by logging it or doing nothing

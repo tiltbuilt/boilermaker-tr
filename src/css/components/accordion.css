@@ -72,4 +72,17 @@
 	.accordion-button[aria-expanded='true'] > .accordion-icon {
 		transform: rotate(90deg);
 	}
+
+	/* NESTED ACCORDIONS */
+
+	.accordion, .tab-panel {
+		
+		.accordion {
+			background-color: var(--color-bg-primary);
+		
+			.accordion-button {
+				background-color: var(--color-bg-primary);	
+			}
+		}
+	}
 } 

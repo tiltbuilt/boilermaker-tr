@@ -32,12 +32,12 @@
 		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 		font-weight: 600;		/*border-radius: 0.4rem;*/
 		text-transform: uppercase;
-		color: var(--color-button-standard-text);
-		background-color: var(--color-button-standard-bg);
+		color: var(--color-text);
+		background-color: var(--color-link);
 
 		&:hover {
-			color: var(--color-button-standard-text-hover);
-			background-color: var(--color-button-standard-bg-hover);			
+			color: var(--color-text);
+			background-color: var(--color-link-hover);			
 			text-decoration: none;
 		}
 
@@ -53,12 +53,12 @@
 
 	.btn-text {  
 		border-radius: 0px;
-		color: var(--color-button-text-text);
+		color: var(--color-link);
 		background-color: transparent;
 		text-decoration: none;
 
 		&:hover {
-			color: var(--color-button-text-text-hover);
+			color: var(--color-link-hover);
 			background-color: transparent;			
 			text-decoration: none;
 		}
@@ -67,7 +67,7 @@
 
 	.btn-text-arrow {
 
-		color: var(--color-button-text-text);
+		color: var(--color-link);
 		background-color: transparent;
 		border: none;
 
@@ -79,17 +79,17 @@
 			margin-left: 0.05em;
 			text-rendering: auto;
 			-webkit-font-smoothing: antialiased;
-			color: var(--color-button-text-arrow);    
+			color: var(--color-link);    
 			transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1);    
 		}
 		
 		&:hover {
-			color: var(--color-button-text-text-hover);
+			color: var(--color-link-hover);
 			background-color: transparent;
 			text-decoration: none;
 
 			&::after {
-				color: var(--color-button-text-arrow-hover);        
+				color: var(--color-link-hover);        
 				transform: translateX(0.25em);
 			}
 		}

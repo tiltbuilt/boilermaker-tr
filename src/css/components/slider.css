@@ -94,10 +94,10 @@
 			z-index: 20;
 			transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);	
 			margin: 0;
-			color: var(--color-slider-nav-button);
+			color: var(--color-link) !important;
 
 			&:hover {
-				color: var(--color-slider-nav-button-hover);
+				color: var(--color-link-hover) !important;
 			}
 				
 			&::after {
@@ -141,20 +141,21 @@
 		
 		.swiper-pagination-bullet {	
 			/* Applies to the dot navigation items themselves */
-			border: 0px none;
-			border-radius: 0px;
-			width: 8%;
-			height: 8px;
-			opacity: 1;	
-			transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-			color: var(--color-slider-pag-bullet);
+			border: 0px none !important;
+			border-radius: 0px !important;
+			width: 8% !important;
+			height: 8px !important;
+			opacity: 1 !important;	
+			transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+			background-color: var(--color-link) !important;
 
 			&:hover {
-				background-color: var(--color-slider-pag-bullet-hover);
+				background-color: var(--color-link-hover) !important;
 			}
 
 			&.swiper-pagination-bullet-active {
-				background-color: var(--color-slider-pag-bullet-active);
+				background-color: var(--color-accent1) !important;
+				opacity: 1 !important;
 			}
 		}
 	}
@@ -177,7 +178,7 @@
 		
 		.swiper-slide {
 			padding-bottom: 0;
-			background-color: var(--color-repeater-card-bg);
+			background-color: var(--color-bg-alt);
 			height: auto !important
 		}
 	}

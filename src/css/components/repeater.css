@@ -82,14 +82,14 @@
 		width: 100%;
 		height: 100%;
 		display: block;
-		background-color: var(--color-repeater-card-bg);
+		background-color: var(--color-bg-alt);
 		box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
 		position: relative;		
 	}
 
 	.repeater-list-card-header {		
 		font-size: var(--text-xl);
-		color: var(--color-black);
+		color: var(--color-link);
 		margin-top: var(--spacing-quarter);		
 	}
 
@@ -100,7 +100,7 @@
 			transform: scale(1.05);	
 			
 			.repeater-list-card-header {
-				color: var(--color-repeater-item-header-hover);
+				color: var(--color-link-hover);
 			}
 		}
 	}
@@ -108,6 +108,16 @@
 	.repeater-card-content {
 		/* this class wraps the text content of the card. Add padding to create space around the text, or if padding on the card-inner class to make a frame, set the padding to 0 to make the text flush with images */
 		padding: var(--spacing-base);	 	
+	}
+
+	/* NESTED REPEATER CARDS */
+
+	.accordion, .tab-panel {
+
+		.repeater-card-inner {
+			background-color: var(--color-bg-primary);
+		}
+
 	}
 
 }

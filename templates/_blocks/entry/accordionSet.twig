@@ -40,7 +40,7 @@
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
 
-<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %} }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
+<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %}, init() { this.$nextTick(() => { const hash = (window.location.hash || '').replace(/^#/, ''); if (!hash) return; const target = document.getElementById(hash); if (target && this.$el.contains(target)) { const items = Array.from(this.$el.querySelectorAll('.accordion')); const idx = items.indexOf(target); if (idx !== -1) this.active = idx + 1; const top = target.getBoundingClientRect().top + window.scrollY - 25; window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' }); } }); } }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -152,4 +152,25 @@
 			</div>
 		</div>		
 	{% endfor %}	
+	{% if entry.accordionsAllowMultiple %}
+	<script>
+	// If multiple accordions allowed, open the one that matches URL hash (if any)
+	document.addEventListener('DOMContentLoaded', function () {
+		const hash = (window.location.hash || '').replace(/^#/, '');
+		if (!hash) return;
+		const container = document.getElementById('{{ blockId }}');
+		if (!container) return;
+		const target = document.getElementById(hash);
+		if (!target || !container.contains(target)) return;
+		const btn = target.querySelector('.accordion-button');
+		if (btn) {
+			btn.click();
+			window.requestAnimationFrame(() => {
+			const top = target.getBoundingClientRect().top + window.scrollY - 50;
+				window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+			});
+		}
+	});
+	</script>
+	{% endif %}
 </div>

@@ -72,8 +72,8 @@
 		width: 100%;		
 		font-size: 100%;		
 		margin-top: var(--spacing-half);
-		color: var(--color-form-input-text);
-		background-color: var(--color-form-input-bg);
+		color: var(--color-text);
+		background-color: var(--color-bg-alt);
 	}
 
 	textarea.form-field-input {
@@ -84,8 +84,8 @@
 	.form-checkbox, .form-radio {		
 		width: .9rem;
 		height: .9rem;
-		color: var(--color-form-input-text);
-		background-color: var(--color-form-input-bg);
+		color: var(--color-text);
+		background-color: var(--color-bg-alt);
 	}
 	
 	.form-radio {
@@ -108,8 +108,8 @@
 		font-size: 100%;		
 		margin-top: var(--spacing-half);
 		line-height: inherit;
-		color: var(--color-form-input-text);
-		background-color: var(--color-form-input-bg);		
+		color: var(--color-text);
+		background-color: var(--color-bg-alt);		
 	}
 	
 	.form-btn-wrapper {

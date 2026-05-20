@@ -14,7 +14,7 @@
 	--color-red-900: #7f1d1d;
 	--color-gray-300: #d1d5db;
 	--color-gray-700: #374151;
-	--color-green-700:: #16a34a;
+	--color-green-700: #16a34a;
 	--color-green-300: #4ade80; 
 
 	/* MODALS */
@@ -24,6 +24,12 @@
 	--color-button-modal-close-hover: var(--color-red-700);
 	--color-modal-overlay-opacity: 0.7;
 
+	/* FORMS */
+	--color-form-success-block-text: var(--color-white);
+	--color-form-success-block-bg: var(--color-green-700);
+	--color-form-field-error-text: var(--color-red-700);
+	--color-form-error-block-text: var(--color-white);
+	--color-form-error-block-bg: var(--color-red-700);
 }
 
 
@@ -37,8 +43,8 @@
 		--color-text: var(--color-black);
 		--color-link: var(--color-red-700);
 		--color-link-hover: var(--color-red-900);
-		--color-accent1:var(--color-green-700);
-		--color-accent2:var(--color-green-300);
+		--color-accent1: var(--color-green-700);
+		--color-accent2: var(--color-green-300);
 	}
 
 	.color-theme-dark, .color-theme-page-header-default {
@@ -47,8 +53,8 @@
 		--color-text: var(--color-white);
 		--color-link: var(--color-red-700);
 		--color-link-hover: var(--color-red-900);
-		--color-accent1:var(--color-green-700);
-		--color-accent2:var(--color-green-300);
+		--color-accent1: var(--color-green-700);
+		--color-accent2: var(--color-green-300);
 	}	
 
 }

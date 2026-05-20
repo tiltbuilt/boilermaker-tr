@@ -52,6 +52,7 @@ x-init="swiper = new Swiper($refs.container, {
 	{% endif %}
 	{% if (sliderButtons) and (listContent|length > 1)  %}
 		navigation: {
+			addIcons: false,
 			nextEl: '#{{blockId}}-next',
 			prevEl: '#{{blockId}}-prev',
 		},

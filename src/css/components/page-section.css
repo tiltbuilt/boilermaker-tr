@@ -12,8 +12,8 @@
       width: 100vw;
       margin: 0;         
       /* The default classes and style below can be changed on a per-project basis */
-      color: var(--color-section-text);
-      background-color: var(--color-section-background);      
+      color: var(--color-text);
+      background-color: var(--color-bg-primary);      
    }
 
    .section-inner {
@@ -28,8 +28,8 @@
       width: 100vw;
       margin: 0;   
       /* The default classes and style below can be changed on a per-project basis */
-      color: var(--color-section-text);
-      background-color: var(--color-section-background);
+      color: var(--color-text);
+      background-color: var(--color-bg-primary);
       display: grid;
       justify-content: center;
       align-items: stretch;	

@@ -34,8 +34,8 @@
 		font-weight: bold;		
 		padding: var(--spacing-base);
 		transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-		color: var(--color-tab-btn-text);
-		background-color: var(--color-tab-btn-bg);	
+		color: var(--color-link);
+		background-color: var(--color-transparent);	
 		cursor: pointer;	
 
 		
@@ -52,7 +52,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			margin-bottom: var(--spacing-half);
-			color: var(--color-tab-btn-icon);
+			color: var(--color-link);
 			
 			svg, i {			
 				display: block;
@@ -71,27 +71,46 @@
 		}
 
 		&:hover {
-			color: var(--color-tab-btn-text-hover);
-			background-color: var(--color-tab-btn-bg-hover);
+			color: var(--color-link-hover);
+			background-color: var(--color-transparent);
 			
 			.tab-icon {
-				color: var(--color-tab-btn-icon-hover);
+				color: var(--color-link-hover);
 			}
 		}
 
 		&.tab-active {
-			color: var(--color-tab-btn-text-active);
-			background-color: var(--color-tab-btn-bg-active);
+			color: var(--color-accent1);
+			background-color: var(--color-bg-alt);
 			
 			.tab-icon {
-				color: var(--color-tab-btn-icon-active);
+				color: var(--color-accent1);
 			}
 		}
 	}
 
 	.tab-panel {
 		padding: var(--spacing-base);
-		color: var(--color-tab-panel-text);
-		background-color: var(--color-tab-panel-bg);
+		color: var(--color-text);
+		background-color: var(--color-bg-alt);
 	}
+
+
+	/* NESTED TABS */
+
+	.accordion, .tab-panel {
+		
+		.tab-panel {
+			background-color: var(--color-bg-primary);		
+		}
+
+		.tab-set-btn {
+
+			&.tab-active {			
+				background-color: var(--color-bg-primary);				
+			}
+		}
+		
+	}
+
 }

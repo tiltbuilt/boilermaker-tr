@@ -48,8 +48,25 @@
   x-data="{
 	selectedId: null,
 	init() {
-	  // Set the first available tab on the page on page load.
-	  this.$nextTick(() => this.select(this.$id('tab', 1)))
+	  // On init, prefer a URL hash that matches a tab button id (if present),
+	  // otherwise fall back to the first tab.
+	  this.$nextTick(() => {
+		const hash = (window.location.hash || '').replace(/^#/, '');
+		if (hash) {
+		  const target = document.getElementById(hash);
+		  // Ensure the found element is one of this tablist's buttons
+		  if (target && this.$refs.tablist && this.$refs.tablist.contains(target)) {
+			this.select(target.id);
+			this.scrollToTarget(target);
+			return;
+		  }
+		}
+		this.select(this.$id('tab', 1));
+	  });
+	},
+	scrollToTarget(el) {
+	  const top = el.getBoundingClientRect().top + window.scrollY - 50;
+	  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
 	},
 	select(id) {
 	  this.selectedId = id
@@ -80,43 +97,63 @@
   
 	{% set tabs = entry.tabs.eagerly().all() %}
 	{% for tab in tabs %}
-	  {# set colors for accordion #}
-	  {% set colorClasses = [] %}
-	  {% if tab.colorScheme != null %}
-		  {% set tabColorScheme = tab.colorScheme.class %}			
-	  {% else %}
-		  {% set tabColorScheme = colorScheme %}
-	  {% endif %}
-	  {% set colorClasses = colorClasses|merge([tabColorScheme]) %}
-	  
-	  
-	  <!-- Tab -->
-	  <li>
-		<button
-		  :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-		  @click="select($el.id)"
-		  @mousedown.prevent
-		  @focus="select($el.id)"
-		  type="button"
-		  :tabindex="isSelected($el.id) ? 0 : -1"
-		  :aria-selected="isSelected($el.id)"
-		  :class="isSelected($el.id) ? 'tab-active' : ''"
-		  class="tab-set-btn {{ colorClasses|join(' ') }}"
-		  role="tab"
-		>
-		{% if tab.icon|length %}
-			<div class="tab-icon">
-			{% if tab.icon.type == 'svg' %}
-				{{ tab.icon.inline }}
-			{% elseif tab.icon.type == 'css' %}
-				<i class="{{ tab.icon.value }}"></i>								
-			{% else %}
-				<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ tab.icon.value }}"></use></svg>
-			{% endif %}
-			</div>
+		{% if tab.customId != '' %}
+			{% set tabId = tab.customId|replace({' ': '-'})|trim %}
+		{% else %}
+			{% set tabId = 'tab-' ~ tab.id ~ '-tabSet-' ~ entry.id %}
 		{% endif %}
-		<span>{{tab.title}}</span></button>
-	  </li>
+		{# set colors for accordion #}
+		{% set colorClasses = [] %}
+		{% if tab.colorScheme != null %}
+			{% set tabColorScheme = tab.colorScheme.class %}			
+		{% else %}
+			{% set tabColorScheme = colorScheme %}
+		{% endif %}
+		{% set colorClasses = colorClasses|merge([tabColorScheme]) %}
+	  
+	  
+			<!-- Tab -->
+			<li>
+				{% if tab.customId is defined and tab.customId != '' %}
+				<button
+					id="{{ tabId }}"
+					@click="select('{{ tabId }}')"
+					@mousedown.prevent
+					@focus="select('{{ tabId }}')"
+					type="button"
+					:tabindex="isSelected('{{ tabId }}') ? 0 : -1"
+					:aria-selected="isSelected('{{ tabId }}')"
+					:class="isSelected('{{ tabId }}') ? 'tab-active' : ''"
+					class="tab-set-btn {{ colorClasses|join(' ') }}"
+					role="tab"
+				>
+				{% else %}
+				<button
+					:id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+					@click="select($el.id)"
+					@mousedown.prevent
+					@focus="select($el.id)"
+					type="button"
+					:tabindex="isSelected($el.id) ? 0 : -1"
+					:aria-selected="isSelected($el.id)"
+					:class="isSelected($el.id) ? 'tab-active' : ''"
+					class="tab-set-btn {{ colorClasses|join(' ') }}"
+					role="tab"
+				>
+				{% endif %}
+				{% if tab.icon|length %}
+						<div class="tab-icon">
+						{% if tab.icon.type == 'svg' %}
+								{{ tab.icon.inline }}
+						{% elseif tab.icon.type == 'css' %}
+								<i class="{{ tab.icon.value }}"></i>                                
+						{% else %}
+								<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ tab.icon.value }}"></use></svg>
+						{% endif %}
+						</div>
+				{% endif %}
+				<span>{{tab.title}}</span></button>
+			</li>
 	{% endfor %}      
   </ul> 
   <!-- Panels -->
@@ -161,13 +198,22 @@
 				
 		
 	
-	  <!-- Panel -->
-	  <div
-		x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
-		:aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
-		role="tabpanel"
-		class=" {{- tabClassList|join(' ') }} {{ gMacros.typeClasses(tab.typeSettings) -}}" {{- gMacros.attributesOut(tab.customAttributes) -}}
-	  >
+			<!-- Panel -->
+			{% if tab.customId is defined and tab.customId != '' %}
+			<div
+				x-show="isSelected('{{ tabId }}')"
+				aria-labelledby="{{ tabId }}"
+				role="tabpanel"
+				class=" {{- tabClassList|join(' ') }} {{ gMacros.typeClasses(tab.typeSettings) -}}" {{- gMacros.attributesOut(tab.customAttributes) -}}
+			>
+			{% else %}
+			<div
+				x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+				:aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+				role="tabpanel"
+				class=" {{- tabClassList|join(' ') }} {{ gMacros.typeClasses(tab.typeSettings) -}}" {{- gMacros.attributesOut(tab.customAttributes) -}}
+			>
+			{% endif %}
 	  <div class="@container">     
 		{% for chunk in tab.elementContent %}
 			{% if chunk.type == 'markup' %}

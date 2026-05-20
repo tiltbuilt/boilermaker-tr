@@ -6,7 +6,7 @@
 	
 	.icon-wrapper {
 		display: flex;		
-		color: var(--color-icon-single-color);
+		color: var(--color-accent1);
 		width: 100%;
 		justify-content: center;
 		align-items: center;	
