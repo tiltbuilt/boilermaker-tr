@@ -1,5 +1,30 @@
 # Changelog
 
+## 3.3.8 - 2026-05-20
+
+### Upgraded
+- Craft and plugins
+
+### Fixed
+- fixed alignment issues with button groups in inline and stacked modes 
+- missing css styles for header that caused notification bars to not render correctly
+- added 0 as available setting for section padding 
+- error coming from content wrpper template having calls for animate variable that no longer exists
+
+### Changed
+- gap setting on layout elements and card repeater grids now defaults to 2x size
+- default headline tag to h2 instead of div
+- baseline size for icons in tab panel to more reasonable size
+- simplified color setup to cut down on the number of variables needed
+- changed animated reveal setup to change trigger from containing sections to elements themselves
+
+### Added
+- color controls for icon, text, and background to notification bar alerts
+- added orientation controls for repeater lists when in button display mode
+- added inline margin controls for image blocks to allow image centering
+- added capability for tab panels and accordions to default to a particular tab or accordion when they have an id that matches a hashtag in the page url
+
+
 ## 3.3.7 - 2026-02-21
 
 ### Upgraded

@@ -40,7 +40,7 @@
 {# set default heading level for set #}
 {% set setHeaderLevel = entry.headingLevel %}
 
-<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %}, init() { this.$nextTick(() => { const hash = (window.location.hash || '').replace(/^#/, ''); if (!hash) return; const target = document.getElementById(hash); if (target && this.$el.contains(target)) { const items = Array.from(this.$el.querySelectorAll('.accordion')); const idx = items.indexOf(target); if (idx !== -1) this.active = idx + 1; const top = target.getBoundingClientRect().top + window.scrollY - 25; window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' }); } }); } }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
+<div {% if entry.accordionsAllowMultiple == 0 %}x-data="{ active: {% if entry.accordionStartState %}1{% else %}0{% endif %}, init() { this.$nextTick(() => { const hash = (window.location.hash || '').replace(/^#/, ''); if (!hash) return; const target = document.getElementById(hash); if (target && this.$el.contains(target)) { const items = Array.from(this.$el.querySelectorAll('.accordion')); const idx = items.indexOf(target); if (idx !== -1) this.active = idx + 1; setTimeout(() => { const elementTop = target.getBoundingClientRect().top + window.scrollY; window.scrollTo({ top: Math.max(0, elementTop - 100), behavior: 'smooth' }); }, 150); } }); } }"{% endif %} id="{{blockId}}" class="{{- blockClass -}} {{ gMacros.displayClasses(entry.display, false)}} {{ gMacros.spacingClasses(entry.margins, false) }} {{ accSetClassList|join(' ') }} {{ entry.customClasses }}" {{ gMacros.attributesOut(entry.customAttributes) -}} >
 	
 	{% set accordions = entry.accordions.eagerly().all() %}
 	{% for acc in accordions %}
@@ -165,10 +165,10 @@
 		const btn = target.querySelector('.accordion-button');
 		if (btn) {
 			btn.click();
-			window.requestAnimationFrame(() => {
-			const top = target.getBoundingClientRect().top + window.scrollY - 50;
-				window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-			});
+			setTimeout(() => {
+				const elementTop = target.getBoundingClientRect().top + window.scrollY;
+				window.scrollTo({ top: Math.max(0, elementTop - 100), behavior: 'smooth' });
+			}, 150);
 		}
 	});
 	</script>

@@ -65,8 +65,10 @@
 	  });
 	},
 	scrollToTarget(el) {
-	  const top = el.getBoundingClientRect().top + window.scrollY - 50;
-	  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+	  setTimeout(() => {
+	    const elementTop = el.getBoundingClientRect().top + window.scrollY;
+	    window.scrollTo({ top: Math.max(0, elementTop - 100), behavior: 'smooth' });
+	  }, 150);
 	},
 	select(id) {
 	  this.selectedId = id
