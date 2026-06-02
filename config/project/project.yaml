@@ -1,4 +1,4 @@
-dateModified: 1779139826
+dateModified: 1780435759
 elementSources:
   craft\elements\Entry:
     -
@@ -262,6 +262,7 @@ meta:
     86544431-ce27-4263-b49f-b814ff50fcfb: 'Date Format' # Date Format
     a1a85592-41a0-4088-acde-b7b2a763ecfa: 'Icon Block Vertical Layout Adjustments' # Icon Block Vertical Layout Adjustments
     a2da31ae-7341-4dd1-b245-5ee55d44cbc2: 'Yes No' # Yes No
+    a5a5b6e8-8fbb-43b1-b3a2-e3b56c991a0c: 'Image Art Direction' # Image Art Direction
     a5df8039-f6c5-4289-9ac2-7681f18d254c: 'Column Vertical Alignment' # Column Vertical Alignment
     a6e56255-d417-4ac8-9a3f-256c30684cd0: Image # Image
     a7d4ee4f-543c-4209-b4fd-5df98550137d: 'Cards Per Row' # Cards Per Row

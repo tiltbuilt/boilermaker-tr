@@ -1,0 +1,522 @@
+columnSuffix: null
+handle: artDirection
+instructions: null
+name: 'Image Art Direction'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - c8647c0a-f3c3-49dd-a30c-025801fd3702
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 7b1e186c-c313-4cee-b7fe-493cdc57b246
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'Baseline Settings (Phone Vertical and Above)'
+                            -
+                              - dateAdded
+                              - '2026-06-02T21:05:48+00:00'
+                            -
+                              - uid
+                              - 3741ad47-9513-431e-8f8b-af66edf60e8b
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:05:48+00:00'
+                            9:
+                              - uid
+                              - 8fd8f26d-a554-49d8-909f-61eb50685fc6
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:05:48+00:00'
+                            9:
+                              - uid
+                              - c81b88c7-5b39-493d-b29e-7ea2d70fb0df
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:05:48+00:00'
+                            9:
+                              - uid
+                              - f5f8683d-cb24-417d-846b-23b2a8825fd3
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'Small Device Settings (Phone Horizontal and Above)'
+                            -
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            -
+                              - uid
+                              - 1d3a12c9-08d9-4e19-95a0-0a0e8cb916f5
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspectSm
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 432ce440-b09d-450a-878c-2dc5d2d21388
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - widthSm
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 98e86cdb-9172-4faf-b427-aaaa946becd8
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrapSm
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 6e93628d-5409-4ba2-817f-d4ff91ac8e5d
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'Medium Devices (Tablet and Above)'
+                            -
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            -
+                              - uid
+                              - 87faff93-f12d-4dd1-bd2a-d5dabb87f444
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspectMd
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 9182cada-4b9c-43d2-97b8-4dc50fb634a7
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - widthMd
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 96bf50cb-4b7c-4de2-b177-db24a15715e6
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrapMd
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - a8906b51-304b-46d6-a262-8fbd520db98a
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'Large Devices (Laptop and Above)'
+                            -
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            -
+                              - uid
+                              - 351aec2e-a26d-4a05-96bb-429a0d7d28f9
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspectLg
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 0d0339ba-7ffb-463b-842e-1fd931b98be2
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - widthLg
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - ba5fe5a6-8260-4e35-a5e9-43bd696b5e1d
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrapLg
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 59779324-3950-4ea6-9922-618e9445da5a
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'X-Large Devices (Desktop and Above)'
+                            -
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            -
+                              - uid
+                              - 3745a34d-61d3-4064-8557-aa72ac509914
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspectXl
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - eca44d77-e26c-4a00-af5f-7cc338ca0e94
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - widthXl
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 1ad30978-1c0b-43f9-91e8-289878bfa286
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrapXl
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - b12b2dba-2ce7-4262-925d-072402fb75c5
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - '2XL Devices (4000px+)'
+                            -
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            -
+                              - uid
+                              - 4ef96365-e829-4fa0-95a0-8b74ac889ff2
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspect2xl
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - c800d549-25e5-4aad-977c-9e1a97f61a15
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - width2xl
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - e2450b09-39c7-47c0-90b5-6708ab504a9c
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrap2xl
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-02T21:29:09+00:00'
+                            9:
+                              - uid
+                              - 2f3d6b1a-6f54-477f-9c21-30f23c0b5435
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock
