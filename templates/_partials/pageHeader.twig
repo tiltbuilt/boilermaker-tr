@@ -24,6 +24,7 @@
 {% set smHeaderAspect = gSettings.pgHeaderAspectSm.value %}
 {% set mdHeaderAspect = gSettings.pgHeaderAspectMd.value %}
 {% set lgHeaderAspect = gSettings.pgHeaderAspectLg.value %}
+{% set udHeaderAspect = entry.aspectRatio.value %}
 
 
 {# set default color scheme for page header if none is set #}
@@ -34,7 +35,7 @@
 {% endif %}
 
 <div id="{{entry.slug}}-page-header" class="page-header section-standard @container {{pageHeaderColorScheme}} ">
-	<div class="page-header-photo-wrapper background-wrapper aspect-{{smHeaderAspect}} md:aspect-auto md:absolute md:inset-0 md:h-full">       
+	<div class="page-header-photo-wrapper background-wrapper {% if udHeaderAspect != '' %}aspect-{{udHeaderAspect}}{% else %}aspect-{{smHeaderAspect}}{% endif %} md:aspect-auto md:absolute md:inset-0 md:h-full">       
         {% if not entry.imageryType %}
             {% set image = entry.pageHeaderDefaultImage.eagerly().one() %}
             {% if image != null  %}

@@ -3,23 +3,23 @@
 
 {% set image = entry.imageAsset.eagerly().one() %}
 
-{% if entry.aspectRatio == '' or entry.aspectRatio == 'auto' %}
+{% if entry.artDirection.aspectDf == '' or entry.artDirection.aspectDf == 'auto' %}
     {% set xForm = 'contentImage' %}
     {% set xFormWidth = image.width %}
     {% set xFormHeight = image.height %}
 {% else %}
-    {% if entry.aspectRatio == 'video' %}
+    {% if entry.artDirection.aspectDf == 'video' %}
         {% set numerator = 16 %}
         {% set denominator = 9 %} 
-    {% elseif entry.aspectRatio == 'square' %}
+    {% elseif entry.artDirection.aspectDf == 'square' %}
         {% set numerator = 1 %}
         {% set denominator = 1 %} 
     {% else %}
-        {% set numerator = entry.aspectRatio.value|split('/')|first %}
-        {% set denominator = entry.aspectRatio.value|split('/')|last %}        
+        {% set numerator = entry.artDirection.aspectDf|split('/')|first %}
+        {% set denominator = entry.artDirection.aspectDf|split('/')|last %}        
     {% endif %}
 
-    {% set xForm = 'image-' ~ entry.aspectRatio %}
+    {% set xForm = 'image-' ~ entry.artDirection.aspectDf %}
     {% set xFormWidth = image.width %}
     {% set xFormHeight = (image.width * denominator) / numerator %}
 {% endif %}
@@ -35,7 +35,7 @@
     height="{{xFormHeight}}"
     {% if not entry.lazyLoadImg %}        
         fetchpriority="high"
-        sizes="{{gMacros.sizesAttr(sizeTracker, imageSizeField)}}"
+        sizes="{{gMacros.sizesAttr(sizeTracker, entry.artDirection)}}"
     {% else %}
         sizes="auto"     
     {% endif %}       

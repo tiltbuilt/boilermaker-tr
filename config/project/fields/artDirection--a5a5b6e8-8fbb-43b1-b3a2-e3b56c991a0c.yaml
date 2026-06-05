@@ -43,6 +43,9 @@ settings:
                             0:
                               - type
                               - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspectDf
                             6:
                               - required
                               - false
@@ -63,6 +66,9 @@ settings:
                             0:
                               - type
                               - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - widthDf
                             6:
                               - required
                               - false
@@ -83,6 +89,9 @@ settings:
                             0:
                               - type
                               - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrapDf
                             6:
                               - required
                               - false
@@ -95,6 +104,89 @@ settings:
                             9:
                               - uid
                               - f5f8683d-cb24-417d-846b-23b2a8825fd3
+                            12:
+                              - fieldUid
+                              - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap
+                        -
+                          __assoc__:
+                            -
+                              - type
+                              - craft\fieldlayoutelements\Heading
+                            -
+                              - heading
+                              - 'X-Small Device Settings (320px +)'
+                            -
+                              - dateAdded
+                              - '2026-06-03T20:47:01+00:00'
+                            -
+                              - uid
+                              - 56706d9e-5dab-49e9-876a-b6df4cdeb9aa
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - aspectXs
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-03T20:47:01+00:00'
+                            9:
+                              - uid
+                              - 31efdf0f-cfef-44fe-8c89-e0a230999f93
+                            12:
+                              - fieldUid
+                              - bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - widthXs
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-03T20:47:01+00:00'
+                            9:
+                              - uid
+                              - 67b8fb62-7f0f-464e-b1a1-1a270ba99e74
+                            12:
+                              - fieldUid
+                              - 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - textWrapXs
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-06-03T20:47:01+00:00'
+                            9:
+                              - uid
+                              - 8b315896-36ab-4015-ba44-a3bb924c7d0b
                             12:
                               - fieldUid
                               - c22c74d6-c1ba-4d51-af9b-d38a798a1e30 # Text Wrap

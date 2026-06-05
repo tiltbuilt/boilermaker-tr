@@ -38,3 +38,24 @@
       max-width: var(--prose); 
    }
 }
+
+
+/* TEXT WRAP */
+        
+@utility text-wrap-left {       
+   float: left;
+   margin-right: var(--spacing-base);
+   margin-bottom: var(--spacing-base);		
+}
+
+@utility text-wrap-right {
+   float: right;
+   margin-left: var(--spacing-base);
+   margin-bottom: var(--spacing-base);					
+}
+
+@utility text-wrap-none {
+   float: none;		
+}
+
+    

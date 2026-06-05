@@ -2,137 +2,71 @@
 {% import '_macros/globalMacros' as gMacros %}
 
 {% set image = entry.imageAsset.eagerly().one() %}
-{% set currentAspectAspect = 'auto' %}
+{% set currentAspect = 'auto' %}
 {% set xFormWidth = '' %}
 {% set xFormHeight = '' %}
-{% set adSettings = entry.imageArtDirection.eagerly().all() %}
-{% set imgSettings = entry.imageSettings.eagerly().all() %}
+{% set aspectClasses = [] %}
 
-{# set frame aspect ratio and image position classes #}
-{% set frameClasses = ['block', 'relative', 'w-full'] %}
 {% set imgClasses = ['block', 'w-full'] %}
 {% set aspectValues =  {
-	'df': 'h-auto',	
-	'xs': null,
-	'sm': null,
-	'md': null,
-	'lg': null,
-	'xl': null,
-	'2xl': null,	
+	'df': {'minSize': 0, 'aspect': 'auto'},
+	'xs': {'minSize': 320, 'aspect': null},
+	'sm': {'minSize': 640, 'aspect': null},
+	'md': {'minSize': 768, 'aspect': null},
+	'lg': {'minSize': 1024, 'aspect': null},
+	'xl': {'minSize': 1280, 'aspect': null},
+	'2xl': {'minSize': 1536, 'aspect': null},	
 } %}
-{% set posValues =  {
-	'df': 'object-center',	
-	'xs': null,
-	'sm': null,
-	'md': null,
-	'lg': null,
-	'xl': null,
-	'2xl': null,	
-} %}
-
-{% for adjustment in adSettings %}
-	{% if adjustment.layoutSize.value == '' %}
-		{% if adjustment.frameAspect.value != '' %}
-			{% set aspectValues  = aspectValues|merge({'df': 'aspect-' ~ adjustment.frameAspect.value })%}
-		{% endif %}
-		{% if adjustment.imagePosition.value != '' %}
-			{% set posValues  = posValues|merge({'df': 'object-' ~ adjustment.imagePosition.value })%}
-		{% endif %}
-	{% else %}
-		{% if adjustment.frameAspect.value != '' %}			
-			{% set aspectValues  = aspectValues|merge({ (adjustment.layoutSize.value) : 'aspect-' ~ adjustment.frameAspect.value })%}
-		{% endif %}
-		{% if adjustment.imagePosition.value != '' %}
-			{% set posValues  = posValues|merge({ (adjustment.layoutSize.value) : 'object-' ~ adjustment.imagePosition.value })%}
-		{% endif %}
+ 
+{% for key,value in aspectValues %}
+	{% set subField = key|capitalize %}
+	{% if entry.artDirection['aspect' ~ subField] != '' %}
+		{% set aspectValues = aspectValues|merge({ (key) : value|merge({'aspect': entry.artDirection['aspect' ~ subField].value}) }) %}
 	{% endif %}
 {% endfor %}
 
 {% for key,value in aspectValues %}
-	{% if value != null %}
-		{% if key == 'df' %}
-			{% set frameClasses = frameClasses|merge([value]) %}
-			{% set imgClasses = imgClasses|merge([value]) %}
-		{% else %}
-			{% set frameClasses = frameClasses|merge([key ~ ':' ~ value]) %}
-			{% set imgClasses = imgClasses|merge([key ~ ':' ~ value]) %}
-		{% endif %}
+	{% if value.aspect != null %}
+		{% set currentAspect = value.aspect %}
 	{% endif %}
+	{% if key == 'df' %}
+		{% set sizeKey = '' %}
+	{% else %}
+		{% set sizeKey = key ~ ':' %}
+	{% endif %}
+	{% set aspectClasses = aspectClasses|merge([sizeKey ~ 'aspect-' ~ currentAspect]) %}
 {% endfor %}
 
-{% for key,value in posValues %}
-	{% if value != null %}
-		{% if key == 'df' %}
-			{% set imgClasses = imgClasses|merge([value]) %}
-		{% else %}
-			{% set imgClasses = imgClasses|merge([key ~ ':' ~ value]) %}
-		{% endif %}
-	{% endif %}
-{% endfor %}
-
-<picture class="{{ frameClasses|join(' ') }} ">
-	{# set ordered array of objects for source settings #}
-	{% set srcObjects =  {
-		'df': {'minSize': 0, 'aspect': 'auto', 'image': image},
-		'xs': {'minSize': 320, 'aspect': null, 'image': null},
-		'sm': {'minSize': 640, 'aspect': null, 'image': null},
-		'md': {'minSize': 768, 'aspect': null, 'image': null},
-		'lg': {'minSize': 1024, 'aspect': null, 'image': null},
-		'xl': {'minSize': 1280, 'aspect': null, 'image': null},
-		'2xl': {'minSize': 1536, 'aspect': null, 'image': null},		
-	} %}
-
-	{% for srcSetting in imgSettings %}
-		{# if there is a new image in the adjustment then use it as the image for src attributes #}
-		{% if srcSetting.deviceSize == '' %}
-			{% set srcSize = 'df' %}
-		{% else %}
-			{% set srcSize = srcSetting.deviceSize.value %}
-		{% endif %}
-
-		{% if srcSetting.imageAsset|length or srcSetting.mediaAspect != '' %}
-			{% if srcSetting.imageAsset|length and srcSetting.deviceSize != '' %}
-				{% set image = srcSetting.imageAsset.eagerly().one() %}
-			{% endif %}
-			{% if srcSetting.mediaAspect.value != '' %}				
-				{% set currentAspect = srcSetting.mediaAspect.value %}
-			{% else %}
-				{% set myRatio = currentAspect %}
-			{% endif %}
-			{% set mySrcObject = srcObjects[(srcSize)] %}			
-			{% set mySrcObject = mySrcObject|merge({'image': image, 'aspect': currentAspect}) %}
-			{% set srcObjects = srcObjects|merge({(srcSize): mySrcObject}) %}
-
-		{% endif %}		
-	{% endfor %}
+<picture class="">	
 		
 	{# loop through and write in src elements for different breakpoints #}
 	
-	{% for sizeKey, srcSettings in srcObjects|reverse %}		
-		{% if srcSettings.image != null or srcSettings.aspect != null %}
-			{% if srcSettings.aspect == 'auto' %}
+	{% for key, value in aspectValues|reverse %}
+		
+		{% if value.aspect != null %}
+			{% if value.aspect == 'auto' %}
 				{% set xForm = 'contentImage' %}				
 			{% else %}
-				{% set xForm = 'image-' ~ srcSettings.aspect %}				
+				{% set xForm = 'image-' ~ value.aspect %}				
 			{% endif %}
-			{% set transformedImages = craft.imagerx.transformImage(srcSettings.image, xForm) %}
-			{% if sizeKey == 'df' %}
-				{% if srcSettings.aspect == 'auto' %}				
-					{% set xFormWidth = srcSettings.image.width %}
-					{% set xFormHeight = srcSettings.image.height %}
+			{% set transformedImages = craft.imagerx.transformImage(image, xForm) %}
+			{% if key == 'df' %}
+				{% if value.aspect == 'auto' %}				
+					{% set xFormWidth = image.width %}
+					{% set xFormHeight = image.height %}
 				{% else %}				
-					{% if srcSettings.aspect == 'video' %}
+					{% if value.aspect == 'video' %}
 						{% set numerator = 16 %}
 						{% set denominator = 9 %} 
-					{% elseif srcSettings.aspect == 'square' %}
+					{% elseif value.aspect == 'square' %}
 						{% set numerator = 1 %}
 						{% set denominator = 1 %} 
 					{% else %}
-						{% set numerator = srcSettings.aspect|split('/')|first %}
-						{% set denominator = srcSettings.aspect|split('/')|last %}        
+						{% set numerator = value.aspect|split('/')|first %}
+						{% set denominator = value.aspect|split('/')|last %}        
 					{% endif %}
-					{% set xFormWidth = srcSettings.image.width %}				
-					{% set xFormHeight = (srcSettings.image.width * denominator) / numerator %}				
+					{% set xFormWidth = image.width %}				
+					{% set xFormHeight = (image.width * denominator) / numerator %}				
 				{% endif %}
 				
 				<img src="{{ craft.imager.placeholder({width: xFormWidth, height: xFormHeight}) }}"
@@ -140,20 +74,21 @@
 					height="{{xFormHeight}}"
 					{% if not entry.lazyLoadImg %}        
 						fetchpriority="high"
-						sizes="{{gMacros.sizesAttr(sizeTracker, imageSizeField)}}"
+						sizes="{{gMacros.sizesAttr(sizeTracker, entry.artDirection)}}"
 					{% else %}
 						sizes="auto"     
 					{% endif %}    
 					srcset="{{ craft.imager.srcset(transformedImages) }}"
 					alt="{{ entry.altText }}"
-					class="{{imgClasses|join(' ')}}"
+					class="block w-full{{aspectClasses|join(' ')}}"
 					loading="{{entry.lazyLoadImg ? 'lazy' : 'eager'}}"
 					decoding="async"
 				>
 			{% else %}
-				<source sizes="auto" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
+				<source sizes="auto" media="(min-width: {{value.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
 			{% endif %}
 		{% endif %}
+	
 	{% endfor %}
 </picture>
 
