@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.3.9 - 2026-06-06
+
+### Upgraded
+- Craft and plugins
+
+### Fixed
+- fixed spacing issue with bullet lists
+
+### Changed
+- field setup and templating on image blocks and page headers to simplify controls
+
 ## 3.3.8 - 2026-05-20
 
 ### Upgraded

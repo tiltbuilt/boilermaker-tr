@@ -21,11 +21,11 @@
 {% endmacro linkCode %}
 
 {# Set sizing of page header using the sizes set in the global settings #}
-{% set smHeaderAspect = gSettings.pgHeaderAspectSm.value %}
-{% set mdHeaderAspect = gSettings.pgHeaderAspectMd.value %}
-{% set lgHeaderAspect = gSettings.pgHeaderAspectLg.value %}
-{% set udHeaderAspect = entry.aspectRatio.value %}
+{% set smHeaderAspect = entry.aspectRatio.value ? entry.aspectRatio.value : gSettings.pgHeaderAspectSm.value %}
+{% set mdHeaderAspect = entry.aspectRatio.value ? entry.aspectRatio.value : gSettings.pgHeaderAspectMd.value %}
+{% set lgHeaderAspect = entry.aspectRatio.value ? entry.aspectRatio.value : gSettings.pgHeaderAspectLg.value %}
 
+{% set opacitySetting = entry.opacity.value ? entry.opacity.value : 'opacity-60' %}
 
 {# set default color scheme for page header if none is set #}
 {% if entry.pageHeaderColorScheme == null %}
@@ -35,89 +35,37 @@
 {% endif %}
 
 <div id="{{entry.slug}}-page-header" class="page-header section-standard @container {{pageHeaderColorScheme}} ">
-	<div class="page-header-photo-wrapper background-wrapper {% if udHeaderAspect != '' %}aspect-{{udHeaderAspect}}{% else %}aspect-{{smHeaderAspect}}{% endif %} md:aspect-auto md:absolute md:inset-0 md:h-full">       
+	<div class="page-header-photo-wrapper background-wrapper aspect-{{smHeaderAspect}} md:aspect-auto md:absolute md:inset-0 md:h-full">       
         {% if not entry.imageryType %}
-            {% set image = entry.pageHeaderDefaultImage.eagerly().one() %}
+            {% set image = entry.pageHeaderImage.eagerly().one() %}
             {% if image != null  %}
-                {% set imgSettings = entry.pageHeaderImageArtDirection.eagerly().all() %}
-                {% set currentAspect = 'auto' %}
                 {% set xFormWidth = '' %}
                 {% set xFormHeight = '' %}
                 {% set srcObjects =  {
-                    'df': {'minSize': 0, 'aspect': 'auto', 'image': image, 'pos': 'center', 'opacity': 'opacity-60'},
-                    'xs': {'minSize': 320, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
-                    'sm': {'minSize': 640, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
-                    'md': {'minSize': 768, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
-                    'lg': {'minSize': 1024, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
-                    'xl': {'minSize': 1280, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},
-                    '2xl': {'minSize': 1536, 'aspect': null, 'image': null, 'pos': null, 'opacity': null},		
+                    'df': {'minSize': 0, 'aspect': smHeaderAspect},                    
+                    'md': {'minSize': 768, 'aspect': mdHeaderAspect}    ,
+                    'lg': {'minSize': 1024, 'aspect': lgHeaderAspect},                    		
                 } %}
 
-                {% set imgClasses = ['block', 'w-full', 'absolute', 'inset-0', 'h-full', 'object-cover'] %}
+                {% set imgClasses = ['block', 'w-full', 'absolute', 'inset-0', 'h-full', 'object-cover', opacitySetting] %}
                 
-                {% for srcSetting in imgSettings %}
-                    {# if there is a new image in the adjustment then use it as the image for src attributes #}
-                    {% if srcSetting.deviceSize == '' %}
-                        {% set srcSize = 'df' %}
-                    {% else %}
-                        {% set srcSize = srcSetting.deviceSize.value %}
-                    {% endif %}
-
-                    {% if srcSetting.imageAsset|length or srcSetting.aspectRatio != '' or srcSetting.imagePosition != '' or srcSetting.opacity != '' %}
-                        {% if srcSetting.imageAsset|length and srcSetting.deviceSize != '' %}
-                            {% set image = srcSetting.imageAsset.eagerly().one() %}
-                        {% endif %}
-                        {% if srcSetting.aspectRatio.value != '' %}				
-                            {% set currentAspect = srcSetting.aspectRatio.value %}
-                        {% else %}
-                            {% set myRatio = currentAspect %}
-                        {% endif %}
-                        {% if srcSetting.opacity.value != '' %}
-                            {% set myOpacity = srcSetting.opacity.value %}
-                        {% else %}
-                            {% set myOpacity = null %}
-                        {% endif %}
-                        {% if srcSetting.imagePosition.value != '' %}
-                            {% set myPos = srcSetting.imagePosition.value %}
-                        {% else %}
-                            {% set myPos = null %}
-                        {% endif %}
-                        {% set mySrcObject = srcObjects[(srcSize)] %}			
-                        {% set mySrcObject = mySrcObject|merge({'image': image, 'aspect': currentAspect, 'pos': myPos, 'opacity': myOpacity}) %}
-                        {% set srcObjects = srcObjects|merge({(srcSize): mySrcObject}) %}
-                    {% endif %}		
-                {% endfor %}
 
                 <picture class="absolute inset-0">
                     
-                    {% for sizeKey, srcSettings in srcObjects|reverse %}
-                        
-                        {% if sizeKey == 'df' %}
-                            {% set devSize = '' %}
-                        {% else %}
-                            {% set devSize = sizeKey ~ ':' %}
-                        {% endif %}
-                        {% if srcSettings.pos != null %}
-                            {% set imgClasses = imgClasses|merge([devSize ~ 'object-' ~ srcSettings.pos]) %}                    
-                        {% endif %}
-                        {% if srcSettings.opacity != null %}
-                            {% set imgClasses = imgClasses|merge([devSize ~ srcSettings.opacity]) %}
-                        {% endif %}
-                        
-                        
+                    {% for sizeKey, srcSettings in srcObjects|reverse %}            
                         {# if there is an image and/or aspect ratio to use, then output the image or source element #}
                         
-                        {% if srcSettings.image != null or srcSettings.aspect != null %}
+                        
                             {% if srcSettings.aspect == 'auto' %}
                                 {% set xForm = 'contentImage' %}				
                             {% else %}
                                 {% set xForm = 'image-' ~ srcSettings.aspect %}				
                             {% endif %}
-                            {% set transformedImages = craft.imagerx.transformImage(srcSettings.image, xForm) %}
+                            {% set transformedImages = craft.imagerx.transformImage(image, xForm) %}
                             
                             {% if srcSettings.aspect == 'auto' %}				
-                                {% set xFormWidth = srcSettings.image.width %}
-                                {% set xFormHeight = srcSettings.image.height %}
+                                {% set xFormWidth = image.width %}
+                                {% set xFormHeight = image.height %}
                             {% else %}				
                                 {% if srcSettings.aspect == 'video' %}
                                     {% set numerator = 16 %}
@@ -129,8 +77,8 @@
                                     {% set numerator = srcSettings.aspect|split('/')|first %}
                                     {% set denominator = srcSettings.aspect|split('/')|last %}        
                                 {% endif %}
-                                {% set xFormWidth = srcSettings.image.width %}				
-                                {% set xFormHeight = (srcSettings.image.width * denominator) / numerator %}				
+                                {% set xFormWidth = image.width %}				
+                                {% set xFormHeight = (image.width * denominator) / numerator %}				
                             {% endif %}
                             
                             {% if sizeKey == 'df' %}
@@ -148,7 +96,7 @@
                             {% else %}
                                 <source sizes="100vw" width="{{xFormWidth}}" height="{{xFormHeight}}" media="(min-width: {{srcSettings.minSize}}px)" srcset="{{ craft.imager.srcset(transformedImages) }}" {% if craft.imager.serverSupportsWebp() %}type="image/webp"{% endif %}>
                             {% endif %}
-                        {% endif %}
+                        
                     {% endfor %}
                 </picture>
             {% endif %}

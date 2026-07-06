@@ -24,30 +24,7 @@ export default defineConfig(({command}) => ({
 	},
 	plugins: [
 		tailwindcss(),
-		manifestSRI(),
-		/*
-		critical({
-		  criticalUrl: 'https://greauxhealthy.ddev.site',
-		  criticalBase: './web/dist/criticalcss/',		 
-		  criticalPages: [					
-		  ],
-		  criticalConfig: {
-			penthouse: {
-				timeout: 60000,
-			},
-			dimensions: [
-				{
-				  height: 700,
-				  width: 500,
-				},
-				{
-				  height: 900,
-				  width: 1300,
-				},
-			],
-		  },	  
-		}),
-		*/
+		manifestSRI(),		
 		viteCompression({
 			filter: /\.(js|mjs|json|css|map)$/i
 		}),
