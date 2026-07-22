@@ -1,4 +1,4 @@
-dateModified: 1780696228
+dateModified: 1784754593
 elementSources:
   craft\elements\Entry:
     -
@@ -116,6 +116,28 @@ fs:
       subfolder: /local/
     type: servd\AssetStorage\AssetsPlatform\Fs
     url: 'https://cdn2.assets-servd.host/'
+  icons:
+    hasUrls: true
+    name: Icons
+    settings:
+      path: $ICON_ASSETS_PATH
+    type: craft\fs\Local
+    url: $ICON_ASSETS_URL
+  iconsServd:
+    hasUrls: false
+    name: 'Icons - Servd'
+    settings:
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      disableTransforms: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: /local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: 'https://cdn2.assets-servd.host/'
   images:
     hasUrls: true
     name: Images
@@ -152,6 +174,7 @@ meta:
     3b11f12d-de65-452c-9f88-880fdf6e2c79: 'Button Alignment' # Button Alignment
     3bcfa1bb-bcae-4957-b813-c81aa2061bfd: 'Text List Style' # Text List Style
     3c147a0d-440a-4850-b41a-98bf61c16df6: Globals # Globals
+    3e969cc0-bed7-4fd0-93f3-3261062450d8: 'User Upload Icons' # User Upload Icons
     3f041b04-6fce-4165-ab3a-d234dabaa7bd: 'Embed Code' # Embed Code
     3fa40ffc-bcf8-4f2f-9462-19c808265175: 'Multiline Text With Search' # Multiline Text With Search
     4a803a3b-ac9b-4ecc-b439-0815fb18e053: 'Tab Set' # Tab Set
@@ -222,6 +245,7 @@ meta:
     589d7e58-f378-455e-b073-055e9221964b: Pages # Pages
     732c729f-8dbb-4f01-a463-c163ddc13eab: 'Left Right' # Left Right
     859bdfc7-87f1-4c0d-8217-2388c34baba4: 'Column Width - No Full' # Column Width - No Full
+    885adfd6-ea67-44e1-adfd-c6695ca69849: Icons # Icons
     0888a226-1804-4ac8-a00d-8b539fdd3483: '404 Page Content' # 404 Page Content
     938f3198-1925-4908-b0e0-8dfd786c00f1: 'Side by Side Media Section' # Side by Side Media Section
     2186e435-0cf5-4c2f-8436-888d6d2e00c9: 'Image Settings' # Image Settings
@@ -313,7 +337,6 @@ meta:
     d7a280bb-af78-455c-9bd1-1fc2f7e4018d: OpenClosed # OpenClosed
     d12df536-921c-4ee2-b0bc-84a97d7c9e95: 'Column Background Color' # Column Background Color
     d85e2e7b-6380-4c46-8ebd-36ad0a2eee46: 'Tab Panel' # Tab Panel
-    d136f8d9-17af-4766-82b7-9c58403b6446: ui-svg-sprites # ui-svg-sprites
     d155be44-8228-40a0-92f8-496642d3e644: 'Layout Settings' # Layout Settings
     d897b42d-3d26-4db5-b105-29c871b31ffb: 'Limited Content' # Limited Content
     dbe6c627-9b3d-4c00-9b60-25f1964d8a29: 'Background Videos' # Background Videos
@@ -657,7 +680,7 @@ plugins:
     schemaVersion: 1.0.0
   upsnap:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 1.0.0
   vite:
     edition: standard

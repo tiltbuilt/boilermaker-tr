@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.4.0 - 2026-07-22
+
+### Upgraded
+- Craft and plugins
+
+### Changed
+- Default title setting on heading block type to use striptags version of mainHeadingText field
+- Changed Icon Picker configuration to remove ui-sprites-svg sprite sheet. Icon Field now pulls from root icon folder which is where the front end build writes its svg output, or from a user uploaded icon folder that is run by the new Icons asset volume. A custom module has been added to restrict the Icons asset volume to only allow svg files as uploads. 
+
 ## 3.3.9 - 2026-06-06
 
 ### Upgraded

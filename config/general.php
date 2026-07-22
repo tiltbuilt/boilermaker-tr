@@ -31,4 +31,11 @@ return GeneralConfig::create()
         '@webroot' => dirname(__DIR__) . '/web',
     ])
     ->partialTemplatesPath('_blocks')
+    // SET SVG as option in file type selector lists
+    ->extraFileKinds([
+        'svg' => [
+            'label' => 'SVG',
+            'extensions' => ['svg'],
+        ],
+    ])
 ;

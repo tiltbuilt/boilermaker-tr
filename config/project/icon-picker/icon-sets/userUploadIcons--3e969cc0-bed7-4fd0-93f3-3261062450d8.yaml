@@ -1,0 +1,8 @@
+enabled: true
+handle: userUploadIcons
+name: 'User Upload Icons'
+settings:
+  folder: /uploads/icons
+  recursive: false
+sortOrder: 4
+type: verbb\iconpicker\iconsets\SvgFolder
