@@ -29,8 +29,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 16/9,
-			'format' => 'jpg'
+			'ratio' => 16/9			
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -51,8 +50,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 4/3,
-			'format' => 'jpg'
+			'ratio' => 4/3			
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -73,8 +71,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 3/2,
-			'format' => 'jpg'
+			'ratio' => 3/2			
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -95,8 +92,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 2/1,
-			'format' => 'jpg'
+			'ratio' => 2/1			
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -117,8 +113,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 3/1,
-			'format' => 'jpg'
+			'ratio' => 3/1
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -139,8 +134,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 4/1,
-			'format' => 'jpg'
+			'ratio' => 4/1
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -161,8 +155,7 @@ return [
 		'defaults' => [
 			'webpQuality' => 70,
 			'jpegQuality' => 70,
-			'ratio' => 1/1,
-			'format' => 'jpg'
+			'ratio' => 1/1
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,
@@ -181,8 +174,7 @@ return [
 			['width' => 640],			
 		],
 		'defaults' => [
-			'ratio' => 3/2,
-			'format' => 'jpg'
+			'ratio' => 3/2
 		],
 		'configOverrides' => [
 			'fillTransforms' => true,

@@ -1,4 +1,4 @@
-dateModified: 1784754593
+dateModified: 1786132563
 elementSources:
   craft\elements\Entry:
     -
@@ -303,6 +303,7 @@ meta:
     b1dd9550-b7de-4c8d-ac15-30a80aef59ff: 'Text Case' # Text Case
     b1e1aad8-a87c-4914-9445-bbbbb92076ee: Heading # Heading
     b4c4f21e-35c3-40ba-b812-86a3bc213582: 'Main Heading Text' # Main Heading Text
+    b7f31543-c171-44e2-9ac2-6c4e54afab38: 'User Icon' # User Icon
     b9dd4da2-a4a7-4a18-960b-da3b1204513f: 'Layout Adjustment' # Layout Adjustment
     b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f: 'Row Layout' # Row Layout
     b81cc92d-9e5b-440d-8461-cdf9ab64807e: Opacity # Opacity
@@ -374,7 +375,7 @@ meta:
 plugins:
   author-toolbar:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 1.0.0
     settings:
       accountSettingsLinkEnabled: true
