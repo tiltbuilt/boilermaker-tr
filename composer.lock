@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "588d706e7bbb71a3988eed912d1d5f2c",
+    "content-hash": "6f09651c50d87e77a1ca1e9190069a9e",
     "packages": [
         {
             "name": "amphp/amp",
@@ -2256,63 +2256,6 @@
             "time": "2026-07-06T20:35:29+00:00"
         },
         {
-            "name": "craftpulse/craft-colour-swatches",
-            "version": "5.1.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craftpulse/craft-colour-swatches/zipball/1e33c1d764569f875192463616bc749d618c0481",
-                "reference": "1e33c1d764569f875192463616bc749d618c0481",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^5.0.0",
-                "php": "^8.0.2"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Colour Swatches",
-                "handle": "colour-swatches",
-                "description": "Adding custom selectable colour palettes, gradients, classes and more to your field types.",
-                "developer": "craftpulse",
-                "developerUrl": "https://github.com/craftpulse",
-                "documentationUrl": "https://github.com/craftpulse/craft-colour-swatches/blob/v4/README.md",
-                "changelogUrl": "https://github.com/craftpulse/craft-colour-swatches/blob/v4/CHANGELOG.md",
-                "class": "percipiolondon\\colourswatches\\ColourSwatches"
-            },
-            "autoload": {
-                "psr-4": {
-                    "percipiolondon\\colourswatches\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Craft Pulse",
-                    "homepage": "https://github.com/craftpulse"
-                }
-            ],
-            "description": "Let clients choose from a predefined set of colours and utilise associated colour codes and class names in your templates.",
-            "keywords": [
-                "cms",
-                "color-swatches",
-                "colors",
-                "colour-swatches",
-                "colours",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "swatches"
-            ],
-            "support": {
-                "email": "support@percipio.london",
-                "docs": "https://github.com/percipioglobal/craft-colour-swatches/blob/v4/README.md",
-                "issues": "https://github.com/percipioglobal/craft-colour-swatches/issues"
-            },
-            "time": "2024-10-28T15:58:40+00:00"
-        },
-        {
             "name": "creocoder/yii2-nested-sets",
             "version": "0.9.0",
             "dist": {
@@ -4281,6 +4224,46 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2025-09-08T19:05:53+00:00"
+        },
+        {
+            "name": "imarc/craft-pickture",
+            "version": "1.1.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imarc/craft-pickture/zipball/40e776799ec5de227e75d49a1c0ed82d490f5c53",
+                "reference": "40e776799ec5de227e75d49a1c0ed82d490f5c53",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0 || ^5.0",
+                "php": "^8.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Pickture",
+                "handle": "pickture"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Imarc\\Pickture\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Imarc",
+                    "homepage": "https://www.imarc.com"
+                }
+            ],
+            "description": "A custom field type to let users pick between thumbnails instead of just text labels.",
+            "support": {
+                "issues": "https://github.com/imarc/craft-pickture/issues",
+                "source": "https://github.com/imarc/craft-pickture",
+                "docs": "https://github.com/imarc/craft-pickture/blob/main/README.md"
+            },
+            "time": "2025-05-08T19:35:39+00:00"
         },
         {
             "name": "intervention/httpauth",
@@ -13160,16 +13143,16 @@
         },
         {
             "name": "verbb/auth",
-            "version": "2.0.43",
+            "version": "2.0.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/auth.git",
-                "reference": "1c0f60fc1b9dc3a03580d5c3b89143bdd19363bc"
+                "reference": "0f221e6e455ce7713028e29ffe64ebb96440b4f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/auth/zipball/1c0f60fc1b9dc3a03580d5c3b89143bdd19363bc",
-                "reference": "1c0f60fc1b9dc3a03580d5c3b89143bdd19363bc",
+                "url": "https://api.github.com/repos/verbb/auth/zipball/0f221e6e455ce7713028e29ffe64ebb96440b4f8",
+                "reference": "0f221e6e455ce7713028e29ffe64ebb96440b4f8",
                 "shasum": ""
             },
             "require": {
@@ -13214,20 +13197,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-30T00:02:09+00:00"
+            "time": "2026-08-10T21:59:37+00:00"
         },
         {
             "name": "verbb/base",
-            "version": "3.0.13",
+            "version": "3.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/verbb-base.git",
-                "reference": "0012d5d656c29c9ff481892b2ec417016ce19720"
+                "reference": "c847f893fa7278413b6554324447137b815e7d3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/0012d5d656c29c9ff481892b2ec417016ce19720",
-                "reference": "0012d5d656c29c9ff481892b2ec417016ce19720",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/c847f893fa7278413b6554324447137b815e7d3e",
+                "reference": "c847f893fa7278413b6554324447137b815e7d3e",
                 "shasum": ""
             },
             "require": {
@@ -13264,7 +13247,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-05T12:11:40+00:00"
+            "time": "2026-08-14T11:53:23+00:00"
         },
         {
             "name": "verbb/buttonbox",
@@ -13659,11 +13642,11 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.1.34",
+            "version": "3.1.35",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/1b47e6ccb678c64a897ce68a0216678aa632e393",
-                "reference": "1b47e6ccb678c64a897ce68a0216678aa632e393",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/43de6124e054f15dda3e8d36954dc4cdd04b0119",
+                "reference": "43de6124e054f15dda3e8d36954dc4cdd04b0119",
                 "shasum": ""
             },
             "require": {
@@ -13676,13 +13659,13 @@
                 "html2text/html2text": "^4.3",
                 "league/html-to-markdown": "^4.10 || ^5.0",
                 "moneyphp/money": "^4.0",
-                "nystudio107/craft-plugin-vite": "^5.0.0",
+                "nystudio107/craft-plugin-vite": "^5.0.3",
                 "php": "^8.2",
                 "stripe/stripe-php": "^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0 || ^14.0 || ^15.0 || ^16.0",
                 "symfony/expression-language": "^5.0 || ^6.0 || ^7.0",
                 "theiconic/name-parser": "^1.0",
-                "verbb/auth": "^2.0.41",
-                "verbb/base": "^3.0.11"
+                "verbb/auth": "^2.0.44",
+                "verbb/base": "^3.0.13"
             },
             "type": "craft-plugin",
             "extra": {
@@ -13720,7 +13703,7 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2026-07-27T02:55:48+00:00"
+            "time": "2026-08-10T23:57:28+00:00"
         },
         {
             "name": "verbb/icon-picker",

@@ -29,7 +29,11 @@
 
 {# -- Any CSS that should be included before </head> -- #}
 {% block headCss %}
-		
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
 	
 {% endblock headCss %}
 

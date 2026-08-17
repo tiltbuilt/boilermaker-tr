@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: green
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:09+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
             instructions: null
@@ -56,6 +58,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:09+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e15525d6-6952-4e06-992e-6cf63f053365 # Tabs
             handle: null
             instructions: null
@@ -93,6 +96,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:13:55+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
             handle: null
             instructions: null
@@ -115,6 +119,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:13:55+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -142,17 +147,18 @@ fieldLayouts:
             uid: cbb0a133-086e-4ecb-aff7-fbcd8994d1eb
             userCondition: null
           -
-            dateAdded: '2025-05-19T20:49:09+00:00'
+            dateAdded: '2026-08-17T21:43:58+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            elementEditCondition: null
+            fieldUid: 04e28b50-88f5-4bca-b7bd-9a766add4257 # Color Scheme
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a1cfaa8b-df74-4370-b426-a82cc9d5eff1
+            uid: 737fa4c9-54ae-4bac-a1ad-e962aae6b80a
             userCondition: null
             warning: null
             width: 100
@@ -166,6 +172,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:09+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -181,6 +188,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:09+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -196,6 +204,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:09+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -218,6 +227,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:13:55+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -232,6 +242,7 @@ fieldLayouts:
         name: Advanced
         uid: 17f816a6-97ba-4306-a727-49a97c4c1f6d
         userCondition: null
+    thumbFieldKey: null
 handle: tabSet
 hasTitleField: true
 icon: null
@@ -243,3 +254,4 @@ slugTranslationMethod: site
 titleFormat: 'Tab Set'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -15,7 +15,8 @@
         position: relative;    
         margin: 0; 
         color: var(--color-text);
-        background-color: transparent;       
+        background-color: transparent;
+        grid-column: span 12 / span 12;       
         /*padding: var(--spacing-base);*/
         /* The default classes and style below can be changed on a per-project basis */  
     }

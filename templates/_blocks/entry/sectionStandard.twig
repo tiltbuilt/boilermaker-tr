@@ -28,10 +28,10 @@
 
 {# Set color classes #}
 {% set colorClasses = [] %}
-{% if entry.colorScheme == null %}
-	{% set colorScheme = "color-theme-default" %}	
+{% if entry.colorScheme|length %}
+	{% set colorScheme = entry.colorScheme %}		
 {% else %}
-	{% set colorScheme = entry.colorScheme.class %}
+	{% set colorScheme = "color-theme-default" %}
 {% endif %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
 {% if entry.bgColor|length %}
@@ -59,6 +59,7 @@
 <section id="{{blockId}}" class="@container {{ blockClass }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins, true) }} {{ sectionClassList|join(' ') }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }}>
 	
 	<div class="inner section-inner {{- gMacros.typeClasses(entry.typeSettings) -}} {{- gMacros.spacingClasses(entry.padding, true) -}}">			
+		
 		{% for chunk in entry.elementContent %}
 			{% if chunk.type == 'markup' %}
 				{{chunk|raw|retconAttr(['ul'], { 'class' : 'bullet-list' }, false)|typogrify}}			

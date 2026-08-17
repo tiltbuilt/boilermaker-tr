@@ -19,6 +19,8 @@ hooks:
         - exec: php craft db/backup
 use_dns_when_possible: true
 composer_version: "2"
+web_environment:
+    - MOTION_TOKEN=d77e94bc02722c178a4de72b1040f2d1cc7f352f1943147f75a19213c161d75b
 upload_dirs: 
     - "uploads"
     - "../storage"

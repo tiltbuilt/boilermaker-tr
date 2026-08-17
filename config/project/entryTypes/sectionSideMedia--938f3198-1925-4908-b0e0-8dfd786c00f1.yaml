@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: lime
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
             handle: null
             instructions: null
@@ -62,6 +64,7 @@ fieldLayouts:
             dateAdded: '2025-11-18T18:28:08+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 98ef6ef6-573d-4db4-9fbe-c4762deb5af5 # Media Type
             handle: null
             instructions: null
@@ -87,6 +90,7 @@ fieldLayouts:
                   value: false
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: defaultPhoto
             instructions: null
@@ -112,6 +116,7 @@ fieldLayouts:
                   value: true
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: cdbe0d46-9b4d-47a1-854d-cc894a161dd5 # Background Video
             handle: defaultVideo
             instructions: null
@@ -127,6 +132,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: altText
             instructions: null
@@ -142,6 +148,7 @@ fieldLayouts:
             dateAdded: '2025-11-18T18:28:08+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: frameAspect
             instructions: 'Sets the minimum aspect ratio of the media (photo/video) side of the section.'
@@ -167,6 +174,7 @@ fieldLayouts:
                   value: false
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: mediaAspect
             instructions: 'Sets what the aspect ratio of the media being displayed within the frame. '
@@ -182,6 +190,7 @@ fieldLayouts:
             dateAdded: '2025-11-18T20:02:48+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: mediaPosition
             instructions: null
@@ -207,6 +216,7 @@ fieldLayouts:
                   value: false
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 2186e435-0cf5-4c2f-8436-888d6d2e00c9 # Image Settings
             handle: null
             instructions: 'Use this field to change settings for the image on a per device basis. You can change to a different image at certain device sizes or change the aspect ratio of the image being used, etc.'
@@ -232,6 +242,7 @@ fieldLayouts:
                   value: true
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 7a8599c0-dfe2-4df7-b924-2368c50d96c4 # Video Settings
             handle: null
             instructions: null
@@ -253,6 +264,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: eb38218b-e090-4cec-807f-ab70934109ba # First Last
             handle: contentPositionSmall
             instructions: null
@@ -268,6 +280,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T21:18:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: c12d2808-0b82-4820-9af1-d1e45e27fc9e # Content Column Layout
             handle: null
             instructions: null
@@ -289,6 +302,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T16:58:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
             handle: null
             instructions: null
@@ -317,6 +331,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T16:58:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
             handle: null
             instructions: null
@@ -339,6 +354,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T16:58:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -357,17 +373,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:51:50+00:00'
+            dateAdded: '2026-08-17T21:38:35+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            elementEditCondition: null
+            fieldUid: 04e28b50-88f5-4bca-b7bd-9a766add4257 # Color Scheme
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 194d15f4-73f4-4cbb-9708-651709ca5699
+            uid: 83ca526a-c850-446d-be40-653aea830f34
             userCondition: null
             warning: null
             width: 100
@@ -375,6 +392,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
             instructions: null
@@ -390,6 +408,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T16:58:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
             instructions: null
@@ -411,6 +430,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -426,6 +446,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -441,6 +462,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -463,6 +485,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T21:56:47+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e3f9e59c-e941-404e-8bc8-b4c57ff28d5c # YesNo - Yes
             handle: lazyLoadImg
             instructions: 'When this switch is activated the image will not load until it is about to appear in the browser. If turned off, the image will load when the page loads. You should only turn this off if an image is going to appear at the top of a page.'
@@ -485,6 +508,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T16:58:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -499,6 +523,7 @@ fieldLayouts:
         name: Advanced
         uid: 19688c00-f44b-4f0e-b507-72b502a4c6ae
         userCondition: null
+    thumbFieldKey: null
 handle: sectionSideMedia
 hasTitleField: true
 icon: null
@@ -510,3 +535,4 @@ slugTranslationMethod: site
 titleFormat: 'Side By Side Section'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

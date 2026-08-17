@@ -28,10 +28,10 @@
 {% set opacitySetting = entry.opacity.value ? entry.opacity.value : 'opacity-60' %}
 
 {# set default color scheme for page header if none is set #}
-{% if entry.pageHeaderColorScheme == null %}
-    {% set pageHeaderColorScheme = 'color-theme-page-header-default' %}
+{% if entry.pageHeaderColorScheme|length %}
+    {% set pageHeaderColorScheme = entry.pageHeaderColorScheme %}    
 {% else %}
-    {% set pageHeaderColorScheme = entry.pageHeaderColorScheme.class %}
+    {% set pageHeaderColorScheme = 'color-theme-page-header-default' %}
 {% endif %}
 
 <div id="{{entry.slug}}-page-header" class="page-header section-standard @container {{pageHeaderColorScheme}} ">

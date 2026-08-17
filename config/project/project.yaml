@@ -1,4 +1,4 @@
-dateModified: 1786132563
+dateModified: 1787004536
 elementSources:
   craft\elements\Entry:
     -
@@ -171,7 +171,6 @@ meta:
     2bf5d5a7-249a-42a4-ae56-79ea7f679bcc: 'Modal to Display' # Modal to Display
     2e638127-2263-4e53-b71d-89eadcf405b0: 'Main Menu' # Main Menu
     3aa14a6e-dabc-42ae-8954-e10f19c53441: Accordions # Accordions
-    3b11f12d-de65-452c-9f88-880fdf6e2c79: 'Button Alignment' # Button Alignment
     3bcfa1bb-bcae-4957-b813-c81aa2061bfd: 'Text List Style' # Text List Style
     3c147a0d-440a-4850-b41a-98bf61c16df6: Globals # Globals
     3e969cc0-bed7-4fd0-93f3-3261062450d8: 'User Upload Icons' # User Upload Icons
@@ -181,6 +180,7 @@ meta:
     4b3b9d20-aab3-4438-b3cd-970c301db971: 'Public Schema' # Public Schema
     4c3b1224-ae0a-41b2-b608-0ad42c53ffb5: 'Slider Set' # Slider Set
     4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73: 'Button Color' # Button Color
+    04e28b50-88f5-4bca-b7bd-9a766add4257: 'Color Scheme' # Color Scheme
     5ad5f513-b34c-48ac-80bf-b573ed1e1f78: 'On Off' # On Off
     5d5ecce2-3ca6-40ee-bdb3-330b7f832bd9: 'Modal Button' # Modal Button
     5d95a350-fb34-496c-8c66-da3952eb4373: 'Text Alignment' # Text Alignment
@@ -234,6 +234,7 @@ meta:
     98ef6ef6-573d-4db4-9fbe-c4762deb5af5: 'Media Type' # Media Type
     99a21841-a7ac-4726-85bf-4628867cba30: Display # Display
     206d3220-640b-4b20-a440-faaa801a11d9: 'Display State' # Display State
+    226fe645-2e7c-4d59-bad1-16078bd3358c: 'Page Header Color Scheme' # Page Header Color Scheme
     335fab75-2107-4c96-80b2-14808539eadd: 'Button Group' # Button Group
     400ed272-3701-4004-b0e0-a74db3d25030: Accordion # Accordion
     413dfe3a-277c-4fba-a7ed-27de63a9a93f: 'Vertical Alignment' # Vertical Alignment
@@ -241,7 +242,6 @@ meta:
     487ec441-2218-43e8-8a96-652a0649e437: 'Color Picker' # Color Picker
     524fa6fd-cc9f-4e7a-8791-a28ce1bb3c97: 'Single URL' # Single URL
     558fedab-c14e-4f41-a438-ba8c394113a5: 'Notification Bar Alerts' # Notification Bar Alerts
-    563d2567-f32a-4687-862f-033e083c1c09: 'Page Header Background Type' # Page Header Background Type
     589d7e58-f378-455e-b073-055e9221964b: Pages # Pages
     732c729f-8dbb-4f01-a463-c163ddc13eab: 'Left Right' # Left Right
     859bdfc7-87f1-4c0d-8217-2388c34baba4: 'Column Width - No Full' # Column Width - No Full
@@ -253,7 +253,6 @@ meta:
     3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25: 'Background Repeat' # Background Repeat
     4306ce1c-1d03-4d40-b285-d1f1f7ea0361: 'Spacing - Margins' # Spacing - Margins
     4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed: 'Phone Number' # Phone Number
-    5514a63a-0a23-42f9-9333-5576b0e95462: 'Color Scheme' # Color Scheme
     5947f640-92a3-49d6-adfa-45816ba49d25: 'Slide Horizontal Layout' # Slide Horizontal Layout
     6307fb87-4049-44c5-a6bd-4753349bb90a: 'Image Margins' # Image Margins
     8125ecc7-14a0-48fa-beb2-ae316b8c9c0d: 'Entries to List' # Entries to List
@@ -261,7 +260,6 @@ meta:
     15890ba2-38e4-4bce-9ccc-45ed62101d3e: Section # Section
     58342a22-c0c8-4901-8615-20d4d69694bb: 'Module to Include' # Module to Include
     62336b23-c907-4179-a797-e2f7a8d75533: 'Type Overrides - Subhead' # Type Overrides - Subhead
-    68048c93-ca73-447b-9387-512eebe4e90b: 'Slide Columns' # Slide Columns
     74484c3f-217d-4141-ba59-128676f0ee17: 'Icon Content Vertical Layout Adjustment' # Icon Content Vertical Layout Adjustment
     82142db1-96fa-4ed9-a7e4-501f639e73f5: 'Button Orientation' # Button Orientation
     93013c2a-acd5-4b87-b999-b352741b10fd: 'Repeater Content' # Repeater Content
@@ -273,7 +271,6 @@ meta:
     1274916c-2577-42bf-a9be-c2a1d3ea5336: New # New
     3245198b-294e-4033-ab6f-56530c5758a1: 'Image Size Adjustment' # Image Size Adjustment
     4720320b-f7d0-49ec-a327-0db0e3a2dd7c: 'Aspect Ratio - Forced' # Aspect Ratio - Forced
-    05601664-3d38-4def-9b37-d9ccaf72ed5c: 'Reveal Animation' # Reveal Animation
     6283122d-7dc0-4b8d-8895-140bc4e66973: 'Page Builder' # Page Builder
     6699696d-9679-496c-9f4c-0a8d498f2959: 'Padding 2' # Padding 2
     13258500-9385-4fb0-a11a-826fcd6a69f4: 'Nav List Display Type' # Nav List Display Type
@@ -305,7 +302,6 @@ meta:
     b4c4f21e-35c3-40ba-b812-86a3bc213582: 'Main Heading Text' # Main Heading Text
     b7f31543-c171-44e2-9ac2-6c4e54afab38: 'User Icon' # User Icon
     b9dd4da2-a4a7-4a18-960b-da3b1204513f: 'Layout Adjustment' # Layout Adjustment
-    b60b76cf-1ca2-42b6-9ba2-6ad3de0f0e4f: 'Row Layout' # Row Layout
     b81cc92d-9e5b-440d-8461-cdf9ab64807e: Opacity # Opacity
     b644bda8-1050-46f5-9453-0b3d19812289: Documents # Documents
     b688f2ad-48f2-460c-ad2c-ad3dc97599ca: 'Device Size' # Device Size
@@ -330,7 +326,6 @@ meta:
     c57caa3f-3422-4928-85a0-f509e3c41317: 'Content Position - Small CTA' # Content Position - Small CTA
     c281acd6-db5d-49e9-a272-08936804b011: 'Card Link' # Card Link
     c478b55b-ac82-444e-9cfe-af352d9ac8e9: 'Icon Content Horizontal Layout Adjustment' # Icon Content Horizontal Layout Adjustment
-    c3506115-fd82-449b-b8b1-037e8e334f3c: 'Page Header Image Art Direction' # Page Header Image Art Direction
     cbcd5b00-2f33-4ac3-82a1-342b8dd20474: 'Column Layout Adjustment' # Column Layout Adjustment
     cd2e4df6-b8ea-4048-be1a-c8404b36a103: 'Icon Horizontal Alignment' # Icon Horizontal Alignment
     cdbe0d46-9b4d-47a1-854d-cc894a161dd5: 'Background Video' # Background Video
@@ -346,12 +341,10 @@ meta:
     e2f8e7ee-d666-4bd1-bfe9-ece40a043b3e: Repeater # Repeater
     e3f9e59c-e941-404e-8bc8-b4c57ff28d5c: 'YesNo - Yes' # YesNo - Yes
     e5bff211-8719-442c-8ca7-caf236c14273: 'Subhead Style' # Subhead Style
-    e5d8e3b7-10f0-430f-af2f-f9acf11b2e77: 'Page Header Color Scheme' # Page Header Color Scheme
     e6aadd12-c632-4735-b22d-b5a758ab5003: 'Boilermaker 3' # Boilermaker 3
     e92ccd0c-f875-418b-84e5-2e10fe5ca803: 'Modal Button Link' # Modal Button Link
     e976e669-f3ac-496a-8450-9d5613262236: 'Subhead Text' # Subhead Text
     e15525d6-6952-4e06-992e-6cf63f053365: Tabs # Tabs
-    e5542413-6c20-435f-8598-e457fb2d1a50: 'Page Header Background' # Page Header Background
     ea38d6d4-055b-43b8-b876-2bcab46e11c8: 'Company Info' # Company Info
     eaf22e5f-1786-41e9-bc4d-0a8682bab8af: 'Media Device Size' # Media Device Size
     eb38218b-e090-4cec-807f-ab70934109ba: 'First Last' # First Last
@@ -522,10 +515,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  colour-swatches:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.4.3
   craft-color-mixer:
     edition: standard
     enabled: true
@@ -608,6 +597,10 @@ plugins:
     enabled: true
     licenseKey: 4NGDY778PUBYATTK1L91ONOC
     schemaVersion: 2.1.2
+  pickture:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   postmark:
     edition: standard
     enabled: true

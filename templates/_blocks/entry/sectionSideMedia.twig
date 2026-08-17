@@ -172,10 +172,10 @@
 
 {# Set color classes #}
 {% set colorClasses = [] %}
-{% if entry.colorScheme == null %}
-	{% set colorScheme = "color-theme-default" %}	
+{% if entry.colorScheme|length %}
+	{% set colorScheme = entry.colorScheme %}		
 {% else %}
-	{% set colorScheme = entry.colorScheme.class %}
+	{% set colorScheme = "color-theme-default" %}
 {% endif %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
 {% if entry.bgColor|length %}

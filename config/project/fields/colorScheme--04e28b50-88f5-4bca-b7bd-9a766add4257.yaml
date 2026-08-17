@@ -4,7 +4,7 @@ instructions: 'This field presets the colors of text, heading etc. in the sectio
 name: 'Color Scheme'
 searchable: false
 settings:
-  default: null
+  customOptions: false
   options:
     -
       __assoc__:
@@ -12,31 +12,34 @@ settings:
           - label
           - 'Light Mode'
         -
-          - color
-          - '#FFF, #000'
+          - template
+          - ''
+        -
+          - background
+          - ''
+        -
+          - value
+          - color-theme-light
         -
           - default
           - ''
-        -
-          - class
-          - color-theme-light
     -
       __assoc__:
         -
           - label
           - 'Dark Mode'
         -
-          - color
-          - '#000,#FFF'
+          - template
+          - ''
+        -
+          - background
+          - ''
+        -
+          - value
+          - color-theme-dark
         -
           - default
           - ''
-        -
-          - class
-          - color-theme-dark
-  palette: null
-  setRandom: false
-  useConfigFile: false
 translationKeyFormat: null
 translationMethod: none
-type: percipiolondon\colourswatches\fields\ColourSwatches
+type: Imarc\Pickture\fields\PicktureField

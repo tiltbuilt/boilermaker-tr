@@ -14,7 +14,7 @@
 {% import '_macros/globalMacros' as gMacros %}
 
 {# Create array for classes to pass to macros for section #}
-{% set columnClassList = ['col-span-12'] %}
+{% set columnClassList = [] %}
 {% set gutterClassList = [] %}
 
 {# Set block id attribute value #}
@@ -32,8 +32,8 @@
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% set colorClasses = [] %}
-{% if entry.colorScheme != null %}
-	{% set colorScheme = entry.colorScheme.class %}	
+{% if entry.colorScheme|length %}
+	{% set colorScheme = entry.colorScheme %}	
 {% endif %}
 {% set colorClasses = colorClasses|merge([colorScheme]) %}
 {% if entry.bgColor|length %}

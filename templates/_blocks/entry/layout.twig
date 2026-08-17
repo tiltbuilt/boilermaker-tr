@@ -36,7 +36,7 @@
 {# insert layout changes #}
 
 {% for layoutItem in entry.layoutSettings.eagerly().all() %}
-	{% set devSize = layoutItem.layoutSize %}
+	{% set devSize = layoutItem.deviceSize %}
 	{% if devSize|length %}
 		{% set devSize = devSize ~ ':' %}	
 	{% endif %}
