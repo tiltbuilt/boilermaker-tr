@@ -30,6 +30,9 @@
 	--color-form-field-error-text: var(--color-red-700);
 	--color-form-error-block-text: var(--color-white);
 	--color-form-error-block-bg: var(--color-red-700);
+
+	/* CURTAINS TRANSITIONS */
+	--color-curtains-wipe-bg: var(--color-red-700);
 }
 
 

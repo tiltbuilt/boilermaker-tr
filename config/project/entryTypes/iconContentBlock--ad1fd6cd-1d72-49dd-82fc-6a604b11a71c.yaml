@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: cyan
 description: null
 fieldLayouts:
@@ -38,14 +39,31 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-08-07T19:56:03+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b7f31543-c171-44e2-9ac2-6c4e54afab38 # User Icon
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f2af15af-4b96-4534-8406-ec28ab192a80
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: null
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a15fcbe5-2476-427e-ad73-a136de530ae9
@@ -72,6 +90,7 @@ fieldLayouts:
             dateAdded: '2025-09-16T15:22:41+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 37ce7ac2-f596-4d6f-9181-3f4d9fa4d692 # Block Layout
             handle: null
             instructions: null
@@ -87,6 +106,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d897b42d-3d26-4db5-b105-29c871b31ffb # Limited Content
             handle: blockContent
             instructions: null
@@ -118,6 +138,7 @@ fieldLayouts:
                   value: true
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: fda8531d-3e9b-418c-8d5e-103f60ff9ada # Icon Block Horizontal Layout Adjustments
             handle: null
             instructions: null
@@ -143,6 +164,7 @@ fieldLayouts:
                   value: false
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: a1a85592-41a0-4088-acde-b7b2a763ecfa # Icon Block Vertical Layout Adjustments
             handle: null
             instructions: null
@@ -164,6 +186,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T21:09:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
             handle: null
             instructions: null
@@ -185,6 +208,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: iconColor
             instructions: 'This field overrides the default icon color for this color scheme'
@@ -200,6 +224,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T21:09:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
             instructions: null
@@ -221,6 +246,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T21:09:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -242,6 +268,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -257,6 +284,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -272,6 +300,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -294,6 +323,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T21:09:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -308,6 +338,7 @@ fieldLayouts:
         name: Advanced
         uid: f47f707a-e3ab-4758-a425-069b2e0d1eb5
         userCondition: null
+    thumbFieldKey: null
 handle: iconContentBlock
 hasTitleField: true
 icon: null
@@ -319,3 +350,4 @@ slugTranslationMethod: site
 titleFormat: 'Icon Content'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

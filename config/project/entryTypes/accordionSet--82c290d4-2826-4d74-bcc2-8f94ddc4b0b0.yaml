@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: green
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 3aa14a6e-dabc-42ae-8954-e10f19c53441 # Accordions
             handle: null
             instructions: null
@@ -62,6 +64,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: accordionIcon
             instructions: null
@@ -77,6 +80,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d7a280bb-af78-455c-9bd1-1fc2f7e4018d # OpenClosed
             handle: accordionStartState
             instructions: null
@@ -92,6 +96,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a2da31ae-7341-4dd1-b245-5ee55d44cbc2 # Yes No
             handle: accordionsAllowMultiple
             instructions: null
@@ -107,6 +112,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bae3f95d-8506-49cb-891a-048c975b11d4 # Heading Level
             handle: null
             instructions: null
@@ -134,17 +140,18 @@ fieldLayouts:
             uid: 946ccdcc-2c4b-48b1-aa7e-6039a2c4176f
             userCondition: null
           -
-            dateAdded: '2025-05-19T20:49:36+00:00'
+            dateAdded: '2026-08-17T21:39:16+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            elementEditCondition: null
+            fieldUid: 04e28b50-88f5-4bca-b7bd-9a766add4257 # Color Scheme
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 9b7d457a-bf24-447b-bbed-346ab8996846
+            uid: df398b87-c5e2-4862-9694-050e2f2a5e88
             userCondition: null
             warning: null
             width: 100
@@ -174,6 +181,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T18:44:12+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 53df91b5-e85f-4b0c-8669-222678840f22 # Padding
             handle: null
             instructions: null
@@ -196,6 +204,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T18:44:12+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -217,6 +226,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -232,6 +242,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -247,6 +258,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:49:36+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -269,6 +281,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T18:44:12+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -283,6 +296,7 @@ fieldLayouts:
         name: Advanced
         uid: b3ea43d9-6cda-405b-9735-80ef906ab405
         userCondition: null
+    thumbFieldKey: null
 handle: accordionSet
 hasTitleField: true
 icon: null
@@ -294,3 +308,4 @@ slugTranslationMethod: site
 titleFormat: 'Accordion Set'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

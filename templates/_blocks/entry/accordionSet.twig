@@ -30,8 +30,8 @@
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
-{% if entry.colorScheme != null %}
-	{% set colorScheme = entry.colorScheme.class %}	
+{% if entry.colorScheme|length %}
+	{% set colorScheme = entry.colorScheme %}	
 {% endif %}
 
 {# Retrieve styling adjustments #}
@@ -55,8 +55,8 @@
 		{% endif %}
 		
 		{# set colors for accordion #}		
-		{% if acc.colorScheme != null %}
-			{% set accColorScheme = acc.colorScheme.class %}			
+		{% if acc.colorScheme|length %}
+			{% set accColorScheme = acc.colorScheme %}			
 		{% else %}
 			{% set accColorScheme = colorScheme %}
 		{% endif %}

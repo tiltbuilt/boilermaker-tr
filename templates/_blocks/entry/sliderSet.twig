@@ -31,8 +31,8 @@
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
 {% set colorClasses = [] %}
-{% if entry.colorScheme != null %}
-	{% set colorScheme = entry.colorScheme.class %}	
+{% if entry.colorScheme|length %}
+	{% set colorScheme = entry.colorScheme %}	
 {% endif %}
 
 {% set sliderSetClassList = sliderSetClassList|merge([colorScheme]) %}

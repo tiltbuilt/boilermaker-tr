@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.4.1 - 2026-08-17
+
+### Upgraded
+- Craft and plugins
+
+### Removed
+- Colour Swatches Plugin
+
+### Added
+- Pickture Plugin
+
+### Changed
+- Modified Icon Picker setup for user uploaded icons to account for Icon Pciekr not bein g able to connect to a SERVD asset volume currently
+- Added Motion+ to javascript stack and added ability to use Motion+ Curtains or standard CSS for page transitions.
+- Changed Color Scheme field to use Pickture instead of Colour Swatches due to discontinuation of support.
+
 ## 3.4.0 - 2026-07-22
 
 ### Upgraded

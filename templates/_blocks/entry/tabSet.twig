@@ -30,8 +30,8 @@
 {% if colorScheme is not defined %}
 	{% set colorScheme = "color-theme-default" %}	
 {% endif %}
-{% if entry.colorScheme != null %}
-	{% set colorScheme = entry.colorScheme.class %}	
+{% if entry.colorScheme|length %}
+	{% set colorScheme = entry.colorScheme %}	
 {% endif %}
 
 {# Retrieve styling adjustments #}
@@ -107,7 +107,7 @@
 		{# set colors for accordion #}
 		{% set colorClasses = [] %}
 		{% if tab.colorScheme != null %}
-			{% set tabColorScheme = tab.colorScheme.class %}			
+			{% set tabColorScheme = tab.colorScheme %}			
 		{% else %}
 			{% set tabColorScheme = colorScheme %}
 		{% endif %}
@@ -173,8 +173,8 @@
 		{% endif %}
 		
 		{# set colors for accordion #}
-		{% if tab.colorScheme != null %}
-			{% set tabColorScheme = tab.colorScheme.class %}			
+		{% if tab.colorScheme|length %}
+			{% set tabColorScheme = tab.colorScheme %}			
 		{% else %}
 			{% set tabColorScheme = colorScheme %}
 		{% endif %}

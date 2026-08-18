@@ -79,13 +79,16 @@
 <div id="{{blockId}}" class="{{ blockClass }} @container {{ colorScheme }} {{ gMacros.displayClasses(entry.display)}} {{ gMacros.spacingClasses(entry.margins) }} {{ entry.customClasses }}" {{- gMacros.attributesOut(entry.customAttributes) }} >
 	<div class="icon-layout {{ layoutClasses|join(' ') }}">
 		<div class="{{- iconClasses|join(' ') }}">
-			{% if  entry.icon.type == 'svg' %}
-				{{  entry.icon.inline }}
-			{% elseif entry.icon.type == 'css' %}
-				<i class="{{ entry.icon }}"></i>								
+			{% if entry.userIcon|length %}
+				{% set userIcon = entry.userIcon.eagerly().one() %}
+				{{ svg(userIcon) }}
 			{% else %}
-				<svg><use xlink:href="/dist/svg/ui-svg-sprites.svg#{{ entry.icon.value }}"></use></svg>
-			{% endif %}
+				{% if entry.icon.type == 'svg' %}
+					{{  entry.icon.inline }}
+				{% elseif entry.icon.type == 'css' %}
+					<i class="{{ entry.icon }}"></i>			
+				{% endif %}
+			{% endif %}			
 		</div>	
 		{% if entry.blockContent|length %}
 			<div class="{{- contentClasses|join(' ') }} {{ gMacros.typeClasses(entry.typeSettings) -}}">

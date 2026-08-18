@@ -1,0 +1,36 @@
+columnSuffix: null
+handle: userIcon
+instructions: null
+name: 'User Icon'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - svg
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:fa819c1c-abac-42ac-b1e5-3de37862ccf3' # Images
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:885adfd6-ea67-44e1-adfd-c6695ca69849' # Icons
+  restrictedLocationSubpath: null
+  selectionLabel: 'Add SVG'
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: thumbs
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

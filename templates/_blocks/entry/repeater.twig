@@ -4,7 +4,7 @@
 {# Set block id, type, color scheme, class list #}
 {% set blockId = entry.customId ? entry.customId|replace({' ': '-'})|trim : 'repeater-' ~ entry.id %}
 {% set blockClass = entry.type.handle|kebab %}
-{% set colorScheme = entry.colorScheme.class ?? colorScheme ?? "color-theme-default" %}
+{% set colorScheme = entry.colorScheme ?? colorScheme ?? "color-theme-default" %}
 {% set repeaterClassList = entry.bgColor|length ? [colorScheme, 'bg-' ~ entry.bgColor] : [colorScheme] %}
 
 {# get order setting from field and match to appropriate parameter syntax #}

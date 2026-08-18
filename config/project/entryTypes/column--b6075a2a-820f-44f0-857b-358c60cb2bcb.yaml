@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: lime
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 9ceecee1-0248-4ae3-a12a-c90171e5f42f # Content
             handle: null
             instructions: null
@@ -62,6 +64,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:24:12+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 15a01698-c77f-4130-b85b-22a6b7f59419 # Column Layout
             handle: null
             instructions: null
@@ -83,6 +86,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:20:37+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f6807d6f-6a06-4137-8317-a236cec446bd # Type Settings
             handle: null
             instructions: null
@@ -111,6 +115,7 @@ fieldLayouts:
             dateAdded: '2025-09-12T21:47:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee647f87-6b2e-4408-a66a-007602c7ee67 # Column Padding
             handle: padding
             instructions: null
@@ -133,6 +138,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:24:12+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -151,17 +157,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:50:34+00:00'
+            dateAdded: '2026-08-17T21:41:17+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            elementEditCondition: null
+            fieldUid: 04e28b50-88f5-4bca-b7bd-9a766add4257 # Color Scheme
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 928f2229-fe71-4ebc-9e3b-a492ef21b5ce
+            uid: 4256cd9d-0f89-40f7-a5e5-e9f71f7ddb18
             userCondition: null
             warning: null
             width: 100
@@ -169,6 +176,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d12df536-921c-4ee2-b0bc-84a97d7c9e95 # Column Background Color
             handle: bgColor
             instructions: null
@@ -184,6 +192,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:20:37+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
             instructions: null
@@ -205,6 +214,7 @@ fieldLayouts:
             dateAdded: '2025-09-03T20:31:39+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 76e84206-fdd5-4553-bf04-6f24f458ce0e # Background Settings
             handle: null
             instructions: null
@@ -226,6 +236,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -241,6 +252,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -256,6 +268,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -278,6 +291,7 @@ fieldLayouts:
             dateAdded: '2025-09-15T15:46:30+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -292,6 +306,7 @@ fieldLayouts:
         name: Advanced
         uid: dd9772a9-92b7-4017-a3eb-82715b3b2249
         userCondition: null
+    thumbFieldKey: null
 handle: column
 hasTitleField: true
 icon: null
@@ -303,3 +318,4 @@ slugTranslationMethod: site
 titleFormat: Column
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

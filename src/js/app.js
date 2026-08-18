@@ -12,6 +12,9 @@ import "../css/app.css";
 /* JS */
 import { animate, stagger, scroll, cubicBezier, inView, frame, time } from "motion";
 
+/* Only needed for the "CURTAINS PAGE TRANSITIONS" block near the bottom of this file. If you remove/comment out that block (e.g. to use native CSS view-transitions instead), remove this import too. */
+import { curtains, wipe } from "motion-plus/curtains";
+
 
 //import * as YTPlayer from 'yt-player';
 
@@ -42,53 +45,67 @@ frame.update(update, true);
 
 
 
-try {
-  animate("body", { opacity: 1 });
-  document.body.classList.add('motion-loaded');
+/* ============================================================================
+ * PAGE REVEAL ANIMATIONS
+ * ----------------------------------------------------------------------------
+ * Works regardless of how page transitions are handled (Curtains, native CSS
+ * view-transitions, or plain full page loads) - nothing below in the Curtains
+ * block is required for this to function, so it's safe to leave in place.
+ * ============================================================================ */
 
-  const elements = [
-    "p",
-    "ul:not(.tab-list)",
-    ".heading", ".btn", ".cta", ".content-image",
-    ".accordion", ".icon-content", ".tab-set", ".slider-set",
-    ".quote", ".content-video", ".icon-wrapper",
-    ".page-header-main-photo", ".stat-ticker-group",
-    ".animated", ".form-field-wrapper", ".form-btn-wrapper",
-  ];
+// Shared selectors for the section reveal animations
+const revealElementSelectorList = [
+  "p",
+  "ul:not(.tab-list)",
+  ".heading", ".btn", ".cta", ".content-image",
+  ".accordion", ".icon-content", ".tab-set", ".slider-set",
+  ".quote", ".content-video", ".icon-wrapper",
+  ".page-header-main-photo", ".stat-ticker-group",
+  ".animated", ".form-field-wrapper", ".form-btn-wrapper",
+];
+const revealSectionSelectorList = [".section-standard", ".section-side-media"];
+const elementRevealSelectors = revealSectionSelectorList.flatMap(section => revealElementSelectorList.map(el => `.main ${section} ${el}`)).join(", ");
+const backgroundRevealSelectors = ".background-wrapper, .side-media-media";
 
-  const sections = [".section-standard", ".section-side-media"];
-  const elementRevealSelectors = sections.flatMap(section => elements.map(el => `.main ${section} ${el}`)).join(", ");
+// Sets up the in-view reveal animations; re-run after every page transition since inView() only observes elements present at call time
+function initRevealAnimations() {
+  try {
+    animate("body", { opacity: 1 });
+    document.body.classList.add('motion-loaded');
 
-  inView(".background-wrapper, .side-media-media", (element) => {
-    animate(element, { opacity: 1 }, {
-      duration: 0.8,
-      ease: [0.3, 0.1, 0.1, 1],
-    });
-  }, { amount: 0.01, once: true });
+    inView(backgroundRevealSelectors, (element) => {
+      animate(element, { opacity: 1 }, {
+        duration: 0.8,
+        ease: [0.3, 0.1, 0.1, 1],
+      });
+    }, { amount: 0.01, once: true });
 
-  inView(elementRevealSelectors, (element) => {
-    animate(element, { opacity: 1, y: 0 }, {
-      duration: 0.55,
-      ease: [0.3, 0.1, 0.1, 1],
-      delay: 0.08,
-    });
-  }, { amount: 0.2, once: true });
+    inView(elementRevealSelectors, (element) => {
+      animate(element, { opacity: 1, y: 0 }, {
+        duration: 0.55,
+        ease: [0.3, 0.1, 0.1, 1],
+        delay: 0.08,
+      });
+    }, { amount: 0.2, once: true });
 
-  inView(".repeater", (repeater) => {
-    const cards = Array.from(repeater.querySelectorAll('.repeater-card'));
-    if (!cards.length) return;
+    inView(".repeater", (repeater) => {
+      const cards = Array.from(repeater.querySelectorAll('.repeater-card'));
+      if (!cards.length) return;
 
-    animate(cards, { opacity: 1, y: 0 }, {
-      delay: stagger(0.15),
-      duration: 0.5,
-      ease: [0.3, 0.1, 0.1, 1],
-    });
-  }, { amount: 'some', once: true });
+      animate(cards, { opacity: 1, y: 0 }, {
+        delay: stagger(0.15),
+        duration: 0.5,
+        ease: [0.3, 0.1, 0.1, 1],
+      });
+    }, { amount: 'some', once: true });
 
-} catch (error) {
-  // Handle the error, perhaps by logging it or doing nothing
-  console.error("Motion.dev failed to load:", error);
+  } catch (error) {
+    // Handle the error, perhaps by logging it or doing nothing
+    console.error("Motion.dev failed to load:", error);
+  }
 }
+
+initRevealAnimations();
 
 
 document.addEventListener('alpine:init', () => {
@@ -134,6 +151,205 @@ if (typeof window.Alpine === "undefined") {
   window.Swiper = Swiper;  
   Alpine.start();
 }
+
+
+/* ============================================================================
+ * CURTAINS PAGE TRANSITIONS (motion-plus)
+ * ----------------------------------------------------------------------------
+ * Handles AJAX-style navigation with a Curtains wipe effect. To use native CSS
+ * view-transitions instead, delete/comment out this entire block along with
+ * the `curtains`/`wipe` import at the top of the file - everything above this
+ * block (Lenis, Alpine, reveal animations) will keep working unaffected.
+ * ============================================================================ */
+/* */
+// Returns whether at least `amount` (0-1) of an element's height is within the viewport
+function isInViewport(el, amount = 0) {
+  const rect = el.getBoundingClientRect();
+  if (rect.height <= 0) return false;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+  return (visibleHeight / rect.height) >= amount;
+}
+
+// Snaps already-visible elements straight to their revealed state (no animation) right after a
+// transition swap, so only content that is still off-screen plays the scroll-triggered fade-in
+function revealAlreadyVisibleElements() {
+  document.querySelectorAll(backgroundRevealSelectors).forEach((el) => {
+    if (isInViewport(el, 0.01)) {
+      el.style.opacity = '1';
+    }
+  });
+
+  document.querySelectorAll(elementRevealSelectors).forEach((el) => {
+    if (isInViewport(el, 0.2)) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    }
+  });
+
+  document.querySelectorAll(".repeater").forEach((repeater) => {
+    if (!isInViewport(repeater, 0)) return;
+    repeater.querySelectorAll('.repeater-card').forEach((card) => {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    });
+  });
+}
+
+// 1. Analytics virtual tracker
+function trackVirtualPageView(url) {
+  const pagePath = new URL(url).pathname;
+  const pageTitle = document.title;
+
+  if (typeof gtag === "function") {
+    gtag("event", "page_view", { page_title: pageTitle, page_location: window.location.href, page_path: pagePath });
+  }
+  if (window.dataLayer && Array.isArray(window.dataLayer)) {
+    window.dataLayer.push({ event: "virtual_pageview", page_url: window.location.href, page_title: pageTitle });
+  }
+  if (typeof fbq === "function") {
+    fbq("track", "PageView");
+  }
+}
+
+// 2. Head tag parser - syncs title, SEOMatic-managed tags (meta, canonical/hreflang, JSON-LD) and stylesheets
+function mergeHead(newDoc) {
+  document.title = newDoc.title;
+
+  const seoSelectors = [
+    'meta[name="description"]',
+    'meta[name="keywords"]',
+    'meta[name="robots"]',
+    'meta[property^="og:"]',
+    'meta[name^="twitter:"]',
+    'link[rel="canonical"]',
+    'link[rel="alternate"][hreflang]',
+    'script[type="application/ld+json"]',
+  ].join(', ');
+
+  document.querySelectorAll(seoSelectors).forEach(el => el.remove());
+  newDoc.querySelectorAll(seoSelectors).forEach(el => {
+    document.head.appendChild(el.cloneNode(true));
+  });
+
+  newDoc.querySelectorAll('link[rel="stylesheet"]').forEach(newLink => {
+    const existingLink = document.querySelector(`link[href="${newLink.getAttribute('href')}"]`);
+    if (!existingLink) {
+      document.head.appendChild(newLink.cloneNode(true));
+    }
+  });
+}
+
+// 2b. Sync all per-page <body> attributes (id, class, Alpine x-data/x-init, etc.) without touching
+// body's children, so body-level nodes like the curtains overlay aren't destroyed mid-transition
+function mergeBodyAttributes(newDoc) {
+  const oldBody = document.body;
+  const newBody = newDoc.body;
+
+  Array.from(oldBody.attributes).forEach(attr => {
+    if (!newBody.hasAttribute(attr.name)) {
+      oldBody.removeAttribute(attr.name);
+    }
+  });
+
+  Array.from(newBody.attributes).forEach(attr => {
+    oldBody.setAttribute(attr.name, attr.value);
+  });
+}
+
+// 3. Isolated Script Initialization (Runs AFTER curtain clears)
+function initPageScripts() {
+  // Re-run script tags injected inside the body
+  document.querySelectorAll("body script").forEach((oldScript) => {
+    const newScript = document.createElement("script");
+    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+    oldScript.parentNode.replaceChild(newScript, oldScript);
+  });
+
+  // Re-arm the reveal-on-scroll animations for the newly injected markup
+  initRevealAnimations();
+}
+
+// Initialize on initial cold page load
+document.addEventListener("DOMContentLoaded", initPageScripts);
+
+// 4. Corrected Async Routing Cycle
+async function navigateTo(url, isBackNavigation = false) {
+  try {
+    // AWAIT ONLY THE DOM SWAP AND PACING TIMER
+    await curtains(
+      async () => {
+        const [response] = await Promise.all([
+          fetch(url),
+          new Promise((resolve) => setTimeout(resolve, 350)) // Give animation processing buffer time
+        ]);
+
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        
+        mergeHead(doc);
+        mergeBodyAttributes(doc);
+
+        // Swap only the #main content, not the whole body, so body-level nodes
+        // like the curtains overlay aren't destroyed mid-transition
+        const newMain = doc.getElementById('main');
+        const currentMain = document.getElementById('main');
+        if (newMain && currentMain) {
+          currentMain.replaceWith(newMain);
+        } else {
+          document.body.innerHTML = doc.body.innerHTML;
+        }
+        
+        if (!isBackNavigation) {
+          window.history.pushState({}, "", url);
+        }
+        window.scrollTo(0, 0);
+
+        // Content already in view once the curtain clears should appear instantly, not fade in
+        revealAlreadyVisibleElements();
+
+        trackVirtualPageView(url);
+      },
+      { transition: { duration: 0.4 }, effect: wipe({ direction: "left", angle: 12 }) }
+    );
+
+    // CRITICAL FIX: Trigger script hooks AFTER the curtains() promise resolves.
+    // This allows the reveal timeline to run natively without blocking the stack thread.
+    requestAnimationFrame(() => {
+      initPageScripts();
+    });
+
+  } catch (error) {
+    console.error("Transition failed, falling back to hard refresh:", error);
+    window.location.href = url; 
+  }
+}
+
+// 5. Unified Event Hook Listeners
+document.addEventListener("click", async (e) => {
+  const link = e.target.closest("a");
+  if (!link || link.origin !== window.location.origin) return;
+  if (link.target && link.target !== "_self") return;
+  if (link.hasAttribute("download")) return;
+
+  const currentUrlNoHash = window.location.href.split('#')[0];
+  const targetUrlNoHash = link.href.split('#')[0];
+  if (currentUrlNoHash === targetUrlNoHash) return;
+
+  e.preventDefault();
+  navigateTo(link.href, false);
+});
+
+window.addEventListener("popstate", () => {
+  navigateTo(window.location.href, true);
+});
+
+/* ============================================================================
+ * END CURTAINS PAGE TRANSITIONS
+ * ============================================================================ */
 
 
 /* Header height padding adjustment */

@@ -1067,18 +1067,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-05-19T20:51:10+00:00'
+            dateAdded: '2026-08-17T21:41:47+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 5514a63a-0a23-42f9-9333-5576b0e95462 # Color Scheme
+            fieldUid: 04e28b50-88f5-4bca-b7bd-9a766add4257 # Color Scheme
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2a42327d-544a-4ccd-b61a-6bdc816e1856
+            uid: de56a9ad-3b41-4289-bb37-7f4603ace0ca
             userCondition: null
             warning: null
             width: 100
