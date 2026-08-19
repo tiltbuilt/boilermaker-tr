@@ -33,21 +33,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - 153ebb8e-b4c2-44e1-a3f2-2f154311c70f
-                            14:
+                            12:
                               - fieldUid
                               - 5feec917-01fb-4987-bd1a-c38c337de8cf # Font
                         -
@@ -59,21 +53,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - fbcf94b7-66f3-4bdf-863c-c481810ae61a
-                            14:
+                            12:
                               - fieldUid
                               - ba9877c7-223a-4c59-b461-4cf1a5068a34 # Font Size
                         -
@@ -85,21 +73,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - 3096bdb8-d097-4dd0-80fc-3c5cf13e98fb
-                            14:
+                            12:
                               - fieldUid
                               - 57eb287d-cdc2-4fba-8588-5dc66ff28c86 # Line Height
                         -
@@ -111,21 +93,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - ec04c215-55f2-4962-b372-bb1f75133d16
-                            14:
+                            12:
                               - fieldUid
                               - a387115c-e26a-48c1-88b4-11f64ea1772d # Font Weight
                         -
@@ -137,21 +113,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-09-14T15:24:29+00:00'
-                            11:
+                            9:
                               - uid
                               - c3905f7c-1090-4ab1-ae1c-79d4600cfdbc
-                            14:
+                            12:
                               - fieldUid
                               - 37a64193-e3ef-4a2d-aa91-555b436b1d7d # Italic?
                         -
@@ -163,21 +133,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - d7050fb6-4932-4907-8d40-945de9c40afb
-                            14:
+                            12:
                               - fieldUid
                               - 0a727c99-d7ce-4920-b1db-ce06d0647067 # Letter Spacing
                         -
@@ -189,21 +153,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - a3a4b5a9-3d20-4039-be1a-5d995b3142b0
-                            14:
+                            12:
                               - fieldUid
                               - b1dd9550-b7de-4c8d-ac15-30a80aef59ff # Text Case
                         -
@@ -229,21 +187,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - 427b2806-2d13-4c52-a5ee-04f8653b153e
-                            14:
+                            12:
                               - fieldUid
                               - 5d95a350-fb34-496c-8c66-da3952eb4373 # Text Alignment
                         -
@@ -255,24 +207,18 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 100
-                            10:
+                            8:
                               - dateAdded
                               - '2025-08-27T20:48:26+00:00'
-                            11:
+                            9:
                               - uid
                               - 65436c68-a019-4715-815c-d35e6bcdc17c
-                            14:
+                            12:
                               - fieldUid
                               - 1bda444e-0c10-4d30-ab1d-f9d24f8b3244 # Number of Text Columns
-            3:
+            4:
               - cardThumbAlignment
               - end
   viewMode: inline

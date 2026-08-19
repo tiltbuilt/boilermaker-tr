@@ -11,11 +11,22 @@ settings:
   css: null
   cssFile: Limited.css
   defaultTransform: null
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
   entryTypes:
     -
-      uid: 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+      __assoc__:
+        -
+          - uid
+          - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+        -
+          - expanded
+          - false
   fullGraphqlData: true
   headingLevels: false
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
   js: null
   jsFile: Limited.json
   options: null

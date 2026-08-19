@@ -1,12 +1,15 @@
 fieldLayouts:
   c9d96308-6e2e-46e4-82b0-7f4eb9481184:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6283122d-7dc0-4b8d-8895-140bc4e66973 # Page Builder
             handle: null
             instructions: null
@@ -21,6 +24,7 @@ fieldLayouts:
         name: '404 Page Content'
         uid: 64d093fe-4a7f-457e-90a0-7387a8820175
         userCondition: null
+    thumbFieldKey: null
 handle: page404
 name: '404 Page Content'
 sortOrder: 2

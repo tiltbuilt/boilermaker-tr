@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.4.1.1 - 2026-08-19
+
+### Upgraded
+- Craft and plugins
+
+### Changed
+- app.js curtains functions to make sure style and script elements were cloned over in new page loads
+
+### Fixed
+- issue with project config expecting ImgIX plugin to be installed
+
 ## 3.4.1 - 2026-08-17
 
 ### Upgraded

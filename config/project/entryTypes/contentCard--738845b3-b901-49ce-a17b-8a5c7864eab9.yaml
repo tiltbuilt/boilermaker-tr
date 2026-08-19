@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: yellow
+description: null
 fieldLayouts:
   bb944a46-5889-4b31-9c83-36e3783d2c5a:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -39,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T20:05:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 66354233-a357-4d3f-9543-7f92fef4d662 # Card Content
             handle: excerpt
             instructions: null
@@ -54,6 +58,7 @@ fieldLayouts:
             dateAdded: '2024-09-05T21:12:17+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
             instructions: null
@@ -68,6 +73,7 @@ fieldLayouts:
         name: Content
         uid: fd013db0-29ce-4c76-b8d3-ec34466f2195
         userCondition: null
+    thumbFieldKey: null
 handle: contentCard
 hasTitleField: true
 icon: null
@@ -79,3 +85,4 @@ slugTranslationMethod: site
 titleFormat: 'Content Card'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

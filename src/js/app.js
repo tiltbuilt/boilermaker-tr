@@ -238,6 +238,30 @@ function mergeHead(newDoc) {
       document.head.appendChild(newLink.cloneNode(true));
     }
   });
+
+  // Copy any page-specific <style> tags in <head> that aren't already present
+  newDoc.querySelectorAll('head style').forEach(newStyle => {
+    const alreadyPresent = Array.from(document.querySelectorAll('head style'))
+      .some(existingStyle => existingStyle.textContent === newStyle.textContent);
+    if (!alreadyPresent) {
+      document.head.appendChild(newStyle.cloneNode(true));
+    }
+  });
+
+  // Copy any page-specific <script> tags in <head>; recreated (not cloned) so they actually execute
+  newDoc.querySelectorAll('head script').forEach(newScript => {
+    const src = newScript.getAttribute('src');
+    const alreadyPresent = src
+      ? document.querySelector(`head script[src="${src}"]`)
+      : Array.from(document.querySelectorAll('head script:not([src])'))
+          .some(existingScript => existingScript.textContent === newScript.textContent);
+    if (alreadyPresent) return;
+
+    const script = document.createElement('script');
+    Array.from(newScript.attributes).forEach(attr => script.setAttribute(attr.name, attr.value));
+    script.textContent = newScript.textContent;
+    document.head.appendChild(script);
+  });
 }
 
 // 2b. Sync all per-page <body> attributes (id, class, Alpine x-data/x-init, etc.) without touching

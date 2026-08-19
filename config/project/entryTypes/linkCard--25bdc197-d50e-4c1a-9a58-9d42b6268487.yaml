@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: yellow
+description: null
 fieldLayouts:
   39bb9f2b-3e0d-4167-9d1e-fd5f29ef7e74:
+    cardThumbAlignment: end
     cardView:
       - type
       - 'layoutElement:a267e2d1-ae60-4826-aaea-283cd94f541c'
@@ -40,6 +43,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T20:27:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 66354233-a357-4d3f-9543-7f92fef4d662 # Card Content
             handle: excerpt
             instructions: null
@@ -55,6 +59,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T20:27:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f1b466ce-fb41-471a-90d4-5d0fd23f346d # Image Asset
             handle: null
             instructions: null
@@ -70,6 +75,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T20:27:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: c281acd6-db5d-49e9-a272-08936804b011 # Card Link
             handle: null
             instructions: null
@@ -84,6 +90,7 @@ fieldLayouts:
         name: Content
         uid: 8203d73c-7831-4a26-a27e-fcf3fad47d3e
         userCondition: null
+    thumbFieldKey: null
 handle: linkCard
 hasTitleField: true
 icon: null
@@ -95,3 +102,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

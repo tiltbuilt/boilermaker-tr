@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: cyan
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T21:01:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aa6f3d94-b580-4806-aac7-1dde0e3062e0 # Button Link
             handle: null
             instructions: null
@@ -62,6 +64,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 47acc143-9347-4976-bd50-02778ffeabf1 # Button Styles
             handle: null
             instructions: null
@@ -77,6 +80,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: adca13f3-4ae5-49c5-83c4-cab3dd9f5ece # Button Size
             handle: null
             instructions: null
@@ -92,6 +96,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 4e9bbb37-55ed-437d-bdbd-9a1dcbc20d73 # Button Color
             handle: null
             instructions: null
@@ -113,6 +118,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -128,6 +134,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -143,6 +150,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:45:54+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -165,6 +173,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T22:29:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -179,6 +188,7 @@ fieldLayouts:
         name: Advanced
         uid: c5ad5011-f1be-491c-a6ba-6c6e5e537c55
         userCondition: null
+    thumbFieldKey: null
 handle: button
 hasTitleField: true
 icon: null
@@ -190,3 +200,4 @@ slugTranslationMethod: site
 titleFormat: Button
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

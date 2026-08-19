@@ -1,12 +1,15 @@
 fieldLayouts:
   3e4d980a-483a-401c-8073-0cc15c5b0d92:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 4600cc8f-8e3f-45bf-bbb9-9e48d2e181ed # Phone Number
             handle: null
             instructions: null
@@ -19,8 +22,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 8cea45ff-f3ed-4c12-b8d2-ed1d8140b912 # Social Media Links
             handle: null
             instructions: null
@@ -35,6 +40,7 @@ fieldLayouts:
         name: 'Company Info'
         uid: dafac861-0cd9-4e71-b606-1ced52de55d2
         userCondition: null
+    thumbFieldKey: null
 handle: companyInfo
 name: 'Company Info'
 sortOrder: 1

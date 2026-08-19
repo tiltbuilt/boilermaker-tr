@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -15,6 +16,7 @@ fieldLayouts:
             dateAdded: '2025-09-15T17:31:29+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
             instructions: null
@@ -30,6 +32,7 @@ fieldLayouts:
             dateAdded: '2025-09-15T17:31:29+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 66d93990-df90-491e-9f27-29da78847eb3 # Icon Size
             handle: null
             instructions: null
@@ -45,6 +48,7 @@ fieldLayouts:
             dateAdded: '2025-09-15T17:31:29+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: df144842-8cb5-4008-8427-22974b6fe49c # Icon Vertical Alignment
             handle: null
             instructions: null
@@ -60,6 +64,7 @@ fieldLayouts:
             dateAdded: '2025-12-18T22:05:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
             handle: iconSpacing
             instructions: null
@@ -74,6 +79,7 @@ fieldLayouts:
         name: Settings
         uid: 8c1a2129-ec3e-4b6f-996f-b8833126a0d6
         userCondition: null
+    thumbFieldKey: null
 handle: iconContentHorizontalLayoutAdjustment
 hasTitleField: false
 icon: null
@@ -85,3 +91,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-adjustment-{layoutSize}-Horizontal'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

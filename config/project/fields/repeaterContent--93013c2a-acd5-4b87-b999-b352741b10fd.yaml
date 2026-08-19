@@ -4,6 +4,7 @@ instructions: null
 name: 'Repeater Content'
 searchable: false
 settings:
+  customOptions: false
   options:
     -
       __assoc__:

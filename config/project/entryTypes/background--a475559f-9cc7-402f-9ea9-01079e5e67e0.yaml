@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -17,6 +18,7 @@ fieldLayouts:
             dateAdded: '2026-01-29T22:27:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b688f2ad-48f2-460c-ad2c-ad3dc97599ca # Device Size
             handle: layoutSize
             instructions: null
@@ -32,6 +34,7 @@ fieldLayouts:
             dateAdded: '2025-09-03T19:46:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 72b1f013-8778-4308-a355-29b6088c7162 # Background Type
             handle: null
             instructions: null
@@ -59,6 +62,7 @@ fieldLayouts:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 3218b554-b14a-4cc0-8b53-3f4b5b1bcd4c # Background Image
             handle: null
             instructions: null
@@ -86,6 +90,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: cdbe0d46-9b4d-47a1-854d-cc894a161dd5 # Background Video
             handle: null
             instructions: null
@@ -113,6 +118,7 @@ fieldLayouts:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: f4d725e6-48b8-4083-a921-ecc0925a0bff # Background Size
             handle: null
             instructions: null
@@ -140,6 +146,7 @@ fieldLayouts:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
             instructions: null
@@ -175,6 +182,7 @@ fieldLayouts:
                     - auto
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 3710a5c7-fa54-4a2c-a07b-4f7a31f5bd25 # Background Repeat
             handle: null
             instructions: null
@@ -203,6 +211,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: null
             instructions: null
@@ -218,6 +227,7 @@ fieldLayouts:
             dateAdded: '2025-09-03T19:46:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b81cc92d-9e5b-440d-8461-cdf9ab64807e # Opacity
             handle: null
             instructions: null
@@ -244,3 +254,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-background-{deviceSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'
