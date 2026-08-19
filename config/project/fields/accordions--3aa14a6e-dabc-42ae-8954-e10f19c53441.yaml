@@ -5,8 +5,14 @@ name: Accordions
 searchable: true
 settings:
   createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 400ed272-3701-4004-b0e0-a74db3d25030 # Accordion
+    -
+      __assoc__:
+        -
+          - uid
+          - 400ed272-3701-4004-b0e0-a74db3d25030 # Accordion
   includeTableView: false
   maxEntries: null
   minEntries: null

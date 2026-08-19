@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: amber
+description: null
 fieldLayouts:
   633cde7d-9883-40ee-a53d-05ab77a40b5b:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:
@@ -39,6 +42,7 @@ fieldLayouts:
             dateAdded: '2024-08-25T21:25:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: acdcfd1c-89a2-4090-989d-17db6ad24060 # Icon
             handle: null
             instructions: null
@@ -54,6 +58,7 @@ fieldLayouts:
             dateAdded: '2024-08-25T21:25:56+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 524fa6fd-cc9f-4e7a-8791-a28ce1bb3c97 # Single URL
             handle: socialLinkUrl
             instructions: null
@@ -68,6 +73,7 @@ fieldLayouts:
         name: Content
         uid: b03413f8-ea23-4ae0-9bae-c37e293f23dc
         userCondition: null
+    thumbFieldKey: null
 handle: socialLink
 hasTitleField: true
 icon: null
@@ -79,3 +85,4 @@ slugTranslationMethod: site
 titleFormat: 'Social Link'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

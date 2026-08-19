@@ -5,8 +5,14 @@ name: Tabs
 searchable: false
 settings:
   createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - d85e2e7b-6380-4c46-8ebd-36ad0a2eee46 # Tab Panel
+    -
+      __assoc__:
+        -
+          - uid
+          - d85e2e7b-6380-4c46-8ebd-36ad0a2eee46 # Tab Panel
   includeTableView: false
   maxEntries: 5
   minEntries: 1

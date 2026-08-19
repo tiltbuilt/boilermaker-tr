@@ -7,6 +7,7 @@ settings:
   default: false
   offLabel: 'Below Headline'
   onLabel: 'Above Headline'
+  showLabelsInCards: false
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

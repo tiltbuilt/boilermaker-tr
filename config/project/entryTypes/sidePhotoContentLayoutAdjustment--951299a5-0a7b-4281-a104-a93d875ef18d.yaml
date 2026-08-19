@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -15,6 +16,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T21:24:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f8bf9322-a174-4828-95a3-9f768c70cdea # Device Size - Tab Plus
             handle: deviceSize
             instructions: null
@@ -30,6 +32,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T22:11:39+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 859bdfc7-87f1-4c0d-8217-2388c34baba4 # Column Width - No Full
             handle: columnWidth
             instructions: null
@@ -45,6 +48,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T21:16:49+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 96e05d50-67cf-45ef-8670-b1764a09015a # Column Position
             handle: null
             instructions: null
@@ -60,6 +64,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T21:16:49+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 413dfe3a-277c-4fba-a7ed-27de63a9a93f # Vertical Alignment
             handle: null
             instructions: null
@@ -75,6 +80,7 @@ fieldLayouts:
             dateAdded: '2025-09-28T21:16:49+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: imagePosition
             instructions: 'Use this field to reposition the photo within its frame, allowing more control over the focal point position'
@@ -90,6 +96,7 @@ fieldLayouts:
             dateAdded: '2025-10-06T21:16:35+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: null
             instructions: 'Use this field to set a minimum aspect ratio for the photo in case there is not much content in the section and you want the photo to have more visibility.'
@@ -104,6 +111,7 @@ fieldLayouts:
         name: Content
         uid: 67ea7606-e05c-4008-8074-29f8fad47c28
         userCondition: null
+    thumbFieldKey: null
 handle: sidePhotoContentLayoutAdjustment
 hasTitleField: false
 icon: null
@@ -115,3 +123,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-layout-{layoutSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

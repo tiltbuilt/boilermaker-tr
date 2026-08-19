@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -14,6 +15,7 @@ fieldLayouts:
             dateAdded: '2025-09-20T22:32:11+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
             instructions: null
@@ -29,6 +31,7 @@ fieldLayouts:
             dateAdded: '2025-09-20T22:16:59+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
             handle: null
             instructions: null
@@ -44,6 +47,7 @@ fieldLayouts:
             dateAdded: '2025-09-20T22:16:59+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bb89e543-0de1-4a53-9480-2e7c0e8a69a5 # Aspect Ratio
             handle: frameAspect
             instructions: null
@@ -59,6 +63,7 @@ fieldLayouts:
             dateAdded: '2025-09-17T19:38:39+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0fe2ca3f-eb30-4294-96a2-1154bd95e41e # Background Position
             handle: imagePosition
             instructions: null
@@ -73,6 +78,7 @@ fieldLayouts:
         name: Content
         uid: 6c2995dc-4eab-4967-a632-caae41ee1561
         userCondition: null
+    thumbFieldKey: null
 handle: imageArtDirectionFrameAdjustment
 hasTitleField: false
 icon: null
@@ -84,3 +90,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-{layoutSize}-ArtDirection-Frame'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

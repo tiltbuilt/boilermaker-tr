@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: yellow
+description: null
 fieldLayouts:
   7e5feb3c-e3b1-4d57-9fde-a887e3b8e079:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +40,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:42+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: excerpt
             instructions: null
@@ -52,6 +56,7 @@ fieldLayouts:
             dateAdded: '2025-05-19T20:50:42+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6283122d-7dc0-4b8d-8895-140bc4e66973 # Page Builder
             handle: null
             instructions: null
@@ -66,6 +71,7 @@ fieldLayouts:
         name: Content
         uid: 722b5556-ee9e-4e0c-8a0d-a0950a45018f
         userCondition: null
+    thumbFieldKey: null
 handle: modal
 hasTitleField: true
 icon: null
@@ -77,3 +83,4 @@ slugTranslationMethod: site
 titleFormat: Modal
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

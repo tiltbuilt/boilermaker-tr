@@ -2,6 +2,7 @@ altTranslationKeyFormat: null
 altTranslationMethod: none
 fieldLayouts:
   591914db-0320-44b3-a9a0-93e9bcf625fc:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: 736faa6d-3585-457e-a390-4e43f19b6820
         userCondition: null
+    thumbFieldKey: null
 fs: $CONTENT_VIDEO_FS
 handle: contentVideos
 name: 'Content Videos'

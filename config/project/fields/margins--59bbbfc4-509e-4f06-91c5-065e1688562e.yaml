@@ -36,21 +36,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-18T22:25:17+00:00'
-                            11:
+                            9:
                               - uid
                               - 95360aa7-e77b-4a84-b0f4-d3586eb2db19
-                            14:
+                            12:
                               - fieldUid
                               - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
                         -
@@ -68,24 +62,18 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-18T22:25:17+00:00'
-                            11:
+                            9:
                               - uid
                               - 8f5235e6-297d-4549-9580-d09ac6cca279
-                            14:
+                            12:
                               - fieldUid
                               - 4306ce1c-1d03-4d40-b285-d1f1f7ea0361 # Spacing - Margins
-            3:
+            4:
               - cardThumbAlignment
               - end
   viewMode: grouped

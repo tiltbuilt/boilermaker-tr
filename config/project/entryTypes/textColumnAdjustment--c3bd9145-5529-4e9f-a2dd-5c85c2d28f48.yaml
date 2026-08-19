@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T16:44:05+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
             instructions: null
@@ -26,6 +28,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T16:44:05+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 13531367-46d6-4c50-8ec6-9bb2a6ab5ab1 # Number of Columns
             handle: null
             instructions: null
@@ -40,6 +43,7 @@ fieldLayouts:
         name: Settings
         uid: 020814e0-d8b6-493b-85ef-ddc931daf681
         userCondition: null
+    thumbFieldKey: null
 handle: textColumnAdjustment
 hasTitleField: false
 icon: null
@@ -51,3 +55,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-{layoutSize}-text-columns-{numberofColumns}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

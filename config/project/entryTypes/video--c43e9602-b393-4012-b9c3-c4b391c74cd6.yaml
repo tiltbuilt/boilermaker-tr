@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: cyan
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 79d28a86-5f89-45cb-99a4-a97fa0992c73 # Video Asset
             handle: null
             instructions: null
@@ -56,6 +58,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 0f72b724-e0a8-4044-a3aa-12255ade6ea1 # Basic Text with Search
             handle: videoCaption
             instructions: null
@@ -77,6 +80,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:17:48+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ec02fe58-24eb-430e-961f-fb063723276c # Image Size
             handle: videoSize
             instructions: null
@@ -98,6 +102,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: textColor
             instructions: null
@@ -113,6 +118,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 487ec441-2218-43e8-8a96-652a0649e437 # Color Picker
             handle: bgColor
             instructions: null
@@ -134,6 +140,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:17:48+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 59bbbfc4-509e-4f06-91c5-065e1688562e # Margins
             handle: null
             instructions: null
@@ -155,6 +162,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6b484609-7d28-4f55-990e-f5212885d922 # Custom ID
             handle: null
             instructions: null
@@ -170,6 +178,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a78e7e89-26cf-4a0e-a36d-b48ca76d7ba5 # Custom Classes
             handle: null
             instructions: null
@@ -185,6 +194,7 @@ fieldLayouts:
             dateAdded: '2025-05-23T19:14:43+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ee64f702-a8f1-46ee-8dea-79f8ad82e25b # Custom Attributes
             handle: null
             instructions: null
@@ -207,6 +217,7 @@ fieldLayouts:
             dateAdded: '2025-08-28T17:17:48+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 99a21841-a7ac-4726-85bf-4628867cba30 # Display
             handle: null
             instructions: null
@@ -221,6 +232,7 @@ fieldLayouts:
         name: Advanced
         uid: f9972402-86f2-400d-9dc0-94b3ae2a58bd
         userCondition: null
+    thumbFieldKey: null
 handle: video
 hasTitleField: true
 icon: film
@@ -232,3 +244,4 @@ slugTranslationMethod: site
 titleFormat: Video
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

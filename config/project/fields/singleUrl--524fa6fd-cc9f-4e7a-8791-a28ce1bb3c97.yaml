@@ -4,7 +4,9 @@ instructions: null
 name: 'Single URL'
 searchable: false
 settings:
+  fullGraphqlData: false
   maxLength: 255
+  showLabelField: false
   types:
     - url
 translationKeyFormat: null

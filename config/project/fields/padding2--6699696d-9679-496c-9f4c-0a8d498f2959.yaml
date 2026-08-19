@@ -36,21 +36,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-18T23:10:37+00:00'
-                            11:
+                            9:
                               - uid
                               - 7af78459-462e-4839-8931-70fe11f8882b
-                            14:
+                            12:
                               - fieldUid
                               - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
                         -
@@ -68,21 +62,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-18T23:10:37+00:00'
-                            11:
+                            9:
                               - uid
                               - 09363d55-74a9-47eb-9a46-fa1538a81799
-                            14:
+                            12:
                               - fieldUid
                               - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
                         -
@@ -100,21 +88,15 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-18T23:10:37+00:00'
-                            11:
+                            9:
                               - uid
                               - 629c12df-4690-4c7f-a326-7121564698f4
-                            14:
+                            12:
                               - fieldUid
                               - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
                         -
@@ -132,24 +114,18 @@ settings:
                               - required
                               - false
                             7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
                               - width
                               - 50
-                            10:
+                            8:
                               - dateAdded
                               - '2025-11-18T23:10:37+00:00'
-                            11:
+                            9:
                               - uid
                               - 8256f9fd-afdf-4b1e-b1eb-2962ae3c5b6d
-                            14:
+                            12:
                               - fieldUid
                               - 91d05e51-ee38-4e73-af4c-ebed7e7572d3 # Spacing
-            3:
+            4:
               - cardThumbAlignment
               - end
   viewMode: grouped

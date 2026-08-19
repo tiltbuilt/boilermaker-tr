@@ -1,6 +1,7 @@
 defaultPlacement: end
 fieldLayouts:
   3d96e099-fa03-4485-be3f-6e3b3c1737c4:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -10,7 +11,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
             disabled: false
             elementCondition: null
             id: null
@@ -34,7 +35,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
             elementCondition: null
             instructions: null
             label: null
@@ -46,7 +47,7 @@ fieldLayouts:
             warning: null
           -
             attribute: newWindow
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
             elementCondition: null
             id: null
             instructions: null
@@ -75,7 +76,7 @@ fieldLayouts:
             autocorrect: true
             autofocus: false
             class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
             disabled: false
             elementCondition: null
             id: null
@@ -109,7 +110,7 @@ fieldLayouts:
             autocorrect: true
             autofocus: false
             class: null
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
             disabled: false
             elementCondition: null
             id: null
@@ -138,7 +139,7 @@ fieldLayouts:
             width: 100
           -
             attribute: customAttributes
-            dateAdded: '2024-09-05T16:11:51-05:00'
+            dateAdded: null
             elementCondition: null
             id: null
             instructions: null
@@ -157,6 +158,7 @@ fieldLayouts:
         name: Advanced
         uid: 5c8c777f-334c-4d72-b87f-fc1dfc4917e0
         userCondition: null
+    thumbFieldKey: null
 handle: mainMenu
 instructions: null
 maxNodes: null
@@ -182,6 +184,7 @@ permissions:
   verbb\navigation\nodetypes\PassiveType:
     enabled: '1'
 propagationMethod: all
+showSiteMenu: true
 siteSettings:
   e6aadd12-c632-4735-b22d-b5a758ab5003: # Boilermaker 3
     enabled: true

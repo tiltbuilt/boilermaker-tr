@@ -2,6 +2,7 @@ altTranslationKeyFormat: null
 altTranslationMethod: none
 fieldLayouts:
   80eef89d-c5f7-45d1-accb-3b9cf9a03875:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: d86d9e90-5f05-45dd-90de-7c65d841ee4f
         userCondition: null
+    thumbFieldKey: null
 fs: $BG_VIDEO_FS
 handle: backgroundVideos
 name: 'Background Videos'

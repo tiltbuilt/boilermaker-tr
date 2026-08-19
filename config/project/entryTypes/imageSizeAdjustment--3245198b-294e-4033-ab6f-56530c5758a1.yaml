@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: pink
 description: null
 fieldLayouts:
@@ -13,6 +14,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T21:53:42+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7f182d27-ea6e-4a71-a3f8-5c9d0f147eed # Layout Size
             handle: null
             instructions: null
@@ -28,6 +30,7 @@ fieldLayouts:
             dateAdded: '2025-08-27T21:53:42+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 049ec87b-57e9-4b3e-8d53-44cb8874474b # Width
             handle: null
             instructions: null
@@ -42,6 +45,7 @@ fieldLayouts:
         name: Settings
         uid: 836e1293-54cb-4f61-b252-05ce4f75cd04
         userCondition: null
+    thumbFieldKey: null
 handle: imageSizeAdjustment
 hasTitleField: false
 icon: null
@@ -53,3 +57,4 @@ slugTranslationMethod: site
 titleFormat: '{object.owner.title}-Size-{layoutSize}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

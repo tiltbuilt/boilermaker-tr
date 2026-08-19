@@ -11,149 +11,424 @@ settings:
   css: ".ck.ck-content {\r\n  font-size: 16px;\r\n}\r\n\r\n.ck.ck-content .text-xs {\r\n  font-size: 12px;\r\n}\r\n\r\n.ck.ck-content .text-sm {\r\n  font-size: 14px;\r\n}\r\n\r\n.ck.ck-content .text-lg {\r\n  font-size: 18px;\r\n}\r\n\r\n.ck.ck-content .text-xl {\r\n  font-size: 20px;\r\n}\r\n\r\n.ck.ck-content .text-2xl {\r\n  font-size: 24px;\r\n}\r\n\r\n.ck.ck-content .text-3xl {\r\n  font-size: 30px;\r\n}\r\n\r\n.ck.ck-content .text-4xl {\r\n  font-size: 36px;\r\n}\r\n\r\n.ck.ck-content .text-5xl {\r\n  font-size: 48px;\r\n}\r\n\r\n.ck.ck-content .text-6xl {\r\n  font-size: 60px;\r\n}\r\n\r\n.ck.ck-content .text-7xl {\r\n  font-size: 72px;\r\n}\r\n\r\n.ck.ck-content .text-8xl {\r\n  font-size: 96px;\r\n}"
   cssFile: null
   defaultTransform: null
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
   entryTypes:
     -
-      expanded: true
-      uid: 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+      __assoc__:
+        -
+          - uid
+          - 335fab75-2107-4c96-80b2-14808539eadd # Button Group
+        -
+          - expanded
+          - true
     -
-      uid: bcc81e37-c9a5-4aaa-a456-847dd36ebf95 # CTA
+      __assoc__:
+        -
+          - uid
+          - bcc81e37-c9a5-4aaa-a456-847dd36ebf95 # CTA
+        -
+          - expanded
+          - false
     -
-      expanded: true
-      uid: b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
+      __assoc__:
+        -
+          - uid
+          - b1e1aad8-a87c-4914-9445-bbbbb92076ee # Heading
+        -
+          - expanded
+          - true
     -
-      uid: ad1fd6cd-1d72-49dd-82fc-6a604b11a71c # Icon Content Block
+      __assoc__:
+        -
+          - uid
+          - ad1fd6cd-1d72-49dd-82fc-6a604b11a71c # Icon Content Block
+        -
+          - expanded
+          - false
     -
-      expanded: true
-      uid: a6e56255-d417-4ac8-9a3f-256c30684cd0 # Image
+      __assoc__:
+        -
+          - uid
+          - a6e56255-d417-4ac8-9a3f-256c30684cd0 # Image
+        -
+          - expanded
+          - true
     -
-      uid: ad2e8ad9-d9ae-4fee-a8f8-de0e8680707c # Quote
+      __assoc__:
+        -
+          - uid
+          - ad2e8ad9-d9ae-4fee-a8f8-de0e8680707c # Quote
+        -
+          - expanded
+          - false
     -
-      expanded: true
-      uid: c43e9602-b393-4012-b9c3-c4b391c74cd6 # Video
+      __assoc__:
+        -
+          - uid
+          - c43e9602-b393-4012-b9c3-c4b391c74cd6 # Video
+        -
+          - expanded
+          - true
     -
-      uid: 486d3e65-7880-4e2e-803e-daecc6657a1d # Content Wrapper
+      __assoc__:
+        -
+          - uid
+          - 486d3e65-7880-4e2e-803e-daecc6657a1d # Content Wrapper
+        -
+          - expanded
+          - false
     -
-      uid: 82c290d4-2826-4d74-bcc2-8f94ddc4b0b0 # Accordion Set
+      __assoc__:
+        -
+          - uid
+          - 82c290d4-2826-4d74-bcc2-8f94ddc4b0b0 # Accordion Set
+        -
+          - expanded
+          - false
     -
-      expanded: true
-      uid: 05fecf3b-4603-46ea-9e54-4612defd70e9 # Layout
+      __assoc__:
+        -
+          - uid
+          - 05fecf3b-4603-46ea-9e54-4612defd70e9 # Layout
+        -
+          - expanded
+          - true
     -
-      uid: 4c3b1224-ae0a-41b2-b608-0ad42c53ffb5 # Slider Set
+      __assoc__:
+        -
+          - uid
+          - 4c3b1224-ae0a-41b2-b608-0ad42c53ffb5 # Slider Set
+        -
+          - expanded
+          - false
     -
-      uid: 4a803a3b-ac9b-4ecc-b439-0815fb18e053 # Tab Set
+      __assoc__:
+        -
+          - uid
+          - 4a803a3b-ac9b-4ecc-b439-0815fb18e053 # Tab Set
+        -
+          - expanded
+          - false
     -
-      uid: 82cdb5ee-7722-4897-8e26-fb817c98e85e # Embed
+      __assoc__:
+        -
+          - uid
+          - 82cdb5ee-7722-4897-8e26-fb817c98e85e # Embed
+        -
+          - expanded
+          - false
     -
-      uid: 1ef67107-0265-4563-8344-695b0a016e56 # Form
+      __assoc__:
+        -
+          - uid
+          - 1ef67107-0265-4563-8344-695b0a016e56 # Form
+        -
+          - expanded
+          - false
     -
-      uid: e2f8e7ee-d666-4bd1-bfe9-ece40a043b3e # Repeater
+      __assoc__:
+        -
+          - uid
+          - e2f8e7ee-d666-4bd1-bfe9-ece40a043b3e # Repeater
+        -
+          - expanded
+          - false
   fullGraphqlData: false
   headingLevels: false
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
   js: null
   jsFile: null
   options:
-    alignment:
-      options:
+    __assoc__:
+      -
+        - alignment
         -
-          className: text-left
-          name: left
+          __assoc__:
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - className
+                      - text-left
+                    -
+                      - name
+                      - left
+                -
+                  __assoc__:
+                    -
+                      - className
+                      - text-right
+                    -
+                      - name
+                      - right
+                -
+                  __assoc__:
+                    -
+                      - className
+                      - text-center
+                    -
+                      - name
+                      - center
+                -
+                  __assoc__:
+                    -
+                      - className
+                      - text-justify
+                    -
+                      - name
+                      - justify
+      -
+        - fontSize
         -
-          className: text-right
-          name: right
+          __assoc__:
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - xs
+                    -
+                      - title
+                      - 'Extra Small'
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-xs
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - sm
+                    -
+                      - title
+                      - Small
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-sm
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - lg
+                    -
+                      - title
+                      - Large
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-lg
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - xl
+                    -
+                      - title
+                      - 'Extra Large'
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 2xl
+                    -
+                      - title
+                      - 2XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-2xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 3xl
+                    -
+                      - title
+                      - 3XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-3xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 4xl
+                    -
+                      - title
+                      - 4XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-4xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 5xl
+                    -
+                      - title
+                      - 5XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-5xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 6xl
+                    -
+                      - title
+                      - 6XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-6xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 7xl
+                    -
+                      - title
+                      - 7XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-7xl
+                          -
+                            - name
+                            - span
+                -
+                  __assoc__:
+                    -
+                      - model
+                      - 8xl
+                    -
+                      - title
+                      - 8XL
+                    -
+                      - view
+                      -
+                        __assoc__:
+                          -
+                            - classes
+                            -
+                              - text-8xl
+                          -
+                            - name
+                            - span
+      -
+        - link
         -
-          className: text-center
-          name: center
-        -
-          className: text-justify
-          name: justify
-    fontSize:
-      options:
-        -
-          model: xs
-          title: 'Extra Small'
-          view:
-            classes:
-              - text-xs
-            name: span
-        -
-          model: sm
-          title: Small
-          view:
-            classes:
-              - text-sm
-            name: span
-        -
-          model: lg
-          title: Large
-          view:
-            classes:
-              - text-lg
-            name: span
-        -
-          model: xl
-          title: 'Extra Large'
-          view:
-            classes:
-              - text-xl
-            name: span
-        -
-          model: 2xl
-          title: 2XL
-          view:
-            classes:
-              - text-2xl
-            name: span
-        -
-          model: 3xl
-          title: 3XL
-          view:
-            classes:
-              - text-3xl
-            name: span
-        -
-          model: 4xl
-          title: 4XL
-          view:
-            classes:
-              - text-4xl
-            name: span
-        -
-          model: 5xl
-          title: 5XL
-          view:
-            classes:
-              - text-5xl
-            name: span
-        -
-          model: 6xl
-          title: 6XL
-          view:
-            classes:
-              - text-6xl
-            name: span
-        -
-          model: 7xl
-          title: 7XL
-          view:
-            classes:
-              - text-7xl
-            name: span
-        -
-          model: 8xl
-          title: 8XL
-          view:
-            classes:
-              - text-8xl
-            name: span
-    link:
-      addTargetToExternalLinks: false
-      decorators:
-        openInNewTab:
-          attributes:
-            rel: 'noopener noreferrer'
-            target: _blank
-          label: 'Open in a new tab'
-          mode: manual
+          __assoc__:
+            -
+              - addTargetToExternalLinks
+              - false
+            -
+              - decorators
+              -
+                __assoc__:
+                  -
+                    - openInNewTab
+                    -
+                      __assoc__:
+                        -
+                          - attributes
+                          -
+                            __assoc__:
+                              -
+                                - rel
+                                - 'noopener noreferrer'
+                              -
+                                - target
+                                - _blank
+                        -
+                          - label
+                          - 'Open in a new tab'
+                        -
+                          - mode
+                          - manual
   parseEmbeds: false
   purifierConfig: null
   purifyHtml: true

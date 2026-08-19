@@ -9,6 +9,7 @@ settings:
   allowUploads: false
   allowedKinds: null
   branchLimit: null
+  defaultPlacement: end
   defaultUploadLocationSource: 'volume:7c366b82-7c53-4dd2-a425-1c416a3e1464' # Content Videos
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
@@ -21,7 +22,7 @@ settings:
   restrictedLocationSource: 'volume:7c366b82-7c53-4dd2-a425-1c416a3e1464' # Content Videos
   restrictedLocationSubpath: null
   selectionLabel: null
-  showCardsInGrid: false
+  showSearchInput: true
   showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
@@ -29,7 +30,7 @@ settings:
     - 'volume:7c366b82-7c53-4dd2-a425-1c416a3e1464' # Content Videos
   targetSiteId: null
   validateRelatedElements: false
-  viewMode: large
+  viewMode: thumbs
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Assets

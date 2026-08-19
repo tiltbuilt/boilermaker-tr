@@ -5,8 +5,14 @@ name: 'Social Media Links'
 searchable: false
 settings:
   createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 79fb09c5-0e2c-49d7-bfe6-a9b38820b56a # Social Link
+    -
+      __assoc__:
+        -
+          - uid
+          - 79fb09c5-0e2c-49d7-bfe6-a9b38820b56a # Social Link
   includeTableView: false
   maxEntries: null
   minEntries: null
