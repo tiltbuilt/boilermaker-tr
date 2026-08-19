@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.4.1.2 - 2026-08-19
+
+### Fixed
+- issue with project config expecting ImgIX plugin to be installed
+
+
 ## 3.4.1.1 - 2026-08-19
 
 ### Upgraded

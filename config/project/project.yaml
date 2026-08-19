@@ -579,11 +579,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: MLFGV1NSRNQFNIUUEB35QGVX
-    schemaVersion: 4.0.0
-  imager-x-imgix-download-transformer:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 4.0.0  
   imager-x-power-pack:
     edition: standard
     enabled: true
