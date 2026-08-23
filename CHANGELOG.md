@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.4.1.3 - 2026-08-23
+
+### Upgraded
+- Craft and plugins
+
+### Fixed
+- issue with default env starter not having settings for icon volume causing errors with asset fields
+
 ## 3.4.1.2 - 2026-08-19
 
 ### Fixed
