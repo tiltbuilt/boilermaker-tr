@@ -39,7 +39,7 @@ fieldLayouts:
         uid: cb5d2dac-d498-4264-8d91-8e6b95beac70
         userCondition: null
     thumbFieldKey: null
-fs: $ICON_FS
+fs: $ICONS_FS
 handle: icons
 name: Icons
 sortOrder: 5

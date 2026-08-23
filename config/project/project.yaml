@@ -1,4 +1,4 @@
-dateModified: 1787164107
+dateModified: 1787507062
 elementSources:
   craft\elements\Entry:
     -
@@ -123,9 +123,9 @@ fs:
     hasUrls: true
     name: Icons
     settings:
-      path: $ICON_ASSETS_PATH
+      path: $ICONS_ASSETS_PATH
     type: craft\fs\Local
-    url: $ICON_ASSETS_URL
+    url: $ICONS_ASSETS_URL
   iconsServd:
     hasUrls: false
     name: 'Icons - Servd'
@@ -579,7 +579,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: MLFGV1NSRNQFNIUUEB35QGVX
-    schemaVersion: 4.0.0  
+    schemaVersion: 4.0.0
   imager-x-power-pack:
     edition: standard
     enabled: true
